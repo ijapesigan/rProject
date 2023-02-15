@@ -18,16 +18,8 @@ note <- sprintf(
 )
 url <- "https://github.com/jeksterslab/rProject"
 
-citHeader(
-  paste(
-    "To cite",
-    pkg,
-    "in publications, please use:"
-  )
-)
-
-citEntry(
-  entry = "Manual",
+bibentry(
+  bibtype = "Manual",
   author = author,
   title = paste0(pkg, ":", " ", title),
   year = year,
@@ -38,5 +30,10 @@ citEntry(
     pkg, ":", " ", title, ".", " ",
     note, ".", " ",
     url
+  ),
+  header = paste(
+    "To cite",
+    pkg,
+    "in publications, please use:"
   )
 )
