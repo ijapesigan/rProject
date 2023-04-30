@@ -20,6 +20,10 @@ Style <- function(path) {
     path = path,
     exclude_dirs = c(
       ".library",
+      file.path(
+        ".setup",
+        "notes"
+      ),
       "renv",
       "packrat"
     )
