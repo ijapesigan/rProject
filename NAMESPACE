@@ -3,6 +3,7 @@
 export(Binary)
 export(Build)
 export(BuildIgnore)
+export(CFF)
 export(Clean)
 export(CleanPkg)
 export(CleanTinyTex)
