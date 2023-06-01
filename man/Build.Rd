@@ -4,7 +4,7 @@
 \alias{Build}
 \title{Build Package}
 \usage{
-Build(path, vignettes = FALSE)
+Build(path, vignettes = FALSE, dependencies = FALSE)
 }
 \arguments{
 \item{path}{Character string.
@@ -12,6 +12,9 @@ Project path.}
 
 \item{vignettes}{Logical.
 Build vignettes.}
+
+\item{dependencies}{Logical.
+Install package dependencies.}
 }
 \description{
 Build Package

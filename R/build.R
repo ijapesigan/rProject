@@ -5,9 +5,12 @@
 #' @inheritParams LibPaths
 #' @param vignettes Logical.
 #'   Build vignettes.
+#' @param dependencies Logical.
+#'   Install package dependencies.
 #' @export
 Build <- function(path,
-                  vignettes = FALSE) {
+                  vignettes = FALSE,
+                  dependencies = FALSE) {
   lib <- LibPaths(path = path)
   installed <- utils::installed.packages()
   pkg_installed <- installed[, "Package"]
@@ -20,7 +23,7 @@ Build <- function(path,
   }
   devtools::document(pkg = path)
   devtools::check(pkg = path, cran = FALSE)
-  devtools::install(pkg = path)
+  devtools::install(pkg = path, dependencies = dependencies)
   devtools::build(
     pkg = path,
     path = path,
