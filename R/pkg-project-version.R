@@ -11,21 +11,20 @@
 PkgProjectVersion <- function(path,
                               pkg,
                               ver) {
-  stopifnot(length(pkg) == length(ver))
-  lib <- LibPaths(path = path)
-  installed <- utils::installed.packages()
-  pkg_installed <- installed[, "Package"]
-  repos <- c(REPO_NAME = PkgRepo(path = path))
-  if (!("remotes" %in% pkg_installed)) {
-    utils::install.packages(
-      "remotes",
-      repos = repos,
-      lib = lib,
-      quiet = TRUE
-    )
-  }
   if (length(pkg) > 0) {
     stopifnot(length(pkg) == length(ver))
+    lib <- LibPaths(path = path)
+    installed <- utils::installed.packages()
+    pkg_installed <- installed[, "Package"]
+    repos <- c(REPO_NAME = PkgRepo(path = path))
+    if (!("remotes" %in% pkg_installed)) {
+      utils::install.packages(
+        "remotes",
+        repos = repos,
+        lib = lib,
+        quiet = TRUE
+      )
+    }
     for (i in seq_along(pkg)) {
       pkg_i <- installed[pkg[i], ]
       ver_i <- pkg_i[["Version"]]

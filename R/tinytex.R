@@ -24,7 +24,7 @@ TinyTex <- function(path,
   if (!("tinytex" %in% pkg_installed)) {
     run <- TRUE
   } else {
-    if (is.null(packageDescription("tinytex")$GithubRepo)) {
+    if (is.null(utils::packageDescription("tinytex")$GithubRepo)) {
       run <- TRUE
     }
   }
