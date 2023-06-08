@@ -4,7 +4,7 @@
 \alias{PkgProjectGitHub}
 \title{Install Project Packages from GitHub}
 \usage{
-PkgProjectGitHub(path, pkg)
+PkgProjectGitHub(path, pkg, ref = "HEAD")
 }
 \arguments{
 \item{path}{Character string.
@@ -12,6 +12,9 @@ Project path.}
 
 \item{pkg}{Character vector.
 GitHub packages.}
+
+\item{ref}{Character vector.
+Git branch.}
 }
 \description{
 Install Project Packages from GitHub

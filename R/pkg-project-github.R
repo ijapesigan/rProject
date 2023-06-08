@@ -5,10 +5,21 @@
 #' @inheritParams LibPaths
 #' @param pkg Character vector.
 #'   GitHub packages.
+#' @param ref Character vector.
+#'   Git branch.
 #' @export
 PkgProjectGitHub <- function(path,
-                             pkg) {
+                             pkg,
+                             ref = "HEAD") {
   lib <- LibPaths(path = path)
+  if (length(ref) == 1) {
+    if (ref == "HEAD") {
+      ref <- rep(
+        x = ref,
+        times = length(pkg)
+      )
+    }
+  }
   installed <- utils::installed.packages()
   pkg_installed <- installed[, "Package"]
   if (!("remotes" %in% pkg_installed)) {
@@ -30,6 +41,7 @@ PkgProjectGitHub <- function(path,
     )
     remotes::install_github(
       repo = pkg[i],
+      ref = ref[i],
       lib = lib,
       quiet = TRUE
     )
