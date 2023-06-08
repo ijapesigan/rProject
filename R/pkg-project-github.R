@@ -11,6 +11,9 @@
 PkgProjectGitHub <- function(path,
                              pkg,
                              ref = "HEAD") {
+  stopifnot(
+    length(pkg) > 0
+  )
   lib <- LibPaths(path = path)
   if (length(ref) == 1) {
     if (ref == "HEAD") {
@@ -20,6 +23,9 @@ PkgProjectGitHub <- function(path,
       )
     }
   }
+  stopifnot(
+    length(pkg) == length(ref)
+  )
   installed <- utils::installed.packages()
   pkg_installed <- installed[, "Package"]
   if (!("remotes" %in% pkg_installed)) {
@@ -30,20 +36,36 @@ PkgProjectGitHub <- function(path,
       quiet = TRUE
     )
   }
+  repo_pkg <- strsplit(pkg, split = "/")
+  repo_pkg <- do.call(
+    what = "rbind",
+    args = repo_pkg
+  )
+  colnames(repo_pkg) <- c("repo", "pkg")
   for (i in seq_along(pkg)) {
-    cat(
-      paste0(
-        "Installing ",
-        pkg[i],
-        "...",
-        "\n"
+    run <- FALSE
+    if (!(repo_pkg[i, "pkg"] %in% pkg_installed)) {
+      run <- TRUE
+    } else {
+      if (is.null(packageDescription(repo_pkg[i, "pkg"])$GithubRepo)) {
+        run <- TRUE
+      }
+    }
+    if (run) {
+      cat(
+        paste0(
+          "Installing ",
+          pkg[i],
+          " from GitHub...",
+          "\n"
+        )
       )
-    )
-    remotes::install_github(
-      repo = pkg[i],
-      ref = ref[i],
-      lib = lib,
-      quiet = TRUE
-    )
+      remotes::install_github(
+        repo = pkg[i],
+        ref = ref[i],
+        lib = lib,
+        quiet = TRUE
+      )
+    }
   }
 }

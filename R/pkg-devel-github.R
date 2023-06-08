@@ -22,19 +22,35 @@ PkgDevelGitHub <- function(path) {
     "r-lib/devtools",
     "r-hub/rhub"
   )
+  repo_pkg <- strsplit(pkg, split = "/")
+  repo_pkg <- do.call(
+    what = "rbind",
+    args = repo_pkg
+  )
+  colnames(repo_pkg) <- c("repo", "pkg")
   for (i in seq_along(pkg)) {
-    cat(
-      paste0(
-        "Installing ",
-        pkg[i],
-        "...",
-        "\n"
+    run <- FALSE
+    if (!(repo_pkg[i, "pkg"] %in% pkg_installed)) {
+      run <- TRUE
+    } else {
+      if (is.null(packageDescription(repo_pkg[i, "pkg"])$GithubRepo)) {
+        run <- TRUE
+      }
+    }
+    if (run) {
+      cat(
+        paste0(
+          "Installing ",
+          pkg[i],
+          " from GitHub...",
+          "\n"
+        )
       )
-    )
-    remotes::install_github(
-      repo = pkg[i],
-      lib = lib,
-      quiet = TRUE
-    )
+      remotes::install_github(
+        repo = pkg[i],
+        lib = lib,
+        quiet = TRUE
+      )
+    }
   }
 }

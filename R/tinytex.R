@@ -20,11 +20,21 @@ TinyTex <- function(path,
       quiet = TRUE
     )
   }
-  remotes::install_github(
-    repo = "rstudio/tinytex",
-    lib = lib,
-    quiet = TRUE
-  )
+  run <- FALSE
+  if (!("tinytex" %in% pkg_installed)) {
+    run <- TRUE
+  } else {
+    if (is.null(packageDescription("tinytex")$GithubRepo)) {
+      run <- TRUE
+    }
+  }
+  if (run) {
+    remotes::install_github(
+      repo = "rstudio/tinytex",
+      lib = lib,
+      quiet = TRUE
+    )
+  }
   if (!tinytex::is_tinytex()) {
     install <- TRUE
   }

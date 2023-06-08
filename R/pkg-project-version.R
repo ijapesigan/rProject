@@ -27,23 +27,27 @@ PkgProjectVersion <- function(path,
   if (length(pkg) > 0) {
     stopifnot(length(pkg) == length(ver))
     for (i in seq_along(pkg)) {
-      cat(
-        paste0(
-          "Installing ",
-          pkg[i],
-          " ",
-          ver[i],
-          "...",
-          "\n"
+      pkg_i <- installed[pkg[i], ]
+      ver_i <- pkg_i[["Version"]]
+      if (ver_i != ver[i]) {
+        cat(
+          paste0(
+            "Installing ",
+            pkg[i],
+            " ",
+            ver[i],
+            "...",
+            "\n"
+          )
         )
-      )
-      remotes::install_version(
-        package = pkg[i],
-        version = ver[i],
-        repos = repos,
-        lib = lib,
-        quiet = TRUE
-      )
+        remotes::install_version(
+          package = pkg[i],
+          version = ver[i],
+          repos = repos,
+          lib = lib,
+          quiet = TRUE
+        )
+      }
     }
   }
 }
