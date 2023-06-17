@@ -4,11 +4,9 @@
 #'
 #' @export
 Tmux <- function() {
-  tmux <- system.file(
-    file.path(
-      "extdata",
-      "install-tmux.sh"
-    ),
+  install_tmux <- system.file(
+    "extdata",
+    "install-tmux",
     package = "rProject"
   )
   run_sh <- FALSE
@@ -32,11 +30,13 @@ Tmux <- function() {
     tmp_dir <- tempdir()
     system(
       paste(
+        "(",
         "cd",
         tmp_dir,
         ";",
         "bash",
-        tmux
+        install_tmux,
+        ")"
       )
     )
     on.exit(
@@ -45,4 +45,5 @@ Tmux <- function() {
       )
     )
   }
+  return(NULL)
 }
