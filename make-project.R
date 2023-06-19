@@ -8,7 +8,7 @@ source(
     ".project"
   )
 )
-secrets_path <- file.path(
+secrets_path <-   file.path(
   path,
   ".secrets"
 )
@@ -25,8 +25,8 @@ if (file.exists(secrets_path)) {
       tokens[i]
     )
   }
+  writeLines(env, "~/.bash-secrets")
 }
-writeLines(env, "~/.bash-secrets")
 dot_library_folder <- file.path(
   path,
   ".library"
