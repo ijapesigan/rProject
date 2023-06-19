@@ -13,7 +13,6 @@ BuildIgnore <- function(path,
   x <- c(
     ".*\\.Rcheck$",
     ".*\\.Rproj$",
-    # ".*\\.sh$",
     ".*\\.sif$",
     ".*\\.tar\\.gz$",
     ".*\\.tar\\.xz$",
@@ -25,8 +24,6 @@ BuildIgnore <- function(path,
     "^Makefile$",
     "^README.md$",
     "^README.Rmd$",
-    # all shell scripts in the root directory should start with `.` and end with `.sh`
-    # characters between the start and end should be letters, numbers, dashes, or underscores
     "^\\.[a-zA-Z0-9-_]+\\.sh$",
     "^\\.data-.*$",
     "^\\.Rproj\\.user$",

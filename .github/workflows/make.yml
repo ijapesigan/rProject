@@ -15,4 +15,6 @@ jobs:
       -
         name: Checkout 
         uses: actions/checkout@v3
+      -
+        name: Make 
         run: make all
