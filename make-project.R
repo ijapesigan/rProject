@@ -8,22 +8,23 @@ source(
     ".project"
   )
 )
-source(
-  file.path(
-    path,
-    ".secrets"
-  )
+secrets_path <- file.path(
+  path,
+  ".secrets"
 )
-keys <- names(tokens)
-env <- rep(x = "", times = length(keys))
-for (i in seq_along(tokens)) {
-  env[i] <- paste0(
-    "export",
-    " ",
-    keys[i],
-    "=",
-    tokens[i]
-  )
+if (file.exists(secrets_path)) {
+  source(secrets_path)
+  keys <- names(tokens)
+  env <- rep(x = "", times = length(keys))
+  for (i in seq_along(tokens)) {
+    env[i] <- paste0(
+      "export",
+      " ",
+      keys[i],
+      "=",
+      tokens[i]
+    )
+  }
 }
 writeLines(env, "~/.bash-secrets")
 dot_library_folder <- file.path(
@@ -82,11 +83,13 @@ rProject::Profile(
   path = path,
   project = project
 )
-rProject::Environment(
-  path = path,
-  project = project,
-  tokens = tokens
-)
+if (file.exists(secrets_path)) {
+  rProject::Environment(
+    path = path,
+    project = project,
+    tokens = tokens
+  )
+}
 rProject::BuildIgnore(
   path = path,
   project = project,
