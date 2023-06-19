@@ -3,7 +3,7 @@
 set -e
 
 # pre TMP ----------------------------------------------------------------------
-TMP_FOLDER=$(mktemp -d -q "$PWD/TEMPDIR" || exit 1)
+TMP_FOLDER=$(mktemp -d -q "${PWD}"/TEMPDIR.XXXXXXXXXX || exit 1)
 # ------------------------------------------------------------------------------
 
 cd TMP_FOLDER
