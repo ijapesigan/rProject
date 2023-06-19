@@ -66,6 +66,7 @@ make-*
 
 # sh
 .clone.sh
+.dotfiles.sh
 
 # dotfiles
 .dotfiles

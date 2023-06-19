@@ -28,3 +28,4 @@
 ^latex.*$
 ^make.*$
 ^rProject.pdf$
+^CITATION\.cff$
