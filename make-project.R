@@ -26,6 +26,13 @@ if (file.exists(secrets_path)) {
     )
   }
   writeLines(env, "~/.bash-secrets")
+} else {
+  message(
+    paste(
+      secrets_path,
+      "not found."
+    )
+  )
 }
 dot_library_folder <- file.path(
   path,
