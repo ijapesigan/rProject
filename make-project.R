@@ -8,7 +8,7 @@ source(
     ".project"
   )
 )
-secrets_path <-   file.path(
+secrets_path <- file.path(
   path,
   ".secrets"
 )
