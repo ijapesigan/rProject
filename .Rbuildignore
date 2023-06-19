@@ -1,5 +1,6 @@
 .*\.Rcheck$
 .*\.Rproj$
+.*\.sh$
 .*\.sif$
 .*\.tar\.gz$
 .*\.tar\.xz$
@@ -11,7 +12,6 @@
 ^Makefile$
 ^README.md$
 ^README.Rmd$
-^\.[a-zA-Z0-9-_]+\.sh$
 ^\.data-.*$
 ^\.Rproj\.user$
 ^\.covrignore$
@@ -27,6 +27,5 @@
 ^docs$
 ^latex.*$
 ^make.*$
-^\.detritus$
 ^rProject.pdf$
 ^CITATION\.cff$
