@@ -1,15 +1,19 @@
 #!/bin/bash
 
+set -e
+
 # pre TMP ----------------------------------------------------------------------
 TMP_FOLDER=$(mktemp -d -q "$PWD/TEMPDIR" || exit 1)
 # ------------------------------------------------------------------------------
 
 cd TMP_FOLDER
-JULIA_VERSION=$(curl -s "https://api.github.com/repos/JuliaLang/julia/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-wget https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_VERSION%.*}/julia-$JULIA_VERSION-linux-x86_64.tar.gz
-mkdir -p $HOME/.local/julia
-tar -zxvf "julia-${JULIA_VERSION}-linux-x86_64.tar.gz" -C $HOME/.local/julia --strip-components 1
-ln -s $HOME/.local/julia $HOME/.local/bin/julia
+export TMUX_VERSION=$(curl -s "https://api.github.com/repos/tmux/tmux/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v*([^"]+)".*/\1/')
+wget "https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz"
+tar -zxvf "tmux-${TMUX_VERSION}.tar.gz"
+cd "tmux-${TMUX_VERSION}"
+./configure --prefix=$HOME/.local
+make
+make install
 
 # post TMP ---------------------------------------------------------------------
 rm -rf -- "$TMP_FOLDER"

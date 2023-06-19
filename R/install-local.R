@@ -27,6 +27,15 @@ InstallLocal <- function(what = c(
   if (all) {
     what <- all_apps
   }
+  bin <- file.path(
+    Sys.getenv("HOME"),
+    ".local",
+    "bin"
+  )
+  dir.create(
+    bin,
+    showWarnings = FALSE
+  )
   for (i in seq_along(what)) {
     if (what[i] %in% all_apps) {
       if (Sys.which(what[i]) == "") {
@@ -36,26 +45,14 @@ InstallLocal <- function(what = c(
       }
       if (run_sh) {
         install <- system.file(
-          "extdata",
-          paste0("install-", what[i]),
+          "shell",
+          paste0(
+            "install-",
+            what[i],
+            ".sh"
+          ),
           package = "rProject"
         )
-        bin <- file.path(
-          Sys.getenv("HOME"),
-          ".local",
-          "bin"
-        )
-        dir.create(
-          bin,
-          showWarnings = FALSE
-        )
-        app <- file.path(
-          bin,
-          what[i]
-        )
-        if (!file.exists(app)) {
-          run_sh <- TRUE
-        }
         if (run_sh) {
           tmp_dir <- tempdir()
           system(
@@ -78,5 +75,5 @@ InstallLocal <- function(what = c(
       }
     }
   }
-  return(NULL)
+  invisible(NULL)
 }
