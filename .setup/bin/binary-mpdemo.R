@@ -68,12 +68,5 @@ BinaryMpdemo <- function() {
       )
     )
   }
-  on.exit(
-    unlink(
-      root$find_file(
-        "TEMPDIR"
-      )
-    )
-  )
 }
 BinaryMpdemo()
