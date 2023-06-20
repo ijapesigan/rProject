@@ -1,4 +1,4 @@
-FROM rocker/r2u:22.04
+FROM jeksterslab/rocker
 
 ADD src /usr/src/local/src
 RUN chmod 777 /usr/src/local/src/setup.sh && \
