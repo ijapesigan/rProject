@@ -40,6 +40,21 @@ if (!require("remotes")) install.packages("remotes")
 remotes::install_github("jeksterslab/rProject")
 ```
 
+## Workflow using the template produced by `rProject`
+
+To build applications installed in `$HOME/.local/bin` (e.g., `tmux`)
+and config files (e.g., `.tmux.conf`) run:
+
+```bash
+make local
+```
+
+To build the project run:
+
+```bash
+make
+```
+
 ## More Information
 
 See

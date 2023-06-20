@@ -1,6 +1,6 @@
 .PHONY: all build local localforce dotfiles project pkg tinytex clean cleanpkg cleantinytex cleanall coverage lint
 
-all: local build latex
+all: build latex
 
 build: pkg clean
 	@echo TinyTex...

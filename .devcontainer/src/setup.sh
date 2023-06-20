@@ -25,10 +25,8 @@ apt_install python3-pip
 pip3 install -U radian
 
 # To add additional R packages,
-# for example, to install tidyverse, dplyr, remotes, and rprojroot,
+# for example, to install tidyverse and dplyr
 # do the following:
 install2.r --error --skipinstalled -n -1 \
   tidyverse \
-  dplyr     \
-  remotes   \
-  rprojroot
+  dplyr
