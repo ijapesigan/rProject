@@ -5,7 +5,7 @@
 #' @inheritParams LibPaths
 #' @inheritParams EnvironmentProject
 #' @param add Character vector.
-#'   Items to add in `.Rbuildignore`.
+#'   Items to add to `.Rbuildignore`.
 #' @export
 BuildIgnore <- function(path,
                         project,

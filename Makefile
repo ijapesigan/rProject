@@ -34,11 +34,11 @@ dotfiles:
 
 project:
 	@echo Building project...
-	@Rscript make-project.R ${PWD}
+	@Rscript tools/make-project.R ${PWD}
 
 pkg: project
 	@echo Installing packages...
-	@Rscript make-packages.R ${PWD}
+	@Rscript tools/make-packages.R ${PWD}
 
 tinytex:
 	@echo Installing TinyTex...

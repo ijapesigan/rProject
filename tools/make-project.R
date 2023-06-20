@@ -5,12 +5,14 @@ path <- as.character(args[1])
 source(
   file.path(
     path,
-    ".project"
+    "tools",
+    "project.R"
   )
 )
 secrets_path <- file.path(
   path,
-  ".secrets"
+  "tools",
+  "secrets.R"
 )
 if (file.exists(secrets_path)) {
   source(secrets_path)
@@ -33,6 +35,7 @@ if (file.exists(secrets_path)) {
       "not found."
     )
   )
+  tokens <- NULL
 }
 dot_library_folder <- file.path(
   path,
@@ -90,13 +93,11 @@ rProject::Profile(
   path = path,
   project = project
 )
-if (file.exists(secrets_path)) {
-  rProject::Environment(
-    path = path,
-    project = project,
-    tokens = tokens
-  )
-}
+rProject::Environment(
+  path = path,
+  project = project,
+  tokens = tokens
+)
 rProject::BuildIgnore(
   path = path,
   project = project,

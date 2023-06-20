@@ -14,7 +14,7 @@ Project path.}
 Project name.}
 
 \item{add}{Character vector.
-Items to add in \code{.Rbuildignore}.}
+Items to add to \code{.Rbuildignore}.}
 }
 \description{
 Build \code{.Rbuildignore}

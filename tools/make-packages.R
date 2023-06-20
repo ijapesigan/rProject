@@ -5,7 +5,8 @@ path <- as.character(args[1])
 source(
   file.path(
     path,
-    ".project"
+    "tools",
+    "project.R"
   )
 )
 dot_library_folder <- file.path(

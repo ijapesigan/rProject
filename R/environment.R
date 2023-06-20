@@ -38,18 +38,20 @@ Environment <- function(path,
     dot_renviron_contents,
     "R_COMPLETION=TRUE"
   )
-  tokens <- EnvironmentTokens(tokens = tokens)
-  tokens <- paste0(
-    names(tokens),
-    "=",
-    "\"",
-    unname(tokens),
-    "\""
-  )
-  dot_renviron_contents <- c(
-    dot_renviron_contents,
-    tokens
-  )
+  if (!is.null(tokens)) {
+    tokens <- EnvironmentTokens(tokens = tokens)
+    tokens <- paste0(
+      names(tokens),
+      "=",
+      "\"",
+      unname(tokens),
+      "\""
+    )
+    dot_renviron_contents <- c(
+      dot_renviron_contents,
+      tokens
+    )
+  }
   project <- EnvironmentProject(project = project)
   project <- paste0(
     names(project),
