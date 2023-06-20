@@ -1,4 +1,4 @@
-# https://raw.githubusercontent.com/rocker-org/devcontainer-images/main/src/r-ver/.devcontainer.json
+// https://raw.githubusercontent.com/rocker-org/devcontainer-images/main/src/r-ver/.devcontainer.json
 
 {
 	"build": {
