@@ -1,8 +1,6 @@
-# https://raw.githubusercontent.com/rocker-org/devcontainer-images/main/src/r-ver/Dockerfile
+FROM rocker/r2u
 
-ARG VARIANT=4
-ARG BASE_IMAGE=rocker/r-ver
-FROM ${BASE_IMAGE}:${VARIANT}
-
-RUN useradd -s /bin/bash -m rstudio \
-    && usermod -a -G staff rstudio
+ADD src /usr/src/local/src
+RUN chmod 777 /usr/src/local/src/setup.sh && \
+    ./usr/src/local/src/setup.sh          && \
+    rm -rf /usr/src/local/src
