@@ -6,7 +6,8 @@
 \usage{
 InstallLocal(
   what = c("tmux", "julia", "mpdemo", "lazygit", "pfetch"),
-  all = FALSE
+  all = FALSE,
+  force = FALSE
 )
 }
 \arguments{
@@ -17,6 +18,10 @@ Valid values include
 
 \item{all}{Logical.
 If \code{all = TRUE}, ignore \code{what} and install all valid \code{what} values.}
+
+\item{force}{Logical.
+If \code{force = TRUE}, install whether or not the application is
+available in the system.}
 }
 \description{
 Install Applications on Local Machine

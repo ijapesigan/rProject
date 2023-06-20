@@ -1,4 +1,4 @@
-.PHONY: all build local dotfiles project pkg tinytex clean cleanpkg cleantinytex cleanall coverage lint
+.PHONY: all build local localforce dotfiles project pkg tinytex clean cleanpkg cleantinytex cleanall coverage lint
 
 all: local build latex
 
@@ -47,6 +47,11 @@ tinytex:
 local: project
 	@echo Installing local applications...
 	@Rscript -e "rProject::InstallLocal(all = TRUE)"
+	@Rscript -e "rProject::ConfigFiles()"
+
+localforce: project
+	@echo Installing local applications...
+	@Rscript -e "rProject::InstallLocal(all = TRUE, force = TRUE)"
 	@Rscript -e "rProject::ConfigFiles()"
 
 clean:

@@ -8,6 +8,9 @@
 #'   `"tmux"`, `"julia"`, `"mpdemo"`, and `"lazygit"`.
 #' @param all Logical.
 #'   If `all = TRUE`, ignore `what` and install all valid `what` values.
+#' @param force Logical.
+#'   If `force = TRUE`, install whether or not the application is
+#'   available in the system.
 #'
 #' @export
 InstallLocal <- function(what = c(
@@ -17,7 +20,8 @@ InstallLocal <- function(what = c(
                            "lazygit",
                            "pfetch"
                          ),
-                         all = FALSE) {
+                         all = FALSE,
+                         force = FALSE) {
   all_apps <- c(
     "tmux",
     "julia",
@@ -38,10 +42,14 @@ InstallLocal <- function(what = c(
   )
   for (i in seq_along(what)) {
     if (what[i] %in% all_apps) {
-      if (Sys.which(what[i]) == "") {
+      if (force) {
         run_sh <- TRUE
       } else {
-        run_sh <- FALSE
+        if (Sys.which(what[i]) == "") {
+          run_sh <- TRUE
+        } else {
+          run_sh <- FALSE
+        }
       }
       if (run_sh) {
         install <- system.file(

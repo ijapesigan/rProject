@@ -15,7 +15,7 @@
 *-Ex.R
 
 # Output files from R CMD build
-/*.tar.gz
+# /*.tar.gz
 # allow package build to be version controlled
 !/*.tar.gz
 
@@ -26,8 +26,8 @@
 .Rproj.user/
 
 # produced vignettes
-# vignettes/*.html
-# vignettes/*.pdf
+vignettes/*.html
+vignettes/*.pdf
 
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
@@ -61,7 +61,6 @@ rsconnect/
 
 # secrets
 *secrets*
-.secrets
 
 # sif
 *.sif
