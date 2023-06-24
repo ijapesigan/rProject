@@ -9,11 +9,11 @@
 ^CITATION\.cff$
 ^LICENSE\.md$
 ^Makefile$
-^README\.md$
 ^README\.Rmd$
-^\.data-.*$
+^README\.md$
 ^\.Rproj\.user$
 ^\.covrignore$
+^\.data-.*$
 ^\.devcontainer$
 ^\.git.*$
 ^\.library$
@@ -22,5 +22,8 @@
 ^\.sim$
 ^detritus$
 ^docs$
+^index\.qmd$
 ^latex.*$
+^scss$
+^qmd$
 ^rProject\.pdf$

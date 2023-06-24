@@ -4,10 +4,17 @@
 \alias{ConfigFiles}
 \title{Setup Config Files}
 \usage{
-ConfigFiles()
+ConfigFiles(git_user)
+}
+\arguments{
+\item{git_user}{Character string.
+Git user.}
 }
 \description{
 Setup Config Files
+}
+\details{
+This function requires a \code{dotfiles} GitHub repository.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

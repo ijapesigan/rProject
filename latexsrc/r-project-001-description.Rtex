@@ -36,13 +36,13 @@ This package is intended for personal use only.
 You can install the released version of
 \texttt{rProject}
 from
-\href{https://github.com/jeksterslab/rProject}{GitHub}
+\href{https://github.com/ijapesigan/rProject}{GitHub}
 with:
 
 %% begin.rcode
 % #| eval = FALSE
 % install.packages("remotes")
-% remotes::install_github("jeksterslab/rProject")
+% remotes::install_github("ijapesigan/rProject")
 %% end.rcode
 
 %% begin.rcode
@@ -52,7 +52,7 @@ with:
 \section*{More Information}
 
 See
-\href{https://jeksterslab.github.io/rProject/index.html}{GitHub Pages}
+\href{https://ijapesigan.github.io/rProject/index.html}{GitHub Pages}
 for package documentation.
 
 \end{document}

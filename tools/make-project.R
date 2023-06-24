@@ -30,9 +30,10 @@ if (file.exists(secrets_path)) {
   writeLines(env, "~/.bash-secrets")
 } else {
   message(
-    paste(
+    paste0(
+      "\n\n",
       secrets_path,
-      "not found."
+      " not found.\n\n"
     )
   )
   tokens <- NULL

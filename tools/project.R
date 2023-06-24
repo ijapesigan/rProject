@@ -39,3 +39,5 @@ pkg_ver <- c()
 ver <- c()
 
 ignore <- NULL
+
+git_user <- "ijapesigan"

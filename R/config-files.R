@@ -2,14 +2,20 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
+#' @details This function requires a `dotfiles` GitHub repository.
+#'
+#' @param git_user Character string.
+#'   Git user.
+#'
 #' @export
-ConfigFiles <- function() {
-  install <- system.file(
-    "shell",
-    paste0(
-      "dotfiles.sh"
-    ),
-    package = "rProject"
+ConfigFiles <- function(git_user) {
+  if (Sys.which("git") == "") {
+    stop("git is not installed.")
+  }
+  dotfiles <- paste0(
+    "git clone https://github.com/",
+    git_user,
+    "/dotfiles.git; cd dotfiles; make"
   )
   tmp_dir <- tempdir()
   system(
@@ -18,8 +24,7 @@ ConfigFiles <- function() {
       "cd",
       tmp_dir,
       ";",
-      "bash",
-      install,
+      dotfiles,
       ")"
     )
   )

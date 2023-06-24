@@ -5,11 +5,11 @@ Authors@R:
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
            role = c("aut", "cre", "cph"),
-           email = "r.jeksterslab@gmail.com",
+           email = "ijapesigan@gmail.com",
            comment = c(ORCID = "0000-0003-4818-8420"))
 Description: A collection of functions to setup R projects.
-URL: https://github.com/jeksterslab/rProject/, https://jeksterslab.github.io/rProject/
-BugReports: https://github.com/jeksterslab/rProject/issues
+URL: https://github.com/ijapesigan/rProject/, https://ijapesigan.github.io/rProject/
+BugReports: https://github.com/ijapesigan/rProject/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

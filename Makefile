@@ -47,12 +47,12 @@ tinytex:
 local: project
 	@echo Installing local applications...
 	@Rscript -e "rProject::InstallLocal(all = TRUE)"
-	@Rscript -e "rProject::ConfigFiles()"
+	@Rscript tools/make-config.R ${PWD}
 
 localforce: project
 	@echo Installing local applications...
 	@Rscript -e "rProject::InstallLocal(all = TRUE, force = TRUE)"
-	@Rscript -e "rProject::ConfigFiles()"
+	@Rscript tools/make-config.R ${PWD}
 
 clean:
 	@echo Cleaning...
