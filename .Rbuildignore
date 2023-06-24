@@ -27,3 +27,6 @@
 ^scss$
 ^qmd$
 ^rProject\.pdf$
+^rProject\.Rcheck$
+^rProject.*\.tar\.gz$
+^rProject.*\.tgz$
