@@ -41,3 +41,4 @@ ver <- c()
 ignore <- NULL
 
 git_user <- "ijapesigan"
+git_email <- "ijapesigan@gmail.com"

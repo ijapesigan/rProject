@@ -8,7 +8,7 @@ author <- c(
     given = "Ivan Jacob Agaloos",
     family = "Pesigan",
     role = c("aut", "cre", "cph"),
-    email = "r.jeksterslab@gmail.com",
+    email = "ijapesigan@gmail.com",
     comment = c(ORCID = "0000-0003-4818-8420")
   )
 )
@@ -16,7 +16,7 @@ note <- sprintf(
   "R package version %s",
   meta$Version
 )
-url <- "https://github.com/jeksterslab/rProject"
+url <- "https://github.com/ijapesigan/rProject"
 
 bibentry(
   bibtype = "Manual",
