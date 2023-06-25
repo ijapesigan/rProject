@@ -5,7 +5,7 @@
 \title{Install Applications on Local Machine}
 \usage{
 InstallLocal(
-  what = c("tmux", "julia", "mpdemo", "lazygit", "pfetch"),
+  what = c("tmux", "julia", "mpdemo", "lazygit", "pfetch", "quarto"),
   all = FALSE,
   force = FALSE
 )
@@ -14,7 +14,7 @@ InstallLocal(
 \item{what}{Character string.
 Vector of applications to install.
 Valid values include
-\code{"tmux"}, \code{"julia"}, \code{"mpdemo"}, and \code{"lazygit"}.}
+\code{"tmux"}, \code{"julia"}, \code{"mpdemo"}, \code{"lazygit"}, \code{"pfetch"}, and \code{"quarto"}.}
 
 \item{all}{Logical.
 If \code{all = TRUE}, ignore \code{what} and install all valid \code{what} values.}

@@ -5,7 +5,7 @@
 #' @param what Character string.
 #'   Vector of applications to install.
 #'   Valid values include
-#'   `"tmux"`, `"julia"`, `"mpdemo"`, and `"lazygit"`.
+#'   `"tmux"`, `"julia"`, `"mpdemo"`, `"lazygit"`, `"pfetch"`, and `"quarto"`.
 #' @param all Logical.
 #'   If `all = TRUE`, ignore `what` and install all valid `what` values.
 #' @param force Logical.
@@ -18,7 +18,8 @@ InstallLocal <- function(what = c(
                            "julia",
                            "mpdemo",
                            "lazygit",
-                           "pfetch"
+                           "pfetch",
+                           "quarto"
                          ),
                          all = FALSE,
                          force = FALSE) {
@@ -26,7 +27,9 @@ InstallLocal <- function(what = c(
     "tmux",
     "julia",
     "mpdemo",
-    "lazygit"
+    "lazygit",
+    "pfetch",
+    "quarto"
   )
   if (all) {
     what <- all_apps
