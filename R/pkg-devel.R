@@ -17,6 +17,7 @@ PkgDevel <- function(path) {
     "microbenchmark",
     "pdftools",
     "pkgdown",
+    "printr",
     "ragg",
     "remotes",
     "rmarkdown",

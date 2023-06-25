@@ -18,6 +18,7 @@
 ^\.git.*$
 ^\.library$
 ^\.lintr$
+^\.quarto$
 ^\.setup$
 ^\.sim$
 ^detritus$
