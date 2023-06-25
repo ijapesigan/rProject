@@ -1,0 +1,30 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "rProject"
+  author: "Ivan Jacob Agaloos Pesigan"
+  date: today
+  search: true
+  repo-url: https://github.com/ijapesigan/rProject
+  repo-actions: [edit]
+  site-url: https://ijapesigan.github.io/rProject/index.html
+  sidebar:
+    collapse-level: 3
+    pinned: true
+  chapters:
+    - index.qmd
+    - qmd/intro/intro.qmd
+    - qmd/references/references.qmd
+  appendices:
+    - qmd/session/session.qmd
+bibliography: qmd/bib/bib.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+
+format:
+  html:
+    theme:
+      - flatly
+      - scss/custom.scss
+    number-sections: false

@@ -1,0 +1,18 @@
+---
+title: "Website Build Session"
+author: "Ivan Jacob Agaloos Pesigan"
+---
+
+## Session
+
+```{r}
+sessionInfo()
+```
+
+```{r}
+#| echo: false
+msg <- "/srv/build/CONTAINER_RELEASE_MSG"
+if (file.exists(msg)) {
+  readLines(msg)
+}
+```
