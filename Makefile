@@ -85,4 +85,5 @@ latex:
 	@Rscript -e "rProject::LatexMake(\"${PWD}\")"
 
 qmd: lint
+	@Rscript qmd/r-script/prerender.R
 	@quarto render ${PWD}

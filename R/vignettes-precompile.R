@@ -38,6 +38,13 @@ VignettesPrecompile <- function(path) {
     x = orig
   )
   if (length(orig) > 0) {
+    dir.create(
+      path = file.path(
+        path,
+        "vignettes"
+      ),
+      showWarnings = FALSE
+    )
     for (i in seq_along(orig)) {
       if (
         !(
