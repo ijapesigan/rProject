@@ -11,6 +11,8 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ijapesigan/rocker
 
     steps:
       -
@@ -22,14 +24,11 @@ jobs:
         with:
           apptainer-version: 1.1.9
       -
-        name: Build Apptainer container
-        run: apptainer build image.sif docker://ijapesigan/rocker:latest
-      -
         name: Build Project
-        run: apptainer exec image.sif make
+        run: make
       -
         name: Render Quarto Project
-        run: apptainer exec image.sif make qmd
+        run: make qmd
       -
         name: Deploy to GitHub pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
