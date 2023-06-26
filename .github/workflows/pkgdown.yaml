@@ -1,6 +1,5 @@
-# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
-# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
-# always check https://raw.githubusercontent.com/r.../examples/pkgdown.yaml for changes
+name: pkgdown
+
 on:
   push:
     branches: [main, master]
@@ -9,8 +8,6 @@ on:
   release:
     types: [published]
   workflow_dispatch:
-
-name: pkgdown
 
 jobs:
   pkgdown:
@@ -22,6 +19,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     permissions:
       contents: write
+
     steps:
       - uses: actions/checkout@v3
 
@@ -40,7 +38,7 @@ jobs:
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE, dest_dir = "pkgdown")
         shell: Rscript {0}
 
-      - name: Deploy to GitHub pages ��
+      - name: Deploy to GitHub pages
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:

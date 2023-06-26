@@ -1,10 +1,12 @@
-name: Build Quarto Website
+name: quarto
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main, master]
   pull_request:
-    branches: [ "main" ]
+    branches: [main, master]
+  release:
+    types: [published]
   workflow_dispatch:
 
 jobs:
@@ -13,6 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ijapesigan/rocker
+    # Only restrict concurrency for non-PR jobs
+    concurrency:
+      group: pkgdown-${{ github.event_name != 'pull_request' || github.run_id }}
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
 
     steps:
       -
@@ -22,7 +31,7 @@ jobs:
         name: Build Project
         run: make
       -
-        name: Render Quarto Project
+        name: Build Quarto Project
         run: make qmd
       -
         name: Deploy to GitHub pages
