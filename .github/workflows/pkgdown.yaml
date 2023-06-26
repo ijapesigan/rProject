@@ -1,5 +1,6 @@
 # Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
 # Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+# always check https://raw.githubusercontent.com/r.../examples/pkgdown.yaml for changes
 on:
   push:
     branches: [main, master]
@@ -36,7 +37,7 @@ jobs:
           needs: website
 
       - name: Build site
-        run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
+        run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE, dest_dir = "pkgdown")
         shell: Rscript {0}
 
       - name: Deploy to GitHub pages ��
