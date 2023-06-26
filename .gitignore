@@ -38,6 +38,7 @@ vignettes/*.pdf
 
 # quarto
 /.quarto/
+quarto/
 
 # Temporary files created by R markdown
 *.utf8.md
@@ -50,6 +51,7 @@ vignettes/*.pdf
 .Rprofile
 
 # pkgdown site
+pkgdown/
 docs/
 doc/
 

@@ -26,5 +26,6 @@
 ^index\.qmd$
 ^latex.*$
 ^scss$
+^quarto$
 ^qmd$
 ^rProject\.pdf$
