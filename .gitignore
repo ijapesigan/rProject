@@ -38,7 +38,8 @@ vignettes/*.pdf
 
 # quarto
 /.quarto/
-quarto/
+/_site/
+/quarto/
 
 # Temporary files created by R markdown
 *.utf8.md

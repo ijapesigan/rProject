@@ -1,4 +1,4 @@
-name: quarto
+name: quarto (GitHub Pages)
 
 on:
   push:
@@ -20,7 +20,6 @@ jobs:
       group: pkgdown-${{ github.event_name != 'pull_request' || github.run_id }}
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
     permissions:
       contents: write
 
@@ -30,11 +29,14 @@ jobs:
         uses: actions/checkout@v3
       -
         name: Build Project
-        run: make
+        run: make build
       -
         name: Build Quarto Project
         run: make qmd
-      - 
-        name: Publish to Quarto Pub 
-        run: quarto publish quarto-pub --no-prompt --no-browser --no-render
-        
+      -
+        name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          clean: true
+          branch: quarto
+          folder: quarto

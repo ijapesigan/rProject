@@ -1,0 +1,39 @@
+name: quarto (Quarto Pub)
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ijapesigan/rocker
+    # Only restrict concurrency for non-PR jobs
+    concurrency:
+      group: pkgdown-${{ github.event_name != 'pull_request' || github.run_id }}
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
+    permissions:
+      contents: write
+
+    steps:
+      -
+        name: Checkout 
+        uses: actions/checkout@v3
+      -
+        name: Build Project
+        run: make build
+      -
+        name: Build Quarto Project
+        run: make qmd
+      -
+        name: Deploy to Quarto Pub
+        run: quarto publish --no-render quarto-pub
