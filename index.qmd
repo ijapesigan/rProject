@@ -8,7 +8,7 @@ Publish the project to Quarto Pub interactively by typing
 
 ```sh
 export QUARTO_PUB_AUTH_TOKEN=TOKEN_HERE
-quarto publish quarto-pub
+quarto publish
 ```
 
 Save the generated `_publish.yml`. Once the `_publish.yml` is generated, the succeeding builds will be handled by GitHub actions.

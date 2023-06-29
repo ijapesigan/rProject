@@ -19,9 +19,10 @@ for (i in seq_along(build)) {
   cat(
     paste0(
       build[i],
-      ": "
+      ": ",
+      readLines(build[i]),
+      "\n"
     )
   )
-  readLines(build[i])
 }
 ```
