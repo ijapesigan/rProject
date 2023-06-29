@@ -7,45 +7,33 @@
 #' @inheritParams LibPaths
 #' @export
 Clean <- function(path) {
-  # delete folders
   unlink(
     file.path(
       path,
-      "man"
+      c(
+        ".quarto",
+        "detritus",
+        "doc",
+        "docs",
+        "man",
+        "pkgdown",
+        "quarto",
+        "TEMPDIR",
+        "_site",
+        file.path(
+          "latexsrc",
+          "pdf"
+        )
+      )
     )
   )
-  unlink(
-    file.path(
-      path,
-      "doc"
-    )
-  )
-  unlink(
-    file.path(
-      path,
-      "docs"
-    )
-  )
-  unlink(
-    file.path(
-      path,
-      "TEMPDIR"
-    )
-  )
-  unlink(
-    file.path(
-      path,
-      "latex",
-      "pdf"
-    )
-  )
-  # delete files
   files <- file.path(
     path,
     c(
       "README.html",
       "README.md",
-      "NAMESPACE"
+      "NAMESPACE",
+      ".lintr"
     )
   )
   files <- c(
@@ -62,6 +50,20 @@ Clean <- function(path) {
         path
       ),
       pattern = utils::glob2rx("*.pdf"),
+      full.names = TRUE
+    ),
+    list.files(
+      file.path(
+        path
+      ),
+      pattern = utils::glob2rx("*.tar.gz"),
+      full.names = TRUE
+    ),
+    list.files(
+      file.path(
+        path
+      ),
+      pattern = utils::glob2rx("*.cff"),
       full.names = TRUE
     )
   )
