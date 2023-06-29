@@ -9,7 +9,7 @@ book:
   search: true
   repo-url: https://github.com/ijapesigan/rProject
   repo-actions: [edit]
-  site-url: https://ijapesigan.github.io/rProject/index.html
+  site-url: https://ijapesigan.quarto.pub/rProject/index.html
   sidebar:
     collapse-level: 3
     pinned: true
