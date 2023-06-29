@@ -44,8 +44,8 @@ make
 
 ## More Information
 
-See [GitHub Pages](https://ijapesigan.github.io/rProject/index.html) for
-package documentation.
+See [GitHub Pages](https://ijapesigan.github.io/rProject) for package
+documentation.
 
 See [Quarto Pub](https://ijapesigan.quarto.pub/rproject) for package
-wiki and .
+wiki and other resources.

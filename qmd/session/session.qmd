@@ -11,8 +11,16 @@ sessionInfo()
 
 ```{r}
 #| echo: false
-msg <- "/srv/build/CONTAINER_RELEASE_MSG"
-if (file.exists(msg)) {
-  readLines(msg)
+build <- list.files(
+  "/srv/build"
+)
+for (i in seq_along(build)) {
+  cat(
+    paste0(
+      build[i],
+      ":\n"
+    )
+  )
+  readLines(build[i])
 }
 ```
