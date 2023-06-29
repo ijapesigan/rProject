@@ -12,13 +12,14 @@ sessionInfo()
 ```{r}
 #| echo: false
 build <- list.files(
-  "/srv/build"
+  path = "/srv/build",
+  full.names = TRUE
 )
 for (i in seq_along(build)) {
   cat(
     paste0(
       build[i],
-      ":\n"
+      ": "
     )
   )
   readLines(build[i])

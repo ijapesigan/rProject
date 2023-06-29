@@ -30,7 +30,7 @@ cleanall: clean cleanpkg cleantinytex
 
 dotfiles:
 	@echo Building dotfiles...
-	@Rscript -e "rProject::ConfigFiles()"
+	@Rscript -e "source('tools/project.R') ; rProject::ConfigFiles(git_user)"
 
 project:
 	@echo Building project...
