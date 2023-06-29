@@ -1,7 +1,7 @@
 rProject
 ================
 Ivan Jacob Agaloos Pesigan
-2023-06-28
+2023-06-29
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
@@ -46,3 +46,6 @@ make
 
 See [GitHub Pages](https://ijapesigan.github.io/rProject/index.html) for
 package documentation.
+
+See [Quarto Pub](https://ijapesigan.quarto.pub/rproject) for package
+wiki and .
