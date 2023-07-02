@@ -14,6 +14,7 @@ PkgDevel <- function(path) {
     "knitr",
     "lintr",
     "magick",
+    "markdown",
     "microbenchmark",
     "pdftools",
     "pkgdown",
@@ -25,7 +26,8 @@ PkgDevel <- function(path) {
     "styler",
     "testthat",
     "tidyverse",
-    "qpdf"
+    "qpdf",
+    "quarto"
   )
   lib <- LibPaths(path = path)
   installed <- utils::installed.packages()
