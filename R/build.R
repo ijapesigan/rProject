@@ -11,16 +11,6 @@
 Build <- function(path,
                   vignettes = FALSE,
                   dependencies = FALSE) {
-  lib <- LibPaths(path = path)
-  installed <- utils::installed.packages()
-  pkg_installed <- installed[, "Package"]
-  if (!("devtools" %in% pkg_installed)) {
-    remotes::install_github(
-      repo = "r-lib/devtools",
-      lib = lib,
-      quiet = TRUE
-    )
-  }
   if (
     file.exists(
       file.path(
@@ -29,6 +19,16 @@ Build <- function(path,
       )
     )
   ) {
+    lib <- LibPaths(path = path)
+    installed <- utils::installed.packages()
+    pkg_installed <- installed[, "Package"]
+    if (!("devtools" %in% pkg_installed)) {
+      remotes::install_github(
+        repo = "r-lib/devtools",
+        lib = lib,
+        quiet = TRUE
+      )
+    }
     devtools::document(pkg = path)
     devtools::check(pkg = path, cran = FALSE)
     devtools::install(pkg = path, dependencies = dependencies)
@@ -37,6 +37,13 @@ Build <- function(path,
       path = path,
       manual = TRUE,
       vignettes = vignettes
+    )
+  } else {
+    message(
+      paste(
+        path,
+        "is not an R package."
+      )
     )
   }
 }

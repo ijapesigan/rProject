@@ -5,25 +5,41 @@
 #' @inheritParams LibPaths
 #' @export
 Dependencies <- function(path) {
-  deps <- list.files(
-    path = file.path(
-      path,
-      ".setup",
-      "r-dependencies"
-    ),
-    pattern = "\\.R$",
-    full.names = TRUE,
-    all.files = TRUE,
-    recursive = TRUE
-  )
-  if (length(deps) > 0) {
-    file.copy(
-      from = deps,
-      to = file.path(
+  if (
+    file.exists(
+      file.path(
         path,
-        "R"
+        "DESCRIPTION"
+      )
+    )
+  ) {
+    deps <- list.files(
+      path = file.path(
+        path,
+        ".setup",
+        "r-dependencies"
       ),
-      overwrite = TRUE
+      pattern = "\\.R$",
+      full.names = TRUE,
+      all.files = TRUE,
+      recursive = TRUE
+    )
+    if (length(deps) > 0) {
+      file.copy(
+        from = deps,
+        to = file.path(
+          path,
+          "R"
+        ),
+        overwrite = TRUE
+      )
+    }
+  } else {
+    message(
+      paste(
+        path,
+        "is not an R package."
+      )
     )
   }
 }

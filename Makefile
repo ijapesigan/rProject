@@ -82,7 +82,9 @@ lint:
 	@Rscript -e "rProject::Lint(\"${PWD}\")"
 
 latex:
+	@echo Compiling latex...
 	@Rscript -e "rProject::LatexMake(\"${PWD}\")"
 
 qmd:
+	@echo Rendering quarto...
 	@Rscript -e "rProject::Quarto(\"${PWD}\")"

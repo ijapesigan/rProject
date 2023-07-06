@@ -10,57 +10,73 @@
 BuildIgnore <- function(path,
                         project,
                         add = NULL) {
-  x <- c(
-    ".*\\.Rcheck$",
-    ".*\\.Rproj$",
-    ".*\\.sif$",
-    ".*\\.tar\\.gz$",
-    ".*\\.tar\\.xz$",
-    ".*\\.tgz$",
-    ".*\\.uuid$",
-    ".*\\.yml$",
-    "^CITATION\\.cff$",
-    "^LICENSE\\.md$",
-    "^Makefile$",
-    "^README\\.Rmd$",
-    "^README\\.md$",
-    "^\\.Rproj\\.user$",
-    "^\\.covrignore$",
-    "^\\.data-.*$",
-    "^\\.devcontainer$",
-    "^\\.git.*$",
-    "^\\.library$",
-    "^\\.lintr$",
-    "^\\.quarto$",
-    "^\\.setup$",
-    "^\\.sim$",
-    "^detritus$",
-    "^docs$",
-    "^index\\.qmd$",
-    "^latex.*$",
-    "^pkgdown$",
-    "^scss$",
-    "^quarto$",
-    "^qmd$",
-    paste0(
-      "^",
-      project,
-      "\\.pdf$"
+  if (
+    file.exists(
+      file.path(
+        path,
+        "DESCRIPTION"
+      )
     )
-  )
-  if (!is.null(add)) {
-    x <- c(x, add)
+  ) {
+    x <- c(
+      ".*\\.Rcheck$",
+      ".*\\.Rproj$",
+      ".*\\.sif$",
+      ".*\\.tar\\.gz$",
+      ".*\\.tar\\.xz$",
+      ".*\\.tgz$",
+      ".*\\.uuid$",
+      ".*\\.yml$",
+      "^CITATION\\.cff$",
+      "^LICENSE\\.md$",
+      "^Makefile$",
+      "^README\\.Rmd$",
+      "^README\\.md$",
+      "^\\.Rproj\\.user$",
+      "^\\.covrignore$",
+      "^\\.data-.*$",
+      "^\\.devcontainer$",
+      "^\\.git.*$",
+      "^\\.library$",
+      "^\\.lintr$",
+      "^\\.quarto$",
+      "^\\.setup$",
+      "^\\.sim$",
+      "^detritus$",
+      "^docs$",
+      "^index\\.qmd$",
+      "^latex.*$",
+      "^pkgdown$",
+      "^scss$",
+      "^quarto$",
+      "^qmd$",
+      paste0(
+        "^",
+        project,
+        "\\.pdf$"
+      )
+    )
+    if (!is.null(add)) {
+      x <- c(x, add)
+    }
+    con <- file(
+      file.path(
+        path,
+        ".Rbuildignore"
+      )
+    )
+    writeLines(
+      text = x,
+      con = con,
+      sep = "\n"
+    )
+    close(con)
+  } else {
+    message(
+      paste(
+        path,
+        "is not an R package."
+      )
+    )
   }
-  con <- file(
-    file.path(
-      path,
-      ".Rbuildignore"
-    )
-  )
-  writeLines(
-    text = x,
-    con = con,
-    sep = "\n"
-  )
-  close(con)
 }

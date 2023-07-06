@@ -6,15 +6,34 @@
 #' @export
 LatexMake <- function(path,
                       clean = FALSE) {
-  try(
-    LatexKnit(
-      path = path
+  if (
+    file.exists(
+      file.path(
+        path,
+        "latexsrc"
+      )
     )
-  )
-  try(
-    LatexCompile(
-      path = path,
-      clean = clean
+  ) {
+    try(
+      LatexKnit(
+        path = path
+      )
     )
-  )
+    try(
+      LatexCompile(
+        path = path,
+        clean = clean
+      )
+    )
+  } else {
+    message(
+      paste(
+        file.path(
+          path,
+          "latexsrc"
+        ),
+        "does not exist."
+      )
+    )
+  }
 }
