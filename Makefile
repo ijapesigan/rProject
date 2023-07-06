@@ -1,6 +1,6 @@
 .PHONY: all build local localforce dotfiles project pkg tinytex clean cleanpkg cleantinytex cleanall coverage lint qmd
 
-all: build latex
+all: build latex qmd
 
 build: pkg clean
 	@echo TinyTex...
@@ -84,6 +84,5 @@ lint:
 latex:
 	@Rscript -e "rProject::LatexMake(\"${PWD}\")"
 
-qmd: lint
-	@Rscript qmd/r-script/prerender.R
-	@quarto render ${PWD}
+qmd:
+	@Rscript -e "rProject::Quarto(\"${PWD}\")"

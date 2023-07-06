@@ -5,6 +5,7 @@
 #' @inheritParams LibPaths
 #' @export
 LatexKnit <- function(path) {
+  detritus <- Detritus(path = path)$tex_folder
   rtex_files <- list.files(
     file.path(
       path,
@@ -26,11 +27,26 @@ LatexKnit <- function(path) {
         knitr::knit(
           input = i,
           output = file.path(
-            Detritus(path = path)$tex_folder,
+            detritus,
             tex_file
           )
         )
       }
+    )
+  }
+  tex_files <- list.files(
+    file.path(
+      path,
+      "latexsrc"
+    ),
+    pattern = "\\.tex$",
+    full.names = TRUE,
+    all.files = TRUE
+  )
+  if (length(tex_files) > 0) {
+    file.copy(
+      from = tex_files,
+      to = detritus
     )
   }
 }

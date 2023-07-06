@@ -21,13 +21,22 @@ Build <- function(path,
       quiet = TRUE
     )
   }
-  devtools::document(pkg = path)
-  devtools::check(pkg = path, cran = FALSE)
-  devtools::install(pkg = path, dependencies = dependencies)
-  devtools::build(
-    pkg = path,
-    path = path,
-    manual = TRUE,
-    vignettes = vignettes
-  )
+  if (
+    file.exists(
+      file.path(
+        path,
+        "DESCRIPTION"
+      )
+    )
+  ) {
+    devtools::document(pkg = path)
+    devtools::check(pkg = path, cran = FALSE)
+    devtools::install(pkg = path, dependencies = dependencies)
+    devtools::build(
+      pkg = path,
+      path = path,
+      manual = TRUE,
+      vignettes = vignettes
+    )
+  }
 }

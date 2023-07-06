@@ -18,18 +18,19 @@ VignetteBuilder: knitr
 Depends:
     R (>= 3.0.0)
 Imports:
-    rprojroot,
-    distro,
-    devtools,
+    cffr,
     covr,
+    devtools,
+    distro,
     knitr,
     lintr,
     pkgdown,
+    quarto,
     remotes,
+    rprojroot,
     stats,
     styler,
     tinytex,
-    cffr,
     utils
 Suggests:
     rmarkdown,
