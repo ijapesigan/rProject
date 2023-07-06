@@ -36,7 +36,7 @@ project:
 	@echo Building project...
 	@Rscript tools/make-project.R ${PWD}
 
-pkg: project
+pkg: project dotfiles
 	@echo Installing packages...
 	@Rscript tools/make-packages.R ${PWD}
 
