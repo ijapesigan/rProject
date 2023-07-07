@@ -27,12 +27,12 @@ Imports:
     pkgdown,
     quarto,
     remotes,
+    rmarkdown,
     rprojroot,
     stats,
     styler,
     tinytex,
     utils
 Suggests:
-    rmarkdown,
     testthat
 RoxygenNote: 7.2.3

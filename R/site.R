@@ -9,18 +9,6 @@ Site <- function(path) {
     file.exists(
       file.path(
         path,
-        "README.Rmd"
-      )
-    )
-  ) {
-    devtools::build_readme(
-      path = path
-    )
-  }
-  if (
-    file.exists(
-      file.path(
-        path,
         "DESCRIPTION"
       )
     )
