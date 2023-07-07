@@ -30,3 +30,6 @@ pip3 install -U radian
 install2.r --error --skipinstalled -n -1 \
   tidyverse \
   dplyr
+
+# rProject
+Rscript -e "remotes::install_github('ijapesigan/rProject')"
