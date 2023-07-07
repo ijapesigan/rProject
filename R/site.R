@@ -9,6 +9,18 @@ Site <- function(path) {
     file.exists(
       file.path(
         path,
+        "README.Rmd"
+      )
+    )
+  ) {
+    devtools::build_readme(
+      path = path
+    )
+  }
+  if (
+    file.exists(
+      file.path(
+        path,
         "DESCRIPTION"
       )
     )
@@ -29,18 +41,6 @@ Site <- function(path) {
         repos = c(REPO_NAME = PkgRepo(path = path)),
         lib = lib,
         quiet = TRUE
-      )
-    }
-    if (
-      file.exists(
-        file.path(
-          path,
-          "README.Rmd"
-        )
-      )
-    ) {
-      devtools::build_readme(
-        path = path
       )
     }
     if (
