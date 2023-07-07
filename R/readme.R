@@ -25,9 +25,15 @@ ReadMe <- function(path) {
     )
   }
   unlink(
-    file.path(
-      path,
-      "README.html"
+    c(
+      file.path(
+        path,
+        "README.html"
+      ),
+      file.path(
+        path,
+        "README.knit.md"
+      )
     )
   )
 }

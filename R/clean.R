@@ -32,6 +32,7 @@ Clean <- function(path) {
     c(
       "README.html",
       "README.md",
+      "README.knit.md",
       "NAMESPACE",
       ".lintr"
     )
