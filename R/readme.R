@@ -33,6 +33,10 @@ ReadMe <- function(path) {
       file.path(
         path,
         "README.knit.md"
+      ),
+      file.path(
+        path,
+        "README_files"
       )
     )
   )
