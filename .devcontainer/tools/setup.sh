@@ -40,4 +40,3 @@ R -e "tinytex::install_tinytex( \
 
 # rProject
 Rscript -e "remotes::install_github('ijapesigan/rProject')"
-
