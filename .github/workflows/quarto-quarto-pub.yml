@@ -35,6 +35,13 @@ jobs:
         name: Build Quarto Project
         run: make quarto
       - 
+        name: _quarto.yml
+        run: |
+          FILE=.setup/quarto/_quarto.yml
+          if [[ -f "$FILE" ]]; then
+            cp "$FILE" .
+          fi
+      - 
         name: _publish.yml
         run: |
           FILE=.setup/quarto/_publish.yml
