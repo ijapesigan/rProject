@@ -34,6 +34,13 @@ jobs:
       -
         name: Build Quarto Project
         run: make quarto
+      - 
+        name: _publish.yml
+        run: |
+          FILE=.setup/quarto/_publish.yml
+          if [[ -f "$FILE" ]]; then
+            cp "$FILE" .
+          fi
       -
         name: Deploy to Quarto Pub
         run: quarto publish --no-render quarto-pub
