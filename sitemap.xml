@@ -1,147 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/ijapesigan/rProject/404.html</loc>
+    <loc>/404.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/LICENSE-text.html</loc>
+    <loc>/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/LICENSE.html</loc>
+    <loc>/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/articles/index.html</loc>
+    <loc>/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/articles/rProject.html</loc>
+    <loc>/articles/rProject.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/articles/session.html</loc>
+    <loc>/articles/session/session.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/authors.html</loc>
+    <loc>/authors.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/index.html</loc>
+    <loc>/index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/news/index.html</loc>
+    <loc>/news/index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Binary.html</loc>
+    <loc>/reference/Binary.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Build.html</loc>
+    <loc>/reference/Build.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/BuildIgnore.html</loc>
+    <loc>/reference/BuildIgnore.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/CFF.html</loc>
+    <loc>/reference/CFF.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Clean.html</loc>
+    <loc>/reference/Clean.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/CleanPkg.html</loc>
+    <loc>/reference/CleanPkg.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/CleanProj.html</loc>
+    <loc>/reference/CleanProj.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/CleanTinyTex.html</loc>
+    <loc>/reference/CleanTinyTex.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/ConfigFiles.html</loc>
+    <loc>/reference/ConfigFiles.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Coverage.html</loc>
+    <loc>/reference/Coverage.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/DataAnalysis.html</loc>
+    <loc>/reference/DataAnalysis.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/DataProcess.html</loc>
+    <loc>/reference/DataProcess.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Dependencies.html</loc>
+    <loc>/reference/Dependencies.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Detritus.html</loc>
+    <loc>/reference/Detritus.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Environment.html</loc>
+    <loc>/reference/Environment.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/EnvironmentProject.html</loc>
+    <loc>/reference/EnvironmentProject.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/EnvironmentTokens.html</loc>
+    <loc>/reference/EnvironmentTokens.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/InstallLocal.html</loc>
+    <loc>/reference/InstallLocal.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/LatexCompile.html</loc>
+    <loc>/reference/LatexCompile.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/LatexKnit.html</loc>
+    <loc>/reference/LatexKnit.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/LatexMake.html</loc>
+    <loc>/reference/LatexMake.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/LibPaths.html</loc>
+    <loc>/reference/LibPaths.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Lint.html</loc>
+    <loc>/reference/Lint.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Manual.html</loc>
+    <loc>/reference/Manual.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/PkgDevel.html</loc>
+    <loc>/reference/PkgDevel.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/PkgDevelGitHub.html</loc>
+    <loc>/reference/PkgDevelGitHub.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/PkgProject.html</loc>
+    <loc>/reference/PkgProject.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/PkgProjectGitHub.html</loc>
+    <loc>/reference/PkgProjectGitHub.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/PkgProjectVersion.html</loc>
+    <loc>/reference/PkgProjectVersion.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/PkgRepo.html</loc>
+    <loc>/reference/PkgRepo.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Profile.html</loc>
+    <loc>/reference/Profile.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Project.html</loc>
+    <loc>/reference/Project.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Quarto.html</loc>
+    <loc>/reference/Quarto.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/ReadMe.html</loc>
+    <loc>/reference/ReadMe.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Site.html</loc>
+    <loc>/reference/Site.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/Style.html</loc>
+    <loc>/reference/Style.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/TinyTex.html</loc>
+    <loc>/reference/TinyTex.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/VignettesPrecompile.html</loc>
+    <loc>/reference/VignettesPrecompile.html</loc>
   </url>
   <url>
-    <loc>https://github.com/ijapesigan/rProject/reference/index.html</loc>
+    <loc>/reference/index.html</loc>
   </url>
 </urlset>
