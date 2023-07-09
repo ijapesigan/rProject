@@ -2,14 +2,16 @@
 rproj <- rprojroot::is_rstudio_project
 source(
   rproj$find_file(
-    "latexsrc",
+    ".setup",
+    "latex",
     "r-scripts",
     "knitr-options-default.R"
   )
 )
 source(
   rproj$find_file(
-    "latexsrc",
+    ".setup",
+    "latex",
     "r-scripts",
     "knitr-options-custom.R"
   )
@@ -53,7 +55,8 @@ x <- c(
   x,
   list.files(
     path = rproj$find_file(
-      ".data-dependencies"
+      ".setup",
+      "data-dependencies"
     ),
     pattern = "\\.rda$",
     full.names = TRUE,

@@ -22,12 +22,11 @@ Lint <- function(path) {
     "=",
     "c(\"CamelCase\", \"snake_case\", \"symbols\")))"
   )
-  con <- file(
-    file.path(
-      path,
-      ".lintr"
-    )
+  lintr <- file.path(
+    path,
+    ".lintr"
   )
+  con <- file(lintr)
   writeLines(
     text = x,
     con = con,
@@ -41,5 +40,25 @@ Lint <- function(path) {
       "renv",
       "packrat"
     )
+  )
+  lint <- file.path(
+    path,
+    ".setup",
+    "lint"
+  )
+  dir.create(
+    path = lint,
+    showWarnings = FALSE,
+    recursive = TRUE
+  )
+  file.copy(
+    from = lintr,
+    to = lint
+  )
+  on.exit(
+    expr = unlink(
+      x = lintr
+    ),
+    add = TRUE
   )
 }

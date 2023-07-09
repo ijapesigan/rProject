@@ -1,9 +1,9 @@
 rProject
 ================
 Ivan Jacob Agaloos Pesigan
-2023-07-08
+2023-07-09
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ijapesigan/rProject/workflows/R-CMD-check/badge.svg)](https://github.com/ijapesigan/rProject/actions)

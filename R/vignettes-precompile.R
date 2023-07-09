@@ -89,8 +89,23 @@ VignettesPrecompile <- function(path) {
         to = vignettes_folder,
         overwrite = TRUE
       )
-      on.exit(unlink(figs))
+      on.exit(
+        expr = unlink(
+          x = figs
+        ),
+        add = TRUE
+      )
     }
+    on.exit(
+      expr = unlink(
+        x = list.files(
+          path = vignettes_folder,
+          pattern = utils::glob2rx("*.orig"),
+          full.names = TRUE
+        )
+      ),
+      add = TRUE
+    )
   } else {
     message(
       paste(

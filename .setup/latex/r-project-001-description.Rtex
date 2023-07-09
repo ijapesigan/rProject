@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\input{latexsrc/preamble/preamble}
+\input{.setup/latex/preamble/preamble}
 
 %% begin.rcode
 % #| label = "root",
@@ -12,10 +12,31 @@
 % #| label = "knitr",
 % #| include = FALSE,
 % #| file = root$find_file(
-% #|   "latexsrc",
+% #|   ".setup",
+% #|   "latex",
 % #|   "r-scripts",
 % #|   "knitr.R"
 % #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% cat(
+%   .PreambleBiblatexCombined(
+%     path = root$find_file(
+%       ".setup",
+%       "latex",
+%       "bib"
+%     ),
+%     output_path = root$find_file(
+%       ".setup",
+%       "latex"
+%     )
+%   )
+% )
 %% end.rcode
 
 \title{rProject: R Project}
@@ -54,5 +75,9 @@ with:
 See
 \href{https://ijapesigan.github.io/rProject/index.html}{GitHub Pages}
 for package documentation.
+
+\nocite{Lib-R-Manual-2023}
+
+\printbibliography
 
 \end{document}

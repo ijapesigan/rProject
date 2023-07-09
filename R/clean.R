@@ -15,14 +15,24 @@ Clean <- function(path) {
         "detritus",
         "doc",
         "docs",
+        "latexmkrc",
         "man",
         "pkgdown",
         "quarto",
         "TEMPDIR",
         "_site",
         file.path(
-          "latexsrc",
+          ".setup",
+          "build"
+        ),
+        file.path(
+          ".setup",
+          "latex",
           "pdf"
+        ),
+        file.path(
+          ".setup",
+          "notes"
         )
       )
     )
@@ -34,7 +44,8 @@ Clean <- function(path) {
       "README.md",
       "README.knit.md",
       "NAMESPACE",
-      ".lintr"
+      ".lintr",
+      ".covrignore"
     )
   )
   files <- c(
@@ -50,6 +61,13 @@ Clean <- function(path) {
       file.path(
         path
       ),
+      pattern = utils::glob2rx("*.cff"),
+      full.names = TRUE
+    ),
+    list.files(
+      file.path(
+        path
+      ),
       pattern = utils::glob2rx("*.pdf"),
       full.names = TRUE
     ),
@@ -58,13 +76,6 @@ Clean <- function(path) {
         path
       ),
       pattern = utils::glob2rx("*.tar.gz"),
-      full.names = TRUE
-    ),
-    list.files(
-      file.path(
-        path
-      ),
-      pattern = utils::glob2rx("*.cff"),
       full.names = TRUE
     )
   )

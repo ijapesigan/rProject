@@ -15,12 +15,14 @@ DataAnalysis <- function(path,
     path = path,
     clean = clean
   )
+  data_analysis <- file.path(
+    path,
+    ".setup",
+    "data-analysis"
+  )
   if (clean) {
     x <- list.files(
-      path = file.path(
-        path,
-        ".data-analysis"
-      ),
+      path = data_analysis,
       pattern = "\\.Rds$",
       full.names = TRUE,
       all.files = TRUE,
@@ -31,10 +33,7 @@ DataAnalysis <- function(path,
     }
   }
   x <- list.files(
-    path = file.path(
-      path,
-      ".data-analysis"
-    ),
+    path = data_analysis,
     pattern = "\\.R$",
     full.names = TRUE,
     all.files = TRUE,

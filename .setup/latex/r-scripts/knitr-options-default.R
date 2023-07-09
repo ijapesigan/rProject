@@ -8,7 +8,8 @@ KnitrOptionsDefault <- function(rproj) {
   )
   source(
     rproj$find_file(
-      "latexsrc",
+      ".setup",
+      "latex",
       "r-scripts",
       "detritus.R"
     )

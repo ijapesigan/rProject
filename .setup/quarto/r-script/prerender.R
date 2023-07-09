@@ -46,11 +46,13 @@ rm(x)
 # bib
 .BiblatexCombined(
   path = root$find_file(
-    "latexsrc",
+    ".setup",
+    "latex",
     "bib"
   ),
   output_path = root$find_file(
-    "qmd",
+    ".setup",
+    "quarto",
     "bib"
   )
 )

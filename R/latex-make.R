@@ -6,12 +6,14 @@
 #' @export
 LatexMake <- function(path,
                       clean = FALSE) {
+  latex <- file.path(
+    path,
+    ".setup",
+    "latex"
+  )
   if (
     file.exists(
-      file.path(
-        path,
-        "latexsrc"
-      )
+      latex
     )
   ) {
     try(
@@ -28,10 +30,7 @@ LatexMake <- function(path,
   } else {
     message(
       paste(
-        file.path(
-          path,
-          "latexsrc"
-        ),
+        latex,
         "does not exist."
       )
     )

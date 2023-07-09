@@ -25,7 +25,12 @@ jobs:
         with:
           extra-packages: any::covr
           needs: coverage
-
+      - name: .covignore
+        run: |
+          FILE=.setup/coverage/.covignore
+          if [[ -f "$FILE" ]]; then
+            cp "$FILE" .
+          fi
       - name: Test coverage
         run: |
           covr::codecov(

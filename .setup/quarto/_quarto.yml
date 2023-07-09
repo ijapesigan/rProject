@@ -15,11 +15,11 @@ book:
     pinned: true
   chapters:
     - index.qmd
-    - qmd/intro/intro.qmd
-    - qmd/references/references.qmd
+    - .setup/quarto/intro/intro.qmd
+    - .setup/quarto/references/references.qmd
   appendices:
-    - qmd/session/session.qmd
-bibliography: qmd/bib/bib.bib
+    - .setup/quarto/session/session.qmd
+bibliography: .setup/quarto/bib/bib.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
 
 format:

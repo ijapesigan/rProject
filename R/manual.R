@@ -13,11 +13,28 @@ Manual <- function(path,
       )
     )
   ) {
+    output <- file.path(
+      path,
+      ".setup",
+      "build"
+    )
     unlink(
-      file.path(
-        path,
-        paste0(project, "pdf")
+      x = list.files(
+        output,
+        pattern = utils::glob2rx("*.pdf"),
+        full.names = TRUE
       )
+    )
+    man <- file.path(
+      path,
+      paste0(
+        project,
+        ".",
+        "pdf"
+      )
+    )
+    unlink(
+      x = man
     )
     system(
       paste(
@@ -33,6 +50,20 @@ Manual <- function(path,
           find.package(project)
         )
       )
+    )
+    file.copy(
+      from = man,
+      to = file.path(
+        path,
+        ".setup",
+        "build"
+      )
+    )
+    on.exit(
+      expr = unlink(
+        x = man
+      ),
+      add = TRUE
     )
   } else {
     message(

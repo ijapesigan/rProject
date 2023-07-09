@@ -8,11 +8,21 @@
 #' @export
 LatexCompile <- function(path,
                          clean = FALSE) {
+  latexmkrc <- system.file(
+    "latexmk",
+    "latexmkrc",
+    package = "rProject"
+  )
+  file.copy(
+    from = latexmkrc,
+    to = path
+  )
   detritus <- Detritus(path = path)
   tex_folder <- detritus$tex_folder
   pdf_folder <- file.path(
     path,
-    "latexsrc",
+    ".setup",
+    "latex",
     "pdf"
   )
   dir.create(
@@ -91,4 +101,10 @@ LatexCompile <- function(path,
       recursive = TRUE
     )
   }
+  unlink(
+    file.path(
+      path,
+      "latexmkrc"
+    )
+  )
 }

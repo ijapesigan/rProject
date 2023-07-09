@@ -1,4 +1,4 @@
-#' Knit `latexsrc/*.Rtex`
+#' Knit `.setup/latex/*.Rtex`
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -6,11 +6,13 @@
 #' @export
 LatexKnit <- function(path) {
   detritus <- Detritus(path = path)$tex_folder
+  latex <- file.path(
+    path,
+    ".setup",
+    "latex"
+  )
   rtex_files <- list.files(
-    file.path(
-      path,
-      "latexsrc"
-    ),
+    path = latex,
     pattern = "\\.Rtex$",
     full.names = TRUE,
     all.files = TRUE
@@ -35,10 +37,7 @@ LatexKnit <- function(path) {
     )
   }
   tex_files <- list.files(
-    file.path(
-      path,
-      "latexsrc"
-    ),
+    path = latex,
     pattern = "\\.tex$",
     full.names = TRUE,
     all.files = TRUE

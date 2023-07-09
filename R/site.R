@@ -31,17 +31,40 @@ Site <- function(path) {
         quiet = TRUE
       )
     }
+    pkgdown <- file.path(
+      path,
+      ".setup",
+      "pkgdown",
+      "_pkgdown.yml"
+    )
     if (
       file.exists(
-        file.path(
-          path,
-          "_pkgdown.yml"
-        )
+        pkgdown
       )
     ) {
+      file.copy(
+        from = pkgdown,
+        to = path
+      )
       pkgdown::build_site(
         pkg = path,
         preview = FALSE
+      )
+      on.exit(
+        expr = unlink(
+          file.path(
+            path,
+            "_pkgdown.yml"
+          )
+        ),
+        add = TRUE
+      )
+    } else {
+      message(
+        paste(
+          pkgdown,
+          "does not exist."
+        )
       )
     }
   } else {

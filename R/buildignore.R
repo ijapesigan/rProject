@@ -21,40 +21,22 @@ BuildIgnore <- function(path,
     x <- c(
       ".*\\.Rcheck$",
       ".*\\.Rproj$",
-      ".*\\.sif$",
-      ".*\\.tar\\.gz$",
-      ".*\\.tar\\.xz$",
-      ".*\\.tgz$",
-      ".*\\.uuid$",
-      ".*\\.yml$",
       "^CITATION\\.cff$",
       "^LICENSE\\.md$",
       "^Makefile$",
       "^README\\.Rmd$",
       "^README\\.md$",
       "^\\.Rproj\\.user$",
-      "^\\.covrignore$",
-      "^\\.data-.*$",
       "^\\.devcontainer$",
       "^\\.git.*$",
       "^\\.library$",
-      "^\\.lintr$",
-      "^\\.quarto$",
       "^\\.setup$",
       "^\\.sim$",
       "^detritus$",
-      "^docs$",
       "^index\\.qmd$",
-      "^latex.*$",
       "^pkgdown$",
-      "^scss$",
       "^quarto$",
-      "^qmd$",
-      paste0(
-        "^",
-        project,
-        "\\.pdf$"
-      )
+      "^scripts$"
     )
     if (!is.null(add)) {
       x <- c(x, add)

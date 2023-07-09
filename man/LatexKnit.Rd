@@ -2,7 +2,7 @@
 % Please edit documentation in R/latex-knit.R
 \name{LatexKnit}
 \alias{LatexKnit}
-\title{Knit \verb{latexsrc/*.Rtex}}
+\title{Knit \verb{.setup/latex/*.Rtex}}
 \usage{
 LatexKnit(path)
 }
@@ -11,7 +11,7 @@ LatexKnit(path)
 Project path.}
 }
 \description{
-Knit \verb{latexsrc/*.Rtex}
+Knit \verb{.setup/latex/*.Rtex}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -5,13 +5,15 @@ path <- as.character(args[1])
 source(
   file.path(
     path,
-    "tools",
+    ".setup",
+    "scripts",
     "project.R"
   )
 )
 secrets_path <- file.path(
   path,
-  "tools",
+  ".setup",
+  "scripts",
   "secrets.R"
 )
 if (file.exists(secrets_path)) {

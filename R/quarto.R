@@ -9,7 +9,8 @@ Quarto <- function(path) {
   qmd_files <- list.files(
     file.path(
       path,
-      "qmd"
+      ".setup",
+      "quarto"
     ),
     pattern = "\\.qmd$",
     full.names = TRUE,
@@ -29,7 +30,8 @@ Quarto <- function(path) {
   if (length(qmd_files) > 0) {
     prerender <- file.path(
       path,
-      "qmd",
+      ".setup",
+      "quarto",
       "r-script",
       "prerender.R"
     )
@@ -37,26 +39,39 @@ Quarto <- function(path) {
       source(prerender)
     } else {
       message(
-        paste0(
+        paste(
           prerender,
-          " ",
           "not found."
         )
       )
     }
-    quarto_yml <- file.path(
+    quarto <- file.path(
       path,
+      ".setup",
+      "quarto",
       "_quarto.yml"
     )
-    if (file.exists(quarto_yml)) {
+    if (file.exists(quarto)) {
+      file.copy(
+        from = quarto,
+        to = path
+      )
       quarto::quarto_render(
         input = path
       )
+      on.exit(
+        expr = unlink(
+          file.path(
+            path,
+            "_quarto.yml"
+          )
+        ),
+        add = TRUE
+      )
     } else {
       message(
-        paste0(
-          quarto_yml,
-          " ",
+        paste(
+          quarto,
           "not found."
         )
       )
@@ -70,7 +85,11 @@ Quarto <- function(path) {
         " ",
         "or",
         " ",
-        file.path(path, "qmd"),
+        file.path(
+          path,
+          ".setup",
+          "quarto"
+        ),
         "."
       )
     )

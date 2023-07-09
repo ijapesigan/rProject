@@ -1,6 +1,6 @@
-.PHONY: all build local localforce dotfiles project pkg tinytex clean cleanpkg cleantinytex cleanall coverage lint qmd
+.PHONY: all build local localforce dotfiles project pkg tinytex clean cleanpkg cleantinytex cleanall coverage lint quarto clone
 
-all: build latex qmd
+all: build latex quarto
 
 build: pkg clean
 	@echo TinyTex...
@@ -32,15 +32,15 @@ cleanall: clean cleanpkg cleantinytex
 
 dotfiles:
 	@echo Building dotfiles...
-	@Rscript -e "source('tools/project.R') ; rProject::ConfigFiles(git_user)"
+	@Rscript -e "source('.setup/scripts/project.R') ; rProject::ConfigFiles(git_user)"
 
 project:
 	@echo Building project...
-	@Rscript tools/make-project.R ${PWD}
+	@Rscript .setup/scripts/make-project.R ${PWD}
 
 pkg: project dotfiles
 	@echo Installing packages...
-	@Rscript tools/make-packages.R ${PWD}
+	@Rscript .setup/scripts/make-packages.R ${PWD}
 
 tinytex:
 	@echo Installing TinyTex...
@@ -49,12 +49,12 @@ tinytex:
 local: project
 	@echo Installing local applications...
 	@Rscript -e "rProject::InstallLocal(all = TRUE)"
-	@Rscript tools/make-config.R ${PWD}
+	@Rscript .setup/scripts/make-config.R ${PWD}
 
 localforce: project
 	@echo Installing local applications...
 	@Rscript -e "rProject::InstallLocal(all = TRUE, force = TRUE)"
-	@Rscript tools/make-config.R ${PWD}
+	@Rscript .setup/scripts/make-config.R ${PWD}
 
 clean:
 	@echo Cleaning...
@@ -87,6 +87,9 @@ latex:
 	@echo Compiling latex...
 	@Rscript -e "rProject::LatexMake(\"${PWD}\")"
 
-qmd:
+quarto:
 	@echo Rendering quarto...
 	@Rscript -e "rProject::Quarto(\"${PWD}\")"
+
+clone:
+	@bash .setup/scripts/clone.sh

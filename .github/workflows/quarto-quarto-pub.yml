@@ -33,7 +33,7 @@ jobs:
         run: make build
       -
         name: Build Quarto Project
-        run: make qmd
+        run: make quarto
       -
         name: Deploy to Quarto Pub
         run: quarto publish --no-render quarto-pub

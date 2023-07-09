@@ -5,7 +5,8 @@ path <- as.character(args[1])
 source(
   file.path(
     path,
-    "tools",
+    ".setup",
+    "scripts",
     "project.R"
   )
 )

@@ -3,10 +3,12 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @inheritParams tinytex::install_tinytex
 #' @param force Logical.
 #'   Force install.
 #' @export
 TinyTex <- function(path,
+                    bundle = "TinyTeX-2",
                     force = FALSE) {
   install <- FALSE
   lib <- LibPaths(path = path)
@@ -43,7 +45,7 @@ TinyTex <- function(path,
   }
   if (install) {
     tinytex::install_tinytex(
-      bundle = "TinyTeX-2",
+      bundle = bundle,
       force = TRUE
     )
   }

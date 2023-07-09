@@ -5,39 +5,50 @@
 #' @inheritParams LibPaths
 #' @export
 ReadMe <- function(path) {
-  readme_rmd <- file.path(
+  readme <- file.path(
     path,
+    ".setup",
+    "readme",
     "README.Rmd"
   )
-  readme_md <- file.path(
-    path,
-    "README.md"
-  )
-  if (
-    file.exists(
-      readme_rmd
+  if (file.exists(readme)) {
+    file.copy(
+      from = readme,
+      to = path
     )
-  ) {
+    readme_rmd <- file.path(
+      path,
+      "README.Rmd"
+    )
+    readme_md <- file.path(
+      path,
+      "README.md"
+    )
     rmarkdown::render(
       input = readme_rmd,
       output_format = "github_document",
       output_file = readme_md
     )
-  }
-  unlink(
-    c(
-      file.path(
-        path,
-        "README.html"
+    on.exit(
+      expr = unlink(
+        x = c(
+          readme_rmd,
+          file.path(
+            path,
+            "README.html"
+          ),
+          file.path(
+            path,
+            "README.knit.md"
+          ),
+          file.path(
+            path,
+            "README_files"
+          )
+        ),
+        recursive = TRUE
       ),
-      file.path(
-        path,
-        "README.knit.md"
-      ),
-      file.path(
-        path,
-        "README_files"
-      )
+      add = TRUE
     )
-  )
+  }
 }

@@ -32,9 +32,26 @@ Build <- function(path,
     devtools::document(pkg = path)
     devtools::check(pkg = path, cran = FALSE)
     devtools::install(pkg = path, dependencies = dependencies)
+    output <- file.path(
+      path,
+      ".setup",
+      "build"
+    )
+    unlink(
+      x = list.files(
+        output,
+        pattern = utils::glob2rx("*.tar.gz"),
+        full.names = TRUE
+      )
+    )
+    dir.create(
+      path = output,
+      showWarnings = FALSE,
+      recursive = TRUE
+    )
     devtools::build(
       pkg = path,
-      path = path,
+      path = output,
       manual = TRUE,
       vignettes = vignettes
     )

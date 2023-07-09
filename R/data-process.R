@@ -10,12 +10,14 @@
 #' @export
 DataProcess <- function(path,
                         clean = FALSE) {
+  data_process <- file.path(
+    path,
+    ".setup",
+    "data-process"
+  )
   if (clean) {
     x <- list.files(
-      path = file.path(
-        path,
-        ".data-process"
-      ),
+      path = data_process,
       pattern = "\\.Rds$",
       full.names = TRUE,
       all.files = TRUE,
@@ -26,10 +28,7 @@ DataProcess <- function(path,
     }
   }
   x <- list.files(
-    path = file.path(
-      path,
-      ".data-process"
-    ),
+    path = data_process,
     pattern = "\\.R$",
     full.names = TRUE,
     all.files = TRUE,

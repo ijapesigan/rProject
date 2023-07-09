@@ -24,7 +24,23 @@ Coverage <- function(path) {
         quiet = TRUE
       )
     }
+    output <- file.path(
+      path,
+      ".setup",
+      "coverage",
+      ".covrignore"
+    )
+    file.copy(
+      from = output,
+      to = path
+    )
     covr::package_coverage(path = path)
+    on.exit(
+      expr = unlink(
+        x = output
+      ),
+      add = TRUE
+    )
   } else {
     message(
       paste(

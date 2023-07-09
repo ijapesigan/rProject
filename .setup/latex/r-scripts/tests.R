@@ -23,7 +23,8 @@ x <- c(
   x,
   list.files(
     path = rproj$find_file(
-      ".data-dependencies"
+      ".setup",
+      "data-dependencies"
     ),
     pattern = "\\.rda$",
     full.names = TRUE,
