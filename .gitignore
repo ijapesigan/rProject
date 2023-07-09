@@ -38,6 +38,8 @@ vignettes/*.pdf
 /.quarto/
 /_site/
 /quarto/
+_quarto.yml
+_publish.yml
 
 # Temporary files created by R markdown
 *.utf8.md
@@ -53,6 +55,7 @@ vignettes/*.pdf
 /pkgdown/
 /docs/
 /doc/
+_pkgdown.yml
 
 # translation temp files
 po/*~
@@ -81,5 +84,11 @@ README_files/
 
 # latex
 latexmkrc
+
+# lint
+.lintr
+
+# coverage
+.covignore
 
 # etc

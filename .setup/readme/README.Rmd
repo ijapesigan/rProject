@@ -18,9 +18,9 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/ijapesigan/rProject/workflows/R-CMD-check/badge.svg)](https://github.com/ijapesigan/rProject/actions)
-[![test-coverage](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yaml)
-[![lint](https://github.com/ijapesigan/rProject/actions/workflows/lint.yaml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/lint.yaml)
-[![pkgdown](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yaml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yaml)
+[![test-coverage](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml)
+[![lint](https://github.com/ijapesigan/rProject/actions/workflows/lint.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/lint.yml)
+[![pkgdown](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml)
 [![quarto (Quarto Pub)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml)
 [![codecov](https://codecov.io/gh/ijapesigan/rProject/branch/main/graph/badge.svg)](https://codecov.io/gh/ijapesigan/rProject)
 <!-- badges: end -->

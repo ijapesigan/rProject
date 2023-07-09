@@ -30,10 +30,12 @@ Coverage <- function(path) {
       "coverage",
       ".covrignore"
     )
-    file.copy(
-      from = output,
-      to = path
-    )
+    if (file.exists(output)) {
+      file.copy(
+        from = output,
+        to = path
+      )
+    }
     covr::package_coverage(path = path)
     on.exit(
       expr = unlink(
