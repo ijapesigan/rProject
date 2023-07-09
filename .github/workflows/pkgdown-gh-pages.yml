@@ -34,6 +34,14 @@ jobs:
           extra-packages: any::pkgdown, local::.
           needs: website
 
+      - 
+        name: _pkgdown.yml
+        run: |
+          FILE=.setup/quarto/_pkgdown.yml
+          if [[ -f "$FILE" ]]; then
+            cp "$FILE" .
+          fi
+
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE, dest_dir = "pkgdown")
         shell: Rscript {0}
