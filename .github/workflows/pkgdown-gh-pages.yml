@@ -37,7 +37,7 @@ jobs:
       - 
         name: _pkgdown.yml
         run: |
-          FILE=.setup/quarto/_pkgdown.yml
+          FILE=.setup/pkgdown/_pkgdown.yml
           if [[ -f "$FILE" ]]; then
             cp "$FILE" .
           fi
