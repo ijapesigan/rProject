@@ -38,14 +38,14 @@ jobs:
         name: _quarto.yml
         run: |
           FILE=.setup/quarto/_quarto.yml
-          if [[ -f "$FILE" ]]; then
+          if [ -f "$FILE" ]; then
             cp "$FILE" .
           fi
       - 
         name: _publish.yml
         run: |
           FILE=.setup/quarto/_publish.yml
-          if [[ -f "$FILE" ]]; then
+          if [ -f "$FILE" ]; then
             cp "$FILE" .
           fi
       -

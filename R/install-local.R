@@ -86,5 +86,4 @@ InstallLocal <- function(what = c(
       }
     }
   }
-  invisible(NULL)
 }
