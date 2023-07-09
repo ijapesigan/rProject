@@ -85,10 +85,4 @@ README_files/
 # latex
 latexmkrc
 
-# lint
-.lintr
-
-# coverage
-.covignore
-
 # etc
