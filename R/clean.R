@@ -5,79 +5,100 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @param push Logical.
+#'   If `push = TRUE` clean in preparation for git push.
 #' @export
-Clean <- function(path) {
+Clean <- function(path,
+                  push = FALSE) {
+  if (push) {
+    files <- list.files(
+      path = path,
+      pattern = ".*secrets.*",
+      full.names = TRUE,
+      recursive = TRUE
+    )
+    unlink(
+      x = files,
+      recursive = TRUE
+    )
+  }
   unlink(
-    file.path(
+    x = file.path(
       path,
       c(
+        ".covrignore",
+        ".lintr",
         ".quarto",
+        "_pkgdown.yml",
+        "_publish.yml",
+        "_quarto.yml",
         "detritus",
         "doc",
         "docs",
         "latexmkrc",
-        "man",
         "pkgdown",
         "quarto",
+        "README.html",
+        "README.knit.md",
         "TEMPDIR",
         "_site",
-        file.path(
-          ".setup",
-          "build"
-        ),
-        file.path(
-          ".setup",
-          "latex",
-          "pdf"
-        ),
         file.path(
           ".setup",
           "notes"
         )
       )
-    )
+    ),
+    recursive = TRUE
   )
-  files <- file.path(
-    path,
-    c(
-      "README.html",
-      "README.md",
-      "README.knit.md",
-      "NAMESPACE",
-      ".lintr",
-      ".covrignore"
+  if (!push) {
+    unlink(
+      x = file.path(
+        path,
+        c(
+          "man",
+          "NAMESPACE",
+          "README.md",
+          "_site",
+          file.path(
+            ".setup",
+            "build"
+          ),
+          file.path(
+            ".setup",
+            "latex",
+            "pdf"
+          )
+        )
+      ),
+      recursive = TRUE
     )
-  )
+  }
   files <- c(
-    files,
     list.files(
-      file.path(
-        path
-      ),
-      pattern = utils::glob2rx("fig-vignettes-*"),
+      path = path,
+      pattern = "^fig-vignettes-.*$",
       full.names = TRUE
     ),
     list.files(
-      file.path(
-        path
-      ),
-      pattern = utils::glob2rx("*.cff"),
+      path = path,
+      pattern = ".*\\.pdf$",
       full.names = TRUE
     ),
     list.files(
-      file.path(
-        path
-      ),
-      pattern = utils::glob2rx("*.pdf"),
-      full.names = TRUE
-    ),
-    list.files(
-      file.path(
-        path
-      ),
-      pattern = utils::glob2rx("*.tar.gz"),
+      path = path,
+      pattern = ".*\\.tar\\.gz$",
       full.names = TRUE
     )
   )
-  unlink(files)
+  unlink(x = files)
+  if (!push) {
+    files <- c(
+      list.files(
+        path = path,
+        pattern = ".*\\.cff$",
+        full.names = TRUE
+      )
+    )
+    unlink(x = files)
+  }
 }
