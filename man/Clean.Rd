@@ -4,11 +4,14 @@
 \alias{Clean}
 \title{Clean Files Generated on Build}
 \usage{
-Clean(path)
+Clean(path, push = FALSE)
 }
 \arguments{
 \item{path}{Character string.
 Project path.}
+
+\item{push}{Logical.
+If \code{push = TRUE} clean in preparation for git push.}
 }
 \description{
 Delete all output files that are generated on automated build.

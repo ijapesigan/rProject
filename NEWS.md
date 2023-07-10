@@ -1,9 +1,11 @@
+# rProject 0.0.2
+
+## Patch
+
+Added the argumnent `push` to [Clean()] for cleaning the directory in preparation for git push.
+
 # rProject 0.0.1
 
-Latest development version.
+## Patch
 
-# rProject 0.0.0.9000
-
-## Major changes
-
-* Add news here...
+Started version numbers.
