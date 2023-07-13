@@ -17,7 +17,6 @@ jobs:
       image: ijapesigan/docs
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
     permissions:
       contents: write
 
@@ -32,4 +31,6 @@ jobs:
           make cleanpkg
       -
         name: Make Project
-        run: make all
+        run: |
+          make install
+          make all
