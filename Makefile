@@ -1,6 +1,18 @@
-.PHONY: push clean cleanpush cleanpkg cleantinytex cleanproj project dotfiles pkg tinytex tinytexforce style lint data dependencies vignettes build coverage latex pdf pkgdown quarto docs all cleanall install local localforce clone
+.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex clone coverage data dependencies docs dotfiles install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes
 
 push: build docs cleanpush coverage
+
+project:
+	@echo "\n\nBuilding project...\n\n"
+	@Rscript .setup/scripts/make-project.R ${PWD}
+
+pkg:
+	@echo "\n\nInstalling packages...\n\n"
+	@Rscript .setup/scripts/make-packages.R ${PWD}
+
+dotfiles:
+	@echo "\n\nBuilding dotfiles...\n\n"
+	@Rscript .setup/scripts/make-config.R ${PWD}
 
 clean:
 	@echo "\n\nCleaning...\n\n"
@@ -22,18 +34,6 @@ cleantinytex:
 cleanproj:
 	@echo "\n\nCleaning project...\n\n"
 	@Rscript -e "rProject::CleanProj(\"${PWD}\")"
-
-project:
-	@echo "\n\nBuilding project...\n\n"
-	@Rscript .setup/scripts/make-project.R ${PWD}
-
-dotfiles:
-	@echo "\n\nBuilding dotfiles...\n\n"
-	@Rscript .setup/scripts/make-config.R ${PWD}
-
-pkg: project dotfiles
-	@echo "\n\nInstalling packages...\n\n"
-	@Rscript .setup/scripts/make-packages.R ${PWD}
 
 tinytex: 
 	@echo "\n\nTinyTex...\n\n"
@@ -66,7 +66,7 @@ vignettes:
 	@echo "\n\nPrecompiling vignettes...\n\n"
 	@Rscript -e "rProject::VignettesPrecompile(\"${PWD}\")"
 
-build: clean pkg tinytex lint data dependencies vignettes
+build: project pkg dotfiles clean tinytex lint data dependencies vignettes
 	@echo "\n\nBuilding package...\n\n"
 	@Rscript -e "rProject::Build(\"${PWD}\")"
 
