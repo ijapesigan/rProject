@@ -14,3 +14,7 @@ library(printr)
 ```{r}
 ?BuildIgnore
 ```
+
+```{r}
+BuildIgnore
+```

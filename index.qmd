@@ -17,4 +17,4 @@ Save the generated `_publish.yml`. Once the `_publish.yml` is generated, the suc
 
 ## Wiki
 
-This website contains resources related to the R [@Lib-R-Manual-2023] package [rProject](https://github.com/ijapesigan/rProject) outside the [pkgdown](https://ijapesigan.github.io/rProject) documentation.
+This website contains resources related to the R [@RCoreTeam-2023] package [rProject](https://github.com/ijapesigan/rProject) outside the [pkgdown](https://ijapesigan.github.io/rProject) documentation.

@@ -12,6 +12,22 @@ ReadMe <- function(path) {
     "README.Rmd"
   )
   if (file.exists(readme)) {
+    bib <- file.path(
+      path,
+      ".setup",
+      "latex",
+      "bib",
+      "bib.bib"
+    )
+    if (!file.exists(bib)) {
+      Bib(path = path)
+    }
+    try(
+      file.copy(
+        from = bib,
+        to = path
+      )
+    )
     file.copy(
       from = readme,
       to = path
@@ -33,6 +49,10 @@ ReadMe <- function(path) {
       expr = unlink(
         x = c(
           readme_rmd,
+          file.path(
+            path,
+            "bib.bib"
+          ),
           file.path(
             path,
             "README.html"

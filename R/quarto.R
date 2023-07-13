@@ -52,6 +52,16 @@ Quarto <- function(path) {
       "_quarto.yml"
     )
     if (file.exists(quarto)) {
+      bib <- file.path(
+        path,
+        ".setup",
+        "quarto",
+        "bib",
+        "bib.bib"
+      )
+      if (!file.exists(bib)) {
+        Bib(path = path)
+      }
       file.copy(
         from = quarto,
         to = path

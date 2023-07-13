@@ -3,6 +3,8 @@ title: "rProject"
 author: "Ivan Jacob Agaloos Pesigan"
 date: "`r Sys.Date()`"
 output: github_document
+bibliography: "bib.bib"
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
 ---
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
@@ -27,7 +29,7 @@ knitr::opts_chunk$set(
 
 ## Description
 
-A collection of functions to setup R projects.
+A collection of functions to setup R [@RCoreTeam-2023] projects.
 This package is intended for personal use only.
 
 ## Installation
@@ -66,3 +68,5 @@ for package documentation.
 See
 [Quarto Pub](https://ijapesigan.quarto.pub/rproject)
 for package wiki and other resources.
+
+## References

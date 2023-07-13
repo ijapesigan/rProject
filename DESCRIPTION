@@ -1,6 +1,6 @@
 Package: rProject
 Title: Setup R Project
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -27,6 +27,7 @@ Imports:
     pkgdown,
     quarto,
     remotes,
+    RefManageR,
     rmarkdown,
     rprojroot,
     stats,

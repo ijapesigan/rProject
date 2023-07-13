@@ -1,3 +1,9 @@
+# rProject 0.0.3
+
+## Patch
+
+Added the the function [Bib()] to generate `bib.bib` files for LateX, quarto, and vignettes.
+
 # rProject 0.0.2
 
 ## Patch

@@ -19,25 +19,20 @@
 % #| )
 %% end.rcode
 
-%% begin.rcode
-% #| label = "biblatex",
-% #| echo = FALSE,
-% #| warning = FALSE,
-% #| results = "asis"
-% cat(
-%   .PreambleBiblatexCombined(
-%     path = root$find_file(
-%       ".setup",
-%       "latex",
-%       "bib"
-%     ),
-%     output_path = root$find_file(
-%       ".setup",
-%       "latex"
-%     )
-%   )
-% )
-%% end.rcode
+\usepackage[style = apa, sortcites = true, sorting = nyt, backend = biber, labeldate = year]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+
+\addbibresource{.setup/latex/bib/bib.bib}
+
+\DeclareSourcemap{
+    \maps[datatype = bibtex]{
+        \map{
+            \step[fieldset = addendum, null]
+            \step[fieldset = note, null]
+            \step[fieldset = annotation, null]
+        }
+    }
+}
 
 \title{rProject: R Project}
 \author{Ivan Jacob Agaloos Pesigan}
@@ -49,7 +44,7 @@
 
 \section*{Description}
 
-A collection of functions to setup R projects.
+A collection of functions to setup R \parencite{RCoreTeam-2023} projects.
 This package is intended for personal use only.
 
 \section*{Installation}
@@ -75,8 +70,6 @@ with:
 See
 \href{https://ijapesigan.github.io/rProject/index.html}{GitHub Pages}
 for package documentation.
-
-\nocite{Lib-R-Manual-2023}
 
 \printbibliography
 

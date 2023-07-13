@@ -16,6 +16,14 @@ LatexMake <- function(path,
       latex
     )
   ) {
+    bib <- file.path(
+      latex,
+      "bib",
+      "bib.bib"
+    )
+    if (!file.exists(bib)) {
+      Bib(path = path)
+    }
     try(
       LatexKnit(
         path = path

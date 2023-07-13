@@ -42,17 +42,3 @@ if (length(x) > 0) {
   rm(i)
 }
 rm(x)
-
-# bib
-.BiblatexCombined(
-  path = root$find_file(
-    ".setup",
-    "latex",
-    "bib"
-  ),
-  output_path = root$find_file(
-    ".setup",
-    "quarto",
-    "bib"
-  )
-)

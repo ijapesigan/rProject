@@ -29,6 +29,14 @@ Build <- function(path,
         quiet = TRUE
       )
     }
+    bib <- file.path(
+      path,
+      "vignettes",
+      "bib.bib"
+    )
+    if (!file.exists(bib)) {
+      Bib(path = path)
+    }
     devtools::document(pkg = path)
     devtools::check(pkg = path, cran = FALSE)
     devtools::install(pkg = path, dependencies = dependencies)

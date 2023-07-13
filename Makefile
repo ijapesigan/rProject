@@ -1,60 +1,6 @@
-.PHONY: all build local localforce dotfiles project pkg tinytex clean cleanpush cleanpkg cleantinytex cleanall coverage lint quarto clone
+.PHONY: push clean cleanpush cleanpkg cleantinytex cleanproj project dotfiles pkg tinytex tinytexforce style lint data dependencies vignettes build coverage latex pdf pkgdown quarto docs all cleanall install local localforce clone
 
-all: build latex quarto cleanpush
-
-build: pkg clean
-	@echo "\n\nTinyTex...\n\n"
-	@Rscript -e "rProject::TinyTex(\"${PWD}\", force = FALSE)"
-	@echo "\n\nStyling...\n\n"
-	@Rscript -e "rProject::Style(\"${PWD}\")"
-	@echo "\n\nLinting...\n\n"
-	@Rscript -e "rProject::Lint(\"${PWD}\")"
-	@echo "\n\nBuilding dependencies...\n\n"
-	@Rscript -e "rProject::DataProcess(\"${PWD}\")"
-	@Rscript -e "rProject::DataAnalysis(\"${PWD}\")"
-	@Rscript -e "rProject::Dependencies(\"${PWD}\")"
-	@echo "\n\nInitial build...\n\n"
-	@Rscript -e "rProject::Build(\"${PWD}\")"
-	@echo "\n\nPrecompiling vignettes...\n\n"
-	@Rscript -e "rProject::VignettesPrecompile(\"${PWD}\")"
-	@echo "\n\nBuilding project...\n\n"
-	@Rscript -e "rProject::Build(\"${PWD}\")"
-	@echo "\n\nBuilding README.md...\n\n"
-	@Rscript -e "rProject::ReadMe(\"${PWD}\")"
-	@echo "\n\nBuilding website...\n\n"
-	@Rscript -e "rProject::Site(\"${PWD}\")"
-	@echo "\n\nBuilding manual...\n\n"
-	@Rscript -e "rProject::Manual(\"${PWD}\", project = Sys.getenv(\"PROJECT\"))"
-	@echo "\n\nBuilding CITATION.cff...\n\n"
-	@Rscript -e "rProject::CFF(\"${PWD}\")"
-
-cleanall: clean cleanpkg cleantinytex
-
-dotfiles:
-	@echo "\n\nBuilding dotfiles...\n\n"
-	@Rscript -e "source('.setup/scripts/project.R') ; rProject::ConfigFiles(git_user)"
-
-project:
-	@echo "\n\nBuilding project...\n\n"
-	@Rscript .setup/scripts/make-project.R ${PWD}
-
-pkg: project dotfiles
-	@echo "\n\nInstalling packages...\n\n"
-	@Rscript .setup/scripts/make-packages.R ${PWD}
-
-tinytex:
-	@echo "\n\nInstalling TinyTex...\n\n"
-	@Rscript -e "rProject::TinyTex(\"${PWD}\", force = TRUE)"
-
-local: project
-	@echo "\n\nInstalling local applications...\n\n"
-	@Rscript -e "rProject::InstallLocal(all = TRUE)"
-	@Rscript .setup/scripts/make-config.R ${PWD}
-
-localforce: project
-	@echo "\n\nInstalling local applications...\n\n"
-	@Rscript -e "rProject::InstallLocal(all = TRUE, force = TRUE)"
-	@Rscript .setup/scripts/make-config.R ${PWD}
+push: build docs cleanpush coverage
 
 clean:
 	@echo "\n\nCleaning...\n\n"
@@ -69,31 +15,107 @@ cleanpkg:
 	@echo "\n\nCleaning packages...\n\n"
 	@Rscript -e "rProject::CleanPkg(\"${PWD}\")"
 
+cleantinytex:
+	@echo "\n\nCleaning TinyTex...\n\n"
+	@Rscript -e "rProject::CleanTinyTex(\"${PWD}\")"
+
 cleanproj:
 	@echo "\n\nCleaning project...\n\n"
 	@Rscript -e "rProject::CleanProj(\"${PWD}\")"
 
-cleantinytex:
-	@echo "\n\nCleaning TinyTex...\n\n"
-	@Rscript -e "rProject::CleanTinyTex(\"${PWD}\")"
+project:
+	@echo "\n\nBuilding project...\n\n"
+	@Rscript .setup/scripts/make-project.R ${PWD}
+
+dotfiles:
+	@echo "\n\nBuilding dotfiles...\n\n"
+	@Rscript .setup/scripts/make-config.R ${PWD}
+
+pkg: project dotfiles
+	@echo "\n\nInstalling packages...\n\n"
+	@Rscript .setup/scripts/make-packages.R ${PWD}
+
+tinytex: 
+	@echo "\n\nTinyTex...\n\n"
+	@Rscript -e "rProject::TinyTex(\"${PWD}\", force = FALSE)"
+
+tinytexforce: 
+	@echo "\n\nTinyTex...\n\n"
+	@Rscript -e "rProject::TinyTex(\"${PWD}\", force = TRUE)"
+
+style:
+	@echo "\n\nStyling...\n\n"
+	@Rscript -e "rProject::Style(\"${PWD}\")"
+
+lint: style
+	@echo "\n\nLinting...\n\n"
+	@Rscript -e "rProject::Lint(\"${PWD}\")"
+
+data:
+	@echo "\n\nBuilding data...\n\n"
+	@Rscript -e "rProject::DataProcess(\"${PWD}\")"
+	@Rscript -e "rProject::DataAnalysis(\"${PWD}\")"
+
+dependencies:
+	@echo "\n\nBuilding dependencies...\n\n"
+	@Rscript -e "rProject::Dependencies(\"${PWD}\")"
+
+vignettes:
+	@echo "\n\nInitial build...\n\n"
+	@Rscript -e "rProject::Build(\"${PWD}\")"
+	@echo "\n\nPrecompiling vignettes...\n\n"
+	@Rscript -e "rProject::VignettesPrecompile(\"${PWD}\")"
+
+build: clean pkg tinytex lint data dependencies vignettes
+	@echo "\n\nBuilding package...\n\n"
+	@Rscript -e "rProject::Build(\"${PWD}\")"
 
 coverage:
 	@echo "\n\nCode coverage...\n\n"
 	@Rscript -e "rProject::Coverage(\"${PWD}\")"
 
-lint:
-	@echo "\n\nStyling...\n\n"
-	@Rscript -e "rProject::Style(\"${PWD}\")"
-	@echo Linting...
-	@Rscript -e "rProject::Lint(\"${PWD}\")"
-
 latex:
 	@echo "\n\nCompiling latex...\n\n"
 	@Rscript -e "rProject::LatexMake(\"${PWD}\")"
 
+pdf:
+	@echo "\n\nCompiling latex...\n\n"
+	@Rscript -e "rProject::LatexMake(\"${PWD}\", clean = TRUE)"
+
+pkgdown:
+	@echo "\n\nBuilding pkgdown website...\n\n"
+	@Rscript -e "rProject::Site(\"${PWD}\")"
+
 quarto:
 	@echo "\n\nRendering quarto...\n\n"
 	@Rscript -e "rProject::Quarto(\"${PWD}\")"
+
+docs:
+	@echo "\n\nBuilding README.md...\n\n"
+	@Rscript -e "rProject::ReadMe(\"${PWD}\")"
+	@echo "\n\nBuilding manual...\n\n"
+	@Rscript -e "rProject::Manual(\"${PWD}\", project = Sys.getenv(\"PROJECT\"))"
+	@echo "\n\nBuilding CITATION.cff...\n\n"
+	@Rscript -e "rProject::CFF(\"${PWD}\")"
+
+all: build docs latex pkgdown quarto coverage
+
+cleanall: clean cleanpush cleanpkg cleantinytex
+
+install: pkg clean
+	@echo "\n\nInstalling...\n\n"
+	@Rscript -e "devtools::document(\"${PWD}\")"
+	@Rscript -e "devtools::install(\"${PWD}\", dependencies = FALSE)"
+
+local: project dotfiles
+	@echo "\n\nInstalling local applications...\n\n"
+	@Rscript -e "rProject::InstallLocal(all = TRUE)"
+	@Rscript .setup/scripts/make-config.R ${PWD}
+
+localforce: project dotfiles
+	@echo "\n\nInstalling local applications...\n\n"
+	@Rscript -e "rProject::InstallLocal(all = TRUE, force = TRUE)"
+	@Rscript .setup/scripts/make-config.R ${PWD}
 
 clone:
 	@bash .setup/scripts/clone.sh

@@ -45,6 +45,23 @@ Clean <- function(path,
         file.path(
           ".setup",
           "notes"
+        ),
+        file.path(
+          ".setup",
+          "latex",
+          "bib",
+          "bib.bib"
+        ),
+        file.path(
+          ".setup",
+          "quarto",
+          "bib",
+          "bib.bib"
+        ),
+        file.path(
+          ".setup",
+          "latex",
+          "pdf"
         )
       )
     ),
@@ -62,11 +79,6 @@ Clean <- function(path,
           file.path(
             ".setup",
             "build"
-          ),
-          file.path(
-            ".setup",
-            "latex",
-            "pdf"
           )
         )
       ),
