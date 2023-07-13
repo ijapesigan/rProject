@@ -30,6 +30,9 @@ if (file.exists(secrets_path)) {
     )
   }
   writeLines(env, "~/.bash-secrets")
+  Sys.setenv(
+    GITHUB_PAT = tokens["GITHUB_PAT"]
+  )
 } else {
   message(
     paste0(
