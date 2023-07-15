@@ -32,5 +32,4 @@ jobs:
       -
         name: Make Project
         run: |
-          make install
           make all
