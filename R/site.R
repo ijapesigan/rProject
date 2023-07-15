@@ -45,7 +45,7 @@ Site <- function(path) {
       bib <- file.path(
         path,
         "vignettes",
-        "bib.bib"
+        "vignettes.bib"
       )
       if (!file.exists(bib)) {
         Bib(path = path)

@@ -6,13 +6,19 @@ Ivan Jacob Agaloos Pesigan
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ijapesigan/rProject/workflows/R-CMD-check/badge.svg)](https://github.com/ijapesigan/rProject/actions)
-[![test-coverage](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml)
+[![latex](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml)
 [![lint](https://github.com/ijapesigan/rProject/actions/workflows/lint.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/lint.yml)
+[![make](https://github.com/ijapesigan/rProject/actions/workflows/make.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/make.yml)
+[![pages-build-deployment](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment)
 [![pkgdown](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml)
+[![quarto (GitHub
+Pages)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-gh-pages.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-gh-pages.yml)
 [![quarto (Quarto
 Pub)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml)
-[![codecov](https://codecov.io/gh/ijapesigan/rProject/branch/main/graph/badge.svg)](https://codecov.io/gh/ijapesigan/rProject)
+[![R-CMD-check](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yaml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yaml)
+[![Shell
+Check](https://github.com/ijapesigan/rProject/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/shellcheck.yml)
+[![test-coverage](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml)
 <!-- badges: end -->
 
 ## Description
@@ -62,7 +68,7 @@ line-spacing="2">
 
 R Core Team. (2023). *R: A language and environment for statistical
 computing*. R Foundation for Statistical Computing.
-[{https://www.R-project.org/}]({https://www.R-project.org/})
+<https://www.R-project.org/>
 
 </div>
 

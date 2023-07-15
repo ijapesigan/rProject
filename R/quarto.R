@@ -57,7 +57,7 @@ Quarto <- function(path) {
         ".setup",
         "quarto",
         "bib",
-        "bib.bib"
+        "quarto.bib"
       )
       if (!file.exists(bib)) {
         Bib(path = path)

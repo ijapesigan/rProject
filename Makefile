@@ -102,7 +102,7 @@ all: build docs latex pkgdown quarto coverage
 
 cleanall: clean cleanpush cleanpkg cleantinytex
 
-install: pkg clean
+install: project pkg clean
 	@echo "\n\nInstalling...\n\n"
 	@Rscript -e "devtools::document(\"${PWD}\")"
 	@Rscript -e "devtools::install(\"${PWD}\", dependencies = FALSE)"

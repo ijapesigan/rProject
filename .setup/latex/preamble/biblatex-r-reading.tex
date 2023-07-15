@@ -1,9 +1,5 @@
-\documentclass{article}
-
-\input{.setup/latex/preamble/preamble}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BIBLATEX APA
+% BIBLATEX READING
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %% begin.rcode
@@ -57,51 +53,11 @@
 %       output_path = root$find_file(
 %         ".setup",
 %         "latex"
-%       )
+%       ),
+%       style = "reading"
 %     )
 %   )
 % }
 %% end.rcode
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\title{rProject: R Project}
-\author{Ivan Jacob Agaloos Pesigan}
-\date{}
-
-\begin{document}
-
-\maketitle
-
-\section*{Description}
-
-A collection of functions to setup R \parencite{RCoreTeam-2023} projects.
-This package is intended for personal use only.
-
-\section*{Installation}
-
-You can install the released version of
-\texttt{rProject}
-from
-\href{https://github.com/ijapesigan/rProject}{GitHub}
-with:
-
-%% begin.rcode
-% #| eval = FALSE
-% install.packages("remotes")
-% remotes::install_github("ijapesigan/rProject")
-%% end.rcode
-
-%% begin.rcode
-% hist(rnorm(100))
-%% end.rcode
-
-\section*{More Information}
-
-See
-\href{https://ijapesigan.github.io/rProject/index.html}{GitHub Pages}
-for package documentation.
-
-\printbibliography
-
-\end{document}

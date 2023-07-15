@@ -83,18 +83,26 @@ Bib <- function(path) {
     }
     mapply(
       FUN = function(test,
-                     output) {
+                     output_dir,
+                     output_name) {
         if (test) {
           dir.create(
-            path = output,
+            path = output_dir,
             showWarnings = FALSE,
             recursive = TRUE
           )
           file.copy(
             from = latex_bib,
-            to = file.path(
-              output,
+            to = output_dir
+          )
+          file.rename(
+            from = file.path(
+              output_dir,
               "bib.bib"
+            ),
+            to = file.path(
+              output_dir,
+              output_name
             )
           )
         }
@@ -103,12 +111,16 @@ Bib <- function(path) {
         quarto,
         vignettes
       ),
-      output = c(
+      output_dir = c(
         file.path(
           quarto_dir,
           "bib"
         ),
         vignettes_dir
+      ),
+      output_name <- c(
+        "quarto.bib",
+        "vignettes.bib"
       )
     )
   }

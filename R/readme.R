@@ -28,6 +28,18 @@ ReadMe <- function(path) {
         to = path
       )
     )
+    try(
+      file.rename(
+        from = file.path(
+          path,
+          "bib.bib"
+        ),
+        to = file.path(
+          path,
+          "vignettes.bib"
+        )
+      )
+    )
     file.copy(
       from = readme,
       to = path
@@ -51,7 +63,7 @@ ReadMe <- function(path) {
           readme_rmd,
           file.path(
             path,
-            "bib.bib"
+            "vignettes.bib"
           ),
           file.path(
             path,
