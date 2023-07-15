@@ -11,7 +11,7 @@
     "href": "index.html#wiki",
     "title": "rProject",
     "section": "Wiki",
-    "text": "Wiki\nThis website contains resources related to the R (R Core Team, 2023) package rProject outside the pkgdown documentation.\n\n\n\n\nR Core Team. (2023). R: A language and environment for statistical computing. R Foundation for Statistical Computing. {https://www.R-project.org/}"
+    "text": "Wiki\nThis website contains resources related to the R (R Core Team, 2023) package rProject outside the pkgdown documentation.\n\n\n\n\nR Core Team. (2023). R: A language and environment for statistical computing. R Foundation for Statistical Computing. https://www.R-project.org/"
   },
   {
     "objectID": ".setup/quarto/intro/intro.html#BuildIgnore",
@@ -25,7 +25,7 @@
     "href": ".setup/quarto/references/references.html",
     "title": "References",
     "section": "",
-    "text": "R Core Team. (2023). R: A language and environment for\nstatistical computing. R Foundation for Statistical Computing. {https://www.R-project.org/}"
+    "text": "R Core Team. (2023). R: A language and environment for\nstatistical computing. R Foundation for Statistical Computing. https://www.R-project.org/"
   },
   {
     "objectID": ".setup/quarto/session/session.html#session",
