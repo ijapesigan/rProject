@@ -4,6 +4,8 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 bibliography: "vignettes.bib"
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+nocite: |
+  @*
 vignette: >
   %\VignetteIndexEntry{rProject: Setup R Project}
   %\VignetteEngine{knitr::rmarkdown}
