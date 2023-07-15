@@ -118,7 +118,7 @@ Bib <- function(path) {
         ),
         vignettes_dir
       ),
-      output_name <- c(
+      output_name = c(
         "quarto.bib",
         "vignettes.bib"
       )
