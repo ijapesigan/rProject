@@ -1,14 +1,15 @@
 name: R-CMD-check
 
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Make Project"]
+    types:
+      - completed
 
 jobs:
+
   R-CMD-check:
+    needs: build
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
@@ -35,8 +36,6 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
-
-    if: "contains(github.event.head_commit.message, '[AUTO-COMMIT]')"
 
     steps:
       - uses: actions/checkout@v3

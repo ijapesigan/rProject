@@ -1,11 +1,10 @@
 name: R Package Test Coverage
 
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Make Project"]
+    types:
+      - completed
 
 jobs:
   test-coverage:
