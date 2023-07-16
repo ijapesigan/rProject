@@ -22,7 +22,7 @@ jobs:
     permissions:
       contents: write
 
-    if: contains(github.event.head_commit.message, "[AUTO-COMMIT]")
+    if: "contains(github.event.head_commit.message, '[AUTO-COMMIT]')"
 
     steps:
       -
