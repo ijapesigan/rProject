@@ -1,12 +1,6 @@
-name: make
+name: Make Project
 
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-  release:
-    types: [published]
   workflow_dispatch:
 
 jobs:
@@ -20,6 +14,8 @@ jobs:
     permissions:
       contents: write
 
+    if: contains(github.event.head_commit.message, 'Automated build.')
+
     steps:
       -
         name: Checkout 
@@ -32,4 +28,13 @@ jobs:
       -
         name: Make Project
         run: |
+          make install
           make all
+          make push
+      - 
+        name: Commit and push changes
+        uses: devops-infra/action-commit-push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: Automated build.
+

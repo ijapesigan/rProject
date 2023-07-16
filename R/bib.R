@@ -6,11 +6,25 @@
 #' @export
 Bib <- function(path) {
   unlink(
-    x = list.files(
-      path = path,
-      pattern = "^bib\\.bib$",
-      full.names = TRUE,
-      recursive = TRUE
+    x = c(
+      list.files(
+        path = path,
+        pattern = "^bib\\.bib$",
+        full.names = TRUE,
+        recursive = TRUE
+      ),
+      list.files(
+        path = path,
+        pattern = "^quarto\\.bib$",
+        full.names = TRUE,
+        recursive = TRUE
+      ),
+      list.files(
+        path = path,
+        pattern = "^vignettes\\.bib$",
+        full.names = TRUE,
+        recursive = TRUE
+      )
     )
   )
   quarto <- vignettes <- FALSE

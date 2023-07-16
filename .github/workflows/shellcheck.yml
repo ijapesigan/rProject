@@ -1,16 +1,15 @@
 name: Shell Check
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
+
+    if: contains(github.event.head_commit.message, 'Automated build.')
+
     steps:
       -
         name: Checkout 

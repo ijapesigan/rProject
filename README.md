@@ -6,19 +6,25 @@ Ivan Jacob Agaloos Pesigan
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
-[![latex](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml)
-[![lint](https://github.com/ijapesigan/rProject/actions/workflows/lint.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/lint.yml)
-[![make](https://github.com/ijapesigan/rProject/actions/workflows/make.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/make.yml)
-[![pages-build-deployment](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment)
-[![pkgdown](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml)
-[![quarto (GitHub
+[![Make
+Project](https://github.com/ijapesigan/rProject/actions/workflows/make.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/make.yml)
+[![R-CMD-check](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yml)
+[![R Package Test
+Coverage](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml)
+[![Lint R
+Package](https://github.com/ijapesigan/rProject/actions/workflows/lint.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/lint.yml)
+[![Package Website (GitHub
+Pages)](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml)
+[![Quarto Website (GitHub
 Pages)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-gh-pages.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-gh-pages.yml)
-[![quarto (Quarto
+[![Quarto Website (Quarto
 Pub)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml)
-[![R-CMD-check](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yaml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yaml)
+[![Compile
+LaTeX](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml)
 [![Shell
 Check](https://github.com/ijapesigan/rProject/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/shellcheck.yml)
-[![test-coverage](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml)
+[![pages-build-deployment](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment)
+[![codecov](https://codecov.io/gh/jeksterslab/rProject/branch/main/graph/badge.svg?token=KVLUET3DJ6)](https://codecov.io/gh/jeksterslab/rProject)
 <!-- badges: end -->
 
 ## Description
