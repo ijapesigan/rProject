@@ -18,8 +18,6 @@ jobs:
     permissions:
       contents: write
 
-    if: "contains(github.event.head_commit.message, '[AUTO-COMMIT]')"
-
     steps:
       - uses: actions/checkout@v3
 
