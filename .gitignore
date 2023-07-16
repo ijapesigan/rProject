@@ -79,4 +79,5 @@ detritus
 README.html
 README_files/
 
-# etc
+# latex
+latexmkrc
