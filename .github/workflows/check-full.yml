@@ -2,14 +2,15 @@ name: R-CMD-check
 
 on:
   workflow_run:
-    workflows: ["Make Project"]
+    workflows: [ "Make Project" ]
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
 
   R-CMD-check:
-    needs: build
+
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
