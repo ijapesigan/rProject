@@ -62,10 +62,25 @@ Bib <- function(path) {
   if (run) {
     if (length_bib_src == 1) {
       bib <- RefManageR::ReadBib(bib_src)
+      RefManageR::WriteBib(
+        bib = bib,
+        file = bib_src,
+        biblatex = TRUE,
+        append = FALSE,
+        verbose = FALSE
+      )
     } else {
       bib <- lapply(
         X = bib_src,
         FUN = RefManageR::ReadBib
+      )
+      mapply(
+        FUN = RefManageR::WriteBib,
+        bib = bib,
+        file = bib_src,
+        biblatex = TRUE,
+        append = FALSE,
+        verbose = FALSE
       )
       bib <- Reduce(
         f = `+`,
@@ -77,7 +92,7 @@ Bib <- function(path) {
       file = latex_bib,
       biblatex = TRUE,
       append = FALSE,
-      verbose = TRUE
+      verbose = FALSE
     )
     # quarto and vignettes
     quarto_dir <- file.path(
