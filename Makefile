@@ -118,3 +118,8 @@ localforce: project dotfiles
 
 clone:
 	@bash .setup/scripts/clone.sh
+
+auto: clone
+	@git add --all
+	@git commit -m "Automated build."
+	@git push origin main
