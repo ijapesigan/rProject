@@ -32,6 +32,9 @@ jobs:
         name: Build Quarto Project
         run: make quarto
       -
+        name: Add .nojekyll
+        run: touch/quarto/.nojekyll
+      -
         name: Deploy to GitHub pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
