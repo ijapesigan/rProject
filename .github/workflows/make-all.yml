@@ -1,4 +1,4 @@
-name: Make Project
+name: Make Project (make all)
 
 on:
   push:
@@ -26,14 +26,9 @@ jobs:
         name: Clean
         run: |
           make clean
+          make cleanpkg
       -
         name: Make Project
         run: |
           make install
-          make push
-      - 
-        name: Commit and push changes
-        uses: devops-infra/action-commit-push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit_message: "[AUTO-COMMIT]"
+          make all
