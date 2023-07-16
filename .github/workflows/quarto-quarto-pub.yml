@@ -1,6 +1,10 @@
 name: Quarto Website (Quarto Pub)
 
 on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:
@@ -18,7 +22,7 @@ jobs:
     permissions:
       contents: write
 
-    if: contains(github.event.head_commit.message, 'Automated build.')
+    if: contains(github.event.head_commit.message, "[AUTO-COMMIT]")
 
     steps:
       -
