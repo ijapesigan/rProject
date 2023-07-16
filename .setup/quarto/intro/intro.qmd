@@ -1,0 +1,20 @@
+---
+title: "Introduction"
+author: Ivan Jacob Agaloos Pesigan
+---
+
+The R project `rProject` contains a collection of functions to setup personal R projects. For example, `rProject::BuildIgnore()` generates the `.Rbuildignore` for my personal R projects. 
+
+```{r}
+#| include: false
+library(rProject)
+library(printr)
+```
+
+```{r}
+?BuildIgnore
+```
+
+```{r}
+BuildIgnore
+```
