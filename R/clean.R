@@ -18,7 +18,13 @@ Clean <- function(path,
       recursive = TRUE
     )
     unlink(
-      x = files,
+      x = c(
+        files,
+        file.path(
+          path,
+          "latexmkrc"
+        )
+      ),
       recursive = TRUE
     )
   }

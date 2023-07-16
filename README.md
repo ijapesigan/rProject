@@ -24,7 +24,7 @@ LaTeX](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml/badge.
 [![Shell
 Check](https://github.com/ijapesigan/rProject/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/shellcheck.yml)
 [![pages-build-deployment](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment)
-[![codecov](https://codecov.io/gh/jeksterslab/rProject/branch/main/graph/badge.svg?token=KVLUET3DJ6)](https://codecov.io/gh/jeksterslab/rProject)
+[![codecov](https://codecov.io/gh/ijapesigan/rProject/branch/main/graph/badge.svg?token=KVLUET3DJ6)](https://codecov.io/gh/ijapesigan/rProject)
 <!-- badges: end -->
 
 ## Description
@@ -40,21 +40,6 @@ You can install the released version of `rProject` from
 ``` r
 if (!require("remotes")) install.packages("remotes")
 remotes::install_github("ijapesigan/rProject")
-```
-
-## Workflow using the template produced by `rProject`
-
-To build applications installed in `$HOME/.local/bin` (e.g., `tmux`) and
-config files (e.g., `.tmux.conf`) run:
-
-``` bash
-make local
-```
-
-To build the project run:
-
-``` bash
-make
 ```
 
 ## More Information
