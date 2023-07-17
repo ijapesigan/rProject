@@ -1,0 +1,35 @@
+# Boettiger-Eddelbuettel-2017
+container
+container-docker
+container-docker-rocker
+
+
+# Deboeck-Preacher-2015
+ild
+ild-mediation
+
+# Kurtzer-Sochat-Bauer-2017
+container
+container-singularity
+
+# Merkel-2014
+container
+container-docker
+
+# Neale-Hunter-Pritikin-etal-2015
+r
+r-packages
+sem
+sem-software
+
+# Ou-Hunter-Chow-2019
+ild
+ild-software
+r
+r-packages
+
+# Rosseel-2012
+r
+r-packages
+sem
+sem-software

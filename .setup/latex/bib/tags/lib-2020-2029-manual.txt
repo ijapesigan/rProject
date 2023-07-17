@@ -1,0 +1,23 @@
+# Arbuckle-2020
+sem
+sem-software
+
+# Arbuckle-2021
+sem
+sem-software
+
+# Kurtzer-cclerget-Bauer-etal-2021
+container
+container-singularity
+
+# RCoreTeam-2021
+r
+r-manual
+
+# RCoreTeam-2022
+r
+r-manual
+
+# RCoreTeam-2023
+r
+r-manual
