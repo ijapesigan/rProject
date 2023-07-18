@@ -1,0 +1,25 @@
+---
+title: "Precompiled Example"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Precompiled Example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+
+
+
+```r
+library(rProject)
+```
+
+
+```r
+hist(z)
+```
+
+<img src="fig-vignettes-unnamed-chunk-4-1.png" width="3300" />
