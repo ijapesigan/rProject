@@ -1,4 +1,4 @@
-FROM ijapesigan/docs
+FROM ijapesigan/r2u-r-project
 
 #ADD scripts /usr/src/local/src
 #RUN chmod 777 /usr/src/local/src/setup.sh && \

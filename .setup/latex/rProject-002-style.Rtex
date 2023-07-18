@@ -116,7 +116,7 @@ are allowed when running \texttt{lintr}.
 
 \begin{itemize}
     \item use one file per function
-    \item use the function name as part of the filename but convert \texttt{BigCamelCase} to lowercase using dash (\texttt{-}) as separator
+    \item use the function name as part of the filename
     \item for files under \texttt{R} and \texttt{.setup/r-dependencies}
         \begin{itemize}
             \item package name dash function name dot R (\texttt{template-foo.R})
