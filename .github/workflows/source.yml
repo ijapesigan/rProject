@@ -41,8 +41,6 @@ jobs:
           mv * $WD/r_source_code
           cd ..
           rm -rf $DIR
-          cd $WD
-          cp README.md r_source_code
       - 
         name: Push to the src branch
         uses: s0/git-publish-subdir-action@develop
