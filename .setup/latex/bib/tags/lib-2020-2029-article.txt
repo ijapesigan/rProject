@@ -18,6 +18,14 @@ container
 container-docker
 container-rocker
 
+# Pesigan-Cheung-2023
+mediation
+mediation-montecarlo
+mediation-bootstrap
+r
+r-package
+r-package-semmcci
+
 # Pesigan-Sun-Cheung-2023
 r
 r-packages

@@ -3,10 +3,22 @@ container
 container-docker
 container-docker-rocker
 
+# Chow-Ho-Hamaker-etal-2010
+ild
+sem
+ssm 
 
 # Deboeck-Preacher-2015
 ild
 ild-mediation
+
+# Hunter-2017
+ild
+ild-software
+sem
+sem-software
+ssm
+ssm-software
 
 # Kurtzer-Sochat-Bauer-2017
 container
