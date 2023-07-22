@@ -42,8 +42,19 @@ Build <- function(path,
       pattern = "^.*\\.cpp"
     )
     if (length(cpp) > 0) {
-      Rcpp::compileAttributes()
-      roxygen2::roxygenize(roclets = "rd")
+      namespace <- file.path(
+        path,
+        "NAMESPACE"
+      )
+      if (!file.exists(namespace)) {
+        file.create(namespace)
+      }
+      Rcpp::compileAttributes(pkgdir = path)
+      roxygen2::roxygenize(
+        package.dir = path,
+        roclets = "rd"
+      )
+      unlink(namespace)
     }
     devtools::document(pkg = path)
     devtools::check(pkg = path, cran = FALSE)

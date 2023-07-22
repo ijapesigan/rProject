@@ -13,7 +13,14 @@
 #'   available in the system.
 #'
 #' @export
-InstallLocal <- function(what = c("tmux", "julia", "mpdemo", "lazygit", "pfetch", "quarto"),
+InstallLocal <- function(what = c(
+                           "tmux",
+                           "julia",
+                           "mpdemo",
+                           "lazygit",
+                           "pfetch",
+                           "quarto"
+                         ),
                          all = FALSE,
                          force = FALSE) {
   all_apps <- c(
