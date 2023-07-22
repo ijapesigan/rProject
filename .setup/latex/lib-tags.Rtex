@@ -1,50 +1,94 @@
 \documentclass{article}
 
+\input{.setup/latex/preamble/preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLATEX APA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "root",
+% #| include = FALSE
+% root <- rprojroot::is_rstudio_project
+%% end.rcode
+
+%% begin.rcode
+% #| label = "knitr",
+% #| include = FALSE,
+% #| file = root$find_file(
+% #|   ".setup",
+% #|   "latex",
+% #|   "r-scripts",
+% #|   "knitr.R"
+% #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% if (require("rProject")) {
+%   Bib(
+%     path = dirname(
+%       root$find_file(
+%         "project.Rproj"
+%       )
+%     )
+%   )
+%   cat(
+%     .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+%   )
+% } else {
+%   cat(
+%     .PreambleBiblatexCombined(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       ),
+%       output_path = root$find_file(
+%         ".setup",
+%         "latex"
+%       )
+%     )
+%   )
+% }
+%% end.rcode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
 %% begin.rcode
-% #| include = FALSE
-% root <- rprojroot::is_rstudio_project
-% tags <- list.files(
-%   path = root$find_file(
-%     ".setup",
-%     "latex",
-%     "bib",
-%     "tags"
-%   ),
-%   pattern = "^lib-.*\\.txt$",
-%   full.names = TRUE
+% #| echo = FALSE
+% bib <- root$find_file(
+%   ".setup",
+%   "latex",
+%   "bib",
+%   "bib.bib"
 % )
-% tags <- lapply(
-%   X = tags,
-%   FUN = function(i) {
-%     x <- gsub(
-%       pattern = "^#.*",
-%       replacement = NA,
-%       x = readLines(i)
-%     ) 
-%     x <- gsub(
-%       pattern = "\\s",
-%       replacement = "",
-%       x = x
-%     )
-%     x <- x[x != ""]
-%     sort(unique(x[complete.cases(x)])) 
-%   }
+% X <- RefManageR::ReadBib(bib)
+% key <- names(X)
+% annotation <- lapply(X = X, function(x) x$annotation)
+% keywords <- lapply(X = X, function(x) x$keywords)
+% x <- cbind(
+%   key = key,
+%   annotation = annotation,
+%   keywords = keywords
 % )
-% tags <- sort(unique(unlist(tags)))
-% tags <- paste(tags, collapse = "\\\\ \n")
-% tags
+% knitr::kable(x)
 %% end.rcode
 
-\begin{center}
-\begin{tabular}{l}
-\hline
-\textbf{tags} \\
-\hline
-\rinline{tags} \\
-\hline
-\end{tabular}
-\end{center}
+\nocite{*}
+
+\printbibliography
 
 \end{document}

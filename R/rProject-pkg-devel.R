@@ -19,16 +19,19 @@ PkgDevel <- function(path) {
     "pdftools",
     "pkgdown",
     "printr",
+    "qpdf",
+    "quarto",
     "ragg",
+    "Rcpp",
     "RefManageR",
     "remotes",
     "rmarkdown",
+    "roxygen2",
     "rprojroot",
     "styler",
     "testthat",
     "tidyverse",
-    "qpdf",
-    "quarto"
+    "tinytex"
   )
   lib <- LibPaths(path = path)
   installed <- utils::installed.packages()

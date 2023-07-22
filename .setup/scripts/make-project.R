@@ -117,3 +117,7 @@ rProject::BuildIgnore(
 rProject::Binary(
   path = path
 )
+rProject::License(
+  path = path,
+  type = license
+)
