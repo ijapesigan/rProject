@@ -10,6 +10,8 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    container:
+      image: ijapesigan/docs
     permissions:
       contents: read
       packages: read
