@@ -37,6 +37,14 @@ Build <- function(path,
     if (!file.exists(bib)) {
       Bib(path = path)
     }
+    cpp <- list.files(
+      path = file.path(path, "src"),
+      pattern = "^.*\\.cpp"
+    )
+    if (length(cpp) > 0) {
+      Rcpp::compileAttributes()
+      roxygen2::roxygenize(roclets = "rd")
+    }
     devtools::document(pkg = path)
     devtools::check(pkg = path, cran = FALSE)
     devtools::install(pkg = path, dependencies = dependencies)
