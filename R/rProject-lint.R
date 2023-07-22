@@ -55,6 +55,23 @@ Lint <- function(path) {
     from = lintr,
     to = lint
   )
+  # .github/linters
+  linters <- file.path(
+    ".github",
+    "linters"
+  )
+  dir.create(
+    path = file.path(
+      ".github",
+      "linters"
+    ),
+    showWarnings = FALSE,
+    recursive = TRUE
+  )
+  file.copy(
+    from = lintr,
+    to = linters
+  )
   on.exit(
     expr = unlink(
       x = lintr
