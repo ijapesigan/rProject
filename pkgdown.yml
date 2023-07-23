@@ -2,10 +2,10 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
-  lib-tags: lib-tags.html
+  precompiled: precompiled.html
   rProject: rProject.html
   session: session/session.html
-last_built: 2023-07-23T13:16Z
+last_built: 2023-07-23T18:39Z
 urls:
   reference: https://github.com/ijapesigan/rProject/reference
   article: https://github.com/ijapesigan/rProject/articles
