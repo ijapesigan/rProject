@@ -14,3 +14,4 @@ if (
   devtools::document(path)
   devtools::install(path, dependencies = FALSE)
 }
+warnings()

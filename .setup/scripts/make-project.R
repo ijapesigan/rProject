@@ -121,3 +121,4 @@ rProject::License(
   path = path,
   type = license
 )
+warnings()
