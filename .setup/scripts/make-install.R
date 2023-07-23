@@ -10,7 +10,21 @@ if (
     )
   )
 ) {
-  rProject::Dependencies(path)
+  deps <- list.files(
+    path = file.path(
+      path,
+      ".setup",
+      "r-dependencies"
+    ),
+    pattern = ".*\\.R",
+    full.names = TRUE, recursive = TRUE
+  )
+  if (length(deps) > 0) {
+    file.copy(
+      from = deps,
+      to = file.path(path, "R")
+    )
+  }
   devtools::document(path)
   devtools::install(path, dependencies = FALSE)
 }
