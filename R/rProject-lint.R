@@ -55,7 +55,6 @@ Lint <- function(path) {
     from = lintr,
     to = lint
   )
-  # .github/linters
   linters <- file.path(
     ".github",
     "linters"
