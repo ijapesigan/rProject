@@ -37,7 +37,7 @@ jobs:
           mkdir -p r_source_code
           tar -xf .setup/build/*.tar.gz -C r_source_code
           DIR=$(ls r_source_code)
-          cd r_source_code/$DIR
+          cd "r_source_code/$DIR"
           mv ./* "$WD/r_source_code"
           cd ..
           rm -rf "$DIR"
