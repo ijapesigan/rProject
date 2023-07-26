@@ -46,7 +46,7 @@ Build <- function(path,
         path,
         "NAMESPACE"
       )
-      if (!file.exists(namespace)) {
+      if(!file.exists(namespace)) {
         file.create(namespace)
       }
       Rcpp::compileAttributes(pkgdir = path)
