@@ -81,6 +81,8 @@ README_files/
 
 # latex
 latexmkrc
-rProject.Rcheck/
-rProject*.tar.gz
-rProject*.tgz
+
+# Rcpp
+src/*.o
+src/*.so
+src/*.dll
