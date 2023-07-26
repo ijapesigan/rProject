@@ -111,6 +111,21 @@ Clean <- function(path,
       path = path,
       pattern = ".*\\.tar\\.gz$",
       full.names = TRUE
+    ),
+    list.files(
+      path = file.path(path, "src"),
+      pattern = ".*\\.o$",
+      full.names = TRUE
+    ),
+    list.files(
+      path = file.path(path, "src"),
+      pattern = ".*\\.so$",
+      full.names = TRUE
+    ),
+    list.files(
+      path = file.path(path, "src"),
+      pattern = ".*\\.dll$",
+      full.names = TRUE
     )
   )
   unlink(x = files)
