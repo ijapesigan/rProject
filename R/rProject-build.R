@@ -38,8 +38,9 @@ Build <- function(path,
       Bib(path = path)
     }
     cpp <- list.files(
-      path = file.path(path, "src"),
-      pattern = "^.*\\.cpp"
+      path = file.path(path, ".setup", "cpp"),
+      pattern = "^.*\\.cpp",
+      full.names = TRUE
     )
     if (length(cpp) > 0) {
       unlink(
@@ -63,6 +64,22 @@ Build <- function(path,
       if (!file.exists(namespace)) {
         file.create(namespace)
       }
+      cpp_file_fn <- file.path(
+        path,
+        "src",
+        "source.cpp"
+      )
+      cpp_file <- file(
+        description = cpp_file_fn,
+        open = "w"
+      )
+      for (i in seq_along(cpp)) {
+        writeLines(
+          text = readLines(con = cpp[i]),
+          con = cpp_file
+        )
+      }
+      close(cpp_file)
       Rcpp::compileAttributes(pkgdir = path)
       roxygen2::roxygenize(
         package.dir = path,
