@@ -42,6 +42,20 @@ Build <- function(path,
       pattern = "^.*\\.cpp"
     )
     if (length(cpp) > 0) {
+      unlink(
+        file.path(
+          path,
+          "R",
+          "RcppExports.R"
+        )
+      )
+      unlink(
+        file.path(
+          path,
+          "src",
+          "RcppExports.cpp"
+        )
+      )
       namespace <- file.path(
         path,
         "NAMESPACE"
