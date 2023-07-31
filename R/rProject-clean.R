@@ -73,14 +73,6 @@ Clean <- function(path,
           ".setup",
           "latex",
           "pdf"
-        ),
-        file.path(
-          "R",
-          "RcppExports.R"
-        ),
-        file.path(
-          "src",
-          "RcppExports.cpp"
         )
       )
     ),
