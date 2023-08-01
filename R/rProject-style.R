@@ -28,4 +28,31 @@ Style <- function(path) {
       "packrat"
     )
   )
+  find <- TRUE
+  format <- TRUE
+  if (Sys.which("find") == "") {
+    find <- FALSE
+  }
+  if (Sys.which("clang-format") == "") {
+    format <- FALSE
+  }
+  if (find == TRUE && format == TRUE) {
+    system(
+      paste0(
+        "find",
+        " ",
+        "\"",
+        file.path(path, ".setup", "cpp", "*.cpp"),
+        "\"",
+        " ",
+        "! -name",
+        " ",
+        "\"",
+        "RcppExports.cpp",
+        "\"",
+        " ",
+        "-exec clang-format -style=google -i {} \\;"
+      )
+    )
+  }
 }
