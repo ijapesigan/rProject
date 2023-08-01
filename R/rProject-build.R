@@ -43,6 +43,11 @@ Build <- function(path,
       full.names = TRUE
     )
     if (length(cpp) > 0) {
+      dir.create(
+        path = file.path(path, "src"),
+        showWarnings = FALSE,
+        recursive = TRUE
+      )
       unlink(
         file.path(
           path,
