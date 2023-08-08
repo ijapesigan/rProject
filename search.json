@@ -28,6 +28,13 @@
     "text": "R Core Team. (2023). R: A language and environment for\nstatistical computing. R Foundation for Statistical Computing. https://www.R-project.org/"
   },
   {
+    "objectID": ".setup/quarto/tags/tags.html",
+    "href": ".setup/quarto/tags/tags.html",
+    "title": "Library Tags",
+    "section": "",
+    "text": "knitr::kable(x)\n\n\n\n\nkey\nannotation\nkeywords\n\n\n\n\nRCoreTeam-2023\nr, r-manual\nNULL"
+  },
+  {
     "objectID": ".setup/quarto/session/session.html#session",
     "href": ".setup/quarto/session/session.html#session",
     "title": "Appendix A — Website Build Session",
