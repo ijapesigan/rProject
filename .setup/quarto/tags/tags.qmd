@@ -1,23 +1,16 @@
 ---
 title: "Library Tags"
 author: "Ivan Jacob Agaloos Pesigan"
-output: rmarkdown::html_vignette
-bibliography: "vignettes.bib"
-csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
-nocite: |
-  @*
-vignette: >
-  %\VignetteIndexEntry{Library Tags}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r}
 #| echo = FALSE
 root <- rprojroot::is_rstudio_project
 bib <- root$find_file(
-  "vignettes",
-  "vignettes.bib"
+  ".setup",
+  "quarto",
+  "bib",
+  "quarto.bib"
 )
 X <- RefManageR::ReadBib(bib)
 key <- names(X)
@@ -33,5 +26,3 @@ x <- cbind(
 ```{r}
 knitr::kable(x)
 ```
-
-## References
