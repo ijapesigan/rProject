@@ -15,8 +15,6 @@ vignette: >
 
 
 
-
-
 ```r
 knitr::kable(x)
 ```
@@ -26,7 +24,5 @@ knitr::kable(x)
 |key            |annotation  |keywords |
 |:--------------|:-----------|:--------|
 |RCoreTeam-2023 |r, r-manual |NULL     |
-
-
 
 ## References
