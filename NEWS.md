@@ -1,5 +1,11 @@
 # Change log
 
+## rProject 0.0.4
+
+### Patch
+
+Added build tools for `Rcpp()` functions.
+
 ## rProject 0.0.3
 
 ### Patch
