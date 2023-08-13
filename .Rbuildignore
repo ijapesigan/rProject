@@ -16,6 +16,3 @@
 ^pkgdown$
 ^quarto$
 ^scripts$
-^rProject\.Rcheck$
-^rProject.*\.tar\.gz$
-^rProject.*\.tgz$
