@@ -169,6 +169,7 @@ Bib <- function(path,
       recursive = TRUE,
       include.dirs = TRUE
     )
+    length_bib_src <- length(bib_src)
     if (length_bib_src == 1) {
       bib <- RefManageR::ReadBib(bib_src)
     } else {
