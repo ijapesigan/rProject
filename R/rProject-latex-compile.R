@@ -8,7 +8,7 @@
 #' @export
 LatexCompile <- function(path,
                          clean = FALSE) {
-  if (!tinytex::check_installed("latexmk")) {
+  if(!tinytex::check_installed("latexmk")) {
     tinytex::tlmgr_install("latexmk")
   }
   latexmkrc <- system.file(
