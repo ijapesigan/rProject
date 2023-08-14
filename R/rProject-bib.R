@@ -136,6 +136,7 @@ Bib <- function(path,
     return(NULL)
   }
   if (run) {
+    # rewrite bib files
     if (length_bib_src == 1) {
       bib <- RefManageR::ReadBib(bib_src)
       RefManageR::WriteBib(
@@ -158,18 +159,37 @@ Bib <- function(path,
         append = FALSE,
         verbose = FALSE
       )
+    }
+    # reread bib files
+    bib_src <- list.files(
+      path = latex_bib_dir,
+      pattern = ".*\\.bib$",
+      all.files = TRUE,
+      full.names = TRUE,
+      recursive = TRUE,
+      include.dirs = TRUE
+    )
+    length_bib_src <- length(bib_src)
+    if (length_bib_src == 1) {
+      bib <- RefManageR::ReadBib(bib_src)
+    } else {
+      bib <- lapply(
+        X = bib_src,
+        FUN = RefManageR::ReadBib
+      )
       bib <- Reduce(
         f = `+`,
         x = bib
       )
-      RefManageR::WriteBib(
-        bib = bib,
-        file = latex_bib,
-        biblatex = TRUE,
-        append = FALSE,
-        verbose = FALSE
-      )
     }
+    # write the consolidate bib.bib
+    RefManageR::WriteBib(
+      bib = bib,
+      file = latex_bib,
+      biblatex = TRUE,
+      append = FALSE,
+      verbose = FALSE
+    )
     # quarto and vignettes
     quarto_dir <- file.path(
       path,
