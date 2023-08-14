@@ -61,9 +61,7 @@ Quarto <- function(path,
         "bib",
         "quarto.bib"
       )
-      if (!file.exists(bib)) {
-        Bib(path = path, lib_bib = lib_bib)
-      }
+      Bib(path = path, lib_bib = lib_bib)
       file.copy(
         from = quarto,
         to = path

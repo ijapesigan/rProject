@@ -16,9 +16,7 @@ Bib <- function(path,
     "bib"
   )
   if (lib_bib) {
-    if (dir.exists(latex_bib_dir)) {
-      BibLib(path = path)
-    }
+    BibLib(path = path)
   }
   # bib
   unlink(
