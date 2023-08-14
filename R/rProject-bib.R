@@ -42,7 +42,8 @@ Bib <- function(path) {
     bib_src <- list.files(
       path = latex_bib_dir,
       pattern = ".*\\.bib$",
-      full.names = TRUE
+      full.names = TRUE,
+      recursive = TRUE
     )
     length_bib_src <- length(bib_src)
     if (length_bib_src > 0) {

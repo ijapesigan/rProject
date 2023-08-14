@@ -1,5 +1,11 @@
 # Change log
 
+## rProject 0.0.5
+
+### Patch
+
+*.bib search in `Bib()` is now recursive.
+
 ## rProject 0.0.4
 
 ### Patch
