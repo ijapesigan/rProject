@@ -3,8 +3,10 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @inheritParams Bib
 #' @export
-Site <- function(path) {
+Site <- function(path,
+                 lib_bib = FALSE) {
   if (
     file.exists(
       file.path(
@@ -48,7 +50,7 @@ Site <- function(path) {
         "vignettes.bib"
       )
       if (!file.exists(bib)) {
-        Bib(path = path)
+        Bib(path = path, lib_bib = lib_bib)
       }
       file.copy(
         from = pkgdown,

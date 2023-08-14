@@ -3,6 +3,7 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @inheritParams Bib
 #' @param vignettes Logical.
 #'   Build vignettes.
 #' @param dependencies Logical.
@@ -10,7 +11,8 @@
 #' @export
 Build <- function(path,
                   vignettes = FALSE,
-                  dependencies = FALSE) {
+                  dependencies = FALSE,
+                  lib_bib = FALSE) {
   if (
     file.exists(
       file.path(
@@ -35,7 +37,7 @@ Build <- function(path,
       "bib.bib"
     )
     if (!file.exists(bib)) {
-      Bib(path = path)
+      Bib(path = path, lib_bib = lib_bib)
     }
     cpp <- list.files(
       path = file.path(path, ".setup", "cpp"),

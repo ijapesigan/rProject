@@ -1,4 +1,4 @@
-.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex clone coverage data dependencies docs dotfiles install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes
+.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex clone coverage data dependencies docs dotfiles install latex lint local localforce pdf pdfall pkg pkgdown project push quarto style tinytex tinytexforce vignettes
 
 push: build docs latex coverage cleanpush
 
@@ -80,7 +80,11 @@ latex:
 
 pdf:
 	@echo "\n\nCompiling latex...\n\n"
-	@Rscript -e "rProject::LatexMake(\"${PWD}\", clean = TRUE)"
+	@Rscript -e "rProject::LatexMake(\"${PWD}\", clean = TRUE, lib_bib = FALSE)"
+
+pdfall:
+	@echo "\n\nCompiling latex...\n\n"
+	@Rscript -e "rProject::LatexMake(\"${PWD}\", clean = TRUE, lib_bib = TRUE)"
 
 pkgdown:
 	@echo "\n\nBuilding pkgdown website...\n\n"

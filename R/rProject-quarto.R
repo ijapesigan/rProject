@@ -3,9 +3,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @inheritParams Bib
 #'
 #' @export
-Quarto <- function(path) {
+Quarto <- function(path,
+                   lib_bib = FALSE) {
   qmd_files <- list.files(
     file.path(
       path,
@@ -60,7 +62,7 @@ Quarto <- function(path) {
         "quarto.bib"
       )
       if (!file.exists(bib)) {
-        Bib(path = path)
+        Bib(path = path, lib_bib = lib_bib)
       }
       file.copy(
         from = quarto,

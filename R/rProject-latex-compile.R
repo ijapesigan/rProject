@@ -42,7 +42,8 @@ LatexCompile <- function(path,
       "*",
       "*/",
       "!*.pdf",
-      "!.gitignore"
+      "!.gitignore",
+      "!bib.bib"
     )
     con <- file(dot_gitignore_file)
     writeLines(
@@ -110,4 +111,17 @@ LatexCompile <- function(path,
       "latexmkrc"
     )
   )
+  bib_dot_bib <- file.path(
+    path,
+    ".setup",
+    "latex",
+    "bib",
+    "bib.bib"
+  )
+  if (file.exists(bib_dot_bib)) {
+    file.copy(
+      from = latex_bib,
+      to = output_dir
+    )
+  }
 }

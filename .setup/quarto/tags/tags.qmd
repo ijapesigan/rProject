@@ -17,6 +17,7 @@ key <- names(X)
 annotation <- lapply(X = X, function(x) x$annotation)
 keywords <- lapply(X = X, function(x) x$keywords)
 x <- cbind(
+  key = key,
   annotation = annotation,
   keywords = keywords
 )
