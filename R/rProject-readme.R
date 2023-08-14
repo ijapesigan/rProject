@@ -3,8 +3,10 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @inheritParams Bib
 #' @export
-ReadMe <- function(path) {
+ReadMe <- function(path,
+                   lib_bib = FALSE) {
   readme <- file.path(
     path,
     ".setup",
@@ -20,7 +22,7 @@ ReadMe <- function(path) {
       "bib.bib"
     )
     if (!file.exists(bib)) {
-      Bib(path = path)
+      Bib(path = path, lib_bib = lib_bib)
     }
     try(
       file.copy(

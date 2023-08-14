@@ -55,23 +55,6 @@ Clean <- function(path,
         file.path(
           ".setup",
           "latex",
-          "bib",
-          "bib.bib"
-        ),
-        file.path(
-          ".setup",
-          "quarto",
-          "bib",
-          "quarto.bib"
-        ),
-        file.path(
-          ".setup",
-          "vignettes",
-          "vignettes.bib"
-        ),
-        file.path(
-          ".setup",
-          "latex",
           "pdf"
         )
       )

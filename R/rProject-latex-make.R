@@ -3,9 +3,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LatexCompile
+#' @inheritParams Bib
 #' @export
 LatexMake <- function(path,
-                      clean = FALSE) {
+                      clean = FALSE,
+                      lib_bib = FALSE) {
   latex <- file.path(
     path,
     ".setup",
@@ -22,7 +24,7 @@ LatexMake <- function(path,
       "bib.bib"
     )
     if (!file.exists(bib)) {
-      Bib(path = path)
+      Bib(path = path, lib_bib = lib_bib)
     }
     try(
       LatexKnit(
