@@ -12,7 +12,6 @@ BibLib <- function(path) {
     "bib"
   )
   if (dir.exists(latex_bib_dir)) {
-    # lib
     wd <- getwd()
     on.exit(
       expr = setwd(wd),
