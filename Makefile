@@ -94,7 +94,7 @@ quarto:
 	@echo "\n\nRendering quarto...\n\n"
 	@Rscript -e "rProject::Quarto(\"${PWD}\")"
 
-quatocatalog:
+quartocatalog:
 	@echo "\n\nRendering quarto...\n\n"
 	@Rscript -e "rProject::Quarto(\"${PWD}\", lib_bib = TRUE)"
 

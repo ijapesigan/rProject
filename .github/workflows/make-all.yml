@@ -25,9 +25,6 @@ jobs:
         name: Checkout 
         uses: actions/checkout@v3
       -
-        name: rProject 
-        run: Rscript -e "if (!require(\"remotes\")) install.packages(\"remotes\") ; remotes::install_github(\"ijapesigan/rProject\")"
-      -
         name: Clean
         run: |
           make clean
