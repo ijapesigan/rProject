@@ -120,8 +120,8 @@ LatexCompile <- function(path,
   )
   if (file.exists(bib_dot_bib)) {
     file.copy(
-      from = latex_bib,
-      to = output_dir
+      from = bib_dot_bib,
+      to = pdf_folder
     )
   }
 }

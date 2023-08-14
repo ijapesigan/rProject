@@ -1,4 +1,4 @@
-name: Compile LaTeX All
+name: Compile LaTeX pdfall
 
 on:
   workflow_run:
