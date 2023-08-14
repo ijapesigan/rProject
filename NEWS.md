@@ -4,7 +4,7 @@
 
 ### Patch
 
-*.bib search in `Bib()` is now recursive.
+Build `bib.bib` from `lib-*` repositories to  using `Bib()`.
 
 ## rProject 0.0.4
 
