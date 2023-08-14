@@ -2,7 +2,7 @@
 
 ## Patch
 
-Build `bib.bib` from `lib-*` repositories to  using `Bib()`.
+Option to build `bib.bib` from `lib-*` repositories using `Bib()`.
 
 # rProject 0.0.4
 

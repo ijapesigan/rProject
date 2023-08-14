@@ -1,4 +1,4 @@
-.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex clone coverage data dependencies docs dotfiles install latex lint local localforce pdf pdfall pkg pkgdown project push quarto style tinytex tinytexforce vignettes
+.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex clone coverage data dependencies docs dotfiles install latex lint local localforce pdf pdfcatalog pkg pkgdown project push quarto quartocatalog style tinytex tinytexforce vignettes
 
 push: build docs latex coverage cleanpush
 
@@ -82,7 +82,7 @@ pdf:
 	@echo "\n\nCompiling latex...\n\n"
 	@Rscript -e "rProject::LatexMake(\"${PWD}\", clean = TRUE, lib_bib = FALSE)"
 
-pdfall:
+pdfcatalog:
 	@echo "\n\nCompiling latex...\n\n"
 	@Rscript -e "rProject::LatexMake(\"${PWD}\", clean = TRUE, lib_bib = TRUE)"
 
@@ -93,6 +93,10 @@ pkgdown:
 quarto:
 	@echo "\n\nRendering quarto...\n\n"
 	@Rscript -e "rProject::Quarto(\"${PWD}\")"
+
+quatocatalog:
+	@echo "\n\nRendering quarto...\n\n"
+	@Rscript -e "rProject::Quarto(\"${PWD}\", lib_bib = TRUE)"
 
 docs:
 	@echo "\n\nBuilding README.md...\n\n"
