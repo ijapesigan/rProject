@@ -49,9 +49,7 @@ Site <- function(path,
         "vignettes",
         "vignettes.bib"
       )
-      if (!file.exists(bib)) {
-        Bib(path = path, lib_bib = lib_bib)
-      }
+      Bib(path = path, lib_bib = lib_bib)
       file.copy(
         from = pkgdown,
         to = path

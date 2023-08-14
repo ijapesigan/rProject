@@ -23,9 +23,7 @@ LatexMake <- function(path,
       "bib",
       "bib.bib"
     )
-    if (!file.exists(bib)) {
-      Bib(path = path, lib_bib = lib_bib)
-    }
+    Bib(path = path, lib_bib = lib_bib)
     try(
       LatexKnit(
         path = path
