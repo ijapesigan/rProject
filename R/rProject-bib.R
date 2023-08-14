@@ -38,8 +38,25 @@ Bib <- function(path) {
     "lib-1940-1949-article",
     "lib-1930-1939-article"
   )
+  clean <- function(libs, path) {
+    lapply(
+      X = libs,
+      FUN = function(lib, path) {
+        unlink(
+          file.path(
+            path,
+            ".setup",
+            "latex",
+            "bib",
+            lib
+          )
+        )
+      },
+      path = path
+    )
+  }
   on.exit(
-    expr = unlink(libs),
+    expr = clean(libs = libs, path = path),
     add = TRUE
   )
   for (i in seq_along(libs)) {
