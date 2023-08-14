@@ -162,14 +162,14 @@ Bib <- function(path,
         f = `+`,
         x = bib
       )
+      RefManageR::WriteBib(
+        bib = bib,
+        file = latex_bib,
+        biblatex = TRUE,
+        append = FALSE,
+        verbose = FALSE
+      )
     }
-    RefManageR::WriteBib(
-      bib = bib,
-      file = latex_bib,
-      biblatex = TRUE,
-      append = FALSE,
-      verbose = FALSE
-    )
     # quarto and vignettes
     quarto_dir <- file.path(
       path,
