@@ -33,14 +33,6 @@ Lint <- function(path) {
     sep = "\n"
   )
   close(con)
-  lintr::lint_dir(
-    path = path,
-    exclusions = list(
-      ".library",
-      "renv",
-      "packrat"
-    )
-  )
   lint <- file.path(
     path,
     ".setup",
@@ -76,5 +68,13 @@ Lint <- function(path) {
       x = lintr
     ),
     add = TRUE
+  )
+  lintr::lint_dir(
+    path = path,
+    exclusions = list(
+      ".library",
+      "renv",
+      "packrat"
+    )
   )
 }

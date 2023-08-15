@@ -7,7 +7,7 @@
 #'
 #' @export
 Quarto <- function(path,
-                   lib_bib = FALSE) {
+                   bib_lib = TRUE) {
   qmd_files <- list.files(
     file.path(
       path,
@@ -61,7 +61,7 @@ Quarto <- function(path,
         "bib",
         "quarto.bib"
       )
-      Bib(path = path, lib_bib = lib_bib)
+      Bib(path = path, bib_lib = bib_lib)
       file.copy(
         from = quarto,
         to = path

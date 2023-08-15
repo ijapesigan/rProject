@@ -7,7 +7,7 @@
 #' @export
 LatexMake <- function(path,
                       clean = FALSE,
-                      lib_bib = FALSE) {
+                      bib_lib = TRUE) {
   latex <- file.path(
     path,
     ".setup",
@@ -23,7 +23,7 @@ LatexMake <- function(path,
       "bib",
       "bib.bib"
     )
-    Bib(path = path, lib_bib = lib_bib)
+    Bib(path = path, bib_lib = bib_lib)
     try(
       LatexKnit(
         path = path
