@@ -2,20 +2,20 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @param lib_bib Logical.
-#'   If `lib_bib = TRUE`,
+#' @param bib_lib Logical.
+#'   If `bib_lib = TRUE`,
 #'   build `bib.bib` from `lib-*` GitHub repositories.
 #' @inheritParams LibPaths
 #' @export
 Bib <- function(path,
-                lib_bib = FALSE) {
+                bib_lib = TRUE) {
   latex_bib_dir <- file.path(
     path,
     ".setup",
     "latex",
     "bib"
   )
-  if (lib_bib) {
+  if (bib_lib) {
     BibLib(path = path)
   }
   # bib

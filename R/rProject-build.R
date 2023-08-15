@@ -12,7 +12,7 @@
 Build <- function(path,
                   vignettes = FALSE,
                   dependencies = FALSE,
-                  lib_bib = FALSE) {
+                  bib_lib = TRUE) {
   if (
     file.exists(
       file.path(
@@ -36,7 +36,7 @@ Build <- function(path,
       "vignettes",
       "bib.bib"
     )
-    Bib(path = path, lib_bib = lib_bib)
+    Bib(path = path, bib_lib = bib_lib)
     cpp <- list.files(
       path = file.path(path, ".setup", "cpp"),
       pattern = "^.*\\.cpp",
