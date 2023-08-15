@@ -31,7 +31,7 @@ jobs:
       -
         name: Make Library
         run: |
-          make lib
+          make push
       - 
         name: Commit and push changes
         uses: devops-infra/action-commit-push@master

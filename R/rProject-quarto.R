@@ -6,8 +6,7 @@
 #' @inheritParams Bib
 #'
 #' @export
-Quarto <- function(path,
-                   bib_lib = TRUE) {
+Quarto <- function(path) {
   qmd_files <- list.files(
     file.path(
       path,
@@ -61,7 +60,12 @@ Quarto <- function(path,
         "bib",
         "quarto.bib"
       )
-      Bib(path = path, bib_lib = bib_lib)
+      if (!file.exists(bib)) {
+        Bib(
+          path = path,
+          bib_lib = FALSE
+        )
+      }
       file.copy(
         from = quarto,
         to = path
