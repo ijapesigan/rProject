@@ -131,11 +131,16 @@ Bib <- function(path,
       append = FALSE,
       verbose = FALSE
     )
-    # quarto and vignettes
+    # quarto, pkgdown and vignettes
     quarto_dir <- file.path(
       path,
       ".setup",
       "quarto"
+    )
+    pkgdown_dir <- file.path(
+      path,
+      ".setup",
+      "pkgdown"
     )
     vignettes_dir <- file.path(
       path,
@@ -143,6 +148,9 @@ Bib <- function(path,
     )
     if (dir.exists(quarto_dir)) {
       quarto <- TRUE
+    }
+    if (dir.exists(pkgdown_dir)) {
+      pkgdown <- TRUE
     }
     if (dir.exists(vignettes_dir)) {
       vignettes <- TRUE
@@ -175,6 +183,7 @@ Bib <- function(path,
       },
       test = c(
         quarto,
+        pkgdown,
         vignettes
       ),
       output_dir = c(
@@ -182,10 +191,12 @@ Bib <- function(path,
           quarto_dir,
           "bib"
         ),
+        pkgdown,
         vignettes_dir
       ),
       output_name = c(
         "quarto.bib",
+        "vignettes.bib",
         "vignettes.bib"
       )
     )
