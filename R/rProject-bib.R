@@ -8,7 +8,7 @@
 #' @inheritParams LibPaths
 #' @export
 Bib <- function(path,
-                bib_lib = TRUE) {
+                bib_lib = FALSE) {
   latex_bib_dir <- file.path(
     path,
     ".setup",
@@ -41,7 +41,7 @@ Bib <- function(path,
       )
     )
   )
-  quarto <- vignettes <- FALSE
+  quarto <- pkgdown <- vignettes <- FALSE
   latex_bib_dir <- file.path(
     path,
     ".setup",
@@ -191,7 +191,7 @@ Bib <- function(path,
           quarto_dir,
           "bib"
         ),
-        pkgdown,
+        pkgdown_dir,
         vignettes_dir
       ),
       output_name = c(

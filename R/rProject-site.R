@@ -5,8 +5,7 @@
 #' @inheritParams LibPaths
 #' @inheritParams Bib
 #' @export
-Site <- function(path,
-                 bib_lib = TRUE) {
+Site <- function(path) {
   if (
     file.exists(
       file.path(
@@ -49,7 +48,12 @@ Site <- function(path,
         "vignettes",
         "vignettes.bib"
       )
-      Bib(path = path, bib_lib = bib_lib)
+      if (!file.exists(bib)) {
+        Bib(
+          path = path,
+          bib_lib = FALSE
+        )
+      }
       file.copy(
         from = pkgdown,
         to = path

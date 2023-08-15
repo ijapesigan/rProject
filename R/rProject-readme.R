@@ -5,8 +5,7 @@
 #' @inheritParams LibPaths
 #' @inheritParams Bib
 #' @export
-ReadMe <- function(path,
-                   bib_lib = TRUE) {
+ReadMe <- function(path) {
   readme <- file.path(
     path,
     ".setup",
@@ -21,7 +20,12 @@ ReadMe <- function(path,
       "bib",
       "bib.bib"
     )
-    Bib(path = path, bib_lib = bib_lib)
+    if (!file.exists(bib)) {
+      Bib(
+        path = path,
+        bib_lib = FALSE
+      )
+    }
     try(
       file.copy(
         from = bib,

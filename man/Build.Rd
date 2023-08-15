@@ -4,7 +4,7 @@
 \alias{Build}
 \title{Build Package}
 \usage{
-Build(path, vignettes = FALSE, dependencies = FALSE, bib_lib = TRUE)
+Build(path, vignettes = FALSE, dependencies = FALSE)
 }
 \arguments{
 \item{path}{Character string.
@@ -15,10 +15,6 @@ Build vignettes.}
 
 \item{dependencies}{Logical.
 Install package dependencies.}
-
-\item{bib_lib}{Logical.
-If \code{bib_lib = TRUE},
-build \code{bib.bib} from \verb{lib-*} GitHub repositories.}
 }
 \description{
 Build Package

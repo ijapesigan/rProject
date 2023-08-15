@@ -6,8 +6,7 @@
 #' @inheritParams Bib
 #' @export
 LatexMake <- function(path,
-                      clean = FALSE,
-                      bib_lib = TRUE) {
+                      clean = FALSE) {
   latex <- file.path(
     path,
     ".setup",
@@ -23,7 +22,12 @@ LatexMake <- function(path,
       "bib",
       "bib.bib"
     )
-    Bib(path = path, bib_lib = bib_lib)
+    if (!file.exists(bib)) {
+      Bib(
+        path = path,
+        bib_lib = FALSE
+      )
+    }
     try(
       LatexKnit(
         path = path

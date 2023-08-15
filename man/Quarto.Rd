@@ -4,15 +4,11 @@
 \alias{Quarto}
 \title{Render Quarto Project}
 \usage{
-Quarto(path, bib_lib = TRUE)
+Quarto(path)
 }
 \arguments{
 \item{path}{Character string.
 Project path.}
-
-\item{bib_lib}{Logical.
-If \code{bib_lib = TRUE},
-build \code{bib.bib} from \verb{lib-*} GitHub repositories.}
 }
 \description{
 Render Quarto Project

@@ -4,15 +4,11 @@
 \alias{Site}
 \title{Build Website}
 \usage{
-Site(path, bib_lib = TRUE)
+Site(path)
 }
 \arguments{
 \item{path}{Character string.
 Project path.}
-
-\item{bib_lib}{Logical.
-If \code{bib_lib = TRUE},
-build \code{bib.bib} from \verb{lib-*} GitHub repositories.}
 }
 \description{
 Build Website

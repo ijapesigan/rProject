@@ -4,7 +4,7 @@
 \alias{Bib}
 \title{Consolidate .bib files into a Single File}
 \usage{
-Bib(path, bib_lib = TRUE)
+Bib(path, bib_lib = FALSE)
 }
 \arguments{
 \item{path}{Character string.

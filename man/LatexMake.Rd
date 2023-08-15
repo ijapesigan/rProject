@@ -4,7 +4,7 @@
 \alias{LatexMake}
 \title{Compile Output of \code{LatexKnit}}
 \usage{
-LatexMake(path, clean = FALSE, bib_lib = TRUE)
+LatexMake(path, clean = FALSE)
 }
 \arguments{
 \item{path}{Character string.
@@ -12,10 +12,6 @@ Project path.}
 
 \item{clean}{Logical.
 Clean \code{latexmk} output except \verb{*.pdf}}
-
-\item{bib_lib}{Logical.
-If \code{bib_lib = TRUE},
-build \code{bib.bib} from \verb{lib-*} GitHub repositories.}
 }
 \description{
 Compile Output of \code{LatexKnit}

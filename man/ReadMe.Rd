@@ -4,15 +4,11 @@
 \alias{ReadMe}
 \title{Build README.md}
 \usage{
-ReadMe(path, bib_lib = TRUE)
+ReadMe(path)
 }
 \arguments{
 \item{path}{Character string.
 Project path.}
-
-\item{bib_lib}{Logical.
-If \code{bib_lib = TRUE},
-build \code{bib.bib} from \verb{lib-*} GitHub repositories.}
 }
 \description{
 Build README.md
