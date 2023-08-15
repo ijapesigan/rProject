@@ -38,6 +38,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: "Automated build."
+      -
+        name: Make LaTeX
+        run: |
+          make pdf
       - 
         name: Push to the latex branch
         uses: s0/git-publish-subdir-action@develop
@@ -46,6 +50,10 @@ jobs:
           BRANCH: latex
           FOLDER: .setup/latex/pdf
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      -
+        name: Make quarto
+        run: |
+          make quarto
       -
         name: Add .nojekyll
         run: touch quarto/.nojekyll
