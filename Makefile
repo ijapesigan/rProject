@@ -1,4 +1,4 @@
-.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex clone coverage data dependencies readme docs dotfiles install latex lint local localforce pdf pdflib pkg pkgdown project push quarto quartolib style tinytex tinytexforce vignettes lib
+.PHONY: all build buildlib clean cleanall cleanpkg cleanproj cleanpush cleantinytex clone coverage data dependencies readme readmelib docs dotfiles install latex lint local localforce pdf pdflib pkg pkgdown project push quarto quartolib style tinytex tinytexforce vignettes lib
 
 push: build docs latex coverage cleanpush
 
@@ -70,6 +70,10 @@ build: project pkg dotfiles clean tinytex lint data dependencies vignettes
 	@echo "\n\nBuilding package...\n\n"
 	@Rscript -e "rProject::Build(\"${PWD}\")"
 
+buildlib: project pkg dotfiles clean tinytex lint data dependencies vignettes
+	@echo "\n\nBuilding package...\n\n"
+	@Rscript -e "rProject::Build(\"${PWD}\", bib_lib = FALSE)"
+
 coverage:
 	@echo "\n\nCode coverage...\n\n"
 	@Rscript -e "rProject::Coverage(\"${PWD}\")"
@@ -102,6 +106,10 @@ readme:
 	@echo "\n\nBuilding README.md...\n\n"
 	@Rscript -e "rProject::ReadMe(\"${PWD}\")"
 
+readmelib:
+	@echo "\n\nBuilding README.md...\n\n"
+	@Rscript -e "rProject::ReadMe(\"${PWD}\", bib_lib = FALSE)"
+
 docs: readme
 	@echo "\n\nBuilding manual...\n\n"
 	@Rscript -e "rProject::Manual(\"${PWD}\", project = Sys.getenv(\"PROJECT\"))"
@@ -126,7 +134,7 @@ localforce: project dotfiles
 	@Rscript -e "rProject::InstallLocal(all = TRUE, force = TRUE)"
 	@Rscript .setup/scripts/make-config.R ${PWD}
 
-lib: build readme pdflib quartolib cleanpush
+lib: buildlib readmelib pdflib quartolib cleanpush
 
 clone:
 	@bash .setup/scripts/clone.sh

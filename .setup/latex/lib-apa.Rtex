@@ -35,7 +35,8 @@
 %       root$find_file(
 %         "project.Rproj"
 %       )
-%     )
+%     ),
+%     bib_lib = FALSE
 %   )
 %   cat(
 %     .PreambleBiblatex(
