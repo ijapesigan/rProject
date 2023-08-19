@@ -38,4 +38,3 @@ Imports:
     utils
 Suggests:
     testthat
-RoxygenNote: 7.2.3

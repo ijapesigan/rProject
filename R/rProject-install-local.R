@@ -14,16 +14,17 @@
 #'
 #' @export
 InstallLocal <- function(
-    what = c(
-      "tmux",
-      "julia",
-      "mpdemo",
-      "lazygit",
-      "pfetch",
-      "quarto"
-    ),
-    all = FALSE,
-    force = FALSE) {
+  what = c(
+    "tmux",
+    "julia",
+    "mpdemo",
+    "lazygit",
+    "pfetch",
+    "quarto"
+  ),
+  all = FALSE,
+  force = FALSE
+) {
   all_apps <- c(
     "tmux",
     "julia",
