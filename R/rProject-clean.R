@@ -10,24 +10,7 @@
 #' @export
 Clean <- function(path,
                   push = FALSE) {
-  if (push) {
-    files <- list.files(
-      path = path,
-      pattern = ".*secrets.*",
-      full.names = TRUE,
-      recursive = TRUE
-    )
-    unlink(
-      x = c(
-        files,
-        file.path(
-          path,
-          "latexmkrc"
-        )
-      ),
-      recursive = TRUE
-    )
-  }
+  # delete regardless of push
   unlink(
     x = file.path(
       path,
@@ -55,51 +38,12 @@ Clean <- function(path,
         file.path(
           ".setup",
           "latex",
-          "bib",
-          "bib.bib"
-        ),
-        file.path(
-          ".setup",
-          "quarto",
-          "bib",
-          "quarto.bib"
-        ),
-        file.path(
-          ".setup",
-          "pkgdown",
-          "vignettes.bib"
-        ),
-        file.path(
-          "vignettes",
-          "vignettes.bib"
-        ),
-        file.path(
-          ".setup",
-          "latex",
           "pdf"
         )
       )
     ),
     recursive = TRUE
   )
-  if (!push) {
-    unlink(
-      x = file.path(
-        path,
-        c(
-          "man",
-          "NAMESPACE",
-          "README.md",
-          "_site",
-          file.path(
-            ".setup",
-            "build"
-          )
-        )
-      ),
-      recursive = TRUE
-    )
-  }
   files <- c(
     list.files(
       path = path,
@@ -107,12 +51,20 @@ Clean <- function(path,
       full.names = TRUE
     ),
     list.files(
-      path = path,
+      path = file.path(
+        path,
+        ".setup",
+        "build"
+      ),
       pattern = ".*\\.pdf$",
       full.names = TRUE
     ),
     list.files(
-      path = path,
+      path = file.path(
+        path,
+        ".setup",
+        "build"
+      ),
       pattern = ".*\\.tar\\.gz$",
       full.names = TRUE
     ),
@@ -133,7 +85,55 @@ Clean <- function(path,
     )
   )
   unlink(x = files)
-  if (!push) {
+  if (push) {
+    unlink(
+      x = list.files(
+        path = path,
+        pattern = ".*secrets.*",
+        full.names = TRUE,
+        recursive = TRUE
+      ),
+      recursive = TRUE
+    )
+  } else {
+    # delete bib when push = FALSE
+    # bib are kept when push = TRUE
+    unlink(
+      x = file.path(
+        path,
+        c(
+          "man",
+          "NAMESPACE",
+          "README.md",
+          file.path(
+            ".setup",
+            "build"
+          ),
+          file.path(
+            ".setup",
+            "latex",
+            "bib",
+            "bib.bib"
+          ),
+          file.path(
+            ".setup",
+            "quarto",
+            "bib",
+            "quarto.bib"
+          ),
+          file.path(
+            ".setup",
+            "pkgdown",
+            "vignettes.bib"
+          ),
+          file.path(
+            "vignettes",
+            "vignettes.bib"
+          )
+        )
+      ),
+      recursive = TRUE
+    )
     files <- c(
       list.files(
         path = path,
