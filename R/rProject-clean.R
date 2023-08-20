@@ -77,9 +77,40 @@ Clean <- function(path,
       ),
       recursive = TRUE
     )
+    unlink(
+      x = file.path(
+        path,
+        c(
+          "man",
+          "NAMESPACE",
+          "README.md",
+          file.path(
+            ".setup",
+            "build"
+          ),
+          file.path(
+            ".setup",
+            "latex",
+            "bib",
+            "bib.bib"
+          ),
+          file.path(
+            ".setup",
+            "quarto",
+            "bib",
+            "quarto.bib"
+          ),
+          file.path(
+            ".setup",
+            "pkgdown",
+            "vignettes.bib"
+          )
+        )
+      ),
+      recursive = TRUE
+    )
+    # keep vignettes/vignettes.bib
   } else {
-    # delete bib when push = FALSE
-    # bib are kept when push = TRUE
     unlink(
       x = file.path(
         path,
