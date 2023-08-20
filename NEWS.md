@@ -1,3 +1,9 @@
+# rProject 0.0.6
+
+## Patch
+
+Edits to `Clean()` to keep `bib` files when `push = TRUE`.
+
 # rProject 0.0.5
 
 ## Patch
