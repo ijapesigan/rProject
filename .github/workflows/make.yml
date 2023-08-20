@@ -32,7 +32,6 @@ jobs:
         name: Make Project
         run: |
           make install
-          make bib
           make push
       - 
         name: Commit and push changes

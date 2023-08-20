@@ -51,24 +51,6 @@ Clean <- function(path,
       full.names = TRUE
     ),
     list.files(
-      path = file.path(
-        path,
-        ".setup",
-        "build"
-      ),
-      pattern = ".*\\.pdf$",
-      full.names = TRUE
-    ),
-    list.files(
-      path = file.path(
-        path,
-        ".setup",
-        "build"
-      ),
-      pattern = ".*\\.tar\\.gz$",
-      full.names = TRUE
-    ),
-    list.files(
       path = file.path(path, "src"),
       pattern = ".*\\.o$",
       full.names = TRUE
