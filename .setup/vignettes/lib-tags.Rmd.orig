@@ -1,16 +1,19 @@
 ---
 title: "Library Tags"
 author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Library Tags}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r}
 #| echo = FALSE
 root <- rprojroot::is_rstudio_project
 bib <- root$find_file(
-  ".setup",
-  "quarto",
-  "bib",
-  "quarto.bib"
+  "vignettes",
+  "vignettes.bib"
 )
 X <- RefManageR::ReadBib(bib)
 key <- names(X)

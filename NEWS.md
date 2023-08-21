@@ -2,7 +2,7 @@
 
 ## Patch
 
-Edits to `Clean()` to keep `bib` files when `push = TRUE`.
+Edits to `Clean()` to keep `vignettes.bib` when `push = TRUE`.
 
 # rProject 0.0.5
 

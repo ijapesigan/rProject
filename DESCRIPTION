@@ -37,5 +37,5 @@ Imports:
     tinytex,
     utils
 Suggests:
-    testthat
-RoxygenNote: 7.2.3
+    testthat,
+    DT
