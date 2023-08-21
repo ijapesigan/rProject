@@ -16,6 +16,24 @@ Bib <- function(path,
     "bib"
   )
   if (bib_lib) {
+    unlink(
+      file.path(
+        path,
+        ".setup",
+        "latex",
+        "bib",
+        "bib.bib"
+      )
+    )
+    unlink(
+      file.path(
+        path,
+        ".setup",
+        "latex",
+        "bib",
+        "zzz.bib"
+      )
+    )
     BibLib(path = path)
   }
   # bib
