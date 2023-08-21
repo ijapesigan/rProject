@@ -31,7 +31,10 @@ jobs:
       -
         name: Make Library
         run: |
+          rm -rf .setup/latex/bib/bib.bib
+          make bib
           make push
+          rm -rf .setup/latex/bib/bib.bib
       - 
         name: Commit and push changes
         uses: devops-infra/action-commit-push@master
@@ -41,7 +44,10 @@ jobs:
       -
         name: Make LaTeX
         run: |
+          rm -rf .setup/latex/bib/bib.bib
+          make bib
           make pdf
+          rm -rf .setup/latex/bib/bib.bib
       - 
         name: Push to the latex branch
         uses: s0/git-publish-subdir-action@develop
@@ -53,7 +59,10 @@ jobs:
       -
         name: Make quarto
         run: |
+          rm -rf .setup/latex/bib/bib.bib
+          make bib
           make quarto
+          rm -rf .setup/latex/bib/bib.bib
       -
         name: Add .nojekyll
         run: touch quarto/.nojekyll
