@@ -11,6 +11,7 @@ PkgDevel <- function(path) {
     "devtools",
     "distro",
     "ggplot2",
+    "DT",
     "knitr",
     "lintr",
     "magick",
