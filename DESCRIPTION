@@ -39,3 +39,4 @@ Imports:
 Suggests:
     testthat,
     DT
+RoxygenNote: 7.2.3
