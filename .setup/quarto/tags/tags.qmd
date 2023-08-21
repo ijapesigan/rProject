@@ -21,6 +21,6 @@ x <- cbind(
   annotation = annotation,
   keywords = keywords
 )
-# DT::datatable(x)
+#DT::datatable(x)
 knitr::kable(x)
 ```
