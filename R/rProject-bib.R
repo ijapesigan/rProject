@@ -17,49 +17,30 @@ Bib <- function(path,
   )
   if (bib_lib) {
     unlink(
-      file.path(
-        path,
-        ".setup",
-        "latex",
-        "bib",
-        "bib.bib"
-      )
-    )
-    unlink(
-      file.path(
-        path,
-        ".setup",
-        "latex",
-        "bib",
-        "zzz.bib"
+      x = c(
+        list.files(
+          path = path,
+          pattern = "^bib\\.bib$",
+          full.names = TRUE,
+          recursive = TRUE
+        ),
+        list.files(
+          path = path,
+          pattern = "^quarto\\.bib$",
+          full.names = TRUE,
+          recursive = TRUE
+        ),
+        list.files(
+          path = path,
+          pattern = "^vignettes\\.bib$",
+          full.names = TRUE,
+          recursive = TRUE
+        )
       )
     )
     BibLib(path = path)
   }
-  # bib
-  unlink(
-    x = c(
-      list.files(
-        path = path,
-        pattern = "^bib\\.bib$",
-        full.names = TRUE,
-        recursive = TRUE
-      ),
-      list.files(
-        path = path,
-        pattern = "^quarto\\.bib$",
-        full.names = TRUE,
-        recursive = TRUE
-      ),
-      list.files(
-        path = path,
-        pattern = "^vignettes\\.bib$",
-        full.names = TRUE,
-        recursive = TRUE
-      )
-    )
-  )
-  quarto <- pkgdown <- vignettes <- FALSE
+  quarto <- vignettes <- FALSE
   latex_bib_dir <- file.path(
     path,
     ".setup",
@@ -149,16 +130,11 @@ Bib <- function(path,
       append = FALSE,
       verbose = FALSE
     )
-    # quarto, pkgdown and vignettes
+    # quarto and vignettes
     quarto_dir <- file.path(
       path,
       ".setup",
       "quarto"
-    )
-    pkgdown_dir <- file.path(
-      path,
-      ".setup",
-      "pkgdown"
     )
     vignettes_dir <- file.path(
       path,
@@ -166,9 +142,6 @@ Bib <- function(path,
     )
     if (dir.exists(quarto_dir)) {
       quarto <- TRUE
-    }
-    if (dir.exists(pkgdown_dir)) {
-      pkgdown <- TRUE
     }
     if (dir.exists(vignettes_dir)) {
       vignettes <- TRUE
@@ -178,6 +151,12 @@ Bib <- function(path,
                      output_dir,
                      output_name) {
         if (test) {
+          unlink(
+            file.path(
+              output_dir,
+              output_name
+            )
+          )
           dir.create(
             path = output_dir,
             showWarnings = FALSE,
@@ -201,7 +180,6 @@ Bib <- function(path,
       },
       test = c(
         quarto,
-        pkgdown,
         vignettes
       ),
       output_dir = c(
@@ -209,13 +187,26 @@ Bib <- function(path,
           quarto_dir,
           "bib"
         ),
-        pkgdown_dir,
         vignettes_dir
       ),
       output_name = c(
         "quarto.bib",
-        "vignettes.bib",
         "vignettes.bib"
+      )
+    )
+  }
+  if (bib_lib) {
+    unlink(
+      list.files(
+        path = file.path(
+          path,
+          ".setup",
+          "latex",
+          "bib"
+        ),
+        pattern = "^lib-.*\\.bib$",
+        full.names = TRUE,
+        recursive = TRUE
       )
     )
   }

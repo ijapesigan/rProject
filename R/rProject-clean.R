@@ -44,32 +44,6 @@ Clean <- function(path,
     ),
     recursive = TRUE
   )
-  # keep vignettes/vignettes.bib
-  unlink(
-    x = file.path(
-      path,
-      c(
-        file.path(
-          ".setup",
-          "latex",
-          "bib",
-          "bib.bib"
-        ),
-        file.path(
-          ".setup",
-          "quarto",
-          "bib",
-          "quarto.bib"
-        ),
-        file.path(
-          ".setup",
-          "pkgdown",
-          "vignettes.bib"
-        )
-      )
-    ),
-    recursive = TRUE
-  )
   files <- c(
     list.files(
       path = path,
@@ -104,7 +78,6 @@ Clean <- function(path,
       recursive = TRUE
     )
   } else {
-    # delete vignettes/vignettes.bib
     unlink(
       x = file.path(
         path,
@@ -115,10 +88,6 @@ Clean <- function(path,
           file.path(
             ".setup",
             "build"
-          ),
-          file.path(
-            "vignettes",
-            "vignettes.bib"
           )
         )
       ),
