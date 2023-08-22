@@ -20,7 +20,9 @@ Lint <- function(path) {
     "linters:",
     "lintr::linters_with_defaults(lintr::object_name_linter(styles",
     "=",
-    "c(\"CamelCase\", \"snake_case\", \"symbols\")))"
+    "c(\"CamelCase\", \"snake_case\", \"symbols\")))",
+    "\n",
+    "exclusions: list(\"R/RcppExports.R\")"
   )
   lintr <- file.path(
     path,
