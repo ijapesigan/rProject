@@ -22,8 +22,7 @@ pkg_cran <- c(
   "betaSandwich",
   "betaMC",
   "betaNB",
-  "semmcci",
-  "DT"
+  "semmcci"
 )
 
 pkg_github <- c(
