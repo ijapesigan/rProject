@@ -16,13 +16,23 @@ Lint <- function(path) {
       quiet = TRUE
     )
   }
-  x <- paste(
+  x <- paste0(
     "linters:",
+    " ",
     "lintr::linters_with_defaults(lintr::object_name_linter(styles",
+    " ",
     "=",
+    " ",
     "c(\"CamelCase\", \"snake_case\", \"symbols\")))",
     "\n",
-    "exclusions: list(\"R/RcppExports.R\")"
+    "exclusions: list(\"R/RcppExports.R\")",
+    "\n",
+    "exclude: \"# Exclude Linting\"",
+    "\n",
+    "exclude_start: \"# Begin Exclude Linting\"",
+    "\n",
+    "exclude_end: \"# End Exclude Linting\"",
+    "\n"
   )
   lintr <- file.path(
     path,
