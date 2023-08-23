@@ -18,7 +18,7 @@ jobs:
       name: Checkout src repo
       uses: actions/checkout@v3
       with:
-        repository: 'src'
+        repository: 'ijapesigan/src'
 
     - 
       name: Set locale
