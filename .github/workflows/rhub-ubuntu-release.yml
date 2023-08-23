@@ -1,10 +1,11 @@
 name: R CMD check (ubuntu-release)
 
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+  workflow_run:
+    workflows: [ "Make Project" ]
+    types:
+      - completed
+  workflow_dispatch:
 
 jobs:
   check:
