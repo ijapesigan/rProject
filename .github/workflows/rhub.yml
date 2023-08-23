@@ -1,0 +1,43 @@
+name: R-CMD-check (rhub)
+
+on:
+  workflow_run:
+    workflows: [ "Source Code" ]
+    types:
+      - completed
+  workflow_dispatch:
+
+# Define a reusable job template
+job_template:
+  runs-on: ubuntu-latest
+  container:
+    image: ghcr.io/r-hub/containers/${{ matrix.container_name }}:latest
+
+  steps:
+  - name: Checkout src repo
+    uses: actions/checkout@v2
+    with:
+      ref: 'src'
+
+  - name: Install dependencies
+    run: |
+      R -q -e 'if (!require("pak")) install.packages("pak")'
+      R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+  - name: R-CMD-check
+    uses: r-lib/actions/check-r-package@v2
+    with:
+      error-on: '"error"'
+
+jobs:
+  check:
+    strategy:
+      matrix:
+        container_name: [atlas, centos7, clang-asan, clang16, clang17, gcc13, nold, ubuntu-clang, ubuntu-gcc12, ubuntu-next, ubuntu-release, valgrind]
+        
+    steps:
+    - name: Set up job
+      run: echo "Running job for ${{ matrix.container_name }}"
+      
+    # Use the defined job template
+    <<: *job_template
