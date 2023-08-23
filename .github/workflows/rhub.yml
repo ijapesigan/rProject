@@ -296,3 +296,339 @@ jobs:
       uses: r-lib/actions/check-r-package@v2
       with:
         error-on: '"error"'
+
+  debian-gcc-devel:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/debian-gcc-devel:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  debian-gcc-devel-lto:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/debian-gcc-devel-lto:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  debian-gcc-devel-lto:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/debian-gcc-devel-lto:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  debian-gcc-patched:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/debian-gcc-patched:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  debian-gcc-release:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/debian-gcc-release:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  debian-clang-devel:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/debian-clang-devel:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  fedora-gcc-devel:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/fedora-gcc-devel:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  fedora-clang-devel:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/fedora-clang-devel:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  fedora-clang-devel-san:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/fedora-clang-devel-san:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  ubuntu-gcc-devel:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/ubuntu-gcc-devel:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  ubuntu-gcc-release:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/ubuntu-gcc-release:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  centos-epel:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/centos-epel:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  rocker-gcc-san:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/rocker-gcc-san:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  ubuntu-rchk:
+    runs-on: ubuntu-latest
+    container:
+      image: r-hub/ubuntu-rchk:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
