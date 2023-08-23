@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  check:
+  check1:
     name: atlas
     runs-on: ubuntu-latest
     container:
@@ -34,7 +34,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check2:
     name: centos7
     runs-on: ubuntu-latest
     container:
@@ -59,7 +59,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check3:
     name: clang-asan
     runs-on: ubuntu-latest
     container:
@@ -84,7 +84,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check4:
     name: clang16
     runs-on: ubuntu-latest
     container:
@@ -109,7 +109,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check5:
     name: clang17
     runs-on: ubuntu-latest
     container:
@@ -134,7 +134,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check6:
     name: gcc13
     runs-on: ubuntu-latest
     container:
@@ -159,7 +159,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check7:
     name: nold
     runs-on: ubuntu-latest
     container:
@@ -184,7 +184,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check8:
     name: ubuntu-clang
     runs-on: ubuntu-latest
     container:
@@ -209,7 +209,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check9:
     name: ubuntu-gcc12
     runs-on: ubuntu-latest
     container:
@@ -234,7 +234,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check10:
     name: ubuntu-next
     runs-on: ubuntu-latest
     container:
@@ -259,7 +259,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check11:
     name: ubuntu-release
     runs-on: ubuntu-latest
     container:
@@ -284,7 +284,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check12:
     name: valgrind
     runs-on: ubuntu-latest
     container:
@@ -309,7 +309,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check13:
     name: debian-gcc-devel
     runs-on: ubuntu-latest
     container:
@@ -334,7 +334,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check14:
     name: debian-gcc-devel-lto
     runs-on: ubuntu-latest
     container:
@@ -359,7 +359,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check15:
     name: debian-gcc-devel-lto
     runs-on: ubuntu-latest
     container:
@@ -384,7 +384,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check16:
     name: debian-gcc-patched
     runs-on: ubuntu-latest
     container:
@@ -409,7 +409,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check17:
     name: debian-gcc-release
     runs-on: ubuntu-latest
     container:
@@ -434,7 +434,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check18:
     name: debian-clang-devel
     runs-on: ubuntu-latest
     container:
@@ -459,7 +459,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check19:
     name: fedora-gcc-devel
     runs-on: ubuntu-latest
     container:
@@ -484,7 +484,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check20:
     name: fedora-clang-devel
     runs-on: ubuntu-latest
     container:
@@ -509,7 +509,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check21:
     name: fedora-clang-devel-san
     runs-on: ubuntu-latest
     container:
@@ -534,7 +534,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check22:
     name: ubuntu-gcc-devel
     runs-on: ubuntu-latest
     container:
@@ -559,7 +559,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check23:
     name: ubuntu-gcc-release
     runs-on: ubuntu-latest
     container:
@@ -584,7 +584,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check24:
     name: centos-epel
     runs-on: ubuntu-latest
     container:
@@ -609,7 +609,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check25:
     name: rocker-gcc-san
     runs-on: ubuntu-latest
     container:
@@ -634,7 +634,7 @@ jobs:
       with:
         error-on: '"error"'
 
-  check:
+  check26:
     name: ubuntu-rchk
     runs-on: ubuntu-latest
     container:
