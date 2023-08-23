@@ -7,37 +7,292 @@ on:
       - completed
   workflow_dispatch:
 
-# Define a reusable job template
-job_template:
-  runs-on: ubuntu-latest
-  container:
-    image: ghcr.io/r-hub/containers/${{ matrix.container_name }}:latest
-
-  steps:
-  - name: Checkout src repo
-    uses: actions/checkout@v2
-    with:
-      ref: 'src'
-
-  - name: Install dependencies
-    run: |
-      R -q -e 'if (!require("pak")) install.packages("pak")'
-      R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
-
-  - name: R-CMD-check
-    uses: r-lib/actions/check-r-package@v2
-    with:
-      error-on: '"error"'
-
 jobs:
-  check:
-    strategy:
-      matrix:
-        container_name: [atlas, centos7, clang-asan, clang16, clang17, gcc13, nold, ubuntu-clang, ubuntu-gcc12, ubuntu-next, ubuntu-release, valgrind]
-        
+
+  atlas:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/atlas:latest
+
     steps:
-    - name: Set up job
-      run: echo "Running job for ${{ matrix.container_name }}"
-      
-    # Use the defined job template
-    <<: *job_template
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  centos7:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/centos7:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  clang-asan:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/clang-asan:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  clang16:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/clang16:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  clang17:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/clang17:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  gcc13:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/gcc13:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  nold:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/nold:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  ubuntu-clang:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/ubuntu-clang:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  ubuntu-gcc12:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/ubuntu-gcc12:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  ubuntu-next:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/ubuntu-next:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  ubuntu-release:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/ubuntu-release:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  valgrind:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/valgrind:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak")'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
