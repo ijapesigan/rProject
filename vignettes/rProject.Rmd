@@ -2,10 +2,6 @@
 title: "rProject: Setup R Project"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
-bibliography: "vignettes.bib"
-csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
-nocite: |
-  @RCoreTeam-2023
 vignette: >
   %\VignetteIndexEntry{rProject: Setup R Project}
   %\VignetteEngine{knitr::rmarkdown}
@@ -36,7 +32,7 @@ knitr::opts_chunk$set(
 
 ## Description
 
-A collection of functions to setup R [@RCoreTeam-2023] projects.
+A collection of functions to setup R projects.
 This package is intended for personal use only.
 
 ## Installation
@@ -75,5 +71,3 @@ for package documentation.
 See
 [Quarto Pub](https://ijapesigan.quarto.pub/rproject)
 for package wiki and other resources.
-
-## References
