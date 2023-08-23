@@ -32,8 +32,6 @@ jobs:
         run: make build
       -
         name: Make LaTeX
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           make bibrproject
           make pdf

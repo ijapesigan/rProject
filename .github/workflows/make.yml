@@ -30,8 +30,6 @@ jobs:
           make clean
       -
         name: Make Project
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           make install
           make bibrproject
