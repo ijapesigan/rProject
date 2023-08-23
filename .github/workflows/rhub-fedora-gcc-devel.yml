@@ -1,0 +1,36 @@
+name: rhub-fedora-gcc-devel
+
+on:
+  workflow_run:
+    workflows: [ "Make Project" ]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: rhub/fedora-gcc-devel
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      USE_BSPM: "true"
+      _R_CHECK_FORCE_SUGGESTS_: "false"
+
+    steps:
+      -
+        name: Checkout 
+        uses: actions/checkout@v3
+      - 
+        name: Bootstrap
+        run: |
+          curl -OLs https://eddelbuettel.github.io/r-ci/run.sh
+          chmod 0755 run.sh
+          ./run.sh bootstrap
+      - 
+        name: Dependencies
+        run: ./run.sh install_all
+      - 
+        name: Test
+        run: ./run.sh run_tests
