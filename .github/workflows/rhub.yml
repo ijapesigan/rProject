@@ -1,10 +1,7 @@
 name: R CMD check with R-hub containers
 
 on:
-  workflow_run:
-    workflows: [ "Make Project" ]
-    types:
-      - completed
+  workflow_dispatch:
     inputs:
       inpcont:
         description: 'Check container'
