@@ -2,7 +2,7 @@ name: R CMD check (centos7)
 
 on:
   workflow_run:
-    workflows: [ "Make Project" ]
+    workflows: [ "Source Code" ]
     types:
       - completed
   workflow_dispatch:
@@ -14,11 +14,22 @@ jobs:
       image: ghcr.io/r-hub/containers/centos7:latest
 
     steps:
-    - uses: actions/checkout@v3
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        repository: 'src'
 
-    - name: Install dependencies
+    - 
+      name: Set locale
+      run: localectl set-locale LANG=en_US.UTF-8
+
+    -
+      name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak")'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
-    - uses: r-lib/actions/check-r-package@v2
+    -
+      name: R CMD check
+      uses: r-lib/actions/check-r-package@v2
