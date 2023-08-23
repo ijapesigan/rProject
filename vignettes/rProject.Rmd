@@ -6,6 +6,10 @@ vignette: >
   %\VignetteIndexEntry{rProject: Setup R Project}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+bibliography: "vignettes.bib"
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+nocite: |
+  @RCoreTeam-2023
 ---
 
 ```{r}
@@ -32,7 +36,7 @@ knitr::opts_chunk$set(
 
 ## Description
 
-A collection of functions to setup R projects.
+A collection of functions to setup R [@RCoreTeam-2023] projects.
 This package is intended for personal use only.
 
 ## Installation
@@ -71,3 +75,5 @@ for package documentation.
 See
 [Quarto Pub](https://ijapesigan.quarto.pub/rproject)
 for package wiki and other resources.
+
+## References
