@@ -9,7 +9,8 @@ on:
 
 jobs:
 
-  atlas:
+  check:
+    name: atlas
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/atlas:latest
@@ -33,7 +34,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  centos7:
+  check:
+    name: centos7
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/centos7:latest
@@ -57,7 +59,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  clang-asan:
+  check:
+    name: clang-asan
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/clang-asan:latest
@@ -81,7 +84,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  clang16:
+  check:
+    name: clang16
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/clang16:latest
@@ -105,7 +109,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  clang17:
+  check:
+    name: clang17
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/clang17:latest
@@ -129,7 +134,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  gcc13:
+  check:
+    name: gcc13
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/gcc13:latest
@@ -153,7 +159,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  nold:
+  check:
+    name: nold
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/nold:latest
@@ -177,7 +184,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  ubuntu-clang:
+  check:
+    name: ubuntu-clang
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/ubuntu-clang:latest
@@ -201,7 +209,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  ubuntu-gcc12:
+  check:
+    name: ubuntu-gcc12
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/ubuntu-gcc12:latest
@@ -225,7 +234,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  ubuntu-next:
+  check:
+    name: ubuntu-next
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/ubuntu-next:latest
@@ -249,7 +259,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  ubuntu-release:
+  check:
+    name: ubuntu-release
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/ubuntu-release:latest
@@ -273,7 +284,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  valgrind:
+  check:
+    name: valgrind
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/containers/valgrind:latest
@@ -297,7 +309,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  debian-gcc-devel:
+  check:
+    name: debian-gcc-devel
     runs-on: ubuntu-latest
     container:
       image: r-hub/debian-gcc-devel:latest
@@ -321,7 +334,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  debian-gcc-devel-lto:
+  check:
+    name: debian-gcc-devel-lto
     runs-on: ubuntu-latest
     container:
       image: r-hub/debian-gcc-devel-lto:latest
@@ -345,7 +359,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  debian-gcc-devel-lto:
+  check:
+    name: debian-gcc-devel-lto
     runs-on: ubuntu-latest
     container:
       image: r-hub/debian-gcc-devel-lto:latest
@@ -369,7 +384,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  debian-gcc-patched:
+  check:
+    name: debian-gcc-patched
     runs-on: ubuntu-latest
     container:
       image: r-hub/debian-gcc-patched:latest
@@ -393,7 +409,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  debian-gcc-release:
+  check:
+    name: debian-gcc-release
     runs-on: ubuntu-latest
     container:
       image: r-hub/debian-gcc-release:latest
@@ -417,7 +434,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  debian-clang-devel:
+  check:
+    name: debian-clang-devel
     runs-on: ubuntu-latest
     container:
       image: r-hub/debian-clang-devel:latest
@@ -441,7 +459,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  fedora-gcc-devel:
+  check:
+    name: fedora-gcc-devel
     runs-on: ubuntu-latest
     container:
       image: r-hub/fedora-gcc-devel:latest
@@ -465,7 +484,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  fedora-clang-devel:
+  check:
+    name: fedora-clang-devel
     runs-on: ubuntu-latest
     container:
       image: r-hub/fedora-clang-devel:latest
@@ -489,7 +509,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  fedora-clang-devel-san:
+  check:
+    name: fedora-clang-devel-san
     runs-on: ubuntu-latest
     container:
       image: r-hub/fedora-clang-devel-san:latest
@@ -513,7 +534,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  ubuntu-gcc-devel:
+  check:
+    name: ubuntu-gcc-devel
     runs-on: ubuntu-latest
     container:
       image: r-hub/ubuntu-gcc-devel:latest
@@ -537,7 +559,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  ubuntu-gcc-release:
+  check:
+    name: ubuntu-gcc-release
     runs-on: ubuntu-latest
     container:
       image: r-hub/ubuntu-gcc-release:latest
@@ -561,7 +584,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  centos-epel:
+  check:
+    name: centos-epel
     runs-on: ubuntu-latest
     container:
       image: r-hub/centos-epel:latest
@@ -585,7 +609,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  rocker-gcc-san:
+  check:
+    name: rocker-gcc-san
     runs-on: ubuntu-latest
     container:
       image: r-hub/rocker-gcc-san:latest
@@ -609,7 +634,8 @@ jobs:
       with:
         error-on: '"error"'
 
-  ubuntu-rchk:
+  check:
+    name: ubuntu-rchk
     runs-on: ubuntu-latest
     container:
       image: r-hub/ubuntu-rchk:latest
