@@ -26,8 +26,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -53,8 +51,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -80,8 +76,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -107,8 +101,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -134,8 +126,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -161,8 +151,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -188,8 +176,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -215,8 +201,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -242,8 +226,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -269,8 +251,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -296,8 +276,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
@@ -323,8 +301,6 @@ jobs:
       name: Install dependencies
       run: |
         R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-        R -q -e 'pak::pkg_install("rspm")'
-        R -q -e 'rspm::enable()'
         R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
     -
