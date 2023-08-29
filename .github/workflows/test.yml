@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Install R
       run: |
-        choco install r.project --params "/AddToPath"
+        choco install r.project --params "/AddToPath" --force
 
     - name: Test R
       run: R
