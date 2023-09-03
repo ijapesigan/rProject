@@ -156,7 +156,17 @@ are allowed when running \texttt{lintr}.
         \end{itemize}
 \end{itemize}
 
-\nocite{Lib-R-Manual-2023}
+\section{Rcpp Functions}
+
+\begin{itemize}
+    \item Save \texttt{Rcpp} functions in \texttt{.setup/cpp} using filname conventions used for \texttt{R} except for the \texttt{.cpp} extennsion. Save \texttt{Makevars} in \texttt{.setup/cpp} as well.
+    \item Use forward declarations of functions in \texttt{.setup/cpp/000-forward-declarations.cpp}.
+    \item \texttt{Rcpp} files are styled using \texttt{clang-format} with the \texttt{style=google} flag.
+    Make sure to limit the number of characters to less than 80 for each line especially when using \texttt{Roxygen} comments to avoid styling errors.
+    \item \texttt{Rcpp} functions are unit tested as \texttt{R} functions.
+\end{itemize}
+
+\nocite{RCoreTeam-2023}
 
 \printbibliography
 
