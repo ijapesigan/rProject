@@ -308,3 +308,56 @@ jobs:
       uses: r-lib/actions/check-r-package@v2
       with:
         error-on: '"error"'
+
+  check13:
+    name: intel
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/intel:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+  check14:
+    name: mkl
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/containers/mkl:latest
+
+    steps:
+    - 
+      name: Checkout src repo
+      uses: actions/checkout@v3
+      with:
+        ref: 'src'
+
+    -
+      name: Install dependencies
+      run: |
+        R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+        R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+    -
+      name: R-CMD-check
+      uses: r-lib/actions/check-r-package@v2
+      with:
+        error-on: '"error"'
+
+# donttest
+# nosuggests
