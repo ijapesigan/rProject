@@ -63,9 +63,9 @@ jobs:
           apptainer-version: ${{ env.APPTAINER_VERSION }}
       -
         name: Build Apptainer container
-        run: apptainer build ${{ secrets.DOCKER_HUB_CONTAINER }}.sif docker://${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:${{ env.NOW }}
+        run: apptainer build ${{ secrets.DOCKER_HUB_CONTAINER }}-${{ env.NOW }}.sif docker://${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:${{ env.NOW }}
       -
         name: Run Apptainer container
         run: |
-          apptainer exec ${{ secrets.DOCKER_HUB_CONTAINER }}.sif cat /etc/os-release
-          apptainer exec ${{ secrets.DOCKER_HUB_CONTAINER }}.sif cat /srv/build/CONTAINER_RELEASE_MSG > release.txt
+          apptainer exec ${{ secrets.DOCKER_HUB_CONTAINER }}-${{ env.NOW }}.sif cat /etc/os-release
+          apptainer exec ${{ secrets.DOCKER_HUB_CONTAINER }}-${{ env.NOW }}.sif cat /srv/build/CONTAINER_RELEASE_MSG > release.txt
