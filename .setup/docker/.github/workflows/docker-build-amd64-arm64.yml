@@ -1,13 +1,16 @@
-name: Docker Build and Push [amd64/arm64] (Daily at 05:00:00)
+name: Docker Build [amd64/arm64]
 
 on:
-  schedule:
-    - cron: "0 6 * * *"
+  workflow_run:
+    workflows: [ "Make Project" ]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
 
-  build:
+  docker:
+
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -40,5 +43,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:${{ env.NOW }}
+          push: false

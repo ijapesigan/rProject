@@ -1,4 +1,4 @@
-name: Docker Build and Push (Daily at 00:00:00)
+name: Docker Build and Push [amd64/arm64] (Daily at 00:00:00)
 
 on:
   schedule:
@@ -13,6 +13,10 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
+      - 
+        name: Set the environment variables
+        run: |
+          echo "NOW=$( date '+%F-%H%M%S%2N' )" >> $GITHUB_ENV
       -
         name: Checkout 
         uses: actions/checkout@v4
@@ -22,6 +26,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - 
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -31,6 +38,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           context: .
+          platforms: linux/amd64,linux/arm64
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:${{ env.NOW }}
