@@ -1,11 +1,12 @@
-name: Docker Build and Push [multi]
+name: Docker Build and Push Dev [multi] (Daily)
 
 on:
-  workflow_run:
-    workflows: [ "Make Project" ]
-    types:
-      - completed
+  schedule:
+    - cron: "0 14 * * *"
   workflow_dispatch:
+
+env:
+  REGISTRY_IMAGE: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}
 
 jobs:
   build:

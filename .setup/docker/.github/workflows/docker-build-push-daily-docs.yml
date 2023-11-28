@@ -1,8 +1,8 @@
-name: Docker Build and Push [amd64/arm64] (Daily at 06:00:00)
+name: Docker Build and Push [amd64/arm64] (Daily at 17:00:00)
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 17 * * *"
   workflow_dispatch:
 
 jobs:
@@ -13,6 +13,22 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
+      - 
+        name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          # this might remove tools that are actually needed,
+          # if set to "true" but frees about 6 GB
+          tool-cache: false
+        
+          # all of these default to true, but feel free to set to
+          # "false" if necessary for your workflow
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
       - 
         name: Set the environment variables
         run: |
