@@ -85,7 +85,6 @@ BibLib <- function(path) {
   )
   file.copy(
     from = bib_src,
-    to = latex_bib_dir,
-    overwrite = TRUE
+    to = latex_bib_dir
   )
 }

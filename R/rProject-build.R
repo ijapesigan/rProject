@@ -90,13 +90,11 @@ Build <- function(path,
       }
       file.copy(
         from = file.path(path, ".setup", "cpp", "Makevars"),
-        to = file.path(path, "src"),
-        overwrite = TRUE
+        to = file.path(path, "src")
       )
       file.copy(
         from = file.path(path, ".setup", "cpp", "Makevars.win"),
-        to = file.path(path, "src"),
-        overwrite = TRUE
+        to = file.path(path, "src")
       )
       close(cpp_file)
       Rcpp::compileAttributes(pkgdir = path)

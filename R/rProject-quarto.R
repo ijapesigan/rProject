@@ -68,8 +68,7 @@ Quarto <- function(path) {
       }
       file.copy(
         from = quarto,
-        to = path,
-        overwrite = TRUE
+        to = path
       )
       quarto::quarto_render(
         input = path

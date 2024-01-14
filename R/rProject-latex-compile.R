@@ -18,8 +18,7 @@ LatexCompile <- function(path,
   )
   file.copy(
     from = latexmkrc,
-    to = path,
-    overwrite = TRUE
+    to = path
   )
   detritus <- Detritus(path = path)
   tex_folder <- detritus$tex_folder
@@ -122,8 +121,7 @@ LatexCompile <- function(path,
   if (file.exists(bib_dot_bib)) {
     file.copy(
       from = bib_dot_bib,
-      to = pdf_folder,
-      overwrite = TRUE
+      to = pdf_folder
     )
   }
 }

@@ -45,8 +45,7 @@ LatexKnit <- function(path) {
   if (length(tex_files) > 0) {
     file.copy(
       from = tex_files,
-      to = detritus,
-      overwrite = TRUE
+      to = detritus
     )
   }
 }

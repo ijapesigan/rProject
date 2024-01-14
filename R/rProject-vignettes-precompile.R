@@ -66,8 +66,7 @@ VignettesPrecompile <- function(path) {
         ) {
           file.copy(
             from = file.path(vignettes_source, orig[i]),
-            to = vignettes_folder,
-            overwrite = TRUE
+            to = vignettes_folder
           )
           knitr::knit(
             file.path(vignettes_folder, orig[i]),
@@ -86,8 +85,7 @@ VignettesPrecompile <- function(path) {
     if (length(figs) > 0) {
       file.copy(
         from = figs,
-        to = vignettes_folder,
-        overwrite = TRUE
+        to = vignettes_folder
       )
       on.exit(
         expr = unlink(
