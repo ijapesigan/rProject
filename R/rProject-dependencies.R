@@ -30,8 +30,7 @@ Dependencies <- function(path) {
         to = file.path(
           path,
           "R"
-        ),
-        overwrite = TRUE
+        )
       )
     }
   } else {

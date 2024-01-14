@@ -56,8 +56,7 @@ Site <- function(path) {
       }
       file.copy(
         from = pkgdown,
-        to = path,
-        overwrite = TRUE
+        to = path
       )
       pkgdown::build_site(
         pkg = path,

@@ -29,8 +29,7 @@ ReadMe <- function(path) {
     try(
       file.copy(
         from = bib,
-        to = path,
-        overwrite = TRUE
+        to = path
       )
     )
     try(
@@ -47,8 +46,7 @@ ReadMe <- function(path) {
     )
     file.copy(
       from = readme,
-      to = path,
-      overwrite = TRUE
+      to = path
     )
     readme_rmd <- file.path(
       path,

@@ -57,8 +57,7 @@ Manual <- function(path,
         path,
         ".setup",
         "build"
-      ),
-      overwrite = TRUE
+      )
     )
     on.exit(
       expr = unlink(

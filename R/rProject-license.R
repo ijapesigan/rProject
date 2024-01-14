@@ -17,8 +17,7 @@ License <- function(path,
           "LICENSE",
           package = "rProject"
         ),
-        to = path,
-        overwrite = TRUE
+        to = path
       )
       file.copy(
         from = system.file(
@@ -26,8 +25,7 @@ License <- function(path,
           "LICENSE.md",
           package = "rProject"
         ),
-        to = path,
-        overwrite = TRUE
+        to = path
       )
     }
     if (type == "gpl3") {
@@ -37,8 +35,7 @@ License <- function(path,
           "LICENSE.md",
           package = "rProject"
         ),
-        to = path,
-        overwrite = TRUE
+        to = path
       )
     }
   }
