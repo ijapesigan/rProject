@@ -164,7 +164,8 @@ Bib <- function(path,
           )
           file.copy(
             from = latex_bib,
-            to = output_dir
+            to = output_dir,
+            overwrite = TRUE
           )
           file.rename(
             from = file.path(
