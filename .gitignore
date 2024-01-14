@@ -86,3 +86,6 @@ latexmkrc
 src/*.o
 src/*.so
 src/*.dll
+rProject.Rcheck/
+rProject*.tar.gz
+rProject*.tgz
