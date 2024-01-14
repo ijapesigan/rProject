@@ -25,7 +25,11 @@ Lint <- function(path) {
     " ",
     "c(\"CamelCase\", \"snake_case\", \"symbols\")))",
     "\n",
-    "exclusions: list(\"R/RcppExports.R\")",
+    "exclusions: list(",
+    "\"R/RcppExports.R\"",
+    ", ",
+    "\"R/methods.R\"",
+    ")",
     "\n",
     "exclude: \"# Exclude Linting\"",
     "\n",
@@ -57,7 +61,8 @@ Lint <- function(path) {
   )
   file.copy(
     from = lintr,
-    to = lint
+    to = lint,
+    overwrite = TRUE
   )
   linters <- file.path(
     ".github",
@@ -73,7 +78,8 @@ Lint <- function(path) {
   )
   file.copy(
     from = lintr,
-    to = linters
+    to = linters,
+    overwrite = TRUE
   )
   on.exit(
     expr = unlink(

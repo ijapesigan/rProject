@@ -33,7 +33,8 @@ Coverage <- function(path) {
     if (file.exists(output)) {
       file.copy(
         from = output,
-        to = path
+        to = path,
+        overwrite = TRUE
       )
     }
     covr::package_coverage(path = path)

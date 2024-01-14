@@ -1,3 +1,9 @@
+# rProject 0.0.7
+
+## Patch
+
+Exclude `R/methods.R` from linting in `Lint()`.
+
 # rProject 0.0.6
 
 ## Patch
