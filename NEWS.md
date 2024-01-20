@@ -1,3 +1,9 @@
+# rProject 0.0.8
+
+## Patch
+
+Remove existing `bib.bib` and `quarto.bib` in `BibLib()`.
+
 # rProject 0.0.7
 
 ## Patch
