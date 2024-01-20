@@ -11,21 +11,6 @@ BibLib <- function(path) {
     "latex",
     "bib"
   )
-  # remove previous bib builds
-  try(
-    unlink(
-      c(
-        file.path(
-          latex_bib_dir,
-          "bib.bib"
-        ),
-        file.path(
-          latex_bib_dir,
-          "quarto.bib"
-        )
-      )
-    )
-  )
   dir.create(
     latex_bib_dir,
     showWarnings = FALSE,
