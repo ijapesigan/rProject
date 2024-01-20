@@ -95,19 +95,21 @@ if (project == "rProject") {
   }
   # remove old bib build for rProject
   unlink(
-    file.path(
-      path,
-      ".setup",
-      "latex",
-      "bib",
-      "bib.bib"
-    ),
-    file.path(
-      path,
-      ".setup",
-      "latex",
-      "bib",
-      "quarto.bib"
+    c(
+      file.path(
+        path,
+        ".setup",
+        "latex",
+        "bib",
+        "bib.bib"
+      ),
+      file.path(
+        path,
+        ".setup",
+        "latex",
+        "bib",
+        "quarto.bib"
+      )
     )
   )
 } else {
