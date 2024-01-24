@@ -1977,6 +1977,18 @@ system, canonicality, nuclear reactor noise analysis},
   publisher = {American Educational Research Association (AERA)},
 }
 
+@Article{HaanRietdijk-Voelkle-Keijsers-Hamaker-2017,
+  author = {Silvia {de Haan-Rietdijk} and Manuel C. Voelkle and Loes Keijsers and Ellen L. Hamaker},
+  date = {2017-10},
+  journaltitle = {Frontiers in Psychology},
+  title = {Discrete- vs. continuous-time modeling of unequally spaced experience sampling method data},
+  doi = {10.3389/fpsyg.2017.01849},
+  issn = {1664-1078},
+  volume = {8},
+  abstract = {The Experience Sampling Method is a common approach in psychological research for collecting intensive longitudinal data with high ecological validity. One characteristic of ESM data is that it is often unequally spaced, because the measurement intervals within a day are deliberately varied, and measurement continues over several days. This poses a problem for discrete-time (DT) modeling approaches, which are based on the assumption that all measurements are equally spaced. Nevertheless, DT approaches such as (vector) autoregressive modeling are often used to analyze ESM data, for instance in the context of affective dynamics research. There are equivalent continuous-time (CT) models, but they are more difficult to implement. In this paper we take a pragmatic approach and evaluate the practical relevance of the violated model assumption in DT AR(1) and VAR(1) models, for the N = 1 case. We use simulated data under an ESM measurement design to investigate the bias in the parameters of interest under four different model implementations, ranging from the true CT model that accounts for all the exact measurement times, to the crudest possible DT model implementation, where even the nighttime is treated as a regular interval. An analysis of empirical affect data illustrates how the differences between DT and CT modeling can play out in practice. We find that the size and the direction of the bias in DT (V)AR models for unequally spaced ESM data depend quite strongly on the true parameter in addition to data characteristics. Our recommendation is to use CT modeling whenever possible, especially now that new software implementations have become available.},
+  publisher = {Frontiers Media SA},
+}
+
 @Article{Hamaker-Kuiper-Grasman-2015,
   author = {Ellen L. Hamaker and Rebecca M. Kuiper and Raoul P. P. P. Grasman},
   date = {2015},
@@ -2814,6 +2826,40 @@ This edition includes R code for each numerical example in addition to Appendix 
   abstract = {The Rocker Project provides widely used Docker images for R across different application scenarios. This article surveys downstream projects that build upon the Rocker Project images and presents the current state of R packages for managing Docker images and controlling containers. These use cases cover diverse topics such as package development, reproducible research, collaborative work, cloud-based data processing, and production deployment of services. The variety of applications demonstrates the power of the Rocker Project specifically and containerisation in general. Across the diverse ways to use containers, we identified common themes: reproducible environments, scalability and efficiency, and portability across clouds. We conclude that the current growth and diversification of use cases is likely to continue its positive impact, but see the need for consolidating the Rockerverse ecosystem of packages, developing common practices for applications, and exploring alternative containerisation software.},
   publisher = {The R Foundation},
   annotation = {container, container-docker, container-rocker},
+}
+
+@Article{Park-Chow-Epskamp-etal-2023,
+  author = {Jonathan J. Park and Sy-Miin Chow and Sacha Epskamp and Peter C. M. Molenaar},
+  date = {2023},
+  journaltitle = {Multivariate Behavioral Research},
+  title = {Subgrouping with chain graphical {VAR} models},
+  abstract = {Recent years have seen the emergence of an ``idio-thetic'' class of methods to bridge the gap between nomothetic and idiographic inference. These methods describe nomothetic trends in idiographic processes by pooling intraindividual information across individuals to inform group-level inference or vice versa. The current work introduces a novel ``idio-thetic'' model: the subgrouped chain graphical vector autoregression (scGVAR). The scGVAR is unique in its ability to identify subgroups of individuals who share common dynamic network structures in both lag(1) and contemporaneous effects. Results from Monte Carlo simulations indicate that the scGVAR shows promise over similar approaches when clusters of individuals differ in their contemporaneous dynamics and in showing increased sensitivity in detecting nuanced group differences while keeping Type-I error rates low. In contrast, a competing approach–the Alternating Least Squares VAR (ALS VAR) performs well when groups were separated by larger distances. Further considerations are provided regarding applications of the ALS VAR and scGVAR on real data and the strengths and limitations of both methods.},
+  publisher = {Informa UK Limited},
+}
+
+@Article{Park-Fisher-Chow-etal-2023a,
+  author = {Jonathan J. Park and Zachary Fisher and Sy-Miin Chow and Peter C. M. Molenaar},
+  date = {2023-01},
+  journaltitle = {Multivariate Behavioral Research},
+  title = {On subgrouping continuous processes in discrete time},
+  doi = {10.1080/00273171.2022.2160957},
+  issn = {1532-7906},
+  number = {1},
+  pages = {154--155},
+  volume = {58},
+  publisher = {Informa UK Limited},
+}
+
+@Article{Park-Fisher-Chow-etal-2023b,
+  author = {Jonathan J. Park and Zachary F. Fisher and Sy-Miin Chow and Peter C. M. Molenaar},
+  date = {2023-08},
+  journaltitle = {Multivariate Behavioral Research},
+  title = {Evaluating discrete time methods for subgrouping continuous processes},
+  doi = {10.1080/00273171.2023.2235685},
+  issn = {1532-7906},
+  pages = {1--13},
+  abstract = {Rapid developments over the last several decades have brought increased focus and attention to the role of time scales and heterogeneity in the modeling of human processes. To address these emerging questions, subgrouping methods developed in the discrete-time framework—such as the vector autoregression (VAR)—have undergone widespread development to identify shared nomothetic trends from idiographic modeling results. Given the dependence of VAR-based parameters on the measurement intervals of the data, we sought to clarify the strengths and limitations of these methods in recovering subgroup dynamics under different measurement intervals. Building on the work of Molenaar and collaborators for subgrouping individual time-series by means of the subgrouped chain graphical VAR (scgVAR) and the subgrouping option in the group iterative multiple model estimation (S-GIMME), we present results from a Monte Carlo study aimed at addressing the implications of identifying subgroups using these discrete-time methods when applied to continuous-time data. Results indicate that discrete-time subgrouping methods perform well at recovering true subgroups when the measurement intervals are large enough to capture the full range of a system’s dynamics, either via lagged or contemporaneous effects. Further implications and limitations are discussed therein.},
+  publisher = {Informa UK Limited},
 }
 
 @Article{Pesigan-Cheung-2020,
