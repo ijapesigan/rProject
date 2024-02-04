@@ -1,0 +1,12 @@
+@Article{Eddelbuettel-Sanderson-2014,
+  author = {Dirk Eddelbuettel and Conrad Sanderson},
+  date = {2014-03},
+  journaltitle = {Computational Statistics \& Data Analysis},
+  title = {{RcppArmadillo}: Accelerating {R} with high-performance {C++} linear algebra},
+  doi = {10.1016/j.csda.2013.02.005},
+  pages = {1054--1063},
+  volume = {71},
+  abstract = {The R statistical environment and language has demonstrated particular strengths for interactive development of statistical algorithms, as well as data modelling and visualisation. Its current implementation has an interpreter at its core which may result in a performance penalty in comparison to directly executing user algorithms in the native machine code of the host CPU. In contrast, the C++ language has no built-in visualisation capabilities, handling of linear algebra or even basic statistical algorithms; however, user programs are converted to high-performance machine code, ahead of execution. A new method avoids possible speed penalties in R by using the Rcpp extension package in conjunction with the Armadillo C++ matrix library. In addition to the inherent performance advantages of compiled code, Armadillo provides an easy-to-use template-based meta-programming framework, allowing the automatic pooling of several linear algebra operations into one, which in turn can lead to further speedups. With the aid of Rcpp and Armadillo, conversion of linear algebra centred algorithms from R to C++ becomes straightforward. The algorithms retain the overall structure as well as readability, all while maintaining a bidirectional link with the host R environment. Empirical timing comparisons of R and C++ implementations of a Kalman filtering algorithm indicate a speedup of several orders of magnitude.},
+  publisher = {Elsevier {BV}},
+  annotation = {r, r-packages},
+}
