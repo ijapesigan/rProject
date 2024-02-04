@@ -1,0 +1,75 @@
+name: Make Project
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ijapesigan/docs
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
+      packages: read
+      statuses: write
+
+    steps:
+      -
+        name: Checkout 
+        uses: actions/checkout@v4
+      -
+        name: Clean
+        run: |
+          make clean
+      -
+        name: Make Library
+        run: |
+          rm -rf .setup/latex/bib/bib.bib
+          make bib
+          make push
+          rm -rf .setup/latex/bib/bib.bib
+      - 
+        name: Commit and push changes
+        uses: devops-infra/action-commit-push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "Automated build."
+      -
+        name: Make LaTeX
+        run: |
+          rm -rf .setup/latex/bib/bib.bib
+          make bib
+          make pdf
+          rm -rf .setup/latex/bib/bib.bib
+      - 
+        name: Push to the latex branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: latex
+          FOLDER: .setup/latex/pdf
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      -
+        name: Make quarto
+        run: |
+          rm -rf .setup/latex/bib/bib.bib
+          make bib
+          make quarto
+          rm -rf .setup/latex/bib/bib.bib
+      -
+        name: Add .nojekyll
+        run: touch quarto/.nojekyll
+      -
+        name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean: true
+          branch: quarto
+          folder: quarto

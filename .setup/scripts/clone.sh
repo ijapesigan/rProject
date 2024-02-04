@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone git@github.com:ijapesigan/lib-2010-2019-article.git
+git clone git@github.com:ijapesigan/rProject.git
 rm -rf "$PWD.git"
-mv lib-2010-2019-article/.git "$PWD"
-rm -rf lib-2010-2019-article
+mv rProject/.git "$PWD"
+rm -rf rProject
