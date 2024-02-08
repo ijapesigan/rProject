@@ -94,6 +94,19 @@ with:
 
 %% begin.rcode
 % hist(rnorm(100))
+% out <-    .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+% fn <- root$find_file(
+%   "output.txt"
+% )
+% fileConn <- file(fn)
+% writeLines(out, fileConn)
+% close(fileConn)
 %% end.rcode
 
 \section*{More Information}
