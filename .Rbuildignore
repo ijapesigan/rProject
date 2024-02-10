@@ -17,3 +17,6 @@
 ^quarto$
 ^scripts$
 ^vignettes$
+^rProject\.Rcheck$
+^rProject.*\.tar\.gz$
+^rProject.*\.tgz$
