@@ -41,6 +41,7 @@ BibLib <- function(path) {
     "lib-1950-1959-article",
     "lib-1940-1949-article",
     "lib-1930-1939-article",
+    "lib-1920-1929-article",
     "lib-1910-1919-article"
   )
   clean <- function(libs, path) {
