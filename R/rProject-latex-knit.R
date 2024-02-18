@@ -31,7 +31,8 @@ LatexKnit <- function(path) {
           output = file.path(
             detritus,
             tex_file
-          )
+          ),
+          envir = new.env()
         )
       }
     )

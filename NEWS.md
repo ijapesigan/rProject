@@ -1,3 +1,9 @@
+# rProject 0.0.8
+
+## Patch
+
+`knit::knit()` uses `envir = new.env()`.
+
 # rProject 0.0.7
 
 ## Patch
