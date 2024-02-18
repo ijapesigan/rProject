@@ -69,8 +69,9 @@ VignettesPrecompile <- function(path) {
             to = vignettes_folder
           )
           knitr::knit(
-            file.path(vignettes_folder, orig[i]),
-            file.path(vignettes_folder, target[i])
+            input = file.path(vignettes_folder, orig[i]),
+            output = file.path(vignettes_folder, target[i]),
+            envir = new.env()
           )
         }
       }
