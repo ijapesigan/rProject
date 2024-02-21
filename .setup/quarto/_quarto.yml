@@ -3,18 +3,20 @@ project:
   output-dir: quarto
 
 book:
-  title: "lib-2020-2029-article"
+  title: "rProject"
   author: "Ivan Jacob Agaloos Pesigan"
   date: today
   search: true
-  repo-url: https://github.com/ijapesigan/lib-2020-2029-article
+  repo-url: https://github.com/ijapesigan/rProject
   repo-actions: [edit]
-  site-url: https://ijapesigan.github.io/lib-2020-2029-article/index.html
+  site-url: https://ijapesigan.quarto.pub/rProject/index.html
   sidebar:
     collapse-level: 3
     pinned: true
   chapters:
     - index.qmd
+    - .setup/quarto/intro/intro.qmd
+    - .setup/quarto/references/references.qmd
     - .setup/quarto/tags/tags.qmd
   appendices:
     - .setup/quarto/session/session.qmd

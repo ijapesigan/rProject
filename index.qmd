@@ -1,8 +1,22 @@
 ---
-title: References
+title: Preface
 nocite: |
   @*
 ---
 
-::: {#refs}
-:::
+<!-- This will become index.html in the quarto website. -->
+
+## Initial setup
+
+Publish the project to Quarto Pub interactively by typing
+
+```sh
+export QUARTO_PUB_AUTH_TOKEN=TOKEN_HERE
+quarto publish
+```
+
+Save the generated `_publish.yml`. Once the `_publish.yml` is generated, the succeeding builds will be handled by GitHub actions.
+
+## Wiki
+
+This website contains resources related to the R [@RCoreTeam-2023] package [rProject](https://github.com/ijapesigan/rProject) outside the [pkgdown](https://ijapesigan.github.io/rProject) documentation.

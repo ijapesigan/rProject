@@ -15,14 +15,22 @@
 #' | `license`        | Options are `"mit"`, `"gpl3"`, or `NULL`            |
 #'
 
-project <- "lib-2020-2029-article"
+project <- "rProject"
 
 pkg_cran <- c(
-  "RefManageR"
+  "betaDelta",
+  "betaSandwich",
+  "betaMC",
+  "betaNB",
+  "semmcci"
 )
 
 pkg_github <- c(
-  "ijapesigan/rProject"
+  "jeksterslab/betaDelta",
+  "jeksterslab/betaSandwich",
+  "jeksterslab/betaMC",
+  "jeksterslab/betaNB",
+  "jeksterslab/semmcci"
 )
 
 pkg_github_ref <- c()
@@ -31,9 +39,9 @@ pkg_ver <- c()
 
 ver <- c()
 
-ignore <- NULL
+ignore <- "^vignettes$"
 
-license <- NULL
+license <- "mit"
 
 git_user <- "ijapesigan"
 git_email <- "learn.ijapesigan@gmail.com"
