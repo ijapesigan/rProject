@@ -29,14 +29,47 @@ jobs:
         run: |
           make clean
       -
-        name: Make Project
+        name: Make Library
         run: |
-          make install
-          make bibrproject
+          rm -rf .setup/latex/bib/bib.bib
+          make bib
           make push
+          rm -rf .setup/latex/bib/bib.bib
       - 
         name: Commit and push changes
         uses: devops-infra/action-commit-push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: "Automated build."
+      -
+        name: Make LaTeX
+        run: |
+          rm -rf .setup/latex/bib/bib.bib
+          make bib
+          make pdf
+          rm -rf .setup/latex/bib/bib.bib
+      - 
+        name: Push to the latex branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: latex
+          FOLDER: .setup/latex/pdf
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      -
+        name: Make quarto
+        run: |
+          rm -rf .setup/latex/bib/bib.bib
+          make bib
+          make quarto
+          rm -rf .setup/latex/bib/bib.bib
+      -
+        name: Add .nojekyll
+        run: touch quarto/.nojekyll
+      -
+        name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean: true
+          branch: quarto
+          folder: quarto
