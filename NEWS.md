@@ -1,3 +1,9 @@
+# rProject 0.0.9
+
+## Patch
+
+Added the `LatexTikzCompile()` function and `LatexMake()` calls it before `LatexCompile()`.
+
 # rProject 0.0.8
 
 ## Patch
