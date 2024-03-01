@@ -34,6 +34,12 @@ LatexMake <- function(path,
       )
     )
     try(
+      LatexTikzCompile(
+        path = path,
+        clean = clean
+      )
+    )
+    try(
       LatexCompile(
         path = path,
         clean = clean
