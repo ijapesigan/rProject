@@ -9,7 +9,10 @@
 <title>rProject: Session • rProject</title>
 <script src="../../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="../../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../../deps/Roboto-0.4.9/font.css" rel="stylesheet">
+<link href="../../deps/JetBrains_Mono-0.4.9/font.css" rel="stylesheet">
+<link href="../../deps/Roboto_Slab-0.4.9/font.css" rel="stylesheet">
+<!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../../pkgdown.js"></script><meta property="og:title" content="rProject: Session">
 <meta property="og:description" content="rProject">
@@ -121,7 +124,7 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
 <span><span class="co">#&gt;  [1] vctrs_0.6.5       cli_3.6.2.9000    knitr_1.45        rlang_1.1.3      </span></span>
 <span><span class="co">#&gt;  [5] xfun_0.42         purrr_1.0.2       textshaping_0.3.7 jsonlite_1.8.8   </span></span>
-<span><span class="co">#&gt;  [9] htmltools_0.5.7   ragg_1.3.0        sass_0.4.8        rmarkdown_2.26   </span></span>
+<span><span class="co">#&gt;  [9] htmltools_0.5.7   ragg_1.3.0        sass_0.4.9        rmarkdown_2.26   </span></span>
 <span><span class="co">#&gt; [13] evaluate_0.23     jquerylib_0.1.4   fastmap_1.1.1     yaml_2.3.8       </span></span>
 <span><span class="co">#&gt; [17] lifecycle_1.0.4   memoise_2.0.1     compiler_4.3.3    fs_1.6.3         </span></span>
 <span><span class="co">#&gt; [21] systemfonts_1.0.6 digest_0.6.35     R6_2.5.1          magrittr_2.0.3   </span></span>
@@ -134,7 +137,7 @@ Agaloos Pesigan</h4>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                Package          LibPath                                  </span></span>
-<span><span class="co">#&gt; rProject       "rProject"       "/tmp/RtmpQ0E6Zd/temp_libpath8ca3bbcf457"</span></span>
+<span><span class="co">#&gt; rProject       "rProject"       "/tmp/Rtmp1eoMwb/temp_libpath8c93eebaf9e"</span></span>
 <span><span class="co">#&gt; rProject       "rProject"       "/__w/rProject/rProject/.library"        </span></span>
 <span><span class="co">#&gt; abind          "abind"          "/usr/local/lib/R/site-library"          </span></span>
 <span><span class="co">#&gt; arrow          "arrow"          "/usr/local/lib/R/site-library"          </span></span>
@@ -779,7 +782,7 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt; rversions      "2.1.2"      NA           </span></span>
 <span><span class="co">#&gt; rvest          "1.0.4"      NA           </span></span>
 <span><span class="co">#&gt; Ryacas         "1.1.5"      NA           </span></span>
-<span><span class="co">#&gt; sass           "0.4.8"      NA           </span></span>
+<span><span class="co">#&gt; sass           "0.4.9"      NA           </span></span>
 <span><span class="co">#&gt; scales         "1.3.0"      NA           </span></span>
 <span><span class="co">#&gt; selectr        "0.4-2"      NA           </span></span>
 <span><span class="co">#&gt; semlbci        "0.10.4"     NA           </span></span>
@@ -3149,7 +3152,7 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt; dplyr          NA                    NA      NA     "yes"            "4.3.0"</span></span>
 <span><span class="co">#&gt; DT             NA                    NA      NA     "no"             "4.3.0"</span></span>
 <span><span class="co">#&gt; dtplyr         NA                    NA      NA     "no"             "4.3.0"</span></span>
-<span><span class="co">#&gt; duckdb         NA                    NA      NA     "yes"            "4.3.3"</span></span>
+<span><span class="co">#&gt; duckdb         NA                    NA      NA     "yes"            "4.3.0"</span></span>
 <span><span class="co">#&gt; dynr           NA                    NA      NA     "yes"            "4.3.3"</span></span>
 <span><span class="co">#&gt; dynUtils       NA                    NA      NA     "no"             "4.3.3"</span></span>
 <span><span class="co">#&gt; ellipse        NA                    NA      NA     "no"             "4.3.0"</span></span>
@@ -3355,7 +3358,7 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt; rversions      NA                    NA      NA     "no"             "4.3.0"</span></span>
 <span><span class="co">#&gt; rvest          NA                    NA      NA     "no"             "4.3.0"</span></span>
 <span><span class="co">#&gt; Ryacas         NA                    NA      NA     "yes"            "4.3.0"</span></span>
-<span><span class="co">#&gt; sass           NA                    NA      NA     "yes"            "4.3.0"</span></span>
+<span><span class="co">#&gt; sass           NA                    NA      NA     "yes"            "4.3.3"</span></span>
 <span><span class="co">#&gt; scales         NA                    NA      NA     "yes"            "4.3.0"</span></span>
 <span><span class="co">#&gt; selectr        NA                    NA      NA     "no"             "4.3.0"</span></span>
 <span><span class="co">#&gt; semlbci        NA                    NA      NA     "no"             "4.3.0"</span></span>
