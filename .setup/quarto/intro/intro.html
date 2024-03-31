@@ -270,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>function (path, project, add = NULL) 
 {
     if (file.exists(file.path(path, "DESCRIPTION"))) {
-        x &lt;- c(".*\\.Rcheck$", ".*\\.Rproj$", "^CITATION\\.cff$", 
+        x &lt;- c(".*\\.Rcheck$", ".*\\.Rproj$", ".*\\.sif$", "^CITATION\\.cff$", 
             "^LICENSE\\.md$", "^Makefile$", "^README\\.Rmd$", 
             "^README\\.md$", "^\\.Rproj\\.user$", "^\\.devcontainer$", 
             "^\\.git.*$", "^\\.library$", "^\\.setup$", "^\\.sim$", 
@@ -287,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         message(paste(path, "is not an R package."))
     }
 }
-&lt;bytecode: 0x62290865b450&gt;
+&lt;bytecode: 0x5579433b6400&gt;
 &lt;environment: namespace:rProject&gt;</code></pre>
 </div>
 </div>
