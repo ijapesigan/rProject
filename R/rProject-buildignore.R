@@ -21,6 +21,7 @@ BuildIgnore <- function(path,
     x <- c(
       ".*\\.Rcheck$",
       ".*\\.Rproj$",
+      ".*\\.sif$",
       "^CITATION\\.cff$",
       "^LICENSE\\.md$",
       "^Makefile$",

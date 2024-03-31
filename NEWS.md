@@ -1,3 +1,9 @@
+# rProject 0.0.10
+
+## Patch
+
+Added `".*\\.sif$` in `BuildIgnore()`.
+
 # rProject 0.0.9
 
 ## Patch
