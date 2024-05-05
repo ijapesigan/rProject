@@ -1,3 +1,9 @@
+# rProject 0.0.11
+
+## Patch
+
+Install `rhub` from CRAN.
+
 # rProject 0.0.10
 
 ## Patch
