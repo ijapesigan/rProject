@@ -19,8 +19,7 @@ PkgDevelGitHub <- function(path) {
   pkg <- c(
     "rstudio/tinytex",
     "r-lib/cli",
-    "r-lib/devtools",
-    "r-hub/rhub"
+    "r-lib/devtools"
   )
   repo_pkg <- strsplit(pkg, split = "/")
   repo_pkg <- do.call(

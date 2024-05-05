@@ -8,7 +8,7 @@ message: 'To cite package "rProject" in publications use:'
 type: software
 license: MIT
 title: 'rProject: Setup R Project'
-version: 0.0.10
+version: 0.0.11
 abstract: A collection of functions to setup R projects.
 authors:
 - family-names: Pesigan
@@ -24,7 +24,7 @@ preferred-citation:
     email: ijapesigan@gmail.com
     orcid: https://orcid.org/0000-0003-4818-8420
   year: '2023'
-  notes: R package version 0.0.10
+  notes: R package version 0.0.11
 repository-code: https://github.com/ijapesigan/rProject
 url: https://github.com/ijapesigan/rProject/
 contact:

@@ -26,6 +26,7 @@ PkgDevel <- function(path) {
     "Rcpp",
     "RefManageR",
     "remotes",
+    "rhub",
     "rmarkdown",
     "roxygen2",
     "rprojroot",
