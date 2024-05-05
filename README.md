@@ -53,7 +53,7 @@ wiki and other resources.
 ## References
 
 <div id="refs" class="references csl-bib-body hanging-indent"
-line-spacing="2">
+entry-spacing="0" line-spacing="2">
 
 <div id="ref-RCoreTeam-2023" class="csl-entry">
 
