@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.PAT }}
 
     steps:
       - 
@@ -53,7 +53,7 @@ jobs:
         name: Docker build and push
         uses: docker/build-push-action@v5
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.PAT }}
           context: .
           platforms: linux/amd64,linux/arm64
           file: ./Dockerfile
