@@ -4,7 +4,7 @@
 \alias{CleanProj}
 \title{Clean Project}
 \usage{
-CleanProj(path, lib = FALSE)
+CleanProj(path, lib = FALSE, sim = FALSE, sif = FALSE)
 }
 \arguments{
 \item{path}{Character string.
@@ -13,6 +13,14 @@ Project path.}
 \item{lib}{Logical.
 If \code{lib = TRUE}, delete \code{.library}.
 If \code{lib = FALSE}, \code{.library} is not deleted.}
+
+\item{sim}{Logical.
+If \code{sim = TRUE}, delete \code{.sim}.
+If \code{sim = FALSE}, \code{.sim} is not deleted.}
+
+\item{sif}{Logical.
+If \code{sif = TRUE}, delete \code{.sif}.
+If \code{sif = FALSE}, \code{.sif} is not deleted.}
 }
 \description{
 Remove all files except \code{project.Rproj} and,

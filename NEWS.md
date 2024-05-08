@@ -1,3 +1,9 @@
+# rProject 0.0.12
+
+## Patch
+
+Option to NOT delete `.sim` and `.sif` in `CleanProj()`.
+
 # rProject 0.0.11
 
 ## Patch

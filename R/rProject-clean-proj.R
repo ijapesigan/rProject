@@ -9,24 +9,60 @@
 #' @param lib Logical.
 #'   If `lib = TRUE`, delete `.library`.
 #'   If `lib = FALSE`, `.library` is not deleted.
+#' @param sim Logical.
+#'   If `sim = TRUE`, delete `.sim`.
+#'   If `sim = FALSE`, `.sim` is not deleted.
+#' @param sif Logical.
+#'   If `sif = TRUE`, delete `.sif`.
+#'   If `sif = FALSE`, `.sif` is not deleted.
 #' @export
 CleanProj <- function(path,
-                      lib = FALSE) {
+                      lib = FALSE,
+                      sim = FALSE,
+                      sif = FALSE) {
   dirs <- list.dirs(
     path = path,
     full.names = FALSE,
     recursive = FALSE
   )
   if (!lib) {
-    dirs <- dirs[
-      stats::complete.cases(
-        gsub(
-          pattern = ".library",
-          replacement = NA,
-          x = dirs
+    if (".library" %in% dirs) {
+      dirs <- dirs[
+        stats::complete.cases(
+          gsub(
+            pattern = ".library",
+            replacement = NA,
+            x = dirs
+          )
         )
-      )
-    ]
+      ]
+    }
+  }
+  if (!sim) {
+    if (".sim" %in% dirs) {
+      dirs <- dirs[
+        stats::complete.cases(
+          gsub(
+            pattern = ".sim",
+            replacement = NA,
+            x = dirs
+          )
+        )
+      ]
+    }
+  }
+  if (!sif) {
+    if (".sif" %in% dirs) {
+      dirs <- dirs[
+        stats::complete.cases(
+          gsub(
+            pattern = ".sif",
+            replacement = NA,
+            x = dirs
+          )
+        )
+      ]
+    }
   }
   dirs <- file.path(
     path,
