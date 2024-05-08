@@ -12,7 +12,7 @@ optionally, .library."><!-- mathjax --><script src="https://cdnjs.cloudflare.com
     
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.11</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.12</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +64,7 @@ optionally, <code>.library</code>.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">CleanProj</span><span class="op">(</span><span class="va">path</span>, lib <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">CleanProj</span><span class="op">(</span><span class="va">path</span>, lib <span class="op">=</span> <span class="cn">FALSE</span>, sim <span class="op">=</span> <span class="cn">FALSE</span>, sif <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -78,6 +78,18 @@ Project path.</p></dd>
 <dd><p>Logical.
 If <code>lib = TRUE</code>, delete <code>.library</code>.
 If <code>lib = FALSE</code>, <code>.library</code> is not deleted.</p></dd>
+
+
+<dt>sim</dt>
+<dd><p>Logical.
+If <code>sim = TRUE</code>, delete <code>.sim</code>.
+If <code>sim = FALSE</code>, <code>.sim</code> is not deleted.</p></dd>
+
+
+<dt>sif</dt>
+<dd><p>Logical.
+If <code>sif = TRUE</code>, delete <code>.sif</code>.
+If <code>sif = FALSE</code>, <code>.sif</code> is not deleted.</p></dd>
 
 </dl></div>
     <div class="section level2">
