@@ -1,9 +1,3 @@
-# rProject 0.0.14
-
-## Patch
-
-Do not lint `methods-*.R`.
-
 # rProject 0.0.13
 
 ## Patch

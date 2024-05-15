@@ -1,6 +1,6 @@
 Package: rProject
 Title: Setup R Project
-Version: 0.0.14
+Version: 0.0.13
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -38,4 +38,3 @@ Imports:
     utils
 Suggests:
     testthat
-RoxygenNote: 7.3.1
