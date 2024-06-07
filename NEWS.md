@@ -1,9 +1,3 @@
-# rProject 0.0.14
-
-## Patch
-
-Account for `.sty` files in `LatexKnit()`.
-
 # rProject 0.0.13
 
 ## Patch
