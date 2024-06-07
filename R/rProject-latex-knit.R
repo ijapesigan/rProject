@@ -49,4 +49,16 @@ LatexKnit <- function(path) {
       to = detritus
     )
   }
+  sty_files <- list.files(
+    path = latex,
+    pattern = "\\.sty$",
+    full.names = TRUE,
+    all.files = TRUE
+  )
+  if (length(sty_files) > 0) {
+    file.copy(
+      from = sty_files,
+      to = detritus
+    )
+  }
 }
