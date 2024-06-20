@@ -1,4 +1,4 @@
-year <- 2023
+year <- 2024
 author_text <- "Pesigan, I. J. A."
 pkg <- meta$Package
 title <- meta$Title
@@ -8,7 +8,7 @@ author <- c(
     given = "Ivan Jacob Agaloos",
     family = "Pesigan",
     role = c("aut", "cre", "cph"),
-    email = "ijapesigan@gmail.com",
+    email = "r.ijapesigan@gmail.com",
     comment = c(ORCID = "0000-0003-4818-8420")
   )
 )
