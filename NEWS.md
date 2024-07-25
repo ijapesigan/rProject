@@ -1,3 +1,9 @@
+# rProject 0.0.14
+
+## Patch
+
+Added `lib-2000-2009-manual` in `BibLib()`.
+
 # rProject 0.0.13
 
 ## Patch
