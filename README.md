@@ -1,7 +1,7 @@
 rProject
 ================
 Ivan Jacob Agaloos Pesigan
-2024-08-06
+2024-08-08
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 
@@ -22,6 +22,8 @@ Pages)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-gh-pages
 Pub)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml)
 [![Compile
 LaTeX](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml)
+[![Compile LaTeX (rProject
+Daily)](https://github.com/ijapesigan/rProject/actions/workflows/latex-rproject-daily.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/latex-rproject-daily.yml)
 [![Shell
 Check](https://github.com/ijapesigan/rProject/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/shellcheck.yml)
 [![pages-build-deployment](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pages/pages-build-deployment)
