@@ -2,7 +2,7 @@
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber,labeldate=year]{biblatex}
 \DeclareLanguageMapping{american}{american-apa}
 
-\addbibresource{/scratch/ibp5092/ijapesigan/rProject/.setup/latex/bib/bib.bib}
+\addbibresource{/__w/rProject/rProject/.setup/latex/bib/bib.bib}
 
 \DeclareSourcemap{
 \maps[datatype = bibtex]{
