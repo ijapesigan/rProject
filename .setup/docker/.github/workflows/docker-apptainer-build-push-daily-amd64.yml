@@ -51,7 +51,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
       -
         name: Docker build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v5
         with:
           repo-token: ${{ secrets.PAT }}
           context: .
@@ -74,13 +74,13 @@ jobs:
           apptainer exec ${{ secrets.DOCKER_HUB_CONTAINER }}-${{ env.NOW }}.sif cat /srv/build/CONTAINER_RELEASE_MSG > release.txt
       -
         name: Upload Singularity Image File
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ secrets.DOCKER_HUB_CONTAINER }}-${{ env.NOW }}.sif
           path: ./${{ secrets.DOCKER_HUB_CONTAINER }}-${{ env.NOW }}.sif
       -
         name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: ${{ secrets.DOCKER_HUB_CONTAINER }}-${{ env.NOW }}.sif
       -
@@ -88,13 +88,13 @@ jobs:
         run: ls -R
       -
         name: Zip artifact
-        uses: thedoctor0/zip-release@0.7.5
+        uses: thedoctor0/zip-release@0.7.1
         with:
           filename: ${{ secrets.DOCKER_HUB_CONTAINER }}-${{ env.NOW }}.zip
           exclusions: '*.git* Dockerfile Makefile project.Rproj README.md *.devcontainer/* /*scripts/* *.setup/*'
       - 
         name: GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v1
         with:
           body_path: ./release.txt
           files: ./${{ secrets.DOCKER_HUB_CONTAINER }}-${{ env.NOW }}.zip

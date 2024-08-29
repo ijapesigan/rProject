@@ -1,4 +1,4 @@
-name: Docker Build and Push Tidyverse [multi] (Daily)
+name: Docker Build and Push [multi] (Daily)
 
 on:
   schedule:

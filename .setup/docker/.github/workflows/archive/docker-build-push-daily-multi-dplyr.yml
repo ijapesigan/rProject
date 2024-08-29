@@ -1,8 +1,8 @@
-name: Docker Build and Push Tidyverse [multi] (Daily)
+name: Docker Build and Push Dplyr [multi] (Daily)
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 3 * * *"
   workflow_dispatch:
 
 env:

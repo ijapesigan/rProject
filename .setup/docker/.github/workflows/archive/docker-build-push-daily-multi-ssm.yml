@@ -1,8 +1,8 @@
-name: Docker Build and Push Tidyverse [multi] (Daily)
+name: Docker Build and Push SSM [multi] (Daily)
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 12 * * *"
   workflow_dispatch:
 
 env:
