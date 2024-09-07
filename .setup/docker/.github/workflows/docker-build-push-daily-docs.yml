@@ -1,8 +1,8 @@
-name: Docker Build and Push [amd64/arm64] (Daily at 17:00:00)
+name: Docker Build and Push [amd64/arm64] (Daily at 21:00:00)
 
 on:
   schedule:
-    - cron: "0 17 * * *"
+    - cron: "0 21 * * *"
   workflow_dispatch:
 
 jobs:
