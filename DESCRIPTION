@@ -23,7 +23,7 @@ Imports: cffr, covr, devtools, distro, knitr, lintr, pkgdown, quarto,
 Suggests: testthat
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2024-09-07 04:56:58 UTC; root
+Packaged: 2024-10-02 01:20:53 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0003-4818-8420>)
 Maintainer: Ivan Jacob Agaloos Pesigan <ijapesigan@gmail.com>
