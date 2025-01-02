@@ -2,7 +2,7 @@ name: Docker Build and Push SSM [multi] (Daily)
 
 on:
   schedule:
-    - cron: "0 15 * * *"
+    - cron: "0 17 * * *"
   workflow_dispatch:
 
 env:

@@ -2,7 +2,7 @@ name: Docker Build and Push SSM [amd64] (Daily)
 
 on:
   schedule:
-    - cron: "0 15 * * *"
+    - cron: "0 5 * * *"
   workflow_dispatch:
 
 jobs:

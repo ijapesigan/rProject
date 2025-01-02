@@ -2,7 +2,7 @@ name: Docker Build and Push SEM [amd64] (Daily)
 
 on:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "0 4 * * *"
   workflow_dispatch:
 
 jobs:
