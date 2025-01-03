@@ -2,7 +2,7 @@ name: Docker Build and Push Dev [multi] (Daily)
 
 on:
   schedule:
-    - cron: "0 21 * * *"
+    - cron: "0 19 * * *"
   workflow_dispatch:
 
 env:
