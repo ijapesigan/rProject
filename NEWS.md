@@ -1,3 +1,9 @@
+# rProject 0.0.15
+
+## Patch
+
+Added `nolint.R` in `Lint()`.
+
 # rProject 0.0.14
 
 ## Patch
