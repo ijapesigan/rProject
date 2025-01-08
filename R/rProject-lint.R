@@ -29,6 +29,8 @@ Lint <- function(path) {
     "\"R/RcppExports.R\"",
     ", ",
     "\"R/methods.R\"",
+    ", ",
+    "\"R/nolint.R\"",
     ")",
     "\n",
     "exclude: \"# Exclude Linting\"",
