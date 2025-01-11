@@ -1,0 +1,40 @@
+name: R-CMD-check (rhub - CRAN-like containers)
+
+on:
+  workflow_run:
+    workflows: [ "Source Code" ]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.PAT }}
+    strategy:
+      matrix:
+        container_image:
+          - ghcr.io/r-hub/containers/ubuntu-clang:latest
+          - ghcr.io/r-hub/containers/ubuntu-gcc12:latest
+          - ghcr.io/r-hub/containers/ubuntu-next:latest
+          - ghcr.io/r-hub/containers/ubuntu-release:latest
+    container:
+      image: ${{ matrix.container_image }}
+    steps:
+      - name: Checkout src repo
+        uses: actions/checkout@v4
+        with:
+          ref: 'src'
+
+      - name: Install dependencies
+        run: |
+          R -q -e 'Sys.setenv(DOWNLOAD_STATIC_LIBV8 = 1); install.packages("V8")'
+          R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+          R -q -e 'pak::pkg_install("gsl", dependencies = TRUE)'
+          R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
+
+      - name: R-CMD-check
+        uses: r-lib/actions/check-r-package@v2
+        with:
+          error-on: '"error"'
