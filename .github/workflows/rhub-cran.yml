@@ -1,4 +1,4 @@
-name: R-CMD-check (rhub - CRAN-like containers)
+name: rhub (CRAN-like containers)
 
 on:
   workflow_run:

@@ -1,4 +1,4 @@
-name: R-CMD-check (rhub - additional containers)
+name: rhub (etc)
 
 on:
   workflow_run:
@@ -14,14 +14,20 @@ jobs:
       GITHUB_PAT: ${{ secrets.PAT }}
     strategy:
       matrix:
-        container_image:
-          - ghcr.io/r-hub/containers/rhel7:latest
-          - ghcr.io/r-hub/containers/rhel8:latest
-          - ghcr.io/r-hub/containers/rhel9:latest
-          - ghcr.io/r-hub/containers/s390x:latest
-          - ghcr.io/r-hub/containers/centos7:latest
+        container:
+          - name: rhel7
+            image: ghcr.io/r-hub/containers/rhel7:latest
+          - name: rhel8
+            image: ghcr.io/r-hub/containers/rhel8:latest
+          - name: rhel9
+            image: ghcr.io/r-hub/containers/rhel9:latest
+          - name: s390x
+            image: ghcr.io/r-hub/containers/s390x:latest
+          - name: centos7
+            image: ghcr.io/r-hub/containers/centos7:latest
+    name: ${{ matrix.container.name }}
     container:
-      image: ${{ matrix.container_image }}
+      image: ${{ matrix.container.image }}
     steps:
       - name: Checkout src repo
         uses: actions/checkout@v4

@@ -1,4 +1,4 @@
-name: R-CMD-check (rhub - additional CRAN checks - 01)
+name: rhub (additional CRAN checks - 01)
 
 on:
   workflow_run:
@@ -14,17 +14,26 @@ jobs:
       GITHUB_PAT: ${{ secrets.PAT }}
     strategy:
       matrix:
-        container_image:
-          - ghcr.io/r-hub/containers/atlas:latest
-          - ghcr.io/r-hub/containers/c23:latest
-          - ghcr.io/r-hub/containers/clang-asan:latest
-          - ghcr.io/r-hub/containers/clang16:latest
-          - ghcr.io/r-hub/containers/clang17:latest
-          - ghcr.io/r-hub/containers/clang18:latest
-          - ghcr.io/r-hub/containers/clang19:latest
-          - ghcr.io/r-hub/containers/clang20:latest
+        container:
+          - name: atlas
+            image: ghcr.io/r-hub/containers/atlas:latest
+          - name: c23
+            image: ghcr.io/r-hub/containers/c23:latest
+          - name: clang-asan
+            image: ghcr.io/r-hub/containers/clang-asan:latest
+          - name: clang16
+            image: ghcr.io/r-hub/containers/clang16:latest
+          - name: clang17
+            image: ghcr.io/r-hub/containers/clang17:latest
+          - name: clang18
+            image: ghcr.io/r-hub/containers/clang18:latest
+          - name: clang19
+            image: ghcr.io/r-hub/containers/clang19:latest
+          - name: clang20
+            image: ghcr.io/r-hub/containers/clang20:latest
+    name: ${{ matrix.container.name }}
     container:
-      image: ${{ matrix.container_image }}
+      image: ${{ matrix.container.image }}
     steps:
       - name: Checkout src repo
         uses: actions/checkout@v4

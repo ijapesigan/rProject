@@ -1,4 +1,4 @@
-name: R-CMD-check (rhub - additional CRAN checks - donttest)
+name: rhub (donttest)
 
 on:
   workflow_run:
@@ -14,10 +14,12 @@ jobs:
       GITHUB_PAT: ${{ secrets.PAT }}
     strategy:
       matrix:
-        container_image:
-          - ghcr.io/r-hub/containers/donttest:latest
+        container:
+          - name: donttest
+            image: ghcr.io/r-hub/containers/donttest:latest
+    name: ${{ matrix.container.name }}
     container:
-      image: ${{ matrix.container_image }}
+      image: ${{ matrix.container.image }}
     steps:
       - name: Checkout src repo
         uses: actions/checkout@v4
