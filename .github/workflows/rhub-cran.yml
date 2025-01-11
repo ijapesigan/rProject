@@ -15,10 +15,15 @@ jobs:
     strategy:
       matrix:
         container_image:
-          - ghcr.io/r-hub/containers/ubuntu-clang:latest
-          - ghcr.io/r-hub/containers/ubuntu-gcc12:latest
-          - ghcr.io/r-hub/containers/ubuntu-next:latest
-          - ghcr.io/r-hub/containers/ubuntu-release:latest
+          - name: ubuntu-clang
+            image: ghcr.io/r-hub/containers/ubuntu-clang:latest
+          - name: ubuntu-gcc12
+            image: ghcr.io/r-hub/containers/ubuntu-gcc12:latest
+          - name: ubuntu-next
+            image: ghcr.io/r-hub/containers/ubuntu-next:latest
+          - name: ubuntu-release
+            image: ghcr.io/r-hub/containers/ubuntu-release:latest
+    name: ${{ matrix.container.name }}
     container:
       image: ${{ matrix.container_image }}
     steps:
