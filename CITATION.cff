@@ -8,7 +8,7 @@ message: 'To cite package "rProject" in publications use:'
 type: software
 license: MIT
 title: 'rProject: Setup R Project'
-version: 0.0.16
+version: 0.0.17
 identifiers:
 - type: url
   value: https://ijapesigan.github.io/rProject/
@@ -27,7 +27,7 @@ preferred-citation:
     email: r.ijapesigan@gmail.com
     orcid: https://orcid.org/0000-0003-4818-8420
   year: '2024'
-  notes: R package version 0.0.16
+  notes: R package version 0.0.17
 repository-code: https://github.com/ijapesigan/rProject
 url: https://github.com/ijapesigan/rProject/
 contact:

@@ -27,19 +27,7 @@ Lint <- function(path) {
     "\n",
     "exclusions: list(",
     "\"R/RcppExports.R\"",
-    ", ",
-    "\"R/methods.R\"",
-    ", ",
-    "\"R/nolint.R\"",
-    ", ",
-    "\"test/testthat/test-nolint.R\"",
     ")",
-    "\n",
-    "exclude: \"# Exclude Linting\"",
-    "\n",
-    "exclude_start: \"# Begin Exclude Linting\"",
-    "\n",
-    "exclude_end: \"# End Exclude Linting\"",
     "\n"
   )
   lintr <- file.path(
@@ -96,7 +84,8 @@ Lint <- function(path) {
     exclusions = list(
       ".library",
       "renv",
-      "packrat"
+      "packrat",
+      "R/RcppExports.R"
     )
   )
 }

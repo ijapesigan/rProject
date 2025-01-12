@@ -1,14 +1,20 @@
+# rProject 0.0.17
+
+## Patch
+
+Revised the `Lint()` function.
+
 # rProject 0.0.16
 
 ## Patch
 
-Added `test/testthat/test-nolint.R` in `Lint()`.
+Added `tests` in exclusions in the `Lint()` function.
 
 # rProject 0.0.15
 
 ## Patch
 
-Added `nolint.R` in `Lint()`.
+Added `nolint.R` in exclusions in the `Lint()` function.
 
 # rProject 0.0.14
 
