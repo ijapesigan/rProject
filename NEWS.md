@@ -1,3 +1,9 @@
+# rProject 0.0.16
+
+## Patch
+
+Added `test/testthat/test-nolint.R` in `Lint()`.
+
 # rProject 0.0.15
 
 ## Patch

@@ -31,6 +31,8 @@ Lint <- function(path) {
     "\"R/methods.R\"",
     ", ",
     "\"R/nolint.R\"",
+    ", ",
+    "\"test/testthat/test-nolint.R\"",
     ")",
     "\n",
     "exclude: \"# Exclude Linting\"",
