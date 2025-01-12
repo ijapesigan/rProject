@@ -13,6 +13,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.PAT }}
     strategy:
+      fail-fast: false
       matrix:
         container:
           - name: atlas
@@ -43,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: |
           R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-          R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"))'
+          R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
 
       - name: R-CMD-check
         uses: r-lib/actions/check-r-package@v2
