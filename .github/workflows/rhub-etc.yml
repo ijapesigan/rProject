@@ -21,8 +21,6 @@ jobs:
             image: ghcr.io/r-hub/containers/rhel8:latest
           - name: rhel9
             image: ghcr.io/r-hub/containers/rhel9:latest
-          - name: s390x
-            image: ghcr.io/r-hub/containers/s390x:latest
           - name: centos7
             image: ghcr.io/r-hub/containers/centos7:latest
     name: ${{ matrix.container.name }}
