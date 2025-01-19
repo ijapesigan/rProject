@@ -1,3 +1,9 @@
+# rProject 0.0.18
+
+## Patch
+
+Added `.quarto` in the `BuildIgnore()` function.
+
 # rProject 0.0.17
 
 ## Patch
