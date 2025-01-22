@@ -24,5 +24,4 @@ jobs:
           ref: 'src'
       -
         name: rhub Check
-        run: |
-        R -e "library(rhub); rhub_check()"
+        run: R -e "library(rhub); rhub_check()"
