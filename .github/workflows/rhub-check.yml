@@ -1,0 +1,27 @@
+name: rhub Check
+
+on:
+  workflow_run:
+    workflows: [ "Make Project" ]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ijapesigan/docs
+    env:
+      GITHUB_PAT: ${{ secrets.PAT }}
+
+    steps:
+      -
+        name: Checkout src repo
+        uses: actions/checkout@v4
+        with:
+          ref: 'src'
+      -
+        name: rhub Check
+        run: R -e "library(rhub); rhub_check()"
