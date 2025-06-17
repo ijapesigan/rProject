@@ -42,11 +42,15 @@ PkgProjectGitHub <- function(path,
     colnames(repo_pkg) <- c("repo", "pkg")
     for (i in seq_along(pkg)) {
       run <- FALSE
-      if (!(repo_pkg[i, "pkg"] %in% pkg_installed)) {
+      if (grepl("@", repo_pkg[i, "pkg"])) {
         run <- TRUE
       } else {
-        if (is.null(utils::packageDescription(repo_pkg[i, "pkg"])$GithubRepo)) {
+        if (!(repo_pkg[i, "pkg"] %in% pkg_installed)) {
           run <- TRUE
+        } else {
+          if (is.null(utils::packageDescription(repo_pkg[i, "pkg"])$GithubRepo)) {
+            run <- TRUE
+          }
         }
       }
       if (run) {

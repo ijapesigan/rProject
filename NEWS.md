@@ -1,3 +1,10 @@
+# rProject 0.0.19
+
+## Patch
+
+* The `PkgProjectGitHub()` function gives priority to installing packages that contain the `@` character in their specification.
+* The `PkgProjectVersion()` function installs the available package first before checking its version.
+
 # rProject 0.0.18
 
 ## Patch
