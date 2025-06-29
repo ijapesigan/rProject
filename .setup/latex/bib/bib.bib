@@ -2612,6 +2612,16 @@ The generality of the block bootstrap is contrasted with sieve bootstraps. We di
   abstract = {This book builds theoretical statistics from the first principles of probability theory. Starting from the basics of probability, the authors develop the theory of statistical inference using techniques, definitions, and concepts that are statistical and are natural extensions and consequences of previous concepts. This book can be used for readers who have a solid mathematics background. It can also be used in a way that stresses the more practical uses of statistical theory, being more concerned with understanding basic statistical concepts and deriving reasonable statistical procedures for a variety of situations, and less concerned with formal optimality investigations.},
 }
 
+@Book{Chatfield-2003,
+  author = {Chris Chatfield},
+  date = {2003-07},
+  title = {The analysis of time series: An introduction},
+  edition = {6},
+  doi = {10.4324/9780203491683},
+  isbn = {9780203491683},
+  publisher = {Chapman and Hall/CRC},
+}
+
 @Book{Collins-Sayer-2002,
   date = {2002},
   title = {New methods for the analysis of change},
@@ -5278,12 +5288,16 @@ This edition includes R code for each numerical example in addition to Appendix 
   keywords = {dynamic structural equation modeling, time-series analysis, intensive longitudinal data, multilevel modeling},
 }
 
-@Article{McNeish-MacKinnon-2022,
+@Article{McNeish-MacKinnon-2025,
   author = {Daniel McNeish and David P. MacKinnon},
-  date = {2022-12},
+  date = {2025-04},
   journaltitle = {Psychological Methods},
   title = {Intensive longitudinal mediation in {Mplus}},
   doi = {10.1037/met0000536},
+  issn = {1082-989X},
+  number = {2},
+  pages = {393--415},
+  volume = {30},
   abstract = {Much of the existing longitudinal mediation literature focuses on panel data where relatively few repeated measures are collected over a relatively broad timespan. However, technological advances in data collection (e.g., smartphones, wearables) have led to a proliferation of short duration, densely collected longitudinal data in behavioral research. These intensive longitudinal data differ in structure and focus relative to traditionally collected panel data. As a result, existing methodological resources do not necessarily extend to nuances present in the recent influx of intensive longitudinal data and designs. In this tutorial, we first cover potential limitations of traditional longitudinal mediation models to accommodate unique characteristics of intensive longitudinal data. Then, we discuss how recently developed dynamic structural equation models (DSEMs) may be well-suited for mediation modeling with intensive longitudinal data and can overcome some of the limitations associated with traditional approaches. We describe four increasingly complex intensive longitudinal mediation models: (a) stationary models where the indirect effect is constant over time and people, (b) person-specific models where the indirect effect varies across people, (c) dynamic models where the indirect effect varies across time, and (d) cross-classified models where the indirect effect varies across both time and people. We apply each model to a running example featuring a mobile health intervention designed to improve health behavior of individuals with binge eating disorder. In each example, we provide annotated Mplus code and interpretation of the output to guide empirical researchers through mediation modeling with this increasingly popular type of longitudinal data.},
   publisher = {American Psychological Association ({APA})},
   keywords = {intensive longitudinal data, time-series, mediation, EMA, daily diary},
@@ -5367,7 +5381,9 @@ This edition includes R code for each numerical example in addition to Appendix 
   title = {Measurement model misspecification in dynamic structural equation models: Power, reliability, and other considerations},
   doi = {10.1080/10705511.2025.2452884},
   issn = {1532-8007},
-  pages = {1--18},
+  number = {3},
+  pages = {511--528},
+  volume = {32},
   abstract = {Dynamic Structural Equation Models (DSEMs) integrate multilevel modeling, time series analysis, and structural equation modeling within a Bayesian estimation framework, offering a versatile tool for analyzing intensive longitudinal data (ILD). However, the impact of measurement structure misspecification in DSEMs, especially under varying reliability conditions and model complexities, remains underexplored. Our Monte Carlo simulation revealed that omitting measurement errors when present led to severe biases in dynamic parameters regardless of reliability conditions, though power remained high. Increasing the number of participants and time points ameliorated but did not eliminate all biases. A single-indicator DSEMs with a measurement structure using composite scores showed similar performance to multiple indicators DSEMs. Empirical applications showed discrepancies in dynamic parameters based on the number of indicators and measurement structures used. Leveraging these findings, we provide design recommendations, functions for extending reliability indices from single-indicator to multiple-indicator models, and guidelines for power evaluations under different reliability conditions.},
   publisher = {Informa UK Limited},
 }
@@ -5434,7 +5450,9 @@ This edition includes R code for each numerical example in addition to Appendix 
   title = {Evaluating discrete time methods for subgrouping continuous processes},
   doi = {10.1080/00273171.2023.2235685},
   issn = {1532-7906},
-  pages = {1--13},
+  number = {6},
+  pages = {1240--1252},
+  volume = {59},
   abstract = {Rapid developments over the last several decades have brought increased focus and attention to the role of time scales and heterogeneity in the modeling of human processes. To address these emerging questions, subgrouping methods developed in the discrete-time framework—such as the vector autoregression (VAR)—have undergone widespread development to identify shared nomothetic trends from idiographic modeling results. Given the dependence of VAR-based parameters on the measurement intervals of the data, we sought to clarify the strengths and limitations of these methods in recovering subgroup dynamics under different measurement intervals. Building on the work of Molenaar and collaborators for subgrouping individual time-series by means of the subgrouped chain graphical VAR (scgVAR) and the subgrouping option in the group iterative multiple model estimation (S-GIMME), we present results from a Monte Carlo study aimed at addressing the implications of identifying subgroups using these discrete-time methods when applied to continuous-time data. Results indicate that discrete-time subgrouping methods perform well at recovering true subgroups when the measurement intervals are large enough to capture the full range of a system’s dynamics, either via lagged or contemporaneous effects. Further implications and limitations are discussed therein.},
   publisher = {Informa UK Limited},
 }
@@ -5465,6 +5483,16 @@ This edition includes R code for each numerical example in addition to Appendix 
   publisher = {Springer Science and Business Media {LLC}},
   keywords = {Monte Carlo method, nonparametric bootstrap, indirect effect, mediation, missing completely at random, missing at random, full-information maximum likelihood, multiple imputation},
   annotation = {mediation, mediation-missing, mediation-bootstrap, mediation-montecarlo, mediation-jointtest, sem, r, r-packages},
+}
+
+@Article{Pesigan-Russell-Chow-2025a,
+  author = {Ivan Jacob Agaloos Pesigan and Michael A. Russell and Sy-Miin Chow},
+  date = {2025},
+  journaltitle = {Psychological Methods},
+  title = {Inferences and effect sizes for direct, indirect, and total effects in continuous-time mediation models},
+  abstract = {Mediation modeling using longitudinal data is an exciting field that captures the interrelations in dynamic changes, such as mediated changes, over time. Even though discrete-time vector autoregressive (DT-VAR) approaches are commonly used to estimate indirect effects in longitudinal data, they have known limitations due to the dependency of inferential results on the time intervals between successive occasions and the assumption of regular spacing between measurements. Continuous-time vector autoregressive (CT-VAR) models have been proposed as an alternative to address these issues. Previous work in the area  (e.g., Deboeck \& Preacher, 2015; Ryan \& Hamaker, 2021) has shown how the direct, indirect, and total effects, for a range of time interval values, can be calculated using parameters estimated from CT-VAR models for causal inferential purposes. However, both standardized effects size measures and methods for calculating the uncertainty around the direct, indirect, and total effects in continuous-time mediation have yet to be explored. Drawing from the mediation model literature, we present and compare results using the delta, Monte Carlo (MC), and parametric bootstrap (PB) methods to calculate standard errors (SEs) and confidence intervals (CIs) for the direct, indirect, and total effects in continuous-time mediation for inferential purposes. Options to automate these inferential procedures and facilitate interpretations are available in the \texttt{cTMed} \texttt{R} package.},
+  publisher = {American Psychological Association ({APA})},
+  keywords = {mediation, effect size, continuous-time, delta method, Monte Carlo method, parametric bootstrap, regions of significance, R package, cTMed},
 }
 
 @Article{Pesigan-Sun-Cheung-2023,
@@ -5541,11 +5569,17 @@ Conclusions: These results support the construct validity of the self-report mea
 
 @Article{Richards-Mallett-Turrisi-etal-2025,
   author = {Veronica L. Richards and Kimberly A. Mallett and Robert J. Turrisi and Shannon D. Glenn and Michael A. Russell},
-  date = {2025-01},
+  date = {2025-03},
   journaltitle = {Psychology of Addictive Behaviors},
-  title = {Profiles of transdermal alcohol concentration and their prediction of negative and positive alcohol-related consequences in young adults’ natural settings},
+  title = {Profiles of transdermal alcohol concentration and their prediction of negative and positive alcohol-related consequences in young adults' natural settings},
   doi = {10.1037/adb0001054},
   issn = {0893-164X},
+  number = {5},
+  pages = {880--888},
+  volume = {48},
+  number = {5},
+  pages = {880--888},
+  volume = {48},
   abstract = {Objective: Transdermal alcohol concentration (TAC) sensors provide a multidimensional characterization of drinking events that self-reports cannot. These profiles may differ in their associated day-level alcohol-related consequences, but no research has tested this. We address this using multilevel latent profile analysis. Method: Two hundred twenty-two young adults who regularly engage in heavy drinking ($M_{\mathrm{age}} = 22.3$, $64\%$ female, $79\%$ non-Hispanic White) responded to surveys and wore TAC sensors for 6 consecutive days. We tested whether four previously identified TAC profiles: (1) high-fast ($8.5\%$ of days), (2) moderate-fast ($12.8\%$), (3) low-slow ($20.4\%$), and (4) little-to-no-drinking days ($58.2\%$) differed in numbers of negative and positive consequences and in the odds that both consequence types occurred on the same day. Results: High-fast (incident rate ratio [$\mathrm{IRR}_{\mathrm{low-slow}}] = 6.18$; $\mathrm{IRR}_{\mathrm{little-to-no-drinking}} = 9.47$) and moderate-fast ($\mathrm{IRR}_{\mathrm{low-slow}} = 3.71$; $\mathrm{IRR}_{\mathrm{little-to-no-drinking}} = 5.68$) days contained more negative consequences compared to low-slow and little-to-no-drinking days. High-fast ($\mathrm{IRR} = 2.05$), moderate-fast ($\mathrm{IRR} = 1.88$), and low-slow ($\mathrm{IRR} = 1.43$) days contained more positive consequences than little-to-no-drinking days. The odds of having only positive consequences were highest on low-slow, $\chi^{2}(3) = 9.10$, $p < .05$, days but the odds of experiencing both consequence types increased on moderate-fast and high-fast days, $\chi^{2}(3) = 39.63$, $p < .001$. Conclusions: Compared to little-to-no-drinking days, TAC profiles indicative of drinking (high-fast, moderate-fast, and low-slow) contained more negative and positive consequences. However, the odds of experiencing only positive consequences were highest among low-slow days and decreased on moderate-fast and high-fast days as the odds of negative consequences rose. These findings provide novel evidence reinforcing harm reduction approaches that seek to maximize positives and minimize negatives of alcohol consumption through emphasis on slow-paced, low-volume drinking.},
   publisher = {American Psychological Association (APA)},
 }
@@ -5592,13 +5626,16 @@ Conclusions: These results support the construct validity of the self-report mea
   publisher = {American Psychological Association (APA)},
 }
 
-@Article{Russell-Richards-Turrisi-etal-2024,
+@Article{Russell-Richards-Turrisi-etal-2025,
   author = {Michael A. Russell and Veronica L. Richards and Robert J. Turrisi and Cara L. Exten and Ivan Jacob Agaloos Pesigan and Gabriel C. Rodriguez},
-  date = {2024-08},
+  date = {2025-03},
   journaltitle = {Psychology of Addictive Behaviors},
-  title = {Profiles of alcohol intoxication and their associated risks in young adults’ natural settings: A multilevel latent profile analysis applied to daily transdermal alcohol concentration data},
+  title = {Profiles of alcohol intoxication and their associated risks in young adults' natural settings: A multilevel latent profile analysis applied to daily transdermal alcohol concentration data},
   doi = {10.1037/adb0001022},
   issn = {0893-164X},
+  number = {2},
+  pages = {173--185},
+  volume = {39},
   abstract = {Objective: Transdermal alcohol concentration (TAC) sensors capture aspects of drinking events that self-reports cannot. The multidimensional nature of TAC data allows novel classification of drinking days and identification of associated behavioral and contextual risks. We used multilevel latent profile analysis (MLPA) to create day-level profiles of TAC features and test their associations with (a) daily behaviors and contexts and (b) risk for alcohol use disorders at baseline. Method: Two hundred twenty-two regularly heavy-drinking young adults (Mage = 22.3) completed the Alcohol Use Disorders Identification Test (AUDIT) at baseline and then responded to mobile phone surveys and wore TAC sensors for six consecutive days. MLPA identified day-level profiles using four TAC features (peak, rise rate, fall rate, and duration). TAC profiles were tested as correlates of daily drinking behaviors, contexts, and baseline AUDIT. Results: Four profiles emerged: (a) high-fast (8.5\% of days), (b) moderate-fast (12.8\%), (c) low-slow (20.4\%), and (d) little-to-no drinking days (58.2\%). Profiles differed in the odds of risky drinking behaviors and contexts. The highest risk occurred on high-fast days, followed by moderate-fast, low-slow, and little-to-no drinking days. Higher baseline AUDIT predicted higher odds of high-fast and moderate-fast days. Conclusions: Days with high and fast intoxication are reflective of high-risk drinking behaviors and were most frequent among those at risk for alcohol use disorders. TAC research using MLPA may offer novel and important insights to intervention efforts.},
   publisher = {American Psychological Association (APA)},
 }
