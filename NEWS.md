@@ -1,3 +1,9 @@
+# rProject 0.0.20
+
+## Patch
+
+* Updated MIT license year to 2025.
+
 # rProject 0.0.19
 
 ## Patch
