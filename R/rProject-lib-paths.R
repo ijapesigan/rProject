@@ -47,5 +47,5 @@ LibPaths <- function(path) {
   Sys.setenv(
     R_LIBS_USER = dot_library_folder
   )
-  return(dot_library_folder)
+  return(dot_library_folder) # nolint
 }

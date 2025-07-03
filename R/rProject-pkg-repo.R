@@ -18,7 +18,7 @@ PkgRepo <- function(path) {
   # set repos
   os <- .OS()
   if (os == "osx") {
-    return(src)
+    return(src) # nolint
   }
   if (os == "windows") {
     return(
@@ -26,7 +26,7 @@ PkgRepo <- function(path) {
         all,
         "latest/bin/windows"
       )
-    )
+    ) # nolint
   }
   if (os == "linux") {
     linux <- paste0(
@@ -35,7 +35,7 @@ PkgRepo <- function(path) {
     )
     distro <- distro::distro()
     if (is.null(distro)) {
-      return(src)
+      return(src) # nolint
     } else {
       repos <- src
       if (tolower(distro$id) == "ubuntu") {
@@ -64,7 +64,7 @@ PkgRepo <- function(path) {
         }
       }
       # populate the rest of the available repositories
-      return(repos)
+      return(repos) # nolint
     }
   }
 }

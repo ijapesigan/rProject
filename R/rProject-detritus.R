@@ -55,5 +55,5 @@ Detritus <- function(path) {
       tex_folder = tex_folder,
       tex_figures_folder = tex_figures_folder
     )
-  )
+  ) # nolint
 }
