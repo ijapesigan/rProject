@@ -17,6 +17,8 @@
 
 project <- "rProject"
 
+rproject_ver <- NULL
+
 pkg_cran <- c(
   "betaDelta",
   "betaSandwich",

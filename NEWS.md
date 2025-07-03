@@ -1,3 +1,9 @@
+# rProject 0.0.21
+
+## Patch
+
+* Specific `rProject` GitHub commit can be installed via the `rproject_ver` object in `.setup/scripts/project.R`.
+
 # rProject 0.0.20
 
 ## Patch
