@@ -48,7 +48,13 @@ PkgProjectGitHub <- function(path,
         if (!(repo_pkg[i, "pkg"] %in% pkg_installed)) {
           run <- TRUE
         } else {
-          if (is.null(utils::packageDescription(repo_pkg[i, "pkg"])$GithubRepo)) {
+          if (
+            is.null(
+              utils::packageDescription(
+                repo_pkg[i, "pkg"]
+              )$GithubRepo
+            )
+          ) {
             run <- TRUE
           }
         }

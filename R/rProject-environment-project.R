@@ -8,9 +8,7 @@
 #' @export
 EnvironmentProject <- function(project) {
   Sys.setenv(PROJECT = project[[1]])
-  return(
-    c(
-      PROJECT = project[[1]]
-    )
-  ) # nolint
+  c(
+    PROJECT = project[[1]]
+  )
 }
