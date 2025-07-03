@@ -19,7 +19,9 @@ DataProcessZ <- function() {
     file = file.path(
       data_dir,
       "z.rda"
-    )
+    ),
+    version = 2,
+    compress = FALSE
   )
 }
 DataProcessZ()
