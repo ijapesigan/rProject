@@ -12,5 +12,5 @@ EnvironmentProject <- function(project) {
     c(
       PROJECT = project[[1]]
     )
-  )
+  ) # nolint
 }

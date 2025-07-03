@@ -95,7 +95,6 @@ if (project == "rProject") {
   }
 } else {
   if (!is.null(rproject_ver)) {
-    remove.packages("rProject")
     remotes::install_github(
       paste0(
         "ijapesigan/rProject",
