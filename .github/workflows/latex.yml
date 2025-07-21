@@ -37,8 +37,8 @@ jobs:
         name: Stash LaTeX artifacts
         run: |
           git config --global --add safe.directory "$(pwd)"
-          git add .setup/*
-          git stash push --include-untracked --message "Pre-publish LaTeX artifacts"
+          git add -A
+          git stash push --include-untracked --message "Pre-publish artifacts"
       - 
         name: Push to the latex branch
         uses: s0/git-publish-subdir-action@develop
