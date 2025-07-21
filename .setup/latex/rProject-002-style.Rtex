@@ -91,8 +91,9 @@ are allowed when running \texttt{lintr}.
     \item use \texttt{BigCamelCase} for function names to distinguish functions from other objects 
     \item append a dot (\texttt{.}) at the beginning for unexported functions (\texttt{.Foo})
     \item append dot Check (\texttt{.Check}) at the beginning for unexported functions used for sanity checks (\texttt{.CheckFoo})
-    \item when calling functions from another package use the \texttt{::} notation as much as possible (\texttt{stats::rnorm(n = 10, mean = 100, sd = 15)})
+    \item when calling functions from another package use the \texttt{::} notation as much as possible (\texttt{stats::rnorm(n = 10, mean = 100, sd = 15)}), except for functions from the \texttt{base} package.
     \item when calling a function, use argument names as much as possible (\texttt{stats::rnorm(n = 10, mean = 100, sd = 15)})
+    \item Avoid explicit return as much as possible.
 \end{itemize}
 
 \section{File and Filenames}
