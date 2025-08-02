@@ -1,6 +1,6 @@
 # based on https://docs.docker.com/build/ci/github-actions/multi-platform/
 
-name: Docker Build and Push Tinytex [multi] (Daily)
+name: Docker Build and Push Tidyverse Dependencies [multi] (Daily)
 
 on:
   schedule:

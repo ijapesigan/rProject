@@ -1,4 +1,4 @@
-name: Docker Build and Push Tinytex [amd64] (Daily)
+name: Docker Build and Push Tidyverse Dependencies [amd64] (Daily)
 
 on:
   schedule:
