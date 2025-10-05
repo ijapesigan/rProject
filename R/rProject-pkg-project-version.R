@@ -14,7 +14,7 @@ PkgProjectVersion <- function(path,
   PkgProject(
     path = path,
     pkg = pkg
-  )                
+  )
   if (length(pkg) > 0) {
     stopifnot(length(pkg) == length(ver))
     lib <- LibPaths(path = path)
