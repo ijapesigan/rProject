@@ -4,7 +4,7 @@ name: Docker Build and Push Missing [multi] (Daily)
 
 on:
   schedule:
-    - cron: "0 19 * * *"
+    - cron: "0 5 * * *"
   workflow_dispatch:
 
 env:
