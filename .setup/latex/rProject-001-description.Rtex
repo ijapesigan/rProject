@@ -75,7 +75,7 @@
 
 \section*{Description}
 
-A collection of functions to setup R \parencite{RCoreTeam-2023} projects.
+A collection of functions to setup R \parencite{RCoreTeam-2025} projects.
 This package is intended for personal use only.
 
 \section*{Installation}

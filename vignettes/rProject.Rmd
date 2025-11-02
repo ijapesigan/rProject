@@ -9,7 +9,7 @@ vignette: >
 bibliography: "vignettes.bib"
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
 nocite: |
-  @RCoreTeam-2023
+  @RCoreTeam-2025
 ---
 
 ```{r}
@@ -38,7 +38,7 @@ knitr::opts_chunk$set(
 
 ## Description
 
-A collection of functions to setup R [@RCoreTeam-2023] projects.
+A collection of functions to setup R [@RCoreTeam-2025] projects.
 This package is intended for personal use only.
 
 ## Installation

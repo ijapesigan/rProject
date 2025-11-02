@@ -167,7 +167,7 @@ are allowed when running \texttt{lintr}.
     \item \texttt{Rcpp} functions are unit tested as \texttt{R} functions.
 \end{itemize}
 
-\nocite{RCoreTeam-2023}
+\nocite{RCoreTeam-2025}
 
 \printbibliography
 
