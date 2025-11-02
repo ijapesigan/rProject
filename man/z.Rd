@@ -8,7 +8,7 @@
 A vector of length 100.
 }
 \usage{
-data(z))
+z
 }
 \description{
 Data from the Standard Normal Distribution
