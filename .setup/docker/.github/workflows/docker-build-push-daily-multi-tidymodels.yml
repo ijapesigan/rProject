@@ -4,7 +4,7 @@ name: Docker Build and Push Tidymodels [multi] (Daily)
 
 on:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 4 * * *"
   workflow_dispatch:
 
 env:
