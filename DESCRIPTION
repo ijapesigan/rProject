@@ -1,6 +1,6 @@
 Package: rProject
 Title: Setup R Project
-Version: 0.0.21
+Version: 0.0.22
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -18,6 +18,7 @@ VignetteBuilder: knitr
 Depends:
     R (>= 3.5.0)
 Imports:
+    BiocManager,
     cffr,
     covr,
     devtools,

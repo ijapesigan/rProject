@@ -6,6 +6,7 @@
 #' @export
 PkgDevel <- function(path) {
   pkg <- c(
+    "BiocManager",
     "cffr",
     "covr",
     "devtools",
