@@ -1,6 +1,6 @@
 Package: rProject
 Title: Setup R Project
-Version: 0.0.21
+Version: 0.0.22
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -13,16 +13,17 @@ URL: https://github.com/ijapesigan/rProject/,
 BugReports: https://github.com/ijapesigan/rProject/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr
 Depends: R (>= 3.5.0)
-Imports: cffr, covr, devtools, distro, knitr, lintr, pkgdown, quarto,
-        Rcpp, remotes, RefManageR, rmarkdown, roxygen2, rprojroot,
-        stats, styler, tinytex, utils
+Imports: BiocManager, cffr, covr, devtools, distro, knitr, lintr,
+        pkgdown, quarto, Rcpp, remotes, RefManageR, rmarkdown,
+        roxygen2, rprojroot, stats, styler, tinytex, utils
 Suggests: testthat
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3.9000
 NeedsCompilation: no
-Packaged: 2025-07-03 23:58:58 UTC; root
+Packaged: 2025-11-22 03:37:45 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0003-4818-8420>)
 Maintainer: Ivan Jacob Agaloos Pesigan <ijapesigan@gmail.com>

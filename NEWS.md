@@ -1,3 +1,9 @@
+# rProject 0.0.22
+
+## Patch
+
+* Added the `PkgProjectBioconductor()` function.
+
 # rProject 0.0.21
 
 ## Patch
