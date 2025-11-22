@@ -31,6 +31,8 @@ jobs:
 
       - name: Make LaTeX
         run: |
+          rm -rf .setup/latex/bib/bib.bib || true
+          rm -rf .setup/latex/bib/quarto.bib || true
           make bibrproject
           make pdf
 
