@@ -42,8 +42,9 @@ jobs:
           cd ..
           rm -rf "$DIR"
       - 
-        name: Reset working tree (throw away build changes)
+        name: Reset working tree
         run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git reset --hard HEAD
       - 
         name: Push to the src branch
