@@ -42,6 +42,10 @@ jobs:
           cd ..
           rm -rf "$DIR"
       - 
+        name: Reset working tree (throw away build changes)
+        run: |
+          git reset --hard HEAD
+      - 
         name: Push to the src branch
         uses: s0/git-publish-subdir-action@develop
         env:
