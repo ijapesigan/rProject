@@ -24,9 +24,6 @@ Lint <- function(path) {
     "=",
     " ",
     "c(\"CamelCase\", \"snake_case\", \"symbols\")))",
-    "\n",
-    "exclusions: list(",
-    "\"R/RcppExports.R\"",
     ")",
     "\n"
   )

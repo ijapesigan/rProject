@@ -39,4 +39,3 @@ Imports:
     utils
 Suggests:
     testthat
-RoxygenNote: 7.3.3.9000
