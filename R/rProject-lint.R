@@ -32,7 +32,6 @@ Lint <- function(path) {
     "    \"renv\",\n",
     "    \"packrat\",\n",
     "    \".library\",\n",
-    "    \"R/RcppExports.R\"\n",
     "  )\n"
   )
   lintr <- file.path(
@@ -93,8 +92,7 @@ Lint <- function(path) {
     exclusions = list(
       "renv",
       "packrat",
-      ".library",
-      "R/RcppExports.R"
+      ".library"
     )
   )
 }
