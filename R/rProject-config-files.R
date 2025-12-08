@@ -29,9 +29,10 @@ ConfigFiles <- function(git_user) {
     )
   )
   on.exit(
-    unlink(
+    expr = unlink(
       tmp_dir
-    )
+    ),
+    add = TRUE
   )
   invisible(NULL)
 }
