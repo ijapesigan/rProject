@@ -19,11 +19,17 @@ Lint <- function(path) {
   x <- paste0(
     "linters:",
     " ",
-    "lintr::linters_with_defaults(lintr::object_name_linter(styles",
+    "lintr::linters_with_defaults(",
+    "lintr::object_name_linter(",
+    "styles",
     " ",
     "=",
     " ",
-    "c(\"CamelCase\", \"snake_case\", \"symbols\")))",
+    "c(",
+    "\"CamelCase\", \"snake_case\", \"symbols\"",
+    ")",
+    ")",
+    ")",
     "\n"
   )
   lintr <- file.path(
@@ -75,13 +81,42 @@ Lint <- function(path) {
     ),
     add = TRUE
   )
-  lintr::lint_dir(
-    path = path,
-    exclusions = list(
-      ".library",
-      "renv",
-      "packrat",
-      "R/RcppExports.R"
+  exclusions <- list(
+    "renv",
+    "packrat",
+    ".library",
+    file.path(
+      "R",
+      "RcppExports.R"
     )
   )
+  for (i in seq_along(exclusions)) {
+    if (
+      !file.exists(
+        file.path(
+          path,
+          exclusions[[i]]
+        )
+      )
+    ) {
+      exclusions[[i]] <- NULL
+    }
+  }
+  exclusions[
+    !vapply(
+      X = exclusions,
+      FUN = is.null,
+      FUN.VALUE = logical(1L)
+    )
+  ]
+  if (length(exclusions) == 0L) {
+    lintr::lint_dir(
+      path = path
+    )
+  } else {
+    lintr::lint_dir(
+      path = path,
+      exclusions = exclusions
+    )
+  }
 }
