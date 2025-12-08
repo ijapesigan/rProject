@@ -24,7 +24,6 @@ Lint <- function(path) {
     "=",
     " ",
     "c(\"CamelCase\", \"snake_case\", \"symbols\")))",
-    ")",
     "\n"
   )
   lintr <- file.path(
