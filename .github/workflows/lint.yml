@@ -29,10 +29,9 @@ jobs:
 
       - name: .lintr
         run: |
-          FILE=.setup/lint/lintr
+          FILE=.setup/lint/.lintr
           if [ -f "$FILE" ]; then
             cp "$FILE" .
-            mv lintr .lintr
           fi
 
       - name: Lint

@@ -80,10 +80,9 @@ InstallLocal <- function(
             )
           )
           on.exit(
-            expr = unlink(
+            unlink(
               tmp_dir
-            ),
-            add = TRUE
+            )
           )
         }
       }
