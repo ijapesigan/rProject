@@ -86,6 +86,12 @@ Lint <- function(path) {
     add = TRUE
   )
   lintr::lint_dir(
-    path = path
+    path = path,
+    exclusions = c(
+      "renv",
+      "packrat",
+      ".library",
+      "R/RcppExports.R"
+    )
   )
 }
