@@ -23,20 +23,17 @@ Lint <- function(path) {
     )
   }
   x <- paste0(
-    "linters:\n",
-    " lintr::linters_with_defaults(\n",
+    "linters: lintr::linters_with_defaults(\n",
     "  lintr::object_name_linter(\n",
-    "   styles = c(\"CamelCase\", \"snake_case\", \"symbols\")\n",
+    "    styles = c(\"CamelCase\", \"snake_case\", \"symbols\")\n",
     "  )\n",
-    " )\n",
-    "\n",
-    "exclusions:\n",
-    " list(\n",
+    ")\n",
+    "exclusions: list(\n",
     "  \"renv\",\n",
     "  \"packrat\",\n",
     "  \".library\",\n",
     "  \"R/RcppExports.R\"\n",
-    " )\n"
+    ")\n"
   )
   lintr <- file.path(
     path,
