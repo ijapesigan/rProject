@@ -30,6 +30,10 @@ Lint <- function(path) {
     ")",
     ")",
     ")",
+    "\n",
+    "exclusions: list(",
+    "\"renv\", \"packrat\", \".library\", \"R/RcppExports.R\"",
+    ")",
     "\n"
   )
   lintr <- file.path(
@@ -81,36 +85,7 @@ Lint <- function(path) {
     ),
     add = TRUE
   )
-  exclusions <- list(
-    "renv",
-    "packrat",
-    ".library",
-    file.path(
-      "R",
-      "RcppExports.R"
-    )
+  lintr::lint_dir(
+    path = path
   )
-  keep <- vapply(
-    X = exclusions,
-    FUN = function(x) {
-      file.exists(
-        file.path(
-          path,
-          x
-        )
-      )
-    },
-    FUN.VALUE = logical(1L)
-  )
-  exclusions <- exclusions[keep]
-  if (length(exclusions) == 0L) {
-    lintr::lint_dir(
-      path = path
-    )
-  } else {
-    lintr::lint_dir(
-      path = path,
-      exclusions = exclusions
-    )
-  }
 }
