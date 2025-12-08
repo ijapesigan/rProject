@@ -1,3 +1,9 @@
+# rProject 0.0.23
+
+## Patch
+
+* Removed exclusions from `.lintr` in the `Lint()` function.
+
 # rProject 0.0.22
 
 ## Patch
