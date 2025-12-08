@@ -90,25 +90,19 @@ Lint <- function(path) {
       "RcppExports.R"
     )
   )
-  for (i in seq_along(exclusions)) {
-    if (
-      !file.exists(
+  keep <- vapply(
+    X = exclusions,
+    FUN = function(x) {
+      file.exists(
         file.path(
           path,
-          exclusions[[i]]
+          x
         )
       )
-    ) {
-      exclusions[[i]] <- NULL
-    }
-  }
-  exclusions[
-    !vapply(
-      X = exclusions,
-      FUN = is.null,
-      FUN.VALUE = logical(1L)
-    )
-  ]
+    },
+    FUN.VALUE = logical(1L)
+  )
+  exclusions <- exclusions[keep]
   if (length(exclusions) == 0L) {
     lintr::lint_dir(
       path = path
