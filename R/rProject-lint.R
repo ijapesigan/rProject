@@ -5,12 +5,23 @@
 #' @inheritParams LibPaths
 #' @export
 Lint <- function(path) {
-  wd <- getwd()
-  setwd(path)
+  path_lintr <- file.path(
+    path,
+    ".lintr"
+  )
   on.exit(
-    expr = setwd(wd),
+    expr = unlink(
+      x = path_lintr
+    ),
     add = TRUE
   )
+  unlink(x = path_lintr)
+  setup_lint <- file.path(
+    path,
+    ".setup",
+    "lint"
+  )
+  unlink(x = setup_lint, recursive = TRUE)
   lib <- LibPaths(path = path)
   installed <- utils::installed.packages()
   pkg_installed <- installed[, "Package"]
@@ -32,43 +43,29 @@ Lint <- function(path) {
     "    \"renv\",\n",
     "    \"packrat\",\n",
     "    \".library\",\n",
+    "    \"R/RcppExports.R\"\n",
     "  )\n"
   )
-  lintr <- file.path(
-    path,
-    ".lintr"
-  )
-  on.exit(
-    expr = unlink(
-      x = lintr
-    ),
-    add = TRUE
-  )
-  con <- file(lintr)
+  con <- file(path_lintr)
   writeLines(
     text = x,
     con = con,
     sep = "\n"
   )
   close(con)
-  lint <- file.path(
-    path,
-    ".setup",
-    "lint"
-  )
   dir.create(
-    path = lint,
+    path = setup_lint,
     showWarnings = FALSE,
     recursive = TRUE
   )
   file.copy(
-    from = lintr,
-    to = lint,
+    from = path_lintr,
+    to = setup_lint,
     overwrite = TRUE
   )
   file.rename(
-    from = file.path(lint, ".lintr"),
-    to = file.path(lint, "lintr")
+    from = file.path(setup_lint, ".lintr"),
+    to = file.path(setup_lint, "lintr")
   )
   linters <- file.path(
     ".github",
@@ -83,7 +80,7 @@ Lint <- function(path) {
     recursive = TRUE
   )
   file.copy(
-    from = lintr,
+    from = path_lintr,
     to = linters,
     overwrite = TRUE
   )
@@ -92,7 +89,8 @@ Lint <- function(path) {
     exclusions = list(
       "renv",
       "packrat",
-      ".library"
+      ".library",
+      "R/RcppExports.R"
     )
   )
 }
