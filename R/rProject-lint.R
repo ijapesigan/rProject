@@ -5,6 +5,12 @@
 #' @inheritParams LibPaths
 #' @export
 Lint <- function(path) {
+  wd <- getwd()
+  setwd(path)
+  on.exit(
+    expr = setwd(wd),
+    add = TRUE
+  )
   lib <- LibPaths(path = path)
   installed <- utils::installed.packages()
   pkg_installed <- installed[, "Package"]
@@ -17,28 +23,30 @@ Lint <- function(path) {
     )
   }
   x <- paste0(
-    "linters:",
-    " ",
-    "lintr::linters_with_defaults(",
-    "lintr::object_name_linter(",
-    "styles",
-    " ",
-    "=",
-    " ",
-    "c(",
-    "\"CamelCase\", \"snake_case\", \"symbols\"",
-    ")",
-    ")",
-    ")",
+    "linters:\n",
+    " lintr::linters_with_defaults(\n",
+    "  lintr::object_name_linter(\n",
+    "   styles = c(\"CamelCase\", \"snake_case\", \"symbols\")\n",
+    "  )\n",
+    " )\n",
     "\n",
-    "exclusions: list(",
-    "\"renv\", \"packrat\", \".library\", \"R/RcppExports.R\"",
-    ")",
-    "\n"
+    "exclusions:\n",
+    " list(\n",
+    "  \"renv\",\n",
+    "  \"packrat\",\n",
+    "  \".library\",\n",
+    "  \"R/RcppExports.R\"\n",
+    " )\n"
   )
   lintr <- file.path(
     path,
     ".lintr"
+  )
+  on.exit(
+    expr = unlink(
+      x = lintr
+    ),
+    add = TRUE
   )
   con <- file(lintr)
   writeLines(
@@ -79,15 +87,9 @@ Lint <- function(path) {
     to = linters,
     overwrite = TRUE
   )
-  on.exit(
-    expr = unlink(
-      x = lintr
-    ),
-    add = TRUE
-  )
   lintr::lint_dir(
     path = path,
-    exclusions = c(
+    exclusions = list(
       "renv",
       "packrat",
       ".library",
