@@ -24,16 +24,16 @@ Lint <- function(path) {
   }
   x <- paste0(
     "linters: lintr::linters_with_defaults(\n",
-    "  lintr::object_name_linter(\n",
-    "    styles = c(\"CamelCase\", \"snake_case\", \"symbols\")\n",
+    "    lintr::object_name_linter(\n",
+    "      styles = c(\"CamelCase\", \"snake_case\", \"symbols\")\n",
+    "    )\n",
     "  )\n",
-    ")\n",
     "exclusions: list(\n",
-    "  \"renv\",\n",
-    "  \"packrat\",\n",
-    "  \".library\",\n",
-    "  \"R/RcppExports.R\"\n",
-    ")\n"
+    "    \"renv\",\n",
+    "    \"packrat\",\n",
+    "    \".library\",\n",
+    "    \"R/RcppExports.R\"\n",
+    "  )\n"
   )
   lintr <- file.path(
     path,
@@ -66,6 +66,10 @@ Lint <- function(path) {
     from = lintr,
     to = lint,
     overwrite = TRUE
+  )
+  file.rename(
+    from = file.path(lint, ".lintr"),
+    to = file.path(lint, "lintr")
   )
   linters <- file.path(
     ".github",
