@@ -29,8 +29,8 @@ BibLib <- function(path) {
     "lib-2010-2019-manual",
     "lib-2010-2019-book",
     "lib-2000-2009-manual",
-    "lib-2010-2019-article",
-    "lib-2000-2009-book",
+    "lib-2010-2019-article", -
+      "lib-2000-2009-book",
     "lib-2000-2009-article",
     "lib-1990-1999-article",
     "lib-1990-1999-book",

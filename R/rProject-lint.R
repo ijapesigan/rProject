@@ -38,15 +38,19 @@ Lint <- function(path) {
   )
   exclusions <- exclusions[keep]
   if (length(exclusions) == 0L) {
-    lintr::lint_dir(
-      path = path,
-      linters = linters
+    try(
+      lintr::lint_dir(
+        path = path,
+        linters = linters
+      )
     )
   } else {
-    lintr::lint_dir(
-      path = path,
-      linters = linters,
-      exclusions = exclusions
+    try(
+      lintr::lint_dir(
+        path = path,
+        linters = linters,
+        exclusions = exclusions
+      )
     )
   }
 }
