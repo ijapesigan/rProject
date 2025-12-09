@@ -72,6 +72,7 @@
 | Celeux-Soromenho-1996 | Celeux-Soromenho-1996 | NULL | NULL |
 | Collins-Wugalter-1992 | Collins-Wugalter-1992 | NULL | NULL |
 | Cooper-Frone-Russell-etal-1995 | Cooper-Frone-Russell-etal-1995 | NULL | NULL |
+| Dishion-McMahon-1998 | Dishion-McMahon-1998 | NULL | NULL |
 | Dumenci-Windle-1996 | Dumenci-Windle-1996 | NULL | NULL |
 | Eilers-Marx-1996 | Eilers-Marx-1996 | NULL | NULL |
 | Hoogland-Boomsma-1998 | Hoogland-Boomsma-1998 | NULL | NULL |
@@ -132,6 +133,7 @@
 | Soltis-Soltis-2003 | Soltis-Soltis-2003 | NULL | bootstrap, jackknife, phylogeny, support |
 | Holmes-2003b | Holmes-2003b | NULL | NULL |
 | Buehlmann-2002 | Buehlmann-2002 | NULL | NULL |
+| Casey-Jones-Hare-2008 | Casey-Jones-Hare-2008 | NULL | NULL |
 | Cheong-MacKinnon-Khoo-2003 | Cheong-MacKinnon-Khoo-2003 | NULL | NULL |
 | Cheung-2007 | Cheung-2007 | mediation, mediation-delta, mediation-likelihood, mediation-bootstrap | mediation, bootstrapping |
 | Cheung-2008 | Cheung-2008 | NULL | NULL |
@@ -163,6 +165,7 @@
 | Kenny-Korchmaros-Bolger-2003 | Kenny-Korchmaros-Bolger-2003 | NULL | NULL |
 | Koob-LeMoal-2008 | Koob-LeMoal-2008 | NULL | NULL |
 | Krull-MacKinnon-2001 | Krull-MacKinnon-2001 | NULL | NULL |
+| Leventhal-BrooksGunn-2000 | Leventhal-BrooksGunn-2000 | NULL | NULL |
 | Long-Ervin-2000 | Long-Ervin-2000 | regression, regression-hc | NULL |
 | Ludtke-Marsh-Robitzsch-etal-2008 | Ludtke-Marsh-Robitzsch-etal-2008 | NULL | NULL |
 | MacKinnon-Fritz-Williams-etal-2007 | MacKinnon-Fritz-Williams-etal-2007 | mediation, mediation-prodclin | NULL |
@@ -174,7 +177,9 @@
 | Mehta-Neale-2005 | Mehta-Neale-2005 | NULL | NULL |
 | Molenaar-2004 | Molenaar-2004 | NULL | NULL |
 | Molenaar-Campbell-2009 | Molenaar-Campbell-2009 | NULL | NULL |
+| Morris-Silk-Steinberg-etal-2007 | Morris-Silk-Steinberg-etal-2007 | NULL | NULL |
 | Nylund-Asparouhov-Muthen-2007 | Nylund-Asparouhov-Muthen-2007 | NULL | NULL |
+| Odgers-Mulvey-Skeem-etal-2009 | Odgers-Mulvey-Skeem-etal-2009 | NULL | NULL |
 | Oud-Jansen-2000 | Oud-Jansen-2000 | NULL | NULL |
 | Patrick-Maggs-2007 | Patrick-Maggs-2007 | NULL | NULL |
 | Patrick-Maggs-2009 | Patrick-Maggs-2009 | NULL | NULL |
@@ -192,17 +197,21 @@
 | Shiffman-2009 | Shiffman-2009 | NULL | ecological momentary assessment, substance use, drug use, tobacco, alcohol |
 | Shiffman-Stone-Hufford-2008 | Shiffman-Stone-Hufford-2008 | NULL | diary, experience sampling, real-time data capture |
 | Shrout-Bolger-2002 | Shrout-Bolger-2002 | mediation, mediation-bootstrap | NULL |
+| Squeglia-Jacobus-Tapert-2009 | Squeglia-Jacobus-Tapert-2009 | NULL | NULL |
+| Stattin-Kerr-2000 | Stattin-Kerr-2000 | NULL | NULL |
 | Staudenmayer-Buonaccorsi-2005 | Staudenmayer-Buonaccorsi-2005 | NULL | NULL |
 | Swift-2000 | Swift-2000 | NULL | NULL |
 | Taylor-MacKinnon-Tein-2007 | Taylor-MacKinnon-Tein-2007 | mediation, mediation-bootstrap, mediation-jointtest | mediation, bootstrapping |
 | vanBuuren-Brand-GroothuisOudshoorn-etal-2006 | vanBuuren-Brand-GroothuisOudshoorn-etal-2006 | NULL | multivariate missing data, multiple imputation, distributional compatibility, Gibbs sampling, simulation, proper imputation |
 | Wang-Zhang-2020 | Wang-Zhang-2020 | NULL | NULL |
+| Wills-Resko-Ainette-etal-2004 | Wills-Resko-Ainette-etal-2004 | NULL | NULL |
 | Yang-2006 | Yang-2006 | NULL | NULL |
 | Yuan-Bentler-2000 | Yuan-Bentler-2000 | NULL | NULL |
 | Yuan-MacKinnon-2009 | Yuan-MacKinnon-2009 | NULL | NULL |
 | Zeileis-2004 | Zeileis-2004 | regression, regression-hc | NULL |
 | Zeileis-2006 | Zeileis-2006 | regression, regression-hc | NULL |
 | Casella-Berger-2002 | Casella-Berger-2002 | NULL | NULL |
+| Chassin-Hussong-Beltran-2009 | Chassin-Hussong-Beltran-2009 | NULL | NULL |
 | Chatfield-2003 | Chatfield-2003 | NULL | NULL |
 | Collins-Sayer-2002 | Collins-Sayer-2002 | NULL | NULL |
 | Feitelson-Rudolph-Schwiegelshohn-2003 | Feitelson-Rudolph-Schwiegelshohn-2003 | NULL | NULL |
@@ -234,12 +243,15 @@
 | Bollen-Brand-2010 | Bollen-Brand-2010 | NULL | NULL |
 | Bond-Greenfield-Patterson-etal-2014 | Bond-Greenfield-Patterson-etal-2014 | NULL | NULL |
 | Bou-Satorra-2017 | Bou-Satorra-2017 | NULL | NULL |
+| Bringmann-Pe-Vissers-etal-2016 | Bringmann-Pe-Vissers-etal-2016 | NULL | NULL |
 | Bringmann-Vissers-Wichers-etal-2013 | Bringmann-Vissers-Wichers-etal-2013 | NULL | NULL |
+| Brody-Yu-Chen-etal-2013 | Brody-Yu-Chen-etal-2013 | NULL | NULL |
 | CastroSchilo-Ferrer-2013 | CastroSchilo-Ferrer-2013 | NULL | NULL |
 | Chen-Daniel-Ziad-etal-2011 | Chen-Daniel-Ziad-etal-2011 | NULL | connectivity analysis, vector autoregression (VAR), structural equation modeling (SEM), structural vector autoregression (SVAR) |
 | Cheung-2013 | Cheung-2013 | NULL | NULL |
 | Chow-Ho-Hamaker-etal-2010 | Chow-Ho-Hamaker-etal-2010 | ild, sem, ssm | NULL |
 | Chow-Witkiewitz-Grasman-etal-2015 | Chow-Witkiewitz-Grasman-etal-2015 | NULL | NULL |
+| Chow-Zu-Shifren-etal-2011 | Chow-Zu-Shifren-etal-2011 | NULL | NULL |
 | Clapp-Madden-Mooney-etal-2017 | Clapp-Madden-Mooney-etal-2017 | NULL | NULL |
 | Crocetti-Hale-Dimitrova-etal-2015 | Crocetti-Hale-Dimitrova-etal-2015 | NULL | NULL |
 | Curran-Bauer-2011 | Curran-Bauer-2011 | NULL | multilevel modeling, growth modeling, trajectory analysis, within-person effects |
@@ -256,17 +268,22 @@
 | Eddelbuettel-Francois-2011 | Eddelbuettel-Francois-2011 | r, r-packages | NULL |
 | Eddelbuettel-Sanderson-2014 | Eddelbuettel-Sanderson-2014 | r, r-packages | NULL |
 | Efron-2012 | Efron-2012 | NULL | deviance, exponential families, generalized linear models, Jeffreys prior |
+| Eisenberg-Spinrad-Eggum-2010 | Eisenberg-Spinrad-Eggum-2010 | NULL | NULL |
 | Enders-Fairchild-MacKinnon-2013 | Enders-Fairchild-MacKinnon-2013 | NULL | NULL |
 | Epskamp-Borsboom-Fried-2017 | Epskamp-Borsboom-Fried-2017 | NULL | network psychometrics, psychological networks, replicability, bootstrap, tutorial |
 | Epskamp-Cramer-Waldorp-etal-2012 | Epskamp-Cramer-Waldorp-etal-2012 | NULL | NULL |
 | Epskamp-Lourens-Mottus-etal-2018 | Epskamp-Lourens-Mottus-etal-2018 | NULL | time-series analysis, multilevel modeling, multivariate analysis, exploratory-data analysis, network modeling |
+| Evans-Kim-2012 | Evans-Kim-2012 | NULL | NULL |
 | Finlay-Ram-Maggs-etal-2012 | Finlay-Ram-Maggs-etal-2012 | NULL | NULL |
 | Fritz-Taylor-MacKinnon-2012 | Fritz-Taylor-MacKinnon-2012 | mediation, mediation-bootstrap | NULL |
 | Gates-Molenaar-Hillary-etal-2010 | Gates-Molenaar-Hillary-etal-2010 | NULL | NULL |
+| George-Russell-Piontak-etal-2017 | George-Russell-Piontak-etal-2017 | NULL | NULL |
 | Greenfield-Ye-Bond-etal-2014 | Greenfield-Ye-Bond-etal-2014 | NULL | NULL |
 | Gu-Preacher-Ferrer-2014 | Gu-Preacher-Ferrer-2014 | NULL | NULL |
 | HaanRietdijk-Voelkle-Keijsers-Hamaker-2017 | HaanRietdijk-Voelkle-Keijsers-Hamaker-2017 | NULL | NULL |
+| Hamaker-Asparouhov-Brose-etal-2018 | Hamaker-Asparouhov-Brose-etal-2018 | NULL | NULL |
 | Hamaker-Ceulemans-Grasman-etal-2015 | Hamaker-Ceulemans-Grasman-etal-2015 | NULL | NULL |
+| Hamaker-Grasman-2015 | Hamaker-Grasman-2015 | NULL | NULL |
 | Hamaker-Kuiper-Grasman-2015 | Hamaker-Kuiper-Grasman-2015 | NULL | cross-lagged panel, reciprocal effects, longitudinal model, trait-state models, within-person dynamics |
 | Hamaker-Schuurman-Zijlmans-2016 | Hamaker-Schuurman-Zijlmans-2016 | NULL | NULL |
 | Hayes-Scharkow-2013 | Hayes-Scharkow-2013 | mediation, mediation-bootstrap, mediation-montecarlo, mediation-prodclin | NULL |
@@ -274,7 +291,10 @@
 | Herring-Zamboanga-Olthuis-etal-2016 | Herring-Zamboanga-Olthuis-etal-2016 | NULL | NULL |
 | Hesterberg-2015 | Hesterberg-2015 | NULL | bias, confidence intervals, sampling distribution, standard error, statistical concepts, teaching |
 | Hingson-Zha-Smyth-2017 | Hingson-Zha-Smyth-2017 | NULL | NULL |
+| Hollenstein-2015 | Hollenstein-2015 | NULL | NULL |
+| Houben-VanDenNoortgate-Kuppens-2015 | Houben-VanDenNoortgate-Kuppens-2015 | NULL | NULL |
 | Hunter-2017 | Hunter-2017 | ild, ild-software, sem, sem-software, ssm, ssm-software | state space model, software, Kalman filter, OpenMx |
+| Hussong-Jones-Stein-etal-2011 | Hussong-Jones-Stein-etal-2011 | NULL | NULL |
 | Jensen-Turk-2014 | Jensen-Turk-2014 | NULL | NULL |
 | Jones-Waller-2013a | Jones-Waller-2013a | NULL | NULL |
 | Jones-Waller-2015 | Jones-Waller-2015 | standardized-regression, standardized-regression-hc | NULL |
@@ -286,6 +306,8 @@
 | Kossakowski-Groot-Haslbeck-2017 | Kossakowski-Groot-Haslbeck-2017 | NULL | NULL |
 | Kuiper-Oisin-2018 | Kuiper-Oisin-2018 | NULL | NULL |
 | Kuppens-2015 | Kuppens-2015 | NULL | NULL |
+| Kuppens-Allen-Sheeber-2010 | Kuppens-Allen-Sheeber-2010 | NULL | NULL |
+| Kuppens-Oravecz-Tuerlinckx-2010 | Kuppens-Oravecz-Tuerlinckx-2010 | NULL | NULL |
 | Kurtzer-Sochat-Bauer-2017 | Kurtzer-Sochat-Bauer-2017 | container, container-singularity | NULL |
 | Kwan-Chan-2011 | Kwan-Chan-2011 | NULL | NULL |
 | Kwan-Chan-2014 | Kwan-Chan-2014 | NULL | squared multiple correlation coefficients, structural equation modeling, model reparameterization, multi-sample analysis |
@@ -299,12 +321,14 @@
 | Moneta-Chlas-Entner-etal-2011 | Moneta-Chlas-Entner-etal-2011 | NULL | causal inference, econometric time series, SVAR, graphical causal models, independent component analysis, conditional independence tests |
 | Neale-Hunter-Pritikin-etal-2015 | Neale-Hunter-Pritikin-etal-2015 | r, r-packages, sem, sem-software | NULL |
 | Northcote-Livingston-2011 | Northcote-Livingston-2011 | NULL | NULL |
+| Odgers-Russell-2017 | Odgers-Russell-2017 | NULL | NULL |
 | OLaughlin-Martin-Ferrer-2018 | OLaughlin-Martin-Ferrer-2018 | NULL | NULL |
 | Oravecz-Tuerlinckx-Vandekerckhove-2011 | Oravecz-Tuerlinckx-Vandekerckhove-2011 | NULL | NULL |
 | ORourke-MacKinnon-2018 | ORourke-MacKinnon-2018 | mediation-prevention | NULL |
 | Ou-Hunter-Chow-2019 | Ou-Hunter-Chow-2019 | ild, ild-software, r, r-packages | NULL |
 | Pastor-Lazowski-2017 | Pastor-Lazowski-2017 | NULL | NULL |
 | Patrick-TerryMcElrath-2016 | Patrick-TerryMcElrath-2016 | NULL | NULL |
+| Pe-Koval-Houben-etal-2015 | Pe-Koval-Houben-etal-2015 | NULL | NULL |
 | Pesigan-Luyckx-Alampay-2014 | Pesigan-Luyckx-Alampay-2014 | NULL | NULL |
 | Piasecki-2019 | Piasecki-2019 | NULL | NULL |
 | Preacher-Kelley-2011 | Preacher-Kelley-2011 | mediation-effectsize | NULL |
@@ -313,6 +337,7 @@
 | Reichardt-2011 | Reichardt-2011 | NULL | NULL |
 | Roache-KarnsWright-Goros-etal-2019 | Roache-KarnsWright-Goros-etal-2019 | NULL | NULL |
 | Rosseel-2012 | Rosseel-2012 | r, r-packages, sem, sem-software | NULL |
+| Russell-Wang-Odgers-2015 | Russell-Wang-Odgers-2015 | NULL | NULL |
 | Sacks-Gonzales-Bouchery-etal-2015 | Sacks-Gonzales-Bouchery-etal-2015 | NULL | NULL |
 | Schermerhorn-Chow-Cummings-2010 | Schermerhorn-Chow-Cummings-2010 | NULL | NULL |
 | Schouten-Lugtig-Vink-2018 | Schouten-Lugtig-Vink-2018 | NULL | missing data, multiple imputation, multivariate amputation, evaluation |
@@ -321,6 +346,7 @@
 | Schuurman-Hamaker-2019 | Schuurman-Hamaker-2019 | NULL | NULL |
 | Schuurman-Houtveen-Hamaker-2015 | Schuurman-Houtveen-Hamaker-2015 | NULL | NULL |
 | Shrout-2011 | Shrout-2011 | NULL | NULL |
+| Simons-Dvorak-Batien-etal-2010 | Simons-Dvorak-Batien-etal-2010 | NULL | NULL |
 | Simons-Wills-Emery-etal-2015 | Simons-Wills-Emery-etal-2015 | NULL | NULL |
 | Singer-2012 | Singer-2012 | NULL | NULL |
 | Sjoerds-deWit-vandenBrink-etal-2013 | Sjoerds-deWit-vandenBrink-etal-2013 | NULL | addiction, fMRI, goal-directed behavior, habit formation, instrumental learning, striatum |
@@ -455,6 +481,7 @@
 | Jorgensen-Pornprasertmanit-Schoemann-etal-2022 | Jorgensen-Pornprasertmanit-Schoemann-etal-2022 | NULL | NULL |
 | Kurtzer-cclerget-Bauer-etal-2021 | Kurtzer-cclerget-Bauer-etal-2021 | container, container-singularity | NULL |
 | Patrick-Miech-Johnston-etal-2023 | Patrick-Miech-Johnston-etal-2023 | NULL | NULL |
+| Patrick-Miech-Johnston-etal-2025 | Patrick-Miech-Johnston-etal-2025 | NULL | Social Sciences (General), Social Sciences |
 | Pesigan-2022 | Pesigan-2022 | NULL | NULL |
 | RCoreTeam-2021 | RCoreTeam-2021 | r, r-manual | NULL |
 | RCoreTeam-2022 | RCoreTeam-2022 | r, r-manual | NULL |
@@ -467,30 +494,5 @@
 | Tange-2021 | Tange-2021 | NULL | NULL |
 | Tange-2024 | Tange-2024 | NULL | NULL |
 | Waller-2022 | Waller-2022 | r, r-package | NULL |
-| Hamaker-Grasman-2015 | Hamaker-Grasman-2015 | NULL | NULL |
-| Dishion-McMahon-1998 | Dishion-McMahon-1998 | NULL | NULL |
-| Casey-Jones-Hare-2008 | Casey-Jones-Hare-2008 | NULL | NULL |
-| Leventhal-BrooksGunn-2000 | Leventhal-BrooksGunn-2000 | NULL | NULL |
-| Morris-Silk-Steinberg-etal-2007 | Morris-Silk-Steinberg-etal-2007 | NULL | NULL |
-| Odgers-Mulvey-Skeem-etal-2009 | Odgers-Mulvey-Skeem-etal-2009 | NULL | NULL |
-| Squeglia-Jacobus-Tapert-2009 | Squeglia-Jacobus-Tapert-2009 | NULL | NULL |
-| Stattin-Kerr-2000 | Stattin-Kerr-2000 | NULL | NULL |
-| Wills-Resko-Ainette-etal-2004 | Wills-Resko-Ainette-etal-2004 | NULL | NULL |
-| Chassin-Hussong-Beltran-2009 | Chassin-Hussong-Beltran-2009 | NULL | NULL |
-| Bringmann-Pe-Vissers-etal-2016 | Bringmann-Pe-Vissers-etal-2016 | NULL | NULL |
-| Brody-Yu-Chen-etal-2013 | Brody-Yu-Chen-etal-2013 | NULL | NULL |
-| Chow-Zu-Shifren-etal-2011 | Chow-Zu-Shifren-etal-2011 | NULL | NULL |
-| Eisenberg-Spinrad-Eggum-2010 | Eisenberg-Spinrad-Eggum-2010 | NULL | NULL |
-| Evans-Kim-2012 | Evans-Kim-2012 | NULL | NULL |
-| George-Russell-Piontak-etal-2017 | George-Russell-Piontak-etal-2017 | NULL | NULL |
-| Hamaker-Asparouhov-Brose-etal-2018 | Hamaker-Asparouhov-Brose-etal-2018 | NULL | NULL |
-| Hollenstein-2015 | Hollenstein-2015 | NULL | NULL |
-| Houben-VanDenNoortgate-Kuppens-2015 | Houben-VanDenNoortgate-Kuppens-2015 | NULL | NULL |
-| Hussong-Jones-Stein-etal-2011 | Hussong-Jones-Stein-etal-2011 | NULL | NULL |
-| Kuppens-Allen-Sheeber-2010 | Kuppens-Allen-Sheeber-2010 | NULL | NULL |
-| Kuppens-Oravecz-Tuerlinckx-2010 | Kuppens-Oravecz-Tuerlinckx-2010 | NULL | NULL |
-| Odgers-Russell-2017 | Odgers-Russell-2017 | NULL | NULL |
-| Pe-Koval-Houben-etal-2015 | Pe-Koval-Houben-etal-2015 | NULL | NULL |
-| Russell-Wang-Odgers-2015 | Russell-Wang-Odgers-2015 | NULL | NULL |
-| Simons-Dvorak-Batien-etal-2010 | Simons-Dvorak-Batien-etal-2010 | NULL | NULL |
-| Patrick-Miech-Johnston-etal-2025 | Patrick-Miech-Johnston-etal-2025 | NULL | Social Sciences (General), Social Sciences |
+| Fisher-Reeves-Lawyer-etal-2017 | Fisher-Reeves-Lawyer-etal-2017 | NULL | NULL |
+| Russell-Odgers-2019 | Russell-Odgers-2019 | NULL | NULL |
