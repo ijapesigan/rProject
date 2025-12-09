@@ -24,5 +24,5 @@ EnvironmentTokens <- function(tokens) {
       )
     )
   }
-  return(tokens) # nolint
+  tokens
 }
