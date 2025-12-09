@@ -67,13 +67,17 @@ Bib <- function(path,
       message(
         "No \".bib\" files found."
       )
-      return(NULL) # nolint
+      # nolint start
+      return(NULL)
+      # nolint end
     }
   } else {
     message(
       "No \".bib\" files found."
     )
-    return(NULL) # nolint
+    # nolint start
+    return(NULL)
+    # nolint end
   }
   if (run) {
     # rewrite bib files

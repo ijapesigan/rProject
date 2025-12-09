@@ -16,76 +16,41 @@ Lint <- function(path) {
       quiet = TRUE
     )
   }
-  x <- paste0(
-    "linters:",
-    " ",
-    "lintr::linters_with_defaults(lintr::object_name_linter(styles",
-    " ",
-    "=",
-    " ",
-    "c(\"CamelCase\", \"snake_case\", \"symbols\")))",
-    "\n",
-    "exclusions: list(",
-    "\"R/RcppExports.R\"",
-    ")",
-    "\n"
-  )
-  lintr <- file.path(
-    path,
-    ".lintr"
-  )
-  con <- file(lintr)
-  writeLines(
-    text = x,
-    con = con,
-    sep = "\n"
-  )
-  close(con)
-  lint <- file.path(
-    path,
-    ".setup",
-    "lint"
-  )
-  dir.create(
-    path = lint,
-    showWarnings = FALSE,
-    recursive = TRUE
-  )
-  file.copy(
-    from = lintr,
-    to = lint,
-    overwrite = TRUE
-  )
-  linters <- file.path(
-    ".github",
-    "linters"
-  )
-  dir.create(
-    path = file.path(
-      ".github",
-      "linters"
-    ),
-    showWarnings = FALSE,
-    recursive = TRUE
-  )
-  file.copy(
-    from = lintr,
-    to = linters,
-    overwrite = TRUE
-  )
-  on.exit(
-    expr = unlink(
-      x = lintr
-    ),
-    add = TRUE
-  )
-  lintr::lint_dir(
-    path = path,
-    exclusions = list(
-      ".library",
-      "renv",
-      "packrat",
-      "R/RcppExports.R"
+  linters <- lintr::linters_with_defaults(
+    lintr::object_name_linter(
+      styles = c(
+        "CamelCase",
+        "snake_case",
+        "symbols"
+      )
     )
   )
+  exclusions <- list(
+    "renv",
+    "packrat",
+    ".library",
+    file.path("R", "RcppExports.R")
+  )
+  keep <- vapply(
+    X = exclusions,
+    FUN = function(x) file.exists(x),
+    FUN.VALUE = logical(1)
+  )
+  exclusions <- exclusions[keep]
+  if (length(exclusions) == 0L) {
+    try(
+      lintr::lint_dir(
+        path = path,
+        linters = linters
+      )
+    )
+  } else {
+    try(
+      lintr::lint_dir(
+        path = path,
+        linters = linters,
+        exclusions = exclusions
+      )
+    )
+  }
 }
