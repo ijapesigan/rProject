@@ -52,12 +52,12 @@ jobs:
           exclusions <- exclusions[keep]
           if (length(exclusions) == 0L) {
             lintr::lint_dir(
-              path = path,
+              path = ".",
               linters = linters
             )
           } else {
             lintr::lint_dir(
-              path = path,
+              path = ".",
               linters = linters,
               exclusions = exclusions
             )
