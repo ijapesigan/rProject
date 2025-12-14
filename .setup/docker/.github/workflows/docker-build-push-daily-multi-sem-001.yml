@@ -1,10 +1,10 @@
 # based on https://docs.docker.com/build/ci/github-actions/multi-platform/
 
-name: Docker Build and Push SSM [multi] (Daily)
+name: Docker Build and Push SEM [multi] (Daily)
 
 on:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "0 5 * * *"
   workflow_dispatch:
 
 env:
