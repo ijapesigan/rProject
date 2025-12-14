@@ -275,6 +275,7 @@
 | Epskamp-Lourens-Mottus-etal-2018 | Epskamp-Lourens-Mottus-etal-2018 | NULL | time-series analysis, multilevel modeling, multivariate analysis, exploratory-data analysis, network modeling |
 | Evans-Kim-2012 | Evans-Kim-2012 | NULL | NULL |
 | Finlay-Ram-Maggs-etal-2012 | Finlay-Ram-Maggs-etal-2012 | NULL | NULL |
+| Fisher-Reeves-Lawyer-etal-2017 | Fisher-Reeves-Lawyer-etal-2017 | NULL | NULL |
 | Fritz-Taylor-MacKinnon-2012 | Fritz-Taylor-MacKinnon-2012 | mediation, mediation-bootstrap | NULL |
 | Gates-Molenaar-Hillary-etal-2010 | Gates-Molenaar-Hillary-etal-2010 | NULL | NULL |
 | George-Russell-Piontak-etal-2017 | George-Russell-Piontak-etal-2017 | NULL | NULL |
@@ -337,6 +338,7 @@
 | Reichardt-2011 | Reichardt-2011 | NULL | NULL |
 | Roache-KarnsWright-Goros-etal-2019 | Roache-KarnsWright-Goros-etal-2019 | NULL | NULL |
 | Rosseel-2012 | Rosseel-2012 | r, r-packages, sem, sem-software | NULL |
+| Russell-Odgers-2019 | Russell-Odgers-2019 | NULL | NULL |
 | Russell-Wang-Odgers-2015 | Russell-Wang-Odgers-2015 | NULL | NULL |
 | Sacks-Gonzales-Bouchery-etal-2015 | Sacks-Gonzales-Bouchery-etal-2015 | NULL | NULL |
 | Schermerhorn-Chow-Cummings-2010 | Schermerhorn-Chow-Cummings-2010 | NULL | NULL |
@@ -445,8 +447,10 @@
 | Park-Chow-Epskamp-etal-2024 | Park-Chow-Epskamp-etal-2024 | NULL | NULL |
 | Park-Fisher-Chow-etal-2023a | Park-Fisher-Chow-etal-2023a | NULL | NULL |
 | Park-Fisher-Chow-etal-2023b | Park-Fisher-Chow-etal-2023b | NULL | NULL |
+| Park-Fisher-Hunter-etal-2025 | Park-Fisher-Hunter-etal-2025 | NULL | NULL |
 | Pesigan-Cheung-2020 | Pesigan-Cheung-2020 | mediation, mediation-likelihood, mediation-bootstrap, mediation-montecarlo | mediation, nonnormal, confidence interval, structural equation modeling, bootstrapping |
 | Pesigan-Cheung-2024 | Pesigan-Cheung-2024 | mediation, mediation-missing, mediation-bootstrap, mediation-montecarlo, mediation-jointtest, sem, r, r-packages | Monte Carlo method, nonparametric bootstrap, indirect effect, mediation, missing completely at random, missing at random, full-information maximum likelihood, multiple imputation |
+| lib-2020-2029-article-Pesigan-Cheung-Wu-etal-2025 | lib-2020-2029-article-Pesigan-Cheung-Wu-etal-2025 | NULL | model comparison, BIC, posterior probability, confidence set, structural equation modeling |
 | Pesigan-Russell-Chow-2025a | Pesigan-Russell-Chow-2025a | NULL | mediation, effect size, continuous-time, delta method, resampling (parametric bootstrap, Monte Carlo method) |
 | Pesigan-Russell-Chow-2025b | Pesigan-Russell-Chow-2025b | NULL | transdermal alcohol concentration, latent trait-state model, latent transition analysis, autoregression, ecological momentary assessment, alcohol use disorder risk, drinking, young adults |
 | Pesigan-Sun-Cheung-2023 | Pesigan-Sun-Cheung-2023 | r, r-packages | standardized regression coefficients, confidence intervals, delta method standard errors, heteroskedasticity-consistent standard errors, R package |
@@ -494,5 +498,3 @@
 | Tange-2021 | Tange-2021 | NULL | NULL |
 | Tange-2024 | Tange-2024 | NULL | NULL |
 | Waller-2022 | Waller-2022 | r, r-package | NULL |
-| Fisher-Reeves-Lawyer-etal-2017 | Fisher-Reeves-Lawyer-etal-2017 | NULL | NULL |
-| Russell-Odgers-2019 | Russell-Odgers-2019 | NULL | NULL |
