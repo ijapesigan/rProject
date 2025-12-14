@@ -68,7 +68,7 @@ Bib <- function(path,
         "No \".bib\" files found."
       )
       # nolint start
-      return(NULL) 
+      return(NULL)
       # nolint end
     }
   } else {
