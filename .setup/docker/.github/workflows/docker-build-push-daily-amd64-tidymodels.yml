@@ -2,7 +2,7 @@ name: Docker Build and Push Tidymodels [amd64] (Daily)
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 1 * * *"
   workflow_dispatch:
 
 jobs:

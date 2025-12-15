@@ -1,8 +1,10 @@
-name: Docker Build and Push [amd64/arm64] (Daily)
+name: Docker Build and Push [amd64/arm64]
 
 on:
-  schedule:
-    - cron: "30 3 * * *"
+  workflow_run:
+    workflows: [ "Make Project" ]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:

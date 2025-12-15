@@ -1,10 +1,12 @@
 # based on https://docs.docker.com/build/ci/github-actions/multi-platform/
 
-name: Docker Build and Push SSM [multi] (Daily)
+name: Docker Build and Push [multi]
 
 on:
-  schedule:
-    - cron: "0 20 * * *"
+  workflow_run:
+    workflows: [ "Make Project" ]
+    types:
+      - completed
   workflow_dispatch:
 
 env:
