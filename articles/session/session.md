@@ -37,7 +37,7 @@ sessionInfo()
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    
-#>  [5] xfun_0.54         cachem_1.1.0      knitr_1.50        htmltools_0.5.9  
+#>  [5] xfun_0.55         cachem_1.1.0      knitr_1.50        htmltools_0.5.9  
 #>  [9] rmarkdown_2.30    lifecycle_1.0.4   cli_3.6.5.9000    sass_0.4.10      
 #> [13] pkgdown_2.2.0     textshaping_1.0.4 jquerylib_0.1.4   systemfonts_1.3.1
 #> [17] compiler_4.5.2    tools_4.5.2       ragg_1.5.0        bslib_0.9.0      
@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/RtmpGcKcID/temp_libpatha2535c9045c"
+#> rProject          "rProject"          "/tmp/RtmpJOHxXL/temp_libpatha25716de196"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -470,7 +470,7 @@ installed.packages()
 #> betaMC            "1.3.3"       NA           
 #> betaNB            "1.0.6"       NA           
 #> betaSandwich      "1.0.8"       NA           
-#> BH                "1.87.0-1"    NA           
+#> BH                "1.90.0-1"    NA           
 #> bibtex            "0.5.1"       NA           
 #> BiocManager       "1.30.27"     NA           
 #> BiocVersion       "3.22.0"      NA           
@@ -640,7 +640,7 @@ installed.packages()
 #> mclust            "6.1.2"       NA           
 #> memoise           "2.0.1"       NA           
 #> metaSEM           "1.5.0"       NA           
-#> metaVAR           "0.0.0.9002"  NA           
+#> metaVAR           "0.0.0.9003"  NA           
 #> mice              "3.19.0"      NA           
 #> microbenchmark    "1.5.0"       NA           
 #> mime              "0.13"        NA           
@@ -817,7 +817,7 @@ installed.packages()
 #> withr             "3.0.2"       NA           
 #> workflows         "1.3.0"       NA           
 #> workflowsets      "1.1.1"       NA           
-#> xfun              "0.54"        NA           
+#> xfun              "0.55"        NA           
 #> xml2              "1.5.1"       NA           
 #> xmlparsedata      "1.0.5"       NA           
 #> xopen             "1.0.1"       NA           
@@ -826,7 +826,7 @@ installed.packages()
 #> yaml              "2.3.12"      NA           
 #> yardstick         "1.3.2"       NA           
 #> zip               "2.3.3"       NA           
-#> zoo               "1.8-14"      NA           
+#> zoo               "1.8-15"      NA           
 #> base              "4.5.2"       "base"       
 #> boot              "1.3-32"      "recommended"
 #> class             "7.3-23"      "recommended"
@@ -2429,7 +2429,7 @@ installed.packages()
 #> withr             "callr, DBI, knitr, methods, rlang, rmarkdown (>= 2.12),\nRSQLite, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> workflows         "butcher (>= 0.2.0), covr, dials (>= 1.0.0), glmnet, knitr,\nmagrittr, Matrix, methods, modeldata (>= 1.0.0), probably,\nrmarkdown, tailor (>= 0.1.0), testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> workflowsets      "covr, dials (>= 0.1.0), finetune, kknn, knitr, modeldata,\nrecipes (>= 1.1.0), rmarkdown, spelling, testthat (>= 3.0.0),\ntidyclust, yardstick (>= 1.3.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-#> xfun              "testit, parallel, codetools, methods, rstudioapi, tinytex (>=\n0.30), mime, litedown (>= 0.6), commonmark, knitr (>= 1.50),\nremotes, pak, curl, xml2, jsonlite, magick, yaml, data.table,\nqs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+#> xfun              "testit, parallel, codetools, methods, rstudioapi, tinytex (>=\n0.30), mime, litedown (>= 0.6), commonmark, knitr (>= 1.50),\nremotes, pak, curl, xml2, jsonlite, magick, yaml, data.table,\nqs2, qs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> xml2              "covr, curl, httr, knitr, mockery, rmarkdown, testthat (>=\n3.2.0), xslt"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> xmlparsedata      "covr, testthat, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> xopen             "ps, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
