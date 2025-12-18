@@ -10,6 +10,7 @@ on:
 env:
   DOCKER_HUB_REPO: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}
   GHCR_REPO: ghcr.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}
+  GITHUB_PAT: ${{ secrets.PAT }}
 
 jobs:
   build:
