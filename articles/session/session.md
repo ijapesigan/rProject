@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/RtmpJOHxXL/temp_libpatha25716de196"
+#> rProject          "rProject"          "/tmp/Rtmp2pAq2s/temp_libpatha254ad2dbfa"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -640,7 +640,7 @@ installed.packages()
 #> mclust            "6.1.2"       NA           
 #> memoise           "2.0.1"       NA           
 #> metaSEM           "1.5.0"       NA           
-#> metaVAR           "0.0.0.9003"  NA           
+#> metaVAR           "0.0.0.9004"  NA           
 #> mice              "3.19.0"      NA           
 #> microbenchmark    "1.5.0"       NA           
 #> mime              "0.13"        NA           
@@ -717,7 +717,7 @@ installed.packages()
 #> rcmdcheck         "1.4.0"       NA           
 #> RColorBrewer      "1.1-3"       NA           
 #> Rcpp              "1.1.0"       NA           
-#> RcppArmadillo     "15.2.2-1"    NA           
+#> RcppArmadillo     "15.2.3-1"    NA           
 #> RcppEigen         "0.3.4.0.2"   NA           
 #> RcppGSL           "0.3.13"      NA           
 #> RcppParallel      "5.1.11-1"    NA           
@@ -728,7 +728,7 @@ installed.packages()
 #> readxl            "1.4.5"       NA           
 #> recipes           "1.3.1"       NA           
 #> RefManageR        "1.4.0"       NA           
-#> reformulas        "0.4.2"       NA           
+#> reformulas        "0.4.3"       NA           
 #> rematch           "2.0.0"       NA           
 #> rematch2          "2.1.2"       NA           
 #> remotes           "2.5.0"       NA           
@@ -767,7 +767,7 @@ installed.packages()
 #> sfd               "0.1.0"       NA           
 #> shape             "1.4.6.1"     NA           
 #> shiny             "1.12.1"      NA           
-#> simStateSpace     "1.2.12.9000" NA           
+#> simStateSpace     "1.2.12.9001" NA           
 #> slider            "0.3.3"       NA           
 #> snow              "0.4-4"       NA           
 #> snowfall          "1.84-6.3"    NA           
