@@ -1,4 +1,4 @@
-year <- 2025
+year <- 2026
 author_text <- "Pesigan, I. J. A."
 pkg <- meta$Package
 title <- meta$Title
