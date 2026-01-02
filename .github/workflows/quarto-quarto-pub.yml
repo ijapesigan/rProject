@@ -18,6 +18,7 @@ jobs:
       group: quarto-quarto-pub-${{ github.event_name != 'pull_request' || github.run_id }}
     env:
       GITHUB_PAT: ${{ secrets.PAT }}
+      GITHUB_ACTIONS: "true"
       QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
     permissions:
       contents: write
