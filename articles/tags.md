@@ -498,3 +498,10 @@
 | Tange-2021 | Tange-2021 | NULL | NULL |
 | Tange-2024 | Tange-2024 | NULL | NULL |
 | Waller-2022 | Waller-2022 | r, r-package | NULL |
+| Viechtbauer-2007 | Viechtbauer-2007 | NULL | NULL |
+| Barlow-Allen-Choate-2016 | Barlow-Allen-Choate-2016 | NULL | NULL |
+| Jackson-White-Riley-2012 | Jackson-White-Riley-2012 | NULL | NULL |
+| Georgeson-AlvarezBartolo-MacKinnon-2025 | Georgeson-AlvarezBartolo-MacKinnon-2025 | mediation | mediation, cross-sectional mediation, sensitivity analysis |
+| Pesigan-Cheung-Wu-etal-2025o | Pesigan-Cheung-Wu-etal-2025o | NULL | model comparison, BIC, posterior probability, confidence set, structural equation modeling |
+| Pesigan-Russell-Chow-2025 | Pesigan-Russell-Chow-2025 | NULL | transdermal alcohol concentration, latent trait–state model, latent transition analysis, ecological momentary assessment, young adults |
+| Pesigan-Russell-Chow-2025o | Pesigan-Russell-Chow-2025o | NULL | mediation, effect size, continuous-time, delta method, resampling (parametric bootstrap, Monte Carlo method) |
