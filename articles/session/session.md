@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/Rtmpk79pim/temp_libpatha3331e744e0"
+#> rProject          "rProject"          "/tmp/Rtmpz6RCdi/temp_libpatha3333d0468f"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -767,7 +767,7 @@ installed.packages()
 #> sfd               "0.1.0"       NA           
 #> shape             "1.4.6.1"     NA           
 #> shiny             "1.12.1"      NA           
-#> simStateSpace     "1.2.12.9001" NA           
+#> simStateSpace     "1.2.13"      NA           
 #> slider            "0.3.3"       NA           
 #> snow              "0.4-4"       NA           
 #> snowfall          "1.84-6.3"    NA           
@@ -1170,7 +1170,7 @@ installed.packages()
 #> sfd               "R (>= 2.10), tibble"                                                                 
 #> shape             "R (>= 2.01)"                                                                         
 #> shiny             "methods, R (>= 3.0.2)"                                                               
-#> simStateSpace     "R (>= 3.5.0)"                                                                        
+#> simStateSpace     "R (>= 4.1.0)"                                                                        
 #> slider            "R (>= 4.0.0)"                                                                        
 #> snow              "R (>= 2.13.1), utils"                                                                
 #> snowfall          "R (>= 2.10), snow"                                                                   
@@ -1573,7 +1573,7 @@ installed.packages()
 #> sfd               "cli, rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> shape             "stats, graphics, grDevices"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> shiny             "bslib (>= 0.6.0), cachem (>= 1.1.0), cli, commonmark (>=\n2.0.0), fastmap (>= 1.1.1), fontawesome (>= 0.4.0), glue (>=\n1.3.2), grDevices, htmltools (>= 0.5.4), httpuv (>= 1.5.2),\njsonlite (>= 0.9.16), later (>= 1.0.0), lifecycle (>= 0.2.0),\nmime (>= 0.3), otel, promises (>= 1.5.0), R6 (>= 2.0), rlang\n(>= 0.4.10), sourcetools, tools, utils, withr, xtable"                                                                                                                                                                                                                                    
-#> simStateSpace     "Rcpp, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+#> simStateSpace     "Rcpp (>= 1.0.12), stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> slider            "cli (>= 3.6.1), rlang (>= 1.1.1), vctrs (>= 0.6.3), warp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> snow              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> snowfall          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
