@@ -33,7 +33,9 @@ Lint <- function(path) {
   )
   keep <- vapply(
     X = exclusions,
-    FUN = function(x) file.exists(x),
+    FUN = function(x) {
+      file.exists(x)
+    },
     FUN.VALUE = logical(1)
   )
   exclusions <- exclusions[keep]
