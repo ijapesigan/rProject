@@ -203,6 +203,7 @@
 | Swift-2000 | Swift-2000 | NULL | NULL |
 | Taylor-MacKinnon-Tein-2007 | Taylor-MacKinnon-Tein-2007 | mediation, mediation-bootstrap, mediation-jointtest | mediation, bootstrapping |
 | vanBuuren-Brand-GroothuisOudshoorn-etal-2006 | vanBuuren-Brand-GroothuisOudshoorn-etal-2006 | NULL | multivariate missing data, multiple imputation, distributional compatibility, Gibbs sampling, simulation, proper imputation |
+| Viechtbauer-2007 | Viechtbauer-2007 | NULL | NULL |
 | Wang-Zhang-2020 | Wang-Zhang-2020 | NULL | NULL |
 | Wills-Resko-Ainette-etal-2004 | Wills-Resko-Ainette-etal-2004 | NULL | NULL |
 | Yang-2006 | Yang-2006 | NULL | NULL |
@@ -234,6 +235,7 @@
 | Asparouhov-Hamaker-Muthen-2017 | Asparouhov-Hamaker-Muthen-2017 | NULL | Bayesian methods, dynamic factor analysis, intensive longitudinal data, time series analysis |
 | Asparouhov-Muthen-2018 | Asparouhov-Muthen-2018 | NULL | NULL |
 | Barker-Taylor-2014 | Barker-Taylor-2014 | NULL | habit, goal-directed behavior, prefrontal cortex, striatum, alcohol, addiction |
+| Barlow-Allen-Choate-2016 | Barlow-Allen-Choate-2016 | NULL | NULL |
 | Barnett-2014 | Barnett-2014 | NULL | NULL |
 | Bell-Jones-2014 | Bell-Jones-2014 | NULL | NULL |
 | Bernardo-Wang-Pesigan-etal-2017 | Bernardo-Wang-Pesigan-etal-2017 | NULL | NULL |
@@ -296,6 +298,7 @@
 | Houben-VanDenNoortgate-Kuppens-2015 | Houben-VanDenNoortgate-Kuppens-2015 | NULL | NULL |
 | Hunter-2017 | Hunter-2017 | ild, ild-software, sem, sem-software, ssm, ssm-software | state space model, software, Kalman filter, OpenMx |
 | Hussong-Jones-Stein-etal-2011 | Hussong-Jones-Stein-etal-2011 | NULL | NULL |
+| Jackson-White-Riley-2012 | Jackson-White-Riley-2012 | NULL | NULL |
 | Jensen-Turk-2014 | Jensen-Turk-2014 | NULL | NULL |
 | Jones-Waller-2013a | Jones-Waller-2013a | NULL | NULL |
 | Jones-Waller-2015 | Jones-Waller-2015 | standardized-regression, standardized-regression-hc | NULL |
@@ -420,7 +423,7 @@
 | Dora-Piccirillo-Foster-etal-2023 | Dora-Piccirillo-Foster-etal-2023 | NULL | NULL |
 | Driver-2025 | Driver-2025 | NULL | NULL |
 | Fridberg-Wang-Porges-2022 | Fridberg-Wang-Porges-2022 | NULL | NULL |
-| Georgeson-AlvarezBartolo-MacKinnon-2023 | Georgeson-AlvarezBartolo-MacKinnon-2023 | mediation | mediation, cross-sectional mediation, sensitivity analysis |
+| Georgeson-AlvarezBartolo-MacKinnon-2025 | Georgeson-AlvarezBartolo-MacKinnon-2025 | mediation | mediation, cross-sectional mediation, sensitivity analysis |
 | Gunn-Steingrimsson-Merrill-etal-2021 | Gunn-Steingrimsson-Merrill-etal-2021 | NULL | NULL |
 | Hamaker-Muthen-2020 | Hamaker-Muthen-2020 | NULL | NULL |
 | Hecht-Zitzmann-2020a | Hecht-Zitzmann-2020a | NULL | NULL |
@@ -450,9 +453,9 @@
 | Park-Fisher-Hunter-etal-2025 | Park-Fisher-Hunter-etal-2025 | NULL | NULL |
 | Pesigan-Cheung-2020 | Pesigan-Cheung-2020 | mediation, mediation-likelihood, mediation-bootstrap, mediation-montecarlo | mediation, nonnormal, confidence interval, structural equation modeling, bootstrapping |
 | Pesigan-Cheung-2024 | Pesigan-Cheung-2024 | mediation, mediation-missing, mediation-bootstrap, mediation-montecarlo, mediation-jointtest, sem, r, r-packages | Monte Carlo method, nonparametric bootstrap, indirect effect, mediation, missing completely at random, missing at random, full-information maximum likelihood, multiple imputation |
-| Pesigan-Cheung-Wu-etal-2025 | Pesigan-Cheung-Wu-etal-2025 | NULL | model comparison, BIC, posterior probability, confidence set, structural equation modeling |
-| Pesigan-Russell-Chow-2025a | Pesigan-Russell-Chow-2025a | NULL | mediation, effect size, continuous-time, delta method, resampling (parametric bootstrap, Monte Carlo method) |
-| Pesigan-Russell-Chow-2025b | Pesigan-Russell-Chow-2025b | NULL | transdermal alcohol concentration, latent trait–state model, latent transition analysis, ecological momentary assessment, young adults |
+| Pesigan-Cheung-Wu-etal-2025o | Pesigan-Cheung-Wu-etal-2025o | NULL | model comparison, BIC, posterior probability, confidence set, structural equation modeling |
+| Pesigan-Russell-Chow-2025 | Pesigan-Russell-Chow-2025 | NULL | transdermal alcohol concentration, latent trait–state model, latent transition analysis, ecological momentary assessment, young adults |
+| Pesigan-Russell-Chow-2025o | Pesigan-Russell-Chow-2025o | NULL | mediation, effect size, continuous-time, delta method, resampling (parametric bootstrap, Monte Carlo method) |
 | Pesigan-Sun-Cheung-2023 | Pesigan-Sun-Cheung-2023 | r, r-packages | standardized regression coefficients, confidence intervals, delta method standard errors, heteroskedasticity-consistent standard errors, R package |
 | Ray-Du-Grodin-etal-2020 | Ray-Du-Grodin-etal-2020 | NULL | NULL |
 | Rhemtulla-vanBork-Borsboom-2020 | Rhemtulla-vanBork-Borsboom-2020 | NULL | NULL |
@@ -498,10 +501,3 @@
 | Tange-2021 | Tange-2021 | NULL | NULL |
 | Tange-2024 | Tange-2024 | NULL | NULL |
 | Waller-2022 | Waller-2022 | r, r-package | NULL |
-| Viechtbauer-2007 | Viechtbauer-2007 | NULL | NULL |
-| Barlow-Allen-Choate-2016 | Barlow-Allen-Choate-2016 | NULL | NULL |
-| Jackson-White-Riley-2012 | Jackson-White-Riley-2012 | NULL | NULL |
-| Georgeson-AlvarezBartolo-MacKinnon-2025 | Georgeson-AlvarezBartolo-MacKinnon-2025 | mediation | mediation, cross-sectional mediation, sensitivity analysis |
-| Pesigan-Cheung-Wu-etal-2025o | Pesigan-Cheung-Wu-etal-2025o | NULL | model comparison, BIC, posterior probability, confidence set, structural equation modeling |
-| Pesigan-Russell-Chow-2025 | Pesigan-Russell-Chow-2025 | NULL | transdermal alcohol concentration, latent trait–state model, latent transition analysis, ecological momentary assessment, young adults |
-| Pesigan-Russell-Chow-2025o | Pesigan-Russell-Chow-2025o | NULL | mediation, effect size, continuous-time, delta method, resampling (parametric bootstrap, Monte Carlo method) |
