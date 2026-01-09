@@ -22,7 +22,16 @@ jobs:
             -path './.git/*'
             -path './inst/GPL3/LICENSE.md'
           )
-          mapfile -d '' files < <(find . -type f "${EXCLUDES[@]}" -prune -o -type f -print0)
+          OR_EXCLUDES=()
+          for p in "${EXCLUDES[@]}"; do
+            OR_EXCLUDES+=(-o "$p")
+          done
+          OR_EXCLUDES=("${OR_EXCLUDES[@]:1}")
+          mapfile -d '' files < <(
+            find . \
+            \( "${OR_EXCLUDES[@]}" \) -prune -o \
+            -type f -print0
+          )
           if grep -nH -I --color=always -P '[^\x00-\x7F]' "${files[@]}"; then
             echo
             echo "Non-ASCII characters found. Please remove/replace them."
