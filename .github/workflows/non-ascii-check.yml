@@ -19,18 +19,19 @@ jobs:
         run: |
           set -euo pipefail
           EXCLUDES=(
-            -path './.git/*'
-            -path './inst/GPL3/LICENSE.md'
+            "./.git"
+            "./.git/*"
+            "./inst/GPL3/LICENSE.md"
           )
           OR_EXCLUDES=()
-          for p in "${EXCLUDES[@]}"; do
-            OR_EXCLUDES+=(-o "$p")
+          for pat in "${EXCLUDES[@]}"; do
+            OR_EXCLUDES+=( -path "$pat" -o )
           done
-          OR_EXCLUDES=("${OR_EXCLUDES[@]:1}")
+          unset 'OR_EXCLUDES[-1]'  # drop trailing -o
           mapfile -d '' files < <(
             find . \
-            \( "${OR_EXCLUDES[@]}" \) -prune -o \
-            -type f -print0
+              \( "${OR_EXCLUDES[@]}" \) -prune -o \
+              -type f -print0
           )
           if grep -nH -I --color=always -P '[^\x00-\x7F]' "${files[@]}"; then
             echo
