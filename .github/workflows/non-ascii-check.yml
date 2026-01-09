@@ -1,4 +1,4 @@
-name: Non-ASCII check
+name: Non-ASCII Check
 
 on:
   workflow_run:
@@ -22,6 +22,7 @@ jobs:
             "./.git"
             "./.git/*"
             "./inst/GPL3/LICENSE.md"
+            "./README.md"
           )
           OR_EXCLUDES=()
           for pat in "${EXCLUDES[@]}"; do
