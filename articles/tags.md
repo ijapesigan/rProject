@@ -454,7 +454,7 @@
 | Pesigan-Cheung-2020 | Pesigan-Cheung-2020 | mediation, mediation-likelihood, mediation-bootstrap, mediation-montecarlo | mediation, nonnormal, confidence interval, structural equation modeling, bootstrapping |
 | Pesigan-Cheung-2024 | Pesigan-Cheung-2024 | mediation, mediation-missing, mediation-bootstrap, mediation-montecarlo, mediation-jointtest, sem, r, r-packages | Monte Carlo method, nonparametric bootstrap, indirect effect, mediation, missing completely at random, missing at random, full-information maximum likelihood, multiple imputation |
 | Pesigan-Cheung-Wu-etal-2025o | Pesigan-Cheung-Wu-etal-2025o | NULL | model comparison, BIC, posterior probability, confidence set, structural equation modeling |
-| Pesigan-Russell-Chow-2025 | Pesigan-Russell-Chow-2025 | NULL | transdermal alcohol concentration, latent trait–state model, latent transition analysis, ecological momentary assessment, young adults |
+| Pesigan-Russell-Chow-2025 | Pesigan-Russell-Chow-2025 | NULL | transdermal alcohol concentration, latent trait-state model, latent transition analysis, ecological momentary assessment, young adults |
 | Pesigan-Russell-Chow-2025o | Pesigan-Russell-Chow-2025o | NULL | mediation, effect size, continuous-time, delta method, resampling (parametric bootstrap, Monte Carlo method) |
 | Pesigan-Sun-Cheung-2023 | Pesigan-Sun-Cheung-2023 | r, r-packages | standardized regression coefficients, confidence intervals, delta method standard errors, heteroskedasticity-consistent standard errors, R package |
 | Ray-Du-Grodin-etal-2020 | Ray-Du-Grodin-etal-2020 | NULL | NULL |
