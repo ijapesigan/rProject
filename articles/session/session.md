@@ -42,7 +42,7 @@ sessionInfo()
 #> [13] pkgdown_2.2.0     textshaping_1.0.4 jquerylib_0.1.4   systemfonts_1.3.1
 #> [17] compiler_4.5.2    tools_4.5.2       ragg_1.5.0        bslib_0.9.0      
 #> [21] evaluate_1.0.5    yaml_2.3.12       otel_0.2.0        jsonlite_2.0.0   
-#> [25] rlang_1.1.6       fs_1.6.6          htmlwidgets_1.6.4
+#> [25] rlang_1.1.7       fs_1.6.6          htmlwidgets_1.6.4
 ```
 
 ## Packages
@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/RtmpbWVijN/temp_libpatha3312bf412a"
+#> rProject          "rProject"          "/tmp/Rtmp9c7541/temp_libpatha336d2ddaf1"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -586,7 +586,7 @@ installed.packages()
 #> hdrcde            "3.4"         NA           
 #> here              "1.0.2"       NA           
 #> highr             "0.11"        NA           
-#> Hmisc             "5.2-4"       NA           
+#> Hmisc             "5.2-5"       NA           
 #> hms               "1.1.4"       NA           
 #> htmlTable         "2.4.3"       NA           
 #> htmltools         "0.5.9"       NA           
@@ -616,7 +616,7 @@ installed.packages()
 #> Lahman            "13.0-0"      NA           
 #> languageserver    "0.3.16"      NA           
 #> later             "1.4.5"       NA           
-#> latex2exp         "0.9.6"       NA           
+#> latex2exp         "0.9.8"       NA           
 #> lava              "1.8.2"       NA           
 #> lavaan            "0.6-21"      NA           
 #> lazyeval          "0.2.2"       NA           
@@ -661,11 +661,11 @@ installed.packages()
 #> nycflights13      "1.0.2"       NA           
 #> OpenMx            "2.22.10"     NA           
 #> openssl           "2.3.4"       NA           
-#> ordinal           "2023.12-4.1" NA           
+#> ordinal           "2025.12-29"  NA           
 #> otel              "0.2.0"       NA           
 #> pan               "1.9"         NA           
 #> pander            "0.6.6"       NA           
-#> parallelly        "1.46.0"      NA           
+#> parallelly        "1.46.1"      NA           
 #> parsnip           "1.4.0"       NA           
 #> patchwork         "1.3.2"       NA           
 #> pbapply           "1.7-4"       NA           
@@ -695,7 +695,7 @@ installed.packages()
 #> proto             "1.0.0"       NA           
 #> ps                "1.9.1"       NA           
 #> psych             "2.5.6"       NA           
-#> purrr             "1.2.0"       NA           
+#> purrr             "1.2.1"       NA           
 #> qgraph            "1.9.8"       NA           
 #> qpdf              "1.4.1"       NA           
 #> quadprog          "1.5-8"       NA           
@@ -716,7 +716,7 @@ installed.packages()
 #> rbibutils         "2.4"         NA           
 #> rcmdcheck         "1.4.0"       NA           
 #> RColorBrewer      "1.1-3"       NA           
-#> Rcpp              "1.1.0"       NA           
+#> Rcpp              "1.1.1"       NA           
 #> RcppArmadillo     "15.2.3-1"    NA           
 #> RcppEigen         "0.3.4.0.2"   NA           
 #> RcppGSL           "0.3.13"      NA           
@@ -741,7 +741,7 @@ installed.packages()
 #> Rhdf5lib          "1.32.0"      NA           
 #> rhub              "2.0.1"       NA           
 #> rjags             "4-17"        NA           
-#> rlang             "1.1.6"       NA           
+#> rlang             "1.1.7"       NA           
 #> RMariaDB          "1.3.4"       NA           
 #> rmarkdown         "2.30"        NA           
 #> roxygen2          "7.3.3.9000"  NA           
@@ -752,7 +752,7 @@ installed.packages()
 #> rsample           "1.3.1"       NA           
 #> RSQLite           "2.4.5"       NA           
 #> rstan             "2.32.7"      NA           
-#> rstantools        "2.5.0"       NA           
+#> rstantools        "2.6.0"       NA           
 #> rstudioapi        "0.17.1"      NA           
 #> rversions         "3.0.0"       NA           
 #> rvest             "1.0.5"       NA           
@@ -767,7 +767,7 @@ installed.packages()
 #> sfd               "0.1.0"       NA           
 #> shape             "1.4.6.1"     NA           
 #> shiny             "1.12.1"      NA           
-#> simStateSpace     "1.2.14"      NA           
+#> simStateSpace     "1.2.14.9000" NA           
 #> slider            "0.3.3"       NA           
 #> snow              "0.4-4"       NA           
 #> snowfall          "1.84-6.3"    NA           
@@ -795,7 +795,7 @@ installed.packages()
 #> timechange        "0.3.0"       NA           
 #> timeDate          "4051.111"    NA           
 #> tinytex           "0.58.1"      NA           
-#> tseries           "0.10-58"     NA           
+#> tseries           "0.10-59"     NA           
 #> TTR               "0.24.4"      NA           
 #> tune              "2.0.1"       NA           
 #> tzdb              "0.5.0"       NA           
@@ -911,7 +911,7 @@ installed.packages()
 #> crayon            NA                                                                                    
 #> credentials       NA                                                                                    
 #> crosstalk         NA                                                                                    
-#> cTMed             "R (>= 3.5.0)"                                                                        
+#> cTMed             "R (>= 4.1.0)"                                                                        
 #> ctsem             "R (>= 4.2.0), Rcpp (>= 0.12.16)"                                                     
 #> curl              "R (>= 3.0.0)"                                                                        
 #> data.table        "R (>= 3.4.0)"                                                                        
@@ -1119,7 +1119,7 @@ installed.packages()
 #> rbibutils         "R (>= 2.10)"                                                                         
 #> rcmdcheck         NA                                                                                    
 #> RColorBrewer      "R (>= 2.0.0)"                                                                        
-#> Rcpp              NA                                                                                    
+#> Rcpp              "R (>= 3.5.0)"                                                                        
 #> RcppArmadillo     "R (>= 3.3.0)"                                                                        
 #> RcppEigen         "R (>= 3.6.0)"                                                                        
 #> RcppGSL           NA                                                                                    
@@ -1144,7 +1144,7 @@ installed.packages()
 #> Rhdf5lib          "R (>= 4.2.0)"                                                                        
 #> rhub              "R (>= 4.0)"                                                                          
 #> rjags             "R (>= 2.14.0), coda (>= 0.13)"                                                       
-#> rlang             "R (>= 3.5.0)"                                                                        
+#> rlang             "R (>= 4.0.0)"                                                                        
 #> RMariaDB          "R (>= 2.8.0)"                                                                        
 #> rmarkdown         "R (>= 3.0)"                                                                          
 #> roxygen2          "R (>= 3.6)"                                                                          
@@ -1314,7 +1314,7 @@ installed.packages()
 #> crayon            "grDevices, methods, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> credentials       "openssl (>= 1.3), sys (>= 2.1), curl, jsonlite, askpass"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> crosstalk         "htmltools (>= 0.3.6), jsonlite, lazyeval, R6"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-#> cTMed             "Rcpp, numDeriv, parallel, simStateSpace"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+#> cTMed             "Rcpp (>= 1.0.12), numDeriv, parallel, simStateSpace"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> ctsem             "cOde, data.table (>= 1.12.8), datasets, Deriv, expm, ggplot2,\ngraphics, grDevices, MASS, Matrix, methods, mize, mvtnorm,\nparallel, plyr, RcppParallel (>= 5.0.1), rstan (>= 2.26.0),\nrstantools (>= 2.3.0), stats, tibble, tools, utils, splines,\nparallelly"                                                                                                                                                                                                                                                                                                                                           
 #> curl              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> data.table        "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
@@ -1422,7 +1422,7 @@ installed.packages()
 #> Lahman            "dplyr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> languageserver    "callr (>= 3.0.0), collections (>= 0.3.0), fs (>= 1.3.1),\njsonlite (>= 1.6), lintr (>= 3.0.0), parallel, R6 (>= 2.4.1),\nroxygen2 (>= 7.0.0), stringi (>= 1.1.7), styler (>= 1.5.1),\ntools, utils, xml2 (>= 1.2.2), xmlparsedata (>= 1.0.3)"                                                                                                                                                                                                                                                                                                                                                               
 #> later             "Rcpp (>= 1.0.10), rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-#> latex2exp         "stringr, magrittr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+#> latex2exp         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> lava              "cli, future.apply, graphics, grDevices, methods, numDeriv,\nprogressr, stats, survival, SQUAREM, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> lavaan            "methods, stats4, stats, utils, graphics, MASS, mnormt,\npbivnorm, numDeriv, quadprog"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> lazyeval          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -2120,7 +2120,7 @@ installed.packages()
 #> crayon            "mockery, rstudioapi, testthat, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> credentials       "testthat, knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> crosstalk         "bslib, ggplot2, sass, shiny, testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-#> cTMed             "knitr, rmarkdown, testthat, expm, dynr, bootStateSpace"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+#> cTMed             "knitr, rmarkdown, testthat, expm, dynr, betaDelta,\nbootStateSpace"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> ctsem             "knitr, testthat, devtools, tinytex, lme4, shiny, gridExtra,\narules, collapse, qgam, papaja, future, future.apply, diagis"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> curl              "spelling, testthat (>= 1.0.0), knitr, jsonlite, later,\nrmarkdown, httpuv (>= 1.4.4), webutils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> data.table        "bit64 (>= 4.0.0), bit (>= 4.0.4), R.utils (>= 2.13.0), xts,\nzoo (>= 1.8-1), yaml, knitr, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
@@ -2228,7 +2228,7 @@ installed.packages()
 #> Lahman            "lattice, ggplot2, googleVis, data.table, vcd, reshape2,\ntidyr, knitr, rmarkdown, car, plyr, tidyverse"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> languageserver    "covr (>= 3.4.0), magrittr (>= 1.5), mockery (>= 0.4.2),\npacman, processx (>= 3.4.1), purrr (>= 0.3.3), testthat (>=\n2.1.0), withr (>= 2.3.0), rmarkdown (>= 2.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> later             "knitr, nanonext, promises, rmarkdown, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-#> latex2exp         "testthat, waldo, knitr, ggplot2, rmarkdown, purrr, tibble,\nreactable, htmltools, RCurl, rlang, dplyr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+#> latex2exp         "tools, testthat, waldo, knitr, ggplot2, rmarkdown, purrr,\ntibble, reactable, htmltools, RCurl, rlang, dplyr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> lava              "KernSmooth, Rgraphviz, data.table, ellipse, fields, geepack,\ngraph, knitr, rmarkdown, igraph (>= 0.6), lavaSearch2, lme4 (>=\n1.1.35.1), MASS, Matrix (>= 1.6.3), mets (>= 1.1), nlme,\noptimx, polycor, quantreg, rgl, targeted (>= 0.4), testthat (>=\n0.11), visNetwork"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> lavaan            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> lazyeval          "knitr, rmarkdown (>= 0.2.65), testthat, covr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
