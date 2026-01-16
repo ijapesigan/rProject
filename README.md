@@ -1,7 +1,7 @@
 rProject
 ================
 Ivan Jacob Agaloos Pesigan
-2026-01-13
+2026-01-16
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 
@@ -9,7 +9,7 @@ Ivan Jacob Agaloos Pesigan
 
 [![Make
 Project](https://github.com/ijapesigan/rProject/actions/workflows/make.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/make.yml)
-[![R-CMD-check](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yml)
+[![R-CMD-check-standard](https://github.com/ijapesigan/rProject/actions/workflows/check-standard.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/check-standard.yml)
 [![R Package Test
 Coverage](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml)
 [![Lint R
