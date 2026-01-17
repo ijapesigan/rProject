@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/RtmpFoJCtn/temp_libpatha3346a5d000"
+#> rProject          "rProject"          "/tmp/RtmpGEraQi/temp_libpatha3359c88a71"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -493,7 +493,7 @@ installed.packages()
 #> checkmate         "2.3.3"       NA           
 #> cli               "3.6.5.9000"  NA           
 #> clipr             "0.8.0"       NA           
-#> clock             "0.7.3"       NA           
+#> clock             "0.7.4"       NA           
 #> clusterGeneration "1.3.8"       NA           
 #> coda              "0.19-4.1"    NA           
 #> cOde              "1.1.1"       NA           
@@ -523,7 +523,7 @@ installed.packages()
 #> DiceDesign        "1.10"        NA           
 #> diffobj           "0.3.6"       NA           
 #> digest            "0.6.39"      NA           
-#> distributional    "0.5.0"       NA           
+#> distributional    "0.6.0"       NA           
 #> distro            "0.1.1"       NA           
 #> doBy              "4.7.1"       NA           
 #> docopt            "0.7.2"       NA           
@@ -794,7 +794,7 @@ installed.packages()
 #> tidyverse         "2.0.0"       NA           
 #> timechange        "0.3.0"       NA           
 #> timeDate          "4051.111"    NA           
-#> tinytex           "0.58.1"      NA           
+#> tinytex           "0.58.2"      NA           
 #> tseries           "0.10-59"     NA           
 #> TTR               "0.24.4"      NA           
 #> tune              "2.0.1"       NA           
@@ -811,7 +811,7 @@ installed.packages()
 #> viridisLite       "0.4.2"       NA           
 #> vroom             "1.6.7"       NA           
 #> waldo             "0.6.2"       NA           
-#> warp              "0.2.2"       NA           
+#> warp              "0.2.3"       NA           
 #> whisker           "0.4.1"       NA           
 #> whoami            "1.3.0"       NA           
 #> withr             "3.0.2"       NA           
@@ -926,7 +926,7 @@ installed.packages()
 #> DiceDesign        "R (>= 2.10)"                                                                         
 #> diffobj           "R (>= 3.1.0)"                                                                        
 #> digest            "R (>= 3.3.0)"                                                                        
-#> distributional    NA                                                                                    
+#> distributional    "R (>= 4.0.0)"                                                                        
 #> distro            NA                                                                                    
 #> doBy              "R (>= 4.2.0), methods"                                                               
 #> docopt            NA                                                                                    
@@ -2135,7 +2135,7 @@ installed.packages()
 #> DiceDesign        "rgl, randtoolbox, lattice"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> diffobj           "knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> digest            "tinytest, simplermarkdown, rbenchmark"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-#> distributional    "testthat (>= 2.1.0), covr, mvtnorm, actuar (>= 2.0.0), evd,\nggdist, ggplot2, gk"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+#> distributional    "testthat (>= 2.1.0), covr, mvtnorm, actuar (>= 2.0.0), evd,\nggdist, ggplot2, gk, pkgdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> distro            "testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> doBy              "geepack, knitr, lme4, markdown, rmarkdown, multcomp, pbkrtest\n(>= 0.5.2), survival, testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> docopt            "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
