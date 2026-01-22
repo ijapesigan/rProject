@@ -34,6 +34,7 @@ BibLib <- function(path) {
     "lib-2000-2009-article",
     "lib-1990-1999-article",
     "lib-1990-1999-book",
+    "lib-1990-1999-manual",
     "lib-1980-1989-article",
     "lib-1980-1989-book",
     "lib-1970-1979-article",
