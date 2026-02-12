@@ -18,10 +18,9 @@ Site <- function(path) {
     installed <- utils::installed.packages()
     pkg_installed <- installed[, "Package"]
     if (!("devtools" %in% pkg_installed)) {
-      remotes::install_github(
-        repo = "r-lib/devtools",
-        lib = lib,
-        quiet = TRUE
+      pak::pak(
+        pkg = "r-lib/devtools",
+        lib = lib
       )
     }
     if (!("pkgdown" %in% pkg_installed)) {

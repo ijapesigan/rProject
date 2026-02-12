@@ -45,10 +45,9 @@ PkgDevelGitHub <- function(path) {
           "\n"
         )
       )
-      remotes::install_github(
+      pak::pak(
         repo = pkg[i],
-        lib = lib,
-        quiet = TRUE
+        lib = lib
       )
     }
   }

@@ -68,11 +68,13 @@ PkgProjectGitHub <- function(path,
             "\n"
           )
         )
-        remotes::install_github(
-          repo = pkg[i],
-          ref = ref[i],
-          lib = lib,
-          quiet = TRUE
+        pak::pak(
+          pkg = paste0(
+            pkg[i],
+            "@",
+            ref[i]
+          ),
+          lib = lib
         )
       }
     }

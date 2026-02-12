@@ -31,10 +31,9 @@ TinyTex <- function(path,
     }
   }
   if (run) {
-    remotes::install_github(
-      repo = "rstudio/tinytex",
-      lib = lib,
-      quiet = TRUE
+    pak::pak(
+      pkg = "rstudio/tinytex",
+      lib = lib
     )
   }
   if (!tinytex::is_tinytex()) {
