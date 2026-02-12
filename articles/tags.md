@@ -22,6 +22,7 @@
 | Cronbach-Furby-1970 | Cronbach-Furby-1970 | NULL | NULL |
 | Efron-1979a | Efron-1979a | NULL | bootstrap, discriminant analysis, error rate estimation, jackknife, nonlinear regression, nonparametric variance estimation, resampling, subsample values |
 | Efron-1979b | Efron-1979b | NULL | NULL |
+| Efron-Morris-1975 | Efron-Morris-1975 | NULL | NULL |
 | Engel-1977 | Engel-1977 | NULL | NULL |
 | Hinkley-1977 | Hinkley-1977 | regression, regression-hc | jackknife, linear model, regression, residual, robustness, |
 | Horn-Horn-Duncan-1975 | Horn-Horn-Duncan-1975 | regression, regression-hc | NULL |
@@ -34,16 +35,20 @@
 | Barnard-Collins-Farewell-etal-1981 | Barnard-Collins-Farewell-etal-1981 | NULL | NULL |
 | Baron-Kenny-1986 | Baron-Kenny-1986 | mediation, mediation-causalsteps | NULL |
 | Bentler-Lee-1983 | Bentler-Lee-1983 | NULL | NULL |
+| Bolger-DeLongis-Kessler-etal-1989 | Bolger-DeLongis-Kessler-etal-1989 | NULL | NULL |
 | Bollen-1987 | Bollen-1987 | NULL | NULL |
 | Browne-1984 | Browne-1984 | NULL | NULL |
 | Chesher-Jewitt-1987 | Chesher-Jewitt-1987 | regression, regression-hc | NULL |
 | Cloninger-1987 | Cloninger-1987 | NULL | NULL |
+| Cohen-Kamarck-Mermelstein-1983 | Cohen-Kamarck-Mermelstein-1983 | NULL | NULL |
 | Cox-Klinger-1988 | Cox-Klinger-1988 | NULL | NULL |
+| Csikszentmihalyi-Larson-1987 | Csikszentmihalyi-Larson-1987 | NULL | NULL |
 | Cudeck-1989 | Cudeck-1989 | NULL | NULL |
 | Efron-1981a | Efron-1981a | NULL | bootstrap, jackknife, delta method, nonparametric confidence intervals, nonparametric standard errors |
 | Efron-1981b | Efron-1981b | NULL | NULL |
 | Efron-1987 | Efron-1987 | NULL | resampling methods, approximate confidence intervals, transformations, nonparametric intervals, second-order theory, skewness corrections |
 | Efron-1988 | Efron-1988 | NULL | NULL |
+| Gingerich-1984 | Gingerich-1984 | NULL | NULL |
 | Gollob-Reichardt-1987 | Gollob-Reichardt-1987 | NULL | NULL |
 | James-Brett-1984 | James-Brett-1984 | mediation, mediation-causalsteps | NULL |
 | Judd-Kenny-1981 | Judd-Kenny-1981 | mediation, mediation-causalsteps | NULL |
@@ -56,25 +61,32 @@
 | Newey-West-1987 | Newey-West-1987 | NULL | NULL |
 | Rasmussen-1987 | Rasmussen-1987 | NULL | NULL |
 | Rogosa-1980 | Rogosa-1980 | NULL | NULL |
+| Russell-1980 | Russell-1980 | NULL | NULL |
 | Schenker-1987 | Schenker-1987 | NULL | NULL |
 | Singh-1981 | Singh-1981 | NULL | NULL |
 | Sobel-1982 | Sobel-1982 | mediation, mediation-delta | NULL |
 | Sobel-1986 | Sobel-1986 | mediation, mediation-delta | NULL |
 | Sobel-1987 | Sobel-1987 | mediation, mediation-delta | NULL |
 | Venzon-Moolgavkar-1988 | Venzon-Moolgavkar-1988 | NULL | confidence intervals, profile likelihood |
+| Watson-Clark-Tellegen-1988 | Watson-Clark-Tellegen-1988 | NULL | NULL |
 | White-1980 | White-1980 | regression, regression-hc | NULL |
 | Bergstrom-1984 | Bergstrom-1984 | NULL | NULL |
+| Bollen-1989 | Bollen-1989 | NULL | NULL |
 | Cohen-1988 | Cohen-1988 | NULL | Social sciences–Statistical methods, Probabilities, Statistical power analysis |
+| Hedges-Olkin-1985 | Hedges-Olkin-1985 | NULL | NULL |
 | NationalResearchCouncil-1982 | NationalResearchCouncil-1982 | data | NULL |
 | Rubin-1987 | Rubin-1987 | Lib-Missing-Data-Books | Multiple imputation (Statistics), Nonresponse (Statistics), Social surveys–Response rate |
 | Serlin-Lapsley-1985 | Serlin-Lapsley-1985 | robustness | NULL |
 | Andrews-1991 | Andrews-1991 | regression, regression-hc | NULL |
 | Andrews-Monahan-1992 | Andrews-Monahan-1992 | regression, regression-hc | NULL |
+| Berkey-Hoaglin-AntczakBouckoms-etal-1998 | Berkey-Hoaglin-AntczakBouckoms-etal-1998 | NULL | NULL |
+| Block-Kremen-1996 | Block-Kremen-1996 | NULL | NULL |
 | Bollen-Stine-1990 | Bollen-Stine-1990 | NULL | NULL |
 | Celeux-Soromenho-1996 | Celeux-Soromenho-1996 | NULL | NULL |
 | Clark-Watson-1991 | Clark-Watson-1991 | NULL | NULL |
 | Collins-Wugalter-1992 | Collins-Wugalter-1992 | NULL | NULL |
 | Cooper-Frone-Russell-etal-1995 | Cooper-Frone-Russell-etal-1995 | NULL | NULL |
+| DeNeve-Cooper-1998 | DeNeve-Cooper-1998 | NULL | NULL |
 | Dishion-McMahon-1998 | Dishion-McMahon-1998 | NULL | NULL |
 | Dumenci-Windle-1996 | Dumenci-Windle-1996 | NULL | NULL |
 | Eilers-Marx-1996 | Eilers-Marx-1996 | NULL | NULL |
@@ -94,6 +106,7 @@
 | Shapiro-Browne-1990 | Shapiro-Browne-1990 | NULL | NULL |
 | Stoffer-Wall-1991 | Stoffer-Wall-1991 | NULL | NULL |
 | Tibshirani-1996 | Tibshirani-1996 | NULL | NULL |
+| vanHouwelingen-Zwinderman-Stijnen-1993 | vanHouwelingen-Zwinderman-Stijnen-1993 | NULL | NULL |
 | VonKorff-Simon-1996 | VonKorff-Simon-1996 | NULL | NULL |
 | Wechsler-Dowdall-Davenport-etal-1995 | Wechsler-Dowdall-Davenport-etal-1995 | NULL | NULL |
 | Arbuckle-1996 | Arbuckle-1996 | NULL | NULL |
@@ -108,10 +121,14 @@
 | Harvey-1990 | Harvey-1990 | NULL | NULL |
 | Kenny-Kashy-Bolger-1998 | Kenny-Kashy-Bolger-1998 | NULL | NULL |
 | Kim-Nelson-1999 | Kim-Nelson-1999 | NULL | Economics–Mathematical models, State-space methods, Heteroscedasticity, Sampling (Statistics), Econometrics |
+| Nesselroade-1991 | Nesselroade-1991 | NULL | NULL |
 | Ollendick-Prinz-1996 | Ollendick-Prinz-1996 | NULL | NULL |
 | Robinson-Riley-1999 | Robinson-Riley-1999 | NULL | NULL |
+| Salovey-Mayer-Goldman-etal-1995 | Salovey-Mayer-Goldman-etal-1995 | NULL | NULL |
 | Schafer-1997 | Schafer-1997 | NULL | NULL |
 | Wills-Filer-1996 | Wills-Filer-1996 | NULL | NULL |
+| Costa-McCrae-1992 | Costa-McCrae-1992 | NULL | NULL |
+| Almeida-2005 | Almeida-2005 | NULL | NULL |
 | Andrews-2000 | Andrews-2000 | NULL | NULL |
 | Arnett-2005 | Arnett-2005 | NULL | NULL |
 | Baker-Piper-McCarthy-etal-2004 | Baker-Piper-McCarthy-etal-2004 | NULL | NULL |
@@ -173,6 +190,7 @@
 | Krull-MacKinnon-2001 | Krull-MacKinnon-2001 | NULL | NULL |
 | Leventhal-BrooksGunn-2000 | Leventhal-BrooksGunn-2000 | NULL | NULL |
 | Long-Ervin-2000 | Long-Ervin-2000 | regression, regression-hc | NULL |
+| Lucas-Fujita-2000 | Lucas-Fujita-2000 | NULL | NULL |
 | Ludtke-Marsh-Robitzsch-etal-2008 | Ludtke-Marsh-Robitzsch-etal-2008 | NULL | NULL |
 | MacKinnon-Fritz-Williams-etal-2007 | MacKinnon-Fritz-Williams-etal-2007 | mediation, mediation-prodclin | NULL |
 | MacKinnon-Krull-Lockwood-2000 | MacKinnon-Krull-Lockwood-2000 | NULL | NULL |
@@ -200,9 +218,11 @@
 | Schafer-Graham-2002 | Schafer-Graham-2002 | NULL | NULL |
 | Selig-Preacher-2009 | Selig-Preacher-2009 | NULL | NULL |
 | Serlin-2000 | Serlin-2000 | robustness | NULL |
+| Shadish-Rindskopf-Hedges-2008 | Shadish-Rindskopf-Hedges-2008 | NULL | NULL |
 | Shiffman-2009 | Shiffman-2009 | NULL | ecological momentary assessment, substance use, drug use, tobacco, alcohol |
 | Shiffman-Stone-Hufford-2008 | Shiffman-Stone-Hufford-2008 | NULL | diary, experience sampling, real-time data capture |
 | Shrout-Bolger-2002 | Shrout-Bolger-2002 | mediation, mediation-bootstrap | NULL |
+| Sliwinski-2008 | Sliwinski-2008 | NULL | NULL |
 | Squeglia-Jacobus-Tapert-2009 | Squeglia-Jacobus-Tapert-2009 | NULL | NULL |
 | Stattin-Kerr-2000 | Stattin-Kerr-2000 | NULL | NULL |
 | Staudenmayer-Buonaccorsi-2005 | Staudenmayer-Buonaccorsi-2005 | NULL | NULL |
@@ -210,6 +230,8 @@
 | Taylor-MacKinnon-Tein-2007 | Taylor-MacKinnon-Tein-2007 | mediation, mediation-bootstrap, mediation-jointtest | mediation, bootstrapping |
 | Thompson-Higgins-2002 | Thompson-Higgins-2002 | NULL | NULL |
 | vanBuuren-Brand-GroothuisOudshoorn-etal-2006 | vanBuuren-Brand-GroothuisOudshoorn-etal-2006 | NULL | multivariate missing data, multiple imputation, distributional compatibility, Gibbs sampling, simulation, proper imputation |
+| VandenNoortgate-Onghena-2008 | VandenNoortgate-Onghena-2008 | NULL | NULL |
+| vanHouwelingen-Arends-Stijnen-2002 | vanHouwelingen-Arends-Stijnen-2002 | NULL | NULL |
 | Viechtbauer-2007 | Viechtbauer-2007 | NULL | NULL |
 | Wang-Zhang-2020 | Wang-Zhang-2020 | NULL | NULL |
 | Wills-Resko-Ainette-etal-2004 | Wills-Resko-Ainette-etal-2004 | NULL | NULL |
@@ -224,6 +246,7 @@
 | Collins-Sayer-2002 | Collins-Sayer-2002 | NULL | NULL |
 | Feitelson-Rudolph-Schwiegelshohn-2003 | Feitelson-Rudolph-Schwiegelshohn-2003 | NULL | NULL |
 | Fernandez-2002 | Fernandez-2002 | NULL | NULL |
+| Gelman-Hill-2006 | Gelman-Hill-2006 | NULL | NULL |
 | Hektner-Schmidt-Csikszentmihalyi-2007 | Hektner-Schmidt-Csikszentmihalyi-2007 | NULL | NULL |
 | Hershberger-Moskowitz-2002 | Hershberger-Moskowitz-2002 | NULL | NULL |
 | Iacus-2008 | Iacus-2008 | NULL | NULL |
@@ -239,12 +262,13 @@
 | Aalen-Roysland-Gran-etal-2016 | Aalen-Roysland-Gran-etal-2016 | NULL | NULL |
 | Antonakis-Bastardoz-Ronkko-2019 | Antonakis-Bastardoz-Ronkko-2019 | NULL | NULL |
 | Appelbaum-Cooper-Kline-etal-2018 | Appelbaum-Cooper-Kline-etal-2018 | NULL | NULL |
-| Asparouhov-Hamaker-Muthen-2017 | Asparouhov-Hamaker-Muthen-2017 | NULL | Bayesian methods, dynamic factor analysis, intensive longitudinal data, time series analysis |
+| Asparouhov-Hamaker-Muthen-2018 | Asparouhov-Hamaker-Muthen-2018 | NULL | Bayesian methods, dynamic factor analysis, intensive longitudinal data, time series analysis |
 | Asparouhov-Muthen-2018 | Asparouhov-Muthen-2018 | NULL | NULL |
 | Barker-Taylor-2014 | Barker-Taylor-2014 | NULL | habit, goal-directed behavior, prefrontal cortex, striatum, alcohol, addiction |
 | Barlow-Allen-Choate-2016 | Barlow-Allen-Choate-2016 | NULL | NULL |
 | Barnett-2014 | Barnett-2014 | NULL | NULL |
 | Bell-Jones-2014 | Bell-Jones-2014 | NULL | NULL |
+| Beltz-Wright-Sprague-etal-2016 | Beltz-Wright-Sprague-etal-2016 | NULL | NULL |
 | Bernardo-Wang-Pesigan-etal-2017 | Bernardo-Wang-Pesigan-etal-2017 | NULL | NULL |
 | Biesanz-Falk-Savalei-2010 | Biesanz-Falk-Savalei-2010 | mediation, mediation-bootstrap, mediation-bayesian | NULL |
 | Blanca-Arnau-LopezMontiel-etal-2013 | Blanca-Arnau-LopezMontiel-etal-2013 | NULL | NULL |
@@ -260,6 +284,7 @@
 | Cheung-2013 | Cheung-2013 | NULL | NULL |
 | Chow-Ho-Hamaker-etal-2010 | Chow-Ho-Hamaker-etal-2010 | ild, sem, ssm | NULL |
 | Chow-Witkiewitz-Grasman-etal-2015 | Chow-Witkiewitz-Grasman-etal-2015 | NULL | NULL |
+| Chow-Zhang-2013 | Chow-Zhang-2013 | NULL | NULL |
 | Chow-Zu-Shifren-etal-2011 | Chow-Zu-Shifren-etal-2011 | NULL | NULL |
 | Clapp-Madden-Mooney-etal-2017 | Clapp-Madden-Mooney-etal-2017 | NULL | NULL |
 | Crocetti-Hale-Dimitrova-etal-2015 | Crocetti-Hale-Dimitrova-etal-2015 | NULL | NULL |
@@ -284,6 +309,8 @@
 | Epskamp-Lourens-Mottus-etal-2018 | Epskamp-Lourens-Mottus-etal-2018 | NULL | time-series analysis, multilevel modeling, multivariate analysis, exploratory-data analysis, network modeling |
 | Evans-Kim-2012 | Evans-Kim-2012 | NULL | NULL |
 | Finlay-Ram-Maggs-etal-2012 | Finlay-Ram-Maggs-etal-2012 | NULL | NULL |
+| Fisher-Medaglia-Jeronimus-2018 | Fisher-Medaglia-Jeronimus-2018 | NULL | NULL |
+| Fisher-Newman-Molenaar-2011 | Fisher-Newman-Molenaar-2011 | NULL | NULL |
 | Fisher-Reeves-Lawyer-etal-2017 | Fisher-Reeves-Lawyer-etal-2017 | NULL | NULL |
 | Fredrickson-Boulton-Firestine-etal-2017 | Fredrickson-Boulton-Firestine-etal-2017 | NULL | NULL |
 | Fritz-Taylor-MacKinnon-2012 | Fritz-Taylor-MacKinnon-2012 | mediation, mediation-bootstrap | NULL |
@@ -291,6 +318,7 @@
 | George-Russell-Piontak-etal-2017 | George-Russell-Piontak-etal-2017 | NULL | NULL |
 | Greenfield-Ye-Bond-etal-2014 | Greenfield-Ye-Bond-etal-2014 | NULL | NULL |
 | Gu-Preacher-Ferrer-2014 | Gu-Preacher-Ferrer-2014 | NULL | NULL |
+| Guo-Zhu-Chow-etal-2012 | Guo-Zhu-Chow-etal-2012 | NULL | NULL |
 | HaanRietdijk-Voelkle-Keijsers-Hamaker-2017 | HaanRietdijk-Voelkle-Keijsers-Hamaker-2017 | NULL | NULL |
 | Hamaker-Asparouhov-Brose-etal-2018 | Hamaker-Asparouhov-Brose-etal-2018 | NULL | NULL |
 | Hamaker-Ceulemans-Grasman-etal-2015 | Hamaker-Ceulemans-Grasman-etal-2015 | NULL | NULL |
@@ -306,6 +334,7 @@
 | Houben-VanDenNoortgate-Kuppens-2015 | Houben-VanDenNoortgate-Kuppens-2015 | NULL | NULL |
 | Hunter-2017 | Hunter-2017 | ild, ild-software, sem, sem-software, ssm, ssm-software | state space model, software, Kalman filter, OpenMx |
 | Hussong-Jones-Stein-etal-2011 | Hussong-Jones-Stein-etal-2011 | NULL | NULL |
+| Hutton-Chow-2014 | Hutton-Chow-2014 | NULL | NULL |
 | Jackson-White-Riley-2012 | Jackson-White-Riley-2012 | NULL | NULL |
 | Jensen-Turk-2014 | Jensen-Turk-2014 | NULL | NULL |
 | Jones-Waller-2013a | Jones-Waller-2013a | NULL | NULL |
@@ -326,9 +355,11 @@
 | Lachowicz-Preacher-Kelley-2018 | Lachowicz-Preacher-Kelley-2018 | NULL | NULL |
 | Leffingwell-Cooney-Murphy-etal-2012 | Leffingwell-Cooney-Murphy-etal-2012 | NULL | NULL |
 | Levitt-Bamberg-Creswell-etal-2018 | Levitt-Bamberg-Creswell-etal-2018 | NULL | NULL |
+| Liu-Xie-Lou-2019 | Liu-Xie-Lou-2019 | NULL | NULL |
 | Maxwell-Cole-Mitchell-2011 | Maxwell-Cole-Mitchell-2011 | NULL | NULL |
 | Merkel-2014 | Merkel-2014 | container, container-docker | NULL |
 | Miocevic-Gonzalez-Valente-etal-2017 | Miocevic-Gonzalez-Valente-etal-2017 | NULL | NULL |
+| Moeyaert-Ugille-Beretvas-2016 | Moeyaert-Ugille-Beretvas-2016 | NULL | NULL |
 | Molenaar-2017 | Molenaar-2017 | NULL | Dynamic factor analysis, Granger causality, hybrid models, lagged factorloadings, matrix polynomials, state-space models, vector autoregressive models |
 | Moneta-Chlas-Entner-etal-2011 | Moneta-Chlas-Entner-etal-2011 | NULL | causal inference, econometric time series, SVAR, graphical causal models, independent component analysis, conditional independence tests |
 | Neale-Hunter-Pritikin-etal-2015 | Neale-Hunter-Pritikin-etal-2015 | r, r-packages, sem, sem-software | NULL |
@@ -369,6 +400,7 @@
 | Tibshirani-2011 | Tibshirani-2011 | NULL | NULL |
 | Tofighi-Kelley-2019 | Tofighi-Kelley-2019 | mediation, mediation-bayesian, mediation-bootstrap, mediation-likelihood, mediation-montecarlo | indirect effect, confidence interval, sequential mediation, Bayesian credible interval |
 | Tofighi-MacKinnon-2015 | Tofighi-MacKinnon-2015 | mediation, mediation-bootstrap, mediation-delta, mediation-montecarlo | confidence interval, mediation analysis, Monte Carlo |
+| Trull-EbnerPriemer-2013 | Trull-EbnerPriemer-2013 | NULL | NULL |
 | Usami-Murayama-Hamaker-2019 | Usami-Murayama-Hamaker-2019 | NULL | NULL |
 | vanBuuren-GroothuisOudshoorn-2011 | vanBuuren-GroothuisOudshoorn-2011 | NULL | MICE, multiple imputation, chained equations, fully conditional specification, Gibbs sampler, predictor selection, passive imputation, R |
 | VerHoef-2012 | VerHoef-2012 | NULL | NULL |
@@ -378,6 +410,7 @@
 | Wang-2018 | Wang-2018 | NULL | NULL |
 | Wichers-Groot-Psychosystems-2016 | Wichers-Groot-Psychosystems-2016 | NULL | NULL |
 | Wu-Jia-2013 | Wu-Jia-2013 | mediation, mediation-missing, mediation-bootstrap | NULL |
+| You-Hunter-Chen-etal-2019 | You-Hunter-Chen-etal-2019 | NULL | NULL |
 | Yu-Pesigan-Zhang-etal-2019 | Yu-Pesigan-Zhang-etal-2019 | NULL | NULL |
 | Yu-Wu-Pesigan-2015 | Yu-Wu-Pesigan-2015 | NULL | NULL |
 | Yuan-Chan-2011 | Yuan-Chan-2011 | standardized-regression, standardized-regression-delta, standardized-regression-normal, standardized-regression-adf | asymptotics, bias, consistency, Monte Carlo |
@@ -414,18 +447,22 @@
 | vanMontfort-Oud-Satorra-2010 | vanMontfort-Oud-Satorra-2010 | NULL | NULL |
 | vanMontfort-Oud-Voelkle-2018 | vanMontfort-Oud-Voelkle-2018 | NULL | NULL |
 | Zhang-Wang-Tong-2015 | Zhang-Wang-Tong-2015 | mediation, mediation-missing, mediation-bootstrap | mediation analysis, missing data, multiple imputation, bootstrap |
+| ADID-2010 | ADID-2010 | NULL | NULL |
 | Hesterberg-2014 | Hesterberg-2014 | NULL | teaching, bootstrap, permutation test, randomization test |
 | Jones-Waller-2013b | Jones-Waller-2013b | NULL | NULL |
 | Muthen-Muthen-2017 | Muthen-Muthen-2017 | sem, sem-software | NULL |
 | Adolf-Loossens-Tuerlinckx-etal-2021 | Adolf-Loossens-Tuerlinckx-etal-2021 | NULL | NULL |
 | Ash-Gueorguieva-Barnett-etal-2022 | Ash-Gueorguieva-Barnett-etal-2022 | NULL | NULL |
+| Baek-Luo-Lam-2023 | Baek-Luo-Lam-2023 | NULL | NULL |
 | Bakk-Kuha-2020 | Bakk-Kuha-2020 | NULL | NULL |
+| Chen-Pustejovsky-2024 | Chen-Pustejovsky-2024 | NULL | NULL |
 | Cheung-2021 | Cheung-2021 | NULL | heterogeneity, gold standard, outcome variable, datasets, mediation analysis |
 | Cheung-Cheung-Lau-etal-2022 | Cheung-Cheung-Lau-etal-2022 | NULL | NULL |
 | Cheung-Pesigan-2023a | Cheung-Pesigan-2023a | NULL | influential cases, outliers, structural equation modeling, AMOS, sensitivity analysis, SPSS |
 | Cheung-Pesigan-2023b | Cheung-Pesigan-2023b | r, r-packages, sem, sem-software, sem-likelihood | confidence interval, likelihood-based confidence interval, robust method, structural equation modeling |
 | Cheung-Pesigan-Vong-2023 | Cheung-Pesigan-Vong-2023 | NULL | bootstrapping, effect sizes, confidence intervals |
 | Courtney-Russell-2021 | Courtney-Russell-2021 | NULL | NULL |
+| Declercq-Jamshidi-FernandezCastilla-2020 | Declercq-Jamshidi-FernandezCastilla-2020 | NULL | NULL |
 | DeMartini-Gueorguieva-Taylor-etal-2022 | DeMartini-Gueorguieva-Taylor-etal-2022 | NULL | alcohol, alcohol habit, Bayesian modeling, habit learning, heavy drinking |
 | Didier-King-Polley-etal-2023 | Didier-King-Polley-etal-2023 | NULL | NULL |
 | Dora-Piccirillo-Foster-etal-2023 | Dora-Piccirillo-Foster-etal-2023 | NULL | NULL |
@@ -438,9 +475,11 @@
 | Hecht-Zitzmann-2020a | Hecht-Zitzmann-2020a | NULL | NULL |
 | Hecht-Zitzmann-2020b | Hecht-Zitzmann-2020b | NULL | NULL |
 | Hecht-Zitzmann-2021 | Hecht-Zitzmann-2021 | NULL | NULL |
+| Kuiper-Ryan-2020 | Kuiper-Ryan-2020 | NULL | NULL |
 | Lee-Gates-2023 | Lee-Gates-2023 | NULL | NULL |
+| Li-Oravecz-Ji-etal-2024 | Li-Oravecz-Ji-etal-2024 | NULL | NULL |
 | Li-Oravecz-Zhou-etal-2022 | Li-Oravecz-Zhou-etal-2022 | bayesian, ild | Bayesian zero-inflated Poisson model, forecast, intensive longitudinal data, regime-switching, spatial data, substance use |
-| Li-Wood-Ji-etal-2021 | Li-Wood-Ji-etal-2021 | NULL | multilevel vector autoregressive models, Bayesian modeling, missing data, affective dynamics |
+| Li-Wood-Ji-etal-2022 | Li-Wood-Ji-etal-2022 | NULL | multilevel vector autoregressive models, Bayesian modeling, missing data, affective dynamics |
 | Lohmann-Zitzmann-Voelkle-etal-2022 | Lohmann-Zitzmann-Voelkle-etal-2022 | NULL | NULL |
 | Loossens-Mestdagh-Dejonckheere-etal-2020 | Loossens-Mestdagh-Dejonckheere-etal-2020 | NULL | NULL |
 | Loossens-Tuerlinckx-Verdonck-2021 | Loossens-Tuerlinckx-Verdonck-2021 | NULL | NULL |
@@ -456,7 +495,9 @@
 | Oh-Hunter-Chow-2025 | Oh-Hunter-Chow-2025 | NULL | NULL |
 | Orth-Clark-Donnellan-etal-2021 | Orth-Clark-Donnellan-etal-2021 | NULL | NULL |
 | Orzek-Voelkle-2023 | Orzek-Voelkle-2023 | NULL | NULL |
+| Ou-Hunter-Lu-etal-2023 | Ou-Hunter-Lu-etal-2023 | NULL | NULL |
 | Park-Chow-Epskamp-etal-2024 | Park-Chow-Epskamp-etal-2024 | NULL | NULL |
+| Park-Chow-Fisher-etal-2020 | Park-Chow-Fisher-etal-2020 | NULL | NULL |
 | Park-Fisher-Chow-etal-2023a | Park-Fisher-Chow-etal-2023a | NULL | NULL |
 | Park-Fisher-Chow-etal-2023b | Park-Fisher-Chow-etal-2023b | NULL | NULL |
 | Park-Fisher-Hunter-etal-2025 | Park-Fisher-Hunter-etal-2025 | NULL | NULL |
@@ -485,6 +526,7 @@
 | Usami-2020 | Usami-2020 | NULL | NULL |
 | Usami-2022 | Usami-2022 | NULL | NULL |
 | vanEgmond-Wright-Livingston-etal-2020 | vanEgmond-Wright-Livingston-etal-2020 | NULL | NULL |
+| Wang-Fang-Bergeman-2026 | Wang-Fang-Bergeman-2026 | NULL | NULL |
 | Zeileis-Koll-Graham-2020 | Zeileis-Koll-Graham-2020 | NULL | NULL |
 | Zhang-Lee-Li-etal-2025 | Zhang-Lee-Li-etal-2025 | NULL | NULL |
 | Chow-Losardo-Park-etal-2023 | Chow-Losardo-Park-etal-2023 | NULL | NULL |
