@@ -21,10 +21,9 @@ CleanTinyTex <- function(path) {
         quiet = TRUE
       )
     }
-    remotes::install_github(
-      repo = "rstudio/tinytex",
-      lib = lib,
-      quiet = TRUE
+    pak::pak(
+      pkg = "rstudio/tinytex",
+      lib = lib
     )
   }
   try(

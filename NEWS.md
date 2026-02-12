@@ -1,3 +1,9 @@
+# rProject 0.0.24
+
+## Patch
+
+* Address `install_github()` deprecation by using `pak::pak()`.
+
 # rProject 0.0.23
 
 ## Patch
