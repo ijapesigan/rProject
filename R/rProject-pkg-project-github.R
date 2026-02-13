@@ -68,7 +68,7 @@ PkgProjectGitHub <- function(path,
             "\n"
           )
         )
-        pak::pak(
+        pak::pkg_install(
           pkg = paste0(
             pkg[i],
             "@",

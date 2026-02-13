@@ -21,7 +21,7 @@ CleanTinyTex <- function(path) {
         quiet = TRUE
       )
     }
-    pak::pak(
+    pak::pkg_install(
       pkg = "rstudio/tinytex",
       lib = lib
     )
