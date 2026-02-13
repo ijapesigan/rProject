@@ -4,9 +4,7 @@
 
 ### Patch
 
-- Address
-  [`install_github()`](https://remotes.r-lib.org/reference/install_github.html)
-  deprecation by using
+- Address `install_github()` deprecation by using
   [`pak::pak()`](https://pak.r-lib.org/reference/pak.html).
 
 ## rProject 0.0.23

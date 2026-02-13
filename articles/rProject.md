@@ -34,8 +34,8 @@ You can install the released version of `rProject` from
 
 ``` r
 
-if (!require("remotes")) install.packages("remotes")
-remotes::install_github("ijapesigan/rProject")
+if (!require("pak")) install.packages("pak")
+pak::pkg_install("ijapesigan/rProject")
 ```
 
 ## Workflow using the template produced by `rProject`
