@@ -48,8 +48,8 @@ from
 [GitHub](https://github.com/ijapesigan/rProject) with:
 
 ```r
-if (!require("remotes")) install.packages("remotes")
-remotes::install_github("ijapesigan/rProject")
+if (!require("pak")) install.packages("pak")
+pak::pkg_install("ijapesigan/rProject")
 ```
 
 ## More Information

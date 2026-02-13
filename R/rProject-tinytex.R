@@ -31,7 +31,7 @@ TinyTex <- function(path,
     }
   }
   if (run) {
-    pak::pak(
+    pak::pkg_install(
       pkg = "rstudio/tinytex",
       lib = lib
     )

@@ -24,7 +24,7 @@ Build <- function(path,
     installed <- utils::installed.packages()
     pkg_installed <- installed[, "Package"]
     if (!("devtools" %in% pkg_installed)) {
-      pak::pak(
+      pak::pkg_install(
         pkg = "r-lib/devtools",
         lib = lib
       )
