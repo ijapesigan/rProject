@@ -46,7 +46,7 @@ PkgDevelGitHub <- function(path) {
         )
       )
       pak::pkg_install(
-        repo = pkg[i],
+        pkg = pkg[i],
         lib = lib
       )
     }
