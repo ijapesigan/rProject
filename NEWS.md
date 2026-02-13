@@ -2,7 +2,7 @@
 
 ## Patch
 
-* Address `install_github()` deprecation by using `pak::pak()`.
+* Address `remotes::install_github()` deprecation by using `pak::pkg_install()`.
 
 # rProject 0.0.23
 
