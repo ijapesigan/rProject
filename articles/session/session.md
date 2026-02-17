@@ -33,7 +33,7 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] rProject_0.0.24
+#> [1] rProject_0.0.25
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    
@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                 
-#> rProject          "rProject"          "/tmp/Rtmp3ZVrU5/temp_libpatha36e81230c"
+#> rProject          "rProject"          "/tmp/Rtmp6EsbA9/temp_libpatha36bf32981"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"       
 #> abind             "abind"             "/usr/local/lib/R/site-library"         
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"         
@@ -459,8 +459,8 @@ installed.packages()
 #> tools             "tools"             "/usr/local/lib/R/library"              
 #> utils             "utils"             "/usr/local/lib/R/library"              
 #>                   Version      Priority     
-#> rProject          "0.0.24"     NA           
-#> rProject          "0.0.24"     NA           
+#> rProject          "0.0.25"     NA           
+#> rProject          "0.0.25"     NA           
 #> abind             "1.4-8"      NA           
 #> Amelia            "1.8.3"      NA           
 #> arm               "1.14-4"     NA           

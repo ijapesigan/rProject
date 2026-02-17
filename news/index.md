@@ -1,5 +1,11 @@
 # Changelog
 
+## rProject 0.0.25
+
+### Patch
+
+- Changed year from 2025 to 2026 in MIT license.
+
 ## rProject 0.0.24
 
 ### Patch
