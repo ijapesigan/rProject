@@ -75,7 +75,7 @@
 
 \section*{Description}
 
-A collection of functions to setup R \parencite{RCoreTeam-2025} projects.
+A collection of functions to setup R \parencite{RCoreTeam-2026} projects.
 This package is intended for personal use only.
 
 \section*{Installation}
@@ -88,8 +88,8 @@ with:
 
 %% begin.rcode
 % #| eval = FALSE
-% install.packages("remotes")
-% remotes::install_github("ijapesigan/rProject")
+% if (!require("pak")) install.packages("pak")
+% pak::pkg_install("ijapesigan/rProject")
 %% end.rcode
 
 \section*{More Information}
