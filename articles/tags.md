@@ -309,6 +309,7 @@
 | Epskamp-Lourens-Mottus-etal-2018 | Epskamp-Lourens-Mottus-etal-2018 | NULL | time-series analysis, multilevel modeling, multivariate analysis, exploratory-data analysis, network modeling |
 | Evans-Kim-2012 | Evans-Kim-2012 | NULL | NULL |
 | Finlay-Ram-Maggs-etal-2012 | Finlay-Ram-Maggs-etal-2012 | NULL | NULL |
+| Fisher-Boswell-2016 | Fisher-Boswell-2016 | NULL | NULL |
 | Fisher-Medaglia-Jeronimus-2018 | Fisher-Medaglia-Jeronimus-2018 | NULL | NULL |
 | Fisher-Newman-Molenaar-2011 | Fisher-Newman-Molenaar-2011 | NULL | NULL |
 | Fisher-Reeves-Lawyer-etal-2017 | Fisher-Reeves-Lawyer-etal-2017 | NULL | NULL |
@@ -380,6 +381,7 @@
 | Reichardt-2011 | Reichardt-2011 | NULL | NULL |
 | Roache-KarnsWright-Goros-etal-2019 | Roache-KarnsWright-Goros-etal-2019 | NULL | NULL |
 | Rosseel-2012 | Rosseel-2012 | r, r-packages, sem, sem-software | NULL |
+| Rush-Rast-Almeida-etal-2019 | Rush-Rast-Almeida-etal-2019 | NULL | NULL |
 | Russell-Odgers-2019 | Russell-Odgers-2019 | NULL | NULL |
 | Russell-Wang-Odgers-2015 | Russell-Wang-Odgers-2015 | NULL | NULL |
 | Sacks-Gonzales-Bouchery-etal-2015 | Sacks-Gonzales-Bouchery-etal-2015 | NULL | NULL |
@@ -471,12 +473,14 @@
 | Fridberg-Wang-Porges-2022 | Fridberg-Wang-Porges-2022 | NULL | NULL |
 | Georgeson-AlvarezBartolo-MacKinnon-2025 | Georgeson-AlvarezBartolo-MacKinnon-2025 | mediation | mediation, cross-sectional mediation, sensitivity analysis |
 | Gunn-Steingrimsson-Merrill-etal-2021 | Gunn-Steingrimsson-Merrill-etal-2021 | NULL | NULL |
+| Hamaker-2025 | Hamaker-2025 | NULL | NULL |
 | Hamaker-Muthen-2020 | Hamaker-Muthen-2020 | NULL | NULL |
+| Haslbeck-Ryan-2022 | Haslbeck-Ryan-2022 | NULL | NULL |
 | Hecht-Zitzmann-2020a | Hecht-Zitzmann-2020a | NULL | NULL |
 | Hecht-Zitzmann-2020b | Hecht-Zitzmann-2020b | NULL | NULL |
 | Hecht-Zitzmann-2021 | Hecht-Zitzmann-2021 | NULL | NULL |
 | Kuiper-Ryan-2020 | Kuiper-Ryan-2020 | NULL | NULL |
-| Lee-Gates-2023 | Lee-Gates-2023 | NULL | NULL |
+| Lee-Gates-2024 | Lee-Gates-2024 | NULL | NULL |
 | Li-Oravecz-Ji-etal-2024 | Li-Oravecz-Ji-etal-2024 | NULL | NULL |
 | Li-Oravecz-Zhou-etal-2022 | Li-Oravecz-Zhou-etal-2022 | bayesian, ild | Bayesian zero-inflated Poisson model, forecast, intensive longitudinal data, regime-switching, spatial data, substance use |
 | Li-Wood-Ji-etal-2022 | Li-Wood-Ji-etal-2022 | NULL | multilevel vector autoregressive models, Bayesian modeling, missing data, affective dynamics |
@@ -503,7 +507,7 @@
 | Park-Fisher-Hunter-etal-2025 | Park-Fisher-Hunter-etal-2025 | NULL | NULL |
 | Pesigan-Cheung-2020 | Pesigan-Cheung-2020 | mediation, mediation-likelihood, mediation-bootstrap, mediation-montecarlo | mediation, nonnormal, confidence interval, structural equation modeling, bootstrapping |
 | Pesigan-Cheung-2024 | Pesigan-Cheung-2024 | mediation, mediation-missing, mediation-bootstrap, mediation-montecarlo, mediation-jointtest, sem, r, r-packages | Monte Carlo method, nonparametric bootstrap, indirect effect, mediation, missing completely at random, missing at random, full-information maximum likelihood, multiple imputation |
-| Pesigan-Cheung-Wu-etal-2025o | Pesigan-Cheung-Wu-etal-2025o | NULL | model comparison, BIC, posterior probability, confidence set, structural equation modeling |
+| Pesigan-Cheung-Wu-etal-2026 | Pesigan-Cheung-Wu-etal-2026 | NULL | model comparison, BIC, posterior probability, confidence set, structural equation modeling |
 | Pesigan-Russell-Chow-2025 | Pesigan-Russell-Chow-2025 | NULL | transdermal alcohol concentration, latent trait-state model, latent transition analysis, ecological momentary assessment, young adults |
 | Pesigan-Russell-Chow-2025o | Pesigan-Russell-Chow-2025o | NULL | mediation, effect size, continuous-time, delta method, resampling (parametric bootstrap, Monte Carlo method) |
 | Pesigan-Sun-Cheung-2023 | Pesigan-Sun-Cheung-2023 | r, r-packages | standardized regression coefficients, confidence intervals, delta method standard errors, heteroskedasticity-consistent standard errors, R package |
@@ -548,6 +552,7 @@
 | RCoreTeam-2023 | RCoreTeam-2023 | r, r-manual | NULL |
 | RCoreTeam-2024 | RCoreTeam-2024 | r, r-manual | NULL |
 | RCoreTeam-2025 | RCoreTeam-2025 | r, r-manual | NULL |
+| RCoreTeam-2026 | RCoreTeam-2026 | r, r-manual | NULL |
 | SAMHSA-2020 | SAMHSA-2020 | NULL | NULL |
 | SAMHSA-2023 | SAMHSA-2023 | NULL | NULL |
 | Schulenberg-Patrick-Johnston-etal-2021 | Schulenberg-Patrick-Johnston-etal-2021 | NULL | NULL |

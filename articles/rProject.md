@@ -24,7 +24,7 @@ Check](https://github.com/ijapesigan/rProject/actions/workflows/shellcheck.yml/b
 
 ## Description
 
-A collection of functions to setup R (R Core Team, 2025) projects. This
+A collection of functions to setup R (R Core Team, 2026) projects. This
 package is intended for personal use only.
 
 ## Installation
@@ -63,6 +63,6 @@ wiki and other resources.
 
 ## References
 
-R Core Team. (2025). *R: A language and environment for statistical
+R Core Team. (2026). *R: A language and environment for statistical
 computing*. R Foundation for Statistical Computing.
 <https://www.R-project.org/>
