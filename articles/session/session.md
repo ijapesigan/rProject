@@ -37,12 +37,12 @@ sessionInfo()
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    
-#>  [5] xfun_0.56         cachem_1.1.0      knitr_1.51        htmltools_0.5.9  
+#>  [5] xfun_0.57         cachem_1.1.0      knitr_1.51        htmltools_0.5.9  
 #>  [9] rmarkdown_2.30    lifecycle_1.0.5   cli_3.6.5.9000    sass_0.4.10      
 #> [13] pkgdown_2.2.0     textshaping_1.0.5 jquerylib_0.1.4   systemfonts_1.3.2
-#> [17] compiler_4.5.3    tools_4.5.3       ragg_1.5.1        bslib_0.10.0     
+#> [17] compiler_4.5.3    tools_4.5.3       ragg_1.5.2        bslib_0.10.0     
 #> [21] evaluate_1.0.5    yaml_2.3.12       otel_0.2.0        jsonlite_2.0.0   
-#> [25] rlang_1.1.7       fs_1.6.7          htmlwidgets_1.6.4
+#> [25] rlang_1.1.7       fs_2.0.0          htmlwidgets_1.6.4
 ```
 
 ## Packages
@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/RtmpLmZ2KY/temp_libpatha4f29e9919c"
+#> rProject          "rProject"          "/tmp/RtmpdbB3zZ/temp_libpatha4f77aa25c5"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -463,7 +463,7 @@ installed.packages()
 #> rProject          "0.0.25"     NA           
 #> abind             "1.4-8"      NA           
 #> Amelia            "1.8.3"      NA           
-#> arm               "1.15-1"     NA           
+#> arm               "1.15-2"     NA           
 #> arrow             "23.0.1.1"   NA           
 #> ash               "1.0-15"     NA           
 #> AsioHeaders       "1.30.2-1"   NA           
@@ -502,7 +502,7 @@ installed.packages()
 #> clusterGeneration "1.3.8"      NA           
 #> coda              "0.19-4.1"   NA           
 #> cOde              "1.1.1"      NA           
-#> collections       "0.3.11"     NA           
+#> collections       "0.3.12"     NA           
 #> colorspace        "2.1-2"      NA           
 #> commonmark        "2.0.0"      NA           
 #> conflicted        "1.2.0"      NA           
@@ -521,14 +521,14 @@ installed.packages()
 #> dbplyr            "2.5.2"      NA           
 #> Deriv             "4.2.0"      NA           
 #> desc              "1.4.3"      NA           
-#> deSolve           "1.41"       NA           
+#> deSolve           "1.42"       NA           
 #> devtools          "2.5.0.9000" NA           
 #> diagram           "1.6.5"      NA           
 #> dials             "1.4.2"      NA           
 #> DiceDesign        "1.10"       NA           
 #> diffobj           "0.3.6"      NA           
 #> digest            "0.6.39"     NA           
-#> distributional    "0.6.0"      NA           
+#> distributional    "0.7.0"      NA           
 #> distro            "0.1.1"      NA           
 #> doBy              "4.7.1"      NA           
 #> docopt            "0.7.2"      NA           
@@ -551,15 +551,15 @@ installed.packages()
 #> fda               "6.3.0"      NA           
 #> fdrtool           "1.2.18"     NA           
 #> fds               "1.8"        NA           
-#> fitVARMxID        "1.0.2.9000" NA           
+#> fitVARMxID        "1.0.3"      NA           
 #> FNN               "1.1.4.1"    NA           
 #> fontawesome       "0.5.3"      NA           
 #> forcats           "1.0.1"      NA           
 #> foreach           "1.5.2"      NA           
-#> forecast          "9.0.1"      NA           
+#> forecast          "9.0.2"      NA           
 #> Formula           "1.2-5"      NA           
 #> fracdiff          "1.5-3"      NA           
-#> fs                "1.6.7"      NA           
+#> fs                "2.0.0"      NA           
 #> fst               "0.9.8"      NA           
 #> fstcore           "0.10.0"     NA           
 #> furrr             "0.3.1"      NA           
@@ -569,7 +569,7 @@ installed.packages()
 #> generics          "0.1.4"      NA           
 #> gert              "2.3.1"      NA           
 #> ggplot2           "4.0.2"      NA           
-#> ggrepel           "0.9.7"      NA           
+#> ggrepel           "0.9.8"      NA           
 #> gh                "1.5.0"      NA           
 #> gitcreds          "0.1.2"      NA           
 #> glasso            "1.11"       NA           
@@ -597,7 +597,7 @@ installed.packages()
 #> htmltools         "0.5.9"      NA           
 #> htmlwidgets       "1.6.4"      NA           
 #> httpgd            "2.1.4"      NA           
-#> httpuv            "1.6.16"     NA           
+#> httpuv            "1.6.17"     NA           
 #> httr              "1.4.8"      NA           
 #> httr2             "1.2.2"      NA           
 #> ids               "1.0.1"      NA           
@@ -646,7 +646,7 @@ installed.packages()
 #> matrixStats       "1.5.0"      NA           
 #> mclust            "6.1.2"      NA           
 #> memoise           "2.0.1"      NA           
-#> metaDyn           "1.0.0"      NA           
+#> metaDyn           "1.0.1"      NA           
 #> metaSEM           "1.5.0"      NA           
 #> mi                "1.2"        NA           
 #> mice              "3.19.0"     NA           
@@ -656,7 +656,7 @@ installed.packages()
 #> minqa             "1.2.8"      NA           
 #> mitml             "0.4-5"      NA           
 #> mize              "0.2.5"      NA           
-#> mlVAR             "0.5.5"      NA           
+#> mlVAR             "0.6.1"      NA           
 #> mnormt            "2.1.2"      NA           
 #> modeldata         "1.5.1"      NA           
 #> modelenv          "0.2.0"      NA           
@@ -718,7 +718,7 @@ installed.packages()
 #> R2jags            "0.8-9"      NA           
 #> R2WinBUGS         "2.1-24"     NA           
 #> R6                "2.6.1"      NA           
-#> ragg              "1.5.1"      NA           
+#> ragg              "1.5.2"      NA           
 #> rainbow           "3.8"        NA           
 #> rappdirs          "0.3.4"      NA           
 #> rbibutils         "2.4.1"      NA           
@@ -730,7 +730,7 @@ installed.packages()
 #> RcppGSL           "0.3.14"     NA           
 #> RcppParallel      "5.1.11-2"   NA           
 #> RcppTOML          "0.2.3"      NA           
-#> RCurl             "1.98-1.17"  NA           
+#> RCurl             "1.98-1.18"  NA           
 #> Rdpack            "2.6.6"      NA           
 #> readr             "2.2.0"      NA           
 #> readxl            "1.4.5"      NA           
@@ -817,7 +817,7 @@ installed.packages()
 #> utf8              "1.2.6"      NA           
 #> uuid              "1.2-2"      NA           
 #> V8                "8.0.1"      NA           
-#> vctrs             "0.7.1"      NA           
+#> vctrs             "0.7.2"      NA           
 #> viridisLite       "0.4.3"      NA           
 #> vroom             "1.7.0"      NA           
 #> waldo             "0.6.2"      NA           
@@ -827,8 +827,8 @@ installed.packages()
 #> withr             "3.0.2"      NA           
 #> workflows         "1.3.0"      NA           
 #> workflowsets      "1.1.1"      NA           
-#> xfun              "0.56"       NA           
-#> XML               "3.99-0.22"  NA           
+#> xfun              "0.57"       NA           
+#> XML               "3.99-0.23"  NA           
 #> xml2              "1.5.2"      NA           
 #> xmlparsedata      "1.0.5"      NA           
 #> xopen             "1.0.1"      NA           
@@ -977,7 +977,7 @@ installed.packages()
 #> generics          "R (>= 3.6)"                                                                          
 #> gert              NA                                                                                    
 #> ggplot2           "R (>= 4.1)"                                                                          
-#> ggrepel           "R (>= 4.5.0), ggplot2 (>= 3.5.2)"                                                    
+#> ggrepel           "R (>= 4.1.0), ggplot2 (>= 3.5.2)"                                                    
 #> gh                "R (>= 4.1)"                                                                          
 #> gitcreds          "R (>= 3.4)"                                                                          
 #> glasso            NA                                                                                    
@@ -1569,7 +1569,7 @@ installed.packages()
 #> RMariaDB          "bit64, blob, DBI (>= 1.1.3), hms (>= 0.5.0), lubridate,\nmethods, rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> rmarkdown         "bslib (>= 0.2.5.1), evaluate (>= 0.13), fontawesome (>=\n0.5.0), htmltools (>= 0.5.1), jquerylib, jsonlite, knitr (>=\n1.43), methods, tinytex (>= 0.31), tools, utils, xfun (>=\n0.36), yaml (>= 2.1.19)"                                                                                                                                                                                                                                                                                                                                                                                                  
 #> rockchalk         "grDevices, methods, lme4, carData, MASS, kutils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-#> roxygen2          "brew, cli (>= 3.3.0), commonmark, desc (>= 1.2.0), knitr,\nlifecycle, methods, pkgload (>= 1.0.2), R6 (>= 2.1.2), rlang\n(>= 1.1.0), stringi, stringr (>= 1.0.0), utils, withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                       
+#> roxygen2          "brew, cli (>= 3.3.0), commonmark, desc (>= 1.2.0), knitr,\nlifecycle, methods, pkgload (>= 1.0.2), R6 (>= 2.1.2), rlang\n(>= 1.1.0), stringr (>= 1.0.0), utils, withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> rpf               "Rcpp (>= 1.0.2), mvtnorm, lifecycle"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> RPostgres         "bit64, blob (>= 1.2.0), DBI (>= 1.2.0), hms (>= 1.0.0),\nlubridate, methods, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> rProject          "BiocManager, cffr, covr, devtools, distro, knitr, lintr, pak,\npkgdown, quarto, Rcpp, remotes, RefManageR, rmarkdown,\nroxygen2, rprojroot, stats, styler, tinytex, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                  
@@ -2160,7 +2160,7 @@ installed.packages()
 #> DiceDesign        "rgl, randtoolbox, lattice"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> diffobj           "knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> digest            "tinytest, simplermarkdown, rbenchmark"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-#> distributional    "testthat (>= 2.1.0), covr, mvtnorm, actuar (>= 2.0.0), evd,\nggdist, ggplot2, gk, pkgdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+#> distributional    "testthat (>= 2.1.0), covr, mvtnorm, actuar (>= 2.0.0), evd,\nggdist, ggplot2, gk, LaplacesDemon, pkgdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> distro            "testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> doBy              "geepack, knitr, lme4, markdown, rmarkdown, multcomp, pbkrtest\n(>= 0.5.2), survival, testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> docopt            "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2229,7 +2229,7 @@ installed.packages()
 #> htmltools         "Cairo, markdown, ragg, shiny, testthat, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> htmlwidgets       "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> httpgd            "testthat, xml2 (>= 1.0.0), knitr, rmarkdown, covr, future,\nhttr, jsonlite"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-#> httpuv            "callr, curl, jsonlite, testthat, websocket"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+#> httpuv            "callr, curl, jsonlite, testthat (>= 3.0.0), websocket"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> httr              "covr, httpuv, jpeg, knitr, png, readr, rmarkdown, testthat\n(>= 0.8.0), xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> httr2             "askpass, bench, clipr, covr, docopt, httpuv, jose, jsonlite,\nknitr, later (>= 1.4.0), nanonext, otel (>= 0.2.0), otelsdk (>=\n0.2.0), paws.common (>= 0.8.0), promises, rmarkdown, testthat\n(>= 3.1.8), tibble, webfakes (>= 1.4.0), xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> ids               "knitr, rcorpora, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
