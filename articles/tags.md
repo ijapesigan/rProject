@@ -559,3 +559,8 @@
 | Tange-2021 | Tange-2021 | NULL | NULL |
 | Tange-2024 | Tange-2024 | NULL | NULL |
 | Waller-2022 | Waller-2022 | r, r-package | NULL |
+| Gelman-2006 | Gelman-2006 | NULL | NULL |
+| Gelman-vanDyk-Huang-etal-2008 | Gelman-vanDyk-Huang-etal-2008 | NULL | NULL |
+| Papaspiliopoulos-Roberts-Skold-2007 | Papaspiliopoulos-Roberts-Skold-2007 | NULL | NULL |
+| vanErp-Mulder-Oberski-2018 | vanErp-Mulder-Oberski-2018 | NULL | NULL |
+| Asparouhov-Muthen-2024 | Asparouhov-Muthen-2024 | NULL | NULL |
