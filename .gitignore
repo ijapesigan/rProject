@@ -86,5 +86,3 @@ latexmkrc
 src/*.o
 src/*.so
 src/*.dll
-
-**/*.quarto_ipynb
