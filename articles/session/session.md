@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/Rtmp8TeaKn/temp_libpatha4f69104087"
+#> rProject          "rProject"          "/tmp/RtmpIVvGqd/temp_libpatha4f7aaca649"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -536,7 +536,7 @@ installed.packages()
 #> dplyr             "1.2.0"      NA           
 #> DT                "0.34.0"     NA           
 #> dtplyr            "1.3.3"      NA           
-#> duckdb            "1.5.0"      NA           
+#> duckdb            "1.5.1"      NA           
 #> dynr              "0.1.16-114" NA           
 #> dynUtils          "0.9.1"      NA           
 #> ellipse           "0.5.0"      NA           
@@ -646,7 +646,7 @@ installed.packages()
 #> matrixStats       "1.5.0"      NA           
 #> mclust            "6.1.2"      NA           
 #> memoise           "2.0.1"      NA           
-#> metaDyn           "1.0.1"      NA           
+#> metaDyn           "1.0.2"      NA           
 #> metaSEM           "1.5.0"      NA           
 #> mi                "1.2"        NA           
 #> mice              "3.19.0"     NA           
@@ -702,7 +702,7 @@ installed.packages()
 #> progressr         "0.18.0"     NA           
 #> promises          "1.5.0"      NA           
 #> proto             "1.0.0"      NA           
-#> ps                "1.9.1"      NA           
+#> ps                "1.9.2"      NA           
 #> psych             "2.6.3"      NA           
 #> purrr             "1.2.1"      NA           
 #> qgraph            "1.9.8"      NA           
@@ -743,7 +743,7 @@ installed.packages()
 #> reprex            "2.1.1"      NA           
 #> reshape2          "1.4.5"      NA           
 #> reticulate        "1.45.0"     NA           
-#> rex               "1.2.1"      NA           
+#> rex               "1.2.2"      NA           
 #> rhdf5             "2.54.1"     NA           
 #> rhdf5filters      "1.22.0"     NA           
 #> Rhdf5lib          "1.32.0"     NA           
@@ -783,7 +783,7 @@ installed.packages()
 #> slider            "0.3.3"      NA           
 #> snow              "0.4-4"      NA           
 #> snowfall          "1.84-6.3"   NA           
-#> sourcetools       "0.1.7-1"    NA           
+#> sourcetools       "0.1.7-2"    NA           
 #> SparseM           "1.84-2"     NA           
 #> sparsevctrs       "0.3.6"      NA           
 #> SQUAREM           "2026.1"     NA           
@@ -806,7 +806,7 @@ installed.packages()
 #> tidyverse         "2.0.0"      NA           
 #> timechange        "0.4.0"      NA           
 #> timeDate          "4052.112"   NA           
-#> tinytex           "0.58.7"     NA           
+#> tinytex           "0.59.1"     NA           
 #> tune              "2.0.1"      NA           
 #> tzdb              "0.5.0"      NA           
 #> ucminf            "1.2.2"      NA           
@@ -819,7 +819,7 @@ installed.packages()
 #> V8                "8.0.1"      NA           
 #> vctrs             "0.7.2"      NA           
 #> viridisLite       "0.4.3"      NA           
-#> vroom             "1.7.0"      NA           
+#> vroom             "1.7.1"      NA           
 #> waldo             "0.6.2"      NA           
 #> warp              "0.2.3"      NA           
 #> whisker           "0.4.1"      NA           
@@ -1559,7 +1559,7 @@ installed.packages()
 #> reprex            "callr (>= 3.6.0), cli (>= 3.2.0), clipr (>= 0.4.0), fs, glue,\nknitr (>= 1.23), lifecycle, rlang (>= 1.0.0), rmarkdown,\nrstudioapi, utils, withr (>= 2.3.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> reshape2          "plyr (>= 1.8.1), Rcpp, stringr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> reticulate        "Matrix, Rcpp (>= 1.0.7), RcppTOML, graphics, here, jsonlite,\nmethods, png, rappdirs, utils, rlang, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-#> rex               "lazyeval"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> rex               "withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> rhdf5             "Rhdf5lib (>= 1.13.4), rhdf5filters (>= 1.15.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> rhdf5filters      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> Rhdf5lib          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -2168,7 +2168,7 @@ installed.packages()
 #> dplyr             "broom, covr, DBI, dbplyr (>= 2.2.1), ggplot2, knitr, Lahman,\nlobstr, nycflights13, purrr, rmarkdown, RSQLite, stringi (>=\n1.7.6), testthat (>= 3.1.5), tidyr (>= 1.3.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> DT                "bslib, future, httpuv, knitr (>= 1.8), rmarkdown, shiny (>=\n1.6), testit, tibble"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> dtplyr            "bench, covr, knitr, rmarkdown, testthat (>= 3.1.2), tidyr (>=\n1.1.0), waldo (>= 0.3.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-#> duckdb            "adbcdrivermanager, arrow (>= 13.0.0), bit64, callr, clock,\nDBItest, dbplyr, dplyr, rlang, testthat (>= 3.0.0), tibble,\nvctrs, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+#> duckdb            "adbcdrivermanager, arrow (>= 13.0.0), bit64, callr, clock,\nDBItest, dbplyr, dplyr, rlang, sf, testthat (>= 3.0.0), tibble,\nvctrs, wk, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> dynr              "testthat, roxygen2 (>= 3.1), knitr, rmarkdown, RcppGSL"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> dynUtils          "knitr, rmarkdown, testthat, simStateSpace"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> ellipse           "MASS"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
