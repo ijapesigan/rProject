@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/RtmpIVvGqd/temp_libpatha4f7aaca649"
+#> rProject          "rProject"          "/tmp/RtmpMIrrWQ/temp_libpatha4f5b637486"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -469,7 +469,7 @@ installed.packages()
 #> AsioHeaders       "1.30.2-1"   NA           
 #> askpass           "1.2.1"      NA           
 #> assertthat        "0.2.1"      NA           
-#> backports         "1.5.0"      NA           
+#> backports         "1.5.1"      NA           
 #> base64enc         "0.1-6"      NA           
 #> betaDelta         "1.0.7"      NA           
 #> betaMC            "1.3.3"      NA           
@@ -509,7 +509,7 @@ installed.packages()
 #> corpcor           "1.6.10"     NA           
 #> covr              "3.6.5"      NA           
 #> cowplot           "1.2.0"      NA           
-#> cpp11             "0.5.3"      NA           
+#> cpp11             "0.5.4"      NA           
 #> crayon            "1.5.3"      NA           
 #> credentials       "2.0.3"      NA           
 #> crosstalk         "1.2.2"      NA           
@@ -533,14 +533,14 @@ installed.packages()
 #> doBy              "4.7.1"      NA           
 #> docopt            "0.7.2"      NA           
 #> downlit           "0.4.5"      NA           
-#> dplyr             "1.2.0"      NA           
+#> dplyr             "1.2.1"      NA           
 #> DT                "0.34.0"     NA           
 #> dtplyr            "1.3.3"      NA           
 #> duckdb            "1.5.1"      NA           
 #> dynr              "0.1.16-114" NA           
 #> dynUtils          "0.9.1"      NA           
 #> ellipse           "0.5.0"      NA           
-#> ellipsis          "0.3.2"      NA           
+#> ellipsis          "0.3.3"      NA           
 #> evaluate          "1.0.5"      NA           
 #> expm              "1.0-0"      NA           
 #> fansi             "1.0.7"      NA           
@@ -562,7 +562,7 @@ installed.packages()
 #> fs                "2.0.1"      NA           
 #> fst               "0.9.8"      NA           
 #> fstcore           "0.10.0"     NA           
-#> furrr             "0.3.1"      NA           
+#> furrr             "0.4.0"      NA           
 #> future            "1.70.0"     NA           
 #> future.apply      "1.20.2"     NA           
 #> gargle            "1.6.1"      NA           
@@ -640,7 +640,7 @@ installed.packages()
 #> loo               "2.9.0"      NA           
 #> lubridate         "1.9.5"      NA           
 #> magick            "2.9.1"      NA           
-#> magrittr          "2.0.4"      NA           
+#> magrittr          "2.0.5"      NA           
 #> markdown          "2.0"        NA           
 #> MatrixModels      "0.5-4"      NA           
 #> matrixStats       "1.5.0"      NA           
@@ -687,19 +687,19 @@ installed.packages()
 #> pkgbuild          "1.4.8"      NA           
 #> pkgconfig         "2.0.3"      NA           
 #> pkgdown           "2.2.0"      NA           
-#> pkgload           "1.5.0"      NA           
+#> pkgload           "1.5.1"      NA           
 #> plyr              "1.8.9"      NA           
 #> png               "0.1-9"      NA           
-#> posterior         "1.6.1"      NA           
+#> posterior         "1.7.0"      NA           
 #> pracma            "2.4.6"      NA           
 #> praise            "1.0.0"      NA           
 #> prettyunits       "1.2.0"      NA           
 #> printr            "0.3"        NA           
-#> processx          "3.8.6"      NA           
+#> processx          "3.8.7"      NA           
 #> prodlim           "2026.03.11" NA           
 #> profvis           "0.4.0"      NA           
 #> progress          "1.2.3"      NA           
-#> progressr         "0.18.0"     NA           
+#> progressr         "0.19.0"     NA           
 #> promises          "1.5.0"      NA           
 #> proto             "1.0.0"      NA           
 #> ps                "1.9.2"      NA           
@@ -734,7 +734,7 @@ installed.packages()
 #> Rdpack            "2.6.6"      NA           
 #> readr             "2.2.0"      NA           
 #> readxl            "1.4.5"      NA           
-#> recipes           "1.3.1"      NA           
+#> recipes           "1.3.2"      NA           
 #> RefManageR        "1.4.0"      NA           
 #> reformulas        "0.4.4"      NA           
 #> rematch           "2.0.0"      NA           
@@ -809,7 +809,7 @@ installed.packages()
 #> tinytex           "0.59.1"     NA           
 #> tune              "2.0.1"      NA           
 #> tzdb              "0.5.0"      NA           
-#> ucminf            "1.2.2"      NA           
+#> ucminf            "1.2.3"      NA           
 #> unigd             "0.2.0"      NA           
 #> urca              "1.3-4"      NA           
 #> urlchecker        "1.0.1"      NA           
@@ -970,7 +970,7 @@ installed.packages()
 #> fs                "R (>= 4.1)"                                                                          
 #> fst               "R (>= 3.0.0)"                                                                        
 #> fstcore           "R (>= 3.0.0)"                                                                        
-#> furrr             "future (>= 1.25.0), R (>= 3.4.0)"                                                    
+#> furrr             "future (>= 1.70.0), R (>= 4.1.0)"                                                    
 #> future            "R (>= 3.2.0)"                                                                        
 #> future.apply      "R (>= 3.2.0), future (>= 1.49.0)"                                                    
 #> gargle            "R (>= 4.1)"                                                                          
@@ -1356,7 +1356,7 @@ installed.packages()
 #> dynr              "MASS, Matrix (>= 1.5-0), numDeriv, xtable, latex2exp, grid,\nreshape2, plyr, mice, magrittr, methods, fda, car, stringi,\ntibble, deSolve, Rdpack"                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> dynUtils          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> ellipse           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-#> ellipsis          "rlang (>= 0.3.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+#> ellipsis          "rlang (>= 1.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> evaluate          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> expm              "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> fansi             "grDevices, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1378,7 +1378,7 @@ installed.packages()
 #> fs                "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> fst               "fstcore, Rcpp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> fstcore           "Rcpp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-#> furrr             "globals (>= 0.14.0), lifecycle (>= 1.0.1), purrr (>= 0.3.4),\nrlang (>= 1.0.2), vctrs (>= 0.4.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+#> furrr             "globals (>= 0.19.1), purrr (>= 1.2.1), rlang (>= 1.1.7), vctrs\n(>= 0.7.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> future            "digest, globals (>= 0.18.0), listenv (>= 0.8.0), parallel,\nparallelly (>= 1.44.0), tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> future.apply      "globals, parallel, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> gargle            "cli (>= 3.0.1), fs (>= 1.3.1), glue (>= 1.3.0), httr (>=\n1.4.5), jsonlite, lifecycle (>= 0.2.0), openssl, rappdirs,\nrlang (>= 1.1.0), stats, utils, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                
@@ -2194,7 +2194,7 @@ installed.packages()
 #> fs                "covr, crayon, knitr, pillar (>= 1.0.0), rmarkdown, spelling,\ntestthat (>= 3.0.0), tibble (>= 1.1.0), vctrs (>= 0.3.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> fst               "testthat, bit64, data.table, lintr, nanotime, crayon"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> fstcore           "testthat, lintr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-#> furrr             "carrier, covr, dplyr (>= 0.7.4), knitr, listenv (>= 0.6.0),\nmagrittr, rmarkdown, testthat (>= 3.0.0), tidyselect, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> furrr             "carrier, covr, dplyr (>= 1.1.4), knitr, parallelly (>=\n1.46.1), testthat (>= 3.3.2), tidyselect"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> future            "methods, RhpcBLASctl, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> future.apply      "datasets, stats, tools, listenv, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> gargle            "aws.ec2metadata, aws.signature, covr, httpuv, knitr,\nrmarkdown, sodium, spelling, testthat (>= 3.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -2366,7 +2366,7 @@ installed.packages()
 #> Rdpack            "grDevices, testthat, rstudioapi, rprojroot, gbRd"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> readr             "covr, curl, datasets, knitr, rmarkdown, spelling, stringi,\ntestthat (>= 3.2.0), tzdb (>= 0.1.1), waldo, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> readxl            "covr, knitr, rmarkdown, testthat (>= 3.1.6), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-#> recipes           "covr, ddalpha, dials (>= 1.2.0), ggplot2, igraph, kernlab,\nknitr, methods, modeldata (>= 0.1.1), parsnip (>= 1.2.0), RANN,\nRcppRoll, rmarkdown, rpart, rsample, RSpectra, splines2,\ntestthat (>= 3.0.0), workflows, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+#> recipes           "covr, ddalpha, dials (>= 1.2.0), dimRed, fastICA, ggplot2,\nigraph (>= 2.1.1), kernlab, knitr, methods, modeldata (>=\n0.1.1), parsnip (>= 1.2.0), RANN, RcppRoll, rmarkdown, rpart,\nrsample, RSpectra, splines2, testthat (>= 3.3.0), workflows,\nxml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> RefManageR        "knitr, markdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> reformulas        "lme4, tinytest, glmmTMB, Formula"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> rematch           "covr, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
@@ -3396,7 +3396,7 @@ installed.packages()
 #> dynr              NA                    NA      NA     "yes"            "4.5.3"
 #> dynUtils          NA                    NA      NA     "no"             "4.5.3"
 #> ellipse           NA                    NA      NA     "no"             "4.5.0"
-#> ellipsis          NA                    NA      NA     "yes"            "4.5.0"
+#> ellipsis          NA                    NA      NA     "no"             "4.5.0"
 #> evaluate          NA                    NA      NA     "no"             "4.5.0"
 #> expm              NA                    NA      NA     "yes"            "4.5.0"
 #> fansi             NA                    NA      NA     "yes"            "4.5.0"
