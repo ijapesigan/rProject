@@ -10,7 +10,7 @@ library(rProject)
 ``` r
 
 sessionInfo()
-#> R version 4.5.3 (2026-03-11)
+#> R version 4.6.0 (2026-04-24)
 #> Platform: x86_64-pc-linux-gnu
 #> Running under: Ubuntu 24.04.4 LTS
 #> 
@@ -38,11 +38,11 @@ sessionInfo()
 #> loaded via a namespace (and not attached):
 #>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    
 #>  [5] xfun_0.57         cachem_1.1.0      knitr_1.51        htmltools_0.5.9  
-#>  [9] rmarkdown_2.31    lifecycle_1.0.5   cli_3.6.5.9000    sass_0.4.10      
+#>  [9] rmarkdown_2.31    lifecycle_1.0.5   cli_3.6.6.9000    sass_0.4.10      
 #> [13] pkgdown_2.2.0     textshaping_1.0.5 jquerylib_0.1.4   systemfonts_1.3.2
-#> [17] compiler_4.5.3    tools_4.5.3       ragg_1.5.2        bslib_0.10.0     
+#> [17] compiler_4.6.0    tools_4.6.0       ragg_1.5.2        bslib_0.10.0     
 #> [21] evaluate_1.0.5    yaml_2.3.12       otel_0.2.0        jsonlite_2.0.0   
-#> [25] rlang_1.2.0       fs_2.0.1          htmlwidgets_1.6.4
+#> [25] rlang_1.2.0       fs_2.1.0          htmlwidgets_1.6.4
 ```
 
 ## Packages
@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/Rtmp6hG1l3/temp_libpatha505b664898"
+#> rProject          "rProject"          "/tmp/Rtmpl3qiKL/temp_libpatha4b6f3beb3a"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -69,6 +69,7 @@ installed.packages()
 #> betaSandwich      "betaSandwich"      "/usr/local/lib/R/site-library"          
 #> BH                "BH"                "/usr/local/lib/R/site-library"          
 #> bibtex            "bibtex"            "/usr/local/lib/R/site-library"          
+#> biocmake          "biocmake"          "/usr/local/lib/R/site-library"          
 #> BiocManager       "BiocManager"       "/usr/local/lib/R/site-library"          
 #> BiocVersion       "BiocVersion"       "/usr/local/lib/R/site-library"          
 #> bit               "bit"               "/usr/local/lib/R/site-library"          
@@ -120,6 +121,7 @@ installed.packages()
 #> DiceDesign        "DiceDesign"        "/usr/local/lib/R/site-library"          
 #> diffobj           "diffobj"           "/usr/local/lib/R/site-library"          
 #> digest            "digest"            "/usr/local/lib/R/site-library"          
+#> dir.expiry        "dir.expiry"        "/usr/local/lib/R/site-library"          
 #> distributional    "distributional"    "/usr/local/lib/R/site-library"          
 #> distro            "distro"            "/usr/local/lib/R/site-library"          
 #> doBy              "doBy"              "/usr/local/lib/R/site-library"          
@@ -143,6 +145,7 @@ installed.packages()
 #> fda               "fda"               "/usr/local/lib/R/site-library"          
 #> fdrtool           "fdrtool"           "/usr/local/lib/R/site-library"          
 #> fds               "fds"               "/usr/local/lib/R/site-library"          
+#> filelock          "filelock"          "/usr/local/lib/R/site-library"          
 #> fitVARMxID        "fitVARMxID"        "/usr/local/lib/R/site-library"          
 #> FNN               "FNN"               "/usr/local/lib/R/site-library"          
 #> fontawesome       "fontawesome"       "/usr/local/lib/R/site-library"          
@@ -158,6 +161,7 @@ installed.packages()
 #> future            "future"            "/usr/local/lib/R/site-library"          
 #> future.apply      "future.apply"      "/usr/local/lib/R/site-library"          
 #> gargle            "gargle"            "/usr/local/lib/R/site-library"          
+#> GauPro            "GauPro"            "/usr/local/lib/R/site-library"          
 #> generics          "generics"          "/usr/local/lib/R/site-library"          
 #> gert              "gert"              "/usr/local/lib/R/site-library"          
 #> ggplot2           "ggplot2"           "/usr/local/lib/R/site-library"          
@@ -172,7 +176,6 @@ installed.packages()
 #> googlesheets4     "googlesheets4"     "/usr/local/lib/R/site-library"          
 #> gower             "gower"             "/usr/local/lib/R/site-library"          
 #> GPArotation       "GPArotation"       "/usr/local/lib/R/site-library"          
-#> GPfit             "GPfit"             "/usr/local/lib/R/site-library"          
 #> graphicalVAR      "graphicalVAR"      "/usr/local/lib/R/site-library"          
 #> gridExtra         "gridExtra"         "/usr/local/lib/R/site-library"          
 #> gsubfn            "gsubfn"            "/usr/local/lib/R/site-library"          
@@ -218,7 +221,7 @@ installed.packages()
 #> lava              "lava"              "/usr/local/lib/R/site-library"          
 #> lavaan            "lavaan"            "/usr/local/lib/R/site-library"          
 #> lazyeval          "lazyeval"          "/usr/local/lib/R/site-library"          
-#> lhs               "lhs"               "/usr/local/lib/R/site-library"          
+#> lbfgs             "lbfgs"             "/usr/local/lib/R/site-library"          
 #> lifecycle         "lifecycle"         "/usr/local/lib/R/site-library"          
 #> lintr             "lintr"             "/usr/local/lib/R/site-library"          
 #> lisrelToR         "lisrelToR"         "/usr/local/lib/R/site-library"          
@@ -247,6 +250,7 @@ installed.packages()
 #> miniUI            "miniUI"            "/usr/local/lib/R/site-library"          
 #> minqa             "minqa"             "/usr/local/lib/R/site-library"          
 #> mitml             "mitml"             "/usr/local/lib/R/site-library"          
+#> mixopt            "mixopt"            "/usr/local/lib/R/site-library"          
 #> mize              "mize"              "/usr/local/lib/R/site-library"          
 #> mlVAR             "mlVAR"             "/usr/local/lib/R/site-library"          
 #> mnormt            "mnormt"            "/usr/local/lib/R/site-library"          
@@ -378,6 +382,7 @@ installed.packages()
 #> sourcetools       "sourcetools"       "/usr/local/lib/R/site-library"          
 #> SparseM           "SparseM"           "/usr/local/lib/R/site-library"          
 #> sparsevctrs       "sparsevctrs"       "/usr/local/lib/R/site-library"          
+#> splitfngr         "splitfngr"         "/usr/local/lib/R/site-library"          
 #> SQUAREM           "SQUAREM"           "/usr/local/lib/R/site-library"          
 #> StanHeaders       "StanHeaders"       "/usr/local/lib/R/site-library"          
 #> stringi           "stringi"           "/usr/local/lib/R/site-library"          
@@ -463,7 +468,7 @@ installed.packages()
 #> rProject          "0.0.25"     NA           
 #> abind             "1.4-8"      NA           
 #> Amelia            "1.8.3"      NA           
-#> arm               "1.15-2"     NA           
+#> arm               "1.15-3"     NA           
 #> arrow             "23.0.1.2"   NA           
 #> ash               "1.0-15"     NA           
 #> AsioHeaders       "1.30.2-1"   NA           
@@ -477,10 +482,11 @@ installed.packages()
 #> betaSandwich      "1.0.9"      NA           
 #> BH                "1.90.0-1"   NA           
 #> bibtex            "0.5.2"      NA           
+#> biocmake          "1.3.1"      NA           
 #> BiocManager       "1.30.27"    NA           
-#> BiocVersion       "3.22.0"     NA           
+#> BiocVersion       "3.23.1"     NA           
 #> bit               "4.6.0"      NA           
-#> bit64             "4.6.0-1"    NA           
+#> bit64             "4.8.0"      NA           
 #> bitops            "1.0-9"      NA           
 #> blob              "1.3.0"      NA           
 #> bootStateSpace    "1.0.3.9000" NA           
@@ -496,7 +502,7 @@ installed.packages()
 #> cellranger        "1.1.0"      NA           
 #> cffr              "1.3.0"      NA           
 #> checkmate         "2.3.4"      NA           
-#> cli               "3.6.5.9000" NA           
+#> cli               "3.6.6.9000" NA           
 #> clipr             "0.8.0"      NA           
 #> clock             "0.7.4"      NA           
 #> clusterGeneration "1.3.8"      NA           
@@ -513,21 +519,22 @@ installed.packages()
 #> crayon            "1.5.3"      NA           
 #> credentials       "2.0.3"      NA           
 #> crosstalk         "1.2.2"      NA           
-#> cTMed             "1.0.9"      NA           
+#> cTMed             "1.0.10"     NA           
 #> ctsem             "3.10.6"     NA           
-#> curl              "7.0.0"      NA           
+#> curl              "7.1.0"      NA           
 #> data.table        "1.18.2.1"   NA           
 #> DBI               "1.3.0"      NA           
 #> dbplyr            "2.5.2"      NA           
 #> Deriv             "4.2.0"      NA           
 #> desc              "1.4.3"      NA           
 #> deSolve           "1.42"       NA           
-#> devtools          "2.5.0.9000" NA           
+#> devtools          "2.5.1.9000" NA           
 #> diagram           "1.6.5"      NA           
-#> dials             "1.4.2"      NA           
+#> dials             "1.4.3"      NA           
 #> DiceDesign        "1.10"       NA           
 #> diffobj           "0.3.6"      NA           
 #> digest            "0.6.39"     NA           
+#> dir.expiry        "1.19.0"     NA           
 #> distributional    "0.7.0"      NA           
 #> distro            "0.1.1"      NA           
 #> doBy              "4.7.1"      NA           
@@ -536,7 +543,7 @@ installed.packages()
 #> dplyr             "1.2.1"      NA           
 #> DT                "0.34.0"     NA           
 #> dtplyr            "1.3.3"      NA           
-#> duckdb            "1.5.1"      NA           
+#> duckdb            "1.5.2"      NA           
 #> dynr              "0.1.16-114" NA           
 #> dynUtils          "0.9.1"      NA           
 #> ellipse           "0.5.0"      NA           
@@ -545,12 +552,13 @@ installed.packages()
 #> expm              "1.0-0"      NA           
 #> fansi             "1.0.7"      NA           
 #> farver            "2.1.2"      NA           
-#> fastDummies       "1.7.5"      NA           
+#> fastDummies       "1.7.6"      NA           
 #> fastmap           "1.2.0"      NA           
 #> fclust            "2.1.3"      NA           
 #> fda               "6.3.0"      NA           
 #> fdrtool           "1.2.18"     NA           
 #> fds               "1.8"        NA           
+#> filelock          "1.0.3"      NA           
 #> fitVARMxID        "1.0.3"      NA           
 #> FNN               "1.1.4.1"    NA           
 #> fontawesome       "0.5.3"      NA           
@@ -558,29 +566,29 @@ installed.packages()
 #> foreach           "1.5.2"      NA           
 #> forecast          "9.0.2"      NA           
 #> Formula           "1.2-5"      NA           
-#> fracdiff          "1.5-3"      NA           
-#> fs                "2.0.1"      NA           
+#> fracdiff          "1.5-4"      NA           
+#> fs                "2.1.0"      NA           
 #> fst               "0.9.8"      NA           
 #> fstcore           "0.10.0"     NA           
 #> furrr             "0.4.0"      NA           
 #> future            "1.70.0"     NA           
 #> future.apply      "1.20.2"     NA           
 #> gargle            "1.6.1"      NA           
+#> GauPro            "0.2.17"     NA           
 #> generics          "0.1.4"      NA           
 #> gert              "2.3.1"      NA           
-#> ggplot2           "4.0.2"      NA           
+#> ggplot2           "4.0.3"      NA           
 #> ggrepel           "0.9.8"      NA           
 #> gh                "1.5.0"      NA           
 #> gitcreds          "0.1.2"      NA           
 #> glasso            "1.11"       NA           
 #> glmnet            "4.1-10"     NA           
 #> globals           "0.19.1"     NA           
-#> glue              "1.8.0"      NA           
+#> glue              "1.8.1"      NA           
 #> googledrive       "2.1.2"      NA           
 #> googlesheets4     "1.1.2"      NA           
 #> gower             "1.0.2"      NA           
 #> GPArotation       "2025.3-1"   NA           
-#> GPfit             "1.0-9"      NA           
 #> graphicalVAR      "0.3.4"      NA           
 #> gridExtra         "2.3"        NA           
 #> gsubfn            "0.7"        NA           
@@ -593,7 +601,7 @@ installed.packages()
 #> highr             "0.12"       NA           
 #> Hmisc             "5.2-5"      NA           
 #> hms               "1.1.4"      NA           
-#> htmlTable         "2.4.3"      NA           
+#> htmlTable         "2.5.0"      NA           
 #> htmltools         "0.5.9"      NA           
 #> htmlwidgets       "1.6.4"      NA           
 #> httpgd            "2.1.4"      NA           
@@ -602,7 +610,7 @@ installed.packages()
 #> httr2             "1.2.2"      NA           
 #> ids               "1.0.1"      NA           
 #> ifaTools          "0.23"       NA           
-#> igraph            "2.2.2"      NA           
+#> igraph            "2.3.0"      NA           
 #> infer             "1.1.0"      NA           
 #> ini               "0.3.1"      NA           
 #> inline            "0.3.21"     NA           
@@ -626,13 +634,13 @@ installed.packages()
 #> lava              "1.9.0"      NA           
 #> lavaan            "0.6-21"     NA           
 #> lazyeval          "0.2.3"      NA           
-#> lhs               "1.2.1"      NA           
+#> lbfgs             "1.2.1.2"    NA           
 #> lifecycle         "1.0.5"      NA           
 #> lintr             "3.3.0-1"    NA           
 #> lisrelToR         "0.3"        NA           
 #> listenv           "0.10.1"     NA           
 #> litedown          "0.9"        NA           
-#> littler           "0.3.22"     NA           
+#> littler           "0.3.23"     NA           
 #> lme4              "2.0-1"      NA           
 #> lmtest            "0.9-40"     NA           
 #> locfit            "1.5-9.12"   NA           
@@ -655,6 +663,7 @@ installed.packages()
 #> miniUI            "0.1.2"      NA           
 #> minqa             "1.2.8"      NA           
 #> mitml             "0.4-5"      NA           
+#> mixopt            "0.1.3"      NA           
 #> mize              "0.2.5"      NA           
 #> mlVAR             "0.6.1"      NA           
 #> mnormt            "2.1.2"      NA           
@@ -663,31 +672,31 @@ installed.packages()
 #> modelr            "0.1.11"     NA           
 #> MplusAutomation   "1.2"        NA           
 #> multicool         "1.0.1"      NA           
-#> mvtnorm           "1.3-6"      NA           
+#> mvtnorm           "1.3-7"      NA           
 #> nloptr            "2.2.1"      NA           
 #> numDeriv          "2016.8-1.1" NA           
 #> nycflights13      "1.0.2"      NA           
 #> OpenMx            "2.22.11"    NA           
-#> openssl           "2.3.5"      NA           
+#> openssl           "2.4.0"      NA           
 #> openxlsx          "4.2.8.1"    NA           
 #> ordinal           "2025.12-29" NA           
 #> otel              "0.2.0"      NA           
-#> pak               "0.9.2"      NA           
+#> pak               "0.9.5"      NA           
 #> pan               "1.9"        NA           
 #> pander            "0.6.6"      NA           
-#> parallelly        "1.46.1"     NA           
-#> parsnip           "1.4.1"      NA           
+#> parallelly        "1.47.0"     NA           
+#> parsnip           "1.5.0"      NA           
 #> patchwork         "1.3.2"      NA           
 #> pbapply           "1.7-4"      NA           
 #> pbivnorm          "0.6.0"      NA           
 #> pbkrtest          "0.5.5"      NA           
 #> pcaPP             "2.0-5"      NA           
-#> pdftools          "3.7.0"      NA           
+#> pdftools          "3.8.0"      NA           
 #> pillar            "1.11.1"     NA           
 #> pkgbuild          "1.4.8"      NA           
 #> pkgconfig         "2.0.3"      NA           
 #> pkgdown           "2.2.0"      NA           
-#> pkgload           "1.5.1"      NA           
+#> pkgload           "1.5.2"      NA           
 #> plyr              "1.8.9"      NA           
 #> png               "0.1-9"      NA           
 #> posterior         "1.7.0"      NA           
@@ -695,22 +704,22 @@ installed.packages()
 #> praise            "1.0.0"      NA           
 #> prettyunits       "1.2.0"      NA           
 #> printr            "0.3"        NA           
-#> processx          "3.8.7"      NA           
+#> processx          "3.9.0"      NA           
 #> prodlim           "2026.03.11" NA           
 #> profvis           "0.4.0"      NA           
 #> progress          "1.2.3"      NA           
 #> progressr         "0.19.0"     NA           
 #> promises          "1.5.0"      NA           
 #> proto             "1.0.0"      NA           
-#> ps                "1.9.2"      NA           
+#> ps                "1.9.3"      NA           
 #> psych             "2.6.3"      NA           
-#> purrr             "1.2.1"      NA           
+#> purrr             "1.2.2"      NA           
 #> qgraph            "1.9.8"      NA           
 #> qpdf              "1.4.1"      NA           
 #> quadprog          "1.5-8"      NA           
 #> quantreg          "6.1"        NA           
 #> quarto            "1.5.1"      NA           
-#> QuickJSR          "1.9.0"      NA           
+#> QuickJSR          "1.9.2"      NA           
 #> R.cache           "0.17.0"     NA           
 #> R.methodsS3       "1.8.2"      NA           
 #> R.oo              "1.27.1"     NA           
@@ -724,8 +733,8 @@ installed.packages()
 #> rbibutils         "2.4.1"      NA           
 #> rcmdcheck         "1.4.0"      NA           
 #> RColorBrewer      "1.1-3"      NA           
-#> Rcpp              "1.1.1"      NA           
-#> RcppArmadillo     "15.2.4-1"   NA           
+#> Rcpp              "1.1.1-1.1"  NA           
+#> RcppArmadillo     "15.2.6-1"   NA           
 #> RcppEigen         "0.3.4.0.2"  NA           
 #> RcppGSL           "0.3.14"     NA           
 #> RcppParallel      "5.1.11-2"   NA           
@@ -742,17 +751,17 @@ installed.packages()
 #> remotes           "2.5.0"      NA           
 #> reprex            "2.1.1"      NA           
 #> reshape2          "1.4.5"      NA           
-#> reticulate        "1.45.0"     NA           
+#> reticulate        "1.46.0"     NA           
 #> rex               "1.2.2"      NA           
-#> rhdf5             "2.54.1"     NA           
-#> rhdf5filters      "1.22.0"     NA           
-#> Rhdf5lib          "1.32.0"     NA           
+#> rhdf5             "2.55.16"    NA           
+#> rhdf5filters      "1.23.3"     NA           
+#> Rhdf5lib          "1.99.6"     NA           
 #> rhub              "2.0.1"      NA           
 #> rjags             "4-17"       NA           
 #> rlang             "1.2.0"      NA           
 #> RMariaDB          "1.3.5"      NA           
 #> rmarkdown         "2.31"       NA           
-#> rockchalk         "1.8.157"    NA           
+#> rockchalk         "1.8.164"    NA           
 #> roxygen2          "7.3.3.9000" NA           
 #> rpf               "1.0.15"     NA           
 #> RPostgres         "1.4.10"     NA           
@@ -767,7 +776,7 @@ installed.packages()
 #> rversions         "3.0.0"      NA           
 #> rvest             "1.0.5"      NA           
 #> Ryacas            "1.1.6"      NA           
-#> S7                "0.2.1"      NA           
+#> S7                "0.2.2"      NA           
 #> sass              "0.4.10"     NA           
 #> scales            "1.4.0"      NA           
 #> selectr           "0.5-1"      NA           
@@ -786,6 +795,7 @@ installed.packages()
 #> sourcetools       "0.1.7-2"    NA           
 #> SparseM           "1.84-2"     NA           
 #> sparsevctrs       "0.3.6"      NA           
+#> splitfngr         "0.1.2"      NA           
 #> SQUAREM           "2026.1"     NA           
 #> StanHeaders       "2.32.10"    NA           
 #> stringi           "1.8.7"      NA           
@@ -800,14 +810,14 @@ installed.packages()
 #> texreg            "1.39.5"     NA           
 #> textshaping       "1.0.5"      NA           
 #> tibble            "3.3.1"      NA           
-#> tidymodels        "1.4.1"      NA           
+#> tidymodels        "1.5.0"      NA           
 #> tidyr             "1.3.2"      NA           
 #> tidyselect        "1.2.1"      NA           
 #> tidyverse         "2.0.0"      NA           
 #> timechange        "0.4.0"      NA           
 #> timeDate          "4052.112"   NA           
 #> tinytex           "0.59.1"     NA           
-#> tune              "2.0.1"      NA           
+#> tune              "2.1.0"      NA           
 #> tzdb              "0.5.0"      NA           
 #> ucminf            "1.2.3"      NA           
 #> unigd             "0.2.0"      NA           
@@ -816,8 +826,8 @@ installed.packages()
 #> usethis           "3.2.1"      NA           
 #> utf8              "1.2.6"      NA           
 #> uuid              "1.2-2"      NA           
-#> V8                "8.0.1"      NA           
-#> vctrs             "0.7.2"      NA           
+#> V8                "8.2.0"      NA           
+#> vctrs             "0.7.3"      NA           
 #> viridisLite       "0.4.3"      NA           
 #> vroom             "1.7.1"      NA           
 #> waldo             "0.6.2"      NA           
@@ -834,38 +844,38 @@ installed.packages()
 #> xopen             "1.0.1"      NA           
 #> xtable            "1.8-8"      NA           
 #> yaml              "2.3.12"     NA           
-#> yardstick         "1.3.2"      NA           
+#> yardstick         "1.4.0"      NA           
 #> zip               "2.3.3"      NA           
 #> zoo               "1.8-15"     NA           
-#> base              "4.5.3"      "base"       
+#> base              "4.6.0"      "base"       
 #> boot              "1.3-32"     "recommended"
 #> class             "7.3-23"     "recommended"
 #> cluster           "2.1.8.2"    "recommended"
 #> codetools         "0.2-20"     "recommended"
-#> compiler          "4.5.3"      "base"       
-#> datasets          "4.5.3"      "base"       
+#> compiler          "4.6.0"      "base"       
+#> datasets          "4.6.0"      "base"       
 #> foreign           "0.8-91"     "recommended"
-#> graphics          "4.5.3"      "base"       
-#> grDevices         "4.5.3"      "base"       
-#> grid              "4.5.3"      "base"       
+#> graphics          "4.6.0"      "base"       
+#> grDevices         "4.6.0"      "base"       
+#> grid              "4.6.0"      "base"       
 #> KernSmooth        "2.23-26"    "recommended"
 #> lattice           "0.22-9"     "recommended"
 #> MASS              "7.3-65"     "recommended"
-#> Matrix            "1.7-4"      "recommended"
-#> methods           "4.5.3"      "base"       
+#> Matrix            "1.7-5"      "recommended"
+#> methods           "4.6.0"      "base"       
 #> mgcv              "1.9-4"      "recommended"
-#> nlme              "3.1-168"    "recommended"
+#> nlme              "3.1-169"    "recommended"
 #> nnet              "7.3-20"     "recommended"
-#> parallel          "4.5.3"      "base"       
-#> rpart             "4.1.24"     "recommended"
+#> parallel          "4.6.0"      "base"       
+#> rpart             "4.1.27"     "recommended"
 #> spatial           "7.3-18"     "recommended"
-#> splines           "4.5.3"      "base"       
-#> stats             "4.5.3"      "base"       
-#> stats4            "4.5.3"      "base"       
+#> splines           "4.6.0"      "base"       
+#> stats             "4.6.0"      "base"       
+#> stats4            "4.6.0"      "base"       
 #> survival          "3.8-6"      "recommended"
-#> tcltk             "4.5.3"      "base"       
-#> tools             "4.5.3"      "base"       
-#> utils             "4.5.3"      "base"       
+#> tcltk             "4.6.0"      "base"       
+#> tools             "4.6.0"      "base"       
+#> utils             "4.6.0"      "base"       
 #>                   Depends                                                                               
 #> rProject          "R (>= 3.5.0)"                                                                        
 #> rProject          "R (>= 3.5.0)"                                                                        
@@ -885,10 +895,11 @@ installed.packages()
 #> betaSandwich      "R (>= 3.5.0)"                                                                        
 #> BH                NA                                                                                    
 #> bibtex            "R (>= 3.0.2)"                                                                        
+#> biocmake          NA                                                                                    
 #> BiocManager       NA                                                                                    
-#> BiocVersion       "R (>= 4.5.0)"                                                                        
+#> BiocVersion       "R (>= 4.6.0)"                                                                        
 #> bit               "R (>= 3.4.0)"                                                                        
-#> bit64             "R (>= 3.4.0), bit (>= 4.0.0)"                                                        
+#> bit64             "R (>= 3.5.0)"                                                                        
 #> bitops            NA                                                                                    
 #> blob              NA                                                                                    
 #> bootStateSpace    "R (>= 3.5.0)"                                                                        
@@ -921,7 +932,7 @@ installed.packages()
 #> crayon            NA                                                                                    
 #> credentials       NA                                                                                    
 #> crosstalk         NA                                                                                    
-#> cTMed             "R (>= 4.1.0)"                                                                        
+#> cTMed             "R (>= 3.5.0)"                                                                        
 #> ctsem             "R (>= 4.2.0), Rcpp (>= 0.12.16)"                                                     
 #> curl              "R (>= 3.0.0)"                                                                        
 #> data.table        "R (>= 3.4.0)"                                                                        
@@ -936,6 +947,7 @@ installed.packages()
 #> DiceDesign        "R (>= 2.10)"                                                                         
 #> diffobj           "R (>= 3.1.0)"                                                                        
 #> digest            "R (>= 3.3.0)"                                                                        
+#> dir.expiry        NA                                                                                    
 #> distributional    "R (>= 4.0.0)"                                                                        
 #> distro            NA                                                                                    
 #> doBy              "R (>= 4.2.0), methods"                                                               
@@ -959,6 +971,7 @@ installed.packages()
 #> fda               "R (>= 3.5), splines, fds, deSolve"                                                   
 #> fdrtool           "R (>= 3.4.0)"                                                                        
 #> fds               "R (>= 3.4.0), rainbow, RCurl"                                                        
+#> filelock          "R (>= 3.4)"                                                                          
 #> fitVARMxID        "R (>= 4.1.0), OpenMx (>= 2.22.10)"                                                   
 #> FNN               "R (>= 4.0.0)"                                                                        
 #> fontawesome       "R (>= 3.3.0)"                                                                        
@@ -974,6 +987,7 @@ installed.packages()
 #> future            "R (>= 3.2.0)"                                                                        
 #> future.apply      "R (>= 3.2.0), future (>= 1.49.0)"                                                    
 #> gargle            "R (>= 4.1)"                                                                          
+#> GauPro            "mixopt (> 0.1.0), numDeriv, rmarkdown, tidyr"                                        
 #> generics          "R (>= 3.6)"                                                                          
 #> gert              NA                                                                                    
 #> ggplot2           "R (>= 4.1)"                                                                          
@@ -983,12 +997,11 @@ installed.packages()
 #> glasso            NA                                                                                    
 #> glmnet            "R (>= 3.6.0), Matrix (>= 1.0-6)"                                                     
 #> globals           "R (>= 3.1.2)"                                                                        
-#> glue              "R (>= 3.6)"                                                                          
+#> glue              "R (>= 4.1)"                                                                          
 #> googledrive       "R (>= 4.1)"                                                                          
 #> googlesheets4     "R (>= 3.6)"                                                                          
 #> gower             NA                                                                                    
 #> GPArotation       "R (>= 2.0.0)"                                                                        
-#> GPfit             NA                                                                                    
 #> graphicalVAR      "R (>= 3.1.0)"                                                                        
 #> gridExtra         NA                                                                                    
 #> gsubfn            "proto"                                                                               
@@ -1034,7 +1047,7 @@ installed.packages()
 #> lava              "R (>= 3.5.0)"                                                                        
 #> lavaan            "R(>= 3.4)"                                                                           
 #> lazyeval          "R (>= 3.1.0)"                                                                        
-#> lhs               "R (>= 3.4.0)"                                                                        
+#> lbfgs             NA                                                                                    
 #> lifecycle         "R (>= 3.6)"                                                                          
 #> lintr             "R (>= 4.0)"                                                                          
 #> lisrelToR         "R (>= 2.15.0)"                                                                       
@@ -1063,6 +1076,7 @@ installed.packages()
 #> miniUI            NA                                                                                    
 #> minqa             NA                                                                                    
 #> mitml             NA                                                                                    
+#> mixopt            "dplyr, ggplot2, splitfngr"                                                           
 #> mize              NA                                                                                    
 #> mlVAR             "R (>= 3.3.0)"                                                                        
 #> mnormt            "R (>= 3.0.0)"                                                                        
@@ -1152,7 +1166,7 @@ installed.packages()
 #> reshape2          "R (>= 3.1)"                                                                          
 #> reticulate        "R (>= 3.5)"                                                                          
 #> rex               NA                                                                                    
-#> rhdf5             "R (>= 4.0.0), methods"                                                               
+#> rhdf5             "methods, R (>= 4.0.0)"                                                               
 #> rhdf5filters      NA                                                                                    
 #> Rhdf5lib          "R (>= 4.2.0)"                                                                        
 #> rhub              "R (>= 4.0)"                                                                          
@@ -1194,6 +1208,7 @@ installed.packages()
 #> sourcetools       "R (>= 3.0.2)"                                                                        
 #> SparseM           "R (>= 2.15), methods"                                                                
 #> sparsevctrs       "R (>= 4.1)"                                                                          
+#> splitfngr         NA                                                                                    
 #> SQUAREM           "R (>= 4.0)"                                                                          
 #> StanHeaders       "R (>= 3.4.0)"                                                                        
 #> stringi           "R (>= 3.4)"                                                                          
@@ -1242,7 +1257,7 @@ installed.packages()
 #> xopen             "R (>= 3.1)"                                                                          
 #> xtable            "R (>= 2.10.0)"                                                                       
 #> yaml              NA                                                                                    
-#> yardstick         "R (>= 3.6.0)"                                                                        
+#> yardstick         "R (>= 4.1)"                                                                          
 #> zip               NA                                                                                    
 #> zoo               "R (>= 3.1.0), stats"                                                                 
 #> base              NA                                                                                    
@@ -1293,10 +1308,11 @@ installed.packages()
 #> betaSandwich      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> BH                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> bibtex            "backports (>= 1.4.0), utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+#> biocmake          "utils, tools, dir.expiry"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> BiocManager       "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> BiocVersion       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> bit               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-#> bit64             "graphics, methods, stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+#> bit64             "bit (>= 4.0.0), graphics, methods, stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #> bitops            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> blob              "methods, rlang, vctrs (>= 0.2.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> bootStateSpace    "stats, simStateSpace, dynr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -1338,12 +1354,13 @@ installed.packages()
 #> Deriv             "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> desc              "cli, R6, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> deSolve           "methods, graphics, grDevices, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-#> devtools          "cli (>= 3.6.5), desc (>= 1.4.3), ellipsis (>= 0.3.2), fs (>=\n1.6.7), lifecycle (>= 1.0.5), memoise (>= 2.0.1), miniUI (>=\n0.1.2), pak (>= 0.9.2), pkgbuild (>= 1.4.8), pkgdown (>=\n2.2.0), pkgload (>= 1.5.0), profvis (>= 0.4.0), rcmdcheck (>=\n1.4.0), rlang (>= 1.1.7), roxygen2 (>= 7.3.3), rversions (>=\n3.0.0), sessioninfo (>= 1.2.3), testthat (>= 3.3.2), urlchecker\n(>= 1.0.1), withr (>= 3.0.2)"                                                                                                                                                                                           
+#> devtools          "cli (>= 3.6.6), desc (>= 1.4.3), ellipsis (>= 0.3.3), fs (>=\n2.1.0), lifecycle (>= 1.0.5), memoise (>= 2.0.1), miniUI (>=\n0.1.2), pak (>= 0.9.5), pkgbuild (>= 1.4.8), pkgdown (>=\n2.2.0), pkgload (>= 1.5.2), profvis (>= 0.4.0), rcmdcheck (>=\n1.4.0), rlang (>= 1.2.0), roxygen2 (>= 7.3.3), rversions (>=\n3.0.0), sessioninfo (>= 1.2.3), testthat (>= 3.3.2), urlchecker\n(>= 1.0.1), withr (>= 3.0.2)"                                                                                                                                                                                           
 #> diagram           "stats, graphics"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #> dials             "cli, DiceDesign, dplyr (>= 0.8.5), glue, hardhat (>= 1.1.0),\nlifecycle, pillar, purrr, rlang (>= 1.1.0), sfd, tibble, utils,\nvctrs (>= 0.3.8), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> DiceDesign        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> diffobj           "crayon (>= 1.3.2), tools, methods, utils, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #> digest            "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+#> dir.expiry        "utils, filelock"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #> distributional    "vctrs (>= 0.3.0), rlang (>= 0.4.5), generics, stats, numDeriv,\nutils, lifecycle, pillar"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> distro            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> doBy              "boot, broom, cowplot, Deriv, dplyr, forecast, ggplot2, MASS,\nMatrix, modelr, microbenchmark, rlang, purrr, tibble, tidyr,"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -1367,6 +1384,7 @@ installed.packages()
 #> fda               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> fdrtool           "graphics, grDevices, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> fds               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+#> filelock          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> fitVARMxID        "stats, simStateSpace (>= 1.2.14)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> FNN               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> fontawesome       "rlang (>= 1.0.6), htmltools (>= 0.5.1.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -1382,6 +1400,7 @@ installed.packages()
 #> future            "digest, globals (>= 0.18.0), listenv (>= 0.8.0), parallel,\nparallelly (>= 1.44.0), tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> future.apply      "globals, parallel, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> gargle            "cli (>= 3.0.1), fs (>= 1.3.1), glue (>= 1.3.0), httr (>=\n1.4.5), jsonlite, lifecycle (>= 0.2.0), openssl, rappdirs,\nrlang (>= 1.1.0), stats, utils, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                
+#> GauPro            "ggplot2, Rcpp, R6, lbfgs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> generics          "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> gert              "askpass, credentials (>= 1.2.1), openssl (>= 2.0.3),\nrstudioapi (>= 0.11), sys, zip (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #> ggplot2           "cli, grDevices, grid, gtable (>= 0.3.6), isoband, lifecycle (>\n1.0.1), rlang (>= 1.1.0), S7, scales (>= 1.4.0), stats, vctrs\n(>= 0.6.0), withr (>= 2.5.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                
@@ -1396,7 +1415,6 @@ installed.packages()
 #> googlesheets4     "cellranger, cli (>= 3.0.0), curl, gargle (>= 1.6.0), glue (>=\n1.3.0), googledrive (>= 2.1.0), httr, ids, lifecycle, magrittr,\nmethods, purrr, rematch2, rlang (>= 1.0.2), tibble (>= 2.1.1),\nutils, vctrs (>= 0.2.3), withr"                                                                                                                                                                                                                                                                                                                                                                             
 #> gower             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> GPArotation       "stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-#> GPfit             "lhs (>= 0.5), lattice (>= 0.18-8)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> graphicalVAR      "Rcpp (>= 0.11.3), Matrix, glasso, glmnet, mvtnorm, qgraph (>=\n1.3.1), dplyr, methods, igraph, rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> gridExtra         "gtable, grid, grDevices, graphics, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> gsubfn            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1442,7 +1460,7 @@ installed.packages()
 #> lava              "cli, future.apply, graphics, grDevices, methods, numDeriv,\nprogressr, stats, survival, SQUAREM, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> lavaan            "methods, stats4, stats, utils, graphics, MASS, mnormt,\npbivnorm, numDeriv, quadprog"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> lazyeval          "rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-#> lhs               "Rcpp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+#> lbfgs             "Rcpp (>= 0.11.2), methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> lifecycle         "cli (>= 3.4.0), rlang (>= 1.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> lintr             "backports (>= 1.5.0), cli (>= 3.4.0), codetools, digest, glue,\nknitr, rex, stats, utils, xfun, xml2 (>= 1.0.0), xmlparsedata\n(>= 1.0.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> lisrelToR         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1471,6 +1489,7 @@ installed.packages()
 #> miniUI            "shiny (>= 0.13), htmltools (>= 0.3), utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> minqa             "Rcpp (>= 0.9.10)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> mitml             "pan, jomo, haven, grDevices, graphics, stats, methods, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+#> mixopt            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> mize              "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> mlVAR             "lme4, arm, qgraph, dplyr (>= 1.0.0), clusterGeneration,\nmvtnorm, corpcor, abind, methods, parallel, MplusAutomation,\ngraphicalVAR, rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> mnormt            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1492,7 +1511,7 @@ installed.packages()
 #> pan               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> pander            "grDevices, graphics, methods, utils, stats, digest, tools,\nRcpp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> parallelly        "parallel, tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-#> parsnip           "cli, dplyr (>= 1.1.0), generics (>= 0.1.2), ggplot2, globals,\nglue, hardhat (>= 1.4.1), lifecycle, magrittr, pillar,\nprettyunits, purrr (>= 1.0.0), rlang (>= 1.1.0), sparsevctrs\n(>= 0.2.0), stats, tibble (>= 2.1.1), tidyr (>= 1.3.0), utils,\nvctrs (>= 0.6.0), withr"                                                                                                                                                                                                                                                                                                                               
+#> parsnip           "cli, dplyr (>= 1.1.0), generics (>= 0.1.2), ggplot2, globals,\nglue, hardhat (>= 1.4.1), lifecycle, magrittr, pillar,\nprettyunits, purrr (>= 1.0.0), rlang (>= 1.1.0), sparsevctrs\n(>= 0.2.0), stats, tibble (>= 2.1.1), tidyr (>= 1.3.0), utils,\nvctrs (>= 0.6.0)"                                                                                                                                                                                                                                                                                                                                      
 #> patchwork         "ggplot2 (>= 3.0.0), gtable (>= 0.3.6), grid, stats, grDevices,\nutils, graphics, rlang (>= 1.0.0), cli, farver"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> pbapply           "parallel"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> pbivnorm          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1511,7 +1530,7 @@ installed.packages()
 #> praise            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> prettyunits       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> printr            "knitr (>= 1.31)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-#> processx          "ps (>= 1.2.0), R6, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> processx          "ps (>= 1.9.3), R6, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> prodlim           "Rcpp (>= 0.11.5), stats, rlang, data.table, grDevices,\nggplot2, scales, graphics, diagram, survival, KernSmooth, lava"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> profvis           "htmlwidgets (>= 0.3.2), rlang (>= 1.1.0), vctrs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #> progress          "crayon, hms, prettyunits, R6"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
@@ -1541,7 +1560,7 @@ installed.packages()
 #> rcmdcheck         "callr (>= 3.1.1.9000), cli (>= 3.0.0), curl, desc (>= 1.2.0),\ndigest, pkgbuild, prettyunits, R6, rprojroot, sessioninfo (>=\n1.1.1), utils, withr, xopen"                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> RColorBrewer      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> Rcpp              "methods, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-#> RcppArmadillo     "Rcpp (>= 1.0.12), stats, utils, methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+#> RcppArmadillo     "Rcpp (>= 1.1.1), stats, utils, methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> RcppEigen         "Rcpp (>= 0.11.0), stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> RcppGSL           "Rcpp (>= 1.1.1), stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> RcppParallel      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1560,7 +1579,7 @@ installed.packages()
 #> reshape2          "plyr (>= 1.8.1), Rcpp, stringr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> reticulate        "Matrix, Rcpp (>= 1.0.7), RcppTOML, graphics, here, jsonlite,\nmethods, png, rappdirs, utils, rlang, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> rex               "withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-#> rhdf5             "Rhdf5lib (>= 1.13.4), rhdf5filters (>= 1.15.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+#> rhdf5             "rhdf5filters (>= 1.15.5), Rhdf5lib (>= 1.33.3)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> rhdf5filters      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> Rhdf5lib          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> rhub              "callr, cli, curl, desc, gert, glue, gitcreds, jsonlite,\npkgbuild, processx, rappdirs, rematch, R6, rprojroot, utils,\nwhoami"                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
@@ -1568,8 +1587,8 @@ installed.packages()
 #> rlang             "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> RMariaDB          "bit64, blob, DBI (>= 1.1.3), hms (>= 0.5.0), lubridate,\nmethods, rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> rmarkdown         "bslib (>= 0.2.5.1), evaluate (>= 0.13), fontawesome (>=\n0.5.0), htmltools (>= 0.5.1), jquerylib, jsonlite, knitr (>=\n1.43), methods, tinytex (>= 0.31), tools, utils, xfun (>=\n0.36), yaml (>= 2.1.19)"                                                                                                                                                                                                                                                                                                                                                                                                  
-#> rockchalk         "grDevices, methods, lme4, carData, MASS, kutils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-#> roxygen2          "brew, cli (>= 3.3.0), commonmark, desc (>= 1.2.0), knitr,\nlifecycle, methods, pkgload (>= 1.0.2), R6 (>= 2.1.2), rlang\n(>= 1.1.0), utils, withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+#> rockchalk         "grDevices, methods, lme4, carData, MASS, kutils, reformulas\n(>= 0.4.3)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+#> roxygen2          "brew, cli (>= 3.3.0), commonmark, desc (>= 1.2.0), knitr,\nlifecycle, methods, pkgload (>= 1.5.2), R6 (>= 2.1.2), rlang\n(>= 1.1.0), utils, withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> rpf               "Rcpp (>= 1.0.2), mvtnorm, lifecycle"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> RPostgres         "bit64, blob (>= 1.2.0), DBI (>= 1.2.0), hms (>= 1.0.0),\nlubridate, methods, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> rProject          "BiocManager, cffr, covr, devtools, distro, knitr, lintr, pak,\npkgdown, quarto, Rcpp, remotes, RefManageR, rmarkdown,\nroxygen2, rprojroot, stats, styler, tinytex, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                  
@@ -1602,6 +1621,7 @@ installed.packages()
 #> sourcetools       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> SparseM           "graphics, stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> sparsevctrs       "cli (>= 3.4.0), rlang (>= 1.1.0), vctrs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+#> splitfngr         "lbfgs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> SQUAREM           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> StanHeaders       "RcppParallel (>= 5.1.4)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> stringi           "tools, utils, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
@@ -1616,14 +1636,14 @@ installed.packages()
 #> texreg            "methods, stats, httr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> textshaping       "lifecycle, stats, stringi, systemfonts (>= 1.3.0), utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> tibble            "cli, lifecycle (>= 1.0.0), magrittr, methods, pillar (>=\n1.8.1), pkgconfig, rlang (>= 1.0.2), utils, vctrs (>= 0.5.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-#> tidymodels        "broom (>= 1.0.9), cli (>= 3.6.5), conflicted (>= 1.2.0), dials\n(>= 1.4.2), dplyr (>= 1.1.4), ggplot2 (>= 3.5.2), hardhat (>=\n1.4.2), infer (>= 1.0.9), modeldata (>= 1.5.1), parsnip (>=\n1.3.3), purrr (>= 1.1.0), recipes (>= 1.3.1), rlang (>= 1.1.6),\nrsample (>= 1.3.1), rstudioapi (>= 0.17.1), tailor (>= 0.1.0),\ntidyr (>= 1.3.1), tune (>= 2.0.0), workflows (>= 1.3.0),\nworkflowsets (>= 1.1.1), yardstick (>= 1.3.2)"                                                                                                                                                                       
+#> tidymodels        "broom (>= 1.0.12), cli (>= 3.6.6), conflicted (>= 1.2.0),\ndials (>= 1.4.3), dplyr (>= 1.2.1), ggplot2 (>= 4.0.3), hardhat\n(>= 1.4.3), infer (>= 1.1.0), modeldata (>= 1.5.1), parsnip (>=\n1.5.0), purrr (>= 1.2.2), recipes (>= 1.3.2), rlang (>= 1.2.0),\nrsample (>= 1.3.2), rstudioapi (>= 0.18.0), tailor (>= 0.1.0),\ntidyr (>= 1.3.2), tune (>= 2.1.0), workflows (>= 1.3.0),\nworkflowsets (>= 1.1.1), yardstick (>= 1.4.0)"                                                                                                                                                                      
 #> tidyr             "cli (>= 3.4.1), dplyr (>= 1.1.0), glue, lifecycle (>= 1.0.3),\nmagrittr, purrr (>= 1.0.1), rlang (>= 1.1.1), stringr (>=\n1.5.0), tibble (>= 2.1.1), tidyselect (>= 1.2.1), utils, vctrs\n(>= 0.5.2)"                                                                                                                                                                                                                                                                                                                                                                                                       
 #> tidyselect        "cli (>= 3.3.0), glue (>= 1.3.0), lifecycle (>= 1.0.3), rlang\n(>= 1.0.4), vctrs (>= 0.5.2), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> tidyverse         "broom (>= 1.0.3), conflicted (>= 1.2.0), cli (>= 3.6.0),\ndbplyr (>= 2.3.0), dplyr (>= 1.1.0), dtplyr (>= 1.2.2), forcats\n(>= 1.0.0), ggplot2 (>= 3.4.1), googledrive (>= 2.0.0),\ngooglesheets4 (>= 1.0.1), haven (>= 2.5.1), hms (>= 1.1.2),\nhttr (>= 1.4.4), jsonlite (>= 1.8.4), lubridate (>= 1.9.2),\nmagrittr (>= 2.0.3), modelr (>= 0.1.10), pillar (>= 1.8.1),\npurrr (>= 1.0.1), ragg (>= 1.2.5), readr (>= 2.1.4), readxl (>=\n1.4.2), reprex (>= 2.0.2), rlang (>= 1.0.6), rstudioapi (>=\n0.14), rvest (>= 1.0.3), stringr (>= 1.5.0), tibble (>= 3.1.8),\ntidyr (>= 1.3.0), xml2 (>= 1.3.3)"
 #> timechange        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> timeDate          "graphics, utils, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> tinytex           "xfun (>= 0.48)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-#> tune              "cli (>= 3.3.0), dials (>= 1.3.0.9000), dplyr (>= 1.1.0),\ngenerics (>= 0.1.2), ggplot2, glue (>= 1.6.2), GPfit, hardhat\n(>= 1.4.2), parallel, parsnip (>= 1.2.1.9003), purrr (>=\n1.0.0), recipes (>= 1.1.0.9001), rlang (>= 1.1.4), rsample (>=\n1.3.0.9003), tailor (>= 0.1.0), tibble (>= 3.1.0), tidyr (>=\n1.2.0), tidyselect (>= 1.1.2), vctrs (>= 0.6.1), withr,\nworkflows (>= 1.3.0), yardstick (>= 1.3.0)"                                                                                                                                                                                       
+#> tune              "cli (>= 3.3.0), dials (>= 1.4.3), dplyr (>= 1.1.0), GauPro (>=\n0.2.15), generics (>= 0.1.2), ggplot2, glue (>= 1.6.2), hardhat\n(>= 1.4.2), lifecycle, parallel, parsnip (>= 1.5.0), purrr (>=\n1.0.0), recipes (>= 1.3.2), rlang (>= 1.1.4), rsample (>=\n1.3.2), tailor (>= 0.1.0), tibble (>= 3.1.0), tidyr (>= 1.2.0),\ntidyselect (>= 1.1.2), vctrs (>= 0.6.1), withr, workflows (>=\n1.3.0), yardstick (>= 1.4.0)"                                                                                                                                                                                   
 #> tzdb              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> ucminf            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> unigd             "systemfonts (>= 1.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -1650,7 +1670,7 @@ installed.packages()
 #> xopen             "processx"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> xtable            "stats, utils, methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> yaml              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-#> yardstick         "cli, dplyr (>= 1.1.0), generics (>= 0.1.2), hardhat (>=\n1.3.0), lifecycle (>= 1.0.3), rlang (>= 1.1.4), tibble,\ntidyselect (>= 1.2.0), utils, vctrs (>= 0.5.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                    
+#> yardstick         "cli, dplyr (>= 1.1.0), generics (>= 0.1.2), hardhat (>=\n1.4.3), lifecycle (>= 1.0.3), rlang (>= 1.1.4), tibble,\ntidyselect (>= 1.2.0), utils, vctrs (>= 0.5.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> zip               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> zoo               "utils, graphics, grDevices, lattice (>= 0.20-27)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> base              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1701,6 +1721,7 @@ installed.packages()
 #> betaSandwich      NA                                                                                                                                                           
 #> BH                NA                                                                                                                                                           
 #> bibtex            NA                                                                                                                                                           
+#> biocmake          NA                                                                                                                                                           
 #> BiocManager       NA                                                                                                                                                           
 #> BiocVersion       NA                                                                                                                                                           
 #> bit               NA                                                                                                                                                           
@@ -1752,6 +1773,7 @@ installed.packages()
 #> DiceDesign        NA                                                                                                                                                           
 #> diffobj           NA                                                                                                                                                           
 #> digest            NA                                                                                                                                                           
+#> dir.expiry        NA                                                                                                                                                           
 #> distributional    NA                                                                                                                                                           
 #> distro            NA                                                                                                                                                           
 #> doBy              NA                                                                                                                                                           
@@ -1775,6 +1797,7 @@ installed.packages()
 #> fda               NA                                                                                                                                                           
 #> fdrtool           NA                                                                                                                                                           
 #> fds               NA                                                                                                                                                           
+#> filelock          NA                                                                                                                                                           
 #> fitVARMxID        NA                                                                                                                                                           
 #> FNN               NA                                                                                                                                                           
 #> fontawesome       NA                                                                                                                                                           
@@ -1790,6 +1813,7 @@ installed.packages()
 #> future            NA                                                                                                                                                           
 #> future.apply      NA                                                                                                                                                           
 #> gargle            NA                                                                                                                                                           
+#> GauPro            "Rcpp, RcppArmadillo"                                                                                                                                        
 #> generics          NA                                                                                                                                                           
 #> gert              NA                                                                                                                                                           
 #> ggplot2           NA                                                                                                                                                           
@@ -1804,7 +1828,6 @@ installed.packages()
 #> googlesheets4     NA                                                                                                                                                           
 #> gower             NA                                                                                                                                                           
 #> GPArotation       NA                                                                                                                                                           
-#> GPfit             NA                                                                                                                                                           
 #> graphicalVAR      "Rcpp, RcppArmadillo"                                                                                                                                        
 #> gridExtra         NA                                                                                                                                                           
 #> gsubfn            NA                                                                                                                                                           
@@ -1850,7 +1873,7 @@ installed.packages()
 #> lava              NA                                                                                                                                                           
 #> lavaan            NA                                                                                                                                                           
 #> lazyeval          NA                                                                                                                                                           
-#> lhs               "Rcpp"                                                                                                                                                       
+#> lbfgs             "Rcpp"                                                                                                                                                       
 #> lifecycle         NA                                                                                                                                                           
 #> lintr             NA                                                                                                                                                           
 #> lisrelToR         NA                                                                                                                                                           
@@ -1879,6 +1902,7 @@ installed.packages()
 #> miniUI            NA                                                                                                                                                           
 #> minqa             "Rcpp"                                                                                                                                                       
 #> mitml             NA                                                                                                                                                           
+#> mixopt            NA                                                                                                                                                           
 #> mize              NA                                                                                                                                                           
 #> mlVAR             NA                                                                                                                                                           
 #> mnormt            NA                                                                                                                                                           
@@ -1970,7 +1994,7 @@ installed.packages()
 #> rex               NA                                                                                                                                                           
 #> rhdf5             "Rhdf5lib"                                                                                                                                                   
 #> rhdf5filters      "Rhdf5lib"                                                                                                                                                   
-#> Rhdf5lib          NA                                                                                                                                                           
+#> Rhdf5lib          "biocmake"                                                                                                                                                   
 #> rhub              NA                                                                                                                                                           
 #> rjags             NA                                                                                                                                                           
 #> rlang             NA                                                                                                                                                           
@@ -2010,6 +2034,7 @@ installed.packages()
 #> sourcetools       NA                                                                                                                                                           
 #> SparseM           NA                                                                                                                                                           
 #> sparsevctrs       NA                                                                                                                                                           
+#> splitfngr         NA                                                                                                                                                           
 #> SQUAREM           NA                                                                                                                                                           
 #> StanHeaders       "RcppEigen (>= 0.3.4.0.0), RcppParallel (>= 5.1.4)"                                                                                                          
 #> stringi           NA                                                                                                                                                           
@@ -2109,10 +2134,11 @@ installed.packages()
 #> betaSandwich      "knitr, rmarkdown, testthat, betaDelta, betaMC, betaNB"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> BH                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> bibtex            "testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+#> biocmake          "knitr, rmarkdown, BiocStyle, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> BiocManager       "BiocVersion, BiocStyle, remotes, rmarkdown, testthat, withr,\ncurl, knitr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> BiocVersion       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> bit               "testthat (>= 3.0.0), roxygen2, knitr, markdown, rmarkdown,\nmicrobenchmark, bit64 (>= 4.0.0), ff (>= 4.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-#> bit64             "testthat (>= 3.0.3), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+#> bit64             "patrick (>= 0.3.0), testthat (>= 3.3.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> bitops            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> blob              "covr, crayon, pillar (>= 1.2.1), testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> bootStateSpace    "knitr, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -2160,6 +2186,7 @@ installed.packages()
 #> DiceDesign        "rgl, randtoolbox, lattice"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> diffobj           "knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> digest            "tinytest, simplermarkdown, rbenchmark"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+#> dir.expiry        "rmarkdown, knitr, testthat, BiocStyle"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> distributional    "testthat (>= 2.1.0), covr, mvtnorm, actuar (>= 2.0.0), evd,\nggdist, ggplot2, gk, LaplacesDemon, pkgdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> distro            "testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> doBy              "geepack, knitr, lme4, markdown, rmarkdown, multcomp, pbkrtest\n(>= 0.5.2), survival, testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2177,12 +2204,13 @@ installed.packages()
 #> expm              "RColorBrewer, sfsmisc, Rmpfr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> fansi             "unitizer, knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> farver            "covr, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-#> fastDummies       "testthat (>= 2.1.0), knitr, rmarkdown, covr, spelling"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+#> fastDummies       "testthat (>= 2.1.0), knitr, rmarkdown, covr, spelling, dplyr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> fastmap           "testthat (>= 2.1.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> fclust            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> fda               "rmarkdown, knitr, lattice"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> fdrtool           ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> fds               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+#> filelock          "callr (>= 2.0.0), covr, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> fitVARMxID        "knitr, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> FNN               "chemometrics, mvtnorm"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> fontawesome       "covr, dplyr (>= 1.0.8), gt (>= 0.9.0), knitr (>= 1.31),\ntestthat (>= 3.0.0), rsvg"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
@@ -2198,6 +2226,7 @@ installed.packages()
 #> future            "methods, RhpcBLASctl, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> future.apply      "datasets, stats, tools, listenv, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> gargle            "aws.ec2metadata, aws.signature, covr, httpuv, knitr,\nrmarkdown, sodium, spelling, testthat (>= 3.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+#> GauPro            "ContourFunctions, dplyr, ggrepel, gridExtra, knitr, lhs,\nMASS, microbenchmark, rlang, splitfngr, testthat, testthatmulti"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> generics          "covr, pkgload, testthat (>= 3.0.0), tibble, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> gert              "spelling, knitr, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> ggplot2           "broom, covr, dplyr, ggplot2movies, hexbin, Hmisc, hms, knitr,\nmapproj, maps, MASS, mgcv, multcomp, munsell, nlme, profvis,\nquantreg, quarto, ragg (>= 1.2.6), RColorBrewer, roxygen2,\nrpart, sf (>= 0.7-3), svglite (>= 2.1.2), testthat (>= 3.1.5),\ntibble, vdiffr (>= 1.0.6), xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2207,12 +2236,11 @@ installed.packages()
 #> glasso            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> glmnet            "knitr, lars, testthat, xfun, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> globals           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-#> glue              "crayon, DBI (>= 1.2.0), dplyr, knitr, magrittr, rlang,\nrmarkdown, RSQLite, testthat (>= 3.2.0), vctrs (>= 0.3.0),\nwaldo (>= 0.5.3), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+#> glue              "crayon, DBI (>= 1.2.0), dplyr, knitr, rlang, rmarkdown,\nRSQLite, testthat (>= 3.2.0), vctrs (>= 0.3.0), waldo (>=\n0.5.3), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> googledrive       "curl, dplyr (>= 1.0.0), knitr, rmarkdown, spelling, testthat\n(>= 3.1.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> googlesheets4     "readr, rmarkdown, spelling, testthat (>= 3.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #> gower             "tinytest (>= 0.9.3),"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> GPArotation       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-#> GPfit             "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> graphicalVAR      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> gridExtra         "ggplot2, egg, lattice, knitr, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> gsubfn            "boot, chron, grid, lattice, quantreg, svUnit, tcltk, zoo"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2258,7 +2286,7 @@ installed.packages()
 #> lava              "KernSmooth, Rgraphviz, data.table, ellipse, fields, geepack,\ngraph, knitr, rmarkdown, igraph (>= 0.6), lavaSearch2, lme4 (>=\n1.1.35.1), MASS, Matrix (>= 1.6.3), mets (>= 1.1), nlme,\noptimx, polycor, quantreg, rgl, svglite, targeted (>= 0.4),\ntestthat (>= 0.11), vdiffr, visNetwork"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> lavaan            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> lazyeval          "knitr, rmarkdown (>= 0.2.65), testthat, covr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-#> lhs               "testthat, DoE.base, knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+#> lbfgs             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> lifecycle         "covr, knitr, lintr (>= 3.1.0), rmarkdown, testthat (>=\n3.0.1), tibble, tidyverse, tools, vctrs, withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> lintr             "bookdown, cyclocomp, jsonlite, patrick (>= 0.2.0), rlang,\nrmarkdown, rstudioapi (>= 0.2), testthat (>= 3.2.1), tibble,\ntufte, withr (>= 2.5.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> lisrelToR         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -2287,6 +2315,7 @@ installed.packages()
 #> miniUI            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> minqa             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> mitml             "mice, miceadds, Amelia, lme4, nlme, lavaan, geepack, glmmTMB,\nsurvival, knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+#> mixopt            "ContourFunctions, gridExtra, lhs, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> mize              "testthat, knitr, rmarkdown, covr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> mlVAR             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> mnormt            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -2308,7 +2337,7 @@ installed.packages()
 #> pan               "mitools, lme4"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> pander            "grid, lattice, ggplot2 (>= 0.9.2), sylly, sylly.en, logger,\nsurvival, microbenchmark, zoo, nlme, descr, MASS, knitr,\nrmarkdown, tables, reshape, memisc, Epi, randomForest, tseries,\ngtable, rms, forecast, data.table"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> parallelly        "commonmark, base64enc"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-#> parsnip           "bench, C50, covr, dials (>= 1.1.0), earth, ggrepel, keras,\nkernlab, kknn, knitr, LiblineaR, MASS, Matrix, methods, mgcv,\nmodeldata, nlme, prodlim, ranger (>= 0.12.0), remotes,\nrmarkdown, rpart, sparklyr (>= 1.0.0), survival, tensorflow,\ntestthat (>= 3.0.0), xgboost (>= 1.5.0.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+#> parsnip           "bench, C50, covr, dials (>= 1.4.2.9001), earth, ggrepel,\nkeras, kernlab, kknn, knitr, LiblineaR, MASS, Matrix, methods,\nmgcv, modeldata, nlme, prodlim, ranger (>= 0.12.0), remotes,\nrmarkdown, rpart, sparklyr (>= 1.0.0), survival, tensorflow,\ntestthat (>= 3.0.0), withr, xgboost (>= 1.5.0.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> patchwork         "knitr, rmarkdown, gridGraphics, gridExtra, ragg, testthat (>=\n2.1.0), vdiffr, covr, png, gt (>= 0.11.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> pbapply           "shiny, future, future.apply"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> pbivnorm          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -2376,7 +2405,7 @@ installed.packages()
 #> reshape2          "covr, lattice, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> reticulate        "callr, knitr, glue, cli, rmarkdown, pillar, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> rex               "covr, dplyr, ggplot2, Hmisc, knitr, magrittr, rmarkdown,\nroxygen2, rvest, stringr, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-#> rhdf5             "bit64, BiocStyle, knitr, rmarkdown, testthat, bench, dplyr,\nggplot2, mockery, BiocParallel"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+#> rhdf5             "bench, BiocParallel, BiocStyle, bit64, curl, dplyr, ggplot2,\nknitr, rmarkdown, testthat, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #> rhdf5filters      "BiocStyle, knitr, rmarkdown, tinytest, rhdf5 (>= 2.47.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> Rhdf5lib          "BiocStyle, knitr, rmarkdown, tinytest, mockery"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> rhub              "asciicast, debugme, knitr, mockery, pillar, rmarkdown,\ntestthat (>= 3.0.0), webfakes, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
@@ -2418,6 +2447,7 @@ installed.packages()
 #> sourcetools       "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> SparseM           "knitr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> sparsevctrs       "knitr, Matrix, methods, rmarkdown, testthat (>= 3.0.0),\ntibble, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+#> splitfngr         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> SQUAREM           "setRNG, interval"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> StanHeaders       "Rcpp, BH (>= 1.75.0-0), knitr (>= 1.36), rmarkdown, Matrix,\nmethods, rstan, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> stringi           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -2466,7 +2496,7 @@ installed.packages()
 #> xopen             "ps, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> xtable            "knitr, zoo, survival, glue, tinytex"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> yaml              "knitr, rmarkdown, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-#> yardstick         "covr, crayon, ggplot2, knitr, probably (>= 1.0.0), rmarkdown,\nsurvival (>= 3.5-0), testthat (>= 3.0.0), tidyr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+#> yardstick         "covr, ggplot2, knitr, probably (>= 1.0.0), rmarkdown,\nsurvival (>= 3.5-0), testthat (>= 3.0.0), tidyr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> zip               "covr, pillar, processx, R6, testthat, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> zoo               "AER, coda, chron, ggplot2 (>= 3.5.0), mondate, scales,\nstinepack, strucchange, timeDate, timeSeries, tinyplot, tis,\ntseries, xts"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> base              "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
@@ -2496,7 +2526,7 @@ installed.packages()
 #> stats4            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> survival          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> tcltk             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-#> tools             "codetools, methods, xml2, curl, commonmark, knitr, xfun, mathjaxr, V8"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+#> tools             "codetools, methods, xml2, curl, commonmark, knitr, xfun, mathjaxr, V8, bibtex"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> utils             "methods, xml2, commonmark, knitr, jsonlite"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #>                   Enhances                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> rProject          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2517,6 +2547,7 @@ installed.packages()
 #> betaSandwich      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> BH                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> bibtex            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> biocmake          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> BiocManager       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> BiocVersion       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> bit               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2568,6 +2599,7 @@ installed.packages()
 #> DiceDesign        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> diffobj           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> digest            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> dir.expiry        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> distributional    NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> distro            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> doBy              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2591,6 +2623,7 @@ installed.packages()
 #> fda               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> fdrtool           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> fds               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> filelock          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> fitVARMxID        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> FNN               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> fontawesome       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2606,6 +2639,7 @@ installed.packages()
 #> future            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> future.apply      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> gargle            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> GauPro            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> generics          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> gert              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> ggplot2           "sp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -2620,7 +2654,6 @@ installed.packages()
 #> googlesheets4     NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> gower             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> GPArotation       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-#> GPfit             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> graphicalVAR      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> gridExtra         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> gsubfn            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2666,7 +2699,7 @@ installed.packages()
 #> lava              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> lavaan            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> lazyeval          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-#> lhs               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> lbfgs             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> lifecycle         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> lintr             "data.table"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> lisrelToR         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2695,6 +2728,7 @@ installed.packages()
 #> miniUI            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> minqa             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> mitml             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> mixopt            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> mize              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> mlVAR             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> mnormt            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2826,6 +2860,7 @@ installed.packages()
 #> sourcetools       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> SparseM           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> sparsevctrs       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> splitfngr         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> SQUAREM           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> StanHeaders       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> stringi           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2896,7 +2931,7 @@ installed.packages()
 #> mgcv              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> nlme              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> nnet              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-#> parallel          "snow, Rmpi, mirai"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+#> parallel          "snow, Rmpi, mirai, parallelly"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> rpart             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> spatial           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> splines           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2925,6 +2960,7 @@ installed.packages()
 #> betaSandwich      "MIT + file LICENSE"                          NA             
 #> BH                "BSL-1.0"                                     NA             
 #> bibtex            "GPL (>= 2)"                                  NA             
+#> biocmake          "MIT + file LICENSE"                          NA             
 #> BiocManager       "Artistic-2.0"                                NA             
 #> BiocVersion       "Artistic-2.0"                                NA             
 #> bit               "GPL-2 | GPL-3"                               NA             
@@ -2976,6 +3012,7 @@ installed.packages()
 #> DiceDesign        "GPL-3"                                       NA             
 #> diffobj           "GPL-2 | GPL-3"                               NA             
 #> digest            "GPL (>= 2)"                                  NA             
+#> dir.expiry        "GPL-3"                                       NA             
 #> distributional    "GPL-3"                                       NA             
 #> distro            "Apache License (>= 2.0)"                     NA             
 #> doBy              "GPL (>= 2)"                                  NA             
@@ -2999,6 +3036,7 @@ installed.packages()
 #> fda               "GPL (>= 2)"                                  NA             
 #> fdrtool           "GPL (>= 3)"                                  NA             
 #> fds               "GPL (>= 2)"                                  NA             
+#> filelock          "MIT + file LICENSE"                          NA             
 #> fitVARMxID        "MIT + file LICENSE"                          NA             
 #> FNN               "GPL (>= 2)"                                  NA             
 #> fontawesome       "MIT + file LICENSE"                          NA             
@@ -3014,6 +3052,7 @@ installed.packages()
 #> future            "LGPL (>= 2.1)"                               NA             
 #> future.apply      "GPL (>= 2)"                                  NA             
 #> gargle            "MIT + file LICENSE"                          NA             
+#> GauPro            "GPL-3"                                       NA             
 #> generics          "MIT + file LICENSE"                          NA             
 #> gert              "MIT + file LICENSE"                          NA             
 #> ggplot2           "MIT + file LICENSE"                          NA             
@@ -3028,7 +3067,6 @@ installed.packages()
 #> googlesheets4     "MIT + file LICENSE"                          NA             
 #> gower             "GPL-3"                                       NA             
 #> GPArotation       "GPL (>= 2)"                                  NA             
-#> GPfit             "GPL-2"                                       NA             
 #> graphicalVAR      "GPL (>= 2)"                                  NA             
 #> gridExtra         "GPL (>= 2)"                                  NA             
 #> gsubfn            "GPL (>= 2)"                                  NA             
@@ -3074,7 +3112,7 @@ installed.packages()
 #> lava              "Apache License (== 2.0)"                     NA             
 #> lavaan            "GPL (>= 2)"                                  NA             
 #> lazyeval          "GPL-3"                                       NA             
-#> lhs               "GPL-3"                                       NA             
+#> lbfgs             "GPL (>= 2)"                                  NA             
 #> lifecycle         "MIT + file LICENSE"                          NA             
 #> lintr             "MIT + file LICENSE"                          NA             
 #> lisrelToR         "GPL-2"                                       NA             
@@ -3103,6 +3141,7 @@ installed.packages()
 #> miniUI            "GPL-3"                                       NA             
 #> minqa             "GPL-2"                                       NA             
 #> mitml             "GPL (>= 2)"                                  NA             
+#> mixopt            "LGPL (>= 3)"                                 NA             
 #> mize              "BSD 2-clause License + file LICENSE"         NA             
 #> mlVAR             "GPL-2"                                       NA             
 #> mnormt            "GPL-2 | GPL-3"                               NA             
@@ -3234,6 +3273,7 @@ installed.packages()
 #> sourcetools       "MIT + file LICENSE"                          NA             
 #> SparseM           "GPL (>= 2)"                                  NA             
 #> sparsevctrs       "MIT + file LICENSE"                          NA             
+#> splitfngr         "GPL-3"                                       NA             
 #> SQUAREM           "GPL (>= 2)"                                  NA             
 #> StanHeaders       "BSD_3_clause + file LICENSE"                 NA             
 #> stringi           "file LICENSE"                                "yes"          
@@ -3285,441 +3325,1272 @@ installed.packages()
 #> yardstick         "MIT + file LICENSE"                          NA             
 #> zip               "MIT + file LICENSE"                          NA             
 #> zoo               "GPL-2 | GPL-3"                               NA             
-#> base              "Part of R 4.5.3"                             NA             
+#> base              "Part of R 4.6.0"                             NA             
 #> boot              "Unlimited"                                   NA             
 #> class             "GPL-2 | GPL-3"                               NA             
 #> cluster           "GPL (>= 2)"                                  NA             
 #> codetools         "GPL"                                         NA             
-#> compiler          "Part of R 4.5.3"                             NA             
-#> datasets          "Part of R 4.5.3"                             NA             
+#> compiler          "Part of R 4.6.0"                             NA             
+#> datasets          "Part of R 4.6.0"                             NA             
 #> foreign           "GPL (>= 2)"                                  NA             
-#> graphics          "Part of R 4.5.3"                             NA             
-#> grDevices         "Part of R 4.5.3"                             NA             
-#> grid              "Part of R 4.5.3"                             NA             
+#> graphics          "Part of R 4.6.0"                             NA             
+#> grDevices         "Part of R 4.6.0"                             NA             
+#> grid              "Part of R 4.6.0"                             NA             
 #> KernSmooth        "Unlimited"                                   NA             
 #> lattice           "GPL (>= 2)"                                  NA             
 #> MASS              "GPL-2 | GPL-3"                               NA             
 #> Matrix            "GPL (>= 2) | file LICENCE"                   NA             
-#> methods           "Part of R 4.5.3"                             NA             
+#> methods           "Part of R 4.6.0"                             NA             
 #> mgcv              "GPL (>= 2)"                                  NA             
 #> nlme              "GPL (>= 2)"                                  NA             
 #> nnet              "GPL-2 | GPL-3"                               NA             
-#> parallel          "Part of R 4.5.3"                             NA             
+#> parallel          "Part of R 4.6.0"                             NA             
 #> rpart             "GPL-2 | GPL-3"                               NA             
 #> spatial           "GPL-2 | GPL-3"                               NA             
-#> splines           "Part of R 4.5.3"                             NA             
-#> stats             "Part of R 4.5.3"                             NA             
-#> stats4            "Part of R 4.5.3"                             NA             
+#> splines           "Part of R 4.6.0"                             NA             
+#> stats             "Part of R 4.6.0"                             NA             
+#> stats4            "Part of R 4.6.0"                             NA             
 #> survival          "LGPL (>= 2)"                                 NA             
-#> tcltk             "Part of R 4.5.3"                             NA             
-#> tools             "Part of R 4.5.3"                             NA             
-#> utils             "Part of R 4.5.3"                             NA             
-#>                   License_restricts_use OS_type MD5sum NeedsCompilation Built  
-#> rProject          NA                    NA      NA     NA               "4.5.3"
-#> rProject          NA                    NA      NA     "no"             "4.5.3"
-#> abind             NA                    NA      NA     "no"             "4.5.0"
-#> Amelia            NA                    NA      NA     "yes"            "4.5.0"
-#> arm               NA                    NA      NA     "no"             "4.5.0"
-#> arrow             NA                    NA      NA     "yes"            "4.5.0"
-#> ash               NA                    NA      NA     "yes"            "4.5.0"
-#> AsioHeaders       NA                    NA      NA     "no"             "4.5.0"
-#> askpass           NA                    NA      NA     "yes"            "4.5.0"
-#> assertthat        NA                    NA      NA     "no"             "4.5.0"
-#> backports         NA                    NA      NA     "yes"            "4.5.0"
-#> base64enc         NA                    NA      NA     "yes"            "4.5.0"
-#> betaDelta         NA                    NA      NA     "no"             "4.5.3"
-#> betaMC            NA                    NA      NA     "no"             "4.5.3"
-#> betaNB            NA                    NA      NA     "no"             "4.5.3"
-#> betaSandwich      NA                    NA      NA     "no"             "4.5.3"
-#> BH                NA                    NA      NA     "no"             "4.5.0"
-#> bibtex            NA                    NA      NA     "no"             "4.5.0"
-#> BiocManager       NA                    NA      NA     "no"             "4.5.0"
-#> BiocVersion       NA                    NA      NA     "no"             "4.5.3"
-#> bit               NA                    NA      NA     "yes"            "4.5.0"
-#> bit64             NA                    NA      NA     "yes"            "4.5.0"
-#> bitops            NA                    NA      NA     "yes"            "4.5.0"
-#> blob              NA                    NA      NA     "no"             "4.5.0"
-#> bootStateSpace    NA                    NA      NA     "no"             "4.5.3"
-#> brew              NA                    NA      NA     "no"             "4.5.0"
-#> brio              NA                    NA      NA     "yes"            "4.5.0"
-#> broom             NA                    NA      NA     "no"             "4.5.0"
-#> bslib             NA                    NA      NA     "no"             "4.5.0"
-#> cachem            NA                    NA      NA     "yes"            "4.5.0"
-#> callr             NA                    NA      NA     "no"             "4.5.0"
-#> car               NA                    NA      NA     "no"             "4.5.0"
-#> caracas           NA                    NA      NA     "no"             "4.5.0"
-#> carData           NA                    NA      NA     "no"             "4.5.0"
-#> cellranger        NA                    NA      NA     "no"             "4.5.0"
-#> cffr              NA                    NA      NA     "no"             "4.5.0"
-#> checkmate         NA                    NA      NA     "yes"            "4.5.0"
-#> cli               NA                    NA      NA     "yes"            "4.5.3"
-#> clipr             NA                    NA      NA     "no"             "4.5.0"
-#> clock             NA                    NA      NA     "yes"            "4.5.0"
-#> clusterGeneration NA                    NA      NA     "no"             "4.5.0"
-#> coda              NA                    NA      NA     "no"             "4.5.0"
-#> cOde              NA                    NA      NA     "no"             "4.5.0"
-#> collections       NA                    NA      NA     "yes"            "4.5.0"
-#> colorspace        NA                    NA      NA     "yes"            "4.5.0"
-#> commonmark        NA                    NA      NA     "yes"            "4.5.0"
-#> conflicted        NA                    NA      NA     "no"             "4.5.0"
-#> corpcor           NA                    NA      NA     "no"             "4.5.0"
-#> covr              NA                    NA      NA     "yes"            "4.5.0"
-#> cowplot           NA                    NA      NA     "no"             "4.5.0"
-#> cpp11             NA                    NA      NA     "no"             "4.5.0"
-#> crayon            NA                    NA      NA     "no"             "4.5.0"
-#> credentials       NA                    NA      NA     "no"             "4.5.0"
-#> crosstalk         NA                    NA      NA     "no"             "4.5.0"
-#> cTMed             NA                    NA      NA     "yes"            "4.5.3"
-#> ctsem             NA                    NA      NA     "yes"            "4.5.0"
-#> curl              NA                    NA      NA     "yes"            "4.5.0"
-#> data.table        NA                    NA      NA     "yes"            "4.5.0"
-#> DBI               NA                    NA      NA     "no"             "4.5.0"
-#> dbplyr            NA                    NA      NA     "no"             "4.5.0"
-#> Deriv             NA                    NA      NA     "no"             "4.5.0"
-#> desc              NA                    NA      NA     "no"             "4.5.0"
-#> deSolve           NA                    NA      NA     "yes"            "4.5.0"
-#> devtools          NA                    NA      NA     "no"             "4.5.3"
-#> diagram           NA                    NA      NA     "no"             "4.5.0"
-#> dials             NA                    NA      NA     "no"             "4.5.0"
-#> DiceDesign        NA                    NA      NA     "yes"            "4.5.0"
-#> diffobj           NA                    NA      NA     "yes"            "4.5.0"
-#> digest            NA                    NA      NA     "yes"            "4.5.0"
-#> distributional    NA                    NA      NA     "no"             "4.5.0"
-#> distro            NA                    NA      NA     "no"             "4.5.0"
-#> doBy              NA                    NA      NA     "no"             "4.5.0"
-#> docopt            NA                    NA      NA     "no"             "4.5.3"
-#> downlit           NA                    NA      NA     "no"             "4.5.0"
-#> dplyr             NA                    NA      NA     "yes"            "4.5.0"
-#> DT                NA                    NA      NA     "no"             "4.5.0"
-#> dtplyr            NA                    NA      NA     "no"             "4.5.0"
-#> duckdb            NA                    NA      NA     "yes"            "4.5.0"
-#> dynr              NA                    NA      NA     "yes"            "4.5.3"
-#> dynUtils          NA                    NA      NA     "no"             "4.5.3"
-#> ellipse           NA                    NA      NA     "no"             "4.5.0"
-#> ellipsis          NA                    NA      NA     "no"             "4.5.0"
-#> evaluate          NA                    NA      NA     "no"             "4.5.0"
-#> expm              NA                    NA      NA     "yes"            "4.5.0"
-#> fansi             NA                    NA      NA     "yes"            "4.5.0"
-#> farver            NA                    NA      NA     "yes"            "4.5.0"
-#> fastDummies       NA                    NA      NA     "no"             "4.5.0"
-#> fastmap           NA                    NA      NA     "yes"            "4.5.0"
-#> fclust            NA                    NA      NA     "yes"            "4.5.0"
-#> fda               NA                    NA      NA     "no"             "4.5.0"
-#> fdrtool           NA                    NA      NA     "yes"            "4.5.0"
-#> fds               NA                    NA      NA     "no"             "4.5.0"
-#> fitVARMxID        NA                    NA      NA     "no"             "4.5.3"
-#> FNN               NA                    NA      NA     "yes"            "4.5.0"
-#> fontawesome       NA                    NA      NA     "no"             "4.5.0"
-#> forcats           NA                    NA      NA     "no"             "4.5.0"
-#> foreach           NA                    NA      NA     "no"             "4.5.0"
-#> forecast          NA                    NA      NA     "yes"            "4.5.0"
-#> Formula           NA                    NA      NA     "no"             "4.5.0"
-#> fracdiff          NA                    NA      NA     "yes"            "4.5.0"
-#> fs                NA                    NA      NA     "yes"            "4.5.0"
-#> fst               NA                    NA      NA     "yes"            "4.5.0"
-#> fstcore           NA                    NA      NA     "yes"            "4.5.0"
-#> furrr             NA                    NA      NA     "no"             "4.5.0"
-#> future            NA                    NA      NA     "no"             "4.5.0"
-#> future.apply      NA                    NA      NA     "no"             "4.5.0"
-#> gargle            NA                    NA      NA     "no"             "4.5.0"
-#> generics          NA                    NA      NA     "no"             "4.5.0"
-#> gert              NA                    NA      NA     "yes"            "4.5.0"
-#> ggplot2           NA                    NA      NA     "no"             "4.5.0"
-#> ggrepel           NA                    NA      NA     "yes"            "4.5.0"
-#> gh                NA                    NA      NA     "no"             "4.5.0"
-#> gitcreds          NA                    NA      NA     "no"             "4.5.0"
-#> glasso            NA                    NA      NA     "yes"            "4.5.0"
-#> glmnet            NA                    NA      NA     "yes"            "4.5.0"
-#> globals           NA                    NA      NA     "no"             "4.5.0"
-#> glue              NA                    NA      NA     "yes"            "4.5.0"
-#> googledrive       NA                    NA      NA     "no"             "4.5.0"
-#> googlesheets4     NA                    NA      NA     "no"             "4.5.0"
-#> gower             NA                    NA      NA     "yes"            "4.5.0"
-#> GPArotation       NA                    NA      NA     "no"             "4.5.0"
-#> GPfit             NA                    NA      NA     "no"             "4.5.0"
-#> graphicalVAR      NA                    NA      NA     "yes"            "4.5.0"
-#> gridExtra         NA                    NA      NA     "no"             "4.5.0"
-#> gsubfn            NA                    NA      NA     "no"             "4.5.0"
-#> gtable            NA                    NA      NA     "no"             "4.5.0"
-#> gtools            NA                    NA      NA     "yes"            "4.5.0"
-#> hardhat           NA                    NA      NA     "no"             "4.5.0"
-#> haven             NA                    NA      NA     "yes"            "4.5.0"
-#> hdrcde            NA                    NA      NA     "yes"            "4.5.0"
-#> here              NA                    NA      NA     "no"             "4.5.0"
-#> highr             NA                    NA      NA     "no"             "4.5.0"
-#> Hmisc             NA                    NA      NA     "yes"            "4.5.0"
-#> hms               NA                    NA      NA     "no"             "4.5.0"
-#> htmlTable         NA                    NA      NA     "no"             "4.5.0"
-#> htmltools         NA                    NA      NA     "yes"            "4.5.0"
-#> htmlwidgets       NA                    NA      NA     "no"             "4.5.0"
-#> httpgd            NA                    NA      NA     "yes"            "4.5.3"
-#> httpuv            NA                    NA      NA     "yes"            "4.5.0"
-#> httr              NA                    NA      NA     "no"             "4.5.0"
-#> httr2             NA                    NA      NA     "no"             "4.5.0"
-#> ids               NA                    NA      NA     "no"             "4.5.0"
-#> ifaTools          NA                    NA      NA     "no"             "4.5.0"
-#> igraph            NA                    NA      NA     "yes"            "4.5.0"
-#> infer             NA                    NA      NA     "no"             "4.5.0"
-#> ini               NA                    NA      NA     "no"             "4.5.0"
-#> inline            NA                    NA      NA     "no"             "4.5.0"
-#> ipred             NA                    NA      NA     "yes"            "4.5.0"
-#> isoband           NA                    NA      NA     "yes"            "4.5.0"
-#> iterators         NA                    NA      NA     "no"             "4.5.0"
-#> jomo              NA                    NA      NA     "yes"            "4.5.0"
-#> jpeg              NA                    NA      NA     "yes"            "4.5.0"
-#> jquerylib         NA                    NA      NA     "no"             "4.5.0"
-#> jsonlite          NA                    NA      NA     "yes"            "4.5.0"
-#> jsonvalidate      NA                    NA      NA     "no"             "4.5.0"
-#> kernlab           NA                    NA      NA     "yes"            "4.5.0"
-#> knitr             NA                    NA      NA     "no"             "4.5.0"
-#> ks                NA                    NA      NA     "yes"            "4.5.0"
-#> kutils            NA                    NA      NA     "no"             "4.5.0"
-#> labeling          NA                    NA      NA     "no"             "4.5.0"
-#> Lahman            NA                    NA      NA     "no"             "4.5.0"
-#> languageserver    NA                    NA      NA     "yes"            "4.5.0"
-#> later             NA                    NA      NA     "yes"            "4.5.0"
-#> latex2exp         NA                    NA      NA     "no"             "4.5.0"
-#> lava              NA                    NA      NA     "no"             "4.5.0"
-#> lavaan            NA                    NA      NA     "no"             "4.5.0"
-#> lazyeval          NA                    NA      NA     "yes"            "4.5.0"
-#> lhs               NA                    NA      NA     "yes"            "4.5.0"
-#> lifecycle         NA                    NA      NA     "no"             "4.5.0"
-#> lintr             NA                    NA      NA     "no"             "4.5.0"
-#> lisrelToR         NA                    NA      NA     "no"             "4.5.0"
-#> listenv           NA                    NA      NA     "no"             "4.5.0"
-#> litedown          NA                    NA      NA     "no"             "4.5.0"
-#> littler           NA                    "unix"  NA     "yes"            "4.5.3"
-#> lme4              NA                    NA      NA     "yes"            "4.5.0"
-#> lmtest            NA                    NA      NA     "yes"            "4.5.0"
-#> locfit            NA                    NA      NA     "yes"            "4.5.0"
-#> longMI            NA                    NA      NA     "no"             "4.5.3"
-#> loo               NA                    NA      NA     "no"             "4.5.0"
-#> lubridate         NA                    NA      NA     "yes"            "4.5.0"
-#> magick            NA                    NA      NA     "yes"            "4.5.0"
-#> magrittr          NA                    NA      NA     "yes"            "4.5.0"
-#> markdown          NA                    NA      NA     "no"             "4.5.0"
-#> MatrixModels      NA                    NA      NA     "no"             "4.5.0"
-#> matrixStats       NA                    NA      NA     "yes"            "4.5.0"
-#> mclust            NA                    NA      NA     "yes"            "4.5.0"
-#> memoise           NA                    NA      NA     "no"             "4.5.0"
-#> metaDyn           NA                    NA      NA     "no"             "4.5.3"
-#> metaSEM           NA                    NA      NA     "no"             "4.5.0"
-#> mi                NA                    NA      NA     "no"             "4.5.0"
-#> mice              NA                    NA      NA     "yes"            "4.5.0"
-#> microbenchmark    NA                    NA      NA     "yes"            "4.5.0"
-#> mime              NA                    NA      NA     "yes"            "4.5.0"
-#> miniUI            NA                    NA      NA     "no"             "4.5.0"
-#> minqa             NA                    NA      NA     "yes"            "4.5.0"
-#> mitml             NA                    NA      NA     "no"             "4.5.0"
-#> mize              NA                    NA      NA     "no"             "4.5.0"
-#> mlVAR             NA                    NA      NA     "no"             "4.5.0"
-#> mnormt            NA                    NA      NA     "yes"            "4.5.0"
-#> modeldata         NA                    NA      NA     "no"             "4.5.0"
-#> modelenv          NA                    NA      NA     "no"             "4.5.0"
-#> modelr            NA                    NA      NA     "no"             "4.5.0"
-#> MplusAutomation   NA                    NA      NA     "no"             "4.5.0"
-#> multicool         NA                    NA      NA     "yes"            "4.5.0"
-#> mvtnorm           NA                    NA      NA     "yes"            "4.5.0"
-#> nloptr            NA                    NA      NA     "yes"            "4.5.0"
-#> numDeriv          NA                    NA      NA     "no"             "4.5.0"
-#> nycflights13      NA                    NA      NA     "no"             "4.5.0"
-#> OpenMx            NA                    NA      NA     "yes"            "4.5.0"
-#> openssl           NA                    NA      NA     "yes"            "4.5.0"
-#> openxlsx          NA                    NA      NA     "yes"            "4.5.0"
-#> ordinal           NA                    NA      NA     "yes"            "4.5.0"
-#> otel              NA                    NA      NA     "no"             "4.5.0"
-#> pak               NA                    NA      NA     "yes"            "4.5.0"
-#> pan               NA                    NA      NA     "yes"            "4.5.0"
-#> pander            NA                    NA      NA     "yes"            "4.5.0"
-#> parallelly        NA                    NA      NA     "yes"            "4.5.0"
-#> parsnip           NA                    NA      NA     "no"             "4.5.0"
-#> patchwork         NA                    NA      NA     "no"             "4.5.0"
-#> pbapply           NA                    NA      NA     "no"             "4.5.0"
-#> pbivnorm          NA                    NA      NA     "yes"            "4.5.0"
-#> pbkrtest          NA                    NA      NA     "no"             "4.5.0"
-#> pcaPP             NA                    NA      NA     "yes"            "4.5.0"
-#> pdftools          NA                    NA      NA     "yes"            "4.5.0"
-#> pillar            NA                    NA      NA     "no"             "4.5.0"
-#> pkgbuild          NA                    NA      NA     "no"             "4.5.0"
-#> pkgconfig         NA                    NA      NA     "no"             "4.5.0"
-#> pkgdown           NA                    NA      NA     "no"             "4.5.0"
-#> pkgload           NA                    NA      NA     "no"             "4.5.0"
-#> plyr              NA                    NA      NA     "yes"            "4.5.0"
-#> png               NA                    NA      NA     "yes"            "4.5.0"
-#> posterior         NA                    NA      NA     "no"             "4.5.0"
-#> pracma            NA                    NA      NA     "no"             "4.5.0"
-#> praise            NA                    NA      NA     "no"             "4.5.0"
-#> prettyunits       NA                    NA      NA     "no"             "4.5.0"
-#> printr            NA                    NA      NA     "no"             "4.5.0"
-#> processx          NA                    NA      NA     "yes"            "4.5.0"
-#> prodlim           NA                    NA      NA     "yes"            "4.5.0"
-#> profvis           NA                    NA      NA     "yes"            "4.5.0"
-#> progress          NA                    NA      NA     "no"             "4.5.0"
-#> progressr         NA                    NA      NA     "no"             "4.5.0"
-#> promises          NA                    NA      NA     "no"             "4.5.0"
-#> proto             NA                    NA      NA     "no"             "4.5.0"
-#> ps                NA                    NA      NA     "yes"            "4.5.0"
-#> psych             NA                    NA      NA     "no"             "4.5.0"
-#> purrr             NA                    NA      NA     "yes"            "4.5.0"
-#> qgraph            NA                    NA      NA     "yes"            "4.5.0"
-#> qpdf              NA                    NA      NA     "yes"            "4.5.0"
-#> quadprog          NA                    NA      NA     "yes"            "4.5.0"
-#> quantreg          NA                    NA      NA     "yes"            "4.5.0"
-#> quarto            NA                    NA      NA     "no"             "4.5.0"
-#> QuickJSR          NA                    NA      NA     "yes"            "4.5.0"
-#> R.cache           NA                    NA      NA     "no"             "4.5.0"
-#> R.methodsS3       NA                    NA      NA     "no"             "4.5.0"
-#> R.oo              NA                    NA      NA     "no"             "4.5.0"
-#> R.utils           NA                    NA      NA     "no"             "4.5.0"
-#> R2jags            NA                    NA      NA     "no"             "4.5.0"
-#> R2WinBUGS         NA                    NA      NA     "no"             "4.5.0"
-#> R6                NA                    NA      NA     "no"             "4.5.0"
-#> ragg              NA                    NA      NA     "yes"            "4.5.0"
-#> rainbow           NA                    NA      NA     "no"             "4.5.0"
-#> rappdirs          NA                    NA      NA     "yes"            "4.5.0"
-#> rbibutils         NA                    NA      NA     "yes"            "4.5.0"
-#> rcmdcheck         NA                    NA      NA     "no"             "4.5.0"
-#> RColorBrewer      NA                    NA      NA     "no"             "4.5.0"
-#> Rcpp              NA                    NA      NA     "yes"            "4.5.0"
-#> RcppArmadillo     NA                    NA      NA     "yes"            "4.5.0"
-#> RcppEigen         NA                    NA      NA     "yes"            "4.5.0"
-#> RcppGSL           NA                    NA      NA     "yes"            "4.5.0"
-#> RcppParallel      NA                    NA      NA     "yes"            "4.5.0"
-#> RcppTOML          NA                    NA      NA     "yes"            "4.5.0"
-#> RCurl             NA                    NA      NA     "yes"            "4.5.0"
-#> Rdpack            NA                    NA      NA     "no"             "4.5.0"
-#> readr             NA                    NA      NA     "yes"            "4.5.0"
-#> readxl            NA                    NA      NA     "yes"            "4.5.0"
-#> recipes           NA                    NA      NA     "no"             "4.5.0"
-#> RefManageR        NA                    NA      NA     "no"             "4.5.0"
-#> reformulas        NA                    NA      NA     "no"             "4.5.0"
-#> rematch           NA                    NA      NA     "no"             "4.5.0"
-#> rematch2          NA                    NA      NA     "no"             "4.5.0"
-#> remotes           NA                    NA      NA     "no"             "4.5.0"
-#> reprex            NA                    NA      NA     "no"             "4.5.0"
-#> reshape2          NA                    NA      NA     "yes"            "4.5.0"
-#> reticulate        NA                    NA      NA     "yes"            "4.5.0"
-#> rex               NA                    NA      NA     "no"             "4.5.0"
-#> rhdf5             NA                    NA      NA     "yes"            "4.5.3"
-#> rhdf5filters      NA                    NA      NA     "yes"            "4.5.3"
-#> Rhdf5lib          NA                    NA      NA     "yes"            "4.5.3"
-#> rhub              NA                    NA      NA     "no"             "4.5.0"
-#> rjags             NA                    NA      NA     "yes"            "4.5.0"
-#> rlang             NA                    NA      NA     "yes"            "4.5.0"
-#> RMariaDB          NA                    NA      NA     "yes"            "4.5.0"
-#> rmarkdown         NA                    NA      NA     "no"             "4.5.0"
-#> rockchalk         NA                    NA      NA     "no"             "4.5.0"
-#> roxygen2          NA                    NA      NA     "yes"            "4.5.3"
-#> rpf               NA                    NA      NA     "yes"            "4.5.0"
-#> RPostgres         NA                    NA      NA     "yes"            "4.5.0"
-#> rProject          NA                    NA      NA     "no"             "4.5.3"
-#> rprojroot         NA                    NA      NA     "no"             "4.5.0"
-#> rsample           NA                    NA      NA     "no"             "4.5.0"
-#> RSQLite           NA                    NA      NA     "yes"            "4.5.0"
-#> rstan             NA                    NA      NA     "yes"            "4.5.0"
-#> rstantools        NA                    NA      NA     "no"             "4.5.0"
-#> rstudioapi        NA                    NA      NA     "no"             "4.5.0"
-#> RUnit             NA                    NA      NA     "no"             "4.5.0"
-#> rversions         NA                    NA      NA     "no"             "4.5.0"
-#> rvest             NA                    NA      NA     "no"             "4.5.0"
-#> Ryacas            NA                    NA      NA     "yes"            "4.5.0"
-#> S7                NA                    NA      NA     "yes"            "4.5.0"
-#> sass              NA                    NA      NA     "yes"            "4.5.0"
-#> scales            NA                    NA      NA     "no"             "4.5.0"
-#> selectr           NA                    NA      NA     "no"             "4.5.0"
-#> sem               NA                    NA      NA     "yes"            "4.5.0"
-#> semlbci           NA                    NA      NA     "no"             "4.5.0"
-#> semmcci           NA                    NA      NA     "no"             "4.5.3"
-#> semPlot           NA                    NA      NA     "no"             "4.5.0"
-#> sessioninfo       NA                    NA      NA     "no"             "4.5.0"
-#> sfd               NA                    NA      NA     "no"             "4.5.0"
-#> shape             NA                    NA      NA     "no"             "4.5.0"
-#> shiny             NA                    NA      NA     "no"             "4.5.0"
-#> simStateSpace     NA                    NA      NA     "yes"            "4.5.3"
-#> slider            NA                    NA      NA     "yes"            "4.5.0"
-#> snow              NA                    NA      NA     "no"             "4.5.0"
-#> snowfall          NA                    NA      NA     "no"             "4.5.0"
-#> sourcetools       NA                    NA      NA     "yes"            "4.5.0"
-#> SparseM           NA                    NA      NA     "yes"            "4.5.0"
-#> sparsevctrs       NA                    NA      NA     "yes"            "4.5.0"
-#> SQUAREM           NA                    NA      NA     "no"             "4.5.0"
-#> StanHeaders       NA                    NA      NA     "yes"            "4.5.0"
-#> stringi           NA                    NA      NA     "yes"            "4.5.0"
-#> stringr           NA                    NA      NA     "no"             "4.5.0"
-#> styler            NA                    NA      NA     "no"             "4.5.0"
-#> symSEM            NA                    NA      NA     "no"             "4.5.0"
-#> sys               NA                    NA      NA     "yes"            "4.5.0"
-#> systemfonts       NA                    NA      NA     "yes"            "4.5.0"
-#> tailor            NA                    NA      NA     "no"             "4.5.0"
-#> tensorA           NA                    NA      NA     "yes"            "4.5.0"
-#> testthat          NA                    NA      NA     "yes"            "4.5.0"
-#> texreg            NA                    NA      NA     "no"             "4.5.0"
-#> textshaping       NA                    NA      NA     "yes"            "4.5.0"
-#> tibble            NA                    NA      NA     "yes"            "4.5.0"
-#> tidymodels        NA                    NA      NA     "no"             "4.5.0"
-#> tidyr             NA                    NA      NA     "yes"            "4.5.0"
-#> tidyselect        NA                    NA      NA     "yes"            "4.5.0"
-#> tidyverse         NA                    NA      NA     "no"             "4.5.0"
-#> timechange        NA                    NA      NA     "yes"            "4.5.0"
-#> timeDate          NA                    NA      NA     "no"             "4.5.0"
-#> tinytex           NA                    NA      NA     "no"             "4.5.3"
-#> tune              NA                    NA      NA     "no"             "4.5.0"
-#> tzdb              NA                    NA      NA     "yes"            "4.5.0"
-#> ucminf            NA                    NA      NA     "yes"            "4.5.0"
-#> unigd             NA                    NA      NA     "yes"            "4.5.0"
-#> urca              NA                    NA      NA     "yes"            "4.5.0"
-#> urlchecker        NA                    NA      NA     "no"             "4.5.0"
-#> usethis           NA                    NA      NA     "no"             "4.5.0"
-#> utf8              NA                    NA      NA     "yes"            "4.5.0"
-#> uuid              NA                    NA      NA     "yes"            "4.5.0"
-#> V8                NA                    NA      NA     "yes"            "4.5.0"
-#> vctrs             NA                    NA      NA     "yes"            "4.5.0"
-#> viridisLite       NA                    NA      NA     "no"             "4.5.0"
-#> vroom             NA                    NA      NA     "yes"            "4.5.0"
-#> waldo             NA                    NA      NA     "no"             "4.5.0"
-#> warp              NA                    NA      NA     "yes"            "4.5.0"
-#> whisker           NA                    NA      NA     "no"             "4.5.0"
-#> whoami            NA                    NA      NA     "no"             "4.5.0"
-#> withr             NA                    NA      NA     "no"             "4.5.0"
-#> workflows         NA                    NA      NA     "no"             "4.5.0"
-#> workflowsets      NA                    NA      NA     "no"             "4.5.0"
-#> xfun              NA                    NA      NA     "yes"            "4.5.0"
-#> XML               NA                    NA      NA     "yes"            "4.5.0"
-#> xml2              NA                    NA      NA     "yes"            "4.5.0"
-#> xmlparsedata      NA                    NA      NA     "no"             "4.5.0"
-#> xopen             NA                    NA      NA     "no"             "4.5.0"
-#> xtable            NA                    NA      NA     "no"             "4.5.0"
-#> yaml              NA                    NA      NA     "yes"            "4.5.0"
-#> yardstick         NA                    NA      NA     "yes"            "4.5.0"
-#> zip               NA                    NA      NA     "yes"            "4.5.0"
-#> zoo               NA                    NA      NA     "yes"            "4.5.0"
-#> base              NA                    NA      NA     NA               "4.5.3"
-#> boot              NA                    NA      NA     "no"             "4.5.3"
-#> class             NA                    NA      NA     "yes"            "4.5.3"
-#> cluster           NA                    NA      NA     "yes"            "4.5.3"
-#> codetools         NA                    NA      NA     "no"             "4.5.3"
-#> compiler          NA                    NA      NA     NA               "4.5.3"
-#> datasets          NA                    NA      NA     NA               "4.5.3"
-#> foreign           NA                    NA      NA     "yes"            "4.5.3"
-#> graphics          NA                    NA      NA     "yes"            "4.5.3"
-#> grDevices         NA                    NA      NA     "yes"            "4.5.3"
-#> grid              NA                    NA      NA     "yes"            "4.5.3"
-#> KernSmooth        NA                    NA      NA     "yes"            "4.5.3"
-#> lattice           NA                    NA      NA     "yes"            "4.5.3"
-#> MASS              NA                    NA      NA     "yes"            "4.5.3"
-#> Matrix            NA                    NA      NA     "yes"            "4.5.3"
-#> methods           NA                    NA      NA     "yes"            "4.5.3"
-#> mgcv              NA                    NA      NA     "yes"            "4.5.3"
-#> nlme              NA                    NA      NA     "yes"            "4.5.3"
-#> nnet              NA                    NA      NA     "yes"            "4.5.3"
-#> parallel          NA                    NA      NA     "yes"            "4.5.3"
-#> rpart             NA                    NA      NA     "yes"            "4.5.3"
-#> spatial           NA                    NA      NA     "yes"            "4.5.3"
-#> splines           NA                    NA      NA     "yes"            "4.5.3"
-#> stats             NA                    NA      NA     "yes"            "4.5.3"
-#> stats4            NA                    NA      NA     NA               "4.5.3"
-#> survival          NA                    NA      NA     "yes"            "4.5.3"
-#> tcltk             NA                    NA      NA     "yes"            "4.5.3"
-#> tools             NA                    NA      NA     "yes"            "4.5.3"
-#> utils             NA                    NA      NA     "yes"            "4.5.3"
+#> tcltk             "Part of R 4.6.0"                             NA             
+#> tools             "Part of R 4.6.0"                             NA             
+#> utils             "Part of R 4.6.0"                             NA             
+#>                   License_restricts_use OS_type MD5sum NeedsCompilation
+#> rProject          NA                    NA      NA     NA              
+#> rProject          NA                    NA      NA     "no"            
+#> abind             NA                    NA      NA     "no"            
+#> Amelia            NA                    NA      NA     "yes"           
+#> arm               NA                    NA      NA     "no"            
+#> arrow             NA                    NA      NA     "yes"           
+#> ash               NA                    NA      NA     "yes"           
+#> AsioHeaders       NA                    NA      NA     "no"            
+#> askpass           NA                    NA      NA     "yes"           
+#> assertthat        NA                    NA      NA     "no"            
+#> backports         NA                    NA      NA     "yes"           
+#> base64enc         NA                    NA      NA     "yes"           
+#> betaDelta         NA                    NA      NA     "no"            
+#> betaMC            NA                    NA      NA     "no"            
+#> betaNB            NA                    NA      NA     "no"            
+#> betaSandwich      NA                    NA      NA     "no"            
+#> BH                NA                    NA      NA     "no"            
+#> bibtex            NA                    NA      NA     "no"            
+#> biocmake          NA                    NA      NA     "no"            
+#> BiocManager       NA                    NA      NA     "no"            
+#> BiocVersion       NA                    NA      NA     "no"            
+#> bit               NA                    NA      NA     "yes"           
+#> bit64             NA                    NA      NA     "yes"           
+#> bitops            NA                    NA      NA     "yes"           
+#> blob              NA                    NA      NA     "no"            
+#> bootStateSpace    NA                    NA      NA     "no"            
+#> brew              NA                    NA      NA     "no"            
+#> brio              NA                    NA      NA     "yes"           
+#> broom             NA                    NA      NA     "no"            
+#> bslib             NA                    NA      NA     "no"            
+#> cachem            NA                    NA      NA     "yes"           
+#> callr             NA                    NA      NA     "no"            
+#> car               NA                    NA      NA     "no"            
+#> caracas           NA                    NA      NA     "no"            
+#> carData           NA                    NA      NA     "no"            
+#> cellranger        NA                    NA      NA     "no"            
+#> cffr              NA                    NA      NA     "no"            
+#> checkmate         NA                    NA      NA     "yes"           
+#> cli               NA                    NA      NA     "yes"           
+#> clipr             NA                    NA      NA     "no"            
+#> clock             NA                    NA      NA     "yes"           
+#> clusterGeneration NA                    NA      NA     "no"            
+#> coda              NA                    NA      NA     "no"            
+#> cOde              NA                    NA      NA     "no"            
+#> collections       NA                    NA      NA     "yes"           
+#> colorspace        NA                    NA      NA     "yes"           
+#> commonmark        NA                    NA      NA     "yes"           
+#> conflicted        NA                    NA      NA     "no"            
+#> corpcor           NA                    NA      NA     "no"            
+#> covr              NA                    NA      NA     "yes"           
+#> cowplot           NA                    NA      NA     "no"            
+#> cpp11             NA                    NA      NA     "no"            
+#> crayon            NA                    NA      NA     "no"            
+#> credentials       NA                    NA      NA     "no"            
+#> crosstalk         NA                    NA      NA     "no"            
+#> cTMed             NA                    NA      NA     "yes"           
+#> ctsem             NA                    NA      NA     "yes"           
+#> curl              NA                    NA      NA     "yes"           
+#> data.table        NA                    NA      NA     "yes"           
+#> DBI               NA                    NA      NA     "no"            
+#> dbplyr            NA                    NA      NA     "no"            
+#> Deriv             NA                    NA      NA     "no"            
+#> desc              NA                    NA      NA     "no"            
+#> deSolve           NA                    NA      NA     "yes"           
+#> devtools          NA                    NA      NA     "no"            
+#> diagram           NA                    NA      NA     "no"            
+#> dials             NA                    NA      NA     "no"            
+#> DiceDesign        NA                    NA      NA     "yes"           
+#> diffobj           NA                    NA      NA     "yes"           
+#> digest            NA                    NA      NA     "yes"           
+#> dir.expiry        NA                    NA      NA     "no"            
+#> distributional    NA                    NA      NA     "no"            
+#> distro            NA                    NA      NA     "no"            
+#> doBy              NA                    NA      NA     "no"            
+#> docopt            NA                    NA      NA     "no"            
+#> downlit           NA                    NA      NA     "no"            
+#> dplyr             NA                    NA      NA     "yes"           
+#> DT                NA                    NA      NA     "no"            
+#> dtplyr            NA                    NA      NA     "no"            
+#> duckdb            NA                    NA      NA     "yes"           
+#> dynr              NA                    NA      NA     "yes"           
+#> dynUtils          NA                    NA      NA     "no"            
+#> ellipse           NA                    NA      NA     "no"            
+#> ellipsis          NA                    NA      NA     "no"            
+#> evaluate          NA                    NA      NA     "no"            
+#> expm              NA                    NA      NA     "yes"           
+#> fansi             NA                    NA      NA     "yes"           
+#> farver            NA                    NA      NA     "yes"           
+#> fastDummies       NA                    NA      NA     "no"            
+#> fastmap           NA                    NA      NA     "yes"           
+#> fclust            NA                    NA      NA     "yes"           
+#> fda               NA                    NA      NA     "no"            
+#> fdrtool           NA                    NA      NA     "yes"           
+#> fds               NA                    NA      NA     "no"            
+#> filelock          NA                    NA      NA     "yes"           
+#> fitVARMxID        NA                    NA      NA     "no"            
+#> FNN               NA                    NA      NA     "yes"           
+#> fontawesome       NA                    NA      NA     "no"            
+#> forcats           NA                    NA      NA     "no"            
+#> foreach           NA                    NA      NA     "no"            
+#> forecast          NA                    NA      NA     "yes"           
+#> Formula           NA                    NA      NA     "no"            
+#> fracdiff          NA                    NA      NA     "yes"           
+#> fs                NA                    NA      NA     "yes"           
+#> fst               NA                    NA      NA     "yes"           
+#> fstcore           NA                    NA      NA     "yes"           
+#> furrr             NA                    NA      NA     "no"            
+#> future            NA                    NA      NA     "no"            
+#> future.apply      NA                    NA      NA     "no"            
+#> gargle            NA                    NA      NA     "no"            
+#> GauPro            NA                    NA      NA     "yes"           
+#> generics          NA                    NA      NA     "no"            
+#> gert              NA                    NA      NA     "yes"           
+#> ggplot2           NA                    NA      NA     "no"            
+#> ggrepel           NA                    NA      NA     "yes"           
+#> gh                NA                    NA      NA     "no"            
+#> gitcreds          NA                    NA      NA     "no"            
+#> glasso            NA                    NA      NA     "yes"           
+#> glmnet            NA                    NA      NA     "yes"           
+#> globals           NA                    NA      NA     "no"            
+#> glue              NA                    NA      NA     "yes"           
+#> googledrive       NA                    NA      NA     "no"            
+#> googlesheets4     NA                    NA      NA     "no"            
+#> gower             NA                    NA      NA     "yes"           
+#> GPArotation       NA                    NA      NA     "no"            
+#> graphicalVAR      NA                    NA      NA     "yes"           
+#> gridExtra         NA                    NA      NA     "no"            
+#> gsubfn            NA                    NA      NA     "no"            
+#> gtable            NA                    NA      NA     "no"            
+#> gtools            NA                    NA      NA     "yes"           
+#> hardhat           NA                    NA      NA     "no"            
+#> haven             NA                    NA      NA     "yes"           
+#> hdrcde            NA                    NA      NA     "yes"           
+#> here              NA                    NA      NA     "no"            
+#> highr             NA                    NA      NA     "no"            
+#> Hmisc             NA                    NA      NA     "yes"           
+#> hms               NA                    NA      NA     "no"            
+#> htmlTable         NA                    NA      NA     "no"            
+#> htmltools         NA                    NA      NA     "yes"           
+#> htmlwidgets       NA                    NA      NA     "no"            
+#> httpgd            NA                    NA      NA     "yes"           
+#> httpuv            NA                    NA      NA     "yes"           
+#> httr              NA                    NA      NA     "no"            
+#> httr2             NA                    NA      NA     "no"            
+#> ids               NA                    NA      NA     "no"            
+#> ifaTools          NA                    NA      NA     "no"            
+#> igraph            NA                    NA      NA     "yes"           
+#> infer             NA                    NA      NA     "no"            
+#> ini               NA                    NA      NA     "no"            
+#> inline            NA                    NA      NA     "no"            
+#> ipred             NA                    NA      NA     "yes"           
+#> isoband           NA                    NA      NA     "yes"           
+#> iterators         NA                    NA      NA     "no"            
+#> jomo              NA                    NA      NA     "yes"           
+#> jpeg              NA                    NA      NA     "yes"           
+#> jquerylib         NA                    NA      NA     "no"            
+#> jsonlite          NA                    NA      NA     "yes"           
+#> jsonvalidate      NA                    NA      NA     "no"            
+#> kernlab           NA                    NA      NA     "yes"           
+#> knitr             NA                    NA      NA     "no"            
+#> ks                NA                    NA      NA     "yes"           
+#> kutils            NA                    NA      NA     "no"            
+#> labeling          NA                    NA      NA     "no"            
+#> Lahman            NA                    NA      NA     "no"            
+#> languageserver    NA                    NA      NA     "yes"           
+#> later             NA                    NA      NA     "yes"           
+#> latex2exp         NA                    NA      NA     "no"            
+#> lava              NA                    NA      NA     "no"            
+#> lavaan            NA                    NA      NA     "no"            
+#> lazyeval          NA                    NA      NA     "yes"           
+#> lbfgs             NA                    NA      NA     "yes"           
+#> lifecycle         NA                    NA      NA     "no"            
+#> lintr             NA                    NA      NA     "no"            
+#> lisrelToR         NA                    NA      NA     "no"            
+#> listenv           NA                    NA      NA     "no"            
+#> litedown          NA                    NA      NA     "no"            
+#> littler           NA                    "unix"  NA     "yes"           
+#> lme4              NA                    NA      NA     "yes"           
+#> lmtest            NA                    NA      NA     "yes"           
+#> locfit            NA                    NA      NA     "yes"           
+#> longMI            NA                    NA      NA     "no"            
+#> loo               NA                    NA      NA     "no"            
+#> lubridate         NA                    NA      NA     "yes"           
+#> magick            NA                    NA      NA     "yes"           
+#> magrittr          NA                    NA      NA     "yes"           
+#> markdown          NA                    NA      NA     "no"            
+#> MatrixModels      NA                    NA      NA     "no"            
+#> matrixStats       NA                    NA      NA     "yes"           
+#> mclust            NA                    NA      NA     "yes"           
+#> memoise           NA                    NA      NA     "no"            
+#> metaDyn           NA                    NA      NA     "no"            
+#> metaSEM           NA                    NA      NA     "no"            
+#> mi                NA                    NA      NA     "no"            
+#> mice              NA                    NA      NA     "yes"           
+#> microbenchmark    NA                    NA      NA     "yes"           
+#> mime              NA                    NA      NA     "yes"           
+#> miniUI            NA                    NA      NA     "no"            
+#> minqa             NA                    NA      NA     "yes"           
+#> mitml             NA                    NA      NA     "no"            
+#> mixopt            NA                    NA      NA     "no"            
+#> mize              NA                    NA      NA     "no"            
+#> mlVAR             NA                    NA      NA     "no"            
+#> mnormt            NA                    NA      NA     "yes"           
+#> modeldata         NA                    NA      NA     "no"            
+#> modelenv          NA                    NA      NA     "no"            
+#> modelr            NA                    NA      NA     "no"            
+#> MplusAutomation   NA                    NA      NA     "no"            
+#> multicool         NA                    NA      NA     "yes"           
+#> mvtnorm           NA                    NA      NA     "yes"           
+#> nloptr            NA                    NA      NA     "yes"           
+#> numDeriv          NA                    NA      NA     "no"            
+#> nycflights13      NA                    NA      NA     "no"            
+#> OpenMx            NA                    NA      NA     "yes"           
+#> openssl           NA                    NA      NA     "yes"           
+#> openxlsx          NA                    NA      NA     "yes"           
+#> ordinal           NA                    NA      NA     "yes"           
+#> otel              NA                    NA      NA     "no"            
+#> pak               NA                    NA      NA     "yes"           
+#> pan               NA                    NA      NA     "yes"           
+#> pander            NA                    NA      NA     "yes"           
+#> parallelly        NA                    NA      NA     "yes"           
+#> parsnip           NA                    NA      NA     "no"            
+#> patchwork         NA                    NA      NA     "no"            
+#> pbapply           NA                    NA      NA     "no"            
+#> pbivnorm          NA                    NA      NA     "yes"           
+#> pbkrtest          NA                    NA      NA     "no"            
+#> pcaPP             NA                    NA      NA     "yes"           
+#> pdftools          NA                    NA      NA     "yes"           
+#> pillar            NA                    NA      NA     "no"            
+#> pkgbuild          NA                    NA      NA     "no"            
+#> pkgconfig         NA                    NA      NA     "no"            
+#> pkgdown           NA                    NA      NA     "no"            
+#> pkgload           NA                    NA      NA     "no"            
+#> plyr              NA                    NA      NA     "yes"           
+#> png               NA                    NA      NA     "yes"           
+#> posterior         NA                    NA      NA     "no"            
+#> pracma            NA                    NA      NA     "no"            
+#> praise            NA                    NA      NA     "no"            
+#> prettyunits       NA                    NA      NA     "no"            
+#> printr            NA                    NA      NA     "no"            
+#> processx          NA                    NA      NA     "yes"           
+#> prodlim           NA                    NA      NA     "yes"           
+#> profvis           NA                    NA      NA     "yes"           
+#> progress          NA                    NA      NA     "no"            
+#> progressr         NA                    NA      NA     "no"            
+#> promises          NA                    NA      NA     "no"            
+#> proto             NA                    NA      NA     "no"            
+#> ps                NA                    NA      NA     "yes"           
+#> psych             NA                    NA      NA     "no"            
+#> purrr             NA                    NA      NA     "yes"           
+#> qgraph            NA                    NA      NA     "yes"           
+#> qpdf              NA                    NA      NA     "yes"           
+#> quadprog          NA                    NA      NA     "yes"           
+#> quantreg          NA                    NA      NA     "yes"           
+#> quarto            NA                    NA      NA     "no"            
+#> QuickJSR          NA                    NA      NA     "yes"           
+#> R.cache           NA                    NA      NA     "no"            
+#> R.methodsS3       NA                    NA      NA     "no"            
+#> R.oo              NA                    NA      NA     "no"            
+#> R.utils           NA                    NA      NA     "no"            
+#> R2jags            NA                    NA      NA     "no"            
+#> R2WinBUGS         NA                    NA      NA     "no"            
+#> R6                NA                    NA      NA     "no"            
+#> ragg              NA                    NA      NA     "yes"           
+#> rainbow           NA                    NA      NA     "no"            
+#> rappdirs          NA                    NA      NA     "yes"           
+#> rbibutils         NA                    NA      NA     "yes"           
+#> rcmdcheck         NA                    NA      NA     "no"            
+#> RColorBrewer      NA                    NA      NA     "no"            
+#> Rcpp              NA                    NA      NA     "yes"           
+#> RcppArmadillo     NA                    NA      NA     "yes"           
+#> RcppEigen         NA                    NA      NA     "yes"           
+#> RcppGSL           NA                    NA      NA     "yes"           
+#> RcppParallel      NA                    NA      NA     "yes"           
+#> RcppTOML          NA                    NA      NA     "yes"           
+#> RCurl             NA                    NA      NA     "yes"           
+#> Rdpack            NA                    NA      NA     "no"            
+#> readr             NA                    NA      NA     "yes"           
+#> readxl            NA                    NA      NA     "yes"           
+#> recipes           NA                    NA      NA     "no"            
+#> RefManageR        NA                    NA      NA     "no"            
+#> reformulas        NA                    NA      NA     "no"            
+#> rematch           NA                    NA      NA     "no"            
+#> rematch2          NA                    NA      NA     "no"            
+#> remotes           NA                    NA      NA     "no"            
+#> reprex            NA                    NA      NA     "no"            
+#> reshape2          NA                    NA      NA     "yes"           
+#> reticulate        NA                    NA      NA     "yes"           
+#> rex               NA                    NA      NA     "no"            
+#> rhdf5             NA                    NA      NA     "yes"           
+#> rhdf5filters      NA                    NA      NA     "yes"           
+#> Rhdf5lib          NA                    NA      NA     "yes"           
+#> rhub              NA                    NA      NA     "no"            
+#> rjags             NA                    NA      NA     "yes"           
+#> rlang             NA                    NA      NA     "yes"           
+#> RMariaDB          NA                    NA      NA     "yes"           
+#> rmarkdown         NA                    NA      NA     "no"            
+#> rockchalk         NA                    NA      NA     "no"            
+#> roxygen2          NA                    NA      NA     "yes"           
+#> rpf               NA                    NA      NA     "yes"           
+#> RPostgres         NA                    NA      NA     "yes"           
+#> rProject          NA                    NA      NA     "no"            
+#> rprojroot         NA                    NA      NA     "no"            
+#> rsample           NA                    NA      NA     "no"            
+#> RSQLite           NA                    NA      NA     "yes"           
+#> rstan             NA                    NA      NA     "yes"           
+#> rstantools        NA                    NA      NA     "no"            
+#> rstudioapi        NA                    NA      NA     "no"            
+#> RUnit             NA                    NA      NA     "no"            
+#> rversions         NA                    NA      NA     "no"            
+#> rvest             NA                    NA      NA     "no"            
+#> Ryacas            NA                    NA      NA     "yes"           
+#> S7                NA                    NA      NA     "yes"           
+#> sass              NA                    NA      NA     "yes"           
+#> scales            NA                    NA      NA     "no"            
+#> selectr           NA                    NA      NA     "no"            
+#> sem               NA                    NA      NA     "yes"           
+#> semlbci           NA                    NA      NA     "no"            
+#> semmcci           NA                    NA      NA     "no"            
+#> semPlot           NA                    NA      NA     "no"            
+#> sessioninfo       NA                    NA      NA     "no"            
+#> sfd               NA                    NA      NA     "no"            
+#> shape             NA                    NA      NA     "no"            
+#> shiny             NA                    NA      NA     "no"            
+#> simStateSpace     NA                    NA      NA     "yes"           
+#> slider            NA                    NA      NA     "yes"           
+#> snow              NA                    NA      NA     "no"            
+#> snowfall          NA                    NA      NA     "no"            
+#> sourcetools       NA                    NA      NA     "yes"           
+#> SparseM           NA                    NA      NA     "yes"           
+#> sparsevctrs       NA                    NA      NA     "yes"           
+#> splitfngr         NA                    NA      NA     "no"            
+#> SQUAREM           NA                    NA      NA     "no"            
+#> StanHeaders       NA                    NA      NA     "yes"           
+#> stringi           NA                    NA      NA     "yes"           
+#> stringr           NA                    NA      NA     "no"            
+#> styler            NA                    NA      NA     "no"            
+#> symSEM            NA                    NA      NA     "no"            
+#> sys               NA                    NA      NA     "yes"           
+#> systemfonts       NA                    NA      NA     "yes"           
+#> tailor            NA                    NA      NA     "no"            
+#> tensorA           NA                    NA      NA     "yes"           
+#> testthat          NA                    NA      NA     "yes"           
+#> texreg            NA                    NA      NA     "no"            
+#> textshaping       NA                    NA      NA     "yes"           
+#> tibble            NA                    NA      NA     "yes"           
+#> tidymodels        NA                    NA      NA     "no"            
+#> tidyr             NA                    NA      NA     "yes"           
+#> tidyselect        NA                    NA      NA     "yes"           
+#> tidyverse         NA                    NA      NA     "no"            
+#> timechange        NA                    NA      NA     "yes"           
+#> timeDate          NA                    NA      NA     "no"            
+#> tinytex           NA                    NA      NA     "no"            
+#> tune              NA                    NA      NA     "no"            
+#> tzdb              NA                    NA      NA     "yes"           
+#> ucminf            NA                    NA      NA     "yes"           
+#> unigd             NA                    NA      NA     "yes"           
+#> urca              NA                    NA      NA     "yes"           
+#> urlchecker        NA                    NA      NA     "no"            
+#> usethis           NA                    NA      NA     "no"            
+#> utf8              NA                    NA      NA     "yes"           
+#> uuid              NA                    NA      NA     "yes"           
+#> V8                NA                    NA      NA     "yes"           
+#> vctrs             NA                    NA      NA     "yes"           
+#> viridisLite       NA                    NA      NA     "no"            
+#> vroom             NA                    NA      NA     "yes"           
+#> waldo             NA                    NA      NA     "no"            
+#> warp              NA                    NA      NA     "yes"           
+#> whisker           NA                    NA      NA     "no"            
+#> whoami            NA                    NA      NA     "no"            
+#> withr             NA                    NA      NA     "no"            
+#> workflows         NA                    NA      NA     "no"            
+#> workflowsets      NA                    NA      NA     "no"            
+#> xfun              NA                    NA      NA     "yes"           
+#> XML               NA                    NA      NA     "yes"           
+#> xml2              NA                    NA      NA     "yes"           
+#> xmlparsedata      NA                    NA      NA     "no"            
+#> xopen             NA                    NA      NA     "no"            
+#> xtable            NA                    NA      NA     "no"            
+#> yaml              NA                    NA      NA     "yes"           
+#> yardstick         NA                    NA      NA     "yes"           
+#> zip               NA                    NA      NA     "yes"           
+#> zoo               NA                    NA      NA     "yes"           
+#> base              NA                    NA      NA     NA              
+#> boot              NA                    NA      NA     "no"            
+#> class             NA                    NA      NA     "yes"           
+#> cluster           NA                    NA      NA     "yes"           
+#> codetools         NA                    NA      NA     "no"            
+#> compiler          NA                    NA      NA     NA              
+#> datasets          NA                    NA      NA     NA              
+#> foreign           NA                    NA      NA     "yes"           
+#> graphics          NA                    NA      NA     "yes"           
+#> grDevices         NA                    NA      NA     "yes"           
+#> grid              NA                    NA      NA     "yes"           
+#> KernSmooth        NA                    NA      NA     "yes"           
+#> lattice           NA                    NA      NA     "yes"           
+#> MASS              NA                    NA      NA     "yes"           
+#> Matrix            NA                    NA      NA     "yes"           
+#> methods           NA                    NA      NA     "yes"           
+#> mgcv              NA                    NA      NA     "yes"           
+#> nlme              NA                    NA      NA     "yes"           
+#> nnet              NA                    NA      NA     "yes"           
+#> parallel          NA                    NA      NA     "yes"           
+#> rpart             NA                    NA      NA     "yes"           
+#> spatial           NA                    NA      NA     "yes"           
+#> splines           NA                    NA      NA     "yes"           
+#> stats             NA                    NA      NA     "yes"           
+#> stats4            NA                    NA      NA     NA              
+#> survival          NA                    NA      NA     "yes"           
+#> tcltk             NA                    NA      NA     "yes"           
+#> tools             NA                    NA      NA     "yes"           
+#> utils             NA                    NA      NA     "yes"           
+#>                   Built                                                        
+#> rProject          "R 4.6.0; ; 2026-04-30 02:42:31 UTC; unix"                   
+#> rProject          "R 4.6.0; ; 2026-04-30 02:42:28 UTC; unix"                   
+#> abind             "R 4.6.0; ; 2026-04-24 01:22:17 UTC; unix"                   
+#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:09:44 UTC; unix"
+#> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   
+#> arrow             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:15:28 UTC; unix"
+#> ash               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:16:50 UTC; unix"
+#> AsioHeaders       "R 4.6.0; ; 2026-04-24 01:29:02 UTC; unix"                   
+#> askpass           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:25:18 UTC; unix"
+#> assertthat        "R 4.6.0; ; 2026-04-24 01:22:17 UTC; unix"                   
+#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:26 UTC; unix"
+#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:05:52 UTC; unix"
+#> betaDelta         "R 4.6.0; ; 2026-04-29 05:52:08 UTC; unix"                   
+#> betaMC            "R 4.6.0; ; 2026-04-29 05:52:19 UTC; unix"                   
+#> betaNB            "R 4.6.0; ; 2026-04-29 05:52:15 UTC; unix"                   
+#> betaSandwich      "R 4.6.0; ; 2026-04-29 05:52:12 UTC; unix"                   
+#> BH                "R 4.6.0; ; 2026-04-24 01:12:36 UTC; unix"                   
+#> bibtex            "R 4.6.0; ; 2026-04-24 21:08:24 UTC; unix"                   
+#> biocmake          "R 4.6.0; ; 2026-04-28 04:11:37 UTC; unix"                   
+#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   
+#> BiocVersion       "R 4.6.0; ; 2026-04-28 04:11:35 UTC; unix"                   
+#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:17 UTC; unix"
+#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:27:56 UTC; unix"
+#> bitops            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:57:11 UTC; unix"
+#> blob              "R 4.6.0; ; 2026-04-24 02:39:14 UTC; unix"                   
+#> bootStateSpace    "R 4.6.0; ; 2026-04-29 05:53:07 UTC; unix"                   
+#> brew              "R 4.6.0; ; 2026-04-24 21:09:21 UTC; unix"                   
+#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"
+#> broom             "R 4.6.0; ; 2026-04-24 03:07:09 UTC; unix"                   
+#> bslib             "R 4.6.0; ; 2026-04-24 02:57:14 UTC; unix"                   
+#> cachem            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:49:23 UTC; unix"
+#> callr             "R 4.6.0; ; 2026-04-24 02:16:09 UTC; unix"                   
+#> car               "R 4.6.0; ; 2026-04-24 03:48:31 UTC; unix"                   
+#> caracas           "R 4.6.0; ; 2026-04-24 23:34:23 UTC; unix"                   
+#> carData           "R 4.6.0; ; 2026-04-24 01:36:11 UTC; unix"                   
+#> cellranger        "R 4.6.0; ; 2026-04-24 02:43:56 UTC; unix"                   
+#> cffr              "R 4.6.0; ; 2026-04-24 22:35:30 UTC; unix"                   
+#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:27:51 UTC; unix"
+#> cli               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-29 05:51:33 UTC; unix"
+#> clipr             "R 4.6.0; ; 2026-04-24 01:15:27 UTC; unix"                   
+#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:36:31 UTC; unix"
+#> clusterGeneration "R 4.6.0; ; 2026-04-24 21:00:44 UTC; unix"                   
+#> coda              "R 4.6.0; ; 2026-04-24 02:33:58 UTC; unix"                   
+#> cOde              "R 4.6.0; ; 2026-04-24 21:09:27 UTC; unix"                   
+#> collections       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:10:42 UTC; unix"
+#> colorspace        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:15:41 UTC; unix"
+#> commonmark        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:23:17 UTC; unix"
+#> conflicted        "R 4.6.0; ; 2026-04-24 21:36:44 UTC; unix"                   
+#> corpcor           "R 4.6.0; ; 2026-04-24 02:29:40 UTC; unix"                   
+#> covr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:26:55 UTC; unix"
+#> cowplot           "R 4.6.0; ; 2026-04-24 03:25:33 UTC; unix"                   
+#> cpp11             "R 4.6.0; ; 2026-04-24 01:22:11 UTC; unix"                   
+#> crayon            "R 4.6.0; ; 2026-04-24 01:23:50 UTC; unix"                   
+#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   
+#> crosstalk         "R 4.6.0; ; 2026-04-24 02:47:11 UTC; unix"                   
+#> cTMed             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-29 05:53:14 UTC; unix"
+#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:16:40 UTC; unix"
+#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:32:50 UTC; unix"
+#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:19 UTC; unix"
+#> DBI               "R 4.6.0; ; 2026-04-24 01:49:14 UTC; unix"                   
+#> dbplyr            "R 4.6.0; ; 2026-04-24 03:24:17 UTC; unix"                   
+#> Deriv             "R 4.6.0; ; 2026-04-24 01:19:38 UTC; unix"                   
+#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   
+#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:50 UTC; unix"
+#> devtools          "R 4.6.0; ; 2026-04-29 05:51:46 UTC; unix"                   
+#> diagram           "R 4.6.0; ; 2026-04-24 01:28:57 UTC; unix"                   
+#> dials             "R 4.6.0; ; 2026-04-24 22:13:38 UTC; unix"                   
+#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:56:50 UTC; unix"
+#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:08:51 UTC; unix"
+#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"
+#> dir.expiry        "R 4.6.0; ; 2026-04-28 04:11:36 UTC; unix"                   
+#> distributional    "R 4.6.0; ; 2026-04-24 02:43:40 UTC; unix"                   
+#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   
+#> doBy              "R 4.6.0; ; 2026-04-24 03:30:51 UTC; unix"                   
+#> docopt            "R 4.6.0; ; 2026-04-24 11:43:50 UTC; unix"                   
+#> downlit           "R 4.6.0; ; 2026-04-24 22:45:05 UTC; unix"                   
+#> dplyr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:59:58 UTC; unix"
+#> DT                "R 4.6.0; ; 2026-04-24 03:44:46 UTC; unix"                   
+#> dtplyr            "R 4.6.0; ; 2026-04-24 22:47:10 UTC; unix"                   
+#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:57:02 UTC; unix"
+#> dynr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-29 05:52:52 UTC; unix"
+#> dynUtils          "R 4.6.0; ; 2026-04-29 05:33:56 UTC; unix"                   
+#> ellipse           "R 4.6.0; ; 2026-04-24 01:59:47 UTC; unix"                   
+#> ellipsis          "R 4.6.0; ; 2026-04-24 21:36:12 UTC; unix"                   
+#> evaluate          "R 4.6.0; ; 2026-04-24 01:39:41 UTC; unix"                   
+#> expm              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:22:14 UTC; unix"
+#> fansi             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:16:37 UTC; unix"
+#> farver            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:18:01 UTC; unix"
+#> fastDummies       "R 4.6.0; ; 2026-04-24 02:51:25 UTC; unix"                   
+#> fastmap           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:49:13 UTC; unix"
+#> fclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:32:50 UTC; unix"
+#> fda               "R 4.6.0; ; 2026-04-24 23:24:12 UTC; unix"                   
+#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:15:12 UTC; unix"
+#> fds               "R 4.6.0; ; 2026-04-24 23:18:57 UTC; unix"                   
+#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:36 UTC; unix"
+#> fitVARMxID        "R 4.6.0; ; 2026-04-29 05:53:38 UTC; unix"                   
+#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:19:31 UTC; unix"
+#> fontawesome       "R 4.6.0; ; 2026-04-24 02:45:51 UTC; unix"                   
+#> forcats           "R 4.6.0; ; 2026-04-24 02:47:55 UTC; unix"                   
+#> foreach           "R 4.6.0; ; 2026-04-24 02:05:39 UTC; unix"                   
+#> forecast          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:42:17 UTC; unix"
+#> Formula           "R 4.6.0; ; 2026-04-24 02:39:01 UTC; unix"                   
+#> fracdiff          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-28 21:22:30 UTC; unix"
+#> fs                "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:01 UTC; unix"
+#> fst               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:50:10 UTC; unix"
+#> fstcore           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:44:48 UTC; unix"
+#> furrr             "R 4.6.0; ; 2026-04-24 21:39:32 UTC; unix"                   
+#> future            "R 4.6.0; ; 2026-04-24 02:12:13 UTC; unix"                   
+#> future.apply      "R 4.6.0; ; 2026-04-24 02:14:05 UTC; unix"                   
+#> gargle            "R 4.6.0; ; 2026-04-24 02:51:28 UTC; unix"                   
+#> GauPro            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:56:26 UTC; unix"
+#> generics          "R 4.6.0; ; 2026-04-24 01:24:54 UTC; unix"                   
+#> gert              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:41:34 UTC; unix"
+#> ggplot2           "R 4.6.0; ; 2026-04-24 02:57:17 UTC; unix"                   
+#> ggrepel           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:43:51 UTC; unix"
+#> gh                "R 4.6.0; ; 2026-04-24 03:07:30 UTC; unix"                   
+#> gitcreds          "R 4.6.0; ; 2026-04-24 01:13:09 UTC; unix"                   
+#> glasso            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:17:49 UTC; unix"
+#> glmnet            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:19:37 UTC; unix"
+#> globals           "R 4.6.0; ; 2026-04-24 01:49:32 UTC; unix"                   
+#> glue              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:31 UTC; unix"
+#> googledrive       "R 4.6.0; ; 2026-04-24 03:00:32 UTC; unix"                   
+#> googlesheets4     "R 4.6.0; ; 2026-04-24 22:19:18 UTC; unix"                   
+#> gower             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:20 UTC; unix"
+#> GPArotation       "R 4.6.0; ; 2026-04-24 01:12:19 UTC; unix"                   
+#> graphicalVAR      "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:20:57 UTC; unix"
+#> gridExtra         "R 4.6.0; ; 2026-04-24 02:31:57 UTC; unix"                   
+#> gsubfn            "R 4.6.0; ; 2026-04-24 21:33:54 UTC; unix"                   
+#> gtable            "R 4.6.0; ; 2026-04-24 01:59:24 UTC; unix"                   
+#> gtools            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:29:15 UTC; unix"
+#> hardhat           "R 4.6.0; ; 2026-04-24 03:24:35 UTC; unix"                   
+#> haven             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:39:19 UTC; unix"
+#> hdrcde            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 23:03:05 UTC; unix"
+#> here              "R 4.6.0; ; 2026-04-24 02:03:23 UTC; unix"                   
+#> highr             "R 4.6.0; ; 2026-04-24 03:25:28 UTC; unix"                   
+#> Hmisc             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:56:41 UTC; unix"
+#> hms               "R 4.6.0; ; 2026-04-24 02:44:41 UTC; unix"                   
+#> htmlTable         "R 4.6.0; ; 2026-04-24 03:50:00 UTC; unix"                   
+#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:41:28 UTC; unix"
+#> htmlwidgets       "R 4.6.0; ; 2026-04-24 03:40:28 UTC; unix"                   
+#> httpgd            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-29 05:50:59 UTC; unix"
+#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:27:19 UTC; unix"
+#> httr              "R 4.6.0; ; 2026-04-24 01:37:52 UTC; unix"                   
+#> httr2             "R 4.6.0; ; 2026-04-24 02:45:35 UTC; unix"                   
+#> ids               "R 4.6.0; ; 2026-04-24 22:06:14 UTC; unix"                   
+#> ifaTools          "R 4.6.0; ; 2026-04-28 06:09:37 UTC; unix"                   
+#> igraph            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:57:13 UTC; unix"
+#> infer             "R 4.6.0; ; 2026-04-24 23:35:58 UTC; unix"                   
+#> ini               "R 4.6.0; ; 2026-04-24 01:22:01 UTC; unix"                   
+#> inline            "R 4.6.0; ; 2026-04-24 01:31:45 UTC; unix"                   
+#> ipred             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 23:24:04 UTC; unix"
+#> isoband           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:58:57 UTC; unix"
+#> iterators         "R 4.6.0; ; 2026-04-24 01:12:25 UTC; unix"                   
+#> jomo              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:09:34 UTC; unix"
+#> jpeg              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:37 UTC; unix"
+#> jquerylib         "R 4.6.0; ; 2026-04-24 02:45:26 UTC; unix"                   
+#> jsonlite          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:24:54 UTC; unix"
+#> jsonvalidate      "R 4.6.0; ; 2026-04-24 21:21:59 UTC; unix"                   
+#> kernlab           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:20:06 UTC; unix"
+#> knitr             "R 4.6.0; ; 2026-04-24 03:26:17 UTC; unix"                   
+#> ks                "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:33:36 UTC; unix"
+#> kutils            "R 4.6.0; ; 2026-04-24 22:24:47 UTC; unix"                   
+#> labeling          "R 4.6.0; ; 2026-04-24 01:27:24 UTC; unix"                   
+#> Lahman            "R 4.6.0; ; 2026-04-24 22:13:49 UTC; unix"                   
+#> languageserver    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:57:02 UTC; unix"
+#> later             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:15:52 UTC; unix"
+#> latex2exp         "R 4.6.0; ; 2026-04-24 02:36:33 UTC; unix"                   
+#> lava              "R 4.6.0; ; 2026-04-24 02:37:27 UTC; unix"                   
+#> lavaan            "R 4.6.0; ; 2026-04-24 21:34:57 UTC; unix"                   
+#> lazyeval          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:20:56 UTC; unix"
+#> lbfgs             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:10:03 UTC; unix"
+#> lifecycle         "R 4.6.0; ; 2026-04-24 01:58:39 UTC; unix"                   
+#> lintr             "R 4.6.0; ; 2026-04-24 22:41:00 UTC; unix"                   
+#> lisrelToR         "R 4.6.0; ; 2026-04-24 21:23:26 UTC; unix"                   
+#> listenv           "R 4.6.0; ; 2026-04-24 01:12:38 UTC; unix"                   
+#> litedown          "R 4.6.0; ; 2026-04-24 22:34:17 UTC; unix"                   
+#> littler           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:43:49 UTC; unix"
+#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:32:17 UTC; unix"
+#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:46:17 UTC; unix"
+#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:06:27 UTC; unix"
+#> longMI            "R 4.6.0; ; 2026-04-29 04:46:50 UTC; unix"                   
+#> loo               "R 4.6.0; ; 2026-04-24 03:04:23 UTC; unix"                   
+#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:30:47 UTC; unix"
+#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:12:41 UTC; unix"
+#> magrittr          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:39:46 UTC; unix"
+#> markdown          "R 4.6.0; ; 2026-04-24 22:34:50 UTC; unix"                   
+#> MatrixModels      "R 4.6.0; ; 2026-04-24 02:10:06 UTC; unix"                   
+#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:14:27 UTC; unix"
+#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:20:01 UTC; unix"
+#> memoise           "R 4.6.0; ; 2026-04-24 02:16:20 UTC; unix"                   
+#> metaDyn           "R 4.6.0; ; 2026-04-29 05:53:48 UTC; unix"                   
+#> metaSEM           "R 4.6.0; ; 2026-04-28 05:58:02 UTC; unix"                   
+#> mi                "R 4.6.0; ; 2026-04-24 21:42:50 UTC; unix"                   
+#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:01:03 UTC; unix"
+#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:51 UTC; unix"
+#> mime              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:59 UTC; unix"
+#> miniUI            "R 4.6.0; ; 2026-04-24 22:47:52 UTC; unix"                   
+#> minqa             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:25:05 UTC; unix"
+#> mitml             "R 4.6.0; ; 2026-04-24 22:15:54 UTC; unix"                   
+#> mixopt            "R 4.6.0; ; 2026-04-24 23:13:13 UTC; unix"                   
+#> mize              "R 4.6.0; ; 2026-04-24 21:27:06 UTC; unix"                   
+#> mlVAR             "R 4.6.0; ; 2026-04-28 06:07:07 UTC; unix"                   
+#> mnormt            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:16:31 UTC; unix"
+#> modeldata         "R 4.6.0; ; 2026-04-24 23:18:30 UTC; unix"                   
+#> modelenv          "R 4.6.0; ; 2026-04-24 22:11:08 UTC; unix"                   
+#> modelr            "R 4.6.0; ; 2026-04-24 03:09:52 UTC; unix"                   
+#> MplusAutomation   "R 4.6.0; ; 2026-04-24 22:18:04 UTC; unix"                   
+#> multicool         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:43:04 UTC; unix"
+#> mvtnorm           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:31:06 UTC; unix"
+#> nloptr            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:27:01 UTC; unix"
+#> numDeriv          "R 4.6.0; ; 2026-04-24 01:57:47 UTC; unix"                   
+#> nycflights13      "R 4.6.0; ; 2026-04-24 22:10:40 UTC; unix"                   
+#> OpenMx            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:17:54 UTC; unix"
+#> openssl           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:26:47 UTC; unix"
+#> openxlsx          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:40:13 UTC; unix"
+#> ordinal           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:24:13 UTC; unix"
+#> otel              "R 4.6.0; ; 2026-04-24 01:29:05 UTC; unix"                   
+#> pak               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-28 03:40:03 UTC; unix"
+#> pan               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:17:25 UTC; unix"
+#> pander            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:28:54 UTC; unix"
+#> parallelly        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:24:14 UTC; unix"
+#> parsnip           "R 4.6.0; ; 2026-04-24 23:54:29 UTC; unix"                   
+#> patchwork         "R 4.6.0; ; 2026-04-24 03:00:27 UTC; unix"                   
+#> pbapply           "R 4.6.0; ; 2026-04-24 01:31:19 UTC; unix"                   
+#> pbivnorm          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:31:28 UTC; unix"
+#> pbkrtest          "R 4.6.0; ; 2026-04-24 03:39:39 UTC; unix"                   
+#> pcaPP             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:19:37 UTC; unix"
+#> pdftools          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:45:33 UTC; unix"
+#> pillar            "R 4.6.0; ; 2026-04-24 02:36:29 UTC; unix"                   
+#> pkgbuild          "R 4.6.0; ; 2026-04-24 02:21:47 UTC; unix"                   
+#> pkgconfig         "R 4.6.0; ; 2026-04-24 01:18:01 UTC; unix"                   
+#> pkgdown           "R 4.6.0; ; 2026-04-24 23:02:30 UTC; unix"                   
+#> pkgload           "R 4.6.0; ; 2026-04-24 02:25:10 UTC; unix"                   
+#> plyr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:32:22 UTC; unix"
+#> png               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:02:59 UTC; unix"
+#> posterior         "R 4.6.0; ; 2026-04-24 02:46:24 UTC; unix"                   
+#> pracma            "R 4.6.0; ; 2026-04-24 01:23:58 UTC; unix"                   
+#> praise            "R 4.6.0; ; 2026-04-24 01:16:13 UTC; unix"                   
+#> prettyunits       "R 4.6.0; ; 2026-04-24 01:22:56 UTC; unix"                   
+#> printr            "R 4.6.0; ; 2026-04-24 22:25:06 UTC; unix"                   
+#> processx          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:14:48 UTC; unix"
+#> prodlim           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:07:28 UTC; unix"
+#> profvis           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:19:47 UTC; unix"
+#> progress          "R 4.6.0; ; 2026-04-24 02:52:06 UTC; unix"                   
+#> progressr         "R 4.6.0; ; 2026-04-24 01:14:01 UTC; unix"                   
+#> promises          "R 4.6.0; ; 2026-04-24 02:01:43 UTC; unix"                   
+#> proto             "R 4.6.0; ; 2026-04-24 21:33:12 UTC; unix"                   
+#> ps                "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:59:38 UTC; unix"
+#> psych             "R 4.6.0; ; 2026-04-24 21:27:27 UTC; unix"                   
+#> purrr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:56:19 UTC; unix"
+#> qgraph            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:10:09 UTC; unix"
+#> qpdf              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:39:17 UTC; unix"
+#> quadprog          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:21:03 UTC; unix"
+#> quantreg          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:31:15 UTC; unix"
+#> quarto            "R 4.6.0; ; 2026-04-24 22:18:55 UTC; unix"                   
+#> QuickJSR          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:56 UTC; unix"
+#> R.cache           "R 4.6.0; ; 2026-04-24 21:12:21 UTC; unix"                   
+#> R.methodsS3       "R 4.6.0; ; 2026-04-24 01:34:58 UTC; unix"                   
+#> R.oo              "R 4.6.0; ; 2026-04-24 01:37:41 UTC; unix"                   
+#> R.utils           "R 4.6.0; ; 2026-04-24 01:39:00 UTC; unix"                   
+#> R2jags            "R 4.6.0; ; 2026-04-24 02:46:58 UTC; unix"                   
+#> R2WinBUGS         "R 4.6.0; ; 2026-04-24 02:38:04 UTC; unix"                   
+#> R6                "R 4.6.0; ; 2026-04-24 01:25:41 UTC; unix"                   
+#> ragg              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:55:10 UTC; unix"
+#> rainbow           "R 4.6.0; ; 2026-04-24 23:13:09 UTC; unix"                   
+#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:26:10 UTC; unix"
+#> rbibutils         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:46:39 UTC; unix"
+#> rcmdcheck         "R 4.6.0; ; 2026-04-24 22:11:24 UTC; unix"                   
+#> RColorBrewer      "R 4.6.0; ; 2026-04-24 01:19:19 UTC; unix"                   
+#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 12:48:18 UTC; unix"
+#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:08:16 UTC; unix"
+#> RcppEigen         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:03:41 UTC; unix"
+#> RcppGSL           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 12:55:06 UTC; unix"
+#> RcppParallel      "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:29:34 UTC; unix"
+#> RcppTOML          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:03:59 UTC; unix"
+#> RCurl             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:57:49 UTC; unix"
+#> Rdpack            "R 4.6.0; ; 2026-04-24 02:35:54 UTC; unix"                   
+#> readr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:15:07 UTC; unix"
+#> readxl            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:53:56 UTC; unix"
+#> recipes           "R 4.6.0; ; 2026-04-24 23:27:00 UTC; unix"                   
+#> RefManageR        "R 4.6.0; ; 2026-04-24 22:30:09 UTC; unix"                   
+#> reformulas        "R 4.6.0; ; 2026-04-24 02:36:15 UTC; unix"                   
+#> rematch           "R 4.6.0; ; 2026-04-24 01:21:33 UTC; unix"                   
+#> rematch2          "R 4.6.0; ; 2026-04-24 22:13:29 UTC; unix"                   
+#> remotes           "R 4.6.0; ; 2026-04-24 21:36:51 UTC; unix"                   
+#> reprex            "R 4.6.0; ; 2026-04-24 22:19:26 UTC; unix"                   
+#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:01:35 UTC; unix"
+#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:06:17 UTC; unix"
+#> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   
+#> rhdf5             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-28 04:14:38 UTC; unix"
+#> rhdf5filters      "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-28 04:14:18 UTC; unix"
+#> Rhdf5lib          "R 4.6.0; ; 2026-04-28 04:14:15 UTC; unix"                   
+#> rhub              "R 4.6.0; ; 2026-04-24 22:27:49 UTC; unix"                   
+#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:38:21 UTC; unix"
+#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:41:30 UTC; unix"
+#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:39:38 UTC; unix"
+#> rmarkdown         "R 4.6.0; ; 2026-04-24 03:34:56 UTC; unix"                   
+#> rockchalk         "R 4.6.0; ; 2026-04-24 22:30:56 UTC; unix"                   
+#> roxygen2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-29 05:51:52 UTC; unix"
+#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:09:00 UTC; unix"
+#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:12:23 UTC; unix"
+#> rProject          "R 4.6.0; ; 2026-04-28 02:46:49 UTC; unix"                   
+#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   
+#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   
+#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:42:11 UTC; unix"
+#> rstan             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:53:40 UTC; unix"
+#> rstantools        "R 4.6.0; ; 2026-04-24 02:32:26 UTC; unix"                   
+#> rstudioapi        "R 4.6.0; ; 2026-04-24 01:31:06 UTC; unix"                   
+#> RUnit             "R 4.6.0; ; 2026-04-24 21:02:48 UTC; unix"                   
+#> rversions         "R 4.6.0; ; 2026-04-24 21:11:46 UTC; unix"                   
+#> rvest             "R 4.6.0; ; 2026-04-24 22:08:00 UTC; unix"                   
+#> Ryacas            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 12:58:59 UTC; unix"
+#> S7                "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:21:55 UTC; unix"
+#> sass              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:46:56 UTC; unix"
+#> scales            "R 4.6.0; ; 2026-04-24 02:00:26 UTC; unix"                   
+#> selectr           "R 4.6.0; ; 2026-04-24 21:52:52 UTC; unix"                   
+#> sem               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:51:22 UTC; unix"
+#> semlbci           "R 4.6.0; ; 2026-04-24 23:14:31 UTC; unix"                   
+#> semmcci           "R 4.6.0; ; 2026-04-29 05:52:05 UTC; unix"                   
+#> semPlot           "R 4.6.0; ; 2026-04-29 04:47:40 UTC; unix"                   
+#> sessioninfo       "R 4.6.0; ; 2026-04-24 21:10:29 UTC; unix"                   
+#> sfd               "R 4.6.0; ; 2026-04-24 22:06:59 UTC; unix"                   
+#> shape             "R 4.6.0; ; 2026-04-24 01:28:15 UTC; unix"                   
+#> shiny             "R 4.6.0; ; 2026-04-24 22:23:51 UTC; unix"                   
+#> simStateSpace     "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-29 05:52:27 UTC; unix"
+#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:14:38 UTC; unix"
+#> snow              "R 4.6.0; ; 2026-04-24 01:30:10 UTC; unix"                   
+#> snowfall          "R 4.6.0; ; 2026-04-24 21:41:41 UTC; unix"                   
+#> sourcetools       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:26:01 UTC; unix"
+#> SparseM           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:31:02 UTC; unix"
+#> sparsevctrs       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:05:27 UTC; unix"
+#> splitfngr         "R 4.6.0; ; 2026-04-24 21:07:07 UTC; unix"                   
+#> SQUAREM           "R 4.6.0; ; 2026-04-24 01:50:37 UTC; unix"                   
+#> StanHeaders       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:04:55 UTC; unix"
+#> stringi           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:28:52 UTC; unix"
+#> stringr           "R 4.6.0; ; 2026-04-24 02:37:54 UTC; unix"                   
+#> styler            "R 4.6.0; ; 2026-04-24 22:07:55 UTC; unix"                   
+#> symSEM            "R 4.6.0; ; 2026-04-28 06:11:30 UTC; unix"                   
+#> sys               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:23:34 UTC; unix"
+#> systemfonts       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:24:48 UTC; unix"
+#> tailor            "R 4.6.0; ; 2026-04-24 23:15:27 UTC; unix"                   
+#> tensorA           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:25:54 UTC; unix"
+#> testthat          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:02:07 UTC; unix"
+#> texreg            "R 4.6.0; ; 2026-04-24 21:52:36 UTC; unix"                   
+#> textshaping       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:46:25 UTC; unix"
+#> tibble            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:41:18 UTC; unix"
+#> tidymodels        "R 4.6.0; ; 2026-04-25 16:12:18 UTC; unix"                   
+#> tidyr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:04:32 UTC; unix"
+#> tidyselect        "R 4.6.0; ; 2026-04-24 02:57:25 UTC; unix"                   
+#> tidyverse         "R 4.6.0; ; 2026-04-24 23:44:35 UTC; unix"                   
+#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:28:01 UTC; unix"
+#> timeDate          "R 4.6.0; ; 2026-04-24 01:48:33 UTC; unix"                   
+#> tinytex           "R 4.6.0; ; 2026-04-29 05:51:28 UTC; unix"                   
+#> tune              "R 4.6.0; ; 2026-04-25 15:45:43 UTC; unix"                   
+#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:28:12 UTC; unix"
+#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:40:31 UTC; unix"
+#> unigd             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:38:45 UTC; unix"
+#> urca              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:22:57 UTC; unix"
+#> urlchecker        "R 4.6.0; ; 2026-04-24 21:39:46 UTC; unix"                   
+#> usethis           "R 4.6.0; ; 2026-04-24 03:11:10 UTC; unix"                   
+#> utf8              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:27:06 UTC; unix"
+#> uuid              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:27:30 UTC; unix"
+#> V8                "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:09:58 UTC; unix"
+#> vctrs             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:34:26 UTC; unix"
+#> viridisLite       "R 4.6.0; ; 2026-04-24 01:27:48 UTC; unix"                   
+#> vroom             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:00:25 UTC; unix"
+#> waldo             "R 4.6.0; ; 2026-04-24 02:10:14 UTC; unix"                   
+#> warp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:13:09 UTC; unix"
+#> whisker           "R 4.6.0; ; 2026-04-24 02:27:36 UTC; unix"                   
+#> whoami            "R 4.6.0; ; 2026-04-24 21:56:37 UTC; unix"                   
+#> withr             "R 4.6.0; ; 2026-04-24 01:28:21 UTC; unix"                   
+#> workflows         "R 4.6.0; ; 2026-04-24 23:57:21 UTC; unix"                   
+#> workflowsets      "R 4.6.0; ; 2026-04-25 16:00:24 UTC; unix"                   
+#> xfun              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:10:53 UTC; unix"
+#> XML               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:26:11 UTC; unix"
+#> xml2              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:01:15 UTC; unix"
+#> xmlparsedata      "R 4.6.0; ; 2026-04-24 22:36:57 UTC; unix"                   
+#> xopen             "R 4.6.0; ; 2026-04-24 21:34:04 UTC; unix"                   
+#> xtable            "R 4.6.0; ; 2026-04-24 01:35:24 UTC; unix"                   
+#> yaml              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:35:34 UTC; unix"
+#> yardstick         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:18:47 UTC; unix"
+#> zip               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:33:36 UTC; unix"
+#> zoo               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:07:50 UTC; unix"
+#> base              "R 4.6.0; ; 2026-04-24 11:37:39 UTC; unix"                   
+#> boot              "R 4.6.0; ; 2026-04-24 11:41:39 UTC; unix"                   
+#> class             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:55 UTC; unix"
+#> cluster           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:42 UTC; unix"
+#> codetools         "R 4.6.0; ; 2026-04-24 11:41:46 UTC; unix"                   
+#> compiler          "R 4.6.0; ; 2026-04-24 11:36:03 UTC; unix"                   
+#> datasets          "R 4.6.0; ; 2026-04-24 11:37:17 UTC; unix"                   
+#> foreign           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:47 UTC; unix"
+#> graphics          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:36:38 UTC; unix"
+#> grDevices         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:36:31 UTC; unix"
+#> grid              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:37:28 UTC; unix"
+#> KernSmooth        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:50 UTC; unix"
+#> lattice           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:38:30 UTC; unix"
+#> MASS              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:38:26 UTC; unix"
+#> Matrix            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:38:37 UTC; unix"
+#> methods           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:37:17 UTC; unix"
+#> mgcv              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:59 UTC; unix"
+#> nlme              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:08 UTC; unix"
+#> nnet              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:56 UTC; unix"
+#> parallel          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:37:38 UTC; unix"
+#> rpart             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:52 UTC; unix"
+#> spatial           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:58 UTC; unix"
+#> splines           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:37:35 UTC; unix"
+#> stats             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:36:46 UTC; unix"
+#> stats4            "R 4.6.0; ; 2026-04-24 11:37:36 UTC; unix"                   
+#> survival          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:41:19 UTC; unix"
+#> tcltk             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:37:36 UTC; unix"
+#> tools             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:36:03 UTC; unix"
+#> utils             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 11:36:24 UTC; unix"
+#>                   Published
+#> rProject          NA       
+#> rProject          NA       
+#> abind             NA       
+#> Amelia            NA       
+#> arm               NA       
+#> arrow             NA       
+#> ash               NA       
+#> AsioHeaders       NA       
+#> askpass           NA       
+#> assertthat        NA       
+#> backports         NA       
+#> base64enc         NA       
+#> betaDelta         NA       
+#> betaMC            NA       
+#> betaNB            NA       
+#> betaSandwich      NA       
+#> BH                NA       
+#> bibtex            NA       
+#> biocmake          NA       
+#> BiocManager       NA       
+#> BiocVersion       NA       
+#> bit               NA       
+#> bit64             NA       
+#> bitops            NA       
+#> blob              NA       
+#> bootStateSpace    NA       
+#> brew              NA       
+#> brio              NA       
+#> broom             NA       
+#> bslib             NA       
+#> cachem            NA       
+#> callr             NA       
+#> car               NA       
+#> caracas           NA       
+#> carData           NA       
+#> cellranger        NA       
+#> cffr              NA       
+#> checkmate         NA       
+#> cli               NA       
+#> clipr             NA       
+#> clock             NA       
+#> clusterGeneration NA       
+#> coda              NA       
+#> cOde              NA       
+#> collections       NA       
+#> colorspace        NA       
+#> commonmark        NA       
+#> conflicted        NA       
+#> corpcor           NA       
+#> covr              NA       
+#> cowplot           NA       
+#> cpp11             NA       
+#> crayon            NA       
+#> credentials       NA       
+#> crosstalk         NA       
+#> cTMed             NA       
+#> ctsem             NA       
+#> curl              NA       
+#> data.table        NA       
+#> DBI               NA       
+#> dbplyr            NA       
+#> Deriv             NA       
+#> desc              NA       
+#> deSolve           NA       
+#> devtools          NA       
+#> diagram           NA       
+#> dials             NA       
+#> DiceDesign        NA       
+#> diffobj           NA       
+#> digest            NA       
+#> dir.expiry        NA       
+#> distributional    NA       
+#> distro            NA       
+#> doBy              NA       
+#> docopt            NA       
+#> downlit           NA       
+#> dplyr             NA       
+#> DT                NA       
+#> dtplyr            NA       
+#> duckdb            NA       
+#> dynr              NA       
+#> dynUtils          NA       
+#> ellipse           NA       
+#> ellipsis          NA       
+#> evaluate          NA       
+#> expm              NA       
+#> fansi             NA       
+#> farver            NA       
+#> fastDummies       NA       
+#> fastmap           NA       
+#> fclust            NA       
+#> fda               NA       
+#> fdrtool           NA       
+#> fds               NA       
+#> filelock          NA       
+#> fitVARMxID        NA       
+#> FNN               NA       
+#> fontawesome       NA       
+#> forcats           NA       
+#> foreach           NA       
+#> forecast          NA       
+#> Formula           NA       
+#> fracdiff          NA       
+#> fs                NA       
+#> fst               NA       
+#> fstcore           NA       
+#> furrr             NA       
+#> future            NA       
+#> future.apply      NA       
+#> gargle            NA       
+#> GauPro            NA       
+#> generics          NA       
+#> gert              NA       
+#> ggplot2           NA       
+#> ggrepel           NA       
+#> gh                NA       
+#> gitcreds          NA       
+#> glasso            NA       
+#> glmnet            NA       
+#> globals           NA       
+#> glue              NA       
+#> googledrive       NA       
+#> googlesheets4     NA       
+#> gower             NA       
+#> GPArotation       NA       
+#> graphicalVAR      NA       
+#> gridExtra         NA       
+#> gsubfn            NA       
+#> gtable            NA       
+#> gtools            NA       
+#> hardhat           NA       
+#> haven             NA       
+#> hdrcde            NA       
+#> here              NA       
+#> highr             NA       
+#> Hmisc             NA       
+#> hms               NA       
+#> htmlTable         NA       
+#> htmltools         NA       
+#> htmlwidgets       NA       
+#> httpgd            NA       
+#> httpuv            NA       
+#> httr              NA       
+#> httr2             NA       
+#> ids               NA       
+#> ifaTools          NA       
+#> igraph            NA       
+#> infer             NA       
+#> ini               NA       
+#> inline            NA       
+#> ipred             NA       
+#> isoband           NA       
+#> iterators         NA       
+#> jomo              NA       
+#> jpeg              NA       
+#> jquerylib         NA       
+#> jsonlite          NA       
+#> jsonvalidate      NA       
+#> kernlab           NA       
+#> knitr             NA       
+#> ks                NA       
+#> kutils            NA       
+#> labeling          NA       
+#> Lahman            NA       
+#> languageserver    NA       
+#> later             NA       
+#> latex2exp         NA       
+#> lava              NA       
+#> lavaan            NA       
+#> lazyeval          NA       
+#> lbfgs             NA       
+#> lifecycle         NA       
+#> lintr             NA       
+#> lisrelToR         NA       
+#> listenv           NA       
+#> litedown          NA       
+#> littler           NA       
+#> lme4              NA       
+#> lmtest            NA       
+#> locfit            NA       
+#> longMI            NA       
+#> loo               NA       
+#> lubridate         NA       
+#> magick            NA       
+#> magrittr          NA       
+#> markdown          NA       
+#> MatrixModels      NA       
+#> matrixStats       NA       
+#> mclust            NA       
+#> memoise           NA       
+#> metaDyn           NA       
+#> metaSEM           NA       
+#> mi                NA       
+#> mice              NA       
+#> microbenchmark    NA       
+#> mime              NA       
+#> miniUI            NA       
+#> minqa             NA       
+#> mitml             NA       
+#> mixopt            NA       
+#> mize              NA       
+#> mlVAR             NA       
+#> mnormt            NA       
+#> modeldata         NA       
+#> modelenv          NA       
+#> modelr            NA       
+#> MplusAutomation   NA       
+#> multicool         NA       
+#> mvtnorm           NA       
+#> nloptr            NA       
+#> numDeriv          NA       
+#> nycflights13      NA       
+#> OpenMx            NA       
+#> openssl           NA       
+#> openxlsx          NA       
+#> ordinal           NA       
+#> otel              NA       
+#> pak               NA       
+#> pan               NA       
+#> pander            NA       
+#> parallelly        NA       
+#> parsnip           NA       
+#> patchwork         NA       
+#> pbapply           NA       
+#> pbivnorm          NA       
+#> pbkrtest          NA       
+#> pcaPP             NA       
+#> pdftools          NA       
+#> pillar            NA       
+#> pkgbuild          NA       
+#> pkgconfig         NA       
+#> pkgdown           NA       
+#> pkgload           NA       
+#> plyr              NA       
+#> png               NA       
+#> posterior         NA       
+#> pracma            NA       
+#> praise            NA       
+#> prettyunits       NA       
+#> printr            NA       
+#> processx          NA       
+#> prodlim           NA       
+#> profvis           NA       
+#> progress          NA       
+#> progressr         NA       
+#> promises          NA       
+#> proto             NA       
+#> ps                NA       
+#> psych             NA       
+#> purrr             NA       
+#> qgraph            NA       
+#> qpdf              NA       
+#> quadprog          NA       
+#> quantreg          NA       
+#> quarto            NA       
+#> QuickJSR          NA       
+#> R.cache           NA       
+#> R.methodsS3       NA       
+#> R.oo              NA       
+#> R.utils           NA       
+#> R2jags            NA       
+#> R2WinBUGS         NA       
+#> R6                NA       
+#> ragg              NA       
+#> rainbow           NA       
+#> rappdirs          NA       
+#> rbibutils         NA       
+#> rcmdcheck         NA       
+#> RColorBrewer      NA       
+#> Rcpp              NA       
+#> RcppArmadillo     NA       
+#> RcppEigen         NA       
+#> RcppGSL           NA       
+#> RcppParallel      NA       
+#> RcppTOML          NA       
+#> RCurl             NA       
+#> Rdpack            NA       
+#> readr             NA       
+#> readxl            NA       
+#> recipes           NA       
+#> RefManageR        NA       
+#> reformulas        NA       
+#> rematch           NA       
+#> rematch2          NA       
+#> remotes           NA       
+#> reprex            NA       
+#> reshape2          NA       
+#> reticulate        NA       
+#> rex               NA       
+#> rhdf5             NA       
+#> rhdf5filters      NA       
+#> Rhdf5lib          NA       
+#> rhub              NA       
+#> rjags             NA       
+#> rlang             NA       
+#> RMariaDB          NA       
+#> rmarkdown         NA       
+#> rockchalk         NA       
+#> roxygen2          NA       
+#> rpf               NA       
+#> RPostgres         NA       
+#> rProject          NA       
+#> rprojroot         NA       
+#> rsample           NA       
+#> RSQLite           NA       
+#> rstan             NA       
+#> rstantools        NA       
+#> rstudioapi        NA       
+#> RUnit             NA       
+#> rversions         NA       
+#> rvest             NA       
+#> Ryacas            NA       
+#> S7                NA       
+#> sass              NA       
+#> scales            NA       
+#> selectr           NA       
+#> sem               NA       
+#> semlbci           NA       
+#> semmcci           NA       
+#> semPlot           NA       
+#> sessioninfo       NA       
+#> sfd               NA       
+#> shape             NA       
+#> shiny             NA       
+#> simStateSpace     NA       
+#> slider            NA       
+#> snow              NA       
+#> snowfall          NA       
+#> sourcetools       NA       
+#> SparseM           NA       
+#> sparsevctrs       NA       
+#> splitfngr         NA       
+#> SQUAREM           NA       
+#> StanHeaders       NA       
+#> stringi           NA       
+#> stringr           NA       
+#> styler            NA       
+#> symSEM            NA       
+#> sys               NA       
+#> systemfonts       NA       
+#> tailor            NA       
+#> tensorA           NA       
+#> testthat          NA       
+#> texreg            NA       
+#> textshaping       NA       
+#> tibble            NA       
+#> tidymodels        NA       
+#> tidyr             NA       
+#> tidyselect        NA       
+#> tidyverse         NA       
+#> timechange        NA       
+#> timeDate          NA       
+#> tinytex           NA       
+#> tune              NA       
+#> tzdb              NA       
+#> ucminf            NA       
+#> unigd             NA       
+#> urca              NA       
+#> urlchecker        NA       
+#> usethis           NA       
+#> utf8              NA       
+#> uuid              NA       
+#> V8                NA       
+#> vctrs             NA       
+#> viridisLite       NA       
+#> vroom             NA       
+#> waldo             NA       
+#> warp              NA       
+#> whisker           NA       
+#> whoami            NA       
+#> withr             NA       
+#> workflows         NA       
+#> workflowsets      NA       
+#> xfun              NA       
+#> XML               NA       
+#> xml2              NA       
+#> xmlparsedata      NA       
+#> xopen             NA       
+#> xtable            NA       
+#> yaml              NA       
+#> yardstick         NA       
+#> zip               NA       
+#> zoo               NA       
+#> base              NA       
+#> boot              NA       
+#> class             NA       
+#> cluster           NA       
+#> codetools         NA       
+#> compiler          NA       
+#> datasets          NA       
+#> foreign           NA       
+#> graphics          NA       
+#> grDevices         NA       
+#> grid              NA       
+#> KernSmooth        NA       
+#> lattice           NA       
+#> MASS              NA       
+#> Matrix            NA       
+#> methods           NA       
+#> mgcv              NA       
+#> nlme              NA       
+#> nnet              NA       
+#> parallel          NA       
+#> rpart             NA       
+#> spatial           NA       
+#> splines           NA       
+#> stats             NA       
+#> stats4            NA       
+#> survival          NA       
+#> tcltk             NA       
+#> tools             NA       
+#> utils             NA
 ```
