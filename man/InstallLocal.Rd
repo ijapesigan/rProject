@@ -14,7 +14,8 @@ InstallLocal(
 \item{what}{Character string.
 Vector of applications to install.
 Valid values include
-\code{"tmux"}, \code{"julia"}, \code{"mpdemo"}, \code{"lazygit"}, \code{"fastfetch"}, and \code{"quarto"}.}
+\code{"tmux"}, \code{"julia"}, \code{"mpdemo"},
+\code{"lazygit"}, \code{"fastfetch"}, and \code{"quarto"}.}
 
 \item{all}{Logical.
 If \code{all = TRUE}, ignore \code{what} and install all valid \code{what} values.}
