@@ -5,7 +5,8 @@
 #' @param what Character string.
 #'   Vector of applications to install.
 #'   Valid values include
-#'   `"tmux"`, `"julia"`, `"mpdemo"`, `"lazygit"`, `"fastfetch"`, and `"quarto"`.
+#'   `"tmux"`, `"julia"`, `"mpdemo"`,
+#'   `"lazygit"`, `"fastfetch"`, and `"quarto"`.
 #' @param all Logical.
 #'   If `all = TRUE`, ignore `what` and install all valid `what` values.
 #' @param force Logical.
