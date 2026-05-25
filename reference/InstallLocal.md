@@ -6,7 +6,7 @@ Install Applications on Local Machine
 
 ``` r
 InstallLocal(
-  what = c("tmux", "julia", "mpdemo", "lazygit", "pfetch", "quarto"),
+  what = c("tmux", "julia", "mpdemo", "lazygit", "fastfetch", "quarto"),
   all = FALSE,
   force = FALSE
 )
@@ -17,8 +17,8 @@ InstallLocal(
 - what:
 
   Character string. Vector of applications to install. Valid values
-  include `"tmux"`, `"julia"`, `"mpdemo"`, `"lazygit"`, `"pfetch"`, and
-  `"quarto"`.
+  include `"tmux"`, `"julia"`, `"mpdemo"`, `"lazygit"`, `"fastfetch"`,
+  and `"quarto"`.
 
 - all:
 
