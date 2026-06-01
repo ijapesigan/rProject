@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/RtmpvxmLUG/temp_libpath9f9192cfda0"
+#> rProject          "rProject"          "/tmp/Rtmpv7NKWl/temp_libpath9fa65c1a8d2"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -99,7 +99,6 @@ installed.packages()
 #> colorspace        "colorspace"        "/usr/local/lib/R/site-library"          
 #> commonmark        "commonmark"        "/usr/local/lib/R/site-library"          
 #> conflicted        "conflicted"        "/usr/local/lib/R/site-library"          
-#> coro              "coro"              "/usr/local/lib/R/site-library"          
 #> corpcor           "corpcor"           "/usr/local/lib/R/site-library"          
 #> covr              "covr"              "/usr/local/lib/R/site-library"          
 #> cowplot           "cowplot"           "/usr/local/lib/R/site-library"          
@@ -109,7 +108,6 @@ installed.packages()
 #> crosstalk         "crosstalk"         "/usr/local/lib/R/site-library"          
 #> cTMed             "cTMed"             "/usr/local/lib/R/site-library"          
 #> ctsem             "ctsem"             "/usr/local/lib/R/site-library"          
-#> cuda12.8          "cuda12.8"          "/usr/local/lib/R/site-library"          
 #> curl              "curl"              "/usr/local/lib/R/site-library"          
 #> data.table        "data.table"        "/usr/local/lib/R/site-library"          
 #> DBI               "DBI"               "/usr/local/lib/R/site-library"          
@@ -236,7 +234,6 @@ installed.packages()
 #> longMI            "longMI"            "/usr/local/lib/R/site-library"          
 #> loo               "loo"               "/usr/local/lib/R/site-library"          
 #> lubridate         "lubridate"         "/usr/local/lib/R/site-library"          
-#> luz               "luz"               "/usr/local/lib/R/site-library"          
 #> magick            "magick"            "/usr/local/lib/R/site-library"          
 #> magrittr          "magrittr"          "/usr/local/lib/R/site-library"          
 #> markdown          "markdown"          "/usr/local/lib/R/site-library"          
@@ -367,7 +364,6 @@ installed.packages()
 #> rvest             "rvest"             "/usr/local/lib/R/site-library"          
 #> Ryacas            "Ryacas"            "/usr/local/lib/R/site-library"          
 #> S7                "S7"                "/usr/local/lib/R/site-library"          
-#> safetensors       "safetensors"       "/usr/local/lib/R/site-library"          
 #> sass              "sass"              "/usr/local/lib/R/site-library"          
 #> scales            "scales"            "/usr/local/lib/R/site-library"          
 #> selectr           "selectr"           "/usr/local/lib/R/site-library"          
@@ -408,7 +404,6 @@ installed.packages()
 #> timechange        "timechange"        "/usr/local/lib/R/site-library"          
 #> timeDate          "timeDate"          "/usr/local/lib/R/site-library"          
 #> tinytex           "tinytex"           "/usr/local/lib/R/site-library"          
-#> torch             "torch"             "/usr/local/lib/R/site-library"          
 #> tune              "tune"              "/usr/local/lib/R/site-library"          
 #> tzdb              "tzdb"              "/usr/local/lib/R/site-library"          
 #> ucminf            "ucminf"            "/usr/local/lib/R/site-library"          
@@ -437,7 +432,6 @@ installed.packages()
 #> xtable            "xtable"            "/usr/local/lib/R/site-library"          
 #> yaml              "yaml"              "/usr/local/lib/R/site-library"          
 #> yardstick         "yardstick"         "/usr/local/lib/R/site-library"          
-#> zeallot           "zeallot"           "/usr/local/lib/R/site-library"          
 #> zip               "zip"               "/usr/local/lib/R/site-library"          
 #> zoo               "zoo"               "/usr/local/lib/R/site-library"          
 #> base              "base"              "/usr/local/lib/R/library"               
@@ -509,7 +503,7 @@ installed.packages()
 #> cffr              "1.4.0"      NA           
 #> checkmate         "2.3.4"      NA           
 #> cli               "3.6.6.9000" NA           
-#> clipr             "0.8.0"      NA           
+#> clipr             "0.8.1"      NA           
 #> clock             "0.7.4"      NA           
 #> clusterGeneration "1.3.8"      NA           
 #> coda              "0.19-4.1"   NA           
@@ -518,7 +512,6 @@ installed.packages()
 #> colorspace        "2.1-2"      NA           
 #> commonmark        "2.0.0"      NA           
 #> conflicted        "1.2.0"      NA           
-#> coro              "1.1.0"      NA           
 #> corpcor           "1.6.10"     NA           
 #> covr              "3.6.5"      NA           
 #> cowplot           "1.2.0"      NA           
@@ -528,7 +521,6 @@ installed.packages()
 #> crosstalk         "1.2.2"      NA           
 #> cTMed             "1.0.10"     NA           
 #> ctsem             "3.10.6"     NA           
-#> cuda12.8          "1.0.9"      NA           
 #> curl              "7.1.0"      NA           
 #> data.table        "1.18.4"     NA           
 #> DBI               "1.3.0"      NA           
@@ -587,7 +579,7 @@ installed.packages()
 #> gert              "2.3.1"      NA           
 #> ggplot2           "4.0.3"      NA           
 #> ggrepel           "0.9.8"      NA           
-#> gh                "1.5.0"      NA           
+#> gh                "1.6.0"      NA           
 #> gitcreds          "0.1.2"      NA           
 #> glasso            "1.11"       NA           
 #> glmnet            "5.0"        NA           
@@ -618,7 +610,7 @@ installed.packages()
 #> httr2             "1.2.2"      NA           
 #> ids               "1.0.1"      NA           
 #> ifaTools          "0.23"       NA           
-#> igraph            "2.3.1"      NA           
+#> igraph            "2.3.2"      NA           
 #> infer             "1.1.0"      NA           
 #> ini               "0.3.1"      NA           
 #> inline            "0.3.21"     NA           
@@ -655,7 +647,6 @@ installed.packages()
 #> longMI            "1.0.0"      NA           
 #> loo               "2.9.0"      NA           
 #> lubridate         "1.9.5"      NA           
-#> luz               "0.5.2"      NA           
 #> magick            "2.9.1"      NA           
 #> magrittr          "2.0.5"      NA           
 #> markdown          "2.0"        NA           
@@ -681,7 +672,7 @@ installed.packages()
 #> modelr            "0.1.11"     NA           
 #> MplusAutomation   "1.2"        NA           
 #> multicool         "1.0.1"      NA           
-#> mvtnorm           "1.3-7"      NA           
+#> mvtnorm           "1.4-0"      NA           
 #> nloptr            "2.2.1"      NA           
 #> numDeriv          "2016.8-1.1" NA           
 #> nycflights13      "1.0.2"      NA           
@@ -743,7 +734,7 @@ installed.packages()
 #> rcmdcheck         "1.4.0"      NA           
 #> RColorBrewer      "1.1-3"      NA           
 #> Rcpp              "1.1.1-1.1"  NA           
-#> RcppArmadillo     "15.2.6-1"   NA           
+#> RcppArmadillo     "15.2.7-1"   NA           
 #> RcppEigen         "0.3.4.0.2"  NA           
 #> RcppGSL           "0.3.14"     NA           
 #> RcppParallel      "5.1.11-2"   NA           
@@ -777,7 +768,7 @@ installed.packages()
 #> rProject          "0.0.25"     NA           
 #> rprojroot         "2.1.1"      NA           
 #> rsample           "1.3.2"      NA           
-#> RSQLite           "3.52.0"     NA           
+#> RSQLite           "3.53.1"     NA           
 #> rstan             "2.32.7"     NA           
 #> rstantools        "2.6.0"      NA           
 #> rstudioapi        "0.18.0"     NA           
@@ -786,7 +777,6 @@ installed.packages()
 #> rvest             "1.0.5"      NA           
 #> Ryacas            "1.1.6"      NA           
 #> S7                "0.2.2"      NA           
-#> safetensors       "0.2.1"      NA           
 #> sass              "0.4.10"     NA           
 #> scales            "1.4.0"      NA           
 #> selectr           "0.5-1"      NA           
@@ -827,7 +817,6 @@ installed.packages()
 #> timechange        "0.4.0"      NA           
 #> timeDate          "4052.112"   NA           
 #> tinytex           "0.59.2"     NA           
-#> torch             "0.17.0"     NA           
 #> tune              "2.1.0"      NA           
 #> tzdb              "0.5.0"      NA           
 #> ucminf            "1.2.3"      NA           
@@ -856,7 +845,6 @@ installed.packages()
 #> xtable            "1.8-8"      NA           
 #> yaml              "2.3.12"     NA           
 #> yardstick         "1.4.0"      NA           
-#> zeallot           "0.2.0"      NA           
 #> zip               "2.3.3"      NA           
 #> zoo               "1.8-15"     NA           
 #> base              "4.6.0"      "base"       
@@ -937,7 +925,6 @@ installed.packages()
 #> colorspace        "R (>= 3.0.0), methods"                                                               
 #> commonmark        NA                                                                                    
 #> conflicted        "R (>= 3.2)"                                                                          
-#> coro              "R (>= 3.5.0)"                                                                        
 #> corpcor           "R (>= 3.0.2)"                                                                        
 #> covr              "R (>= 3.1.0), methods"                                                               
 #> cowplot           "R (>= 3.5.0)"                                                                        
@@ -947,7 +934,6 @@ installed.packages()
 #> crosstalk         NA                                                                                    
 #> cTMed             "R (>= 3.5.0)"                                                                        
 #> ctsem             "R (>= 4.2.0), Rcpp (>= 0.12.16)"                                                     
-#> cuda12.8          NA                                                                                    
 #> curl              "R (>= 3.0.0)"                                                                        
 #> data.table        "R (>= 3.4.0)"                                                                        
 #> DBI               "methods, R (>= 3.0.0)"                                                               
@@ -1074,7 +1060,6 @@ installed.packages()
 #> longMI            "R (>= 3.5.0)"                                                                        
 #> loo               "R (>= 3.1.2)"                                                                        
 #> lubridate         "methods, R (>= 3.2)"                                                                 
-#> luz               NA                                                                                    
 #> magick            "R (>= 4.1.0)"                                                                        
 #> magrittr          "R (>= 3.4.0)"                                                                        
 #> markdown          "R (>= 2.11.1)"                                                                       
@@ -1205,7 +1190,6 @@ installed.packages()
 #> rvest             "R (>= 4.1)"                                                                          
 #> Ryacas            "R (>= 3.3.0)"                                                                        
 #> S7                "R (>= 3.5.0)"                                                                        
-#> safetensors       NA                                                                                    
 #> sass              NA                                                                                    
 #> scales            "R (>= 4.1)"                                                                          
 #> selectr           "R (>= 3.0)"                                                                          
@@ -1246,7 +1230,6 @@ installed.packages()
 #> timechange        "R (>= 3.3)"                                                                          
 #> timeDate          "R (>= 3.6.0), methods"                                                               
 #> tinytex           NA                                                                                    
-#> torch             NA                                                                                    
 #> tune              "R (>= 4.1)"                                                                          
 #> tzdb              "R (>= 4.0.0)"                                                                        
 #> ucminf            "R (>= 3.5.0)"                                                                        
@@ -1275,7 +1258,6 @@ installed.packages()
 #> xtable            "R (>= 2.10.0)"                                                                       
 #> yaml              NA                                                                                    
 #> yardstick         "R (>= 4.1)"                                                                          
-#> zeallot           "R (>= 3.2)"                                                                          
 #> zip               NA                                                                                    
 #> zoo               "R (>= 3.1.0), stats"                                                                 
 #> base              NA                                                                                    
@@ -1356,7 +1338,6 @@ installed.packages()
 #> colorspace        "graphics, grDevices, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> commonmark        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> conflicted        "cli (>= 3.4.0), memoise, rlang (>= 1.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-#> coro              "rlang (>= 0.4.12)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> corpcor           "stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> covr              "digest, stats, utils, jsonlite, rex, httr, cli, withr (>=\n1.0.2), yaml"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> cowplot           "ggplot2 (>= 3.5.2), grid, gtable, grDevices, methods, rlang,\nscales"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
@@ -1366,7 +1347,6 @@ installed.packages()
 #> crosstalk         "htmltools (>= 0.3.6), jsonlite, lazyeval, R6"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> cTMed             "Rcpp (>= 1.0.12), numDeriv, parallel, simStateSpace"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> ctsem             "cOde, data.table (>= 1.12.8), datasets, Deriv, expm, ggplot2,\ngraphics, grDevices, MASS, Matrix, methods, mize, mvtnorm,\nparallel, plyr, RcppParallel (>= 5.0.1), rstan (>= 2.26.0),\nrstantools (>= 2.3.0), stats, tibble, tools, utils, splines,\nparallelly, corpcor, png"                                                                                                                                                                                                                                                                                                                             
-#> cuda12.8          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> curl              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> data.table        "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> DBI               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1425,7 +1405,7 @@ installed.packages()
 #> gert              "askpass, credentials (>= 1.2.1), openssl (>= 2.0.3),\nrstudioapi (>= 0.11), sys, zip (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #> ggplot2           "cli, grDevices, grid, gtable (>= 0.3.6), isoband, lifecycle (>\n1.0.1), rlang (>= 1.1.0), S7, scales (>= 1.4.0), stats, vctrs\n(>= 0.6.0), withr (>= 2.5.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> ggrepel           "grid, Rcpp, rlang (>= 1.1.6), S7, scales (>= 1.4.0), withr (>=\n3.0.2)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-#> gh                "cli (>= 3.0.1), gitcreds, glue, httr2 (>= 1.0.6), ini,\njsonlite, lifecycle, rlang (>= 1.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+#> gh                "cli (>= 3.0.1), gitcreds, glue, httr2 (>= 1.0.6), ini,\njsonlite, lifecycle, rlang (>= 1.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> gitcreds          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> glasso            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> glmnet            "methods, utils, foreach, shape, survival, Rcpp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
@@ -1493,7 +1473,6 @@ installed.packages()
 #> longMI            "lavaan"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> loo               "checkmate, matrixStats (>= 0.52), parallel, posterior (>=\n1.5.0), stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> lubridate         "generics, timechange (>= 0.4.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-#> luz               "torch (>= 0.11.9000), magrittr, zeallot, rlang (>= 1.0.0),\ncoro, glue, progress, R6, generics, purrr, fs, prettyunits, cli"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> magick            "Rcpp (>= 0.12.12), magrittr, curl"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> magrittr          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> markdown          "utils, xfun, litedown (>= 0.6)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
@@ -1519,7 +1498,7 @@ installed.packages()
 #> modelr            "broom, magrittr, purrr (>= 0.2.2), rlang (>= 1.0.6), tibble,\ntidyr (>= 0.8.0), tidyselect, vctrs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> MplusAutomation   "utils, boot, plyr, gsubfn, coda, xtable, lattice, texreg,\npander, digest, parallel, ggplot2, data.table, fastDummies,\ncheckmate"                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 #> multicool         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-#> mvtnorm           "stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+#> mvtnorm           "stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> nloptr            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> numDeriv          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> nycflights13      "tibble"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -1624,7 +1603,6 @@ installed.packages()
 #> rvest             "cli, glue, httr (>= 0.5), lifecycle (>= 1.0.3), magrittr,\nrlang (>= 1.1.0), selectr, tibble, xml2 (>= 1.4.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> Ryacas            "Rcpp (>= 0.12.0), stats, methods, magrittr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> S7                "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-#> safetensors       "cli, jsonlite, R6, rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> sass              "fs (>= 1.2.4), rlang (>= 0.4.10), htmltools (>= 0.5.1), R6,\nrappdirs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> scales            "cli, farver (>= 2.0.3), glue, labeling, lifecycle, R6,\nRColorBrewer, rlang (>= 1.1.0), viridisLite"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> selectr           "methods, stringr, R6"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
@@ -1665,7 +1643,6 @@ installed.packages()
 #> timechange        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> timeDate          "graphics, utils, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> tinytex           "xfun (>= 0.48)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-#> torch             "Rcpp, R6, withr, rlang (>= 1.0.0), methods, utils, stats,\nbit64, magrittr, tools, coro (>= 1.0.2), callr, cli (>= 3.0.0),\nglue, desc, safetensors (>= 0.1.1), jsonlite, scales"                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> tune              "cli (>= 3.3.0), dials (>= 1.4.3), dplyr (>= 1.1.0), GauPro (>=\n0.2.15), generics (>= 0.1.2), ggplot2, glue (>= 1.6.2), hardhat\n(>= 1.4.2), lifecycle, parallel, parsnip (>= 1.5.0), purrr (>=\n1.0.0), recipes (>= 1.3.2), rlang (>= 1.1.4), rsample (>=\n1.3.2), tailor (>= 0.1.0), tibble (>= 3.1.0), tidyr (>= 1.2.0),\ntidyselect (>= 1.1.2), vctrs (>= 0.6.1), withr, workflows (>=\n1.3.0), yardstick (>= 1.4.0)"                                                                                                                                                                                   
 #> tzdb              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> ucminf            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1694,7 +1671,6 @@ installed.packages()
 #> xtable            "stats, utils, methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> yaml              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> yardstick         "cli, dplyr (>= 1.1.0), generics (>= 0.1.2), hardhat (>=\n1.4.3), lifecycle (>= 1.0.3), rlang (>= 1.1.4), tibble,\ntidyselect (>= 1.2.0), utils, vctrs (>= 0.5.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                    
-#> zeallot           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> zip               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> zoo               "utils, graphics, grDevices, lattice (>= 0.20-27)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> base              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1775,7 +1751,6 @@ installed.packages()
 #> colorspace        NA                                                                                                                                                           
 #> commonmark        NA                                                                                                                                                           
 #> conflicted        NA                                                                                                                                                           
-#> coro              NA                                                                                                                                                           
 #> corpcor           NA                                                                                                                                                           
 #> covr              NA                                                                                                                                                           
 #> cowplot           NA                                                                                                                                                           
@@ -1785,7 +1760,6 @@ installed.packages()
 #> crosstalk         NA                                                                                                                                                           
 #> cTMed             "Rcpp (>= 1.0.12), RcppArmadillo (>= 15.0.2-2)"                                                                                                              
 #> ctsem             "BH (>= 1.66.0-1), Rcpp (>= 0.12.16), RcppEigen (>=\n0.3.3.4.0), RcppParallel (>= 5.0.1), rstan (>= 2.26),\nStanHeaders (>= 2.26.0), RcppParallel (>= 5.0.1)"
-#> cuda12.8          NA                                                                                                                                                           
 #> curl              NA                                                                                                                                                           
 #> data.table        NA                                                                                                                                                           
 #> DBI               NA                                                                                                                                                           
@@ -1912,7 +1886,6 @@ installed.packages()
 #> longMI            NA                                                                                                                                                           
 #> loo               NA                                                                                                                                                           
 #> lubridate         NA                                                                                                                                                           
-#> luz               NA                                                                                                                                                           
 #> magick            "Rcpp"                                                                                                                                                       
 #> magrittr          NA                                                                                                                                                           
 #> markdown          NA                                                                                                                                                           
@@ -2043,7 +2016,6 @@ installed.packages()
 #> rvest             NA                                                                                                                                                           
 #> Ryacas            "Rcpp"                                                                                                                                                       
 #> S7                NA                                                                                                                                                           
-#> safetensors       NA                                                                                                                                                           
 #> sass              NA                                                                                                                                                           
 #> scales            NA                                                                                                                                                           
 #> selectr           NA                                                                                                                                                           
@@ -2084,7 +2056,6 @@ installed.packages()
 #> timechange        "cpp11 (>= 0.2.7)"                                                                                                                                           
 #> timeDate          NA                                                                                                                                                           
 #> tinytex           NA                                                                                                                                                           
-#> torch             "Rcpp"                                                                                                                                                       
 #> tune              NA                                                                                                                                                           
 #> tzdb              "cpp11 (>= 0.5.2)"                                                                                                                                           
 #> ucminf            NA                                                                                                                                                           
@@ -2113,7 +2084,6 @@ installed.packages()
 #> xtable            NA                                                                                                                                                           
 #> yaml              NA                                                                                                                                                           
 #> yardstick         NA                                                                                                                                                           
-#> zeallot           NA                                                                                                                                                           
 #> zip               NA                                                                                                                                                           
 #> zoo               NA                                                                                                                                                           
 #> base              NA                                                                                                                                                           
@@ -2194,7 +2164,6 @@ installed.packages()
 #> colorspace        "datasets, utils, KernSmooth, MASS, kernlab, mvtnorm, vcd,\ntcltk, shiny, shinyjs, ggplot2, dplyr, scales, grid, png, jpeg,\nknitr, rmarkdown, RColorBrewer, rcartocolor, scico, viridis,\nwesanderson"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> commonmark        "curl, testthat, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> conflicted        "callr, covr, dplyr, Matrix, methods, pkgload, testthat (>=\n3.0.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-#> coro              "knitr, later (>= 1.1.0), magrittr (>= 2.0.0), promises,\nreticulate, rmarkdown, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> corpcor           ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> covr              "R6, S7 (>= 0.2.0), curl, knitr, rmarkdown, htmltools, DT (>=\n0.2), testthat (>= 3.0.0), rlang, rstudioapi (>= 0.2), xml2 (>=\n1.0.0), parallel, memoise, covr, box (>= 1.2.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> cowplot           "Cairo, covr, dplyr, forcats, gridGraphics (>= 0.4-0), knitr,\nlattice, magick, maps, PASWR, patchwork, rmarkdown, ragg,\ntestthat (>= 1.0.0), tidyr, vdiffr (>= 0.3.0), VennDiagram"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
@@ -2204,7 +2173,6 @@ installed.packages()
 #> crosstalk         "bslib, ggplot2, sass, shiny, testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> cTMed             "knitr, rmarkdown, testthat, expm, dynr, betaDelta,\nbootStateSpace"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> ctsem             "knitr, testthat, devtools, tinytex, lme4, shiny, gridExtra,\narules, collapse, qgam, papaja, future, future.apply, diagis,\npdftools, rstudioapi"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-#> cuda12.8          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> curl              "spelling, testthat (>= 1.0.0), knitr, jsonlite, later,\nrmarkdown, httpuv (>= 1.4.4), webutils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> data.table        "bit64 (>= 4.0.0), bit (>= 4.0.4), R.utils (>= 2.13.0), xts,\nzoo (>= 1.8-1), yaml, knitr, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> DBI               "arrow, blob, callr, covr, DBItest (>= 1.8.2), dbplyr,\ndownlit, dplyr, glue, hms, knitr, magrittr, nanoarrow (>=\n0.3.0.1), otel, otelsdk, RMariaDB, rmarkdown, rprojroot,\nRSQLite (>= 1.1-2), testthat (>= 3.0.0), vctrs, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -2263,7 +2231,7 @@ installed.packages()
 #> gert              "spelling, knitr, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> ggplot2           "broom, covr, dplyr, ggplot2movies, hexbin, Hmisc, hms, knitr,\nmapproj, maps, MASS, mgcv, multcomp, munsell, nlme, profvis,\nquantreg, quarto, ragg (>= 1.2.6), RColorBrewer, roxygen2,\nrpart, sf (>= 0.7-3), svglite (>= 2.1.2), testthat (>= 3.1.5),\ntibble, vdiffr (>= 1.0.6), xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> ggrepel           "knitr, rmarkdown, testthat, svglite, vdiffr, gridExtra, ggpp,\npatchwork, devtools, prettydoc, ggbeeswarm, dplyr, magrittr,\nreadr, stringr, marquee, rsvg, sf"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-#> gh                "connectcreds, covr, knitr, rmarkdown, rprojroot, spelling,\ntestthat (>= 3.0.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+#> gh                "connectcreds, covr, knitr, rmarkdown, rprojroot, spelling,\ntestthat (>= 3.0.0), vctrs, webfakes (>= 1.5.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> gitcreds          "codetools, covr, knitr, mockery, oskeyring, rmarkdown,\ntestthat (>= 3.0.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> glasso            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> glmnet            "knitr, lars, nnet, testthat, xfun, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
@@ -2331,7 +2299,6 @@ installed.packages()
 #> longMI            "knitr, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> loo               "bayesplot (>= 1.7.0), brms (>= 2.10.0), ggplot2, graphics,\nknitr, rmarkdown, rstan, rstanarm (>= 2.19.0), rstantools,\nspdep, testthat (>= 3.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> lubridate         "covr, knitr, rmarkdown, testthat (>= 2.1.0), vctrs (>= 0.6.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-#> luz               "knitr, rmarkdown, testthat (>= 3.0.0), covr, Metrics, withr,\nvdiffr, ggplot2 (>= 3.0.0), dplyr, torchvision, tfevents (>=\n0.0.2), tidyr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> magick            "av, spelling, jsonlite, methods, knitr, rmarkdown, rsvg,\nwebp, pdftools, ggplot2, gapminder, IRdisplay, tesseract,\ngifski"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> magrittr          "covr, knitr, rlang, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> markdown          "knitr, rmarkdown (>= 2.18), yaml, RCurl"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
@@ -2462,7 +2429,6 @@ installed.packages()
 #> rvest             "chromote, covr, knitr, purrr, R6, readr, repurrrsive,\nrmarkdown, spelling, stringi (>= 0.3.1), testthat (>= 3.0.2),\ntidyr, webfakes"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> Ryacas            "devtools, exams, knitr, Matrix, pkgload, rmarkdown, igraph,\ntestthat (>= 2.1.0), unix, Rmpfr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> S7                "bench, callr, covr, knitr, methods, rmarkdown, testthat (>=\n3.2.0), tibble"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-#> safetensors       "testthat (>= 3.0.0), torch (>= 0.11.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 #> sass              "testthat, knitr, rmarkdown, withr, shiny, curl"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> scales            "bit64, covr, dichromat, ggplot2, hms (>= 0.5.0), stringi,\ntestthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> selectr           "testthat, XML, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
@@ -2503,7 +2469,6 @@ installed.packages()
 #> timechange        "testthat (>= 0.7.1.99), knitr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> timeDate          "RUnit"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> tinytex           "testit, rstudioapi"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-#> torch             "testthat (>= 3.0.0), covr, knitr (>= 1.36), rmarkdown,\npalmerpenguins, mvtnorm, numDeriv, katex"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> tune              "C50, censored (>= 0.3.0), covr, future (>= 1.33.0),\nfuture.apply, kernlab, kknn, knitr, mgcv, mirai (>= 2.4.0),\nmodeldata, probably, scales, spelling, splines2, survival,\ntestthat (>= 3.0.0), xgboost, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> tzdb              "covr, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> ucminf            "numDeriv"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2532,7 +2497,6 @@ installed.packages()
 #> xtable            "knitr, zoo, survival, glue, tinytex"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> yaml              "knitr, rmarkdown, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> yardstick         "covr, ggplot2, knitr, probably (>= 1.0.0), rmarkdown,\nsurvival (>= 3.5-0), testthat (>= 3.0.0), tidyr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-#> zeallot           "codetools, testthat, knitr, rmarkdown, purrr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> zip               "covr, pillar, processx, R6, testthat, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> zoo               "AER, coda, chron, ggplot2 (>= 3.5.0), mondate, scales,\nstinepack, strucchange, timeDate, timeSeries, tinyplot, tis,\ntseries, xts"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> base              "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
@@ -2613,7 +2577,6 @@ installed.packages()
 #> colorspace        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> commonmark        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> conflicted        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-#> coro              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> corpcor           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> covr              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> cowplot           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2623,7 +2586,6 @@ installed.packages()
 #> crosstalk         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> cTMed             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> ctsem             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-#> cuda12.8          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> curl              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> data.table        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> DBI               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2750,7 +2712,6 @@ installed.packages()
 #> longMI            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> loo               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> lubridate         "chron, data.table, timeDate, tis, zoo"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-#> luz               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> magick            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> magrittr          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> markdown          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2881,7 +2842,6 @@ installed.packages()
 #> rvest             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> Ryacas            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> S7                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-#> safetensors       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> sass              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> scales            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> selectr           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2922,7 +2882,6 @@ installed.packages()
 #> timechange        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> timeDate          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> tinytex           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-#> torch             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> tune              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> tzdb              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> ucminf            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -2951,7 +2910,6 @@ installed.packages()
 #> xtable            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> yaml              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> yardstick         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-#> zeallot           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> zip               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> zoo               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> base              "chron, date, round"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -3032,7 +2990,6 @@ installed.packages()
 #> colorspace        "BSD_3_clause + file LICENSE"                 NA             
 #> commonmark        "BSD_2_clause + file LICENSE"                 NA             
 #> conflicted        "MIT + file LICENSE"                          NA             
-#> coro              "MIT + file LICENSE"                          NA             
 #> corpcor           "GPL (>= 3)"                                  NA             
 #> covr              "MIT + file LICENSE"                          NA             
 #> cowplot           "GPL-2"                                       NA             
@@ -3042,7 +2999,6 @@ installed.packages()
 #> crosstalk         "MIT + file LICENSE"                          NA             
 #> cTMed             "GPL (>= 3)"                                  NA             
 #> ctsem             "GPL-3"                                       NA             
-#> cuda12.8          "MIT + file LICENSE"                          NA             
 #> curl              "MIT + file LICENSE"                          NA             
 #> data.table        "MPL-2.0 | file LICENSE"                      NA             
 #> DBI               "LGPL (>= 2.1)"                               NA             
@@ -3169,7 +3125,6 @@ installed.packages()
 #> longMI            "MIT + file LICENSE"                          NA             
 #> loo               "GPL (>= 3)"                                  NA             
 #> lubridate         "MIT + file LICENSE"                          NA             
-#> luz               "MIT + file LICENSE"                          NA             
 #> magick            "MIT + file LICENSE"                          NA             
 #> magrittr          "MIT + file LICENSE"                          NA             
 #> markdown          "MIT + file LICENSE"                          NA             
@@ -3300,7 +3255,6 @@ installed.packages()
 #> rvest             "MIT + file LICENSE"                          NA             
 #> Ryacas            "GPL"                                         NA             
 #> S7                "MIT + file LICENSE"                          NA             
-#> safetensors       "MIT + file LICENSE"                          NA             
 #> sass              "MIT + file LICENSE"                          NA             
 #> scales            "MIT + file LICENSE"                          NA             
 #> selectr           "BSD_3_clause + file LICENCE"                 NA             
@@ -3341,7 +3295,6 @@ installed.packages()
 #> timechange        "GPL (>= 3)"                                  NA             
 #> timeDate          "GPL (>= 2)"                                  NA             
 #> tinytex           "MIT + file LICENSE"                          NA             
-#> torch             "MIT + file LICENSE"                          NA             
 #> tune              "MIT + file LICENSE"                          NA             
 #> tzdb              "MIT + file LICENSE"                          NA             
 #> ucminf            "GPL (>= 2)"                                  NA             
@@ -3370,7 +3323,6 @@ installed.packages()
 #> xtable            "GPL (>= 2)"                                  NA             
 #> yaml              "BSD_3_clause + file LICENSE"                 NA             
 #> yardstick         "MIT + file LICENSE"                          NA             
-#> zeallot           "MIT + file LICENSE"                          NA             
 #> zip               "MIT + file LICENSE"                          NA             
 #> zoo               "GPL-2 | GPL-3"                               NA             
 #> base              "Part of R 4.6.0"                             NA             
@@ -3451,7 +3403,6 @@ installed.packages()
 #> colorspace        NA                    NA      NA     "yes"           
 #> commonmark        NA                    NA      NA     "yes"           
 #> conflicted        NA                    NA      NA     "no"            
-#> coro              NA                    NA      NA     "no"            
 #> corpcor           NA                    NA      NA     "no"            
 #> covr              NA                    NA      NA     "yes"           
 #> cowplot           NA                    NA      NA     "no"            
@@ -3461,7 +3412,6 @@ installed.packages()
 #> crosstalk         NA                    NA      NA     "no"            
 #> cTMed             NA                    NA      NA     "yes"           
 #> ctsem             NA                    NA      NA     "yes"           
-#> cuda12.8          NA                    NA      NA     "no"            
 #> curl              NA                    NA      NA     "yes"           
 #> data.table        NA                    NA      NA     "yes"           
 #> DBI               NA                    NA      NA     "no"            
@@ -3588,7 +3538,6 @@ installed.packages()
 #> longMI            NA                    NA      NA     "no"            
 #> loo               NA                    NA      NA     "no"            
 #> lubridate         NA                    NA      NA     "yes"           
-#> luz               NA                    NA      NA     "no"            
 #> magick            NA                    NA      NA     "yes"           
 #> magrittr          NA                    NA      NA     "yes"           
 #> markdown          NA                    NA      NA     "no"            
@@ -3719,7 +3668,6 @@ installed.packages()
 #> rvest             NA                    NA      NA     "no"            
 #> Ryacas            NA                    NA      NA     "yes"           
 #> S7                NA                    NA      NA     "yes"           
-#> safetensors       NA                    NA      NA     "no"            
 #> sass              NA                    NA      NA     "yes"           
 #> scales            NA                    NA      NA     "no"            
 #> selectr           NA                    NA      NA     "no"            
@@ -3760,7 +3708,6 @@ installed.packages()
 #> timechange        NA                    NA      NA     "yes"           
 #> timeDate          NA                    NA      NA     "no"            
 #> tinytex           NA                    NA      NA     "no"            
-#> torch             NA                    NA      NA     "yes"           
 #> tune              NA                    NA      NA     "no"            
 #> tzdb              NA                    NA      NA     "yes"           
 #> ucminf            NA                    NA      NA     "yes"           
@@ -3789,7 +3736,6 @@ installed.packages()
 #> xtable            NA                    NA      NA     "no"            
 #> yaml              NA                    NA      NA     "yes"           
 #> yardstick         NA                    NA      NA     "yes"           
-#> zeallot           NA                    NA      NA     "no"            
 #> zip               NA                    NA      NA     "yes"           
 #> zoo               NA                    NA      NA     "yes"           
 #> base              NA                    NA      NA     NA              
@@ -3822,10 +3768,10 @@ installed.packages()
 #> tools             NA                    NA      NA     "yes"           
 #> utils             NA                    NA      NA     "yes"           
 #>                   Built                                                        
-#> rProject          "R 4.6.0; ; 2026-05-25 04:35:50 UTC; unix"                   
-#> rProject          "R 4.6.0; ; 2026-05-25 04:35:47 UTC; unix"                   
+#> rProject          "R 4.6.0; ; 2026-06-01 03:53:48 UTC; unix"                   
+#> rProject          "R 4.6.0; ; 2026-06-01 03:53:45 UTC; unix"                   
 #> abind             "R 4.6.0; ; 2026-04-24 01:22:17 UTC; unix"                   
-#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:09:44 UTC; unix"
+#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 14:02:42 UTC; unix"
 #> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   
 #> arrow             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:45:22 UTC; unix"
 #> ash               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:16:50 UTC; unix"
@@ -3834,20 +3780,20 @@ installed.packages()
 #> assertthat        "R 4.6.0; ; 2026-04-24 01:22:17 UTC; unix"                   
 #> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:26 UTC; unix"
 #> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:05:52 UTC; unix"
-#> betaDelta         "R 4.6.0; ; 2026-05-24 06:36:51 UTC; unix"                   
-#> betaMC            "R 4.6.0; ; 2026-05-24 06:36:59 UTC; unix"                   
-#> betaNB            "R 4.6.0; ; 2026-05-24 06:36:57 UTC; unix"                   
-#> betaSandwich      "R 4.6.0; ; 2026-05-24 06:36:54 UTC; unix"                   
+#> betaDelta         "R 4.6.0; ; 2026-05-31 19:09:12 UTC; unix"                   
+#> betaMC            "R 4.6.0; ; 2026-05-31 19:09:20 UTC; unix"                   
+#> betaNB            "R 4.6.0; ; 2026-05-31 19:09:17 UTC; unix"                   
+#> betaSandwich      "R 4.6.0; ; 2026-05-31 19:09:15 UTC; unix"                   
 #> BH                "R 4.6.0; ; 2026-04-24 01:12:36 UTC; unix"                   
 #> bibtex            "R 4.6.0; ; 2026-04-24 21:08:24 UTC; unix"                   
-#> biocmake          "R 4.6.0; ; 2026-05-21 04:51:14 UTC; unix"                   
+#> biocmake          "R 4.6.0; ; 2026-05-30 04:32:10 UTC; unix"                   
 #> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   
-#> BiocVersion       "R 4.6.0; ; 2026-05-21 04:51:12 UTC; unix"                   
+#> BiocVersion       "R 4.6.0; ; 2026-05-30 04:32:08 UTC; unix"                   
 #> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:17 UTC; unix"
 #> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-20 05:38:18 UTC; unix"
 #> bitops            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:57:11 UTC; unix"
 #> blob              "R 4.6.0; ; 2026-04-24 02:39:14 UTC; unix"                   
-#> bootStateSpace    "R 4.6.0; ; 2026-05-24 06:37:52 UTC; unix"                   
+#> bootStateSpace    "R 4.6.0; ; 2026-05-31 19:10:10 UTC; unix"                   
 #> brew              "R 4.6.0; ; 2026-04-24 21:09:21 UTC; unix"                   
 #> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"
 #> broom             "R 4.6.0; ; 2026-05-15 06:00:38 UTC; unix"                   
@@ -3860,8 +3806,8 @@ installed.packages()
 #> cellranger        "R 4.6.0; ; 2026-04-24 02:43:56 UTC; unix"                   
 #> cffr              "R 4.6.0; ; 2026-05-05 06:04:44 UTC; unix"                   
 #> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:27:51 UTC; unix"
-#> cli               "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-24 06:36:16 UTC; unix"
-#> clipr             "R 4.6.0; ; 2026-04-24 01:15:27 UTC; unix"                   
+#> cli               "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-31 19:08:38 UTC; unix"
+#> clipr             "R 4.6.0; ; 2026-05-26 05:44:45 UTC; unix"                   
 #> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:21 UTC; unix"
 #> clusterGeneration "R 4.6.0; ; 2026-04-24 21:00:44 UTC; unix"                   
 #> coda              "R 4.6.0; ; 2026-04-24 02:33:58 UTC; unix"                   
@@ -3870,7 +3816,6 @@ installed.packages()
 #> colorspace        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:15:41 UTC; unix"
 #> commonmark        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:23:17 UTC; unix"
 #> conflicted        "R 4.6.0; ; 2026-04-24 21:36:44 UTC; unix"                   
-#> coro              "R 4.6.0; ; 2026-04-24 02:20:56 UTC; unix"                   
 #> corpcor           "R 4.6.0; ; 2026-04-24 02:29:40 UTC; unix"                   
 #> covr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:26:55 UTC; unix"
 #> cowplot           "R 4.6.0; ; 2026-04-24 03:25:33 UTC; unix"                   
@@ -3878,9 +3823,8 @@ installed.packages()
 #> crayon            "R 4.6.0; ; 2026-04-24 01:23:50 UTC; unix"                   
 #> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   
 #> crosstalk         "R 4.6.0; ; 2026-04-24 02:47:11 UTC; unix"                   
-#> cTMed             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-24 06:37:59 UTC; unix"
+#> cTMed             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-31 19:10:16 UTC; unix"
 #> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:16:40 UTC; unix"
-#> cuda12.8          "R 4.6.0; ; 2026-05-23 05:47:50 UTC; unix"                   
 #> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:32:50 UTC; unix"
 #> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:44:34 UTC; unix"
 #> DBI               "R 4.6.0; ; 2026-04-24 01:49:14 UTC; unix"                   
@@ -3888,13 +3832,13 @@ installed.packages()
 #> Deriv             "R 4.6.0; ; 2026-04-24 01:19:38 UTC; unix"                   
 #> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   
 #> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:50 UTC; unix"
-#> devtools          "R 4.6.0; ; 2026-05-24 06:36:28 UTC; unix"                   
+#> devtools          "R 4.6.0; ; 2026-05-31 19:08:50 UTC; unix"                   
 #> diagram           "R 4.6.0; ; 2026-04-24 01:28:57 UTC; unix"                   
 #> dials             "R 4.6.0; ; 2026-04-24 22:13:38 UTC; unix"                   
 #> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:56:50 UTC; unix"
 #> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:08:51 UTC; unix"
 #> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"
-#> dir.expiry        "R 4.6.0; ; 2026-05-21 04:51:13 UTC; unix"                   
+#> dir.expiry        "R 4.6.0; ; 2026-05-30 04:32:09 UTC; unix"                   
 #> distributional    "R 4.6.0; ; 2026-04-24 02:43:40 UTC; unix"                   
 #> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   
 #> doBy              "R 4.6.0; ; 2026-04-24 03:30:51 UTC; unix"                   
@@ -3904,8 +3848,8 @@ installed.packages()
 #> DT                "R 4.6.0; ; 2026-04-24 03:44:46 UTC; unix"                   
 #> dtplyr            "R 4.6.0; ; 2026-04-24 22:47:10 UTC; unix"                   
 #> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:57:02 UTC; unix"
-#> dynr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-24 06:37:35 UTC; unix"
-#> dynUtils          "R 4.6.0; ; 2026-05-23 05:46:29 UTC; unix"                   
+#> dynr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-31 19:09:54 UTC; unix"
+#> dynUtils          "R 4.6.0; ; 2026-05-31 18:50:22 UTC; unix"                   
 #> ellipse           "R 4.6.0; ; 2026-04-24 01:59:47 UTC; unix"                   
 #> ellipsis          "R 4.6.0; ; 2026-04-24 21:36:12 UTC; unix"                   
 #> evaluate          "R 4.6.0; ; 2026-04-24 01:39:41 UTC; unix"                   
@@ -3914,17 +3858,17 @@ installed.packages()
 #> farver            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:18:01 UTC; unix"
 #> fastDummies       "R 4.6.0; ; 2026-04-24 02:51:25 UTC; unix"                   
 #> fastmap           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:49:13 UTC; unix"
-#> fclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:32:50 UTC; unix"
+#> fclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 14:18:30 UTC; unix"
 #> fda               "R 4.6.0; ; 2026-04-24 23:24:12 UTC; unix"                   
 #> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:15:12 UTC; unix"
 #> fds               "R 4.6.0; ; 2026-05-06 05:19:49 UTC; unix"                   
 #> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:36 UTC; unix"
-#> fitVARMxID        "R 4.6.0; ; 2026-05-24 06:38:24 UTC; unix"                   
+#> fitVARMxID        "R 4.6.0; ; 2026-05-31 19:10:40 UTC; unix"                   
 #> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:19:31 UTC; unix"
 #> fontawesome       "R 4.6.0; ; 2026-04-24 02:45:51 UTC; unix"                   
 #> forcats           "R 4.6.0; ; 2026-04-24 02:47:55 UTC; unix"                   
 #> foreach           "R 4.6.0; ; 2026-04-24 02:05:39 UTC; unix"                   
-#> forecast          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:42:17 UTC; unix"
+#> forecast          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 14:25:14 UTC; unix"
 #> Formula           "R 4.6.0; ; 2026-04-24 02:39:01 UTC; unix"                   
 #> fracdiff          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-28 21:22:30 UTC; unix"
 #> fs                "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:01 UTC; unix"
@@ -3939,7 +3883,7 @@ installed.packages()
 #> gert              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:41:34 UTC; unix"
 #> ggplot2           "R 4.6.0; ; 2026-04-24 02:57:17 UTC; unix"                   
 #> ggrepel           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:43:51 UTC; unix"
-#> gh                "R 4.6.0; ; 2026-04-24 03:07:30 UTC; unix"                   
+#> gh                "R 4.6.0; ; 2026-05-30 14:05:02 UTC; unix"                   
 #> gitcreds          "R 4.6.0; ; 2026-04-24 01:13:09 UTC; unix"                   
 #> glasso            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:17:49 UTC; unix"
 #> glmnet            "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-05 05:57:15 UTC; unix"
@@ -3949,7 +3893,7 @@ installed.packages()
 #> googlesheets4     "R 4.6.0; ; 2026-04-24 22:19:18 UTC; unix"                   
 #> gower             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:20 UTC; unix"
 #> GPArotation       "R 4.6.0; ; 2026-04-30 05:59:46 UTC; unix"                   
-#> graphicalVAR      "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:20:57 UTC; unix"
+#> graphicalVAR      "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 14:15:42 UTC; unix"
 #> gridExtra         "R 4.6.0; ; 2026-04-24 02:31:57 UTC; unix"                   
 #> gsubfn            "R 4.6.0; ; 2026-04-24 21:33:54 UTC; unix"                   
 #> gtable            "R 4.6.0; ; 2026-04-24 01:59:24 UTC; unix"                   
@@ -3964,13 +3908,13 @@ installed.packages()
 #> htmlTable         "R 4.6.0; ; 2026-04-24 03:50:00 UTC; unix"                   
 #> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:41:28 UTC; unix"
 #> htmlwidgets       "R 4.6.0; ; 2026-04-24 03:40:28 UTC; unix"                   
-#> httpgd            "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-24 06:35:37 UTC; unix"
+#> httpgd            "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-31 19:08:04 UTC; unix"
 #> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:27:19 UTC; unix"
 #> httr              "R 4.6.0; ; 2026-04-24 01:37:52 UTC; unix"                   
 #> httr2             "R 4.6.0; ; 2026-04-24 02:45:35 UTC; unix"                   
 #> ids               "R 4.6.0; ; 2026-04-24 22:06:14 UTC; unix"                   
 #> ifaTools          "R 4.6.0; ; 2026-04-28 06:09:37 UTC; unix"                   
-#> igraph            "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:46:37 UTC; unix"
+#> igraph            "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 14:03:06 UTC; unix"
 #> infer             "R 4.6.0; ; 2026-04-24 23:35:58 UTC; unix"                   
 #> ini               "R 4.6.0; ; 2026-04-24 01:22:01 UTC; unix"                   
 #> inline            "R 4.6.0; ; 2026-04-24 01:31:45 UTC; unix"                   
@@ -4004,10 +3948,9 @@ installed.packages()
 #> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:32:17 UTC; unix"
 #> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:46:17 UTC; unix"
 #> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:06:27 UTC; unix"
-#> longMI            "R 4.6.0; ; 2026-05-23 04:57:05 UTC; unix"                   
+#> longMI            "R 4.6.0; ; 2026-05-31 05:50:39 UTC; unix"                   
 #> loo               "R 4.6.0; ; 2026-04-24 03:04:23 UTC; unix"                   
 #> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:30:47 UTC; unix"
-#> luz               "R 4.6.0; ; 2026-04-28 21:23:38 UTC; unix"                   
 #> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:12:41 UTC; unix"
 #> magrittr          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:39:46 UTC; unix"
 #> markdown          "R 4.6.0; ; 2026-04-24 22:34:50 UTC; unix"                   
@@ -4015,7 +3958,7 @@ installed.packages()
 #> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:14:27 UTC; unix"
 #> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:20:01 UTC; unix"
 #> memoise           "R 4.6.0; ; 2026-04-24 02:16:20 UTC; unix"                   
-#> metaDyn           "R 4.6.0; ; 2026-05-24 06:38:34 UTC; unix"                   
+#> metaDyn           "R 4.6.0; ; 2026-05-31 19:10:49 UTC; unix"                   
 #> metaSEM           "R 4.6.0; ; 2026-04-28 05:58:02 UTC; unix"                   
 #> mi                "R 4.6.0; ; 2026-04-24 21:42:50 UTC; unix"                   
 #> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 07:13:31 UTC; unix"
@@ -4033,7 +3976,7 @@ installed.packages()
 #> modelr            "R 4.6.0; ; 2026-04-24 03:09:52 UTC; unix"                   
 #> MplusAutomation   "R 4.6.0; ; 2026-04-24 22:18:04 UTC; unix"                   
 #> multicool         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:43:04 UTC; unix"
-#> mvtnorm           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:31:06 UTC; unix"
+#> mvtnorm           "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 14:01:19 UTC; unix"
 #> nloptr            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:27:01 UTC; unix"
 #> numDeriv          "R 4.6.0; ; 2026-04-24 01:57:47 UTC; unix"                   
 #> nycflights13      "R 4.6.0; ; 2026-04-24 22:10:40 UTC; unix"                   
@@ -4095,7 +4038,7 @@ installed.packages()
 #> rcmdcheck         "R 4.6.0; ; 2026-04-24 22:11:24 UTC; unix"                   
 #> RColorBrewer      "R 4.6.0; ; 2026-04-24 01:19:19 UTC; unix"                   
 #> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 12:48:18 UTC; unix"
-#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:08:16 UTC; unix"
+#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 14:01:23 UTC; unix"
 #> RcppEigen         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:03:41 UTC; unix"
 #> RcppGSL           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 12:55:06 UTC; unix"
 #> RcppParallel      "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:29:34 UTC; unix"
@@ -4114,22 +4057,22 @@ installed.packages()
 #> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:01:35 UTC; unix"
 #> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:06:17 UTC; unix"
 #> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   
-#> rhdf5             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-21 04:54:15 UTC; unix"
-#> rhdf5filters      "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-21 04:53:55 UTC; unix"
-#> Rhdf5lib          "R 4.6.0; ; 2026-05-21 04:53:52 UTC; unix"                   
+#> rhdf5             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 04:34:31 UTC; unix"
+#> rhdf5filters      "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 04:34:16 UTC; unix"
+#> Rhdf5lib          "R 4.6.0; ; 2026-05-30 04:34:14 UTC; unix"                   
 #> rhub              "R 4.6.0; ; 2026-04-24 22:27:49 UTC; unix"                   
 #> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:38:21 UTC; unix"
 #> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:41:30 UTC; unix"
 #> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:03 UTC; unix"
 #> rmarkdown         "R 4.6.0; ; 2026-04-24 03:34:56 UTC; unix"                   
 #> rockchalk         "R 4.6.0; ; 2026-04-24 22:30:56 UTC; unix"                   
-#> roxygen2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-24 06:36:34 UTC; unix"
+#> roxygen2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-31 19:08:55 UTC; unix"
 #> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:09:00 UTC; unix"
 #> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:56 UTC; unix"
-#> rProject          "R 4.6.0; ; 2026-05-21 03:32:54 UTC; unix"                   
+#> rProject          "R 4.6.0; ; 2026-05-30 02:54:36 UTC; unix"                   
 #> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   
 #> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   
-#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-11 05:13:43 UTC; unix"
+#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-24 05:21:09 UTC; unix"
 #> rstan             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:53:40 UTC; unix"
 #> rstantools        "R 4.6.0; ; 2026-04-24 02:32:26 UTC; unix"                   
 #> rstudioapi        "R 4.6.0; ; 2026-04-24 01:31:06 UTC; unix"                   
@@ -4138,19 +4081,18 @@ installed.packages()
 #> rvest             "R 4.6.0; ; 2026-04-24 22:08:00 UTC; unix"                   
 #> Ryacas            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 12:58:59 UTC; unix"
 #> S7                "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:21:55 UTC; unix"
-#> safetensors       "R 4.6.0; ; 2026-04-28 03:42:52 UTC; unix"                   
 #> sass              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:46:56 UTC; unix"
 #> scales            "R 4.6.0; ; 2026-04-24 02:00:26 UTC; unix"                   
 #> selectr           "R 4.6.0; ; 2026-04-24 21:52:52 UTC; unix"                   
 #> sem               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:51:22 UTC; unix"
 #> semlbci           "R 4.6.0; ; 2026-04-24 23:14:31 UTC; unix"                   
-#> semmcci           "R 4.6.0; ; 2026-05-24 06:36:48 UTC; unix"                   
+#> semmcci           "R 4.6.0; ; 2026-05-31 19:09:09 UTC; unix"                   
 #> semPlot           "R 4.6.0; ; 2026-04-30 06:02:32 UTC; unix"                   
 #> sessioninfo       "R 4.6.0; ; 2026-04-24 21:10:29 UTC; unix"                   
 #> sfd               "R 4.6.0; ; 2026-04-24 22:06:59 UTC; unix"                   
 #> shape             "R 4.6.0; ; 2026-04-24 01:28:15 UTC; unix"                   
 #> shiny             "R 4.6.0; ; 2026-04-24 22:23:51 UTC; unix"                   
-#> simStateSpace     "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-24 06:37:08 UTC; unix"
+#> simStateSpace     "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-31 19:09:30 UTC; unix"
 #> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:14:38 UTC; unix"
 #> snow              "R 4.6.0; ; 2026-04-24 01:30:10 UTC; unix"                   
 #> snowfall          "R 4.6.0; ; 2026-04-24 21:41:41 UTC; unix"                   
@@ -4178,8 +4120,7 @@ installed.packages()
 #> tidyverse         "R 4.6.0; ; 2026-04-24 23:44:35 UTC; unix"                   
 #> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:45:56 UTC; unix"
 #> timeDate          "R 4.6.0; ; 2026-04-24 01:48:33 UTC; unix"                   
-#> tinytex           "R 4.6.0; ; 2026-05-24 06:36:11 UTC; unix"                   
-#> torch             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:15:40 UTC; unix"
+#> tinytex           "R 4.6.0; ; 2026-05-31 19:08:34 UTC; unix"                   
 #> tune              "R 4.6.0; ; 2026-04-25 15:45:43 UTC; unix"                   
 #> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:46:05 UTC; unix"
 #> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:40:31 UTC; unix"
@@ -4208,7 +4149,6 @@ installed.packages()
 #> xtable            "R 4.6.0; ; 2026-04-24 01:35:24 UTC; unix"                   
 #> yaml              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:35:34 UTC; unix"
 #> yardstick         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:18:47 UTC; unix"
-#> zeallot           "R 4.6.0; ; 2026-04-24 01:46:16 UTC; unix"                   
 #> zip               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:33:36 UTC; unix"
 #> zoo               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:07:50 UTC; unix"
 #> base              "R 4.6.0; ; 2026-04-24 11:37:39 UTC; unix"                   
@@ -4289,7 +4229,6 @@ installed.packages()
 #> colorspace        NA       
 #> commonmark        NA       
 #> conflicted        NA       
-#> coro              NA       
 #> corpcor           NA       
 #> covr              NA       
 #> cowplot           NA       
@@ -4299,7 +4238,6 @@ installed.packages()
 #> crosstalk         NA       
 #> cTMed             NA       
 #> ctsem             NA       
-#> cuda12.8          NA       
 #> curl              NA       
 #> data.table        NA       
 #> DBI               NA       
@@ -4426,7 +4364,6 @@ installed.packages()
 #> longMI            NA       
 #> loo               NA       
 #> lubridate         NA       
-#> luz               NA       
 #> magick            NA       
 #> magrittr          NA       
 #> markdown          NA       
@@ -4557,7 +4494,6 @@ installed.packages()
 #> rvest             NA       
 #> Ryacas            NA       
 #> S7                NA       
-#> safetensors       NA       
 #> sass              NA       
 #> scales            NA       
 #> selectr           NA       
@@ -4598,7 +4534,6 @@ installed.packages()
 #> timechange        NA       
 #> timeDate          NA       
 #> tinytex           NA       
-#> torch             NA       
 #> tune              NA       
 #> tzdb              NA       
 #> ucminf            NA       
@@ -4627,7 +4562,6 @@ installed.packages()
 #> xtable            NA       
 #> yaml              NA       
 #> yardstick         NA       
-#> zeallot           NA       
 #> zip               NA       
 #> zoo               NA       
 #> base              NA       
