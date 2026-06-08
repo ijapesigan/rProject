@@ -1,7 +1,7 @@
 rProject
 ================
 Ivan Jacob Agaloos Pesigan
-2026-06-03
+2026-06-08
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 
@@ -56,7 +56,7 @@ wiki and other resources.
 ## References
 
 <div id="refs" class="references csl-bib-body hanging-indent"
-entry-spacing="0" line-spacing="2">
+data-entry-spacing="0" data-line-spacing="2">
 
 <div id="ref-RCoreTeam-2026" class="csl-entry">
 
