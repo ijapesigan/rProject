@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/RtmpnIyPKn/temp_libpath9f92ad58410"
+#> rProject          "rProject"          "/tmp/RtmpRbk6u3/temp_libpath9fb14864500"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -132,6 +132,7 @@ installed.packages()
 #> dtplyr            "dtplyr"            "/usr/local/lib/R/site-library"          
 #> duckdb            "duckdb"            "/usr/local/lib/R/site-library"          
 #> dynr              "dynr"              "/usr/local/lib/R/site-library"          
+#> dynTools          "dynTools"          "/usr/local/lib/R/site-library"          
 #> dynUtils          "dynUtils"          "/usr/local/lib/R/site-library"          
 #> ellipse           "ellipse"           "/usr/local/lib/R/site-library"          
 #> ellipsis          "ellipsis"          "/usr/local/lib/R/site-library"          
@@ -476,10 +477,10 @@ installed.packages()
 #> assertthat        "0.2.1"      NA           
 #> backports         "1.5.1"      NA           
 #> base64enc         "0.1-6"      NA           
-#> betaDelta         "1.0.7"      NA           
-#> betaMC            "1.3.3"      NA           
-#> betaNB            "1.0.6"      NA           
-#> betaSandwich      "1.0.9"      NA           
+#> betaDelta         "1.0.7.9000" NA           
+#> betaMC            "1.3.4.9000" NA           
+#> betaNB            "1.0.7.9000" NA           
+#> betaSandwich      "1.0.9.9000" NA           
 #> BH                "1.90.0-1"   NA           
 #> bibtex            "0.5.2"      NA           
 #> biocmake          "1.4.0"      NA           
@@ -519,7 +520,7 @@ installed.packages()
 #> crayon            "1.5.3"      NA           
 #> credentials       "2.0.3"      NA           
 #> crosstalk         "1.2.2"      NA           
-#> cTMed             "1.0.10"     NA           
+#> cTMed             "1.0.9.9000" NA           
 #> ctsem             "3.10.6"     NA           
 #> curl              "7.1.0"      NA           
 #> data.table        "1.18.4"     NA           
@@ -535,7 +536,7 @@ installed.packages()
 #> diffobj           "0.3.6"      NA           
 #> digest            "0.6.39"     NA           
 #> dir.expiry        "1.20.0"     NA           
-#> distributional    "0.7.0"      NA           
+#> distributional    "0.7.1"      NA           
 #> distro            "0.1.1"      NA           
 #> doBy              "4.7.1"      NA           
 #> docopt            "0.7.2"      NA           
@@ -545,7 +546,8 @@ installed.packages()
 #> dtplyr            "1.3.3"      NA           
 #> duckdb            "1.5.2"      NA           
 #> dynr              "0.1.16-114" NA           
-#> dynUtils          "0.9.1"      NA           
+#> dynTools          "0.0.0.9000" NA           
+#> dynUtils          "0.9.2"      NA           
 #> ellipse           "0.5.0"      NA           
 #> ellipsis          "0.3.3"      NA           
 #> evaluate          "1.0.5"      NA           
@@ -677,11 +679,11 @@ installed.packages()
 #> numDeriv          "2016.8-1.1" NA           
 #> nycflights13      "1.0.2"      NA           
 #> OpenMx            "2.22.11"    NA           
-#> openssl           "2.4.1"      NA           
+#> openssl           "2.4.2"      NA           
 #> openxlsx          "4.2.8.1"    NA           
 #> ordinal           "2025.12-29" NA           
 #> otel              "0.2.0"      NA           
-#> pak               "0.9.5"      NA           
+#> pak               "0.10.0"     NA           
 #> pan               "1.9"        NA           
 #> pander            "0.6.6"      NA           
 #> parallelly        "1.47.0"     NA           
@@ -771,7 +773,7 @@ installed.packages()
 #> RSQLite           "3.53.1"     NA           
 #> rstan             "2.32.7"     NA           
 #> rstantools        "2.6.0"      NA           
-#> rstudioapi        "0.18.0"     NA           
+#> rstudioapi        "0.19.0"     NA           
 #> RUnit             "0.4.33.1"   NA           
 #> rversions         "3.0.0"      NA           
 #> rvest             "1.0.5"      NA           
@@ -781,8 +783,8 @@ installed.packages()
 #> scales            "1.4.0"      NA           
 #> selectr           "0.5-1"      NA           
 #> sem               "3.1-16"     NA           
-#> semlbci           "0.11.5"     NA           
-#> semmcci           "1.1.6"      NA           
+#> semlbci           "0.11.6"     NA           
+#> semmcci           "1.1.6.9000" NA           
 #> semPlot           "1.1.8"      NA           
 #> sessioninfo       "1.2.4"      NA           
 #> sfd               "0.1.0"      NA           
@@ -845,7 +847,7 @@ installed.packages()
 #> xtable            "1.8-8"      NA           
 #> yaml              "2.3.12"     NA           
 #> yardstick         "1.4.0"      NA           
-#> zip               "2.3.3"      NA           
+#> zip               "3.0.0"      NA           
 #> zoo               "1.8-15"     NA           
 #> base              "4.6.0"      "base"       
 #> boot              "1.3-32"     "recommended"
@@ -958,6 +960,7 @@ installed.packages()
 #> dtplyr            "R (>= 4.0)"                                                                          
 #> duckdb            "DBI, R (>= 4.1.0)"                                                                   
 #> dynr              "R (>= 3.0.0), ggplot2"                                                               
+#> dynTools          "R (>= 4.1.0)"                                                                        
 #> dynUtils          "R (>= 3.5.0)"                                                                        
 #> ellipse           "R (>= 2.0.0),graphics,stats"                                                         
 #> ellipsis          "R (>= 3.2)"                                                                          
@@ -1371,6 +1374,7 @@ installed.packages()
 #> dtplyr            "cli (>= 3.4.0), data.table (>= 1.13.0), dplyr (>= 1.1.0),\nglue, lifecycle, rlang (>= 1.0.4), tibble, tidyselect (>=\n1.2.0), vctrs (>= 0.4.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> duckdb            "methods, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> dynr              "MASS, Matrix (>= 1.5-0), numDeriv, xtable, latex2exp, grid,\nreshape2, plyr, mice, magrittr, methods, fda, car, stringi,\ntibble, deSolve, Rdpack"                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+#> dynTools          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> dynUtils          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> ellipse           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> ellipsis          "rlang (>= 1.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -1784,6 +1788,7 @@ installed.packages()
 #> dtplyr            NA                                                                                                                                                           
 #> duckdb            NA                                                                                                                                                           
 #> dynr              NA                                                                                                                                                           
+#> dynTools          NA                                                                                                                                                           
 #> dynUtils          NA                                                                                                                                                           
 #> ellipse           NA                                                                                                                                                           
 #> ellipsis          NA                                                                                                                                                           
@@ -2084,7 +2089,7 @@ installed.packages()
 #> xtable            NA                                                                                                                                                           
 #> yaml              NA                                                                                                                                                           
 #> yardstick         NA                                                                                                                                                           
-#> zip               NA                                                                                                                                                           
+#> zip               "cli"                                                                                                                                                        
 #> zoo               NA                                                                                                                                                           
 #> base              NA                                                                                                                                                           
 #> boot              NA                                                                                                                                                           
@@ -2129,8 +2134,8 @@ installed.packages()
 #> backports         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> base64enc         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> betaDelta         "knitr, rmarkdown, testthat, betaSandwich, betaMC, betaNB"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-#> betaMC            "knitr, rmarkdown, testthat, MASS, mice, Amelia"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-#> betaNB            "knitr, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+#> betaMC            "knitr, rmarkdown, testthat, MASS, mice, Amelia, betaDelta,\nbetaSandwich, betaNB"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+#> betaNB            "knitr, rmarkdown, testthat, betaDelta, betaSandwich, betaMC"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 #> betaSandwich      "knitr, rmarkdown, testthat, betaDelta, betaMC, betaNB"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> BH                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 #> bibtex            "testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
@@ -2197,6 +2202,7 @@ installed.packages()
 #> dtplyr            "bench, covr, knitr, rmarkdown, testthat (>= 3.1.2), tidyr (>=\n1.1.0), waldo (>= 0.3.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> duckdb            "adbcdrivermanager, arrow (>= 13.0.0), bit64, callr, clock,\nDBItest, dbplyr, dplyr, rlang, sf, testthat (>= 3.0.0), tibble,\nvctrs, wk, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> dynr              "testthat, roxygen2 (>= 3.1), knitr, rmarkdown, RcppGSL"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+#> dynTools          "knitr, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> dynUtils          "knitr, rmarkdown, testthat, simStateSpace"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #> ellipse           "MASS"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 #> ellipsis          "covr, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
@@ -2423,7 +2429,7 @@ installed.packages()
 #> RSQLite           "callr, cli, DBItest (>= 1.8.0), decor, gert, gh, hms, knitr,\nmagrittr, rmarkdown, rvest, testthat (>= 3.0.0), withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #> rstan             "testthat (>= 3.0.4), parallel, KernSmooth, shinystan,\nbayesplot, rmarkdown, rstantools, rstudioapi, Matrix, knitr,\ncoda, V8"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 #> rstantools        "rstan (>= 2.17.2), usethis (>= 1.5.1), testthat (>= 2.0.0),\nknitr, pkgbuild, pkgload, roxygen2 (>= 6.0.1), rmarkdown,\nrstudioapi"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-#> rstudioapi        "testthat, knitr, rmarkdown, clipr, covr, curl, jsonlite,\nwithr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+#> rstudioapi        "testthat, knitr, rmarkdown, clipr, covr, curl, jsonlite, R6,\nwithr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> RUnit             "XML (>= 3.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 #> rversions         "pillar, testthat (>= 3.0.0), webfakes, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 #> rvest             "chromote, covr, knitr, purrr, R6, readr, repurrrsive,\nrmarkdown, spelling, stringi (>= 0.3.1), testthat (>= 3.0.2),\ntidyr, webfakes"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
@@ -2497,7 +2503,7 @@ installed.packages()
 #> xtable            "knitr, zoo, survival, glue, tinytex"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 #> yaml              "knitr, rmarkdown, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 #> yardstick         "covr, ggplot2, knitr, probably (>= 1.0.0), rmarkdown,\nsurvival (>= 3.5-0), testthat (>= 3.0.0), tidyr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-#> zip               "covr, pillar, processx, R6, testthat, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+#> zip               "callr, cli, curl, pillar, processx, R6, testthat, webfakes,\nwithr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> zoo               "AER, coda, chron, ggplot2 (>= 3.5.0), mondate, scales,\nstinepack, strucchange, timeDate, timeSeries, tinyplot, tis,\ntseries, xts"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 #> base              "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #> boot              "MASS, survival"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
@@ -2610,6 +2616,7 @@ installed.packages()
 #> dtplyr            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> duckdb            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> dynr              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+#> dynTools          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> dynUtils          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> ellipse           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 #> ellipsis          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -3023,6 +3030,7 @@ installed.packages()
 #> dtplyr            "MIT + file LICENSE"                          NA             
 #> duckdb            "MIT + file LICENSE"                          NA             
 #> dynr              "GPL-3"                                       NA             
+#> dynTools          "MIT + file LICENSE"                          NA             
 #> dynUtils          "GPL (>= 3)"                                  NA             
 #> ellipse           "GPL (>= 2)"                                  NA             
 #> ellipsis          "MIT + file LICENSE"                          NA             
@@ -3436,6 +3444,7 @@ installed.packages()
 #> dtplyr            NA                    NA      NA     "no"            
 #> duckdb            NA                    NA      NA     "yes"           
 #> dynr              NA                    NA      NA     "yes"           
+#> dynTools          NA                    NA      NA     "no"            
 #> dynUtils          NA                    NA      NA     "no"            
 #> ellipse           NA                    NA      NA     "no"            
 #> ellipsis          NA                    NA      NA     "no"            
@@ -3768,8 +3777,8 @@ installed.packages()
 #> tools             NA                    NA      NA     "yes"           
 #> utils             NA                    NA      NA     "yes"           
 #>                   Built                                                        
-#> rProject          "R 4.6.0; ; 2026-06-08 03:37:16 UTC; unix"                   
-#> rProject          "R 4.6.0; ; 2026-06-08 03:37:13 UTC; unix"                   
+#> rProject          "R 4.6.0; ; 2026-06-15 15:16:41 UTC; unix"                   
+#> rProject          "R 4.6.0; ; 2026-06-15 15:16:38 UTC; unix"                   
 #> abind             "R 4.6.0; ; 2026-04-24 01:22:17 UTC; unix"                   
 #> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 14:02:42 UTC; unix"
 #> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   
@@ -3780,20 +3789,20 @@ installed.packages()
 #> assertthat        "R 4.6.0; ; 2026-04-24 01:22:17 UTC; unix"                   
 #> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:26 UTC; unix"
 #> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:05:52 UTC; unix"
-#> betaDelta         "R 4.6.0; ; 2026-06-07 21:19:51 UTC; unix"                   
-#> betaMC            "R 4.6.0; ; 2026-06-07 21:20:00 UTC; unix"                   
-#> betaNB            "R 4.6.0; ; 2026-06-07 21:19:57 UTC; unix"                   
-#> betaSandwich      "R 4.6.0; ; 2026-06-07 21:19:54 UTC; unix"                   
+#> betaDelta         "R 4.6.0; ; 2026-06-15 08:59:40 UTC; unix"                   
+#> betaMC            "R 4.6.0; ; 2026-06-15 08:59:49 UTC; unix"                   
+#> betaNB            "R 4.6.0; ; 2026-06-15 08:59:46 UTC; unix"                   
+#> betaSandwich      "R 4.6.0; ; 2026-06-15 08:59:43 UTC; unix"                   
 #> BH                "R 4.6.0; ; 2026-04-24 01:12:36 UTC; unix"                   
 #> bibtex            "R 4.6.0; ; 2026-04-24 21:08:24 UTC; unix"                   
-#> biocmake          "R 4.6.0; ; 2026-06-06 04:33:55 UTC; unix"                   
+#> biocmake          "R 4.6.0; ; 2026-06-14 05:14:49 UTC; unix"                   
 #> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   
-#> BiocVersion       "R 4.6.0; ; 2026-06-06 04:33:53 UTC; unix"                   
+#> BiocVersion       "R 4.6.0; ; 2026-06-14 05:14:47 UTC; unix"                   
 #> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:17 UTC; unix"
 #> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-20 05:38:18 UTC; unix"
 #> bitops            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:57:11 UTC; unix"
 #> blob              "R 4.6.0; ; 2026-04-24 02:39:14 UTC; unix"                   
-#> bootStateSpace    "R 4.6.0; ; 2026-06-07 21:20:50 UTC; unix"                   
+#> bootStateSpace    "R 4.6.0; ; 2026-06-15 09:00:37 UTC; unix"                   
 #> brew              "R 4.6.0; ; 2026-04-24 21:09:21 UTC; unix"                   
 #> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"
 #> broom             "R 4.6.0; ; 2026-05-15 06:00:38 UTC; unix"                   
@@ -3806,7 +3815,7 @@ installed.packages()
 #> cellranger        "R 4.6.0; ; 2026-04-24 02:43:56 UTC; unix"                   
 #> cffr              "R 4.6.0; ; 2026-05-05 06:04:44 UTC; unix"                   
 #> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:27:51 UTC; unix"
-#> cli               "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-07 21:19:16 UTC; unix"
+#> cli               "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-15 08:59:07 UTC; unix"
 #> clipr             "R 4.6.0; ; 2026-05-26 05:44:45 UTC; unix"                   
 #> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:21 UTC; unix"
 #> clusterGeneration "R 4.6.0; ; 2026-04-24 21:00:44 UTC; unix"                   
@@ -3823,7 +3832,7 @@ installed.packages()
 #> crayon            "R 4.6.0; ; 2026-04-24 01:23:50 UTC; unix"                   
 #> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   
 #> crosstalk         "R 4.6.0; ; 2026-04-24 02:47:11 UTC; unix"                   
-#> cTMed             "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-07 21:20:57 UTC; unix"
+#> cTMed             "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-15 09:00:44 UTC; unix"
 #> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:16:40 UTC; unix"
 #> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:32:50 UTC; unix"
 #> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:44:34 UTC; unix"
@@ -3832,14 +3841,14 @@ installed.packages()
 #> Deriv             "R 4.6.0; ; 2026-04-24 01:19:38 UTC; unix"                   
 #> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   
 #> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:50 UTC; unix"
-#> devtools          "R 4.6.0; ; 2026-06-07 21:19:28 UTC; unix"                   
+#> devtools          "R 4.6.0; ; 2026-06-15 08:59:18 UTC; unix"                   
 #> diagram           "R 4.6.0; ; 2026-04-24 01:28:57 UTC; unix"                   
 #> dials             "R 4.6.0; ; 2026-04-24 22:13:38 UTC; unix"                   
 #> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:56:50 UTC; unix"
 #> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:08:51 UTC; unix"
 #> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"
-#> dir.expiry        "R 4.6.0; ; 2026-06-06 04:33:54 UTC; unix"                   
-#> distributional    "R 4.6.0; ; 2026-04-24 02:43:40 UTC; unix"                   
+#> dir.expiry        "R 4.6.0; ; 2026-06-14 05:14:47 UTC; unix"                   
+#> distributional    "R 4.6.0; ; 2026-06-12 05:54:19 UTC; unix"                   
 #> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   
 #> doBy              "R 4.6.0; ; 2026-04-24 03:30:51 UTC; unix"                   
 #> docopt            "R 4.6.0; ; 2026-04-24 11:43:50 UTC; unix"                   
@@ -3848,8 +3857,9 @@ installed.packages()
 #> DT                "R 4.6.0; ; 2026-04-24 03:44:46 UTC; unix"                   
 #> dtplyr            "R 4.6.0; ; 2026-04-24 22:47:10 UTC; unix"                   
 #> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:57:02 UTC; unix"
-#> dynr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-07 21:20:34 UTC; unix"
-#> dynUtils          "R 4.6.0; ; 2026-06-07 06:39:18 UTC; unix"                   
+#> dynr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-15 09:00:22 UTC; unix"
+#> dynTools          "R 4.6.0; ; 2026-06-15 09:01:03 UTC; unix"                   
+#> dynUtils          "R 4.6.0; ; 2026-06-15 07:31:08 UTC; unix"                   
 #> ellipse           "R 4.6.0; ; 2026-04-24 01:59:47 UTC; unix"                   
 #> ellipsis          "R 4.6.0; ; 2026-04-24 21:36:12 UTC; unix"                   
 #> evaluate          "R 4.6.0; ; 2026-04-24 01:39:41 UTC; unix"                   
@@ -3863,7 +3873,7 @@ installed.packages()
 #> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:15:12 UTC; unix"
 #> fds               "R 4.6.0; ; 2026-05-06 05:19:49 UTC; unix"                   
 #> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:36 UTC; unix"
-#> fitVARMxID        "R 4.6.0; ; 2026-06-07 21:21:21 UTC; unix"                   
+#> fitVARMxID        "R 4.6.0; ; 2026-06-15 09:01:12 UTC; unix"                   
 #> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:19:31 UTC; unix"
 #> fontawesome       "R 4.6.0; ; 2026-04-24 02:45:51 UTC; unix"                   
 #> forcats           "R 4.6.0; ; 2026-04-24 02:47:55 UTC; unix"                   
@@ -3908,7 +3918,7 @@ installed.packages()
 #> htmlTable         "R 4.6.0; ; 2026-04-24 03:50:00 UTC; unix"                   
 #> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:41:28 UTC; unix"
 #> htmlwidgets       "R 4.6.0; ; 2026-04-24 03:40:28 UTC; unix"                   
-#> httpgd            "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-07 21:18:40 UTC; unix"
+#> httpgd            "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-15 08:58:34 UTC; unix"
 #> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:27:19 UTC; unix"
 #> httr              "R 4.6.0; ; 2026-04-24 01:37:52 UTC; unix"                   
 #> httr2             "R 4.6.0; ; 2026-04-24 02:45:35 UTC; unix"                   
@@ -3948,7 +3958,7 @@ installed.packages()
 #> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:32:17 UTC; unix"
 #> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:46:17 UTC; unix"
 #> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:06:27 UTC; unix"
-#> longMI            "R 4.6.0; ; 2026-06-07 05:57:29 UTC; unix"                   
+#> longMI            "R 4.6.0; ; 2026-06-15 06:42:39 UTC; unix"                   
 #> loo               "R 4.6.0; ; 2026-04-24 03:04:23 UTC; unix"                   
 #> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:30:47 UTC; unix"
 #> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:12:41 UTC; unix"
@@ -3958,7 +3968,7 @@ installed.packages()
 #> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:14:27 UTC; unix"
 #> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:20:01 UTC; unix"
 #> memoise           "R 4.6.0; ; 2026-04-24 02:16:20 UTC; unix"                   
-#> metaDyn           "R 4.6.0; ; 2026-06-07 21:21:31 UTC; unix"                   
+#> metaDyn           "R 4.6.0; ; 2026-06-15 09:01:22 UTC; unix"                   
 #> metaSEM           "R 4.6.0; ; 2026-04-28 05:58:02 UTC; unix"                   
 #> mi                "R 4.6.0; ; 2026-04-24 21:42:50 UTC; unix"                   
 #> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 07:13:31 UTC; unix"
@@ -3981,11 +3991,11 @@ installed.packages()
 #> numDeriv          "R 4.6.0; ; 2026-04-24 01:57:47 UTC; unix"                   
 #> nycflights13      "R 4.6.0; ; 2026-04-24 22:10:40 UTC; unix"                   
 #> OpenMx            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:17:54 UTC; unix"
-#> openssl           "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-15 06:01:35 UTC; unix"
+#> openssl           "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-10 05:34:22 UTC; unix"
 #> openxlsx          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:40:13 UTC; unix"
 #> ordinal           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:24:13 UTC; unix"
 #> otel              "R 4.6.0; ; 2026-04-24 01:29:05 UTC; unix"                   
-#> pak               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-28 03:40:03 UTC; unix"
+#> pak               "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-08 05:31:48 UTC; unix"
 #> pan               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:17:25 UTC; unix"
 #> pander            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 14:28:54 UTC; unix"
 #> parallelly        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:24:14 UTC; unix"
@@ -4057,25 +4067,25 @@ installed.packages()
 #> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 15:01:35 UTC; unix"
 #> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:06:17 UTC; unix"
 #> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   
-#> rhdf5             "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-06 04:36:53 UTC; unix"
-#> rhdf5filters      "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-06 04:36:34 UTC; unix"
-#> Rhdf5lib          "R 4.6.0; ; 2026-06-06 04:36:31 UTC; unix"                   
+#> rhdf5             "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-14 05:17:42 UTC; unix"
+#> rhdf5filters      "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-14 05:17:23 UTC; unix"
+#> Rhdf5lib          "R 4.6.0; ; 2026-06-14 05:17:20 UTC; unix"                   
 #> rhub              "R 4.6.0; ; 2026-04-24 22:27:49 UTC; unix"                   
 #> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:38:21 UTC; unix"
 #> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:41:30 UTC; unix"
 #> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:03 UTC; unix"
 #> rmarkdown         "R 4.6.0; ; 2026-04-24 03:34:56 UTC; unix"                   
 #> rockchalk         "R 4.6.0; ; 2026-04-24 22:30:56 UTC; unix"                   
-#> roxygen2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-07 21:19:34 UTC; unix"
+#> roxygen2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-15 08:59:24 UTC; unix"
 #> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:09:00 UTC; unix"
 #> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:56 UTC; unix"
-#> rProject          "R 4.6.0; ; 2026-06-06 02:57:31 UTC; unix"                   
+#> rProject          "R 4.6.0; ; 2026-06-14 03:55:04 UTC; unix"                   
 #> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   
 #> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   
 #> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-24 05:21:09 UTC; unix"
 #> rstan             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 13:53:40 UTC; unix"
 #> rstantools        "R 4.6.0; ; 2026-04-24 02:32:26 UTC; unix"                   
-#> rstudioapi        "R 4.6.0; ; 2026-04-24 01:31:06 UTC; unix"                   
+#> rstudioapi        "R 4.6.0; ; 2026-06-12 05:53:49 UTC; unix"                   
 #> RUnit             "R 4.6.0; ; 2026-04-24 21:02:48 UTC; unix"                   
 #> rversions         "R 4.6.0; ; 2026-04-24 21:11:46 UTC; unix"                   
 #> rvest             "R 4.6.0; ; 2026-04-24 22:08:00 UTC; unix"                   
@@ -4085,14 +4095,14 @@ installed.packages()
 #> scales            "R 4.6.0; ; 2026-04-24 02:00:26 UTC; unix"                   
 #> selectr           "R 4.6.0; ; 2026-04-24 21:52:52 UTC; unix"                   
 #> sem               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:51:22 UTC; unix"
-#> semlbci           "R 4.6.0; ; 2026-04-24 23:14:31 UTC; unix"                   
-#> semmcci           "R 4.6.0; ; 2026-06-07 21:19:48 UTC; unix"                   
+#> semlbci           "R 4.6.0; ; 2026-06-09 05:46:24 UTC; unix"                   
+#> semmcci           "R 4.6.0; ; 2026-06-15 08:59:37 UTC; unix"                   
 #> semPlot           "R 4.6.0; ; 2026-04-30 06:02:32 UTC; unix"                   
 #> sessioninfo       "R 4.6.0; ; 2026-06-05 14:25:12 UTC; unix"                   
 #> sfd               "R 4.6.0; ; 2026-04-24 22:06:59 UTC; unix"                   
 #> shape             "R 4.6.0; ; 2026-04-24 01:28:15 UTC; unix"                   
 #> shiny             "R 4.6.0; ; 2026-04-24 22:23:51 UTC; unix"                   
-#> simStateSpace     "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-07 21:20:09 UTC; unix"
+#> simStateSpace     "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-15 08:59:58 UTC; unix"
 #> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:14:38 UTC; unix"
 #> snow              "R 4.6.0; ; 2026-04-24 01:30:10 UTC; unix"                   
 #> snowfall          "R 4.6.0; ; 2026-04-24 21:41:41 UTC; unix"                   
@@ -4120,7 +4130,7 @@ installed.packages()
 #> tidyverse         "R 4.6.0; ; 2026-04-24 23:44:35 UTC; unix"                   
 #> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:45:56 UTC; unix"
 #> timeDate          "R 4.6.0; ; 2026-04-24 01:48:33 UTC; unix"                   
-#> tinytex           "R 4.6.0; ; 2026-06-07 21:19:11 UTC; unix"                   
+#> tinytex           "R 4.6.0; ; 2026-06-15 08:59:03 UTC; unix"                   
 #> tune              "R 4.6.0; ; 2026-04-25 15:45:43 UTC; unix"                   
 #> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:46:05 UTC; unix"
 #> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:40:31 UTC; unix"
@@ -4149,7 +4159,7 @@ installed.packages()
 #> xtable            "R 4.6.0; ; 2026-04-24 01:35:24 UTC; unix"                   
 #> yaml              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:35:34 UTC; unix"
 #> yardstick         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:18:47 UTC; unix"
-#> zip               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:33:36 UTC; unix"
+#> zip               "R 4.6.0; x86_64-pc-linux-gnu; 2026-06-11 05:14:27 UTC; unix"
 #> zoo               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:07:50 UTC; unix"
 #> base              "R 4.6.0; ; 2026-04-24 11:37:39 UTC; unix"                   
 #> boot              "R 4.6.0; ; 2026-04-24 11:41:39 UTC; unix"                   
@@ -4262,6 +4272,7 @@ installed.packages()
 #> dtplyr            NA       
 #> duckdb            NA       
 #> dynr              NA       
+#> dynTools          NA       
 #> dynUtils          NA       
 #> ellipse           NA       
 #> ellipsis          NA       
