@@ -97,10 +97,10 @@ Build <- function(path,
       )
       close(cpp_file)
       Rcpp::compileAttributes(pkgdir = path)
-      roxygen2::roxygenize(
-        package.dir = path,
-        roclets = "rd"
-      )
+      # roxygen2::roxygenize(
+      #   package.dir = path,
+      #   roclets = "rd"
+      # )
       unlink(namespace)
     }
     devtools::document(pkg = path)
