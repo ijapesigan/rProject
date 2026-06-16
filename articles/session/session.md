@@ -51,7 +51,7 @@ sessionInfo()
 
 installed.packages()
 #>                   Package             LibPath                                  
-#> rProject          "rProject"          "/tmp/Rtmp997FSE/temp_libpath9fb1bcaa283"
+#> rProject          "rProject"          "/tmp/RtmpcQTJ0H/temp_libpath9fb6c946339"
 #> rProject          "rProject"          "/__w/rProject/rProject/.library"        
 #> abind             "abind"             "/usr/local/lib/R/site-library"          
 #> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          
@@ -3777,8 +3777,8 @@ installed.packages()
 #> tools             NA                    NA      NA     "yes"           
 #> utils             NA                    NA      NA     "yes"           
 #>                   Built                                                        
-#> rProject          "R 4.6.0; ; 2026-06-15 22:51:20 UTC; unix"                   
-#> rProject          "R 4.6.0; ; 2026-06-15 22:51:17 UTC; unix"                   
+#> rProject          "R 4.6.0; ; 2026-06-16 00:30:37 UTC; unix"                   
+#> rProject          "R 4.6.0; ; 2026-06-16 00:30:34 UTC; unix"                   
 #> abind             "R 4.6.0; ; 2026-04-24 01:22:17 UTC; unix"                   
 #> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-30 14:02:42 UTC; unix"
 #> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   
