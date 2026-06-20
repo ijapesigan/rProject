@@ -197,6 +197,7 @@
 | Higgins-Thompson-2002 | Higgins-Thompson-2002 | NULL | NULL |
 | Higham-2002 | Higham-2002 | NULL | NULL |
 | Hofer-Piccinin-2009 | Hofer-Piccinin-2009 | NULL | NULL |
+| Jahng-Wood-Trull-2008 | Jahng-Wood-Trull-2008 | NULL | NULL |
 | Kauermann-Carroll-2001 | Kauermann-Carroll-2001 | regression, regression-hc | NULL |
 | Kenny-Korchmaros-Bolger-2003 | Kenny-Korchmaros-Bolger-2003 | NULL | NULL |
 | Kessler-Berglund-Dewit-etal-2002 | Kessler-Berglund-Dewit-etal-2002 | NULL | NULL |
@@ -306,6 +307,7 @@
 | Bond-Greenfield-Patterson-etal-2014 | Bond-Greenfield-Patterson-etal-2014 | NULL | NULL |
 | Bosley-Soyster-Fisher-2019 | Bosley-Soyster-Fisher-2019 | NULL | NULL |
 | Bou-Satorra-2017 | Bou-Satorra-2017 | NULL | NULL |
+| Bringmann-Ferrer-Hamaker-et-al-2018 | Bringmann-Ferrer-Hamaker-et-al-2018 | NULL | NULL |
 | Bringmann-Pe-Vissers-etal-2016 | Bringmann-Pe-Vissers-etal-2016 | NULL | NULL |
 | Bringmann-Vissers-Wichers-etal-2013 | Bringmann-Vissers-Wichers-etal-2013 | NULL | NULL |
 | Brody-Yu-Chen-etal-2013 | Brody-Yu-Chen-etal-2013 | NULL | NULL |
@@ -502,6 +504,7 @@
 | Oravecz-Wood-Ram-2018 | Oravecz-Wood-Ram-2018 | NULL | NULL |
 | ORourke-MacKinnon-2019 | ORourke-MacKinnon-2019 | mediation-prevention | NULL |
 | Oud-Delsing-2010 | Oud-Delsing-2010 | NULL | NULL |
+| Oud-Voelkle-Driver-2018 | Oud-Voelkle-Driver-2018 | NULL | NULL |
 | Pawitan-2013 | Pawitan-2013 | NULL | NULL |
 | Ryan-Kuiper-Hamaker-2018 | Ryan-Kuiper-Hamaker-2018 | NULL | NULL |
 | Shumway-Stoffer-2017 | Shumway-Stoffer-2017 | NULL | Time-series analysis, Time-series analysis–Data processing, R (Computer program language) |
