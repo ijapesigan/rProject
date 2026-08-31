@@ -1,6 +1,6 @@
 # rProject
 
-Ivan Jacob Agaloos Pesigan 2026-08-23
+Ivan Jacob Agaloos Pesigan 2026-08-31
 
 ## Description
 
@@ -12,7 +12,9 @@ package is intended for personal use only.
 You can install the released version of `rProject` from
 [GitHub](https://github.com/ijapesigan/rProject) with:
 
-`if`` ``(``!`[`require`](https://rdrr.io/r/base/library.html)`(`[`"pak"`](https://pak.r-lib.org/)`)``)`` `[`install.packages`](https://rdrr.io/r/utils/install.packages.html)`(``"pak"``)`` ``pak``::`[`pkg_install`](https://pak.r-lib.org/reference/pkg_install.html)`(``"ijapesigan/rProject"``)`
+\
+`if`` ``(``!`[`require`](https://rdrr.io/r/base/library.html)`(`[`"pak"`](https://pak.r-lib.org/)`)``)`` `[`install.packages`](https://rdrr.io/r/utils/install.packages.html)`(``"pak"``)`\
+`pak``::`[`pkg_install`](https://pak.r-lib.org/reference/pkg_install.html)`(``"ijapesigan/rProject"``)`
 
 ## More Information
 
