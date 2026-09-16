@@ -34,8 +34,8 @@
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
-`#>  [5] xfun_0.60         cachem_1.1.0      knitr_1.51        htmltools_0.5.9  `\
-`#>  [9] rmarkdown_2.31    lifecycle_1.0.5   cli_3.6.6.9000    sass_0.4.10      `\
+`#>  [5] xfun_0.60         cachem_1.1.0      knitr_1.52        htmltools_0.5.9  `\
+`#>  [9] rmarkdown_2.32    lifecycle_1.0.5   cli_3.6.6.9000    sass_0.4.10      `\
 `#> [13] pkgdown_2.2.1     textshaping_1.0.5 jquerylib_0.1.4   systemfonts_1.3.2`\
 `#> [17] compiler_4.6.1    tools_4.6.1       ragg_1.5.2        bslib_0.12.0     `\
 `#> [21] evaluate_1.0.5    yaml_2.3.12       otel_0.2.0        jsonlite_2.0.0   `\
@@ -46,7 +46,7 @@
 \
 [`installed.packages`](https://rdrr.io/r/utils/installed.packages.html)`(``)`\
 `#>                   Package             LibPath                                  `\
-`#> rProject          "rProject"          "/tmp/RtmpJtKdyf/temp_libpath9f112a8ff9c"`\
+`#> rProject          "rProject"          "/tmp/Rtmp7hb7JS/temp_libpath9f245af3694"`\
 `#> rProject          "rProject"          "/__w/rProject/rProject/.library"        `\
 `#> abind             "abind"             "/usr/local/lib/R/site-library"          `\
 `#> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          `\
@@ -475,7 +475,7 @@
 `#> BiocManager       "1.30.27"    NA           `\
 `#> BiocVersion       "3.23.1"     NA           `\
 `#> bit               "4.6.0"      NA           `\
-`#> bit64             "4.8.4"      NA           `\
+`#> bit64             "4.8.6"      NA           `\
 `#> bitops            "1.1-0"      NA           `\
 `#> blob              "1.3.0"      NA           `\
 `#> bootStateSpace    "1.0.3.9000" NA           `\
@@ -514,17 +514,17 @@
 `#> data.table        "1.18.6.1"   NA           `\
 `#> DBI               "1.3.0"      NA           `\
 `#> dbplyr            "2.6.0"      NA           `\
-`#> Deriv             "4.3.0"      NA           `\
+`#> Deriv             "4.3.5"      NA           `\
 `#> desc              "1.4.3"      NA           `\
 `#> deSolve           "1.42"       NA           `\
 `#> devtools          "2.5.2.9000" NA           `\
 `#> diagram           "1.6.5"      NA           `\
 `#> dials             "1.4.4"      NA           `\
 `#> DiceDesign        "1.10"       NA           `\
-`#> diffobj           "0.3.8"      NA           `\
+`#> diffobj           "0.3.9"      NA           `\
 `#> digest            "0.6.39"     NA           `\
 `#> dir.expiry        "1.20.0"     NA           `\
-`#> distributional    "0.8.1"      NA           `\
+`#> distributional    "0.9.0"      NA           `\
 `#> distro            "0.1.1"      NA           `\
 `#> doBy              "4.7.2"      NA           `\
 `#> docopt            "0.7.2"      NA           `\
@@ -549,7 +549,7 @@
 `#> fdrtool           "1.2.18"     NA           `\
 `#> fds               "1.9"        NA           `\
 `#> filelock          "1.0.3"      NA           `\
-`#> fitVARMxID        "1.0.5"      NA           `\
+`#> fitVARMxID        "1.0.6"      NA           `\
 `#> FNN               "1.1.4.1"    NA           `\
 `#> fontawesome       "0.5.3"      NA           `\
 `#> forcats           "1.0.1"      NA           `\
@@ -589,14 +589,14 @@
 `#> hdrcde            "3.5.0"      NA           `\
 `#> here              "1.0.2"      NA           `\
 `#> highr             "0.12"       NA           `\
-`#> Hmisc             "5.2-6"      NA           `\
+`#> Hmisc             "5.3-0"      NA           `\
 `#> hms               "1.1.4"      NA           `\
 `#> htmlTable         "2.5.0"      NA           `\
 `#> htmltools         "0.5.9"      NA           `\
 `#> htmlwidgets       "1.6.4"      NA           `\
 `#> httpgd            "2.1.4"      NA           `\
 `#> httpuv            "1.6.17"     NA           `\
-`#> httr              "1.4.8"      NA           `\
+`#> httr              "1.4.9"      NA           `\
 `#> httr2             "1.3.0"      NA           `\
 `#> ids               "1.0.1"      NA           `\
 `#> ifaTools          "0.23"       NA           `\
@@ -613,11 +613,11 @@
 `#> jsonlite          "2.0.0"      NA           `\
 `#> jsonvalidate      "1.5.0"      NA           `\
 `#> kernlab           "0.9-33"     NA           `\
-`#> knitr             "1.51"       NA           `\
+`#> knitr             "1.52"       NA           `\
 `#> ks                "1.15.3"     NA           `\
 `#> labeling          "0.4.3"      NA           `\
 `#> Lahman            "14.0-0"     NA           `\
-`#> languageserver    "0.3.18"     NA           `\
+`#> languageserver    "0.3.19"     NA           `\
 `#> later             "1.4.8"      NA           `\
 `#> latex2exp         "0.9.8"      NA           `\
 `#> lava              "1.9.3"      NA           `\
@@ -642,7 +642,7 @@
 `#> matrixStats       "1.5.0"      NA           `\
 `#> mclust            "6.1.3"      NA           `\
 `#> memoise           "2.0.1"      NA           `\
-`#> metaDyn           "1.0.3"      NA           `\
+`#> metaDyn           "1.0.4"      NA           `\
 `#> metaSEM           "1.5.0"      NA           `\
 `#> mice              "3.19.0"     NA           `\
 `#> microbenchmark    "1.5.0"      NA           `\
@@ -673,11 +673,11 @@
 `#> parallelly        "1.48.0"     NA           `\
 `#> parsnip           "1.6.0"      NA           `\
 `#> patchwork         "1.3.2"      NA           `\
-`#> pbapply           "1.7-4"      NA           `\
+`#> pbapply           "1.7-5"      NA           `\
 `#> pbivnorm          "0.6.0"      NA           `\
 `#> pbkrtest          "0.5.5"      NA           `\
 `#> pcaPP             "2.0-5"      NA           `\
-`#> pdftools          "3.9.0"      NA           `\
+`#> pdftools          "3.9.1"      NA           `\
 `#> pillar            "1.11.1"     NA           `\
 `#> pkgbuild          "1.4.8"      NA           `\
 `#> pkgconfig         "2.0.3"      NA           `\
@@ -720,7 +720,7 @@
 `#> rcmdcheck         "1.4.0"      NA           `\
 `#> RColorBrewer      "1.1-3"      NA           `\
 `#> Rcpp              "1.1.2"      NA           `\
-`#> RcppArmadillo     "15.4.2-1"   NA           `\
+`#> RcppArmadillo     "15.6.0-1"   NA           `\
 `#> RcppEigen         "0.3.4.0.2"  NA           `\
 `#> RcppGSL           "0.3.14"     NA           `\
 `#> RcppParallel      "6.2.1"      NA           `\
@@ -738,7 +738,7 @@
 `#> remotes           "2.5.0"      NA           `\
 `#> reprex            "2.1.1"      NA           `\
 `#> reshape2          "1.4.5"      NA           `\
-`#> reticulate        "1.46.0"     NA           `\
+`#> reticulate        "1.47.0"     NA           `\
 `#> rex               "1.2.2"      NA           `\
 `#> rhdf5             "2.56.0"     NA           `\
 `#> rhdf5filters      "1.24.1"     NA           `\
@@ -747,7 +747,7 @@
 `#> rjags             "4-17"       NA           `\
 `#> rlang             "1.3.0"      NA           `\
 `#> RMariaDB          "1.3.5"      NA           `\
-`#> rmarkdown         "2.31"       NA           `\
+`#> rmarkdown         "2.32"       NA           `\
 `#> roxygen2          "8.1.0.9000" NA           `\
 `#> rpf               "1.0.15"     NA           `\
 `#> RPostgres         "1.4.10"     NA           `\
@@ -781,7 +781,7 @@
 `#> sparsevctrs       "0.3.6"      NA           `\
 `#> splitfngr         "0.1.2"      NA           `\
 `#> SQUAREM           "2026.1"     NA           `\
-`#> StanHeaders       "2.32.10"    NA           `\
+`#> StanHeaders       "2.39.1"     NA           `\
 `#> stringi           "1.8.9"      NA           `\
 `#> stringr           "1.6.0"      NA           `\
 `#> styler            "1.11.0"     NA           `\
@@ -800,14 +800,14 @@
 `#> tidyverse         "2.0.0"      NA           `\
 `#> timechange        "0.4.0"      NA           `\
 `#> timeDate          "4052.112"   NA           `\
-`#> tinytex           "0.60.1"     NA           `\
+`#> tinytex           "0.60.2"     NA           `\
 `#> tune              "2.1.0"      NA           `\
 `#> tzdb              "0.5.0"      NA           `\
 `#> ucminf            "1.2.3"      NA           `\
 `#> unigd             "0.2.0"      NA           `\
 `#> urca              "1.3-4"      NA           `\
 `#> urlchecker        "2.0.0"      NA           `\
-`#> usethis           "3.2.1"      NA           `\
+`#> usethis           "3.2.2"      NA           `\
 `#> utf8              "1.2.6"      NA           `\
 `#> uuid              "1.2-2"      NA           `\
 `#> V8                "8.2.0"      NA           `\
@@ -921,7 +921,7 @@
 `#> data.table        "R (>= 3.4.0)"                                                                        `\
 `#> DBI               "methods, R (>= 3.0.0)"                                                               `\
 `#> dbplyr            "R (>= 4.1)"                                                                          `\
-`#> Deriv             "Rcpp"                                                                                `\
+`#> Deriv             "Rcpp, R (>= 4.5)"                                                                    `\
 `#> desc              "R (>= 3.4)"                                                                          `\
 `#> deSolve           "R (>= 3.3.0)"                                                                        `\
 `#> devtools          "R (>= 4.1), usethis (>= 3.2.1)"                                                      `\
@@ -1456,7 +1456,7 @@
 `#> matrixStats       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> mclust            "stats, utils, graphics, grDevices"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `\
 `#> memoise           "rlang (>= 0.4.10), cachem"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
-`#> metaDyn           "Matrix, fitVARMxID (>= 1.0.2)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
+`#> metaDyn           "Matrix, fitVARMxID (>= 1.0.6)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> metaSEM           "Matrix, MASS, ellipse, graphics, stats, utils, mvtnorm,\nnumDeriv, lavaan"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> mice              "broom, dplyr, glmnet, graphics, grDevices, lattice, mitml,\nnnet, Rcpp, rpart, stats, tidyr, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> microbenchmark    "graphics, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
@@ -1561,8 +1561,8 @@
 `#> rjags             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> rlang             "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> RMariaDB          "bit64, blob, DBI (>= 1.1.3), hms (>= 0.5.0), lubridate,\nmethods, rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
-`#> rmarkdown         "bslib (>= 0.2.5.1), evaluate (>= 0.13), fontawesome (>=\n0.5.0), htmltools (>= 0.5.1), jquerylib, jsonlite, knitr (>=\n1.43), methods, tinytex (>= 0.31), tools, utils, xfun (>=\n0.36), yaml (>= 2.1.19)"                                                                                                                                                                                                                                                                                                                                                                                                  `\
-`#> roxygen2          "brew, cli (>= 3.3.0), commonmark, desc (>= 1.2.0), knitr,\nlifecycle, methods, pkgload (>= 1.5.2), R6 (>= 2.1.2), rdtools\n(>= 0.1.0), rlang (>= 1.1.0), utils, withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                `\
+`#> rmarkdown         "bslib (>= 0.2.5.1), evaluate (>= 0.13), fontawesome (>=\n0.5.0), htmltools (>= 0.5.1), jquerylib, jsonlite, knitr (>=\n1.50), methods, tinytex (>= 0.31), tools, utils, xfun (>=\n0.36), yaml (>= 2.1.19)"                                                                                                                                                                                                                                                                                                                                                                                                  `\
+`#> roxygen2          "brew, cli (>= 3.3.0), commonmark, desc (>= 1.2.0), knitr,\nlifecycle, methods, pkgload (>= 1.5.2), R6 (>= 2.1.2), rdtools\n(>= 0.1.0), rlang (>= 1.1.0), stats, utils, withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> rpf               "Rcpp (>= 1.0.2), mvtnorm, lifecycle"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> RPostgres         "bit64, blob (>= 1.2.0), DBI (>= 1.2.0), hms (>= 1.0.0),\nlubridate, methods, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> rProject          "BiocManager, cffr, covr, devtools, distro, knitr, lintr, pak,\npkgdown, quarto, Rcpp, remotes, RefManageR, rmarkdown,\nroxygen2, rprojroot, stats, styler, tinytex, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
@@ -1621,7 +1621,7 @@
 `#> unigd             "systemfonts (>= 1.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> urca              "nlme, graphics, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> urlchecker        "cli, curl, gitcreds, rlang (>= 1.1.0), tools, utils, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
-`#> usethis           "cli (>= 3.0.1), clipr (>= 0.3.0), crayon, curl (>= 2.7), desc\n(>= 1.4.2), fs (>= 1.3.0), gert (>= 1.4.1), gh (>= 1.2.1), glue\n(>= 1.3.0), jsonlite, lifecycle (>= 1.0.0), purrr, rappdirs,\nrlang (>= 1.1.0), rprojroot (>= 2.1.1), rstudioapi, stats,\ntools, utils, whisker, withr (>= 2.3.0), yaml"                                                                                                                                                                                                                                                                                                    `\
+`#> usethis           "cli (>= 3.0.1), clipr (>= 0.3.0), crayon, curl (>= 2.7), desc\n(>= 1.4.2), fs (>= 1.3.0), gert (>= 1.4.1), gh (>= 1.6.0), glue\n(>= 1.3.0), jsonlite, lifecycle (>= 1.0.0), pak, purrr,\nrappdirs, rlang (>= 1.1.0), rprojroot (>= 2.1.1), rstudioapi,\nwhisker, withr (>= 2.3.0), yaml"                                                                                                                                                                                                                                                                                                                    `\
 `#> utf8              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> uuid              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> V8                "Rcpp (>= 0.12.12), jsonlite (>= 1.0), curl (>= 1.0), utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
@@ -2002,7 +2002,7 @@
 `#> sparsevctrs       NA                                                                                                                                                           `\
 `#> splitfngr         NA                                                                                                                                                           `\
 `#> SQUAREM           NA                                                                                                                                                           `\
-`#> StanHeaders       "RcppEigen (>= 0.3.4.0.0), RcppParallel (>= 5.1.4)"                                                                                                          `\
+`#> StanHeaders       "RcppEigen (>= 0.3.3.9.3), RcppParallel (>= 5.1.4)"                                                                                                          `\
 `#> stringi           NA                                                                                                                                                           `\
 `#> stringr           NA                                                                                                                                                           `\
 `#> styler            NA                                                                                                                                                           `\
@@ -2152,7 +2152,7 @@
 `#> diffobj           "knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> digest            "tinytest, simplermarkdown, rbenchmark"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> dir.expiry        "rmarkdown, knitr, testthat, BiocStyle"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
-`#> distributional    "testthat (>= 2.1.0), covr, mvtnorm, actuar (>= 2.0.0), evd,\nggdist, ggplot2, gk, LaplacesDemon, pkgdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
+`#> distributional    "testthat (>= 2.1.0), covr, mvtnorm, actuar (>= 2.0.0), evd,\nggdist, ggplot2, gk, knitr, LaplacesDemon, pkgdown, rmarkdown,\ntweedieDistr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> distro            "testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> doBy              "geepack, knitr, lme4, markdown, rmarkdown, multcomp,\nmicrobenchmark, pbkrtest (>= 0.5.2), survival, testthat (>=\n2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> docopt            "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
@@ -2241,7 +2241,7 @@
 `#> jsonlite          "httr, vctrs, testthat, knitr, rmarkdown, R.rsp, sf"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> jsonvalidate      "knitr, jsonlite, rmarkdown, testthat, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> kernlab           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> knitr             "bslib, DBI (>= 0.4-1), digest, formatR, gifski, gridSVG,\nhtmlwidgets (>= 0.7), jpeg, JuliaCall (>= 0.11.1), magick,\nlitedown, markdown (>= 1.3), otel, otelsdk, png, ragg,\nreticulate (>= 1.4), rgl (>= 0.95.1201), rlang, rmarkdown,\nsass, showtext, styler (>= 1.2.0), targets (>= 0.6.0), testit,\ntibble, tikzDevice (>= 0.10), tinytex (>= 0.56), webshot,\nrstudioapi, svglite"                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
+`#> knitr             "bslib, DBI (>= 0.4-1), digest, formatR, gifski, gridSVG,\nhtmlwidgets (>= 0.7), jpeg, JuliaCall (>= 0.11.1), magick,\nlitedown (>= 0.10), otel, otelsdk, png, ragg (>= 1.5.0),\nreticulate (>= 1.4), rgl (>= 0.95.1201), rlang, rmarkdown,\nsass, showtext, styler (>= 1.2.0), targets (>= 0.6.0), testit,\ntibble, tikzDevice (>= 0.10), tinytex (>= 0.56), webshot,\nrstudioapi, svglite"                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
 `#> ks                "geometry, knitr, MASS, misc3d (>= 0.4-0), oz, plot3D, rgl (>=\n0.66), rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> labeling          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> Lahman            "lattice, ggplot2, googleVis, data.table, vcd, reshape2,\ntidyr, knitr, rmarkdown, car, plyr, tidyverse"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
@@ -2435,7 +2435,7 @@
 `#> unigd             "testthat (>= 3.0.0), xml2 (>= 1.0.0), fontquiver (>= 0.2.0),\ncovr, knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> urca              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> urlchecker        "covr, testthat (>= 3.0.0), webfakes, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
-`#> usethis           "covr, knitr, magick, pkgload (>= 1.3.2.1), quarto (>= 1.5.1),\nrmarkdown, roxygen2 (>= 7.1.2), spelling (>= 1.2), testthat (>=\n3.1.8)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
+`#> usethis           "askpass, covr, knitr, magick, pkgload (>= 1.3.2.1), quarto\n(>= 1.5.1), rmarkdown, roxygen2 (>= 7.1.2), spelling (>= 1.2),\ntestthat (>= 3.1.8)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> utf8              "cli, covr, knitr, rlang, rmarkdown, testthat (>= 3.0.0),\nwithr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> uuid              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> V8                "testthat, knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
@@ -3189,7 +3189,7 @@
 `#> rjags             "GPL (== 2)"                                  NA             `\
 `#> rlang             "MIT + file LICENSE"                          NA             `\
 `#> RMariaDB          "MIT + file LICENSE"                          NA             `\
-`#> rmarkdown         "GPL-3"                                       NA             `\
+`#> rmarkdown         "MIT + file LICENSE"                          NA             `\
 `#> roxygen2          "MIT + file LICENSE"                          NA             `\
 `#> rpf               "GPL (>= 3)"                                  NA             `\
 `#> RPostgres         "MIT + file LICENSE"                          NA             `\
@@ -3709,10 +3709,10 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-09-01 04:24:21 UTC; unix"                   `\
-`#> rProject          "R 4.6.1; ; 2026-09-01 04:24:18 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-09-16 03:07:33 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-09-16 03:07:30 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
-`#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-27 09:43:18 UTC; unix"`\
+`#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:31:14 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   `\
 `#> arrow             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-24 04:55:31 UTC; unix"`\
 `#> ash               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:16:50 UTC; unix"`\
@@ -3721,20 +3721,20 @@
 `#> assertthat        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> betaDelta         "R 4.6.1; ; 2026-08-31 09:16:58 UTC; unix"                   `\
-`#> betaMC            "R 4.6.1; ; 2026-08-31 09:17:05 UTC; unix"                   `\
-`#> betaNB            "R 4.6.1; ; 2026-08-31 09:17:03 UTC; unix"                   `\
-`#> betaSandwich      "R 4.6.1; ; 2026-08-31 09:17:00 UTC; unix"                   `\
+`#> betaDelta         "R 4.6.1; ; 2026-09-15 08:22:11 UTC; unix"                   `\
+`#> betaMC            "R 4.6.1; ; 2026-09-15 08:22:21 UTC; unix"                   `\
+`#> betaNB            "R 4.6.1; ; 2026-09-15 08:22:18 UTC; unix"                   `\
+`#> betaSandwich      "R 4.6.1; ; 2026-09-15 08:22:14 UTC; unix"                   `\
 `#> BH                "R 4.6.0; ; 2026-08-12 20:21:37 UTC; unix"                   `\
 `#> bibtex            "R 4.6.0; ; 2026-08-12 20:21:43 UTC; unix"                   `\
-`#> biocmake          "R 4.6.1; ; 2026-08-30 18:14:32 UTC; unix"                   `\
+`#> biocmake          "R 4.6.1; ; 2026-09-14 05:13:54 UTC; unix"                   `\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   `\
-`#> BiocVersion       "R 4.6.1; ; 2026-08-30 18:14:30 UTC; unix"                   `\
+`#> BiocVersion       "R 4.6.1; ; 2026-09-14 05:13:52 UTC; unix"                   `\
 `#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
-`#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-21 04:14:33 UTC; unix"`\
+`#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:12 UTC; unix"`\
 `#> bitops            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-31 07:27:38 UTC; unix"`\
 `#> blob              "R 4.6.0; ; 2026-08-12 20:22:28 UTC; unix"                   `\
-`#> bootStateSpace    "R 4.6.1; ; 2026-08-31 09:17:52 UTC; unix"                   `\
+`#> bootStateSpace    "R 4.6.1; ; 2026-09-15 08:23:08 UTC; unix"                   `\
 `#> brew              "R 4.6.0; ; 2026-08-12 20:21:48 UTC; unix"                   `\
 `#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"`\
 `#> broom             "R 4.6.0; ; 2026-08-12 20:23:52 UTC; unix"                   `\
@@ -3747,7 +3747,7 @@
 `#> cellranger        "R 4.6.0; ; 2026-08-12 20:22:53 UTC; unix"                   `\
 `#> cffr              "R 4.6.0; ; 2026-08-25 04:31:41 UTC; unix"                   `\
 `#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
-`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-31 09:16:26 UTC; unix"`\
+`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-15 08:21:38 UTC; unix"`\
 `#> clipr             "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
 `#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:21 UTC; unix"`\
 `#> clusterGeneration "R 4.6.0; ; 2026-04-24 21:00:44 UTC; unix"                   `\
@@ -3764,34 +3764,34 @@
 `#> crayon            "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   `\
 `#> crosstalk         "R 4.6.0; ; 2026-08-12 20:22:17 UTC; unix"                   `\
-`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-31 09:18:02 UTC; unix"`\
-`#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-28 08:17:43 UTC; unix"`\
+`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-15 08:23:18 UTC; unix"`\
+`#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:31:26 UTC; unix"`\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-26 04:37:59 UTC; unix"`\
 `#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:30:51 UTC; unix"`\
 `#> DBI               "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
 `#> dbplyr            "R 4.6.0; ; 2026-08-12 20:23:54 UTC; unix"                   `\
-`#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:56 UTC; unix"`\
+`#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:22:17 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   `\
 `#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:50 UTC; unix"`\
-`#> devtools          "R 4.6.1; ; 2026-08-31 09:16:37 UTC; unix"                   `\
+`#> devtools          "R 4.6.1; ; 2026-09-15 08:21:49 UTC; unix"                   `\
 `#> diagram           "R 4.6.0; ; 2026-04-24 01:28:57 UTC; unix"                   `\
 `#> dials             "R 4.6.0; ; 2026-06-23 05:17:57 UTC; unix"                   `\
 `#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:56:50 UTC; unix"`\
-`#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-18 12:06:31 UTC; unix"`\
+`#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:19:38 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
-`#> dir.expiry        "R 4.6.1; ; 2026-08-30 18:14:31 UTC; unix"                   `\
-`#> distributional    "R 4.6.0; ; 2026-06-28 05:14:17 UTC; unix"                   `\
+`#> dir.expiry        "R 4.6.1; ; 2026-09-14 05:13:53 UTC; unix"                   `\
+`#> distributional    "R 4.6.0; ; 2026-09-09 09:18:45 UTC; unix"                   `\
 `#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   `\
 `#> doBy              "R 4.6.0; ; 2026-08-12 20:24:57 UTC; unix"                   `\
-`#> docopt            "R 4.6.1; ; 2026-08-27 13:46:18 UTC; unix"                   `\
+`#> docopt            "R 4.6.1; ; 2026-09-11 13:11:31 UTC; unix"                   `\
 `#> downlit           "R 4.6.0; ; 2026-04-24 22:45:05 UTC; unix"                   `\
 `#> dplyr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:54 UTC; unix"`\
 `#> DT                "R 4.6.0; ; 2026-08-12 20:25:47 UTC; unix"                   `\
 `#> dtplyr            "R 4.6.0; ; 2026-08-12 20:23:17 UTC; unix"                   `\
 `#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-27 14:46:26 UTC; unix"`\
-`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-31 09:17:37 UTC; unix"`\
-`#> dynTools          "R 4.6.1; ; 2026-08-31 09:18:21 UTC; unix"                   `\
-`#> dynUtils          "R 4.6.1; ; 2026-08-31 08:34:24 UTC; unix"                   `\
+`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-15 08:22:53 UTC; unix"`\
+`#> dynTools          "R 4.6.1; ; 2026-09-15 08:23:39 UTC; unix"                   `\
+`#> dynUtils          "R 4.6.1; ; 2026-09-15 07:35:53 UTC; unix"                   `\
 `#> ellipse           "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> ellipsis          "R 4.6.0; ; 2026-04-24 21:36:12 UTC; unix"                   `\
 `#> evaluate          "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
@@ -3800,17 +3800,17 @@
 `#> farver            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> fastDummies       "R 4.6.0; ; 2026-04-24 02:51:25 UTC; unix"                   `\
 `#> fastmap           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
-`#> fclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-27 10:24:11 UTC; unix"`\
+`#> fclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 10:26:03 UTC; unix"`\
 `#> fda               "R 4.6.0; ; 2026-08-24 07:10:42 UTC; unix"                   `\
 `#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:15:12 UTC; unix"`\
 `#> fds               "R 4.6.0; ; 2026-05-06 05:19:49 UTC; unix"                   `\
 `#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:36 UTC; unix"`\
-`#> fitVARMxID        "R 4.6.1; ; 2026-08-31 09:18:30 UTC; unix"                   `\
+`#> fitVARMxID        "R 4.6.1; ; 2026-09-15 08:23:48 UTC; unix"                   `\
 `#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
 `#> fontawesome       "R 4.6.0; ; 2026-08-12 20:22:14 UTC; unix"                   `\
 `#> forcats           "R 4.6.0; ; 2026-08-12 20:22:52 UTC; unix"                   `\
 `#> foreach           "R 4.6.0; ; 2026-08-12 20:21:42 UTC; unix"                   `\
-`#> forecast          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:13 UTC; unix"`\
+`#> forecast          "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 10:14:52 UTC; unix"`\
 `#> Formula           "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
 `#> fracdiff          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> fs                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:37 UTC; unix"`\
@@ -3820,7 +3820,7 @@
 `#> future            "R 4.6.0; ; 2026-08-12 20:22:03 UTC; unix"                   `\
 `#> future.apply      "R 4.6.0; ; 2026-08-12 20:22:17 UTC; unix"                   `\
 `#> gargle            "R 4.6.0; ; 2026-08-12 20:22:42 UTC; unix"                   `\
-`#> GauPro            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-27 09:32:33 UTC; unix"`\
+`#> GauPro            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:37:08 UTC; unix"`\
 `#> generics          "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> gert              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-20 04:34:02 UTC; unix"`\
 `#> ggplot2           "R 4.6.0; ; 2026-08-12 20:22:35 UTC; unix"                   `\
@@ -3835,7 +3835,7 @@
 `#> googlesheets4     "R 4.6.0; ; 2026-08-12 20:23:44 UTC; unix"                   `\
 `#> gower             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:20 UTC; unix"`\
 `#> GPArotation       "R 4.6.0; ; 2026-08-23 04:29:28 UTC; unix"                   `\
-`#> graphicalVAR      "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-27 10:33:34 UTC; unix"`\
+`#> graphicalVAR      "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 10:32:23 UTC; unix"`\
 `#> gridExtra         "R 4.6.0; ; 2026-08-12 20:22:12 UTC; unix"                   `\
 `#> gsubfn            "R 4.6.0; ; 2026-04-24 21:33:54 UTC; unix"                   `\
 `#> gtable            "R 4.6.0; ; 2026-08-12 20:22:02 UTC; unix"                   `\
@@ -3845,14 +3845,14 @@
 `#> hdrcde            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 23:03:05 UTC; unix"`\
 `#> here              "R 4.6.0; ; 2026-04-24 02:03:23 UTC; unix"                   `\
 `#> highr             "R 4.6.0; ; 2026-08-12 20:21:52 UTC; unix"                   `\
-`#> Hmisc             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-24 07:12:54 UTC; unix"`\
+`#> Hmisc             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-07 03:59:05 UTC; unix"`\
 `#> hms               "R 4.6.0; ; 2026-08-12 20:22:26 UTC; unix"                   `\
 `#> htmlTable         "R 4.6.0; ; 2026-08-12 20:25:44 UTC; unix"                   `\
 `#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:04 UTC; unix"`\
 `#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:25:06 UTC; unix"                   `\
-`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-31 09:15:53 UTC; unix"`\
+`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-15 08:21:04 UTC; unix"`\
 `#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
-`#> httr              "R 4.6.0; ; 2026-08-12 20:22:15 UTC; unix"                   `\
+`#> httr              "R 4.6.0; ; 2026-09-02 03:59:46 UTC; unix"                   `\
 `#> httr2             "R 4.6.0; ; 2026-07-14 05:11:28 UTC; unix"                   `\
 `#> ids               "R 4.6.0; ; 2026-08-12 20:22:12 UTC; unix"                   `\
 `#> ifaTools          "R 4.6.0; ; 2026-04-28 06:09:37 UTC; unix"                   `\
@@ -3869,11 +3869,11 @@
 `#> jsonlite          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> jsonvalidate      "R 4.6.0; ; 2026-04-24 21:21:59 UTC; unix"                   `\
 `#> kernlab           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> knitr             "R 4.6.0; ; 2026-08-12 20:22:06 UTC; unix"                   `\
+`#> knitr             "R 4.6.0; ; 2026-09-07 03:56:59 UTC; unix"                   `\
 `#> ks                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:40 UTC; unix"`\
 `#> labeling          "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
 `#> Lahman            "R 4.6.0; ; 2026-04-24 22:13:49 UTC; unix"                   `\
-`#> languageserver    "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-03 21:32:59 UTC; unix"`\
+`#> languageserver    "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-14 04:13:03 UTC; unix"`\
 `#> later             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:57 UTC; unix"`\
 `#> latex2exp         "R 4.6.0; ; 2026-04-24 02:36:33 UTC; unix"                   `\
 `#> lava              "R 4.6.0; ; 2026-08-21 04:14:37 UTC; unix"                   `\
@@ -3884,11 +3884,11 @@
 `#> lintr             "R 4.6.0; ; 2026-07-16 05:10:48 UTC; unix"                   `\
 `#> listenv           "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> litedown          "R 4.6.0; ; 2026-08-27 05:32:48 UTC; unix"                   `\
-`#> littler           "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:46:17 UTC; unix"`\
+`#> littler           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 13:11:29 UTC; unix"`\
 `#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:11 UTC; unix"`\
 `#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:00 UTC; unix"`\
 `#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:06:27 UTC; unix"`\
-`#> longMI            "R 4.6.1; ; 2026-08-31 07:12:04 UTC; unix"                   `\
+`#> longMI            "R 4.6.1; ; 2026-09-15 06:19:02 UTC; unix"                   `\
 `#> loo               "R 4.6.0; ; 2026-07-25 05:23:32 UTC; unix"                   `\
 `#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:14 UTC; unix"`\
 `#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:00:10 UTC; unix"`\
@@ -3898,7 +3898,7 @@
 `#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
 `#> memoise           "R 4.6.0; ; 2026-08-12 20:21:58 UTC; unix"                   `\
-`#> metaDyn           "R 4.6.1; ; 2026-08-31 09:18:38 UTC; unix"                   `\
+`#> metaDyn           "R 4.6.1; ; 2026-09-15 08:23:57 UTC; unix"                   `\
 `#> metaSEM           "R 4.6.0; ; 2026-04-28 05:58:02 UTC; unix"                   `\
 `#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:13:40 UTC; unix"`\
 `#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:51 UTC; unix"`\
@@ -3919,7 +3919,7 @@
 `#> nloptr            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:20 UTC; unix"`\
 `#> numDeriv          "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> nycflights13      "R 4.6.0; ; 2026-04-24 22:10:40 UTC; unix"                   `\
-`#> OpenMx            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-28 08:13:22 UTC; unix"`\
+`#> OpenMx            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:14:05 UTC; unix"`\
 `#> openssl           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:57 UTC; unix"`\
 `#> ordinal           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-28 08:47:21 UTC; unix"`\
 `#> otel              "R 4.6.0; ; 2026-08-12 20:21:45 UTC; unix"                   `\
@@ -3929,11 +3929,11 @@
 `#> parallelly        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
 `#> parsnip           "R 4.6.0; ; 2026-05-15 06:02:37 UTC; unix"                   `\
 `#> patchwork         "R 4.6.0; ; 2026-04-24 03:00:27 UTC; unix"                   `\
-`#> pbapply           "R 4.6.0; ; 2026-04-24 01:31:19 UTC; unix"                   `\
+`#> pbapply           "R 4.6.0; ; 2026-09-02 04:00:10 UTC; unix"                   `\
 `#> pbivnorm          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:31:28 UTC; unix"`\
 `#> pbkrtest          "R 4.6.0; ; 2026-08-12 20:25:57 UTC; unix"                   `\
 `#> pcaPP             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:19:37 UTC; unix"`\
-`#> pdftools          "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:17:19 UTC; unix"`\
+`#> pdftools          "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:01:07 UTC; unix"`\
 `#> pillar            "R 4.6.0; ; 2026-08-12 20:22:26 UTC; unix"                   `\
 `#> pkgbuild          "R 4.6.0; ; 2026-04-24 02:21:47 UTC; unix"                   `\
 `#> pkgconfig         "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
@@ -3976,7 +3976,7 @@
 `#> rcmdcheck         "R 4.6.0; ; 2026-04-24 22:11:24 UTC; unix"                   `\
 `#> RColorBrewer      "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:59 UTC; unix"`\
+`#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:16:41 UTC; unix"`\
 `#> RcppEigen         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:57 UTC; unix"`\
 `#> RcppGSL           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:18:46 UTC; unix"`\
 `#> RcppParallel      "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-28 08:10:27 UTC; unix"`\
@@ -3994,24 +3994,24 @@
 `#> remotes           "R 4.6.0; ; 2026-04-24 21:36:51 UTC; unix"                   `\
 `#> reprex            "R 4.6.0; ; 2026-08-12 20:25:14 UTC; unix"                   `\
 `#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:13 UTC; unix"`\
-`#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:19:44 UTC; unix"`\
+`#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:23:09 UTC; unix"`\
 `#> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   `\
-`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-30 18:17:28 UTC; unix"`\
-`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-30 18:17:08 UTC; unix"`\
-`#> Rhdf5lib          "R 4.6.1; ; 2026-08-30 18:17:05 UTC; unix"                   `\
+`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-14 05:16:55 UTC; unix"`\
+`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-14 05:16:35 UTC; unix"`\
+`#> Rhdf5lib          "R 4.6.1; ; 2026-09-14 05:16:32 UTC; unix"                   `\
 `#> rhub              "R 4.6.0; ; 2026-04-24 22:27:49 UTC; unix"                   `\
 `#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:38:21 UTC; unix"`\
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:03 UTC; unix"`\
-`#> rmarkdown         "R 4.6.0; ; 2026-08-12 20:24:30 UTC; unix"                   `\
-`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-31 09:16:43 UTC; unix"`\
+`#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:00:02 UTC; unix"                   `\
+`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-15 08:21:55 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:24:25 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:49 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-08-30 18:06:14 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-09-14 03:25:05 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:44 UTC; unix"`\
-`#> rstan             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-28 08:14:08 UTC; unix"`\
+`#> rstan             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:14:11 UTC; unix"`\
 `#> rstantools        "R 4.6.0; ; 2026-08-30 04:16:54 UTC; unix"                   `\
 `#> rstudioapi        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> rversions         "R 4.6.0; ; 2026-04-24 21:11:46 UTC; unix"                   `\
@@ -4022,13 +4022,13 @@
 `#> scales            "R 4.6.0; ; 2026-08-12 20:22:07 UTC; unix"                   `\
 `#> selectr           "R 4.6.0; ; 2026-08-12 20:21:42 UTC; unix"                   `\
 `#> semlbci           "R 4.6.0; ; 2026-07-28 08:48:55 UTC; unix"                   `\
-`#> semmcci           "R 4.6.1; ; 2026-08-31 09:16:55 UTC; unix"                   `\
+`#> semmcci           "R 4.6.1; ; 2026-09-15 08:22:08 UTC; unix"                   `\
 `#> semPlot           "R 4.6.0; ; 2026-07-18 12:17:16 UTC; unix"                   `\
 `#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:25:12 UTC; unix"                   `\
 `#> sfd               "R 4.6.0; ; 2026-04-24 22:06:59 UTC; unix"                   `\
 `#> shape             "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> shiny             "R 4.6.0; ; 2026-08-12 20:24:30 UTC; unix"                   `\
-`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-31 09:17:13 UTC; unix"`\
+`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-15 08:22:29 UTC; unix"`\
 `#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:14:38 UTC; unix"`\
 `#> snow              "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> snowfall          "R 4.6.0; ; 2026-04-24 21:41:41 UTC; unix"                   `\
@@ -4037,7 +4037,7 @@
 `#> sparsevctrs       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:05:27 UTC; unix"`\
 `#> splitfngr         "R 4.6.0; ; 2026-04-24 21:07:07 UTC; unix"                   `\
 `#> SQUAREM           "R 4.6.0; ; 2026-04-24 01:50:37 UTC; unix"                   `\
-`#> StanHeaders       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-28 08:11:58 UTC; unix"`\
+`#> StanHeaders       "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:11:27 UTC; unix"`\
 `#> stringi           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
 `#> stringr           "R 4.6.0; ; 2026-08-12 20:22:54 UTC; unix"                   `\
 `#> styler            "R 4.6.0; ; 2026-04-24 22:07:55 UTC; unix"                   `\
@@ -4056,14 +4056,14 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:27:55 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
-`#> tinytex           "R 4.6.1; ; 2026-08-31 09:16:22 UTC; unix"                   `\
+`#> tinytex           "R 4.6.1; ; 2026-09-15 08:21:33 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 15:45:43 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:40:31 UTC; unix"`\
 `#> unigd             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:34 UTC; unix"`\
 `#> urca              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:04 UTC; unix"`\
 `#> urlchecker        "R 4.6.0; ; 2026-07-09 17:32:21 UTC; unix"                   `\
-`#> usethis           "R 4.6.0; ; 2026-04-24 03:11:10 UTC; unix"                   `\
+`#> usethis           "R 4.6.0; ; 2026-09-11 04:12:24 UTC; unix"                   `\
 `#> utf8              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:36 UTC; unix"`\
 `#> uuid              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:38 UTC; unix"`\
 `#> V8                "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:27:42 UTC; unix"`\
@@ -4086,35 +4086,35 @@
 `#> yardstick         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:18:47 UTC; unix"`\
 `#> zip               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> zoo               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
-`#> base              "R 4.6.1; ; 2026-08-27 13:40:51 UTC; unix"                   `\
-`#> boot              "R 4.6.1; ; 2026-08-27 13:44:42 UTC; unix"                   `\
-`#> class             "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:45:00 UTC; unix"`\
-`#> cluster           "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:44:45 UTC; unix"`\
-`#> codetools         "R 4.6.1; ; 2026-08-27 13:44:50 UTC; unix"                   `\
-`#> compiler          "R 4.6.1; ; 2026-08-27 13:39:04 UTC; unix"                   `\
-`#> datasets          "R 4.6.1; ; 2026-08-27 13:40:27 UTC; unix"                   `\
-`#> foreign           "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:44:51 UTC; unix"`\
-`#> graphics          "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:39:48 UTC; unix"`\
-`#> grDevices         "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:39:40 UTC; unix"`\
-`#> grid              "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:40:41 UTC; unix"`\
-`#> KernSmooth        "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:44:55 UTC; unix"`\
-`#> lattice           "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:41:43 UTC; unix"`\
-`#> MASS              "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:41:38 UTC; unix"`\
-`#> Matrix            "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:41:50 UTC; unix"`\
-`#> methods           "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:40:28 UTC; unix"`\
-`#> mgcv              "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:45:05 UTC; unix"`\
-`#> nlme              "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:44:05 UTC; unix"`\
-`#> nnet              "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:45:01 UTC; unix"`\
-`#> parallel          "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:40:50 UTC; unix"`\
-`#> rpart             "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:44:56 UTC; unix"`\
-`#> spatial           "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:45:03 UTC; unix"`\
-`#> splines           "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:40:47 UTC; unix"`\
-`#> stats             "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:39:56 UTC; unix"`\
-`#> stats4            "R 4.6.1; ; 2026-08-27 13:40:48 UTC; unix"                   `\
-`#> survival          "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:44:17 UTC; unix"`\
-`#> tcltk             "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:40:49 UTC; unix"`\
-`#> tools             "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:39:04 UTC; unix"`\
-`#> utils             "R 4.6.1; x86_64-pc-linux-gnu; 2026-08-27 13:39:31 UTC; unix"`\
+`#> base              "R 4.6.1; ; 2026-09-11 12:43:09 UTC; unix"                   `\
+`#> boot              "R 4.6.1; ; 2026-09-11 12:47:04 UTC; unix"                   `\
+`#> class             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:22 UTC; unix"`\
+`#> cluster           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:07 UTC; unix"`\
+`#> codetools         "R 4.6.1; ; 2026-09-11 12:47:12 UTC; unix"                   `\
+`#> compiler          "R 4.6.1; ; 2026-09-11 12:41:20 UTC; unix"                   `\
+`#> datasets          "R 4.6.1; ; 2026-09-11 12:42:45 UTC; unix"                   `\
+`#> foreign           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:13 UTC; unix"`\
+`#> graphics          "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:42:05 UTC; unix"`\
+`#> grDevices         "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:41:58 UTC; unix"`\
+`#> grid              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:42:58 UTC; unix"`\
+`#> KernSmooth        "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:17 UTC; unix"`\
+`#> lattice           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:44:00 UTC; unix"`\
+`#> MASS              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:43:55 UTC; unix"`\
+`#> Matrix            "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:44:08 UTC; unix"`\
+`#> methods           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:42:46 UTC; unix"`\
+`#> mgcv              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:27 UTC; unix"`\
+`#> nlme              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:46:27 UTC; unix"`\
+`#> nnet              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:24 UTC; unix"`\
+`#> parallel          "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:43:08 UTC; unix"`\
+`#> rpart             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:19 UTC; unix"`\
+`#> spatial           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:25 UTC; unix"`\
+`#> splines           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:43:05 UTC; unix"`\
+`#> stats             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:42:14 UTC; unix"`\
+`#> stats4            "R 4.6.1; ; 2026-09-11 12:43:06 UTC; unix"                   `\
+`#> survival          "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:46:39 UTC; unix"`\
+`#> tcltk             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:43:06 UTC; unix"`\
+`#> tools             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:41:20 UTC; unix"`\
+`#> utils             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:41:49 UTC; unix"`\
 `#>                   Published`\
 `#> rProject          NA       `\
 `#> rProject          NA       `\
