@@ -2,6 +2,9 @@
 
 ## All functions
 
+- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md) :
+  Write the Project's AI Instructions
+
 - [`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md)
   : Install Global AI Instructions
 
@@ -48,6 +51,15 @@
 
 - [`DataAnalysis()`](https://github.com/ijapesigan/rProject/reference/DataAnalysis.md)
   : Data Analysis
+
+- [`DataCompress()`](https://github.com/ijapesigan/rProject/reference/DataCompress.md)
+  : Compress Data Files
+
+- [`DataManifest()`](https://github.com/ijapesigan/rProject/reference/DataManifest.md)
+  : Write the Data Manifest
+
+- [`DataPath()`](https://github.com/ijapesigan/rProject/reference/DataPath.md)
+  : Find a Data File in the Data Tiers
 
 - [`DataProcess()`](https://github.com/ijapesigan/rProject/reference/DataProcess.md)
   : Process Data
@@ -107,6 +119,9 @@
 - [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md) :
   Lint Project
 
+- [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md) :
+  Create or Update a Change-Set Log
+
 - [`Manual()`](https://github.com/ijapesigan/rProject/reference/Manual.md)
   : Package Manual
 
@@ -140,6 +155,9 @@
 - [`Project()`](https://github.com/ijapesigan/rProject/reference/Project.md)
   : Setup the project.Rproj file
 
+- [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+  : Check the Public Export
+
 - [`Quarto()`](https://github.com/ijapesigan/rProject/reference/Quarto.md)
   : Render Quarto Project
 
@@ -152,6 +170,12 @@
 - [`Site()`](https://github.com/ijapesigan/rProject/reference/Site.md) :
   Build Website
 
+- [`SizeCheck()`](https://github.com/ijapesigan/rProject/reference/SizeCheck.md)
+  : Check a Project Against Overleaf's Limits
+
+- [`Spec()`](https://github.com/ijapesigan/rProject/reference/Spec.md) :
+  Create a Spec
+
 - [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
   : Style Project
 
@@ -159,6 +183,9 @@
   :
 
   Install `~/.TinyTex`
+
+- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  : Verify an Overleaf Push
 
 - [`VignettesPrecompile()`](https://github.com/ijapesigan/rProject/reference/VignettesPrecompile.md)
   : Precompile Vignettes

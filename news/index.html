@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.30</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.36</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,64 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.36" id="rproject-0036">rProject 0.0.36<a class="anchor" aria-label="anchor" href="#rproject-0036"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-36">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-36"></a></h3>
+<ul><li>
+<code>make verify RECORD=TRUE</code> (run as <code>apptainer exec &lt;sif&gt; make verify RECORD=TRUE</code>) pulls the private repository into <code>.verify</code> and checks the push. <code>.setup/scripts/verify.sh</code> only pulls (git; no R, no Apptainer).</li>
+<li>
+<code><a href="../reference/Verify.html">Verify()</a></code> has a new check, “New commit”, which fails, and records nothing, when the commit is already in <code>.setup/logs/index.md</code> (a stale <code>.verify</code> or no new push).</li>
+<li>Makefile targets never call Apptainer; <code>make auto</code> and <code>make public</code> call <code>Rscript</code>.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.35" id="rproject-0035">rProject 0.0.35<a class="anchor" aria-label="anchor" href="#rproject-0035"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-35">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-35"></a></h3>
+<ul><li>Data tiers: <code>.setup/data-raw</code> (shareable), <code>.setup/data-private</code> (restricted; never public), <code>.setup/data-external</code> (local only), and <code>.setup/data-cache</code> (local only).</li>
+<li>Added the <code><a href="../reference/DataPath.html">DataPath()</a></code> function to find a data file by its plain name in the tiers, stored as is or compressed (<code>.xz</code>, <code>.gz</code>); <code>plain = TRUE</code> returns an uncompressed copy for tools such as Mplus.</li>
+<li>Added the <code><a href="../reference/DataCompress.html">DataCompress()</a></code> function to compress data files with xz, so they do not count as editable text in Overleaf.</li>
+<li>Added the <code><a href="../reference/DataManifest.html">DataManifest()</a></code> function and the <code>make manifest</code> target to write <code>.setup/ai/data.md</code> (private): tier, size, MD5, status, source, location, and the scripts that use each file.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.34" id="rproject-0034">rProject 0.0.34<a class="anchor" aria-label="anchor" href="#rproject-0034"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-34">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-34"></a></h3>
+<ul><li>Added the <code><a href="../reference/AI.html">AI()</a></code> function and the <code>make ai</code> target. <code><a href="../reference/AI.html">AI()</a></code> writes the project’s AI instructions (<code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>.github/copilot-instructions.md</code>) from templates in <code>inst/ai</code>, and creates <code>.setup/ai/project.md</code> for project facts once. Project types are detected (package, manuscript, simulation, library, talk) or set with an <code>ai</code> list in <code>.setup/scripts/project.R</code>. <code>make project</code> runs it.</li>
+<li>
+<code>make project</code> upgrades rProject in other projects when GitHub has a newer commit (a pinned <code>rproject_ver</code> is still honored).</li>
+<li>
+<code><a href="../reference/Verify.html">Verify()</a></code> and <code><a href="../reference/Log.html">Log()</a></code> treat the generated AI instruction files as generated.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.33" id="rproject-0033">rProject 0.0.33<a class="anchor" aria-label="anchor" href="#rproject-0033"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-33">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-33"></a></h3>
+<ul><li>Added the <code><a href="../reference/SizeCheck.html">SizeCheck()</a></code> function and the <code>make sizecheck</code> target to check a project against Overleaf’s limits (editable text, file sizes, number of files, total size, duplicates). <code>make lint</code> reports it.</li>
+<li>Added the <code><a href="../reference/Public.html">Public()</a></code> function and the <code>make public</code> target. <code>make auto</code> calls <code><a href="../reference/Public.html">Public()</a></code> before <code>git add</code>, so private files, files over 50 MB, and tokens are never published.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.32" id="rproject-0032">rProject 0.0.32<a class="anchor" aria-label="anchor" href="#rproject-0032"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-32">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-32"></a></h3>
+<ul><li>Added the <code><a href="../reference/Spec.html">Spec()</a></code> and <code><a href="../reference/Log.html">Log()</a></code> functions and the <code>make spec</code> and <code>make log</code> targets. <code><a href="../reference/Log.html">Log()</a></code> writes the change-set log, adds a pending row to <code>.setup/logs/index.md</code>, and lists the files to update in Overleaf by comparing the project with the private repository.</li>
+<li>
+<code>.setup/scripts/verify.sh</code> keeps the clone of the private repository in <code>.verify</code> (local only), so <code>make verify</code> and <code>make log</code> work inside the container.</li>
+<li>
+<code><a href="../reference/Verify.html">Verify()</a></code> ignores the generated <code>Config/roxygen2/version</code> line in <code>DESCRIPTION</code>.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.31" id="rproject-0031">rProject 0.0.31<a class="anchor" aria-label="anchor" href="#rproject-0031"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-31">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-31"></a></h3>
+<ul><li>Added the <code><a href="../reference/Verify.html">Verify()</a></code> function, the <code>make verify</code> target, and <code>.setup/scripts/verify.sh</code> to check an Overleaf push against its change-set log: listed files, deletions, unlisted changes, the commit message, secrets, and the public export. With <code>record = TRUE</code>, the result is written to the log and <code>.setup/logs/index.md</code>.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.30" id="rproject-0030">rProject 0.0.30<a class="anchor" aria-label="anchor" href="#rproject-0030"></a></h2>
 <div class="section level3">
