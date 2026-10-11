@@ -10,7 +10,5 @@ source(
     "project.R"
   )
 )
-rProject::ConfigFiles(
-  git_user = git_user
-)
+rProject::ConfigFiles()
 warnings()

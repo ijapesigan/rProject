@@ -95,5 +95,3 @@ AGENTS.md
 CLAUDE.md
 .claude/
 .github/copilot-instructions.md
-
-**/*.quarto_ipynb
