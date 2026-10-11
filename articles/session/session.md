@@ -46,7 +46,7 @@
 \
 [`installed.packages`](https://rdrr.io/r/utils/installed.packages.html)`(``)`\
 `#>                   Package             LibPath                                  `\
-`#> rProject          "rProject"          "/tmp/Rtmp0VQuOl/temp_libpathaec271e7c4c"`\
+`#> rProject          "rProject"          "/tmp/Rtmpn8eU2s/temp_libpathaec6aba2b13"`\
 `#> rProject          "rProject"          "/__w/rProject/rProject/.library"        `\
 `#> abind             "abind"             "/usr/local/lib/R/site-library"          `\
 `#> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          `\
@@ -3709,8 +3709,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-11 22:00:15 UTC; unix"                   `\
-`#> rProject          "R 4.6.1; ; 2026-10-11 22:00:11 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-11 22:13:28 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-11 22:13:25 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:31:14 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   `\
