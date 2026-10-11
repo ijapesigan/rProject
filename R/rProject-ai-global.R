@@ -11,12 +11,8 @@
 #' |---|---|
 #' | `AGENTS.md` | `~/.claude/CLAUDE.md` |
 #' | `AGENTS.md` | `~/.codex/AGENTS.md` |
-#' | `AGENTS.md` | `~/.copilot/instructions/AGENTS.md` |
+#' | `AGENTS.md` | `~/.copilot/copilot-instructions.md` |
 #' | `claude-settings.json` | `~/.claude/settings.json` |
-#'
-#' GitHub Copilot reads `~/.copilot/instructions`
-#' only when the environment variable `COPILOT_CUSTOM_INSTRUCTIONS_DIRS`
-#' includes that folder.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -72,7 +68,7 @@ AIGlobal <- function(path,
       text = instructions
     ),
     list(
-      file = file.path(home, ".copilot", "instructions", "AGENTS.md"),
+      file = file.path(home, ".copilot", "copilot-instructions.md"),
       text = instructions
     )
   )

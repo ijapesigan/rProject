@@ -29,14 +29,9 @@ Existing files that differ are backed up with the suffix \code{.bak}.
    Source \tab Installed to \cr
    \code{AGENTS.md} \tab \verb{~/.claude/CLAUDE.md} \cr
    \code{AGENTS.md} \tab \verb{~/.codex/AGENTS.md} \cr
-   \code{AGENTS.md} \tab \verb{~/.copilot/instructions/AGENTS.md} \cr
+   \code{AGENTS.md} \tab \verb{~/.copilot/copilot-instructions.md} \cr
    \code{claude-settings.json} \tab \verb{~/.claude/settings.json} \cr
 }
-
-
-GitHub Copilot reads \verb{~/.copilot/instructions}
-only when the environment variable \code{COPILOT_CUSTOM_INSTRUCTIONS_DIRS}
-includes that folder.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

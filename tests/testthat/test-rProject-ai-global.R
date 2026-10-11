@@ -31,7 +31,7 @@ lapply(
       c(
         ".claude/CLAUDE.md",
         ".codex/AGENTS.md",
-        ".copilot/instructions/AGENTS.md",
+        ".copilot/copilot-instructions.md",
         ".claude/settings.json"
       )
     )
