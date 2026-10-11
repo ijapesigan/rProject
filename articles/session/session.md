@@ -46,7 +46,7 @@
 \
 [`installed.packages`](https://rdrr.io/r/utils/installed.packages.html)`(``)`\
 `#>                   Package             LibPath                                  `\
-`#> rProject          "rProject"          "/tmp/RtmpJ3XblA/temp_libpath9f84f55234b"`\
+`#> rProject          "rProject"          "/tmp/RtmpMVii5P/temp_libpath9f931863305"`\
 `#> rProject          "rProject"          "/__w/rProject/rProject/.library"        `\
 `#> abind             "abind"             "/usr/local/lib/R/site-library"          `\
 `#> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          `\
@@ -751,7 +751,7 @@
 `#> roxygen2          "8.1.1.9000" NA           `\
 `#> rpf               "1.0.15"     NA           `\
 `#> RPostgres         "1.4.10"     NA           `\
-`#> rProject          "0.0.28"     NA           `\
+`#> rProject          "0.0.30"     NA           `\
 `#> rprojroot         "2.1.1"      NA           `\
 `#> rsample           "1.3.2"      NA           `\
 `#> RSQLite           "3.53.3"     NA           `\
@@ -3709,8 +3709,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-11 08:47:53 UTC; unix"                   `\
-`#> rProject          "R 4.6.1; ; 2026-10-11 08:47:50 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-11 17:43:41 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-11 17:43:39 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:31:14 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   `\
@@ -4007,7 +4007,7 @@
 `#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-10 09:22:15 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:24:25 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:49 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-11 05:09:33 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-11 10:12:39 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:44 UTC; unix"`\
