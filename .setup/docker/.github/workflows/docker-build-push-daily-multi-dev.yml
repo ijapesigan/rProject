@@ -12,6 +12,10 @@ env:
   GHCR_REPO: ghcr.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}
   GITHUB_PAT: ${{ secrets.PAT }}
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
     strategy:
