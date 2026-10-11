@@ -4,17 +4,18 @@
 \alias{ConfigFiles}
 \title{Setup Config Files}
 \usage{
-ConfigFiles(git_user)
+ConfigFiles(repo = "ijapesigan/dotfiles")
 }
 \arguments{
-\item{git_user}{Character string.
-Git user.}
+\item{repo}{Character string.
+GitHub repository in the form \code{owner/name}.}
 }
 \description{
-Setup Config Files
-}
-\details{
-This function requires a \code{dotfiles} GitHub repository.
+Clones a public \code{dotfiles} GitHub repository and runs \code{make} in it.
+The clone ignores the global Git configuration,
+so URL rewrites to SSH host aliases do not apply
+and the repository is fetched anonymously over HTTPS.
+This also works inside a container without access to SSH keys.
 }
 \author{
 Ivan Jacob Agaloos Pesigan
