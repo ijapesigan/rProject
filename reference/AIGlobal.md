@@ -28,16 +28,13 @@ Returns the paths of the files that were written.
 
 ## Details
 
-|                        |                                     |
-|------------------------|-------------------------------------|
-| Source                 | Installed to                        |
-| `AGENTS.md`            | `~/.claude/CLAUDE.md`               |
-| `AGENTS.md`            | `~/.codex/AGENTS.md`                |
-| `AGENTS.md`            | `~/.copilot/instructions/AGENTS.md` |
-| `claude-settings.json` | `~/.claude/settings.json`           |
-
-GitHub Copilot reads `~/.copilot/instructions` only when the environment
-variable `COPILOT_CUSTOM_INSTRUCTIONS_DIRS` includes that folder.
+|                        |                                      |
+|------------------------|--------------------------------------|
+| Source                 | Installed to                         |
+| `AGENTS.md`            | `~/.claude/CLAUDE.md`                |
+| `AGENTS.md`            | `~/.codex/AGENTS.md`                 |
+| `AGENTS.md`            | `~/.copilot/copilot-instructions.md` |
+| `claude-settings.json` | `~/.claude/settings.json`            |
 
 ## Author
 

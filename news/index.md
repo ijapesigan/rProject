@@ -1,5 +1,14 @@
 # Changelog
 
+## rProject 0.0.29
+
+### Patch
+
+- [`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md)
+  installs the GitHub Copilot instructions to
+  `~/.copilot/copilot-instructions.md`, which Copilot loads in every
+  session. `COPILOT_CUSTOM_INSTRUCTIONS_DIRS` is no longer needed.
+
 ## rProject 0.0.28
 
 ### Patch
