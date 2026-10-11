@@ -86,3 +86,14 @@ latexmkrc
 src/*.o
 src/*.so
 src/*.dll
+
+# private: kept on Overleaf and the private repo, excluded from the public repo
+.setup/ai/
+.setup/logs/
+.setup/data-private/
+AGENTS.md
+CLAUDE.md
+.claude/
+.github/copilot-instructions.md
+
+**/*.quarto_ipynb

@@ -1,4 +1,4 @@
-.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib bibrproject clone coverage data dependencies readme docs dotfiles install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes
+.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes
 
 push: build docs latex coverage cleanpush
 
@@ -13,6 +13,10 @@ pkg:
 dotfiles:
 	@echo "\n\nBuilding dotfiles...\n\n"
 	@Rscript .setup/scripts/make-config.R ${PWD}
+
+aiglobal:
+	@echo "\n\nInstalling global AI instructions...\n\n"
+	@Rscript -e "rProject::AIGlobal(\"${PWD}\")"
 
 clean:
 	@echo "\n\nCleaning...\n\n"
@@ -58,6 +62,10 @@ style:
 lint: style
 	@echo "\n\nLinting...\n\n"
 	@Rscript -e "rProject::Lint(\"${PWD}\")"
+
+secretscan:
+	@echo "\n\nScanning for secrets...\n\n"
+	@Rscript -e "rProject::SecretScan(\"${PWD}\")"
 
 data:
 	@echo "\n\nBuilding data...\n\n"

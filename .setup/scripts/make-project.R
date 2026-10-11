@@ -10,14 +10,94 @@ source(
     "project.R"
   )
 )
-secrets_path <- file.path(
+# Secrets are read from the local machine, never from the project.
+# The first file that defines `tokens` wins:
+#   1. Sys.getenv("RPROJECT_SECRETS")
+#   2. ~/.config/rproject/<project>.R
+#   3. ~/.config/rproject/secrets.R
+#   4. .setup/scripts/secrets.R (legacy; prints a warning)
+secrets_legacy <- file.path(
   path,
   ".setup",
   "scripts",
   "secrets.R"
 )
-if (file.exists(secrets_path)) {
-  source(secrets_path)
+secrets_candidates <- c(
+  Sys.getenv("RPROJECT_SECRETS"),
+  file.path(
+    "~",
+    ".config",
+    "rproject",
+    paste0(project, ".R")
+  ),
+  file.path(
+    "~",
+    ".config",
+    "rproject",
+    "secrets.R"
+  ),
+  secrets_legacy
+)
+secrets_candidates <- secrets_candidates[
+  nzchar(secrets_candidates) & file.exists(secrets_candidates)
+]
+tokens <- NULL
+secrets_path <- NULL
+for (secrets_candidate in secrets_candidates) {
+  secrets_env <- new.env(parent = globalenv())
+  sys.source(
+    file = secrets_candidate,
+    envir = secrets_env
+  )
+  tokens <- get0(
+    x = "tokens",
+    envir = secrets_env,
+    inherits = FALSE
+  )
+  if (length(tokens) > 0) {
+    secrets_path <- secrets_candidate
+    break
+  }
+}
+rm(list = ls(pattern = "^secrets_(env|candidate|candidates)$"))
+if (!is.null(secrets_path)) {
+  if (secrets_path == secrets_legacy) {
+    warning(
+      paste0(
+        "\n\nSecrets were read from ",
+        secrets_legacy,
+        ".\nMove them to ~/.config/rproject/secrets.R (chmod 600)",
+        " and remove the tokens from Overleaf.\n\n"
+      ),
+      call. = FALSE
+    )
+  } else {
+    secrets_mode <- file.info(secrets_path)$mode
+    if (bitwAnd(as.integer(secrets_mode), strtoi("077", base = 8L)) != 0L) {
+      Sys.chmod(
+        paths = secrets_path,
+        mode = "600"
+      )
+      message(
+        paste0(
+          "\n\nPermissions of ",
+          secrets_path,
+          " changed from ",
+          format(secrets_mode),
+          " to 600.\n\n"
+        )
+      )
+    }
+  }
+  message(
+    paste0(
+      "\n\nSecrets read from ",
+      secrets_path,
+      ": ",
+      paste(names(tokens), collapse = ", "),
+      "\n\n"
+    )
+  )
   keys <- names(tokens)
   env <- rep(x = "", times = length(keys))
   for (i in seq_along(tokens)) {
@@ -37,8 +117,10 @@ if (file.exists(secrets_path)) {
   message(
     paste0(
       "\n\n",
-      secrets_path,
-      " not found.\n\n"
+      "No secrets found.",
+      " Put tokens in ~/.config/rproject/secrets.R",
+      " (not needed in GitHub Actions).",
+      "\n\n"
     )
   )
   tokens <- NULL

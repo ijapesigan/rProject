@@ -75,4 +75,9 @@ Environment <- function(path,
     sep = "\n"
   )
   close(con)
+  # .Renviron may contain tokens
+  Sys.chmod(
+    paths = dot_renviron_file,
+    mode = "600"
+  )
 }
