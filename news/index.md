@@ -1,5 +1,15 @@
 # Changelog
 
+## rProject 0.0.28
+
+### Patch
+
+- [`ConfigFiles()`](https://github.com/ijapesigan/rProject/reference/ConfigFiles.md)
+  no longer takes `git_user`. It clones `repo` (default
+  `ijapesigan/dotfiles`) anonymously over HTTPS, ignoring Git URL
+  rewrites, so `make dotfiles` works inside containers. It stops with an
+  error when the clone or `make` fails.
+
 ## rProject 0.0.27
 
 ### Patch
