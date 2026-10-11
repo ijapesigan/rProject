@@ -1,3 +1,49 @@
+# rProject 0.0.36
+
+## Patch
+
+* `make verify RECORD=TRUE` (run as `apptainer exec <sif> make verify RECORD=TRUE`) pulls the private repository into `.verify` and checks the push. `.setup/scripts/verify.sh` only pulls (git; no R, no Apptainer).
+* `Verify()` has a new check, "New commit", which fails, and records nothing, when the commit is already in `.setup/logs/index.md` (a stale `.verify` or no new push).
+* Makefile targets never call Apptainer; `make auto` and `make public` call `Rscript`.
+
+# rProject 0.0.35
+
+## Patch
+
+* Data tiers: `.setup/data-raw` (shareable), `.setup/data-private` (restricted; never public), `.setup/data-external` (local only), and `.setup/data-cache` (local only).
+* Added the `DataPath()` function to find a data file by its plain name in the tiers, stored as is or compressed (`.xz`, `.gz`); `plain = TRUE` returns an uncompressed copy for tools such as Mplus.
+* Added the `DataCompress()` function to compress data files with xz, so they do not count as editable text in Overleaf.
+* Added the `DataManifest()` function and the `make manifest` target to write `.setup/ai/data.md` (private): tier, size, MD5, status, source, location, and the scripts that use each file.
+
+# rProject 0.0.34
+
+## Patch
+
+* Added the `AI()` function and the `make ai` target. `AI()` writes the project's AI instructions (`AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`) from templates in `inst/ai`, and creates `.setup/ai/project.md` for project facts once. Project types are detected (package, manuscript, simulation, library, talk) or set with an `ai` list in `.setup/scripts/project.R`. `make project` runs it.
+* `make project` upgrades rProject in other projects when GitHub has a newer commit (a pinned `rproject_ver` is still honored).
+* `Verify()` and `Log()` treat the generated AI instruction files as generated.
+
+# rProject 0.0.33
+
+## Patch
+
+* Added the `SizeCheck()` function and the `make sizecheck` target to check a project against Overleaf's limits (editable text, file sizes, number of files, total size, duplicates). `make lint` reports it.
+* Added the `Public()` function and the `make public` target. `make auto` calls `Public()` before `git add`, so private files, files over 50 MB, and tokens are never published.
+
+# rProject 0.0.32
+
+## Patch
+
+* Added the `Spec()` and `Log()` functions and the `make spec` and `make log` targets. `Log()` writes the change-set log, adds a pending row to `.setup/logs/index.md`, and lists the files to update in Overleaf by comparing the project with the private repository.
+* `.setup/scripts/verify.sh` keeps the clone of the private repository in `.verify` (local only), so `make verify` and `make log` work inside the container.
+* `Verify()` ignores the generated `Config/roxygen2/version` line in `DESCRIPTION`.
+
+# rProject 0.0.31
+
+## Patch
+
+* Added the `Verify()` function, the `make verify` target, and `.setup/scripts/verify.sh` to check an Overleaf push against its change-set log: listed files, deletions, unlisted changes, the commit message, secrets, and the public export. With `record = TRUE`, the result is written to the log and `.setup/logs/index.md`.
+
 # rProject 0.0.30
 
 ## Patch

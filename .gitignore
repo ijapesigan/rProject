@@ -91,9 +91,12 @@ src/*.dll
 .setup/ai/
 .setup/logs/
 .setup/data-private/
+.setup/data-external/
+.setup/data-cache/
 AGENTS.md
 CLAUDE.md
 .claude/
+.verify/
 .github/copilot-instructions.md
 CLAUDE.local.md
 .mcp.json

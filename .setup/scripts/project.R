@@ -14,6 +14,11 @@
 #' | `pkg_bioconductor` | Bioconductor packages to install.                   |
 #' | `ignore`           | Items to add to `.Rbuildignore`.                    |
 #' | `license`          | Options are `"mit"`, `"gpl3"`, or `NULL`            |
+#' | `ai`               | Optional. Project type(s) and image for the AI      |
+#' |                    | instructions written by `rProject::AI()`, e.g.,     |
+#' |                    | `list(type = c("manuscript", "simulation"),`        |
+#' |                    | `sif = "manmetavar.sif")`. Types are detected and   |
+#' |                    | the image defaults to `docs.sif` when omitted.      |
 #'
 
 project <- "rProject"

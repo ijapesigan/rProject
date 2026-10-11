@@ -38,7 +38,7 @@ SecretScan <- function(path,
   )
   files <- file.path(path, rel)
   skip <- grepl(
-    pattern = "^(\\.git|\\.library|renv|packrat)/|(^|/)\\.Renviron$",
+    pattern = "^(\\.git|\\.verify|\\.library|renv|packrat)/|(^|/)\\.Renviron$",
     x = rel
   )
   files <- files[!skip]
