@@ -1,5 +1,28 @@
 # Changelog
 
+## rProject 0.0.27
+
+### Patch
+
+- Added the
+  [`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md)
+  function and the `make aiglobal` target to install global AI
+  instructions for Claude Code, Codex, and GitHub Copilot.
+
+## rProject 0.0.26
+
+### Patch
+
+- Secrets are read from the local machine (`$RPROJECT_SECRETS`,
+  `~/.config/rproject/<project>.R`, or `~/.config/rproject/secrets.R`)
+  in `.setup/scripts/make-project.R`. `.setup/scripts/secrets.R` is only
+  used as a fallback, with a warning.
+- [`Environment()`](https://github.com/ijapesigan/rProject/reference/Environment.md)
+  sets the permissions of `.Renviron` to `600`.
+- Added the
+  [`SecretScan()`](https://github.com/ijapesigan/rProject/reference/SecretScan.md)
+  function and the `make secretscan` target.
+
 ## rProject 0.0.25
 
 ### Patch

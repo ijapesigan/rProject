@@ -30,7 +30,7 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.25`\
+`#> [1] rProject_0.0.27`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
@@ -46,7 +46,7 @@
 \
 [`installed.packages`](https://rdrr.io/r/utils/installed.packages.html)`(``)`\
 `#>                   Package             LibPath                                  `\
-`#> rProject          "rProject"          "/tmp/RtmpXL4iEb/temp_libpath9f112f3483f"`\
+`#> rProject          "rProject"          "/tmp/RtmpFHZC2O/temp_libpath9f159cdef6f"`\
 `#> rProject          "rProject"          "/__w/rProject/rProject/.library"        `\
 `#> abind             "abind"             "/usr/local/lib/R/site-library"          `\
 `#> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          `\
@@ -453,8 +453,8 @@
 `#> tools             "tools"             "/usr/local/lib/R/library"               `\
 `#> utils             "utils"             "/usr/local/lib/R/library"               `\
 `#>                   Version      Priority     `\
-`#> rProject          "0.0.25"     NA           `\
-`#> rProject          "0.0.25"     NA           `\
+`#> rProject          "0.0.27"     NA           `\
+`#> rProject          "0.0.27"     NA           `\
 `#> abind             "1.4-8"      NA           `\
 `#> Amelia            "1.8.3"      NA           `\
 `#> arm               "1.15-3"     NA           `\
@@ -498,7 +498,7 @@
 `#> coda              "0.19-4.1"   NA           `\
 `#> cOde              "1.1.1"      NA           `\
 `#> collections       "0.3.12"     NA           `\
-`#> colorspace        "2.1-3"      NA           `\
+`#> colorspace        "2.1-4"      NA           `\
 `#> commonmark        "2.0.0"      NA           `\
 `#> conflicted        "1.2.0"      NA           `\
 `#> corpcor           "1.6.10"     NA           `\
@@ -621,7 +621,7 @@
 `#> later             "1.4.8"      NA           `\
 `#> latex2exp         "0.9.8"      NA           `\
 `#> lava              "1.9.3"      NA           `\
-`#> lavaan            "0.7-2"      NA           `\
+`#> lavaan            "0.7-3"      NA           `\
 `#> lazyeval          "0.2.3"      NA           `\
 `#> lbfgs             "1.2.1.2"    NA           `\
 `#> lifecycle         "1.0.5"      NA           `\
@@ -748,7 +748,7 @@
 `#> rlang             "1.3.0"      NA           `\
 `#> RMariaDB          "1.3.5"      NA           `\
 `#> rmarkdown         "2.32"       NA           `\
-`#> roxygen2          "8.1.0.9000" NA           `\
+`#> roxygen2          "8.1.1.9000" NA           `\
 `#> rpf               "1.0.15"     NA           `\
 `#> RPostgres         "1.4.10"     NA           `\
 `#> rProject          "0.0.25"     NA           `\
@@ -1435,7 +1435,7 @@
 `#> later             "Rcpp (>= 1.0.10), rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> latex2exp         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> lava              "cli, future.apply, graphics, grDevices, methods, numDeriv,\nprogressr, stats, survival, SQUAREM, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
-`#> lavaan            "methods, stats4, stats, utils, graphics, MASS, mnormt,\npbivnorm, numDeriv, quadprog"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
+`#> lavaan            "methods, parallel, stats4, stats, utils, graphics, grDevices,\nMASS, mnormt, pbivnorm, numDeriv, quadprog"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> lazyeval          "rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> lbfgs             "Rcpp (>= 0.11.2), methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> lifecycle         "cli (>= 3.4.0), rlang (>= 1.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -3709,8 +3709,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-09 02:22:44 UTC; unix"                   `\
-`#> rProject          "R 4.6.1; ; 2026-10-09 02:22:41 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-11 01:29:08 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-11 01:29:05 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:31:14 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   `\
@@ -3721,20 +3721,20 @@
 `#> assertthat        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> betaDelta         "R 4.6.1; ; 2026-10-08 09:53:59 UTC; unix"                   `\
-`#> betaMC            "R 4.6.1; ; 2026-10-08 09:54:09 UTC; unix"                   `\
-`#> betaNB            "R 4.6.1; ; 2026-10-08 09:54:06 UTC; unix"                   `\
-`#> betaSandwich      "R 4.6.1; ; 2026-10-08 09:54:03 UTC; unix"                   `\
+`#> betaDelta         "R 4.6.1; ; 2026-10-10 09:22:31 UTC; unix"                   `\
+`#> betaMC            "R 4.6.1; ; 2026-10-10 09:22:40 UTC; unix"                   `\
+`#> betaNB            "R 4.6.1; ; 2026-10-10 09:22:37 UTC; unix"                   `\
+`#> betaSandwich      "R 4.6.1; ; 2026-10-10 09:22:35 UTC; unix"                   `\
 `#> BH                "R 4.6.0; ; 2026-08-12 20:21:37 UTC; unix"                   `\
 `#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:32 UTC; unix"                   `\
-`#> biocmake          "R 4.6.1; ; 2026-10-06 06:38:42 UTC; unix"                   `\
+`#> biocmake          "R 4.6.1; ; 2026-10-09 06:26:10 UTC; unix"                   `\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   `\
-`#> BiocVersion       "R 4.6.1; ; 2026-10-06 06:38:40 UTC; unix"                   `\
+`#> BiocVersion       "R 4.6.1; ; 2026-10-09 06:26:08 UTC; unix"                   `\
 `#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
 `#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:12 UTC; unix"`\
 `#> bitops            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-31 07:27:38 UTC; unix"`\
 `#> blob              "R 4.6.0; ; 2026-08-12 20:22:28 UTC; unix"                   `\
-`#> bootStateSpace    "R 4.6.1; ; 2026-10-08 09:54:59 UTC; unix"                   `\
+`#> bootStateSpace    "R 4.6.1; ; 2026-10-10 09:23:29 UTC; unix"                   `\
 `#> brew              "R 4.6.0; ; 2026-08-12 20:21:48 UTC; unix"                   `\
 `#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"`\
 `#> broom             "R 4.6.0; ; 2026-08-12 20:23:52 UTC; unix"                   `\
@@ -3747,14 +3747,14 @@
 `#> cellranger        "R 4.6.0; ; 2026-09-26 06:35:53 UTC; unix"                   `\
 `#> cffr              "R 4.6.0; ; 2026-08-25 04:31:41 UTC; unix"                   `\
 `#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
-`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-08 09:53:22 UTC; unix"`\
+`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-10 09:21:53 UTC; unix"`\
 `#> clipr             "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
 `#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:21 UTC; unix"`\
 `#> clusterGeneration "R 4.6.0; ; 2026-04-24 21:00:44 UTC; unix"                   `\
 `#> coda              "R 4.6.0; ; 2026-04-24 02:33:58 UTC; unix"                   `\
 `#> cOde              "R 4.6.0; ; 2026-04-24 21:09:27 UTC; unix"                   `\
 `#> collections       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:10:42 UTC; unix"`\
-`#> colorspace        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
+`#> colorspace        "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-09 05:44:49 UTC; unix"`\
 `#> commonmark        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> conflicted        "R 4.6.0; ; 2026-08-12 20:22:07 UTC; unix"                   `\
 `#> corpcor           "R 4.6.0; ; 2026-04-24 02:29:40 UTC; unix"                   `\
@@ -3764,7 +3764,7 @@
 `#> crayon            "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   `\
 `#> crosstalk         "R 4.6.0; ; 2026-08-12 20:22:17 UTC; unix"                   `\
-`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-08 09:55:09 UTC; unix"`\
+`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-10 09:23:39 UTC; unix"`\
 `#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:31:26 UTC; unix"`\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-26 04:37:59 UTC; unix"`\
 `#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:30:51 UTC; unix"`\
@@ -3773,13 +3773,13 @@
 `#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:22:17 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   `\
 `#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:50 UTC; unix"`\
-`#> devtools          "R 4.6.1; ; 2026-10-08 09:53:37 UTC; unix"                   `\
+`#> devtools          "R 4.6.1; ; 2026-10-10 09:22:09 UTC; unix"                   `\
 `#> diagram           "R 4.6.0; ; 2026-04-24 01:28:57 UTC; unix"                   `\
 `#> dials             "R 4.6.0; ; 2026-06-23 05:17:57 UTC; unix"                   `\
 `#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:56:50 UTC; unix"`\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:19:38 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
-`#> dir.expiry        "R 4.6.1; ; 2026-10-06 06:38:41 UTC; unix"                   `\
+`#> dir.expiry        "R 4.6.1; ; 2026-10-09 06:26:09 UTC; unix"                   `\
 `#> distributional    "R 4.6.0; ; 2026-09-09 09:18:45 UTC; unix"                   `\
 `#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   `\
 `#> doBy              "R 4.6.0; ; 2026-08-12 20:24:57 UTC; unix"                   `\
@@ -3789,9 +3789,9 @@
 `#> DT                "R 4.6.0; ; 2026-08-12 20:25:47 UTC; unix"                   `\
 `#> dtplyr            "R 4.6.0; ; 2026-10-02 08:11:50 UTC; unix"                   `\
 `#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-30 05:47:53 UTC; unix"`\
-`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-08 09:54:43 UTC; unix"`\
-`#> dynTools          "R 4.6.1; ; 2026-10-08 09:55:31 UTC; unix"                   `\
-`#> dynUtils          "R 4.6.1; ; 2026-10-08 08:47:09 UTC; unix"                   `\
+`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-10 09:23:14 UTC; unix"`\
+`#> dynTools          "R 4.6.1; ; 2026-10-10 09:23:59 UTC; unix"                   `\
+`#> dynUtils          "R 4.6.1; ; 2026-10-10 08:23:25 UTC; unix"                   `\
 `#> ellipse           "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> ellipsis          "R 4.6.0; ; 2026-04-24 21:36:12 UTC; unix"                   `\
 `#> evaluate          "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
@@ -3805,7 +3805,7 @@
 `#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:15:12 UTC; unix"`\
 `#> fds               "R 4.6.0; ; 2026-05-06 05:19:49 UTC; unix"                   `\
 `#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:36 UTC; unix"`\
-`#> fitVARMxID        "R 4.6.1; ; 2026-10-08 09:55:40 UTC; unix"                   `\
+`#> fitVARMxID        "R 4.6.1; ; 2026-10-10 09:24:07 UTC; unix"                   `\
 `#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
 `#> fontawesome       "R 4.6.0; ; 2026-08-12 20:22:14 UTC; unix"                   `\
 `#> forcats           "R 4.6.0; ; 2026-08-12 20:22:52 UTC; unix"                   `\
@@ -3850,7 +3850,7 @@
 `#> htmlTable         "R 4.6.0; ; 2026-08-12 20:25:44 UTC; unix"                   `\
 `#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:04 UTC; unix"`\
 `#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:25:06 UTC; unix"                   `\
-`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-08 09:52:47 UTC; unix"`\
+`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-10 09:21:19 UTC; unix"`\
 `#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
 `#> httr              "R 4.6.0; ; 2026-09-02 03:59:46 UTC; unix"                   `\
 `#> httr2             "R 4.6.0; ; 2026-07-14 05:11:28 UTC; unix"                   `\
@@ -3877,7 +3877,7 @@
 `#> later             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:57 UTC; unix"`\
 `#> latex2exp         "R 4.6.0; ; 2026-04-24 02:36:33 UTC; unix"                   `\
 `#> lava              "R 4.6.0; ; 2026-08-21 04:14:37 UTC; unix"                   `\
-`#> lavaan            "R 4.6.0; ; 2026-07-17 05:35:00 UTC; unix"                   `\
+`#> lavaan            "R 4.6.0; ; 2026-10-09 05:44:52 UTC; unix"                   `\
 `#> lazyeval          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:48 UTC; unix"`\
 `#> lbfgs             "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:53:20 UTC; unix"`\
 `#> lifecycle         "R 4.6.0; ; 2026-08-12 20:21:53 UTC; unix"                   `\
@@ -3888,7 +3888,7 @@
 `#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:11 UTC; unix"`\
 `#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:00 UTC; unix"`\
 `#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:06:27 UTC; unix"`\
-`#> longMI            "R 4.6.1; ; 2026-10-08 07:41:08 UTC; unix"                   `\
+`#> longMI            "R 4.6.1; ; 2026-10-10 07:24:28 UTC; unix"                   `\
 `#> loo               "R 4.6.0; ; 2026-07-25 05:23:32 UTC; unix"                   `\
 `#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:14 UTC; unix"`\
 `#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:00:10 UTC; unix"`\
@@ -3898,7 +3898,7 @@
 `#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
 `#> memoise           "R 4.6.0; ; 2026-08-12 20:21:58 UTC; unix"                   `\
-`#> metaDyn           "R 4.6.1; ; 2026-10-08 09:55:50 UTC; unix"                   `\
+`#> metaDyn           "R 4.6.1; ; 2026-10-10 09:24:16 UTC; unix"                   `\
 `#> metaSEM           "R 4.6.0; ; 2026-04-28 05:58:02 UTC; unix"                   `\
 `#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:13:40 UTC; unix"`\
 `#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:51 UTC; unix"`\
@@ -3973,7 +3973,7 @@
 `#> rainbow           "R 4.6.0; ; 2026-09-26 06:36:28 UTC; unix"                   `\
 `#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
 `#> rbibutils         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> rcmdcheck         "R 4.6.1; ; 2026-10-08 09:53:34 UTC; unix"                   `\
+`#> rcmdcheck         "R 4.6.1; ; 2026-10-10 09:22:06 UTC; unix"                   `\
 `#> RColorBrewer      "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:16:41 UTC; unix"`\
@@ -3996,18 +3996,18 @@
 `#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:13 UTC; unix"`\
 `#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:23:09 UTC; unix"`\
 `#> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   `\
-`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-06 06:41:42 UTC; unix"`\
-`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-06 06:41:23 UTC; unix"`\
-`#> Rhdf5lib          "R 4.6.1; ; 2026-10-06 06:41:20 UTC; unix"                   `\
+`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-09 06:29:08 UTC; unix"`\
+`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-09 06:28:48 UTC; unix"`\
+`#> Rhdf5lib          "R 4.6.1; ; 2026-10-09 06:28:45 UTC; unix"                   `\
 `#> rhub              "R 4.6.0; ; 2026-04-24 22:27:49 UTC; unix"                   `\
 `#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:38:21 UTC; unix"`\
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:03 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:00:02 UTC; unix"                   `\
-`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-08 09:53:43 UTC; unix"`\
+`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-10 09:22:15 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:24:25 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:49 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-06 04:55:00 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-09 04:36:41 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:44 UTC; unix"`\
@@ -4022,13 +4022,13 @@
 `#> scales            "R 4.6.0; ; 2026-08-12 20:22:07 UTC; unix"                   `\
 `#> selectr           "R 4.6.0; ; 2026-09-28 04:40:54 UTC; unix"                   `\
 `#> semlbci           "R 4.6.0; ; 2026-07-28 08:48:55 UTC; unix"                   `\
-`#> semmcci           "R 4.6.1; ; 2026-10-08 09:53:56 UTC; unix"                   `\
+`#> semmcci           "R 4.6.1; ; 2026-10-10 09:22:29 UTC; unix"                   `\
 `#> semPlot           "R 4.6.0; ; 2026-07-18 12:17:16 UTC; unix"                   `\
 `#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:25:12 UTC; unix"                   `\
 `#> sfd               "R 4.6.0; ; 2026-04-24 22:06:59 UTC; unix"                   `\
 `#> shape             "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> shiny             "R 4.6.0; ; 2026-08-12 20:24:30 UTC; unix"                   `\
-`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-08 09:54:18 UTC; unix"`\
+`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-10 09:22:49 UTC; unix"`\
 `#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:14:38 UTC; unix"`\
 `#> snow              "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> snowfall          "R 4.6.0; ; 2026-04-24 21:41:41 UTC; unix"                   `\
@@ -4056,7 +4056,7 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:27:55 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
-`#> tinytex           "R 4.6.1; ; 2026-10-08 09:53:17 UTC; unix"                   `\
+`#> tinytex           "R 4.6.1; ; 2026-10-10 09:21:49 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 15:45:43 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:40:31 UTC; unix"`\

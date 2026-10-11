@@ -2,6 +2,9 @@
 
 ## All functions
 
+- [`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md)
+  : Install Global AI Instructions
+
 - [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md) :
   Consolidate .bib files into a Single File
 
@@ -142,6 +145,9 @@
 
 - [`ReadMe()`](https://github.com/ijapesigan/rProject/reference/ReadMe.md)
   : Build README.md
+
+- [`SecretScan()`](https://github.com/ijapesigan/rProject/reference/SecretScan.md)
+  : Scan Project for Secrets
 
 - [`Site()`](https://github.com/ijapesigan/rProject/reference/Site.md) :
   Build Website

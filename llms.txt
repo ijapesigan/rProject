@@ -1,6 +1,6 @@
 # rProject
 
-Ivan Jacob Agaloos Pesigan 2026-10-09
+Ivan Jacob Agaloos Pesigan 2026-10-11
 
 ## Description
 
@@ -33,6 +33,9 @@ computing*. R Foundation for Statistical Computing.
 # Package index
 
 ## All functions
+
+- [`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md)
+  : Install Global AI Instructions
 
 - [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md) :
   Consolidate .bib files into a Single File
@@ -174,6 +177,9 @@ computing*. R Foundation for Statistical Computing.
 
 - [`ReadMe()`](https://github.com/ijapesigan/rProject/reference/ReadMe.md)
   : Build README.md
+
+- [`SecretScan()`](https://github.com/ijapesigan/rProject/reference/SecretScan.md)
+  : Scan Project for Secrets
 
 - [`Site()`](https://github.com/ijapesigan/rProject/reference/Site.md) :
   Build Website

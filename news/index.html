@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.25</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.27</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,23 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.27" id="rproject-0027">rProject 0.0.27<a class="anchor" aria-label="anchor" href="#rproject-0027"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-27">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-27"></a></h3>
+<ul><li>Added the <code><a href="../reference/AIGlobal.html">AIGlobal()</a></code> function and the <code>make aiglobal</code> target to install global AI instructions for Claude Code, Codex, and GitHub Copilot.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.26" id="rproject-0026">rProject 0.0.26<a class="anchor" aria-label="anchor" href="#rproject-0026"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-26">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-26"></a></h3>
+<ul><li>Secrets are read from the local machine (<code>$RPROJECT_SECRETS</code>, <code>~/.config/rproject/&lt;project&gt;.R</code>, or <code>~/.config/rproject/secrets.R</code>) in <code>.setup/scripts/make-project.R</code>. <code>.setup/scripts/secrets.R</code> is only used as a fallback, with a warning.</li>
+<li>
+<code><a href="../reference/Environment.html">Environment()</a></code> sets the permissions of <code>.Renviron</code> to <code>600</code>.</li>
+<li>Added the <code><a href="../reference/SecretScan.html">SecretScan()</a></code> function and the <code>make secretscan</code> target.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.25" id="rproject-0025">rProject 0.0.25<a class="anchor" aria-label="anchor" href="#rproject-0025"></a></h2>
 <div class="section level3">

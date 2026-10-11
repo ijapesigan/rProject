@@ -700,6 +700,10 @@
 | Vanhasbroeck-Ariens-Tuerlinckx-etal-2021 | Vanhasbroeck-Ariens-Tuerlinckx-etal-2021 | NULL | NULL |
 | Arbuckle-2020 | Arbuckle-2020 | sem, sem-software | NULL |
 | Arbuckle-2021 | Arbuckle-2021 | sem, sem-software | NULL |
+| Asparouhov-Muthen-2022 | Asparouhov-Muthen-2022 | NULL | NULL |
+| Asparouhov-Muthen-2023 | Asparouhov-Muthen-2023 | NULL | NULL |
+| Asparouhov-Muthen-2024a | Asparouhov-Muthen-2024a | NULL | NULL |
+| Asparouhov-Muthen-2024b | Asparouhov-Muthen-2024b | NULL | NULL |
 | Eddelbuettel-Francois-Allaire-etal-2023 | Eddelbuettel-Francois-Allaire-etal-2023 | r, r-package | NULL |
 | Jorgensen-Pornprasertmanit-Schoemann-etal-2022 | Jorgensen-Pornprasertmanit-Schoemann-etal-2022 | NULL | NULL |
 | Kurtzer-cclerget-Bauer-etal-2021 | Kurtzer-cclerget-Bauer-etal-2021 | container, container-singularity | NULL |
