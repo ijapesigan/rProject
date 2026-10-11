@@ -1,5 +1,14 @@
 # Changelog
 
+## rProject 0.0.30
+
+### Patch
+
+- [`BuildIgnore()`](https://github.com/ijapesigan/rProject/reference/BuildIgnore.md)
+  excludes AI tool files from package builds: `.claude`, `CLAUDE.md`,
+  `CLAUDE.local.md`, `.mcp.json`, `AGENTS.md`, `.codex`, `GEMINI.md`,
+  and `.gemini`.
+
 ## rProject 0.0.29
 
 ### Patch
