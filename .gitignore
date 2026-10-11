@@ -95,5 +95,10 @@ AGENTS.md
 CLAUDE.md
 .claude/
 .github/copilot-instructions.md
+CLAUDE.local.md
+.mcp.json
+.codex/
+GEMINI.md
+.gemini/
 
 **/*.quarto_ipynb
