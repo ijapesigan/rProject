@@ -290,12 +290,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>function (path, project, add = NULL) 
 {
     if (file.exists(file.path(path, "DESCRIPTION"))) {
-        x &lt;- c(".*\\.Rcheck$", ".*\\.Rproj$", ".*\\.sif$", "^CITATION\\.cff$", 
-            "^LICENSE\\.md$", "^Makefile$", "^README\\.Rmd$", 
-            "^README\\.md$", "^\\.Rproj\\.user$", "^\\.devcontainer$", 
-            "^\\.git.*$", "^\\.library$", "^\\.quarto$", "^\\.setup$", 
-            "^\\.sif$", "^\\.sim$", "^detritus$", "^index\\.qmd$", 
-            "^pkgdown$", "^quarto$", "^scripts$")
+        x &lt;- c(".*\\.Rcheck$", ".*\\.Rproj$", ".*\\.sif$", "^AGENTS\\.md$", 
+            "^CITATION\\.cff$", "^CLAUDE\\.local\\.md$", "^CLAUDE\\.md$", 
+            "^GEMINI\\.md$", "^LICENSE\\.md$", "^Makefile$", 
+            "^README\\.Rmd$", "^README\\.md$", "^\\.Rproj\\.user$", 
+            "^\\.claude$", "^\\.codex$", "^\\.devcontainer$", 
+            "^\\.gemini$", "^\\.git.*$", "^\\.library$", "^\\.mcp\\.json$", 
+            "^\\.quarto$", "^\\.setup$", "^\\.sif$", "^\\.sim$", 
+            "^detritus$", "^index\\.qmd$", "^pkgdown$", "^quarto$", 
+            "^scripts$")
         if (!is.null(add)) {
             x &lt;- c(x, add)
         }
@@ -307,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         message(paste(path, "is not an R package."))
     }
 }
-&lt;bytecode: 0x557cf0c1b280&gt;
+&lt;bytecode: 0x559af5cbd7c0&gt;
 &lt;environment: namespace:rProject&gt;</code></pre>
 </div>
 </div>
