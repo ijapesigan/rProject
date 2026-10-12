@@ -47,7 +47,8 @@ except local-only folders
 and build output that \code{make} writes and Overleaf never gets
 (\code{docs}, \code{pkgdown}, \code{quarto}, \code{.setup/build}, \code{.setup/latex/pdf},
 \code{.setup/quarto/bib}),
-and the local-only data tiers (\code{.setup/data-external}, \code{.setup/data-cache}).
+the local-only data tiers (\code{.setup/data-external}, \code{.setup/data-cache}),
+and images (\code{.sif}).
 }
 \details{
 \itemize{

@@ -82,26 +82,14 @@ CleanProj <- function(path,
     full.names = FALSE,
     no.. = TRUE
   )
-  files <- files[
-    stats::complete.cases(
-      gsub(
-        pattern = "project.Rproj",
-        replacement = NA,
-        x = files
-      )
-    )
-  ]
-  if (!lib) {
-    files <- files[
-      stats::complete.cases(
-        gsub(
-          pattern = ".library",
-          replacement = NA,
-          x = files
-        )
-      )
-    ]
-  }
+  # list.files() also returns folders, so keep the protected ones here too
+  keep <- c(
+    "project.Rproj",
+    if (!lib) ".library",
+    if (!sim) ".sim",
+    if (!sif) ".sif"
+  )
+  files <- files[!(files %in% keep)]
   files <- file.path(
     path,
     files

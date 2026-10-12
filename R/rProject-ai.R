@@ -11,15 +11,18 @@
 #'
 #' All of them are private (gitignored and excluded from the package build).
 #'
-#' The project type and the image come from `type` and `sif`,
+#' The project type comes from `type`,
 #' else from an `ai` list in `.setup/scripts/project.R`
-#' (e.g., `ai <- list(type = c("manuscript", "simulation"), sif = "x.sif")`),
-#' else they are detected:
+#' (e.g., `ai <- list(type = c("manuscript", "simulation"))`),
+#' else it is detected:
 #' `"simulation"` if `.sim` exists,
 #' `"manuscript"` if a `*-manuscript*.Rtex` exists
 #' or the name starts with `man`,
 #' `"library"` for `lib-*`, `"talk"` for `talks*`,
-#' otherwise `"package"`; the image defaults to `docs.sif`.
+#' otherwise `"package"`.
+#'
+#' The user chooses the Apptainer image and runs `apptainer exec`;
+#' the instructions tell agents not to pick an image.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -27,13 +30,10 @@
 #' @param type Character vector.
 #'   Project types: any of `"package"`, `"manuscript"`, `"simulation"`,
 #'   `"library"`, and `"talk"`.
-#' @param sif Character string.
-#'   File name of the Apptainer image.
 #' @return Returns the paths of the files that were written, invisibly.
 #' @export
 AI <- function(path,
-               type = NULL,
-               sif = NULL) {
+               type = NULL) {
   project <- .VerifyProject(path = path)
   settings <- .AISettings(path = path)
   if (is.null(type)) {
@@ -42,16 +42,9 @@ AI <- function(path,
   if (is.null(type)) {
     type <- .AIType(path = path, project = project)
   }
-  if (is.null(sif)) {
-    sif <- settings$sif
-  }
-  if (is.null(sif)) {
-    sif <- "docs.sif"
-  }
   values <- c(
     project = project,
     types = paste(type, collapse = ", "),
-    sif = sif,
     folders = .AIRows(
       type = type,
       rows = list(
@@ -61,7 +54,7 @@ AI <- function(path,
         ),
         simulation = c(
           "| `.sim/` | simulation scripts (SLURM, GNU Parallel) |",
-          "| `.sif/` | the image (local only; never uploaded) |"
+          "| `.sif/` | images or links to them (local only; never uploaded) |"
         )
       )
     ),
@@ -137,8 +130,6 @@ AI <- function(path,
       project,
       " (",
       values[["types"]],
-      "; ",
-      sif,
       "): ",
       ifelse(
         length(written) > 0L,

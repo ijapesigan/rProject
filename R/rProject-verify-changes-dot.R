@@ -5,6 +5,7 @@
     c(
       "^\\.git/",
       "^\\.verify/",
+      "^\\.sif/",
       "^\\.setup/data-external/",
       "^\\.setup/data-cache/",
       "^\\.library/",
@@ -17,7 +18,7 @@
       "^quarto/",
       "^\\.setup/build/",
       "^\\.setup/quarto/bib/",
-      "(^|/)latexmkrc$",
+      "^latexmkrc$",
       "^man/",
       "^src/",
       "^vignettes/",

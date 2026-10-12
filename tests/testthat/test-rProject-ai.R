@@ -15,7 +15,7 @@ lapply(
     root <- file.path(tempfile(pattern = "ai"), "manTest")
     write(root, ".setup/scripts/project.R", c(
       "project <- \"manTest\"",
-      "ai <- list(sif = \"mantest.sif\")"
+      "ai <- list()"
     ))
     write(root, ".setup/latex/manTest-manuscript-EDIT-THIS.Rtex", "x")
     write(root, ".sim/sim.R", "x <- 1")
@@ -43,7 +43,9 @@ lapply(
         testthat::expect_true(
           any(grepl("Type: manuscript, simulation", agents, fixed = TRUE))
         )
-        testthat::expect_true(any(grepl("mantest.sif", agents, fixed = TRUE)))
+        testthat::expect_true(
+          any(grepl("the user chooses it", agents, fixed = TRUE))
+        )
         testthat::expect_true("## Manuscript" %in% agents)
         testthat::expect_true("## Simulation" %in% agents)
         testthat::expect_false("## Talk" %in% agents)
