@@ -31,7 +31,7 @@ ConfigFiles <- function(repo = "ijapesigan/dotfiles") {
       "--depth",
       "1",
       paste0("https://github.com/", repo, ".git"),
-      shQuote(tmp_dir)
+      .ShellQuote(x = tmp_dir)
     ),
     env = c(
       "GIT_CONFIG_GLOBAL=/dev/null",
@@ -48,11 +48,12 @@ ConfigFiles <- function(repo = "ijapesigan/dotfiles") {
       call. = FALSE
     )
   }
-  status <- system(
-    paste(
-      "cd",
-      shQuote(tmp_dir),
-      "&& make"
+  # make -C runs make in the clone, as `cd <clone> && make` did
+  status <- system2(
+    command = "make",
+    args = c(
+      "-C",
+      .ShellQuote(x = tmp_dir)
     )
   )
   if (status != 0) {

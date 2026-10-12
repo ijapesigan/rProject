@@ -53,19 +53,26 @@ LatexCompile <- function(path,
     )
     close(con)
   }
-  try(
-    system(
-      paste0(
-        "latexmk -f -pdf -interaction=nonstopmode -output-directory=",
-        pdf_folder,
-        " ",
-        paste0(
-          tex_folder,
-          "/*.tex"
+  # the .tex files listed in R, not by a shell glob
+  tex_files <- list.files(
+    path = tex_folder,
+    pattern = "\\.tex$",
+    full.names = TRUE
+  )
+  if (length(tex_files) > 0) {
+    try(
+      system2(
+        command = "latexmk",
+        args = c(
+          "-f",
+          "-pdf",
+          "-interaction=nonstopmode",
+          paste0("-output-directory=", .ShellQuote(x = pdf_folder)),
+          .ShellQuote(x = tex_files)
         )
       )
     )
-  )
+  }
   if (clean) {
     invisible(
       lapply(

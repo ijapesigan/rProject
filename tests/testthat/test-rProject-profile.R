@@ -7,7 +7,7 @@ lapply(
     testthat::test_that(
       paste(text, "writes .Rprofile for a package"),
       {
-        root <- .TestProject()
+        root <- .TestProject(pattern = "project with space ")
         Profile(path = root, project = "testProject")
         profile <- readLines(file.path(root, ".Rprofile"))
         testthat::expect_true(

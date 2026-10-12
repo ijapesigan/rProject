@@ -16,12 +16,6 @@ BibLib <- function(path) {
     showWarnings = FALSE,
     recursive = TRUE
   )
-  wd <- getwd()
-  on.exit(
-    expr = setwd(wd),
-    add = TRUE
-  )
-  setwd(latex_bib_dir)
   libs <- c(
     "lib-2020-2029-book",
     "lib-2020-2029-manual",
@@ -69,12 +63,23 @@ BibLib <- function(path) {
     expr = clean(libs = libs, path = path),
     add = TRUE
   )
+  # clone into the bib folder, without changing the working directory
   for (i in seq_along(libs)) {
-    system(
-      paste0(
-        "git clone https://github.com/ijapesigan/",
-        libs[i],
-        ".git"
+    system2(
+      command = "git",
+      args = c(
+        "clone",
+        paste0(
+          "https://github.com/ijapesigan/",
+          libs[i],
+          ".git"
+        ),
+        .ShellQuote(
+          x = file.path(
+            latex_bib_dir,
+            libs[i]
+          )
+        )
       )
     )
   }

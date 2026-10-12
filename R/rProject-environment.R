@@ -24,10 +24,17 @@ Environment <- function(path,
     "R_PROFILE_USER",
     "R_HISTFILE"
   )
-  value <- c(
-    paste0("\"", LibPaths(path = path), "\""),
-    paste0("\"", dot_rprofile_file, "\""),
-    paste0("\"", dot_rhistory_file, "\"")
+  # forward slashes: .Renviron reads backslashes as escapes
+  value <- paste0(
+    "\"",
+    .PathSlash(
+      x = c(
+        LibPaths(path = path),
+        dot_rprofile_file,
+        dot_rhistory_file
+      )
+    ),
+    "\""
   )
   dot_renviron_contents <- paste(
     key,

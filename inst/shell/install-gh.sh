@@ -5,7 +5,7 @@
 
 set -euo pipefail
 
-# shellcheck source=install-common.sh
+# shellcheck source=install-common.sh disable=SC1091
 source "$(dirname "${BASH_SOURCE[0]}")/install-common.sh"
 check_arch
 

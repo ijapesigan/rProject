@@ -4,6 +4,7 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::skip_if_not_installed("remotes")
+    .SkipUnlessSiteLibrary(pkgs = c("remotes", "distro"))
     state <- .TestState()
     root <- .TestProject()
     testthat::test_that(

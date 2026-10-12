@@ -28,60 +28,33 @@ Style <- function(path) {
       "packrat"
     )
   )
-  find <- TRUE
-  format <- TRUE
-  if (Sys.which("find") == "") {
-    find <- FALSE
-  }
-  if (Sys.which("clang-format") == "") {
-    format <- FALSE
-  }
-  if (find == TRUE && format == TRUE) {
-    system(
-      paste0(
-        "find",
-        " ",
-        "\"",
-        file.path(path, ".setup", "cpp"),
-        "\"",
-        " ",
-        "-name",
-        " ",
-        "\"",
-        "*.cpp",
-        "\"",
-        " ",
-        "! -name",
-        " ",
-        "\"",
-        "RcppExports.cpp",
-        "\"",
-        " ",
-        "-exec clang-format -style=google -i {} \\;"
-      )
+  # C++ in .setup/cpp and src, except the generated RcppExports.cpp
+  if (Sys.which("clang-format") != "") {
+    cpp <- list.files(
+      path = file.path(
+        path,
+        c(
+          file.path(
+            ".setup",
+            "cpp"
+          ),
+          "src"
+        )
+      ),
+      pattern = "\\.cpp$",
+      full.names = TRUE,
+      recursive = TRUE
     )
-    system(
-      paste0(
-        "find",
-        " ",
-        "\"",
-        file.path(path, "src"),
-        "\"",
-        " ",
-        "-name",
-        " ",
-        "\"",
-        "*.cpp",
-        "\"",
-        " ",
-        "! -name",
-        " ",
-        "\"",
-        "RcppExports.cpp",
-        "\"",
-        " ",
-        "-exec clang-format -style=google -i {} \\;"
+    cpp <- cpp[basename(cpp) != "RcppExports.cpp"]
+    if (length(cpp) > 0) {
+      system2(
+        command = "clang-format",
+        args = c(
+          "-style=google",
+          "-i",
+          .ShellQuote(x = cpp)
+        )
       )
-    )
+    }
   }
 }

@@ -8,7 +8,7 @@ lapply(
     testthat::test_that(
       paste(text, "copies latexmkrc and does nothing without TikZ files"),
       {
-        root <- .TestProject()
+        root <- .TestProject(pattern = "project with space ")
         suppressMessages(LatexTikzCompile(path = root))
         testthat::expect_true(file.exists(file.path(root, "latexmkrc")))
         testthat::expect_false(dir.exists(file.path(root, "detritus")))
@@ -19,7 +19,7 @@ lapply(
       paste(text, "compiles a TikZ figure to PDF (slow)"),
       {
         .SkipSlow()
-        root <- .TestProject()
+        root <- .TestProject(pattern = "project with space ")
         tikz <- file.path(root, ".setup", "latex", "tikz")
         dir.create(tikz, recursive = TRUE)
         writeLines(

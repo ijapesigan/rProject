@@ -4,6 +4,7 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::skip_if(Sys.which("git") == "")
+    testthat::skip_on_os("windows")
     git <- function(dir, ...) {
       suppressWarnings(
         system2(

@@ -1,9 +1,11 @@
 # Shared test helpers (testthat sources helper-*.R before the tests).
 
-# A small fake project in a temporary folder.
+# A small fake project in a temporary folder. A `pattern` with a space tests
+# paths with spaces.
 .TestProject <- function(name = "testProject",
-                         description = TRUE) {
-  root <- file.path(tempfile(pattern = "project"), name)
+                         description = TRUE,
+                         pattern = "project") {
+  root <- file.path(tempfile(pattern = pattern), name)
   dir.create(
     file.path(root, ".setup", "scripts"),
     recursive = TRUE
@@ -59,6 +61,28 @@
     Sys.unsetenv(unset)
   }
   invisible(NULL)
+}
+
+# Functions that call LibPaths() see only .library, the site library, and
+# base R (the container layout). Skip when a package they need is elsewhere,
+# as on the plain GitHub runners (user library).
+.SkipUnlessSiteLibrary <- function(pkgs) {
+  found <- nzchar(
+    vapply(
+      X = pkgs,
+      FUN = function(pkg) {
+        system.file(package = pkg, lib.loc = c(.Library.site, .Library))
+      },
+      FUN.VALUE = character(1)
+    )
+  )
+  testthat::skip_if_not(
+    all(found),
+    message = paste(
+      "not in the site library:",
+      paste(pkgs[!found], collapse = ", ")
+    )
+  )
 }
 
 # Slow tests (installers, network, long builds) run only on request.

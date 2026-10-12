@@ -3,7 +3,7 @@
   suppressWarnings(
     system2(
       command = "git",
-      args = c("-C", shQuote(private), args),
+      args = c("-C", .ShellQuote(x = private), args),
       stdout = TRUE,
       stderr = FALSE
     )

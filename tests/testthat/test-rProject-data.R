@@ -3,7 +3,7 @@ lapply(
   X = 1,
   FUN = function(i,
                  text) {
-    root <- tempfile(pattern = "data")
+    root <- tempfile(pattern = "data with space ")
     dirs <- file.path(
       root,
       ".setup",

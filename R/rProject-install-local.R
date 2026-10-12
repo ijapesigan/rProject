@@ -69,17 +69,13 @@ InstallLocal <- function(
         )
         if (run_sh) {
           tmp_dir <- tempdir()
-          system(
-            paste(
-              "(",
-              "cd",
-              tmp_dir,
-              ";",
-              "bash",
-              install,
-              ")"
-            )
+          # bash, in the temporary folder (Unix only)
+          wd <- setwd(tmp_dir)
+          system2(
+            command = "bash",
+            args = .ShellQuote(x = install)
           )
+          setwd(wd)
           on.exit(
             expr = unlink(
               tmp_dir

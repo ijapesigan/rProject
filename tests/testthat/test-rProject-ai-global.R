@@ -72,6 +72,7 @@ lapply(
     testthat::test_that(
       paste(text, "sets mode 600"),
       {
+        testthat::skip_on_os("windows")
         testthat::expect_true(
           all(
             format(file.info(targets)$mode) == "600"

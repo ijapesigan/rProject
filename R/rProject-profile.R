@@ -26,11 +26,10 @@ Profile <- function(path,
       ")",
       "\n"
     )
+    # deparse() quotes and escapes the path
     lib <- paste0(
       ".libPaths(",
-      "\"",
-      LibPaths(path = path),
-      "\"",
+      deparse(.PathSlash(x = LibPaths(path = path))),
       ")",
       "\n"
     )

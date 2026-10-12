@@ -8,6 +8,9 @@ lapply(
     # with only a temporary library and base R on the path, and stops unless
     # that holds.
     testthat::skip_on_cran()
+    testthat::skip_on_os("windows")
+    # covr instruments CleanPkg(), so its copy cannot run in a clean process
+    testthat::skip_if(identical(Sys.getenv("R_COVR"), "true"), "under covr")
     r_bin <- R.home("bin")
     root <- .TestProject()
     other <- tempfile(pattern = "otherlib")

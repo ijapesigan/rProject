@@ -29,20 +29,23 @@
     },
     FUN.VALUE = character(1)
   )
+  # relative paths by prefix, not by a regex built from the path
+  root <- paste0(
+    normalizePath(path = path, winslash = "/"),
+    "/"
+  )
   vapply(
     X = files,
     FUN = function(file) {
       # the plain name, as scripts refer to it
       name <- sub(pattern = "\\.(xz|gz)$", replacement = "", x = basename(file))
-      hits <- scripts[grepl(pattern = name, x = text, fixed = TRUE)]
-      paste(
-        sub(
-          pattern = paste0("^", normalizePath(path), "/"),
-          replacement = "",
-          x = normalizePath(hits)
-        ),
-        collapse = ", "
+      hits <- normalizePath(
+        path = scripts[grepl(pattern = name, x = text, fixed = TRUE)],
+        winslash = "/"
       )
+      inside <- startsWith(x = hits, prefix = root)
+      hits[inside] <- substring(text = hits[inside], first = nchar(root) + 1L)
+      paste(hits, collapse = ", ")
     },
     FUN.VALUE = character(1),
     USE.NAMES = FALSE

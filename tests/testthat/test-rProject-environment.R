@@ -6,7 +6,7 @@ lapply(
     state <- .TestState(vars = c(
       "PROJECT", "R_LIBS_USER", "R_PROFILE_USER", "R_HISTFILE", "TEST_TOKEN"
     ))
-    root <- .TestProject()
+    root <- .TestProject(pattern = "project with space ")
     Environment(
       path = root,
       project = "testProject",
@@ -28,6 +28,7 @@ lapply(
     testthat::test_that(
       paste(text, "makes .Renviron readable by the owner only"),
       {
+        testthat::skip_on_os("windows")
         testthat::expect_equal(format(file.info(renviron)$mode), "600")
       }
     )

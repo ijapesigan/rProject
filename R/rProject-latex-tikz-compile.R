@@ -78,14 +78,19 @@ LatexTikzCompile <- function(path,
       to = tex_folder
     )
     try(
-      system(
-        paste0(
-          "latexmk -f -pdf -interaction=nonstopmode -output-directory=",
-          pdf_folder,
-          " ",
-          paste0(
-            tex_folder,
-            "/*.tex"
+      system2(
+        command = "latexmk",
+        args = c(
+          "-f",
+          "-pdf",
+          "-interaction=nonstopmode",
+          paste0("-output-directory=", .ShellQuote(x = pdf_folder)),
+          .ShellQuote(
+            x = list.files(
+              path = tex_folder,
+              pattern = "\\.tex$",
+              full.names = TRUE
+            )
           )
         )
       )
@@ -155,11 +160,14 @@ LatexTikzCompile <- function(path,
         file_name_png
       )
       try(
-        system(
-          paste(
-            "pdftoppm -png -singlefile -r 300",
-            pdf_files[i],
-            file_name_png
+        system2(
+          command = "pdftoppm",
+          args = c(
+            "-png",
+            "-singlefile",
+            "-r",
+            "300",
+            .ShellQuote(x = c(pdf_files[i], file_name_png))
           )
         )
       )
