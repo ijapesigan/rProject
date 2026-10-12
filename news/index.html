@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.39</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.40</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,23 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.40" id="rproject-0040">rProject 0.0.40<a class="anchor" aria-label="anchor" href="#rproject-0040"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-40">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-40"></a></h3>
+<ul><li>Paths and shell calls work across platforms, and with spaces in paths:
+<ul><li>
+<code><a href="../reference/Profile.html">Profile()</a></code> writes the library path with <code><a href="https://rdrr.io/r/base/deparse.html" class="external-link">deparse()</a></code>, and <code><a href="../reference/Environment.html">Environment()</a></code> writes paths with forward slashes.</li>
+<li>
+<code><a href="../reference/DataManifest.html">DataManifest()</a></code> makes paths relative by prefix, not by a regular expression built from the path.</li>
+<li>Shell commands go through <code><a href="https://rdrr.io/r/base/system2.html" class="external-link">system2()</a></code>, with each path quoted for the platform’s shell: <code><a href="../reference/LatexCompile.html">LatexCompile()</a></code> and <code><a href="../reference/LatexTikzCompile.html">LatexTikzCompile()</a></code> pass the <code>.tex</code> files to latexmk explicitly (no shell glob); <code><a href="../reference/Style.html">Style()</a></code> finds the C++ files in R (no <code>find</code>); <code><a href="../reference/BibLib.html">BibLib()</a></code> clones into the bib folder without changing the working directory; plus <code><a href="../reference/Manual.html">Manual()</a></code>, <code><a href="../reference/InstallLocal.html">InstallLocal()</a></code>, <code><a href="../reference/ConfigFiles.html">ConfigFiles()</a></code> (<code>make -C</code>), <code><a href="../reference/Public.html">Public()</a></code>, and <code><a href="../reference/Verify.html">Verify()</a></code>.</li>
+<li>New internal helpers: <code>.PathSlash()</code> and <code>.ShellQuote()</code>.</li>
+</ul></li>
+<li>Tests pass on the plain GitHub runners (ubuntu, macOS, Windows) and under covr. Tests of functions that need the container layout (<code><a href="../reference/Lint.html">Lint()</a></code>, <code><a href="../reference/Style.html">Style()</a></code>, <code><a href="../reference/PkgProjectVersion.html">PkgProjectVersion()</a></code>) skip when their packages are not in the site library. Tests of Unix-only behavior (file modes, <code>clang-format</code>, <code><a href="../reference/CleanPkg.html">CleanPkg()</a></code>) skip on Windows, as do <code><a href="../reference/Public.html">Public()</a></code> and <code><a href="../reference/Verify.html">Verify()</a></code> until a Windows run confirms them. Tests now use paths with spaces.</li>
+<li>
+<code>inst/shell/install-*.sh</code>: a ShellCheck directive for the sourced <code>install-common.sh</code> (SC1091).</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.39" id="rproject-0039">rProject 0.0.39<a class="anchor" aria-label="anchor" href="#rproject-0039"></a></h2>
 <div class="section level3">

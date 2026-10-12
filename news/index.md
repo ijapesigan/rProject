@@ -1,5 +1,54 @@
 # Changelog
 
+## rProject 0.0.40
+
+### Patch
+
+- Paths and shell calls work across platforms, and with spaces in paths:
+  - [`Profile()`](https://github.com/ijapesigan/rProject/reference/Profile.md)
+    writes the library path with
+    [`deparse()`](https://rdrr.io/r/base/deparse.html), and
+    [`Environment()`](https://github.com/ijapesigan/rProject/reference/Environment.md)
+    writes paths with forward slashes.
+  - [`DataManifest()`](https://github.com/ijapesigan/rProject/reference/DataManifest.md)
+    makes paths relative by prefix, not by a regular expression built
+    from the path.
+  - Shell commands go through
+    [`system2()`](https://rdrr.io/r/base/system2.html), with each path
+    quoted for the platform’s shell:
+    [`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
+    and
+    [`LatexTikzCompile()`](https://github.com/ijapesigan/rProject/reference/LatexTikzCompile.md)
+    pass the `.tex` files to latexmk explicitly (no shell glob);
+    [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
+    finds the C++ files in R (no `find`);
+    [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md)
+    clones into the bib folder without changing the working directory;
+    plus
+    [`Manual()`](https://github.com/ijapesigan/rProject/reference/Manual.md),
+    [`InstallLocal()`](https://github.com/ijapesigan/rProject/reference/InstallLocal.md),
+    [`ConfigFiles()`](https://github.com/ijapesigan/rProject/reference/ConfigFiles.md)
+    (`make -C`),
+    [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md),
+    and
+    [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md).
+  - New internal helpers: `.PathSlash()` and `.ShellQuote()`.
+- Tests pass on the plain GitHub runners (ubuntu, macOS, Windows) and
+  under covr. Tests of functions that need the container layout
+  ([`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md),
+  [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md),
+  [`PkgProjectVersion()`](https://github.com/ijapesigan/rProject/reference/PkgProjectVersion.md))
+  skip when their packages are not in the site library. Tests of
+  Unix-only behavior (file modes, `clang-format`,
+  [`CleanPkg()`](https://github.com/ijapesigan/rProject/reference/CleanPkg.md))
+  skip on Windows, as do
+  [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+  and
+  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  until a Windows run confirms them. Tests now use paths with spaces.
+- `inst/shell/install-*.sh`: a ShellCheck directive for the sourced
+  `install-common.sh` (SC1091).
+
 ## rProject 0.0.39
 
 ### Patch

@@ -30,7 +30,7 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.39`\
+`#> [1] rProject_0.0.40`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
@@ -46,7 +46,7 @@
 \
 [`installed.packages`](https://rdrr.io/r/utils/installed.packages.html)`(``)`\
 `#>                   Package             LibPath                                  `\
-`#> rProject          "rProject"          "/tmp/RtmpvlkaEZ/temp_libpathe3269ba5309"`\
+`#> rProject          "rProject"          "/tmp/RtmpElcSSY/temp_libpathe445cc6662c"`\
 `#> rProject          "rProject"          "/__w/rProject/rProject/.library"        `\
 `#> abind             "abind"             "/usr/local/lib/R/site-library"          `\
 `#> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          `\
@@ -453,8 +453,8 @@
 `#> tools             "tools"             "/usr/local/lib/R/library"               `\
 `#> utils             "utils"             "/usr/local/lib/R/library"               `\
 `#>                   Version      Priority     `\
-`#> rProject          "0.0.39"     NA           `\
-`#> rProject          "0.0.39"     NA           `\
+`#> rProject          "0.0.40"     NA           `\
+`#> rProject          "0.0.40"     NA           `\
 `#> abind             "1.4-8"      NA           `\
 `#> Amelia            "1.8.3"      NA           `\
 `#> arm               "1.15-3"     NA           `\
@@ -3709,8 +3709,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-12 02:29:39 UTC; unix"                   `\
-`#> rProject          "R 4.6.1; ; 2026-10-12 02:29:35 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-12 03:55:32 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-12 03:55:30 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:31:14 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   `\
