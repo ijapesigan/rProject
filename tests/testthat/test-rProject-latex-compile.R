@@ -8,7 +8,7 @@ lapply(
       {
         .SkipSlow()
         testthat::skip_if(Sys.which("latexmk") == "", "latexmk not found")
-        root <- .TestProject()
+        root <- .TestProject(pattern = "project with space ")
         latex <- file.path(root, ".setup", "latex")
         dir.create(latex, recursive = TRUE)
         writeLines(

@@ -5,6 +5,7 @@ lapply(
                  text) {
     testthat::skip_on_cran()
     testthat::skip_if_not_installed("lintr")
+    .SkipUnlessSiteLibrary(pkgs = c("lintr", "distro"))
     state <- .TestState()
     root <- .TestProject()
     testthat::test_that(

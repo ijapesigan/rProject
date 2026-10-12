@@ -5,8 +5,9 @@ lapply(
                  text) {
     testthat::skip_on_cran()
     testthat::skip_if_not_installed("styler")
+    .SkipUnlessSiteLibrary(pkgs = c("styler", "distro"))
     state <- .TestState()
-    root <- .TestProject()
+    root <- .TestProject(pattern = "project with space ")
     writeLines("x<-c( 1,2 )", file.path(root, "R", "a.R"))
     testthat::test_that(
       paste(text, "styles R code"),
@@ -21,6 +22,7 @@ lapply(
     testthat::test_that(
       paste(text, "formats C++ with clang-format (Google style)"),
       {
+        testthat::skip_on_os("windows")
         testthat::skip_if(Sys.which("clang-format") == "")
         dir.create(file.path(root, "src"))
         writeLines(

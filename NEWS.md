@@ -1,3 +1,15 @@
+# rProject 0.0.40
+
+## Patch
+
+* Paths and shell calls work across platforms, and with spaces in paths:
+  * `Profile()` writes the library path with `deparse()`, and `Environment()` writes paths with forward slashes.
+  * `DataManifest()` makes paths relative by prefix, not by a regular expression built from the path.
+  * Shell commands go through `system2()`, with each path quoted for the platform's shell: `LatexCompile()` and `LatexTikzCompile()` pass the `.tex` files to latexmk explicitly (no shell glob); `Style()` finds the C++ files in R (no `find`); `BibLib()` clones into the bib folder without changing the working directory; plus `Manual()`, `InstallLocal()`, `ConfigFiles()` (`make -C`), `Public()`, and `Verify()`.
+  * New internal helpers: `.PathSlash()` and `.ShellQuote()`.
+* Tests pass on the plain GitHub runners (ubuntu, macOS, Windows) and under covr. Tests of functions that need the container layout (`Lint()`, `Style()`, `PkgProjectVersion()`) skip when their packages are not in the site library. Tests of Unix-only behavior (file modes, `clang-format`, `CleanPkg()`) skip on Windows, as do `Public()` and `Verify()` until a Windows run confirms them. Tests now use paths with spaces.
+* `inst/shell/install-*.sh`: a ShellCheck directive for the sourced `install-common.sh` (SC1091).
+
 # rProject 0.0.39
 
 ## Patch

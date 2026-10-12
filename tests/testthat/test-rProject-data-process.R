@@ -8,7 +8,7 @@ lapply(
     dir.create(dir, recursive = TRUE)
     out <- file.path(dir, "out.Rds")
     writeLines(
-      text = paste0("saveRDS(1, \"", out, "\")"),
+      text = paste0("saveRDS(1, ", deparse(out), ")"),
       con = file.path(dir, "data-process-001.R")
     )
     testthat::test_that(

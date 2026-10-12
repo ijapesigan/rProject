@@ -12,7 +12,7 @@
       command = "git",
       args = c(
         "-C",
-        shQuote(root),
+        .ShellQuote(x = root),
         "check-ignore",
         "--no-index",
         "--stdin"

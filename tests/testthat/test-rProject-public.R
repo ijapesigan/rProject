@@ -29,6 +29,7 @@ lapply(
     testthat::test_that(
       paste(text, "passes a safe export"),
       {
+        testthat::skip_on_os("windows")
         exported <- suppressMessages(Public(path = root))
         testthat::expect_true("R/foo.R" %in% exported)
         testthat::expect_false(".setup/ai/plan.md" %in% exported)

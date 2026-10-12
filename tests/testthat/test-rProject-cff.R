@@ -8,7 +8,7 @@ lapply(
     testthat::test_that(
       paste(text, "writes CITATION.cff for a package"),
       {
-        root <- .TestProject()
+        root <- normalizePath(.TestProject())
         writeLines(
           text = c(
             "Package: testProject",

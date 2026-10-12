@@ -7,7 +7,7 @@ lapply(
     dir.create(file.path(root, ".setup", "bin", "sub"), recursive = TRUE)
     marker <- file.path(root, "ran.txt")
     writeLines(
-      text = paste0("writeLines(\"bin\", \"", marker, "\")"),
+      text = paste0("writeLines(\"bin\", ", deparse(marker), ")"),
       con = file.path(root, ".setup", "bin", "sub", "make-bin.R")
     )
     testthat::test_that(

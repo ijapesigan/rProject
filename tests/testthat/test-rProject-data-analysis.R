@@ -11,12 +11,12 @@ lapply(
     processed <- file.path(process, "processed.Rds")
     result <- file.path(analysis, "result.Rds")
     writeLines(
-      text = paste0("saveRDS(2, \"", processed, "\")"),
+      text = paste0("saveRDS(2, ", deparse(processed), ")"),
       con = file.path(process, "data-process-001.R")
     )
     writeLines(
       text = paste0(
-        "saveRDS(readRDS(\"", processed, "\") * 3, \"", result, "\")"
+        "saveRDS(readRDS(", deparse(processed), ") * 3, ", deparse(result), ")"
       ),
       con = file.path(analysis, "data-analysis-001.R")
     )

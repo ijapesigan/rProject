@@ -36,19 +36,15 @@ Manual <- function(path,
     unlink(
       x = man
     )
-    system(
-      paste(
-        shQuote(
-          file.path(
-            R.home("bin"),
-            "R"
-          )
-        ),
+    system2(
+      command = file.path(
+        R.home("bin"),
+        "R"
+      ),
+      args = c(
         "CMD",
         "Rd2pdf",
-        shQuote(
-          find.package(project)
-        )
+        .ShellQuote(x = find.package(project))
       )
     )
     file.copy(
