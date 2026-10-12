@@ -9,7 +9,7 @@ on top of the global instructions installed by AIGlobal()."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.36</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.39</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@ on top of the global instructions installed by <code><a href="AIGlobal.html">AIG
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">AI</span><span class="op">(</span><span class="va">path</span>, type <span class="op">=</span> <span class="cn">NULL</span>, sif <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">AI</span><span class="op">(</span><span class="va">path</span>, type <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -65,11 +65,6 @@ Project path.</p></dd>
 Project types: any of <code>"package"</code>, <code>"manuscript"</code>, <code>"simulation"</code>,
 <code>"library"</code>, and <code>"talk"</code>.</p></dd>
 
-
-<dt id="arg-sif">sif<a class="anchor" aria-label="anchor" href="#arg-sif"></a></dt>
-<dd><p>Character string.
-File name of the Apptainer image.</p></dd>
-
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -84,15 +79,17 @@ Created once and never overwritten.</p></li>
 <code>CLAUDE.md</code> (Claude Code), and <code>.github/copilot-instructions.md</code>
 (Copilot in the IDE): generated, and rewritten when they change.</p></li>
 </ul><p>All of them are private (gitignored and excluded from the package build).</p>
-<p>The project type and the image come from <code>type</code> and <code>sif</code>,
+<p>The project type comes from <code>type</code>,
 else from an <code>ai</code> list in <code>.setup/scripts/project.R</code>
-(e.g., <code>ai &lt;- list(type = c("manuscript", "simulation"), sif = "x.sif")</code>),
-else they are detected:
+(e.g., <code>ai &lt;- list(type = c("manuscript", "simulation"))</code>),
+else it is detected:
 <code>"simulation"</code> if <code>.sim</code> exists,
 <code>"manuscript"</code> if a <code>*-manuscript*.Rtex</code> exists
 or the name starts with <code>man</code>,
 <code>"library"</code> for <code>lib-*</code>, <code>"talk"</code> for <code>talks*</code>,
-otherwise <code>"package"</code>; the image defaults to <code>docs.sif</code>.</p>
+otherwise <code>"package"</code>.</p>
+<p>The user chooses the Apptainer image and runs <code>apptainer exec</code>;
+the instructions tell agents not to pick an image.</p>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>

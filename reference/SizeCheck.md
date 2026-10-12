@@ -4,8 +4,8 @@ Measures what goes to Overleaf: every file in the project except
 local-only folders (`.git`, `.verify`, `.library`, `.Rproj.user`,
 `detritus`) and build output that `make` writes and Overleaf never gets
 (`docs`, `pkgdown`, `quarto`, `.setup/build`, `.setup/latex/pdf`,
-`.setup/quarto/bib`), and the local-only data tiers
-(`.setup/data-external`, `.setup/data-cache`).
+`.setup/quarto/bib`), the local-only data tiers (`.setup/data-external`,
+`.setup/data-cache`), and images (`.sif`).
 
 ## Usage
 

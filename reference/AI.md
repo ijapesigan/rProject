@@ -7,7 +7,7 @@ of the global instructions installed by
 ## Usage
 
 ``` r
-AI(path, type = NULL, sif = NULL)
+AI(path, type = NULL)
 ```
 
 ## Arguments
@@ -20,10 +20,6 @@ AI(path, type = NULL, sif = NULL)
 
   Character vector. Project types: any of `"package"`, `"manuscript"`,
   `"simulation"`, `"library"`, and `"talk"`.
-
-- sif:
-
-  Character string. File name of the Apptainer image.
 
 ## Value
 
@@ -41,13 +37,15 @@ Returns the paths of the files that were written, invisibly.
 All of them are private (gitignored and excluded from the package
 build).
 
-The project type and the image come from `type` and `sif`, else from an
-`ai` list in `.setup/scripts/project.R` (e.g.,
-`ai <- list(type = c("manuscript", "simulation"), sif = "x.sif")`), else
-they are detected: `"simulation"` if `.sim` exists, `"manuscript"` if a
+The project type comes from `type`, else from an `ai` list in
+`.setup/scripts/project.R` (e.g.,
+`ai <- list(type = c("manuscript", "simulation"))`), else it is
+detected: `"simulation"` if `.sim` exists, `"manuscript"` if a
 `*-manuscript*.Rtex` exists or the name starts with `man`, `"library"`
-for `lib-*`, `"talk"` for `talks*`, otherwise `"package"`; the image
-defaults to `docs.sif`.
+for `lib-*`, `"talk"` for `talks*`, otherwise `"package"`.
+
+The user chooses the Apptainer image and runs `apptainer exec`; the
+instructions tell agents not to pick an image.
 
 ## Author
 

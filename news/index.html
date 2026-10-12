@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.36</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.39</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,37 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.39" id="rproject-0039">rProject 0.0.39<a class="anchor" aria-label="anchor" href="#rproject-0039"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-39">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-39"></a></h3>
+<ul><li>Unit tests for every exported function. Slow tests (installers, network, full LaTeX and Quarto builds) run only with <code>RPROJECT_SLOW_TESTS=true</code>. Functions that change the machine (<code><a href="../reference/TinyTex.html">TinyTex()</a></code>, <code><a href="../reference/CleanTinyTex.html">CleanTinyTex()</a></code>, <code><a href="../reference/PkgDevel.html">PkgDevel()</a></code>, <code><a href="../reference/PkgDevelGitHub.html">PkgDevelGitHub()</a></code>) are checked for their interface only. <code><a href="../reference/CleanPkg.html">CleanPkg()</a></code> is tested in a separate R process whose library paths are temporary.</li>
+<li>
+<code><a href="../reference/CleanProj.html">CleanProj()</a></code> keeps <code>.sim</code> and <code>.sif</code> unless <code>sim = TRUE</code> or <code>sif = TRUE</code>, as documented. It used to delete them.</li>
+<li>The package ships <code>inst/latexmk/latexmkrc</code> again (Overleaf’s latexmk configuration), so <code><a href="../reference/LatexCompile.html">LatexCompile()</a></code> and <code><a href="../reference/LatexTikzCompile.html">LatexTikzCompile()</a></code> use the same latexmk rules on GitHub Actions and locally as on Overleaf. <code>.gitignore</code> now ignores only the root <code>latexmkrc</code>, and <code><a href="../reference/Verify.html">Verify()</a></code> compares <code>inst/latexmk/latexmkrc</code>.</li>
+<li>The <code><a href="../reference/Clean.html">Clean()</a></code> documentation says that <code>push = TRUE</code> does not delete <code>*secrets*</code> files in hidden folders such as <code>.setup</code>.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.38" id="rproject-0038">rProject 0.0.38<a class="anchor" aria-label="anchor" href="#rproject-0038"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-38">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-38"></a></h3>
+<ul><li>The user chooses the Apptainer image and runs <code>apptainer exec &lt;image&gt;</code>. <code><a href="../reference/Log.html">Log()</a></code> records the image that actually ran (its name, build date, and base digest, from the container’s labels) under “Make commands run”.</li>
+<li>The project instructions (<code><a href="../reference/AI.html">AI()</a></code>) tell agents not to pick an image; <code>.setup/ai/project.md</code> has a line for the image a project usually uses.</li>
+<li>
+<code><a href="../reference/AI.html">AI()</a></code> no longer takes <code>sif</code>.</li>
+<li>
+<code><a href="../reference/SizeCheck.html">SizeCheck()</a></code> and <code><a href="../reference/Verify.html">Verify()</a></code> skip <code>.sif/</code>.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.37" id="rproject-0037">rProject 0.0.37<a class="anchor" aria-label="anchor" href="#rproject-0037"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-37">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-37"></a></h3>
+<ul><li>Added <code>inst/shell/install.sh</code> to install or update the machine tools into <code>~/.local</code> on Linux (Apptainer, Claude Code, Codex, Copilot, Gemini, herdr, gh): <code>bash install.sh machine</code>, or name the tools; <code>--list</code> shows versions. Each tool keeps its previous version if the new one fails.</li>
+<li>Added <code>inst/shell/install-{apptainer,claude,codex,copilot,gemini,herdr}.sh</code> and <code>install-common.sh</code>. <code>install-gh.sh</code> now installs the prebuilt release, checked against its SHA-256 checksums. <code>install-gemini.sh</code> links <code>node</code> into <code>~/.local/bin</code>, so Gemini works without nvm being loaded.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.36" id="rproject-0036">rProject 0.0.36<a class="anchor" aria-label="anchor" href="#rproject-0036"></a></h2>
 <div class="section level3">

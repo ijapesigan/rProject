@@ -1,5 +1,72 @@
 # Changelog
 
+## rProject 0.0.39
+
+### Patch
+
+- Unit tests for every exported function. Slow tests (installers,
+  network, full LaTeX and Quarto builds) run only with
+  `RPROJECT_SLOW_TESTS=true`. Functions that change the machine
+  ([`TinyTex()`](https://github.com/ijapesigan/rProject/reference/TinyTex.md),
+  [`CleanTinyTex()`](https://github.com/ijapesigan/rProject/reference/CleanTinyTex.md),
+  [`PkgDevel()`](https://github.com/ijapesigan/rProject/reference/PkgDevel.md),
+  [`PkgDevelGitHub()`](https://github.com/ijapesigan/rProject/reference/PkgDevelGitHub.md))
+  are checked for their interface only.
+  [`CleanPkg()`](https://github.com/ijapesigan/rProject/reference/CleanPkg.md)
+  is tested in a separate R process whose library paths are temporary.
+- [`CleanProj()`](https://github.com/ijapesigan/rProject/reference/CleanProj.md)
+  keeps `.sim` and `.sif` unless `sim = TRUE` or `sif = TRUE`, as
+  documented. It used to delete them.
+- The package ships `inst/latexmk/latexmkrc` again (Overleaf’s latexmk
+  configuration), so
+  [`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
+  and
+  [`LatexTikzCompile()`](https://github.com/ijapesigan/rProject/reference/LatexTikzCompile.md)
+  use the same latexmk rules on GitHub Actions and locally as on
+  Overleaf. `.gitignore` now ignores only the root `latexmkrc`, and
+  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  compares `inst/latexmk/latexmkrc`.
+- The
+  [`Clean()`](https://github.com/ijapesigan/rProject/reference/Clean.md)
+  documentation says that `push = TRUE` does not delete `*secrets*`
+  files in hidden folders such as `.setup`.
+
+## rProject 0.0.38
+
+### Patch
+
+- The user chooses the Apptainer image and runs
+  `apptainer exec <image>`.
+  [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md)
+  records the image that actually ran (its name, build date, and base
+  digest, from the container’s labels) under “Make commands run”.
+- The project instructions
+  ([`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md))
+  tell agents not to pick an image; `.setup/ai/project.md` has a line
+  for the image a project usually uses.
+- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md) no
+  longer takes `sif`.
+- [`SizeCheck()`](https://github.com/ijapesigan/rProject/reference/SizeCheck.md)
+  and
+  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  skip `.sif/`.
+
+## rProject 0.0.37
+
+### Patch
+
+- Added `inst/shell/install.sh` to install or update the machine tools
+  into `~/.local` on Linux (Apptainer, Claude Code, Codex, Copilot,
+  Gemini, herdr, gh): `bash install.sh machine`, or name the tools;
+  `--list` shows versions. Each tool keeps its previous version if the
+  new one fails.
+- Added
+  `inst/shell/install-{apptainer,claude,codex,copilot,gemini,herdr}.sh`
+  and `install-common.sh`. `install-gh.sh` now installs the prebuilt
+  release, checked against its SHA-256 checksums. `install-gemini.sh`
+  links `node` into `~/.local/bin`, so Gemini works without nvm being
+  loaded.
+
 ## rProject 0.0.36
 
 ### Patch
