@@ -5,6 +5,7 @@
     c(
       "^\\.git/",
       "^\\.verify/",
+      "^\\.sif/",
       "^\\.setup/data-external/",
       "^\\.setup/data-cache/",
       "^\\.library/",

@@ -12,9 +12,11 @@ maintains (aims, data, notation, co-authors, open issues).
 - Name: `{{project}}`
 - Type: {{types}}
 - Private repository: `jeksterslab-psu/{{project}}` (Overleaf pushes here)
-- Image: `{{sif}}`. Use `.sif/{{sif}}` if it exists, otherwise
-  `~/work/sif/{{sif}}`. Run everything as
+- Image: **the user chooses it** and runs
   `apptainer exec <image> make <target>`; R is not installed on the host.
+  Do not pick an image. When a command needs one, ask, or give the command
+  with `<image>` for the user to fill in. `.setup/ai/project.md` may note the
+  image the project usually uses.
 
 ## Folder map
 

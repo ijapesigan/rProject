@@ -1,3 +1,19 @@
+# rProject 0.0.38
+
+## Patch
+
+* The user chooses the Apptainer image and runs `apptainer exec <image>`. `Log()` records the image that actually ran (its name, build date, and base digest, from the container's labels) under "Make commands run".
+* The project instructions (`AI()`) tell agents not to pick an image; `.setup/ai/project.md` has a line for the image a project usually uses.
+* `AI()` no longer takes `sif`.
+* `SizeCheck()` and `Verify()` skip `.sif/`.
+
+# rProject 0.0.37
+
+## Patch
+
+* Added `inst/shell/install.sh` to install or update the machine tools into `~/.local` on Linux (Apptainer, Claude Code, Codex, Copilot, Gemini, herdr, gh): `bash install.sh machine`, or name the tools; `--list` shows versions. Each tool keeps its previous version if the new one fails.
+* Added `inst/shell/install-{apptainer,claude,codex,copilot,gemini,herdr}.sh` and `install-common.sh`. `install-gh.sh` now installs the prebuilt release, checked against its SHA-256 checksums. `install-gemini.sh` links `node` into `~/.local/bin`, so Gemini works without nvm being loaded.
+
 # rProject 0.0.36
 
 ## Patch

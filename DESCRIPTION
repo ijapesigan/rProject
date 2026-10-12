@@ -1,6 +1,6 @@
 Package: rProject
 Title: Setup R Project
-Version: 0.0.36
+Version: 0.0.38
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",

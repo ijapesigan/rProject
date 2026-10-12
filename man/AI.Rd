@@ -4,7 +4,7 @@
 \alias{AI}
 \title{Write the Project's AI Instructions}
 \usage{
-AI(path, type = NULL, sif = NULL)
+AI(path, type = NULL)
 }
 \arguments{
 \item{path}{Character string.
@@ -13,9 +13,6 @@ Project path.}
 \item{type}{Character vector.
 Project types: any of \code{"package"}, \code{"manuscript"}, \code{"simulation"},
 \code{"library"}, and \code{"talk"}.}
-
-\item{sif}{Character string.
-File name of the Apptainer image.}
 }
 \value{
 Returns the paths of the files that were written, invisibly.
@@ -35,15 +32,18 @@ Created once and never overwritten.
 
 All of them are private (gitignored and excluded from the package build).
 
-The project type and the image come from \code{type} and \code{sif},
+The project type comes from \code{type},
 else from an \code{ai} list in \code{.setup/scripts/project.R}
-(e.g., \code{ai <- list(type = c("manuscript", "simulation"), sif = "x.sif")}),
-else they are detected:
+(e.g., \code{ai <- list(type = c("manuscript", "simulation"))}),
+else it is detected:
 \code{"simulation"} if \code{.sim} exists,
 \code{"manuscript"} if a \verb{*-manuscript*.Rtex} exists
 or the name starts with \code{man},
 \code{"library"} for \verb{lib-*}, \code{"talk"} for \verb{talks*},
-otherwise \code{"package"}; the image defaults to \code{docs.sif}.
+otherwise \code{"package"}.
+
+The user chooses the Apptainer image and runs \verb{apptainer exec};
+the instructions tell agents not to pick an image.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

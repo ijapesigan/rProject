@@ -6,7 +6,8 @@
 #' and build output that `make` writes and Overleaf never gets
 #' (`docs`, `pkgdown`, `quarto`, `.setup/build`, `.setup/latex/pdf`,
 #' `.setup/quarto/bib`),
-#' and the local-only data tiers (`.setup/data-external`, `.setup/data-cache`).
+#' the local-only data tiers (`.setup/data-external`, `.setup/data-cache`),
+#' and images (`.sif`).
 #'
 #' - **Editable text** (fails): non-binary files in total
 #'   above `editable` MB. Overleaf's GitHub sync stops above 7 MB.
@@ -71,7 +72,8 @@ SizeCheck <- function(path,
         "\\.setup/latex/pdf",
         "\\.setup/quarto/bib",
         "\\.setup/data-external",
-        "\\.setup/data-cache"
+        "\\.setup/data-cache",
+        "\\.sif"
       ),
       collapse = "|"
     ),
