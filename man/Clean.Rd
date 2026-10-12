@@ -11,7 +11,9 @@ Clean(path, push = FALSE)
 Project path.}
 
 \item{push}{Logical.
-If \code{push = TRUE} clean in preparation for git push.}
+If \code{push = TRUE} clean in preparation for git push:
+generated files are kept, and files matching \verb{*secrets*} are deleted,
+except in hidden folders such as \code{.setup}.}
 }
 \description{
 Delete all output files that are generated on automated build.

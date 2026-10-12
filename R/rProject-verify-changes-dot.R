@@ -18,7 +18,7 @@
       "^quarto/",
       "^\\.setup/build/",
       "^\\.setup/quarto/bib/",
-      "(^|/)latexmkrc$",
+      "^latexmkrc$",
       "^man/",
       "^src/",
       "^vignettes/",

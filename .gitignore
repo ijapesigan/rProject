@@ -80,7 +80,7 @@ README.html
 README_files/
 
 # latex
-latexmkrc
+/latexmkrc
 
 # Rcpp
 src/*.o

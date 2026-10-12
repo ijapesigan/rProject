@@ -6,7 +6,9 @@
 #'
 #' @inheritParams LibPaths
 #' @param push Logical.
-#'   If `push = TRUE` clean in preparation for git push.
+#'   If `push = TRUE` clean in preparation for git push:
+#'   generated files are kept, and files matching `*secrets*` are deleted,
+#'   except in hidden folders such as `.setup`.
 #' @export
 Clean <- function(path,
                   push = FALSE) {

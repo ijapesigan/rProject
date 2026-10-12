@@ -1,3 +1,12 @@
+# rProject 0.0.39
+
+## Patch
+
+* Unit tests for every exported function. Slow tests (installers, network, full LaTeX and Quarto builds) run only with `RPROJECT_SLOW_TESTS=true`. Functions that change the machine (`TinyTex()`, `CleanTinyTex()`, `PkgDevel()`, `PkgDevelGitHub()`) are checked for their interface only. `CleanPkg()` is tested in a separate R process whose library paths are temporary.
+* `CleanProj()` keeps `.sim` and `.sif` unless `sim = TRUE` or `sif = TRUE`, as documented. It used to delete them.
+* The package ships `inst/latexmk/latexmkrc` again (Overleaf's latexmk configuration), so `LatexCompile()` and `LatexTikzCompile()` use the same latexmk rules on GitHub Actions and locally as on Overleaf. `.gitignore` now ignores only the root `latexmkrc`, and `Verify()` compares `inst/latexmk/latexmkrc`.
+* The `Clean()` documentation says that `push = TRUE` does not delete `*secrets*` files in hidden folders such as `.setup`.
+
 # rProject 0.0.38
 
 ## Patch

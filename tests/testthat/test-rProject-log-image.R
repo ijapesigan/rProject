@@ -8,7 +8,10 @@ lapply(
       text = c(
         "{",
         "  \"org.label-schema.build-date\": \"Sunday_11_October_2026\",",
-        "  \"org.opencontainers.image.base.digest\": \"sha256:64b60b5393308d35e1\"",
+        paste0(
+          "  \"org.opencontainers.image.base.digest\": ",
+          "\"sha256:64b60b5393308d35e1\""
+        ),
         "}"
       ),
       con = labels
@@ -48,7 +51,10 @@ lapply(
       }
     )
     Sys.unsetenv(c("APPTAINER_NAME", "SINGULARITY_NAME"))
-    do.call(what = Sys.setenv, args = as.list(saved[nzchar(saved)]))
+    # restore only what was set (Sys.setenv() with no arguments is an error)
+    if (any(nzchar(saved))) {
+      do.call(what = Sys.setenv, args = as.list(saved[nzchar(saved)]))
+    }
     unlink(labels)
   },
   text = "test-rProject-log-image"
