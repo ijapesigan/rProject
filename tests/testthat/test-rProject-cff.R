@@ -24,14 +24,21 @@ lapply(
           ),
           con = file.path(root, "DESCRIPTION")
         )
-        # make cff runs from the project folder; cffr needs that
-        wd <- setwd(root)
+        # run from another folder: CFF() must not depend on the working
+        # directory
+        elsewhere <- tempfile(pattern = "elsewhere")
+        dir.create(elsewhere)
+        wd <- setwd(elsewhere)
         on.exit(setwd(wd), add = TRUE)
         suppressMessages(CFF(path = root))
         cff <- file.path(root, "CITATION.cff")
         testthat::expect_true(file.exists(cff))
         testthat::expect_true(any(grepl("testProject", readLines(cff))))
-        unlink(dirname(root), recursive = TRUE)
+        testthat::expect_false(
+          file.exists(file.path(elsewhere, "CITATION.cff"))
+        )
+        setwd(wd)
+        unlink(c(dirname(root), elsewhere), recursive = TRUE)
       }
     )
     testthat::test_that(

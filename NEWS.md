@@ -1,3 +1,9 @@
+# rProject 0.0.41
+
+## Patch
+
+* `CFF()` works from any working directory: it passes cffr the project's `DESCRIPTION` file and writes `CITATION.cff` into the project folder.
+
 # rProject 0.0.40
 
 ## Patch

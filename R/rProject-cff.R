@@ -13,8 +13,17 @@ CFF <- function(path) {
       )
     )
   ) {
+    # cffr reads the DESCRIPTION file, not the folder, and writes outfile
+    # relative to the working directory; both are given in full
     cffr::cff_write(
-      x = path,
+      x = file.path(
+        path,
+        "DESCRIPTION"
+      ),
+      outfile = file.path(
+        path,
+        "CITATION.cff"
+      ),
       gh_keywords = TRUE,
       dependencies = FALSE,
       validate = TRUE,
