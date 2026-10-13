@@ -1,5 +1,8 @@
 # Library Tags
 
+    ## Ignoring entry 'Pesigan-2022'  (line9481) because:
+    ##  A bibentry of bibtype 'PhdThesis' has to specify the fields: school, year
+
 |  | key | annotation | keywords |
 |:---|:---|:---|:---|
 | Wright-1918 | Wright-1918 | NULL | NULL |
