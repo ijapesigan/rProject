@@ -12,7 +12,7 @@ Project path.}
 
 \item{type}{Character vector.
 Project types: any of \code{"package"}, \code{"manuscript"}, \code{"simulation"},
-\code{"library"}, and \code{"talk"}.}
+\code{"library"}, \code{"talk"}, and \code{"container"}.}
 }
 \value{
 Returns the paths of the files that were written, invisibly.
@@ -40,7 +40,12 @@ else it is detected:
 \code{"manuscript"} if a \verb{*-manuscript*.Rtex} exists
 or the name starts with \code{man},
 \code{"library"} for \verb{lib-*}, \code{"talk"} for \verb{talks*},
+\code{"container"} for \verb{docker-*},
 otherwise \code{"package"}.
+
+Where the project lives (the private GitHub repository, the Overleaf
+project, and the public GitHub repository) comes from \verb{.setup/repo/},
+which \code{\link[=Project]{Project()}} creates when it is missing.
 
 The user chooses the Apptainer image and runs \verb{apptainer exec};
 the instructions tell agents not to pick an image.

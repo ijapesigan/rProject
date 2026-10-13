@@ -19,8 +19,13 @@
       recursive = TRUE
     )
   )
+  # skip the data stores, AI files, and logs; keep the data-analysis and
+  # data-process scripts
   scripts <- scripts[
-    !grepl(pattern = "/\\.setup/(data-|ai/|logs/)", x = scripts)
+    !grepl(
+      pattern = "/\\.setup/(data-(raw|private|external|cache)|ai|logs)/",
+      x = scripts
+    )
   ]
   text <- vapply(
     X = scripts,

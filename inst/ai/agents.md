@@ -11,7 +11,11 @@ maintains (aims, data, notation, co-authors, open issues).
 
 - Name: `{{project}}`
 - Type: {{types}}
-- Private repository: `jeksterslab-psu/{{project}}` (Overleaf pushes here)
+- Private repository: {{private_github}} (Overleaf pushes here)
+- Overleaf project: {{private_overleaf}}
+- Public repository: {{public_github}} (`make auto` pushes here)
+- These come from `.setup/repo/` (private). O2G checks the private
+  repository; PUB checks the public one.
 - Image: **the user chooses it** and runs
   `apptainer exec <image> make <target>`; R is not installed on the host.
   Do not pick an image. When a command needs one, ask, or give the command
@@ -29,6 +33,7 @@ maintains (aims, data, notation, co-authors, open issues).
 | `.setup/data-private/` | restricted data: never public |
 | `.setup/ai/` | specs, the plan, `project.md` (private) |
 | `.setup/logs/` | one log per Overleaf push, and `index.md` (private) |
+| `.setup/repo/` | where the project lives (private) |
 {{folders}}
 
 ## Make targets

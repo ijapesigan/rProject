@@ -18,12 +18,22 @@ if [[ -z "${project}" ]]; then
   exit 1
 fi
 
+# the private repository: .setup/repo/private-github.md (owner/repo), else
+# jeksterslab-psu/<project>
+repo="jeksterslab-psu/${project}"
+if [[ -f .setup/repo/private-github.md ]]; then
+  recorded="$(tr -d '[:space:]' < .setup/repo/private-github.md)"
+  if [[ "${recorded}" =~ ^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$ ]]; then
+    repo="${recorded}"
+  fi
+fi
+
 private="${VERIFY_DIR:-${path}/.verify}"
 if [[ -d "${private}/.git" ]]; then
   git -C "${private}" fetch -q origin
   git -C "${private}" reset -q --hard origin/HEAD
 else
-  git clone -q "git@github.com:jeksterslab-psu/${project}.git" "${private}"
+  git clone -q "git@github.com:${repo}.git" "${private}"
 fi
 
 echo ".verify is at $(git -C "${private}" log --oneline -1)"

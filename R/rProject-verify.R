@@ -17,8 +17,13 @@
 #'   does not end with `Log: .setup/logs/<log>`.
 #' - **Secrets:** [SecretScan()] finds a token in the private repository.
 #' - **Public export:** a file that `make auto` would publish is private
-#'   (e.g., `.setup/ai/`, `.setup/logs/`, `AGENTS.md`)
+#'   (e.g., `.setup/ai/`, `.setup/logs/`, `.setup/repo/`, `AGENTS.md`)
 #'   or larger than 50 MB.
+#' - **Repo info:** `.setup/repo/private-overleaf.md` is not an Overleaf
+#'   project URL (for example, a share link, which grants access).
+#'   Warning only: a file in `.setup/repo/` is missing,
+#'   `private-github.md` differs from the `.verify` remote,
+#'   or `public-github.md` differs from the repository in `clone.sh`.
 #'
 #' Generated files (e.g., `NAMESPACE`, `man/`),
 #' local folders (e.g., `.library`),
@@ -37,10 +42,13 @@
 #'   By default `.verify` in the project.
 #' @param log Character string.
 #'   File name of the change-set log in `.setup/logs`.
-#'   If `NULL`, the newest log with a pending push in `.setup/logs/index.md`.
+#'   If `NULL`, the newest log with a pending push in `.setup/logs/index.md`,
+#'   else the log named in the pushed commit message
+#'   (`Log: .setup/logs/<log>`), as for a fix-up push.
 #' @param record Logical.
 #'   If `TRUE`, write the commit and the result
-#'   in the log's "Pushes" table and in `.setup/logs/index.md`.
+#'   in the log's "Pushes" table and in `.setup/logs/index.md`,
+#'   filling the pending row, or adding a row when there is none.
 #' @param error Logical.
 #'   If `TRUE`, stop with an error when a check fails.
 #' @return Returns a data frame of checks
@@ -53,6 +61,21 @@ Verify <- function(path,
                    error = TRUE) {
   if (is.null(log)) {
     log <- .VerifyLogPending(path = path)
+  }
+  if (is.na(log)) {
+    # a fix-up push: no pending row, but the commit message names the log
+    log <- .VerifyLogMessage(private = private)
+  }
+  if (is.na(log)) {
+    stop(
+      paste0(
+        "\n\nNo pending push in ",
+        file.path(path, ".setup", "logs", "index.md"),
+        ", and the last commit message has no",
+        " \"Log: .setup/logs/<log>\" line. Pass `log`.\n\n"
+      ),
+      call. = FALSE
+    )
   }
   log_file <- file.path(
     path,
@@ -124,6 +147,11 @@ Verify <- function(path,
   )
   # public export
   public <- .VerifyPublic(private = private)
+  # where the project lives
+  repo_info <- .VerifyRepoInfo(
+    path = path,
+    private = private
+  )
   checks <- data.frame(
     check = c(
       "New commit",
@@ -132,7 +160,8 @@ Verify <- function(path,
       "Unlisted changes",
       "Commit message",
       "Secrets",
-      "Public export"
+      "Public export",
+      "Repo info"
     ),
     status = c(
       ifelse(recorded, "fail", "pass"),
@@ -141,7 +170,8 @@ Verify <- function(path,
       ifelse(length(unlisted) > 0L, "warn", "pass"),
       ifelse(message_ok, "pass", "warn"),
       ifelse(nrow(secrets) > 0L, "fail", "pass"),
-      ifelse(length(public) > 0L, "fail", "pass")
+      ifelse(length(public) > 0L, "fail", "pass"),
+      repo_info[["status"]]
     ),
     detail = c(
       ifelse(
@@ -182,7 +212,8 @@ Verify <- function(path,
         length(public) > 0L,
         paste(public, collapse = "; "),
         "no private or oversized files"
-      )
+      ),
+      repo_info[["detail"]]
     ),
     stringsAsFactors = FALSE
   )
@@ -234,7 +265,8 @@ Verify <- function(path,
       path = path,
       log = log,
       sha = sha,
-      result = result
+      result = result,
+      summary = c(message_body, "")[1]
     )
   }
   if (any(failed) && error) {

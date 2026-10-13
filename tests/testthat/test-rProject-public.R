@@ -59,6 +59,37 @@ lapply(
       }
     )
     unlink(root, recursive = TRUE)
+    # a folder that is not a git repository (e.g., downloaded from Overleaf)
+    root <- tempfile(pattern = "public-nogit")
+    write(root, ".gitignore", ".setup/ai/")
+    write(root, "R/foo.R", "Foo <- function() 1")
+    write(root, ".setup/ai/plan.md", "private plan")
+    write(root, ".setup/repo/.gitignore", c("*", "*/"))
+    write(root, ".setup/repo/private-github.md", "owner/repo")
+    testthat::test_that(
+      paste(text, "applies .gitignore outside a git repository"),
+      {
+        testthat::skip_on_os("windows")
+        exported <- suppressMessages(Public(path = root))
+        testthat::expect_true("R/foo.R" %in% exported)
+        testthat::expect_false(".setup/ai/plan.md" %in% exported)
+        testthat::expect_false(".setup/repo/private-github.md" %in% exported)
+        testthat::expect_false(dir.exists(file.path(root, ".git")))
+      }
+    )
+    testthat::test_that(
+      paste(text, "stops on .setup/repo in the export"),
+      {
+        testthat::skip_on_os("windows")
+        unlink(file.path(root, ".setup", "repo", ".gitignore"))
+        testthat::expect_error(
+          suppressMessages(Public(path = root)),
+          ".setup/repo/private-github.md (private)",
+          fixed = TRUE
+        )
+      }
+    )
+    unlink(root, recursive = TRUE)
   },
   text = "test-rProject-public"
 )

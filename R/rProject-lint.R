@@ -25,34 +25,34 @@ Lint <- function(path) {
       )
     )
   )
-  exclusions <- list(
-    "renv",
-    "packrat",
-    ".library",
-    file.path("R", "RcppExports.R")
-  )
-  keep <- vapply(
-    X = exclusions,
-    FUN = function(x) {
-      file.exists(x)
-    },
-    FUN.VALUE = logical(1)
-  )
-  exclusions <- exclusions[keep]
-  if (length(exclusions) == 0L) {
-    try(
-      lintr::lint_dir(
-        path = path,
-        linters = linters
+  # the files to skip, as full paths: lintr (3.4.0) fails on an excluded
+  # folder that holds no R files
+  exclusions <- c(
+    unlist(
+      lapply(
+        X = file.path(path, c("renv", "packrat", ".library", ".verify")),
+        FUN = list.files,
+        pattern = "\\.(r|rmd|qmd|rnw|rhtml|rrst|rtex|rtxt)$",
+        ignore.case = TRUE,
+        all.files = TRUE,
+        recursive = TRUE,
+        full.names = TRUE
       )
+    ),
+    file.path(path, "R", "RcppExports.R")
+  )
+  exclusions <- exclusions[file.exists(exclusions)]
+  # no try(): an error in lintr stops make lint
+  if (length(exclusions) == 0L) {
+    lintr::lint_dir(
+      path = path,
+      linters = linters
     )
   } else {
-    try(
-      lintr::lint_dir(
-        path = path,
-        linters = linters,
-        exclusions = exclusions
-      )
+    lintr::lint_dir(
+      path = path,
+      linters = linters,
+      exclusions = exclusions
     )
   }
 }

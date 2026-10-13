@@ -167,76 +167,70 @@ if (!("pak" %in% pkg_installed)) {
     quiet = TRUE
   )
 }
-if (project == "rProject") {
-  if (!("rProject" %in% pkg_installed)) {
-    pak::pkg_install(
-      pkg = "ijapesigan/rProject",
-      lib = dot_library_folder
-    )
-  }
-} else {
-  if (is.null(rproject_ver)) {
-    # pak does not upgrade an installed GitHub package,
-    # so install the current commit when the project's copy is older
-    rproject_head <- suppressWarnings(
-      system2(
-        command = "git",
-        args = c(
-          "ls-remote",
-          "https://github.com/ijapesigan/rProject.git",
-          "HEAD"
-        ),
-        stdout = TRUE,
-        stderr = FALSE,
-        env = c(
-          "GIT_CONFIG_GLOBAL=/dev/null",
-          "GIT_TERMINAL_PROMPT=0"
-        )
+# every project, rProject included: install rProject when it is missing,
+# and upgrade it when the installed copy is older than the GitHub HEAD
+# (or than rproject_ver)
+if (is.null(rproject_ver)) {
+  # pak does not upgrade an installed GitHub package,
+  # so install the current commit when the project's copy is older
+  rproject_head <- suppressWarnings(
+    system2(
+      command = "git",
+      args = c(
+        "ls-remote",
+        "https://github.com/ijapesigan/rProject.git",
+        "HEAD"
+      ),
+      stdout = TRUE,
+      stderr = FALSE,
+      env = c(
+        "GIT_CONFIG_GLOBAL=/dev/null",
+        "GIT_TERMINAL_PROMPT=0"
       )
     )
-    rproject_head <- substr(
-      x = c(rproject_head, NA_character_)[1],
-      start = 1,
-      stop = 40
+  )
+  rproject_head <- substr(
+    x = c(rproject_head, NA_character_)[1],
+    start = 1,
+    stop = 40
+  )
+  rproject_sha <- suppressWarnings(
+    utils::packageDescription(
+      pkg = "rProject",
+      lib.loc = dot_library_folder,
+      fields = "RemoteSha"
     )
-    rproject_sha <- suppressWarnings(
-      utils::packageDescription(
-        pkg = "rProject",
-        lib.loc = dot_library_folder,
-        fields = "RemoteSha"
-      )
-    )
-    if (is.na(rproject_head)) {
-      if (is.na(rproject_sha)) {
-        pak::pkg_install(
-          pkg = "ijapesigan/rProject",
-          lib = dot_library_folder
-        )
-      } else {
-        message(
-          "\n\nCould not reach GitHub; keeping the installed rProject.\n\n"
-        )
-      }
-    } else if (!identical(rproject_sha, rproject_head)) {
+  )
+  if (is.na(rproject_head)) {
+    if (is.na(rproject_sha)) {
       pak::pkg_install(
-        pkg = paste0(
-          "ijapesigan/rProject",
-          "@",
-          rproject_head
-        ),
+        pkg = "ijapesigan/rProject",
         lib = dot_library_folder
       )
+    } else {
+      message(
+        "\n\nCould not reach GitHub; keeping the installed rProject.\n\n"
+      )
     }
-  } else {
+  } else if (!identical(rproject_sha, rproject_head)) {
     pak::pkg_install(
       pkg = paste0(
         "ijapesigan/rProject",
         "@",
-        rproject_ver
+        rproject_head
       ),
       lib = dot_library_folder
     )
   }
+} else {
+  pak::pkg_install(
+    pkg = paste0(
+      "ijapesigan/rProject",
+      "@",
+      rproject_ver
+    ),
+    lib = dot_library_folder
+  )
 }
 rProject::Project(
   path = path

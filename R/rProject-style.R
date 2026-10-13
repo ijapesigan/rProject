@@ -20,6 +20,7 @@ Style <- function(path) {
     path = path,
     exclude_dirs = c(
       ".library",
+      ".verify",
       file.path(
         ".setup",
         "notes"

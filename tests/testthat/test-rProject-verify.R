@@ -69,10 +69,21 @@ lapply(
       for (dir in c(path, private)) {
         write(dir, "R/foo.R", "Foo <- function() 1")
         write(dir, "new.R", "x <- 1")
-        write(dir, ".gitignore", c(".setup/logs/", ".setup/ai/"))
+        write(
+          dir,
+          ".gitignore",
+          c(".setup/logs/", ".setup/ai/", ".setup/repo/")
+        )
         write(dir, file.path(".setup", "logs", log), log_text)
         write(dir, file.path(".setup", "logs", "index.md"), index_text)
         write(dir, file.path(".setup", "ai", "plan.md"), "private plan")
+        write(dir, ".setup/repo/private-github.md", "owner/proj")
+        write(
+          dir,
+          ".setup/repo/private-overleaf.md",
+          "https://www.overleaf.com/project/0123456789abcdef01234567"
+        )
+        write(dir, ".setup/repo/public-github.md", "none")
       }
       git(private, "init", "-q")
       git(private, "add", "--all")
@@ -244,7 +255,82 @@ lapply(
       }
     )
     unlink(x$root, recursive = TRUE)
-    # 5. a section for another project is ignored
+    # 5. a fix-up push: no pending row, the commit message names the log
+    x <- fixture()
+    suppressMessages(Verify(path = x$path, private = x$private, record = TRUE))
+    for (dir in c(x$path, x$private)) {
+      write(dir, "R/foo.R", "Foo <- function() 3")
+    }
+    git(x$private, "add", "--all")
+    git(
+      x$private,
+      "commit",
+      "-q",
+      "-m",
+      shQuote(paste0("Fix the function\n\nLog: .setup/logs/", log))
+    )
+    sha <- git(x$private, "rev-parse", "--short", "HEAD")
+    checks <- suppressMessages(
+      Verify(path = x$path, private = x$private, record = TRUE, error = FALSE)
+    )
+    testthat::test_that(
+      paste(text, "records a fix-up push without a pending row"),
+      {
+        testthat::expect_equal(status(checks, "New commit"), "pass")
+        log_lines <- readLines(file.path(x$path, ".setup", "logs", log))
+        index_lines <- readLines(
+          file.path(x$path, ".setup", "logs", "index.md")
+        )
+        rows <- log_lines[grepl("^\\| [0-9a-f]{7}", log_lines)]
+        testthat::expect_length(rows, 2L)
+        testthat::expect_match(rows[2], sha, fixed = TRUE)
+        testthat::expect_match(index_lines[3], sha, fixed = TRUE)
+        testthat::expect_match(index_lines[3], "Fix the function", fixed = TRUE)
+      }
+    )
+    unlink(x$root, recursive = TRUE)
+    # 6. repo info: a share link fails; a missing file warns
+    x <- fixture()
+    for (dir in c(x$path, x$private)) {
+      write(
+        dir,
+        ".setup/repo/private-overleaf.md",
+        "https://www.overleaf.com/read/abcdefghijkl"
+      )
+    }
+    checks <- suppressMessages(
+      Verify(path = x$path, private = x$private, error = FALSE)
+    )
+    testthat::test_that(
+      paste(text, "fails on an Overleaf share link"),
+      {
+        testthat::expect_equal(status(checks, "Repo info"), "fail")
+      }
+    )
+    unlink(file.path(x$path, ".setup/repo/public-github.md"))
+    unlink(file.path(x$private, ".setup/repo/public-github.md"))
+    for (dir in c(x$path, x$private)) {
+      write(
+        dir,
+        ".setup/repo/private-overleaf.md",
+        "https://www.overleaf.com/project/0123456789abcdef01234567"
+      )
+    }
+    checks <- suppressMessages(
+      Verify(path = x$path, private = x$private, error = FALSE)
+    )
+    testthat::test_that(
+      paste(text, "warns on a missing repo file"),
+      {
+        testthat::expect_equal(status(checks, "Repo info"), "warn")
+        testthat::expect_match(
+          checks$detail[checks$check == "Repo info"],
+          "public-github.md"
+        )
+      }
+    )
+    unlink(x$root, recursive = TRUE)
+    # 7. a section for another project is ignored
     testthat::test_that(
       paste(text, "reads only this project's sections"),
       {
