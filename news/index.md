@@ -1,5 +1,16 @@
 # Changelog
 
+## rProject 0.0.45
+
+### Patch
+
+- `.LibLatex()` (used by
+  [`LibAdd()`](https://github.com/ijapesigan/rProject/reference/LibAdd.md))
+  keeps its character map as a two-column matrix instead of a named
+  vector. Names become symbols, which R without a UTF-8 locale (R 3.6
+  and R 4.1 on Windows) could not translate: `R CMD check` warned, and
+  the accents were left unconverted.
+
 ## rProject 0.0.44
 
 ### Patch

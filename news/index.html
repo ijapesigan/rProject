@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.44</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.45</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,14 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.45" id="rproject-0045">rProject 0.0.45<a class="anchor" aria-label="anchor" href="#rproject-0045"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-45">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-45"></a></h3>
+<ul><li>
+<code>.LibLatex()</code> (used by <code><a href="../reference/LibAdd.html">LibAdd()</a></code>) keeps its character map as a two-column matrix instead of a named vector. Names become symbols, which R without a UTF-8 locale (R 3.6 and R 4.1 on Windows) could not translate: <code>R CMD check</code> warned, and the accents were left unconverted.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.44" id="rproject-0044">rProject 0.0.44<a class="anchor" aria-label="anchor" href="#rproject-0044"></a></h2>
 <div class="section level3">
