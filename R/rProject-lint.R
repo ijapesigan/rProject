@@ -44,15 +44,21 @@ Lint <- function(path) {
   exclusions <- exclusions[file.exists(exclusions)]
   # no try(): an error in lintr stops make lint
   if (length(exclusions) == 0L) {
-    lintr::lint_dir(
+    lints <- lintr::lint_dir(
       path = path,
       linters = linters
     )
   } else {
-    lintr::lint_dir(
+    lints <- lintr::lint_dir(
       path = path,
       linters = linters,
       exclusions = exclusions
     )
   }
+  # lib-* projects: check the entries too (reported, not an error)
+  project <- .VerifyProject(path = path)
+  if (grepl(pattern = "^lib-[0-9]{4}-[0-9]{4}-[a-z]+$", x = project)) {
+    print(LibCheck(path = path))
+  }
+  lints
 }

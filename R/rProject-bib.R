@@ -1,4 +1,13 @@
-#' Consolidate .bib files into a Single File
+#' Consolidate .bib Files into a Single File
+#'
+#' Joins the `.bib` files in `.setup/latex/bib` into `bib.bib`,
+#' verbatim and in file-name order,
+#' and copies it to `.setup/quarto/bib/quarto.bib`
+#' and `vignettes/vignettes.bib` when those folders exist.
+#' The source files are never rewritten:
+#' in `lib-*` projects they are the entries themselves
+#' (one entry per file, ASCII with LaTeX accents).
+#' [LibCheck()] validates them with biber.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -40,164 +49,64 @@ Bib <- function(path,
     )
     BibLib(path = path)
   }
-  quarto <- vignettes <- FALSE
-  latex_bib_dir <- file.path(
-    path,
-    ".setup",
-    "latex",
-    "bib"
-  )
   latex_bib <- file.path(
     latex_bib_dir,
     "bib.bib"
   )
-  if (dir.exists(latex_bib_dir)) {
-    bib_src <- list.files(
-      path = latex_bib_dir,
-      pattern = ".*\\.bib$",
-      all.files = TRUE,
-      full.names = TRUE,
-      recursive = TRUE,
-      include.dirs = TRUE
-    )
-    length_bib_src <- length(bib_src)
-    if (length_bib_src > 0) {
-      run <- TRUE
-    } else {
-      message(
-        "No \".bib\" files found."
-      )
-      # nolint start
-      return(NULL)
-      # nolint end
-    }
-  } else {
+  bib_src <- list.files(
+    path = latex_bib_dir,
+    pattern = ".*\\.bib$",
+    all.files = TRUE,
+    full.names = TRUE,
+    recursive = TRUE
+  )
+  # the outputs are not sources
+  bib_src <- bib_src[
+    !(basename(bib_src) %in% c("bib.bib", "quarto.bib", "vignettes.bib"))
+  ]
+  out <- NULL
+  if (length(bib_src) == 0L) {
     message(
       "No \".bib\" files found."
     )
-    # nolint start
-    return(NULL)
-    # nolint end
-  }
-  if (run) {
-    # rewrite bib files
-    if (length_bib_src == 1) {
-      bib <- RefManageR::ReadBib(bib_src)
-      RefManageR::WriteBib(
-        bib = bib,
-        file = bib_src,
-        biblatex = TRUE,
-        append = FALSE,
-        verbose = FALSE
-      )
-    } else {
-      bib <- lapply(
-        X = bib_src,
-        FUN = RefManageR::ReadBib
-      )
-      mapply(
-        FUN = RefManageR::WriteBib,
-        bib = bib,
-        file = bib_src,
-        biblatex = TRUE,
-        append = FALSE,
-        verbose = FALSE
-      )
-    }
-    # reread bib files
-    bib_src <- list.files(
-      path = latex_bib_dir,
-      pattern = ".*\\.bib$",
-      all.files = TRUE,
-      full.names = TRUE,
-      recursive = TRUE,
-      include.dirs = TRUE
-    )
-    length_bib_src <- length(bib_src)
-    if (length_bib_src == 1) {
-      bib <- RefManageR::ReadBib(bib_src)
-    } else {
-      bib <- lapply(
-        X = bib_src,
-        FUN = RefManageR::ReadBib
-      )
-      bib <- Reduce(
-        f = `+`,
-        x = bib
-      )
-    }
-    # write the consolidated bib.bib
-    RefManageR::WriteBib(
-      bib = bib,
-      file = latex_bib,
-      biblatex = TRUE,
-      append = FALSE,
-      verbose = FALSE
-    )
-    # quarto and vignettes
-    quarto_dir <- file.path(
-      path,
-      ".setup",
-      "quarto"
-    )
-    vignettes_dir <- file.path(
-      path,
-      "vignettes"
-    )
-    if (dir.exists(quarto_dir)) {
-      quarto <- TRUE
-    }
-    if (dir.exists(vignettes_dir)) {
-      vignettes <- TRUE
-    }
-    mapply(
-      FUN = function(test,
-                     output_dir,
-                     output_name) {
-        if (test) {
-          unlink(
-            file.path(
-              output_dir,
-              output_name
-            )
-          )
-          dir.create(
-            path = output_dir,
-            showWarnings = FALSE,
-            recursive = TRUE
-          )
-          file.copy(
-            from = latex_bib,
-            to = output_dir
-          )
-          file.rename(
-            from = file.path(
-              output_dir,
-              "bib.bib"
-            ),
-            to = file.path(
-              output_dir,
-              output_name
-            )
-          )
+  } else {
+    # verbatim, one blank line between files
+    bib <- unlist(
+      lapply(
+        X = sort(bib_src),
+        FUN = function(file) {
+          c(readLines(con = file, warn = FALSE), "")
         }
-      },
-      test = c(
-        quarto,
-        vignettes
-      ),
-      output_dir = c(
-        file.path(
-          quarto_dir,
-          "bib"
-        ),
-        vignettes_dir
-      ),
-      output_name = c(
-        "quarto.bib",
-        "vignettes.bib"
       )
     )
+    writeLines(
+      text = bib,
+      con = latex_bib
+    )
+    out <- latex_bib
+    # quarto and vignettes
+    copies <- c(
+      file.path(path, ".setup", "quarto", "bib", "quarto.bib"),
+      file.path(path, "vignettes", "vignettes.bib")
+    )
+    keep <- dir.exists(
+      c(
+        file.path(path, ".setup", "quarto"),
+        file.path(path, "vignettes")
+      )
+    )
+    for (copy in copies[keep]) {
+      dir.create(
+        path = dirname(copy),
+        showWarnings = FALSE,
+        recursive = TRUE
+      )
+      file.copy(
+        from = latex_bib,
+        to = copy,
+        overwrite = TRUE
+      )
+    }
   }
   if (bib_lib) {
     unlink(
@@ -214,4 +123,5 @@ Bib <- function(path,
       )
     )
   }
+  invisible(out)
 }

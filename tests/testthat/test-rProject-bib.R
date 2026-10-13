@@ -3,19 +3,18 @@ lapply(
   X = 1,
   FUN = function(i,
                  text) {
-    testthat::skip_if_not_installed("RefManageR")
     entry <- function(key, title) {
       c(
         paste0("@Article{", key, ","),
-        "  author = {Doe, Jane},",
+        "  author = {Jane Doe and Lee M{\\'e}n},",
         paste0("  title = {", title, "},"),
-        "  journal = {Journal},",
-        "  year = {2020},",
+        "  journaltitle = {Journal},",
+        "  date = {2020},",
         "}"
       )
     }
     testthat::test_that(
-      paste(text, "merges .bib files, copies them for quarto and vignettes"),
+      paste(text, "joins .bib files verbatim and copies them"),
       {
         root <- .TestProject()
         bib_dir <- file.path(root, ".setup", "latex", "bib")
@@ -26,10 +25,20 @@ lapply(
         writeLines(entry("Doe-2020b", "Second"), file.path(bib_dir, "b.bib"))
         suppressMessages(Bib(path = root))
         merged <- readLines(file.path(bib_dir, "bib.bib"))
-        testthat::expect_true(any(grepl("Doe-2020a", merged)))
-        testthat::expect_true(any(grepl("Doe-2020b", merged)))
-        testthat::expect_true(
-          file.exists(file.path(root, ".setup", "quarto", "bib", "quarto.bib"))
+        testthat::expect_equal(
+          merged,
+          c(entry("Doe-2020a", "First"), "", entry("Doe-2020b", "Second"), "")
+        )
+        # the sources are not rewritten, and bib.bib is not a source
+        testthat::expect_equal(
+          readLines(file.path(bib_dir, "a.bib")),
+          entry("Doe-2020a", "First")
+        )
+        suppressMessages(Bib(path = root))
+        testthat::expect_equal(readLines(file.path(bib_dir, "bib.bib")), merged)
+        testthat::expect_equal(
+          readLines(file.path(root, ".setup", "quarto", "bib", "quarto.bib")),
+          merged
         )
         testthat::expect_true(
           file.exists(file.path(root, "vignettes", "vignettes.bib"))

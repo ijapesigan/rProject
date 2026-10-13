@@ -2,7 +2,7 @@
 % Please edit documentation in R/rProject-bib.R
 \name{Bib}
 \alias{Bib}
-\title{Consolidate .bib files into a Single File}
+\title{Consolidate .bib Files into a Single File}
 \usage{
 Bib(path, bib_lib = FALSE)
 }
@@ -15,7 +15,14 @@ If \code{bib_lib = TRUE},
 build \code{bib.bib} from \verb{lib-*} GitHub repositories.}
 }
 \description{
-Consolidate .bib files into a Single File
+Joins the \code{.bib} files in \code{.setup/latex/bib} into \code{bib.bib},
+verbatim and in file-name order,
+and copies it to \code{.setup/quarto/bib/quarto.bib}
+and \code{vignettes/vignettes.bib} when those folders exist.
+The source files are never rewritten:
+in \verb{lib-*} projects they are the entries themselves
+(one entry per file, ASCII with LaTeX accents).
+\code{\link[=LibCheck]{LibCheck()}} validates them with biber.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

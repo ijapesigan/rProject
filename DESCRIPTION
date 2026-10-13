@@ -1,6 +1,6 @@
 Package: rProject
 Title: Setup R Project
-Version: 0.0.42
+Version: 0.0.43
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -23,6 +23,7 @@ Imports:
     covr,
     devtools,
     distro,
+    jsonlite,
     knitr,
     lintr,
     pak,
@@ -30,7 +31,6 @@ Imports:
     quarto,
     Rcpp,
     remotes,
-    RefManageR,
     rmarkdown,
     roxygen2,
     rprojroot,

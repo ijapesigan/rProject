@@ -1,4 +1,4 @@
-.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log sizecheck public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes
+.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log sizecheck public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes
 
 push: build docs latex coverage cleanpush
 
@@ -42,6 +42,14 @@ cleanproj:
 bib:
 	@echo "\n\nCleaning project...\n\n"
 	@Rscript -e "rProject::Bib(\"${PWD}\", bib_lib = FALSE)"
+
+libcheck:
+	@echo "\n\nChecking the lib-* entries...\n\n"
+	@Rscript -e "print(rProject::LibCheck(\"${PWD}\", root = if (nzchar(\"${ROOT}\")) \"${ROOT}\" else NULL))"
+
+libformat:
+	@echo "\n\nPutting the lib-* entries in the house layout...\n\n"
+	@Rscript -e "rProject::LibFormat(\"${PWD}\", write = TRUE)"
 
 bibrproject:
 	@echo "\n\nCleaning project...\n\n"
