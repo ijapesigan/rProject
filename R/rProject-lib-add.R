@@ -114,7 +114,11 @@ LibAdd <- function(doi,
         call. = FALSE
       )
     }
-    writeLines(text = text, con = file)
+    # LF on every platform
+    writeBin(
+      object = charToRaw(paste0(paste(text, collapse = "\n"), "\n")),
+      con = file
+    )
     LibCheck(path = file.path(root, entry$repo), root = root)
   }
   invisible(list(file = file, text = text, questions = questions))

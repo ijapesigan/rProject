@@ -240,6 +240,30 @@ lapply(
             "}"
           )
         )
+        raw <- readBin(
+          con = file.path(repo, bib(repo, "Doe-1985")),
+          what = "raw",
+          n = 1000
+        )
+        testthat::expect_false(as.raw(13L) %in% raw)
+      }
+    )
+    testthat::test_that(
+      paste(text, "LibCheck and LibFormat accept CRLF line endings"),
+      {
+        # as writeLines() writes on Windows
+        writeBin(
+          object = charToRaw(paste0(paste(entry, collapse = "\r\n"), "\r\n")),
+          con = file.path(repo, bib(repo, "Baron-Kenny-1986"))
+        )
+        checks <- suppressMessages(LibCheck(path = repo))
+        testthat::expect_false(
+          any(checks$key == "Baron-Kenny-1986" & checks$check == "layout")
+        )
+        changed <- suppressMessages(LibFormat(path = repo))
+        testthat::expect_false(
+          "lib-1980-1989-article-Baron-Kenny-1986.bib" %in% changed
+        )
       }
     )
     testthat::test_that(

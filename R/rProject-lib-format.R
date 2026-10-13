@@ -74,10 +74,8 @@ LibFormat <- function(path,
       if (!identical(new, text) || !grepl(pattern = "\n$", x = raw)) {
         changed <- c(changed, basename(file))
         if (write) {
-          writeLines(
-            text = sub(pattern = "\n$", replacement = "", x = new),
-            con = file
-          )
+          # LF on every platform
+          writeBin(object = charToRaw(new), con = file)
         }
       }
     }
