@@ -1,5 +1,36 @@
 # Changelog
 
+## rProject 0.0.43
+
+### Minor
+
+- [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md)
+  joins the `.bib` files into `bib.bib` verbatim and no longer rewrites
+  them with RefManageR (which turned `{\'e}` into `{\a'e}`, reordered
+  fields, and silently dropped entries it could not read). RefManageR is
+  no longer imported; `jsonlite` is (for Crossref).
+- New
+  [`LibCheck()`](https://github.com/ijapesigan/rProject/reference/LibCheck.md)
+  (and `make libcheck`): checks a `lib-*` library’s entries (one per
+  file, file name, key and `-etal` rule, year and decade, entry type,
+  required fields, ASCII, unescaped `%`, keys and DOIs used twice across
+  repositories, lone suffixes, biber’s datamodel, house layout).
+  `make lint` runs it in `lib-*` projects.
+- New
+  [`LibFormat()`](https://github.com/ijapesigan/rProject/reference/LibFormat.md)
+  (and `make libformat`): puts every entry in the house layout and field
+  order, with `{\'e}` accents, `--` page ranges, and bare DOIs, without
+  changing what the entries say.
+- New
+  [`LibAdd()`](https://github.com/ijapesigan/rProject/reference/LibAdd.md):
+  drafts an entry from a DOI’s Crossref record (issue date, LaTeX
+  accents, key, repository, abstract, the library’s ISSN and publisher
+  for the journal) and lists what it cannot decide.
+- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md): the
+  library section states the conventions; the manuscript section says to
+  check citations against the `lib-*` library and to add missing
+  references there first.
+
 ## rProject 0.0.42
 
 ### Minor

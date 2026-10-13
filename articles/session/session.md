@@ -30,7 +30,7 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.42`\
+`#> [1] rProject_0.0.43`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
@@ -49,7 +49,6 @@
 `#> rProject          "rProject"         `\
 `#> askpass           "askpass"          `\
 `#> base64enc         "base64enc"        `\
-`#> bibtex            "bibtex"           `\
 `#> BiocManager       "BiocManager"      `\
 `#> brew              "brew"             `\
 `#> brio              "brio"             `\
@@ -76,7 +75,6 @@
 `#> fastmap           "fastmap"          `\
 `#> fontawesome       "fontawesome"      `\
 `#> fs                "fs"               `\
-`#> generics          "generics"         `\
 `#> gert              "gert"             `\
 `#> gh                "gh"               `\
 `#> gitcreds          "gitcreds"         `\
@@ -95,7 +93,6 @@
 `#> later             "later"            `\
 `#> lifecycle         "lifecycle"        `\
 `#> lintr             "lintr"            `\
-`#> lubridate         "lubridate"        `\
 `#> magrittr          "magrittr"         `\
 `#> memoise           "memoise"          `\
 `#> mime              "mime"             `\
@@ -108,7 +105,6 @@
 `#> pkgconfig         "pkgconfig"        `\
 `#> pkgdown           "pkgdown"          `\
 `#> pkgload           "pkgload"          `\
-`#> plyr              "plyr"             `\
 `#> praise            "praise"           `\
 `#> prettyunits       "prettyunits"      `\
 `#> processx          "processx"         `\
@@ -127,7 +123,6 @@
 `#> rcmdcheck         "rcmdcheck"        `\
 `#> Rcpp              "Rcpp"             `\
 `#> rdtools           "rdtools"          `\
-`#> RefManageR        "RefManageR"       `\
 `#> remotes           "remotes"          `\
 `#> rex               "rex"              `\
 `#> rlang             "rlang"            `\
@@ -142,14 +137,12 @@
 `#> shiny             "shiny"            `\
 `#> sourcetools       "sourcetools"      `\
 `#> stringi           "stringi"          `\
-`#> stringr           "stringr"          `\
 `#> styler            "styler"           `\
 `#> sys               "sys"              `\
 `#> systemfonts       "systemfonts"      `\
 `#> testthat          "testthat"         `\
 `#> textshaping       "textshaping"      `\
 `#> tibble            "tibble"           `\
-`#> timechange        "timechange"       `\
 `#> tinytex           "tinytex"          `\
 `#> urlchecker        "urlchecker"       `\
 `#> usethis           "usethis"          `\
@@ -571,10 +564,9 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/RtmpBmFzhT/temp_libpath134550e10419" "0.0.42"    `\
+`#> rProject          "/tmp/RtmpSLHBLk/temp_libpath131644cc694b" "0.0.43"    `\
 `#> askpass           "/__w/rProject/rProject/.library"          "1.2.1"     `\
 `#> base64enc         "/__w/rProject/rProject/.library"          "0.1-6"     `\
-`#> bibtex            "/__w/rProject/rProject/.library"          "0.5.3"     `\
 `#> BiocManager       "/__w/rProject/rProject/.library"          "1.30.27"   `\
 `#> brew              "/__w/rProject/rProject/.library"          "1.0-10"    `\
 `#> brio              "/__w/rProject/rProject/.library"          "1.1.5"     `\
@@ -601,7 +593,6 @@
 `#> fastmap           "/__w/rProject/rProject/.library"          "1.2.0"     `\
 `#> fontawesome       "/__w/rProject/rProject/.library"          "0.5.3"     `\
 `#> fs                "/__w/rProject/rProject/.library"          "2.1.0"     `\
-`#> generics          "/__w/rProject/rProject/.library"          "0.1.4"     `\
 `#> gert              "/__w/rProject/rProject/.library"          "2.4.1"     `\
 `#> gh                "/__w/rProject/rProject/.library"          "1.6.1"     `\
 `#> gitcreds          "/__w/rProject/rProject/.library"          "0.1.2"     `\
@@ -620,7 +611,6 @@
 `#> later             "/__w/rProject/rProject/.library"          "1.4.8"     `\
 `#> lifecycle         "/__w/rProject/rProject/.library"          "1.0.5"     `\
 `#> lintr             "/__w/rProject/rProject/.library"          "3.4.0"     `\
-`#> lubridate         "/__w/rProject/rProject/.library"          "1.9.5"     `\
 `#> magrittr          "/__w/rProject/rProject/.library"          "2.0.5"     `\
 `#> memoise           "/__w/rProject/rProject/.library"          "2.0.1"     `\
 `#> mime              "/__w/rProject/rProject/.library"          "0.13"      `\
@@ -633,7 +623,6 @@
 `#> pkgconfig         "/__w/rProject/rProject/.library"          "2.0.3"     `\
 `#> pkgdown           "/__w/rProject/rProject/.library"          "2.2.1"     `\
 `#> pkgload           "/__w/rProject/rProject/.library"          "1.5.3"     `\
-`#> plyr              "/__w/rProject/rProject/.library"          "1.8.9"     `\
 `#> praise            "/__w/rProject/rProject/.library"          "1.0.0"     `\
 `#> prettyunits       "/__w/rProject/rProject/.library"          "1.2.0"     `\
 `#> processx          "/__w/rProject/rProject/.library"          "3.9.0"     `\
@@ -652,13 +641,12 @@
 `#> rcmdcheck         "/__w/rProject/rProject/.library"          "1.4.0.9001"`\
 `#> Rcpp              "/__w/rProject/rProject/.library"          "1.1.2"     `\
 `#> rdtools           "/__w/rProject/rProject/.library"          "0.1.0"     `\
-`#> RefManageR        "/__w/rProject/rProject/.library"          "1.4.0"     `\
 `#> remotes           "/__w/rProject/rProject/.library"          "2.5.0"     `\
 `#> rex               "/__w/rProject/rProject/.library"          "1.2.2"     `\
 `#> rlang             "/__w/rProject/rProject/.library"          "1.3.0"     `\
 `#> rmarkdown         "/__w/rProject/rProject/.library"          "2.32"      `\
 `#> roxygen2          "/__w/rProject/rProject/.library"          "8.1.1"     `\
-`#> rProject          "/__w/rProject/rProject/.library"          "0.0.42"    `\
+`#> rProject          "/__w/rProject/rProject/.library"          "0.0.43"    `\
 `#> rprojroot         "/__w/rProject/rProject/.library"          "2.1.1"     `\
 `#> rstudioapi        "/__w/rProject/rProject/.library"          "0.19.0"    `\
 `#> rversions         "/__w/rProject/rProject/.library"          "3.0.0"     `\
@@ -667,14 +655,12 @@
 `#> shiny             "/__w/rProject/rProject/.library"          "1.14.0"    `\
 `#> sourcetools       "/__w/rProject/rProject/.library"          "0.1.7-2"   `\
 `#> stringi           "/__w/rProject/rProject/.library"          "1.8.9"     `\
-`#> stringr           "/__w/rProject/rProject/.library"          "1.6.0"     `\
 `#> styler            "/__w/rProject/rProject/.library"          "1.11.0"    `\
 `#> sys               "/__w/rProject/rProject/.library"          "3.4.3"     `\
 `#> systemfonts       "/__w/rProject/rProject/.library"          "1.3.2"     `\
 `#> testthat          "/__w/rProject/rProject/.library"          "3.3.2"     `\
 `#> textshaping       "/__w/rProject/rProject/.library"          "1.0.5"     `\
 `#> tibble            "/__w/rProject/rProject/.library"          "3.3.1"     `\
-`#> timechange        "/__w/rProject/rProject/.library"          "0.4.0"     `\
 `#> tinytex           "/__w/rProject/rProject/.library"          "0.61.1"    `\
 `#> urlchecker        "/__w/rProject/rProject/.library"          "2.0.0"     `\
 `#> usethis           "/__w/rProject/rProject/.library"          "3.2.2"     `\
@@ -809,7 +795,7 @@
 `#> gitcreds          "/usr/local/lib/R/site-library"            "0.1.2"     `\
 `#> glasso            "/usr/local/lib/R/site-library"            "1.11"      `\
 `#> glmnet            "/usr/local/lib/R/site-library"            "5.1"       `\
-`#> globals           "/usr/local/lib/R/site-library"            "0.19.1"    `\
+`#> globals           "/usr/local/lib/R/site-library"            "0.20.0"    `\
 `#> glue              "/usr/local/lib/R/site-library"            "1.8.1"     `\
 `#> googledrive       "/usr/local/lib/R/site-library"            "2.1.2"     `\
 `#> googlesheets4     "/usr/local/lib/R/site-library"            "1.1.2"     `\
@@ -1099,7 +1085,6 @@
 `#> rProject          NA           `\
 `#> askpass           NA           `\
 `#> base64enc         NA           `\
-`#> bibtex            NA           `\
 `#> BiocManager       NA           `\
 `#> brew              NA           `\
 `#> brio              NA           `\
@@ -1126,7 +1111,6 @@
 `#> fastmap           NA           `\
 `#> fontawesome       NA           `\
 `#> fs                NA           `\
-`#> generics          NA           `\
 `#> gert              NA           `\
 `#> gh                NA           `\
 `#> gitcreds          NA           `\
@@ -1145,7 +1129,6 @@
 `#> later             NA           `\
 `#> lifecycle         NA           `\
 `#> lintr             NA           `\
-`#> lubridate         NA           `\
 `#> magrittr          NA           `\
 `#> memoise           NA           `\
 `#> mime              NA           `\
@@ -1158,7 +1141,6 @@
 `#> pkgconfig         NA           `\
 `#> pkgdown           NA           `\
 `#> pkgload           NA           `\
-`#> plyr              NA           `\
 `#> praise            NA           `\
 `#> prettyunits       NA           `\
 `#> processx          NA           `\
@@ -1177,7 +1159,6 @@
 `#> rcmdcheck         NA           `\
 `#> Rcpp              NA           `\
 `#> rdtools           NA           `\
-`#> RefManageR        NA           `\
 `#> remotes           NA           `\
 `#> rex               NA           `\
 `#> rlang             NA           `\
@@ -1192,14 +1173,12 @@
 `#> shiny             NA           `\
 `#> sourcetools       NA           `\
 `#> stringi           NA           `\
-`#> stringr           NA           `\
 `#> styler            NA           `\
 `#> sys               NA           `\
 `#> systemfonts       NA           `\
 `#> testthat          NA           `\
 `#> textshaping       NA           `\
 `#> tibble            NA           `\
-`#> timechange        NA           `\
 `#> tinytex           NA           `\
 `#> urlchecker        NA           `\
 `#> usethis           NA           `\
@@ -1624,7 +1603,6 @@
 `#> rProject          "R (>= 3.5.0)"                                                                        `\
 `#> askpass           NA                                                                                    `\
 `#> base64enc         "R (>= 2.9.0)"                                                                        `\
-`#> bibtex            "R (>= 3.6.0)"                                                                        `\
 `#> BiocManager       NA                                                                                    `\
 `#> brew              NA                                                                                    `\
 `#> brio              "R (>= 3.6)"                                                                          `\
@@ -1651,7 +1629,6 @@
 `#> fastmap           NA                                                                                    `\
 `#> fontawesome       "R (>= 3.3.0)"                                                                        `\
 `#> fs                "R (>= 4.1)"                                                                          `\
-`#> generics          "R (>= 3.6)"                                                                          `\
 `#> gert              NA                                                                                    `\
 `#> gh                "R (>= 4.1)"                                                                          `\
 `#> gitcreds          "R (>= 3.4)"                                                                          `\
@@ -1670,7 +1647,6 @@
 `#> later             "R (>= 3.5)"                                                                          `\
 `#> lifecycle         "R (>= 3.6)"                                                                          `\
 `#> lintr             "R (>= 4.1.0)"                                                                        `\
-`#> lubridate         "methods, R (>= 3.2)"                                                                 `\
 `#> magrittr          "R (>= 3.4.0)"                                                                        `\
 `#> memoise           NA                                                                                    `\
 `#> mime              NA                                                                                    `\
@@ -1683,7 +1659,6 @@
 `#> pkgconfig         NA                                                                                    `\
 `#> pkgdown           "R (>= 4.1)"                                                                          `\
 `#> pkgload           "R (>= 3.4.0)"                                                                        `\
-`#> plyr              "R (>= 3.1.0)"                                                                        `\
 `#> praise            NA                                                                                    `\
 `#> prettyunits       "R(>= 2.10)"                                                                          `\
 `#> processx          "R (>= 3.4.0)"                                                                        `\
@@ -1702,7 +1677,6 @@
 `#> rcmdcheck         "R (>= 3.4)"                                                                          `\
 `#> Rcpp              "R (>= 3.5.0)"                                                                        `\
 `#> rdtools           "R (>= 4.0)"                                                                          `\
-`#> RefManageR        "R (>= 3.0)"                                                                          `\
 `#> remotes           "R (>= 3.0.0)"                                                                        `\
 `#> rex               NA                                                                                    `\
 `#> rlang             "R (>= 4.0.0)"                                                                        `\
@@ -1717,14 +1691,12 @@
 `#> shiny             "methods, R (>= 3.1.2)"                                                               `\
 `#> sourcetools       "R (>= 3.0.2)"                                                                        `\
 `#> stringi           "R (>= 3.4)"                                                                          `\
-`#> stringr           "R (>= 4.1.0)"                                                                        `\
 `#> styler            "R (>= 4.0.0)"                                                                        `\
 `#> sys               NA                                                                                    `\
 `#> systemfonts       "R (>= 3.2.0)"                                                                        `\
 `#> testthat          "R (>= 4.1.0)"                                                                        `\
 `#> textshaping       "R (>= 3.2.0)"                                                                        `\
 `#> tibble            "R (>= 3.4.0)"                                                                        `\
-`#> timechange        "R (>= 3.3)"                                                                          `\
 `#> tinytex           NA                                                                                    `\
 `#> urlchecker        "R (>= 4.1)"                                                                          `\
 `#> usethis           "R (>= 4.1)"                                                                          `\
@@ -2146,10 +2118,9 @@
 `#> tools             NA                                                                                    `\
 `#> utils             NA                                                                                    `\
 `#>                   Imports                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
-`#> rProject          "BiocManager,\ncffr,\ncovr,\ndevtools,\ndistro,\nknitr,\nlintr,\npak,\npkgdown,\nquarto,\nRcpp,\nremotes,\nRefManageR,\nrmarkdown,\nroxygen2,\nrprojroot,\nstats,\nstyler,\ntinytex,\nutils"                                                                                                                                                                                                                                                                                                                                                                                                                 `\
+`#> rProject          "BiocManager,\ncffr,\ncovr,\ndevtools,\ndistro,\njsonlite,\nknitr,\nlintr,\npak,\npkgdown,\nquarto,\nRcpp,\nremotes,\nrmarkdown,\nroxygen2,\nrprojroot,\nstats,\nstyler,\ntinytex,\nutils"                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> askpass           "sys (>= 2.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> base64enc         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> bibtex            "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> BiocManager       "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> brew              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> brio              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -2176,7 +2147,6 @@
 `#> fastmap           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> fontawesome       "rlang (>= 1.0.6), htmltools (>= 0.5.1.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> fs                "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
-`#> generics          "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> gert              "askpass, credentials (>= 1.2.1), openssl (>= 2.0.3),\nrstudioapi (>= 0.11), sys, zip (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> gh                "cli (>= 3.0.1), gitcreds, glue, httr2 (>= 1.0.6), ini,\njsonlite, lifecycle, rlang (>= 1.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> gitcreds          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -2195,7 +2165,6 @@
 `#> later             "Rcpp (>= 1.0.10), rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> lifecycle         "cli (>= 3.4.0), rlang (>= 1.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> lintr             "cli (>= 3.4.0), codetools, digest, glue, knitr, rex, stats,\nutils, xfun, xml2 (>= 1.3.4), xmlparsedata (>= 1.0.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
-`#> lubridate         "generics, timechange (>= 0.4.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> magrittr          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> memoise           "rlang (>= 0.4.10), cachem"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> mime              "tools"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
@@ -2208,7 +2177,6 @@
 `#> pkgconfig         "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> pkgdown           "bslib (>= 0.5.1), callr (>= 3.7.3), cli (>= 3.6.1), desc (>=\n1.4.0), downlit (>= 0.4.4), fontawesome, fs (>= 1.4.0), httr2\n(>= 1.0.2), jsonlite, lifecycle, openssl, purrr (>= 1.0.0),\nragg (>= 1.4.0), rlang (>= 1.1.4), rmarkdown (>= 2.27), tibble,\nwhisker, withr (>= 2.4.3), xml2 (>= 1.3.1), yaml (>= 2.3.9)"                                                                                                                                                                                                                                                                                     `\
 `#> pkgload           "cli (>= 3.3.0), desc, fs, glue, lifecycle, methods, pkgbuild,\nprocessx, rlang (>= 1.1.1), rprojroot, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
-`#> plyr              "Rcpp (>= 0.11.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> praise            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> prettyunits       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> processx          "ps (>= 1.9.3), R6, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
@@ -2227,13 +2195,12 @@
 `#> rcmdcheck         "callr (>= 3.1.1.9000), cli (>= 3.0.0), curl, desc (>= 1.2.0),\ndigest, pkgbuild, prettyunits, R6, rprojroot, sessioninfo (>=\n1.1.1), utils, withr, xopen"                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> Rcpp              "methods, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> rdtools           "stats, tools"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
-`#> RefManageR        "xml2, jsonlite, utils, plyr, tools, httr, lubridate (>=\n1.5.0), stringr, methods, bibtex (>= 0.4.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> remotes           "methods, stats, tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> rex               "withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> rlang             "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> rmarkdown         "bslib (>= 0.2.5.1), evaluate (>= 0.13), fontawesome (>=\n0.5.0), htmltools (>= 0.5.1), jquerylib, jsonlite, knitr (>=\n1.50), methods, tinytex (>= 0.31), tools, utils, xfun (>=\n0.36), yaml (>= 2.1.19)"                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> roxygen2          "brew, cli (>= 3.3.0), commonmark, desc (>= 1.2.0), knitr,\nlifecycle, methods, pkgload (>= 1.5.2), R6 (>= 2.1.2), rdtools\n(>= 0.1.0), rlang (>= 1.1.0), stats, utils, withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                         `\
-`#> rProject          "BiocManager, cffr, covr, devtools, distro, knitr, lintr, pak,\npkgdown, quarto, Rcpp, remotes, RefManageR, rmarkdown,\nroxygen2, rprojroot, stats, styler, tinytex, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
+`#> rProject          "BiocManager, cffr, covr, devtools, distro, jsonlite, knitr,\nlintr, pak, pkgdown, quarto, Rcpp, remotes, rmarkdown,\nroxygen2, rprojroot, stats, styler, tinytex, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> rprojroot         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> rstudioapi        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> rversions         "curl"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
@@ -2242,14 +2209,12 @@
 `#> shiny             "bslib (>= 0.6.0), cachem (>= 1.1.0), cli, commonmark (>=\n2.0.0), fastmap (>= 1.1.1), fontawesome (>= 0.4.0), glue (>=\n1.3.2), grDevices, htmltools (>= 0.5.4), httpuv (>= 1.5.2),\njsonlite (>= 0.9.16), later (>= 1.0.0), lifecycle (>= 0.2.0),\nmime (>= 0.3), otel, promises (>= 1.5.0), R6 (>= 2.0), rlang\n(>= 0.4.10), sourcetools, tools, utils, withr, xtable"                                                                                                                                                                                                                                    `\
 `#> sourcetools       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> stringi           "tools, utils, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
-`#> stringr           "cli, glue (>= 1.6.1), lifecycle (>= 1.0.3), magrittr, rlang\n(>= 1.0.0), stringi (>= 1.5.3), vctrs (>= 0.4.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> styler            "cli (>= 3.1.1), magrittr (>= 2.0.0), purrr (>= 1.0.2), R.cache\n(>= 0.15.0), rlang (>= 1.0.0), rprojroot (>= 1.1), tools, vctrs\n(>= 0.4.1), withr (>= 2.3.0),"                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> sys               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> systemfonts       "base64enc, grid, jsonlite, lifecycle, tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> testthat          "brio (>= 1.1.5), callr (>= 3.7.6), cli (>= 3.6.5), desc (>=\n1.4.3), evaluate (>= 1.0.4), jsonlite (>= 2.0.0), lifecycle (>=\n1.0.4), magrittr (>= 2.0.3), methods, pkgload (>= 1.4.0),\npraise (>= 1.0.0), processx (>= 3.8.6), ps (>= 1.9.1), R6 (>=\n2.6.1), rlang (>= 1.1.6), utils, waldo (>= 0.6.2), withr (>=\n3.0.2)"                                                                                                                                                                                                                                                                               `\
 `#> textshaping       "lifecycle, stats, stringi, systemfonts (>= 1.3.0), utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> tibble            "cli, lifecycle (>= 1.0.0), magrittr, methods, pillar (>=\n1.8.1), pkgconfig, rlang (>= 1.0.2), utils, vctrs (>= 0.5.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
-`#> timechange        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> tinytex           "xfun (>= 0.48)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> urlchecker        "cli, curl, gitcreds, rlang (>= 1.1.0), tools, utils, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> usethis           "cli (>= 3.0.1), clipr (>= 0.3.0), crayon, curl (>= 2.7), desc\n(>= 1.4.2), fs (>= 1.3.0), gert (>= 1.4.1), gh (>= 1.6.0), glue\n(>= 1.3.0), jsonlite, lifecycle (>= 1.0.0), pak, purrr,\nrappdirs, rlang (>= 1.1.0), rprojroot (>= 2.1.1), rstudioapi,\nwhisker, withr (>= 2.3.0), yaml"                                                                                                                                                                                                                                                                                                                    `\
@@ -2674,7 +2639,6 @@
 `#> rProject          NA                                                                                                                                                           `\
 `#> askpass           NA                                                                                                                                                           `\
 `#> base64enc         NA                                                                                                                                                           `\
-`#> bibtex            NA                                                                                                                                                           `\
 `#> BiocManager       NA                                                                                                                                                           `\
 `#> brew              NA                                                                                                                                                           `\
 `#> brio              NA                                                                                                                                                           `\
@@ -2701,7 +2665,6 @@
 `#> fastmap           NA                                                                                                                                                           `\
 `#> fontawesome       NA                                                                                                                                                           `\
 `#> fs                NA                                                                                                                                                           `\
-`#> generics          NA                                                                                                                                                           `\
 `#> gert              NA                                                                                                                                                           `\
 `#> gh                NA                                                                                                                                                           `\
 `#> gitcreds          NA                                                                                                                                                           `\
@@ -2720,7 +2683,6 @@
 `#> later             "Rcpp"                                                                                                                                                       `\
 `#> lifecycle         NA                                                                                                                                                           `\
 `#> lintr             NA                                                                                                                                                           `\
-`#> lubridate         NA                                                                                                                                                           `\
 `#> magrittr          NA                                                                                                                                                           `\
 `#> memoise           NA                                                                                                                                                           `\
 `#> mime              NA                                                                                                                                                           `\
@@ -2733,7 +2695,6 @@
 `#> pkgconfig         NA                                                                                                                                                           `\
 `#> pkgdown           NA                                                                                                                                                           `\
 `#> pkgload           NA                                                                                                                                                           `\
-`#> plyr              "Rcpp"                                                                                                                                                       `\
 `#> praise            NA                                                                                                                                                           `\
 `#> prettyunits       NA                                                                                                                                                           `\
 `#> processx          NA                                                                                                                                                           `\
@@ -2752,7 +2713,6 @@
 `#> rcmdcheck         NA                                                                                                                                                           `\
 `#> Rcpp              NA                                                                                                                                                           `\
 `#> rdtools           NA                                                                                                                                                           `\
-`#> RefManageR        NA                                                                                                                                                           `\
 `#> remotes           NA                                                                                                                                                           `\
 `#> rex               NA                                                                                                                                                           `\
 `#> rlang             NA                                                                                                                                                           `\
@@ -2767,14 +2727,12 @@
 `#> shiny             NA                                                                                                                                                           `\
 `#> sourcetools       NA                                                                                                                                                           `\
 `#> stringi           NA                                                                                                                                                           `\
-`#> stringr           NA                                                                                                                                                           `\
 `#> styler            NA                                                                                                                                                           `\
 `#> sys               NA                                                                                                                                                           `\
 `#> systemfonts       "cpp11 (>= 0.2.1)"                                                                                                                                           `\
 `#> testthat          NA                                                                                                                                                           `\
 `#> textshaping       "cpp11 (>= 0.2.1), systemfonts (>= 1.0.0)"                                                                                                                   `\
 `#> tibble            NA                                                                                                                                                           `\
-`#> timechange        "cpp11 (>= 0.2.7)"                                                                                                                                           `\
 `#> tinytex           NA                                                                                                                                                           `\
 `#> urlchecker        NA                                                                                                                                                           `\
 `#> usethis           NA                                                                                                                                                           `\
@@ -3199,7 +3157,6 @@
 `#> rProject          "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> askpass           "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> base64enc         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> bibtex            "testthat (>= 3.0.3)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> BiocManager       "BiocVersion, BiocStyle, remotes, rmarkdown, testthat, withr,\ncurl, knitr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> brew              "testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> brio              "covr, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
@@ -3226,7 +3183,6 @@
 `#> fastmap           "testthat (>= 2.1.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> fontawesome       "covr, dplyr (>= 1.0.8), gt (>= 0.9.0), knitr (>= 1.31),\ntestthat (>= 3.0.0), rsvg"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> fs                "covr, crayon, knitr, pillar (>= 1.0.0), rmarkdown, spelling,\ntestthat (>= 3.0.0), tibble (>= 1.1.0), vctrs (>= 0.3.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
-`#> generics          "covr, pkgload, testthat (>= 3.0.0), tibble, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `\
 `#> gert              "spelling, knitr, rmarkdown, testthat (>= 3.0.0), roxygen2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> gh                "connectcreds, covr, knitr, rmarkdown, rprojroot, spelling,\ntestthat (>= 3.0.0), vctrs, webfakes (>= 1.5.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> gitcreds          "codetools, covr, knitr, mockery, oskeyring, rmarkdown,\ntestthat (>= 3.0.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
@@ -3245,7 +3201,6 @@
 `#> later             "knitr, nanonext, promises, rmarkdown, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> lifecycle         "covr, knitr, lintr (>= 3.1.0), rmarkdown, testthat (>=\n3.0.1), tibble, tidyverse, tools, vctrs, withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> lintr             "bookdown, cyclocomp, jsonlite, patrick (>= 0.2.0), rlang,\nrmarkdown, rstudioapi (>= 0.2), testthat (>= 3.3.0), tibble,\ntufte, withr (>= 2.5.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> lubridate         "covr, knitr, rmarkdown, testthat (>= 2.1.0), vctrs (>= 0.6.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> magrittr          "covr, knitr, rlang, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> memoise           "digest, aws.s3, covr, googleAuthR, googleCloudStorageR, httr,\ntestthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> mime              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -3258,7 +3213,6 @@
 `#> pkgconfig         "covr, testthat, disposables (>= 1.0.3)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> pkgdown           "covr, diffviewer, evaluate (>= 0.24.0), gert, gt, htmltools,\nhtmlwidgets, knitr (>= 1.50), magick, methods, nanonext (>=\n1.8.0), pkgload (>= 1.0.2), quarto, rsconnect, rstudioapi,\nrticles, sass, testthat (>= 3.1.3), tools"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> pkgload           "bitops, jsonlite, mathjaxr, pak, Rcpp, remotes, rstudioapi,\ntestthat (>= 3.2.1.1), usethis, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
-`#> plyr              "abind, covr, doParallel, foreach, iterators, itertools,\ntcltk, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> praise            "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> prettyunits       "codetools, covr, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> processx          "callr (>= 3.7.3), cli (>= 3.3.0), codetools, covr, curl,\ndebugme, parallel, rlang (>= 1.0.2), testthat (>= 3.0.0),\nwebfakes, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
@@ -3277,7 +3231,6 @@
 `#> rcmdcheck         "covr, knitr, processx, ps, rmarkdown, svglite, testthat (>=\n3.2.0), webfakes"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> Rcpp              "tinytest, inline, rbenchmark, pkgKitten (>= 0.1.2)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> rdtools           "testthat (>= 3.0.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
-`#> RefManageR        "knitr, markdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> remotes           "brew, callr, codetools, covr, curl, git2r (>= 0.23.0), knitr,\nmockery, pingr, pkgbuild (>= 1.0.1), rmarkdown, rprojroot,\ntestthat (>= 3.0.0), webfakes, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> rex               "covr, dplyr, ggplot2, Hmisc, knitr, magrittr, rmarkdown,\nroxygen2, rvest, stringr, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> rlang             "cli (>= 3.1.0), covr, crayon, desc, fs, glue, knitr,\nmagrittr, methods, pillar, pkgload, rmarkdown, stats, testthat\n(>= 3.3.2), tibble, usethis, vctrs (>= 0.2.3), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
@@ -3292,14 +3245,12 @@
 `#> shiny             "Cairo (>= 1.5-5), coro (>= 1.1.0), datasets, DT, dygraphs,\nfuture, ggplot2, knitr (>= 1.6), magrittr, markdown, mirai,\notelsdk (>= 0.2.0), ragg, reactlog (>= 1.0.0), rmarkdown, sass,\nshinytest2, showtext, testthat (>= 3.2.1), watcher, yaml"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> sourcetools       "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> stringi           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> stringr           "covr, dplyr, gt, htmltools, htmlwidgets, knitr, rmarkdown,\ntestthat (>= 3.0.0), tibble"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> styler            "data.tree (>= 0.1.6), digest, here, knitr, prettycode,\nrmarkdown, roxygen2, rstudioapi (>= 0.7), tibble (>= 1.4.2),\ntestthat (>= 3.2.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> sys               "unix (>= 1.4), spelling, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `\
 `#> systemfonts       "covr, farver, ggplot2, graphics, knitr, ragg, rmarkdown,\nsvglite, testthat (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> testthat          "covr, curl (>= 0.9.5), diffviewer (>= 0.1.0), digest (>=\n0.6.33), gh, knitr, otel, otelsdk, rmarkdown, rstudioapi, S7,\nshiny, usethis, vctrs (>= 0.1.0), xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> textshaping       "covr, grDevices, grid, knitr, rmarkdown, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> tibble            "bench, bit64, blob, brio, callr, DiagrammeR, dplyr, evaluate,\nformattable, ggplot2, here, hms, htmltools, knitr, lubridate,\nnycflights13, pkgload, purrr, rmarkdown, stringi, testthat (>=\n3.0.2), tidyr, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
-`#> timechange        "testthat (>= 0.7.1.99), knitr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> tinytex           "testit, rstudioapi"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> urlchecker        "covr, testthat (>= 3.0.0), webfakes, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
 `#> usethis           "askpass, covr, knitr, magick, pkgload (>= 1.3.2.1), quarto\n(>= 1.5.1), rmarkdown, roxygen2 (>= 7.1.2), spelling (>= 1.2),\ntestthat (>= 3.1.8)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
@@ -3724,7 +3675,6 @@
 `#> rProject          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> askpass           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> base64enc         "png"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
-`#> bibtex            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> BiocManager       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> brew              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> brio              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3751,7 +3701,6 @@
 `#> fastmap           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> fontawesome       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> fs                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
-`#> generics          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> gert              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> gh                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> gitcreds          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3770,7 +3719,6 @@
 `#> later             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> lifecycle         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> lintr             "data.table"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
-`#> lubridate         "chron, data.table, timeDate, tis, zoo"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> magrittr          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> memoise           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> mime              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3783,7 +3731,6 @@
 `#> pkgconfig         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> pkgdown           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> pkgload           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
-`#> plyr              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> praise            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> prettyunits       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> processx          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3802,7 +3749,6 @@
 `#> rcmdcheck         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> Rcpp              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> rdtools           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
-`#> RefManageR        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> remotes           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> rex               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> rlang             "winch"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -3817,14 +3763,12 @@
 `#> shiny             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> sourcetools       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> stringi           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
-`#> stringr           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> styler            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> sys               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> systemfonts       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> testthat          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> textshaping       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> tibble            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
-`#> timechange        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> tinytex           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> urlchecker        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> usethis           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -4249,7 +4193,6 @@
 `#> rProject          "MIT + file LICENSE"                          NA             `\
 `#> askpass           "MIT + file LICENSE"                          NA             `\
 `#> base64enc         "GPL-2 | GPL-3"                               NA             `\
-`#> bibtex            "GPL (>= 2)"                                  NA             `\
 `#> BiocManager       "Artistic-2.0"                                NA             `\
 `#> brew              "GPL (>= 2)"                                  NA             `\
 `#> brio              "MIT + file LICENSE"                          NA             `\
@@ -4276,7 +4219,6 @@
 `#> fastmap           "MIT + file LICENSE"                          NA             `\
 `#> fontawesome       "MIT + file LICENSE"                          NA             `\
 `#> fs                "MIT + file LICENSE"                          NA             `\
-`#> generics          "MIT + file LICENSE"                          NA             `\
 `#> gert              "MIT + file LICENSE"                          NA             `\
 `#> gh                "MIT + file LICENSE"                          NA             `\
 `#> gitcreds          "MIT + file LICENSE"                          NA             `\
@@ -4295,7 +4237,6 @@
 `#> later             "MIT + file LICENSE"                          NA             `\
 `#> lifecycle         "MIT + file LICENSE"                          NA             `\
 `#> lintr             "MIT + file LICENSE"                          NA             `\
-`#> lubridate         "MIT + file LICENSE"                          NA             `\
 `#> magrittr          "MIT + file LICENSE"                          NA             `\
 `#> memoise           "MIT + file LICENSE"                          NA             `\
 `#> mime              "GPL"                                         NA             `\
@@ -4308,7 +4249,6 @@
 `#> pkgconfig         "MIT + file LICENSE"                          NA             `\
 `#> pkgdown           "MIT + file LICENSE"                          NA             `\
 `#> pkgload           "MIT + file LICENSE"                          NA             `\
-`#> plyr              "MIT + file LICENSE"                          NA             `\
 `#> praise            "MIT + file LICENSE"                          NA             `\
 `#> prettyunits       "MIT + file LICENSE"                          NA             `\
 `#> processx          "MIT + file LICENSE"                          NA             `\
@@ -4327,7 +4267,6 @@
 `#> rcmdcheck         "MIT + file LICENSE"                          NA             `\
 `#> Rcpp              "GPL (>= 2)"                                  NA             `\
 `#> rdtools           "MIT + file LICENSE"                          NA             `\
-`#> RefManageR        "GPL-2 | GPL-3 | BSD_3_clause + file LICENSE" NA             `\
 `#> remotes           "MIT + file LICENSE"                          NA             `\
 `#> rex               "MIT + file LICENSE"                          NA             `\
 `#> rlang             "MIT + file LICENSE"                          NA             `\
@@ -4342,14 +4281,12 @@
 `#> shiny             "MIT + file LICENSE"                          NA             `\
 `#> sourcetools       "MIT + file LICENSE"                          NA             `\
 `#> stringi           "file LICENSE"                                "yes"          `\
-`#> stringr           "MIT + file LICENSE"                          NA             `\
 `#> styler            "MIT + file LICENSE"                          NA             `\
 `#> sys               "MIT + file LICENSE"                          NA             `\
 `#> systemfonts       "MIT + file LICENSE"                          NA             `\
 `#> testthat          "MIT + file LICENSE"                          NA             `\
 `#> textshaping       "MIT + file LICENSE"                          NA             `\
 `#> tibble            "MIT + file LICENSE"                          NA             `\
-`#> timechange        "GPL (>= 3)"                                  NA             `\
 `#> tinytex           "MIT + file LICENSE"                          NA             `\
 `#> urlchecker        "GPL-3"                                       NA             `\
 `#> usethis           "MIT + file LICENSE"                          NA             `\
@@ -4774,7 +4711,6 @@
 `#> rProject          NA                    NA      NA     NA              `\
 `#> askpass           NA                    NA      NA     "yes"           `\
 `#> base64enc         NA                    NA      NA     "yes"           `\
-`#> bibtex            NA                    NA      NA     "no"            `\
 `#> BiocManager       NA                    NA      NA     "no"            `\
 `#> brew              NA                    NA      NA     "no"            `\
 `#> brio              NA                    NA      NA     "yes"           `\
@@ -4801,7 +4737,6 @@
 `#> fastmap           NA                    NA      NA     "yes"           `\
 `#> fontawesome       NA                    NA      NA     "no"            `\
 `#> fs                NA                    NA      NA     "yes"           `\
-`#> generics          NA                    NA      NA     "no"            `\
 `#> gert              NA                    NA      NA     "yes"           `\
 `#> gh                NA                    NA      NA     "no"            `\
 `#> gitcreds          NA                    NA      NA     "no"            `\
@@ -4820,7 +4755,6 @@
 `#> later             NA                    NA      NA     "yes"           `\
 `#> lifecycle         NA                    NA      NA     "no"            `\
 `#> lintr             NA                    NA      NA     "no"            `\
-`#> lubridate         NA                    NA      NA     "yes"           `\
 `#> magrittr          NA                    NA      NA     "yes"           `\
 `#> memoise           NA                    NA      NA     "no"            `\
 `#> mime              NA                    NA      NA     "yes"           `\
@@ -4833,7 +4767,6 @@
 `#> pkgconfig         NA                    NA      NA     "no"            `\
 `#> pkgdown           NA                    NA      NA     "no"            `\
 `#> pkgload           NA                    NA      NA     "no"            `\
-`#> plyr              NA                    NA      NA     "yes"           `\
 `#> praise            NA                    NA      NA     "no"            `\
 `#> prettyunits       NA                    NA      NA     "no"            `\
 `#> processx          NA                    NA      NA     "yes"           `\
@@ -4852,7 +4785,6 @@
 `#> rcmdcheck         NA                    NA      NA     "no"            `\
 `#> Rcpp              NA                    NA      NA     "yes"           `\
 `#> rdtools           NA                    NA      NA     "yes"           `\
-`#> RefManageR        NA                    NA      NA     "no"            `\
 `#> remotes           NA                    NA      NA     "no"            `\
 `#> rex               NA                    NA      NA     "no"            `\
 `#> rlang             NA                    NA      NA     "yes"           `\
@@ -4867,14 +4799,12 @@
 `#> shiny             NA                    NA      NA     "no"            `\
 `#> sourcetools       NA                    NA      NA     "yes"           `\
 `#> stringi           NA                    NA      NA     "yes"           `\
-`#> stringr           NA                    NA      NA     "no"            `\
 `#> styler            NA                    NA      NA     "no"            `\
 `#> sys               NA                    NA      NA     "yes"           `\
 `#> systemfonts       NA                    NA      NA     "yes"           `\
 `#> testthat          NA                    NA      NA     "yes"           `\
 `#> textshaping       NA                    NA      NA     "yes"           `\
 `#> tibble            NA                    NA      NA     "yes"           `\
-`#> timechange        NA                    NA      NA     "yes"           `\
 `#> tinytex           NA                    NA      NA     "no"            `\
 `#> urlchecker        NA                    NA      NA     "no"            `\
 `#> usethis           NA                    NA      NA     "no"            `\
@@ -5296,10 +5226,9 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-13 06:47:14 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-13 18:03:34 UTC; unix"                   `\
 `#> askpass           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:32 UTC; unix"                   `\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   `\
 `#> brew              "R 4.6.0; ; 2026-08-12 20:21:48 UTC; unix"                   `\
 `#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"`\
@@ -5315,7 +5244,7 @@
 `#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   `\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-26 04:37:59 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   `\
-`#> devtools          "R 4.6.1; ; 2026-10-13 06:44:14 UTC; unix"                   `\
+`#> devtools          "R 4.6.1; ; 2026-10-13 18:01:30 UTC; unix"                   `\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:19:38 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
 `#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   `\
@@ -5326,7 +5255,6 @@
 `#> fastmap           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> fontawesome       "R 4.6.0; ; 2026-08-12 20:22:14 UTC; unix"                   `\
 `#> fs                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:37 UTC; unix"`\
-`#> generics          "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> gert              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-20 04:34:02 UTC; unix"`\
 `#> gh                "R 4.6.0; ; 2026-07-21 05:26:50 UTC; unix"                   `\
 `#> gitcreds          "R 4.6.0; ; 2026-04-24 01:13:09 UTC; unix"                   `\
@@ -5345,7 +5273,6 @@
 `#> later             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:57 UTC; unix"`\
 `#> lifecycle         "R 4.6.0; ; 2026-08-12 20:21:53 UTC; unix"                   `\
 `#> lintr             "R 4.6.0; ; 2026-07-16 05:10:48 UTC; unix"                   `\
-`#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:14 UTC; unix"`\
 `#> magrittr          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> memoise           "R 4.6.0; ; 2026-08-12 20:21:58 UTC; unix"                   `\
 `#> mime              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
@@ -5358,7 +5285,6 @@
 `#> pkgconfig         "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> pkgdown           "R 4.6.0; ; 2026-07-08 05:15:06 UTC; unix"                   `\
 `#> pkgload           "R 4.6.0; ; 2026-06-16 05:19:55 UTC; unix"                   `\
-`#> plyr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:56 UTC; unix"`\
 `#> praise            "R 4.6.0; ; 2026-04-24 01:16:13 UTC; unix"                   `\
 `#> prettyunits       "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> processx          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:47 UTC; unix"`\
@@ -5374,16 +5300,15 @@
 `#> R6                "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> ragg              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:49 UTC; unix"`\
 `#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> rcmdcheck         "R 4.6.1; ; 2026-10-13 06:44:11 UTC; unix"                   `\
+`#> rcmdcheck         "R 4.6.1; ; 2026-10-13 18:01:28 UTC; unix"                   `\
 `#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> rdtools           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-17 05:34:52 UTC; unix"`\
-`#> RefManageR        "R 4.6.0; ; 2026-08-12 20:23:27 UTC; unix"                   `\
 `#> remotes           "R 4.6.0; ; 2026-04-24 21:36:51 UTC; unix"                   `\
 `#> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   `\
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:00:02 UTC; unix"                   `\
 `#> roxygen2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-09 05:45:48 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-13 06:47:09 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-13 18:03:31 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rstudioapi        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> rversions         "R 4.6.0; ; 2026-04-24 21:11:46 UTC; unix"                   `\
@@ -5392,15 +5317,13 @@
 `#> shiny             "R 4.6.0; ; 2026-08-12 20:24:30 UTC; unix"                   `\
 `#> sourcetools       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
 `#> stringi           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
-`#> stringr           "R 4.6.0; ; 2026-08-12 20:22:54 UTC; unix"                   `\
 `#> styler            "R 4.6.0; ; 2026-04-24 22:07:55 UTC; unix"                   `\
 `#> sys               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> systemfonts       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:13 UTC; unix"`\
 `#> testthat          "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 06:36:19 UTC; unix"`\
 `#> textshaping       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:09 UTC; unix"`\
 `#> tibble            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
-`#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
-`#> tinytex           "R 4.6.1; ; 2026-10-13 06:44:01 UTC; unix"                   `\
+`#> tinytex           "R 4.6.1; ; 2026-10-13 18:01:21 UTC; unix"                   `\
 `#> urlchecker        "R 4.6.0; ; 2026-07-09 17:32:21 UTC; unix"                   `\
 `#> usethis           "R 4.6.0; ; 2026-09-11 04:12:24 UTC; unix"                   `\
 `#> utf8              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:36 UTC; unix"`\
@@ -5426,20 +5349,20 @@
 `#> assertthat        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> betaDelta         "R 4.6.1; ; 2026-10-13 05:28:10 UTC; unix"                   `\
-`#> betaMC            "R 4.6.1; ; 2026-10-13 05:28:17 UTC; unix"                   `\
-`#> betaNB            "R 4.6.1; ; 2026-10-13 05:28:15 UTC; unix"                   `\
-`#> betaSandwich      "R 4.6.1; ; 2026-10-13 05:28:12 UTC; unix"                   `\
+`#> betaDelta         "R 4.6.1; ; 2026-10-13 10:03:02 UTC; unix"                   `\
+`#> betaMC            "R 4.6.1; ; 2026-10-13 10:03:10 UTC; unix"                   `\
+`#> betaNB            "R 4.6.1; ; 2026-10-13 10:03:08 UTC; unix"                   `\
+`#> betaSandwich      "R 4.6.1; ; 2026-10-13 10:03:05 UTC; unix"                   `\
 `#> BH                "R 4.6.0; ; 2026-08-12 20:21:37 UTC; unix"                   `\
 `#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:32 UTC; unix"                   `\
-`#> biocmake          "R 4.6.1; ; 2026-10-11 06:06:13 UTC; unix"                   `\
+`#> biocmake          "R 4.6.1; ; 2026-10-13 02:59:40 UTC; unix"                   `\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   `\
-`#> BiocVersion       "R 4.6.1; ; 2026-10-11 06:06:11 UTC; unix"                   `\
+`#> BiocVersion       "R 4.6.1; ; 2026-10-13 02:59:39 UTC; unix"                   `\
 `#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
 `#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:12 UTC; unix"`\
 `#> bitops            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-31 07:27:38 UTC; unix"`\
 `#> blob              "R 4.6.0; ; 2026-08-12 20:22:28 UTC; unix"                   `\
-`#> bootStateSpace    "R 4.6.1; ; 2026-10-13 05:28:51 UTC; unix"                   `\
+`#> bootStateSpace    "R 4.6.1; ; 2026-10-13 10:03:46 UTC; unix"                   `\
 `#> brew              "R 4.6.0; ; 2026-08-12 20:21:48 UTC; unix"                   `\
 `#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"`\
 `#> broom             "R 4.6.0; ; 2026-08-12 20:23:52 UTC; unix"                   `\
@@ -5452,7 +5375,7 @@
 `#> cellranger        "R 4.6.0; ; 2026-09-26 06:35:53 UTC; unix"                   `\
 `#> cffr              "R 4.6.0; ; 2026-08-25 04:31:41 UTC; unix"                   `\
 `#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
-`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 05:27:43 UTC; unix"`\
+`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 10:02:34 UTC; unix"`\
 `#> clipr             "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
 `#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:21 UTC; unix"`\
 `#> clusterGeneration "R 4.6.0; ; 2026-04-24 21:00:44 UTC; unix"                   `\
@@ -5469,7 +5392,7 @@
 `#> crayon            "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   `\
 `#> crosstalk         "R 4.6.0; ; 2026-08-12 20:22:17 UTC; unix"                   `\
-`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 05:29:00 UTC; unix"`\
+`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 10:03:56 UTC; unix"`\
 `#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:31:26 UTC; unix"`\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-26 04:37:59 UTC; unix"`\
 `#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:30:51 UTC; unix"`\
@@ -5478,13 +5401,13 @@
 `#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:22:17 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   `\
 `#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:50 UTC; unix"`\
-`#> devtools          "R 4.6.1; ; 2026-10-13 05:27:54 UTC; unix"                   `\
+`#> devtools          "R 4.6.1; ; 2026-10-13 10:02:46 UTC; unix"                   `\
 `#> diagram           "R 4.6.0; ; 2026-04-24 01:28:57 UTC; unix"                   `\
 `#> dials             "R 4.6.0; ; 2026-06-23 05:17:57 UTC; unix"                   `\
 `#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:56:50 UTC; unix"`\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:19:38 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
-`#> dir.expiry        "R 4.6.1; ; 2026-10-11 06:06:12 UTC; unix"                   `\
+`#> dir.expiry        "R 4.6.1; ; 2026-10-13 02:59:40 UTC; unix"                   `\
 `#> distributional    "R 4.6.0; ; 2026-09-09 09:18:45 UTC; unix"                   `\
 `#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   `\
 `#> doBy              "R 4.6.0; ; 2026-08-12 20:24:57 UTC; unix"                   `\
@@ -5494,9 +5417,9 @@
 `#> DT                "R 4.6.0; ; 2026-08-12 20:25:47 UTC; unix"                   `\
 `#> dtplyr            "R 4.6.0; ; 2026-10-02 08:11:50 UTC; unix"                   `\
 `#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-30 05:47:53 UTC; unix"`\
-`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 05:28:41 UTC; unix"`\
-`#> dynTools          "R 4.6.1; ; 2026-10-13 05:29:13 UTC; unix"                   `\
-`#> dynUtils          "R 4.6.1; ; 2026-10-12 09:02:10 UTC; unix"                   `\
+`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 10:03:36 UTC; unix"`\
+`#> dynTools          "R 4.6.1; ; 2026-10-13 10:04:11 UTC; unix"                   `\
+`#> dynUtils          "R 4.6.1; ; 2026-10-13 09:16:31 UTC; unix"                   `\
 `#> ellipse           "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> ellipsis          "R 4.6.0; ; 2026-04-24 21:36:12 UTC; unix"                   `\
 `#> evaluate          "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
@@ -5510,7 +5433,7 @@
 `#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:15:12 UTC; unix"`\
 `#> fds               "R 4.6.0; ; 2026-05-06 05:19:49 UTC; unix"                   `\
 `#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:36 UTC; unix"`\
-`#> fitVARMxID        "R 4.6.1; ; 2026-10-13 05:29:20 UTC; unix"                   `\
+`#> fitVARMxID        "R 4.6.1; ; 2026-10-13 10:04:18 UTC; unix"                   `\
 `#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
 `#> fontawesome       "R 4.6.0; ; 2026-08-12 20:22:14 UTC; unix"                   `\
 `#> forcats           "R 4.6.0; ; 2026-08-12 20:22:52 UTC; unix"                   `\
@@ -5534,7 +5457,7 @@
 `#> gitcreds          "R 4.6.0; ; 2026-04-24 01:13:09 UTC; unix"                   `\
 `#> glasso            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:17:49 UTC; unix"`\
 `#> glmnet            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-25 04:24:30 UTC; unix"`\
-`#> globals           "R 4.6.0; ; 2026-08-12 20:21:42 UTC; unix"                   `\
+`#> globals           "R 4.6.0; ; 2026-10-12 04:29:40 UTC; unix"                   `\
 `#> glue              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
 `#> googledrive       "R 4.6.0; ; 2026-08-12 20:23:12 UTC; unix"                   `\
 `#> googlesheets4     "R 4.6.0; ; 2026-08-12 20:23:44 UTC; unix"                   `\
@@ -5555,7 +5478,7 @@
 `#> htmlTable         "R 4.6.0; ; 2026-08-12 20:25:44 UTC; unix"                   `\
 `#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:04 UTC; unix"`\
 `#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:25:06 UTC; unix"                   `\
-`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 05:27:19 UTC; unix"`\
+`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 10:02:09 UTC; unix"`\
 `#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
 `#> httr              "R 4.6.0; ; 2026-09-02 03:59:46 UTC; unix"                   `\
 `#> httr2             "R 4.6.0; ; 2026-07-14 05:11:28 UTC; unix"                   `\
@@ -5593,7 +5516,7 @@
 `#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:11 UTC; unix"`\
 `#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:00 UTC; unix"`\
 `#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:06:27 UTC; unix"`\
-`#> longMI            "R 4.6.1; ; 2026-10-12 07:36:47 UTC; unix"                   `\
+`#> longMI            "R 4.6.1; ; 2026-10-13 07:56:13 UTC; unix"                   `\
 `#> loo               "R 4.6.0; ; 2026-07-25 05:23:32 UTC; unix"                   `\
 `#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:14 UTC; unix"`\
 `#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:00:10 UTC; unix"`\
@@ -5603,7 +5526,7 @@
 `#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
 `#> memoise           "R 4.6.0; ; 2026-08-12 20:21:58 UTC; unix"                   `\
-`#> metaDyn           "R 4.6.1; ; 2026-10-13 05:29:28 UTC; unix"                   `\
+`#> metaDyn           "R 4.6.1; ; 2026-10-13 10:04:27 UTC; unix"                   `\
 `#> metaSEM           "R 4.6.0; ; 2026-04-28 05:58:02 UTC; unix"                   `\
 `#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:13:40 UTC; unix"`\
 `#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:51 UTC; unix"`\
@@ -5678,7 +5601,7 @@
 `#> rainbow           "R 4.6.0; ; 2026-09-26 06:36:28 UTC; unix"                   `\
 `#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
 `#> rbibutils         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> rcmdcheck         "R 4.6.1; ; 2026-10-13 05:27:52 UTC; unix"                   `\
+`#> rcmdcheck         "R 4.6.1; ; 2026-10-13 10:02:44 UTC; unix"                   `\
 `#> RColorBrewer      "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:16:41 UTC; unix"`\
@@ -5701,18 +5624,18 @@
 `#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:13 UTC; unix"`\
 `#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:23:09 UTC; unix"`\
 `#> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   `\
-`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-11 06:09:20 UTC; unix"`\
-`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-11 06:08:59 UTC; unix"`\
-`#> Rhdf5lib          "R 4.6.1; ; 2026-10-11 06:08:56 UTC; unix"                   `\
+`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 03:01:37 UTC; unix"`\
+`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 03:01:25 UTC; unix"`\
+`#> Rhdf5lib          "R 4.6.1; ; 2026-10-13 03:01:23 UTC; unix"                   `\
 `#> rhub              "R 4.6.0; ; 2026-04-24 22:27:49 UTC; unix"                   `\
 `#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:38:21 UTC; unix"`\
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:03 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:00:02 UTC; unix"                   `\
-`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 05:27:58 UTC; unix"`\
+`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 10:02:50 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:24:25 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:49 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-13 06:31:00 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-13 07:55:26 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:44 UTC; unix"`\
@@ -5727,13 +5650,13 @@
 `#> scales            "R 4.6.0; ; 2026-08-12 20:22:07 UTC; unix"                   `\
 `#> selectr           "R 4.6.0; ; 2026-09-28 04:40:54 UTC; unix"                   `\
 `#> semlbci           "R 4.6.0; ; 2026-07-28 08:48:55 UTC; unix"                   `\
-`#> semmcci           "R 4.6.1; ; 2026-10-13 05:28:07 UTC; unix"                   `\
+`#> semmcci           "R 4.6.1; ; 2026-10-13 10:02:59 UTC; unix"                   `\
 `#> semPlot           "R 4.6.0; ; 2026-07-18 12:17:16 UTC; unix"                   `\
 `#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:25:12 UTC; unix"                   `\
 `#> sfd               "R 4.6.0; ; 2026-04-24 22:06:59 UTC; unix"                   `\
 `#> shape             "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> shiny             "R 4.6.0; ; 2026-08-12 20:24:30 UTC; unix"                   `\
-`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 05:28:24 UTC; unix"`\
+`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-13 10:03:19 UTC; unix"`\
 `#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:14:38 UTC; unix"`\
 `#> snow              "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> snowfall          "R 4.6.0; ; 2026-04-24 21:41:41 UTC; unix"                   `\
@@ -5761,7 +5684,7 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:27:55 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
-`#> tinytex           "R 4.6.1; ; 2026-10-13 05:27:40 UTC; unix"                   `\
+`#> tinytex           "R 4.6.1; ; 2026-10-13 10:02:31 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 15:45:43 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:40:31 UTC; unix"`\
@@ -5824,7 +5747,6 @@
 `#> rProject          NA       `\
 `#> askpass           NA       `\
 `#> base64enc         NA       `\
-`#> bibtex            NA       `\
 `#> BiocManager       NA       `\
 `#> brew              NA       `\
 `#> brio              NA       `\
@@ -5851,7 +5773,6 @@
 `#> fastmap           NA       `\
 `#> fontawesome       NA       `\
 `#> fs                NA       `\
-`#> generics          NA       `\
 `#> gert              NA       `\
 `#> gh                NA       `\
 `#> gitcreds          NA       `\
@@ -5870,7 +5791,6 @@
 `#> later             NA       `\
 `#> lifecycle         NA       `\
 `#> lintr             NA       `\
-`#> lubridate         NA       `\
 `#> magrittr          NA       `\
 `#> memoise           NA       `\
 `#> mime              NA       `\
@@ -5883,7 +5803,6 @@
 `#> pkgconfig         NA       `\
 `#> pkgdown           NA       `\
 `#> pkgload           NA       `\
-`#> plyr              NA       `\
 `#> praise            NA       `\
 `#> prettyunits       NA       `\
 `#> processx          NA       `\
@@ -5902,7 +5821,6 @@
 `#> rcmdcheck         NA       `\
 `#> Rcpp              NA       `\
 `#> rdtools           NA       `\
-`#> RefManageR        NA       `\
 `#> remotes           NA       `\
 `#> rex               NA       `\
 `#> rlang             NA       `\
@@ -5917,14 +5835,12 @@
 `#> shiny             NA       `\
 `#> sourcetools       NA       `\
 `#> stringi           NA       `\
-`#> stringr           NA       `\
 `#> styler            NA       `\
 `#> sys               NA       `\
 `#> systemfonts       NA       `\
 `#> testthat          NA       `\
 `#> textshaping       NA       `\
 `#> tibble            NA       `\
-`#> timechange        NA       `\
 `#> tinytex           NA       `\
 `#> urlchecker        NA       `\
 `#> usethis           NA       `\

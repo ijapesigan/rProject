@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.42</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.43</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,19 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.43" id="rproject-0043">rProject 0.0.43<a class="anchor" aria-label="anchor" href="#rproject-0043"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-43">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-43"></a></h3>
+<ul><li>
+<code><a href="../reference/Bib.html">Bib()</a></code> joins the <code>.bib</code> files into <code>bib.bib</code> verbatim and no longer rewrites them with RefManageR (which turned <code>{\'e}</code> into <code>{\a'e}</code>, reordered fields, and silently dropped entries it could not read). RefManageR is no longer imported; <code>jsonlite</code> is (for Crossref).</li>
+<li>New <code><a href="../reference/LibCheck.html">LibCheck()</a></code> (and <code>make libcheck</code>): checks a <code>lib-*</code> library’s entries (one per file, file name, key and <code>-etal</code> rule, year and decade, entry type, required fields, ASCII, unescaped <code>%</code>, keys and DOIs used twice across repositories, lone suffixes, biber’s datamodel, house layout). <code>make lint</code> runs it in <code>lib-*</code> projects.</li>
+<li>New <code><a href="../reference/LibFormat.html">LibFormat()</a></code> (and <code>make libformat</code>): puts every entry in the house layout and field order, with <code>{\'e}</code> accents, <code>--</code> page ranges, and bare DOIs, without changing what the entries say.</li>
+<li>New <code><a href="../reference/LibAdd.html">LibAdd()</a></code>: drafts an entry from a DOI’s Crossref record (issue date, LaTeX accents, key, repository, abstract, the library’s ISSN and publisher for the journal) and lists what it cannot decide.</li>
+<li>
+<code><a href="../reference/AI.html">AI()</a></code>: the library section states the conventions; the manuscript section says to check citations against the <code>lib-*</code> library and to add missing references there first.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.42" id="rproject-0042">rProject 0.0.42<a class="anchor" aria-label="anchor" href="#rproject-0042"></a></h2>
 <div class="section level3">

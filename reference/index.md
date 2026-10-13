@@ -9,7 +9,7 @@
   : Install Global AI Instructions
 
 - [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md) :
-  Consolidate .bib files into a Single File
+  Consolidate .bib Files into a Single File
 
 - [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md)
   : Copy .bib Files from lib-\* GitHUb Repositories
@@ -107,6 +107,15 @@
 
 - [`LatexTikzCompile()`](https://github.com/ijapesigan/rProject/reference/LatexTikzCompile.md)
   : Compile Tikz
+
+- [`LibAdd()`](https://github.com/ijapesigan/rProject/reference/LibAdd.md)
+  : Add an Entry to the lib-\* Library from a DOI
+
+- [`LibCheck()`](https://github.com/ijapesigan/rProject/reference/LibCheck.md)
+  : Check the Entries of a lib-\* Library
+
+- [`LibFormat()`](https://github.com/ijapesigan/rProject/reference/LibFormat.md)
+  : Put the Entries of a lib-\* Library in the House Layout
 
 - [`LibPaths()`](https://github.com/ijapesigan/rProject/reference/LibPaths.md)
   :
