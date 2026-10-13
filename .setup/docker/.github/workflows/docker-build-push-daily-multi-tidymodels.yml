@@ -4,7 +4,7 @@ name: Docker Build and Push Tidymodels [multi] (Daily)
 
 on:
   schedule:
-    - cron: "0 4 * * *"
+    - cron: "0 1 * * *"
   workflow_dispatch:
 
 env:
@@ -67,6 +67,8 @@ jobs:
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
           outputs: type=image,"name=${{ env.DOCKER_HUB_REPO }},${{ env.GHCR_REPO }}",push-by-digest=true,name-canonical=true,push=true
+          secrets: |
+            GITHUB_PAT=${{ secrets.PAT }}
 
       - name: Export digest
         run: |

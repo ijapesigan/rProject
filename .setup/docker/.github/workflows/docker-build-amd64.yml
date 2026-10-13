@@ -48,3 +48,5 @@ jobs:
           platforms: linux/amd64
           file: ./Dockerfile
           push: false
+          secrets: |
+            GITHUB_PAT=${{ secrets.PAT }}

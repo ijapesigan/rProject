@@ -63,6 +63,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_CONTAINER }}:${{ env.NOW }}
+          secrets: |
+            GITHUB_PAT=${{ secrets.PAT }}
       -
         name: Set up Apptainer
         uses: eWaterCycle/setup-apptainer@v2
