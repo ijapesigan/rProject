@@ -9,7 +9,7 @@ against the change-set log in .setup/logs."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.41</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.42</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,13 +75,16 @@ By default <code>.verify</code> in the project.</p></dd>
 <dt id="arg-log">log<a class="anchor" aria-label="anchor" href="#arg-log"></a></dt>
 <dd><p>Character string.
 File name of the change-set log in <code>.setup/logs</code>.
-If <code>NULL</code>, the newest log with a pending push in <code>.setup/logs/index.md</code>.</p></dd>
+If <code>NULL</code>, the newest log with a pending push in <code>.setup/logs/index.md</code>,
+else the log named in the pushed commit message
+(<code>Log: .setup/logs/&lt;log&gt;</code>), as for a fix-up push.</p></dd>
 
 
 <dt id="arg-record">record<a class="anchor" aria-label="anchor" href="#arg-record"></a></dt>
 <dd><p>Logical.
 If <code>TRUE</code>, write the commit and the result
-in the log's "Pushes" table and in <code>.setup/logs/index.md</code>.</p></dd>
+in the log's "Pushes" table and in <code>.setup/logs/index.md</code>,
+filling the pending row, or adding a row when there is none.</p></dd>
 
 
 <dt id="arg-error">error<a class="anchor" aria-label="anchor" href="#arg-error"></a></dt>
@@ -108,8 +111,13 @@ between the project and the private repository.</p></li>
 does not end with <code>Log: .setup/logs/&lt;log&gt;</code>.</p></li>
 <li><p><strong>Secrets:</strong> <code><a href="SecretScan.html">SecretScan()</a></code> finds a token in the private repository.</p></li>
 <li><p><strong>Public export:</strong> a file that <code>make auto</code> would publish is private
-(e.g., <code>.setup/ai/</code>, <code>.setup/logs/</code>, <code>AGENTS.md</code>)
+(e.g., <code>.setup/ai/</code>, <code>.setup/logs/</code>, <code>.setup/repo/</code>, <code>AGENTS.md</code>)
 or larger than 50 MB.</p></li>
+<li><p><strong>Repo info:</strong> <code>.setup/repo/private-overleaf.md</code> is not an Overleaf
+project URL (for example, a share link, which grants access).
+Warning only: a file in <code>.setup/repo/</code> is missing,
+<code>private-github.md</code> differs from the <code>.verify</code> remote,
+or <code>public-github.md</code> differs from the repository in <code>clone.sh</code>.</p></li>
 </ul><p>Generated files (e.g., <code>NAMESPACE</code>, <code>man/</code>),
 local folders (e.g., <code>.library</code>),
 and secret files are never compared.</p>

@@ -29,12 +29,15 @@ Verify(
 - log:
 
   Character string. File name of the change-set log in `.setup/logs`. If
-  `NULL`, the newest log with a pending push in `.setup/logs/index.md`.
+  `NULL`, the newest log with a pending push in `.setup/logs/index.md`,
+  else the log named in the pushed commit message
+  (`Log: .setup/logs/<log>`), as for a fix-up push.
 
 - record:
 
   Logical. If `TRUE`, write the commit and the result in the log's
-  "Pushes" table and in `.setup/logs/index.md`.
+  "Pushes" table and in `.setup/logs/index.md`, filling the pending row,
+  or adding a row when there is none.
 
 - error:
 
@@ -69,8 +72,14 @@ The checks, and when each fails:
   finds a token in the private repository.
 
 - **Public export:** a file that `make auto` would publish is private
-  (e.g., `.setup/ai/`, `.setup/logs/`, `AGENTS.md`) or larger than 50
-  MB.
+  (e.g., `.setup/ai/`, `.setup/logs/`, `.setup/repo/`, `AGENTS.md`) or
+  larger than 50 MB.
+
+- **Repo info:** `.setup/repo/private-overleaf.md` is not an Overleaf
+  project URL (for example, a share link, which grants access). Warning
+  only: a file in `.setup/repo/` is missing, `private-github.md` differs
+  from the `.verify` remote, or `public-github.md` differs from the
+  repository in `clone.sh`.
 
 Generated files (e.g., `NAMESPACE`, `man/`), local folders (e.g.,
 `.library`), and secret files are never compared.

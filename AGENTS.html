@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.41</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.42</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,6 +48,9 @@
 </li>
 <li>Type: simulation</li>
 <li>Private repository: <code>jeksterslab-psu/rProject</code> (Overleaf pushes here)</li>
+<li>Overleaf project: not recorded (<code>.setup/repo/private-overleaf.md</code>)</li>
+<li>Public repository: <code>ijapesigan/rProject</code> (<code>make auto</code> pushes here)</li>
+<li>These come from <code>.setup/repo/</code> (private). O2G checks the private repository; PUB checks the public one.</li>
 <li>Image: <strong>the user chooses it</strong> and runs <code>apptainer exec &lt;image&gt; make &lt;target&gt;</code>; R is not installed on the host. Do not pick an image. When a command needs one, ask, or give the command with <code>&lt;image&gt;</code> for the user to fill in. <code>.setup/ai/project.md</code> may note the image the project usually uses.</li>
 </ul></div>
 <div class="section level2">
@@ -69,6 +72,8 @@
 <td>specs, the plan, <code>project.md</code> (private)</td>
 </tr><tr><td><code>.setup/logs/</code></td>
 <td>one log per Overleaf push, and <code>index.md</code> (private)</td>
+</tr><tr><td><code>.setup/repo/</code></td>
+<td>where the project lives (private)</td>
 </tr><tr><td><code>.sim/</code></td>
 <td>simulation scripts (SLURM, GNU Parallel)</td>
 </tr><tr><td><code>.sif/</code></td>

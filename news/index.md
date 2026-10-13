@@ -1,5 +1,55 @@
 # Changelog
 
+## rProject 0.0.42
+
+### Minor
+
+- `.setup/repo/` records where a project lives: `private-github.md`,
+  `private-overleaf.md` (the project URL, never a share link), and
+  `public-github.md` (`owner/repo`, or `none`).
+  [`Project()`](https://github.com/ijapesigan/rProject/reference/Project.md)
+  creates it when it is missing, with the two GitHub repositories filled
+  in.
+- `verify.sh` clones the private repository named in
+  `.setup/repo/private-github.md` (needed when `project.R` and the
+  repository name differ, as in the docker projects).
+- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  checks `.setup/repo/` (“Repo info”): an Overleaf share link fails; a
+  missing file, or a repository that differs from the `.verify` remote
+  or from `clone.sh`, warns.
+- `Verify(record = TRUE)` records a fix-up push without a pending row:
+  it finds the log from the commit message (`Log: .setup/logs/<log>`)
+  and adds rows to the log and to `index.md`.
+- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md)
+  writes the three locations into `AGENTS.md`, and has a `"container"`
+  type for `docker-*` projects (`inst/ai/section-container.md`).
+- [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+  and
+  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  treat `.setup/repo/` as private, and
+  [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+  applies `.gitignore` outside a git repository (for example, a folder
+  downloaded from Overleaf).
+- [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md)
+  lists the files to delete in Overleaf (in the private repository but
+  not in the project), and names the
+  [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md) files
+  as generated.
+
+### Patch
+
+- [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md)
+  and
+  [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
+  skip `.verify/`;
+  [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md)
+  resolves its exclusions relative to the project and no longer hides
+  errors with [`try()`](https://rdrr.io/r/base/try.html).
+- `.DataManifestUsedBy()` keeps the `.setup/data-analysis/` and
+  `.setup/data-process/` scripts.
+- `make-project.R` upgrades rProject in the rProject project too (it
+  only installed it when missing, so `.library` kept an old version).
+
 ## rProject 0.0.41
 
 ### Patch

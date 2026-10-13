@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.41</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.42</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,35 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.42" id="rproject-0042">rProject 0.0.42<a class="anchor" aria-label="anchor" href="#rproject-0042"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-42">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-42"></a></h3>
+<ul><li>
+<code>.setup/repo/</code> records where a project lives: <code>private-github.md</code>, <code>private-overleaf.md</code> (the project URL, never a share link), and <code>public-github.md</code> (<code>owner/repo</code>, or <code>none</code>). <code><a href="../reference/Project.html">Project()</a></code> creates it when it is missing, with the two GitHub repositories filled in.</li>
+<li>
+<code>verify.sh</code> clones the private repository named in <code>.setup/repo/private-github.md</code> (needed when <code>project.R</code> and the repository name differ, as in the docker projects).</li>
+<li>
+<code><a href="../reference/Verify.html">Verify()</a></code> checks <code>.setup/repo/</code> (“Repo info”): an Overleaf share link fails; a missing file, or a repository that differs from the <code>.verify</code> remote or from <code>clone.sh</code>, warns.</li>
+<li>
+<code>Verify(record = TRUE)</code> records a fix-up push without a pending row: it finds the log from the commit message (<code>Log: .setup/logs/&lt;log&gt;</code>) and adds rows to the log and to <code>index.md</code>.</li>
+<li>
+<code><a href="../reference/AI.html">AI()</a></code> writes the three locations into <code>AGENTS.md</code>, and has a <code>"container"</code> type for <code>docker-*</code> projects (<code>inst/ai/section-container.md</code>).</li>
+<li>
+<code><a href="../reference/Public.html">Public()</a></code> and <code><a href="../reference/Verify.html">Verify()</a></code> treat <code>.setup/repo/</code> as private, and <code><a href="../reference/Public.html">Public()</a></code> applies <code>.gitignore</code> outside a git repository (for example, a folder downloaded from Overleaf).</li>
+<li>
+<code><a href="../reference/Log.html">Log()</a></code> lists the files to delete in Overleaf (in the private repository but not in the project), and names the <code><a href="../reference/AI.html">AI()</a></code> files as generated.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="patch-0-0-42">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-42"></a></h3>
+<ul><li>
+<code><a href="../reference/Lint.html">Lint()</a></code> and <code><a href="../reference/Style.html">Style()</a></code> skip <code>.verify/</code>; <code><a href="../reference/Lint.html">Lint()</a></code> resolves its exclusions relative to the project and no longer hides errors with <code><a href="https://rdrr.io/r/base/try.html" class="external-link">try()</a></code>.</li>
+<li>
+<code>.DataManifestUsedBy()</code> keeps the <code>.setup/data-analysis/</code> and <code>.setup/data-process/</code> scripts.</li>
+<li>
+<code>make-project.R</code> upgrades rProject in the rProject project too (it only installed it when missing, so <code>.library</code> kept an old version).</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.41" id="rproject-0041">rProject 0.0.41<a class="anchor" aria-label="anchor" href="#rproject-0041"></a></h2>
 <div class="section level3">

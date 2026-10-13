@@ -19,7 +19,7 @@ AI(path, type = NULL)
 - type:
 
   Character vector. Project types: any of `"package"`, `"manuscript"`,
-  `"simulation"`, `"library"`, and `"talk"`.
+  `"simulation"`, `"library"`, `"talk"`, and `"container"`.
 
 ## Value
 
@@ -42,7 +42,14 @@ The project type comes from `type`, else from an `ai` list in
 `ai <- list(type = c("manuscript", "simulation"))`), else it is
 detected: `"simulation"` if `.sim` exists, `"manuscript"` if a
 `*-manuscript*.Rtex` exists or the name starts with `man`, `"library"`
-for `lib-*`, `"talk"` for `talks*`, otherwise `"package"`.
+for `lib-*`, `"talk"` for `talks*`, `"container"` for `docker-*`,
+otherwise `"package"`.
+
+Where the project lives (the private GitHub repository, the Overleaf
+project, and the public GitHub repository) comes from `.setup/repo/`,
+which
+[`Project()`](https://github.com/ijapesigan/rProject/reference/Project.md)
+creates when it is missing.
 
 The user chooses the Apptainer image and runs `apptainer exec`; the
 instructions tell agents not to pick an image.
