@@ -1,6 +1,6 @@
 Package: rProject
 Title: Setup R Project
-Version: 0.0.42
+Version: 0.0.43
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -17,13 +17,13 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr
 Depends: R (>= 3.5.0)
-Imports: BiocManager, cffr, covr, devtools, distro, knitr, lintr, pak,
-        pkgdown, quarto, Rcpp, remotes, RefManageR, rmarkdown,
+Imports: BiocManager, cffr, covr, devtools, distro, jsonlite, knitr,
+        lintr, pak, pkgdown, quarto, Rcpp, remotes, rmarkdown,
         roxygen2, rprojroot, stats, styler, tinytex, utils
 Suggests: testthat
 Config/roxygen2/version: 8.1.1
 NeedsCompilation: no
-Packaged: 2026-10-13 06:47:03 UTC; root
+Packaged: 2026-10-13 18:04:33 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0003-4818-8420>)
 Maintainer: Ivan Jacob Agaloos Pesigan <ijapesigan@gmail.com>
