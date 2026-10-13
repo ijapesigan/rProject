@@ -14,7 +14,13 @@
         X = files,
         FUN = function(file) {
           raw <- readBin(con = file, what = "raw", n = file.info(file)$size)
-          text <- rawToChar(raw[raw != as.raw(0)])
+          # CRLF (a Windows checkout) is not a layout difference
+          text <- gsub(
+            pattern = "\r\n",
+            replacement = "\n",
+            x = rawToChar(raw[raw != as.raw(0)]),
+            fixed = TRUE
+          )
           entry <- .LibParse(text = text)
           field <- function(name) {
             unname(c(entry$fields[name], NA_character_)[1])

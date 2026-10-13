@@ -1,3 +1,9 @@
+# rProject 0.0.44
+
+## Patch
+
+* `LibCheck()` no longer reports a layout difference for an entry checked out with CRLF line endings (Windows); `LibFormat()` and `LibAdd()` write LF line endings on every platform. This fixes the `test-rProject-lib.R` failure on the Windows R CMD check jobs.
+
 # rProject 0.0.43
 
 ## Minor
