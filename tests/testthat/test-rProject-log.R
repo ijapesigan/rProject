@@ -18,6 +18,8 @@ lapply(
     # the private repository has foo.R and old.R
     write(private, "R/foo.R", "Foo <- function() 1")
     write(private, "R/old.R", "Old <- function() 1")
+    # gone.R was deleted locally
+    write(private, "R/gone.R", "Gone <- function() 1")
     system2(
       command = "git",
       args = c("-C", shQuote(private), "init", "-q"),
@@ -72,6 +74,15 @@ lapply(
         testthat::expect_false("R/old.R" %in% upload)
         testthat::expect_false("NAMESPACE" %in% upload)
         testthat::expect_false(any(grepl("^\\.verify", upload)))
+      }
+    )
+    testthat::test_that(
+      paste(text, "lists files deleted locally under Delete in Overleaf"),
+      {
+        testthat::expect_equal(
+          section$file[section$action == "delete"],
+          "R/gone.R"
+        )
       }
     )
     testthat::test_that(

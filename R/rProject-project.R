@@ -50,6 +50,8 @@ Project <- function(path) {
     con = con
   )
   close(con)
+  # where the project lives (private GitHub, Overleaf, public GitHub)
+  .RepoInfoWrite(path = path)
   root <- rprojroot::is_rstudio_project
   cat(
     paste(

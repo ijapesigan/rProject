@@ -22,11 +22,14 @@ By default \code{.verify} in the project.}
 
 \item{log}{Character string.
 File name of the change-set log in \code{.setup/logs}.
-If \code{NULL}, the newest log with a pending push in \code{.setup/logs/index.md}.}
+If \code{NULL}, the newest log with a pending push in \code{.setup/logs/index.md},
+else the log named in the pushed commit message
+(\verb{Log: .setup/logs/<log>}), as for a fix-up push.}
 
 \item{record}{Logical.
 If \code{TRUE}, write the commit and the result
-in the log's "Pushes" table and in \code{.setup/logs/index.md}.}
+in the log's "Pushes" table and in \code{.setup/logs/index.md},
+filling the pending row, or adding a row when there is none.}
 
 \item{error}{Logical.
 If \code{TRUE}, stop with an error when a check fails.}
@@ -54,8 +57,13 @@ between the project and the private repository.
 does not end with \verb{Log: .setup/logs/<log>}.
 \item \strong{Secrets:} \code{\link[=SecretScan]{SecretScan()}} finds a token in the private repository.
 \item \strong{Public export:} a file that \verb{make auto} would publish is private
-(e.g., \verb{.setup/ai/}, \verb{.setup/logs/}, \code{AGENTS.md})
+(e.g., \verb{.setup/ai/}, \verb{.setup/logs/}, \verb{.setup/repo/}, \code{AGENTS.md})
 or larger than 50 MB.
+\item \strong{Repo info:} \code{.setup/repo/private-overleaf.md} is not an Overleaf
+project URL (for example, a share link, which grants access).
+Warning only: a file in \verb{.setup/repo/} is missing,
+\code{private-github.md} differs from the \code{.verify} remote,
+or \code{public-github.md} differs from the repository in \code{clone.sh}.
 }
 
 Generated files (e.g., \code{NAMESPACE}, \verb{man/}),

@@ -83,6 +83,39 @@ lapply(
         )
       }
     )
+    testthat::test_that(
+      paste(text, "writes a container section and where the project lives"),
+      {
+        docker <- file.path(dirname(root), "docker-001-tidyverse")
+        private <- "jeksterslab-psu/docker-001-tidyverse"
+        write(
+          docker,
+          ".setup/scripts/project.R",
+          "project <- \"docker-tidyverse\""
+        )
+        write(docker, ".setup/repo/private-github.md", private)
+        write(
+          docker,
+          ".setup/repo/public-github.md",
+          "ijapesigan/docker-tidyverse"
+        )
+        suppressMessages(AI(path = docker))
+        agents <- readLines(file.path(docker, "AGENTS.md"))
+        testthat::expect_true(
+          any(grepl("Type: container", agents, fixed = TRUE))
+        )
+        testthat::expect_true("## Container image" %in% agents)
+        testthat::expect_true(
+          any(grepl(paste0("`", private, "`"), agents, fixed = TRUE))
+        )
+        testthat::expect_true(
+          any(grepl("`ijapesigan/docker-tidyverse`", agents, fixed = TRUE))
+        )
+        testthat::expect_true(
+          any(grepl("Overleaf project: not recorded", agents, fixed = TRUE))
+        )
+      }
+    )
     unlink(dirname(root), recursive = TRUE)
   },
   text = "test-rProject-ai"

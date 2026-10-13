@@ -27,6 +27,20 @@ lapply(
         testthat::expect_length(Lint(path = root), 0L)
       }
     )
+    testthat::test_that(
+      paste(text, "skips .verify, from any working directory"),
+      {
+        dir.create(file.path(root, ".verify", "R"), recursive = TRUE)
+        writeLines(
+          "bad_Name = function( x ) x",
+          file.path(root, ".verify", "R", "b.R")
+        )
+        old <- setwd(tempdir())
+        lints <- Lint(path = root)
+        setwd(old)
+        testthat::expect_length(lints, 0L)
+      }
+    )
     .TestRestore(state)
     unlink(dirname(root), recursive = TRUE)
   },

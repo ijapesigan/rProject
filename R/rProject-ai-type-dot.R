@@ -9,7 +9,8 @@
       grepl(pattern = "^man", x = project),
     simulation = dir.exists(file.path(path, ".sim")),
     library = grepl(pattern = "^lib-", x = project),
-    talk = grepl(pattern = "^talks", x = project)
+    talk = grepl(pattern = "^talks", x = project),
+    container = grepl(pattern = "^docker-", x = project)
   )
   type <- names(type)[type]
   if (length(type) == 0L) {

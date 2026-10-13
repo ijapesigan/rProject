@@ -19,7 +19,12 @@
 #' `"manuscript"` if a `*-manuscript*.Rtex` exists
 #' or the name starts with `man`,
 #' `"library"` for `lib-*`, `"talk"` for `talks*`,
+#' `"container"` for `docker-*`,
 #' otherwise `"package"`.
+#'
+#' Where the project lives (the private GitHub repository, the Overleaf
+#' project, and the public GitHub repository) comes from `.setup/repo/`,
+#' which [Project()] creates when it is missing.
 #'
 #' The user chooses the Apptainer image and runs `apptainer exec`;
 #' the instructions tell agents not to pick an image.
@@ -29,7 +34,7 @@
 #' @inheritParams LibPaths
 #' @param type Character vector.
 #'   Project types: any of `"package"`, `"manuscript"`, `"simulation"`,
-#'   `"library"`, and `"talk"`.
+#'   `"library"`, `"talk"`, and `"container"`.
 #' @return Returns the paths of the files that were written, invisibly.
 #' @export
 AI <- function(path,
@@ -42,9 +47,31 @@ AI <- function(path,
   if (is.null(type)) {
     type <- .AIType(path = path, project = project)
   }
+  info <- .RepoInfo(path = path)
+  shown <- function(x, missing) {
+    ifelse(is.na(x), missing, paste0("`", x, "`"))
+  }
   values <- c(
     project = project,
     types = paste(type, collapse = ", "),
+    private_github = shown(
+      x = info$private_github,
+      missing = paste0(
+        "`jeksterslab-psu/", project, "` (assumed; see `.setup/repo/`)"
+      )
+    ),
+    private_overleaf = shown(
+      x = info$private_overleaf,
+      missing = "not recorded (`.setup/repo/private-overleaf.md`)"
+    ),
+    public_github = ifelse(
+      attr(info, "public_none"),
+      "none",
+      shown(
+        x = info$public_github,
+        missing = "not recorded (`.setup/repo/public-github.md`)"
+      )
+    ),
     folders = .AIRows(
       type = type,
       rows = list(
@@ -70,7 +97,14 @@ AI <- function(path,
     sections = paste(
       vapply(
         X = intersect(
-          c("manuscript", "simulation", "package", "library", "talk"),
+          c(
+            "manuscript",
+            "simulation",
+            "package",
+            "library",
+            "talk",
+            "container"
+          ),
           type
         ),
         FUN = function(x) {
