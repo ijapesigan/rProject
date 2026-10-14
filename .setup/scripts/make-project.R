@@ -167,6 +167,70 @@ if (!("pak" %in% pkg_installed)) {
     quiet = TRUE
   )
 }
+# install rProject alone into .library: pak looks only in `lib` for what is
+# installed, so with dependencies it would rebuild from source every package
+# the image already has (spec 2026-10-13-make-project-pak); the dependencies
+# come from the image, which .libPaths() keeps after .library
+rproject_install <- function(ref) {
+  message(
+    paste0(
+      "\n\nInstalling rProject ",
+      ref,
+      " into .library (dependencies from the image).\n\n"
+    )
+  )
+  rproject_missing <- paste0(
+    "\n\nIf a dependency is missing, add it to the image",
+    " (docker-docs or the project's .sif);",
+    " make project does not install dependencies into .library.\n\n"
+  )
+  tryCatch(
+    expr = pak::pkg_install(
+      pkg = ref,
+      lib = dot_library_folder,
+      dependencies = FALSE
+    ),
+    error = function(e) {
+      stop(
+        paste0(
+          "\n\nrProject could not be installed in .library:\n",
+          conditionMessage(e),
+          rproject_missing
+        ),
+        call. = FALSE
+      )
+    }
+  )
+  # load it in a fresh R process; a missing dependency belongs in the image
+  rproject_load <- suppressWarnings(
+    system2(
+      command = file.path(R.home("bin"), "Rscript"),
+      args = c(
+        "--vanilla",
+        "-e",
+        shQuote(
+          paste0(
+            ".libPaths(c(\"",
+            dot_library_folder,
+            "\", .libPaths())); loadNamespace(\"rProject\")"
+          )
+        )
+      ),
+      stdout = TRUE,
+      stderr = TRUE
+    )
+  )
+  if (!is.null(attr(rproject_load, "status"))) {
+    stop(
+      paste0(
+        "\n\nrProject was installed in .library but does not load:\n",
+        paste(rproject_load, collapse = "\n"),
+        rproject_missing
+      ),
+      call. = FALSE
+    )
+  }
+}
 # every project, rProject included: install rProject when it is missing,
 # and upgrade it when the installed copy is older than the GitHub HEAD
 # (or than rproject_ver)
@@ -203,33 +267,28 @@ if (is.null(rproject_ver)) {
   )
   if (is.na(rproject_head)) {
     if (is.na(rproject_sha)) {
-      pak::pkg_install(
-        pkg = "ijapesigan/rProject",
-        lib = dot_library_folder
-      )
+      rproject_install(ref = "ijapesigan/rProject")
     } else {
       message(
         "\n\nCould not reach GitHub; keeping the installed rProject.\n\n"
       )
     }
   } else if (!identical(rproject_sha, rproject_head)) {
-    pak::pkg_install(
-      pkg = paste0(
+    rproject_install(
+      ref = paste0(
         "ijapesigan/rProject",
         "@",
         rproject_head
-      ),
-      lib = dot_library_folder
+      )
     )
   }
 } else {
-  pak::pkg_install(
-    pkg = paste0(
+  rproject_install(
+    ref = paste0(
       "ijapesigan/rProject",
       "@",
       rproject_ver
-    ),
-    lib = dot_library_folder
+    )
   )
 }
 rProject::Project(
