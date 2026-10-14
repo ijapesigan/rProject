@@ -9,7 +9,7 @@ on top of the global instructions installed by AIGlobal()."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.45</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.46</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,8 @@ Project path.</p></dd>
 
 <dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
 <dd><p>Character vector.
-Project types: any of <code>"package"</code>, <code>"manuscript"</code>, <code>"simulation"</code>,
+Project types: any of <code>"package"</code>, <code>"cran"</code> (a package on CRAN or
+headed there; with <code>"package"</code>), <code>"manuscript"</code>, <code>"simulation"</code>,
 <code>"library"</code>, <code>"talk"</code>, and <code>"container"</code>.</p></dd>
 
 </dl></div>
@@ -83,9 +84,12 @@ Created once and never overwritten.</p></li>
 else from an <code>ai</code> list in <code>.setup/scripts/project.R</code>
 (e.g., <code>ai &lt;- list(type = c("manuscript", "simulation"))</code>),
 else it is detected:
-<code>"simulation"</code> if <code>.sim</code> exists,
+<code>"simulation"</code> if <code>.sim/README.md</code> (which describes the simulation)
+exists,
 <code>"manuscript"</code> if a <code>*-manuscript*.Rtex</code> exists
 or the name starts with <code>man</code>,
+<code>"package"</code> and <code>"cran"</code> for a <code>cran-*</code> folder
+(its <code>project.R</code> names the package),
 <code>"library"</code> for <code>lib-*</code>, <code>"talk"</code> for <code>talks*</code>,
 <code>"container"</code> for <code>docker-*</code>,
 otherwise <code>"package"</code>.</p>

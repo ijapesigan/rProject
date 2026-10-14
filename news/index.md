@@ -1,5 +1,24 @@
 # Changelog
 
+## rProject 0.0.46
+
+### Minor
+
+- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md): a
+  new project type, `"cran"`, for `cran-*` folders (R packages on CRAN
+  or headed there; their `project.R` names the package). They get the
+  package and the new CRAN section (`R CMD check --as-cran` clean,
+  version and NEWS for every change,
+  [`tempdir()`](https://rdrr.io/r/base/tempfile.html) only, the user
+  submits).
+- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md): a
+  project is a simulation when `.sim/README.md` (which describes the
+  simulation) exists; `.sim/` alone (the template’s `make.sh`) is not
+  one. rProject and plain packages were labelled “simulation”.
+- `make-project.R` (linked into every project): installs rProject alone
+  into `.library`, with the dependencies from the image; in GitHub
+  Actions, with its dependencies.
+
 ## rProject 0.0.45
 
 ### Patch

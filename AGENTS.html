@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.45</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.46</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
 <h2 id="project">Project<a class="anchor" aria-label="anchor" href="#project"></a></h2>
 <ul><li>Name: <code>rProject</code>
 </li>
-<li>Type: simulation</li>
+<li>Type: package</li>
 <li>Private repository: <code>jeksterslab-psu/rProject</code> (Overleaf pushes here)</li>
 <li>Overleaf project: not recorded (<code>.setup/repo/private-overleaf.md</code>)</li>
 <li>Public repository: <code>ijapesigan/rProject</code> (<code>make auto</code> pushes here)</li>
@@ -74,10 +74,6 @@
 <td>one log per Overleaf push, and <code>index.md</code> (private)</td>
 </tr><tr><td><code>.setup/repo/</code></td>
 <td>where the project lives (private)</td>
-</tr><tr><td><code>.sim/</code></td>
-<td>simulation scripts (SLURM, GNU Parallel)</td>
-</tr><tr><td><code>.sif/</code></td>
-<td>images or links to them (local only; never uploaded)</td>
 </tr></tbody></table></div>
 <div class="section level2">
 <h2 id="make-targets">Make targets<a class="anchor" aria-label="anchor" href="#make-targets"></a></h2>
@@ -107,12 +103,11 @@
 <p>Overleaf’s GitHub sync stops above 7 MB of editable text and caps text files at 2 MB. Keep large data compressed (binary, e.g. <code>.Rds</code> or <code>.xz</code>) and never store the same file twice. <code>make sizecheck</code> reports problems.</p>
 </div>
 <div class="section level2">
-<h2 id="simulation">Simulation<a class="anchor" aria-label="anchor" href="#simulation"></a></h2>
-<ul><li>Scripts are in <code>.sim/</code>; read <code>.sim/README.md</code> first.</li>
-<li>Jobs run with SLURM and GNU Parallel inside the image (<code>apptainer exec</code>). The user submits jobs on the compute nodes or the local nodes; you never submit a job.</li>
-<li>Before handing over a job: a smoke test with one or two replications on the submit node, inside the image, and <code>sbatch --test-only</code> on the job script (it checks the script and submits nothing).</li>
-<li>Summaries must be compressed and under 50 MB, and must not repeat raw output. Run <code>make sizecheck</code> before uploading.</li>
-<li>When a run fails, read the SLURM output and the error files, and list the failed tasks and replications with the first error of each.</li>
+<h2 id="package">Package<a class="anchor" aria-label="anchor" href="#package"></a></h2>
+<ul><li>Every exported function has roxygen documentation and tests.</li>
+<li>
+<code>make all</code> runs the checks; fix every error, warning, and note.</li>
+<li>Keep the R style rules from your global instructions (BigCamelCase, one function per file, internal <code>.Foo</code> functions in <code>R/&lt;pkg&gt;-&lt;name&gt;-dot.R</code>).</li>
 </ul></div>
 </div>
 

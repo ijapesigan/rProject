@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.45</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.46</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,18 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.46" id="rproject-0046">rProject 0.0.46<a class="anchor" aria-label="anchor" href="#rproject-0046"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-46">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-46"></a></h3>
+<ul><li>
+<code><a href="../reference/AI.html">AI()</a></code>: a new project type, <code>"cran"</code>, for <code>cran-*</code> folders (R packages on CRAN or headed there; their <code>project.R</code> names the package). They get the package and the new CRAN section (<code>R CMD check --as-cran</code> clean, version and NEWS for every change, <code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir()</a></code> only, the user submits).</li>
+<li>
+<code><a href="../reference/AI.html">AI()</a></code>: a project is a simulation when <code>.sim/README.md</code> (which describes the simulation) exists; <code>.sim/</code> alone (the template’s <code>make.sh</code>) is not one. rProject and plain packages were labelled “simulation”.</li>
+<li>
+<code>make-project.R</code> (linked into every project): installs rProject alone into <code>.library</code>, with the dependencies from the image; in GitHub Actions, with its dependencies.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.45" id="rproject-0045">rProject 0.0.45<a class="anchor" aria-label="anchor" href="#rproject-0045"></a></h2>
 <div class="section level3">

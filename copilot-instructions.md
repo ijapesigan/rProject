@@ -1,7 +1,6 @@
 # rProject
 
-See `AGENTS.md` and `.setup/ai/project.md` for this project
-(simulation).
+See `AGENTS.md` and `.setup/ai/project.md` for this project (package).
 
 - R: BigCamelCase functions; snake_case objects; `pkg::fn()` with named
   arguments; no explicit

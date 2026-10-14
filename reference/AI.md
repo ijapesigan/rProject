@@ -18,7 +18,8 @@ AI(path, type = NULL)
 
 - type:
 
-  Character vector. Project types: any of `"package"`, `"manuscript"`,
+  Character vector. Project types: any of `"package"`, `"cran"` (a
+  package on CRAN or headed there; with `"package"`), `"manuscript"`,
   `"simulation"`, `"library"`, `"talk"`, and `"container"`.
 
 ## Value
@@ -40,10 +41,12 @@ build).
 The project type comes from `type`, else from an `ai` list in
 `.setup/scripts/project.R` (e.g.,
 `ai <- list(type = c("manuscript", "simulation"))`), else it is
-detected: `"simulation"` if `.sim` exists, `"manuscript"` if a
-`*-manuscript*.Rtex` exists or the name starts with `man`, `"library"`
-for `lib-*`, `"talk"` for `talks*`, `"container"` for `docker-*`,
-otherwise `"package"`.
+detected: `"simulation"` if `.sim/README.md` (which describes the
+simulation) exists, `"manuscript"` if a `*-manuscript*.Rtex` exists or
+the name starts with `man`, `"package"` and `"cran"` for a `cran-*`
+folder (its `project.R` names the package), `"library"` for `lib-*`,
+`"talk"` for `talks*`, `"container"` for `docker-*`, otherwise
+`"package"`.
 
 Where the project lives (the private GitHub repository, the Overleaf
 project, and the public GitHub repository) comes from `.setup/repo/`,
