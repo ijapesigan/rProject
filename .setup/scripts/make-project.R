@@ -170,13 +170,21 @@ if (!("pak" %in% pkg_installed)) {
 # install rProject alone into .library: pak looks only in `lib` for what is
 # installed, so with dependencies it would rebuild from source every package
 # the image already has (spec 2026-10-13-make-project-pak); the dependencies
-# come from the image, which .libPaths() keeps after .library
+# come from the image, which .libPaths() keeps after .library. In GitHub
+# Actions, make cleanpkg has removed the image's packages (the container runs
+# as root), so there pak installs the dependencies too
+rproject_deps <- identical(Sys.getenv("GITHUB_ACTIONS"), "true")
 rproject_install <- function(ref) {
   message(
     paste0(
       "\n\nInstalling rProject ",
       ref,
-      " into .library (dependencies from the image).\n\n"
+      " into .library",
+      ifelse(
+        rproject_deps,
+        " with its dependencies (GitHub Actions).\n\n",
+        " (dependencies from the image).\n\n"
+      )
     )
   )
   rproject_missing <- paste0(
@@ -188,7 +196,7 @@ rproject_install <- function(ref) {
     expr = pak::pkg_install(
       pkg = ref,
       lib = dot_library_folder,
-      dependencies = FALSE
+      dependencies = if (rproject_deps) NA else FALSE
     ),
     error = function(e) {
       stop(
