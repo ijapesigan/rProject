@@ -11,7 +11,8 @@ AI(path, type = NULL)
 Project path.}
 
 \item{type}{Character vector.
-Project types: any of \code{"package"}, \code{"manuscript"}, \code{"simulation"},
+Project types: any of \code{"package"}, \code{"cran"} (a package on CRAN or
+headed there; with \code{"package"}), \code{"manuscript"}, \code{"simulation"},
 \code{"library"}, \code{"talk"}, and \code{"container"}.}
 }
 \value{
@@ -36,9 +37,12 @@ The project type comes from \code{type},
 else from an \code{ai} list in \code{.setup/scripts/project.R}
 (e.g., \code{ai <- list(type = c("manuscript", "simulation"))}),
 else it is detected:
-\code{"simulation"} if \code{.sim} exists,
+\code{"simulation"} if \code{.sim/README.md} (which describes the simulation)
+exists,
 \code{"manuscript"} if a \verb{*-manuscript*.Rtex} exists
 or the name starts with \code{man},
+\code{"package"} and \code{"cran"} for a \verb{cran-*} folder
+(its \code{project.R} names the package),
 \code{"library"} for \verb{lib-*}, \code{"talk"} for \verb{talks*},
 \code{"container"} for \verb{docker-*},
 otherwise \code{"package"}.

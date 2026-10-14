@@ -19,6 +19,7 @@ lapply(
     ))
     write(root, ".setup/latex/manTest-manuscript-EDIT-THIS.Rtex", "x")
     write(root, ".sim/sim.R", "x <- 1")
+    write(root, ".sim/README.md", "# Simulation")
     written <- suppressMessages(AI(path = root))
     agents <- readLines(file.path(root, "AGENTS.md"))
     testthat::test_that(
@@ -81,6 +82,33 @@ lapply(
           .AIType(path = tempdir(), project = "fitVARMxID"),
           "package"
         )
+        # cran-* folder; .sim/ with only the template's files
+        cran <- file.path(tempfile(pattern = "ai"), "cran-fitVARMxID")
+        dir.create(file.path(cran, ".sim"), recursive = TRUE)
+        writeLines(text = "#!/bin/bash", con = file.path(cran, ".sim/make.sh"))
+        writeLines(text = "*", con = file.path(cran, ".sim/.gitignore"))
+        testthat::expect_equal(
+          .AIType(path = cran, project = "fitVARMxID"),
+          c("package", "cran")
+        )
+        # a script alone is not a simulation; .sim/README.md is
+        writeLines(text = "x <- 1", con = file.path(cran, ".sim/sim.R"))
+        testthat::expect_equal(
+          .AIType(path = cran, project = "fitVARMxID"),
+          c("package", "cran")
+        )
+        writeLines(
+          text = "# Simulation",
+          con = file.path(cran, ".sim/README.md")
+        )
+        testthat::expect_equal(
+          .AIType(path = cran, project = "fitVARMxID"),
+          c("simulation", "package", "cran")
+        )
+        write(cran, ".setup/scripts/project.R", "project <- \"fitVARMxID\"")
+        suppressMessages(AI(path = cran, type = c("package", "cran")))
+        agents <- readLines(file.path(cran, "AGENTS.md"))
+        testthat::expect_true(all(c("## Package", "## CRAN") %in% agents))
       }
     )
     testthat::test_that(
