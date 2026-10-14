@@ -62,7 +62,8 @@ The checks, and when each fails:
   the private repository.
 
 - **Unlisted changes:** (warning only) other files differ between the
-  project and the private repository.
+  project and the private repository (`.setup/notes/claude.txt`, the
+  resume commands, is not counted).
 
 - **Commit message:** (warning only) the last commit message does not
   end with `Log: .setup/logs/<log>`.

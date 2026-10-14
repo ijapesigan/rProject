@@ -15,6 +15,9 @@
   project is a simulation when `.sim/README.md` (which describes the
   simulation) exists; `.sim/` alone (the template’s `make.sh`) is not
   one. rProject and plain packages were labelled “simulation”.
+- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md):
+  `.setup/notes/claude.txt` (the resume commands, which the agent keeps
+  current when the user leaves) is not counted as an unlisted change.
 - `make-project.R` (linked into every project): installs rProject alone
   into `.library`, with the dependencies from the image; in GitHub
   Actions, with its dependencies.
