@@ -12,7 +12,8 @@
 #' - **Deletions:** a file listed under "Delete in Overleaf"
 #'   is still in the private repository.
 #' - **Unlisted changes:** (warning only) other files differ
-#'   between the project and the private repository.
+#'   between the project and the private repository
+#'   (`.setup/notes/claude.txt`, the resume commands, is not counted).
 #' - **Commit message:** (warning only) the last commit message
 #'   does not end with `Log: .setup/logs/<log>`.
 #' - **Secrets:** [SecretScan()] finds a token in the private repository.

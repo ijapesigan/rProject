@@ -52,7 +52,8 @@ is missing from or differs in the private repository.
 \item \strong{Deletions:} a file listed under "Delete in Overleaf"
 is still in the private repository.
 \item \strong{Unlisted changes:} (warning only) other files differ
-between the project and the private repository.
+between the project and the private repository
+(\code{.setup/notes/claude.txt}, the resume commands, is not counted).
 \item \strong{Commit message:} (warning only) the last commit message
 does not end with \verb{Log: .setup/logs/<log>}.
 \item \strong{Secrets:} \code{\link[=SecretScan]{SecretScan()}} finds a token in the private repository.

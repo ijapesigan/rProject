@@ -4,6 +4,7 @@
 
 * `AI()`: a new project type, `"cran"`, for `cran-*` folders (R packages on CRAN or headed there; their `project.R` names the package). They get the package and the new CRAN section (`R CMD check --as-cran` clean, version and NEWS for every change, `tempdir()` only, the user submits).
 * `AI()`: a project is a simulation when `.sim/README.md` (which describes the simulation) exists; `.sim/` alone (the template's `make.sh`) is not one. rProject and plain packages were labelled "simulation".
+* `Verify()`: `.setup/notes/claude.txt` (the resume commands, which the agent keeps current when the user leaves) is not counted as an unlisted change.
 * `make-project.R` (linked into every project): installs rProject alone into `.library`, with the dependencies from the image; in GitHub Actions, with its dependencies.
 
 # rProject 0.0.45

@@ -216,6 +216,7 @@ lapply(
     x <- fixture()
     write(x$private, "old.R", "y <- 1")
     write(x$path, "R/bar.R", "Bar <- function() 1")
+    write(x$path, ".setup/notes/claude.txt", "claude --resume 1234")
     checks <- suppressMessages(
       Verify(path = x$path, private = x$private, error = FALSE)
     )
@@ -227,6 +228,11 @@ lapply(
         testthat::expect_match(
           checks$detail[checks$check == "Unlisted changes"],
           "R/bar.R"
+        )
+        # the resume commands are not counted
+        testthat::expect_no_match(
+          checks$detail[checks$check == "Unlisted changes"],
+          "claude.txt"
         )
       }
     )
