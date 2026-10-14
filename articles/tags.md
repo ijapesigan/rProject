@@ -1,6 +1,6 @@
 # Library Tags
 
-    ## Ignoring entry 'Pesigan-2022'  (line9481) because:
+    ## Ignoring entry 'Pesigan-2022'  (line9528) because:
     ##  A bibentry of bibtype 'PhdThesis' has to specify the fields: school, year
 
 |  | key | annotation | keywords |
@@ -53,6 +53,7 @@
 | Efron-1988 | Efron-1988 | NULL | NULL |
 | Gingerich-1984 | Gingerich-1984 | NULL | NULL |
 | Gollob-Reichardt-1987 | Gollob-Reichardt-1987 | NULL | NULL |
+| Gourieroux-Monfort-Trognon-1984 | Gourieroux-Monfort-Trognon-1984 | NULL | NULL |
 | James-Brett-1984 | James-Brett-1984 | mediation, mediation-causalsteps | NULL |
 | Judd-Kenny-1981 | Judd-Kenny-1981 | mediation, mediation-causalsteps | NULL |
 | Kaplan-Martin-Robbins-1984 | Kaplan-Martin-Robbins-1984 | NULL | NULL |
@@ -74,6 +75,7 @@
 | Venzon-Moolgavkar-1988 | Venzon-Moolgavkar-1988 | NULL | confidence intervals, profile likelihood |
 | Watson-Clark-Tellegen-1988 | Watson-Clark-Tellegen-1988 | NULL | NULL |
 | White-1980 | White-1980 | regression, regression-hc | NULL |
+| White-1982 | White-1982 | NULL | NULL |
 | Bergstrom-1984 | Bergstrom-1984 | NULL | NULL |
 | Bollen-1989 | Bollen-1989 | NULL | NULL |
 | Cohen-1988 | Cohen-1988 | NULL | Social sciences–Statistical methods, Probabilities, Statistical power analysis |
@@ -448,6 +450,7 @@
 | Moeyaert-Ugille-Beretvas-2017 | Moeyaert-Ugille-Beretvas-2017 | NULL | NULL |
 | Molenaar-2017 | Molenaar-2017 | NULL | Dynamic factor analysis, Granger causality, hybrid models, lagged factorloadings, matrix polynomials, state-space models, vector autoregressive models |
 | Moneta-Chlas-Entner-etal-2011 | Moneta-Chlas-Entner-etal-2011 | NULL | causal inference, econometric time series, SVAR, graphical causal models, independent component analysis, conditional independence tests |
+| Morris-White-Crowther-2019 | Morris-White-Crowther-2019 | NULL | NULL |
 | Neale-Hunter-Pritikin-etal-2016 | Neale-Hunter-Pritikin-etal-2016 | r, r-packages, sem, sem-software | NULL |
 | Northcote-Livingston-2011 | Northcote-Livingston-2011 | NULL | NULL |
 | Odgers-Russell-2017 | Odgers-Russell-2017 | NULL | NULL |
