@@ -1,5 +1,15 @@
 # Changelog
 
+## rProject 0.0.47
+
+### Patch
+
+- [`BuildIgnore()`](https://github.com/ijapesigan/rProject/reference/BuildIgnore.md):
+  `.Rbuildignore` ignores the root `latexmkrc` (Overleaf’s copy, kept in
+  every Overleaf project). Built from an Overleaf clone, `R CMD check`
+  noted “Non-standard file/directory found at top level: ‘latexmkrc’”.
+  The package copy, `inst/latexmk/latexmkrc`, is still shipped.
+
 ## rProject 0.0.46
 
 ### Minor
