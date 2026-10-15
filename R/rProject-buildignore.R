@@ -46,6 +46,7 @@ BuildIgnore <- function(path,
       "^\\.verify$",
       "^detritus$",
       "^index\\.qmd$",
+      "^latexmkrc$",
       "^pkgdown$",
       "^quarto$",
       "^scripts$"
