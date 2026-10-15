@@ -69,6 +69,17 @@ lapply(
       }
     )
     testthat::test_that(
+      paste(text, "ignores the root latexmkrc only"),
+      {
+        testthat::expect_true(
+          ignored("latexmkrc")
+        )
+        testthat::expect_false(
+          ignored("inst/latexmk/latexmkrc")
+        )
+      }
+    )
+    testthat::test_that(
       paste(text, "appends add"),
       {
         testthat::expect_equal(
