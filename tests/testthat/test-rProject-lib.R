@@ -58,6 +58,25 @@ lapply(
       }
     )
     testthat::test_that(
+      paste(text, "keeps Collection and types not in the list"),
+      {
+        fields <- c(
+          editor = "A A and B B",
+          date = "1991",
+          title = "T",
+          publisher = "P"
+        )
+        testthat::expect_equal(
+          .LibFormat(type = "collection", key = "A-B-1991", fields = fields)[1],
+          "@Collection{A-B-1991,"
+        )
+        testthat::expect_equal(
+          .LibFormat(type = "Patent", key = "A-B-1991", fields = fields)[1],
+          "@Patent{A-B-1991,"
+        )
+      }
+    )
+    testthat::test_that(
       paste(text, "splits names outside braces"),
       {
         testthat::expect_equal(

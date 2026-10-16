@@ -5,6 +5,7 @@
   types <- c(
     article = "Article",
     book = "Book",
+    collection = "Collection",
     inbook = "InBook",
     incollection = "InCollection",
     inproceedings = "InProceedings",
@@ -19,7 +20,9 @@
     dataset = "Dataset",
     unpublished = "Unpublished"
   )
-  type <- c(types[tolower(type)], type)[1]
+  # a type not in the list keeps its spelling
+  house <- types[tolower(type)]
+  type <- if (is.na(house)) type else unname(house)
   fields <- fields[!is.na(fields) & nzchar(trimws(fields))]
   names(fields) <- tolower(names(fields))
   lead <- c(
