@@ -47,6 +47,30 @@ lapply(
       }
     )
     testthat::test_that(
+      paste(text, "copies an existing bib.bib without sources"),
+      {
+        root <- .TestProject()
+        bib_dir <- file.path(root, ".setup", "latex", "bib")
+        dir.create(bib_dir, recursive = TRUE)
+        dir.create(file.path(root, ".setup", "quarto"))
+        dir.create(file.path(root, "vignettes"))
+        merged <- c(entry("Doe-2020a", "First"), "")
+        writeLines(merged, file.path(bib_dir, "bib.bib"))
+        testthat::expect_silent(out <- Bib(path = root))
+        testthat::expect_equal(out, file.path(bib_dir, "bib.bib"))
+        testthat::expect_equal(readLines(file.path(bib_dir, "bib.bib")), merged)
+        testthat::expect_equal(
+          readLines(file.path(root, ".setup", "quarto", "bib", "quarto.bib")),
+          merged
+        )
+        testthat::expect_equal(
+          readLines(file.path(root, "vignettes", "vignettes.bib")),
+          merged
+        )
+        unlink(dirname(root), recursive = TRUE)
+      }
+    )
+    testthat::test_that(
       paste(text, "says so when there are no .bib files"),
       {
         root <- .TestProject()

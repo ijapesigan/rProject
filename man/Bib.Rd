@@ -19,6 +19,8 @@ Joins the \code{.bib} files in \code{.setup/latex/bib} into \code{bib.bib},
 verbatim and in file-name order,
 and copies it to \code{.setup/quarto/bib/quarto.bib}
 and \code{vignettes/vignettes.bib} when those folders exist.
+Without sources (a clone of the repository, which has only \code{bib.bib}),
+the existing \code{bib.bib} is copied.
 The source files are never rewritten:
 in \verb{lib-*} projects they are the entries themselves
 (one entry per file, ASCII with LaTeX accents).

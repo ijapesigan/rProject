@@ -4,6 +4,8 @@
 #' verbatim and in file-name order,
 #' and copies it to `.setup/quarto/bib/quarto.bib`
 #' and `vignettes/vignettes.bib` when those folders exist.
+#' Without sources (a clone of the repository, which has only `bib.bib`),
+#' the existing `bib.bib` is copied.
 #' The source files are never rewritten:
 #' in `lib-*` projects they are the entries themselves
 #' (one entry per file, ASCII with LaTeX accents).
@@ -65,11 +67,7 @@ Bib <- function(path,
     !(basename(bib_src) %in% c("bib.bib", "quarto.bib", "vignettes.bib"))
   ]
   out <- NULL
-  if (length(bib_src) == 0L) {
-    message(
-      "No \".bib\" files found."
-    )
-  } else {
+  if (length(bib_src) > 0L) {
     # verbatim, one blank line between files
     bib <- unlist(
       lapply(
@@ -83,6 +81,13 @@ Bib <- function(path,
       text = bib,
       con = latex_bib
     )
+  }
+  if (!file.exists(latex_bib)) {
+    message(
+      "No \".bib\" files found."
+    )
+  } else {
+    # without sources, the existing bib.bib (e.g., a clone)
     out <- latex_bib
     # quarto and vignettes
     copies <- c(
