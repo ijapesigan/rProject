@@ -4,6 +4,12 @@
 
 ### Patch
 
+- [`LibFormat()`](https://github.com/ijapesigan/rProject/reference/LibFormat.md)
+  keeps entry types it does not list (a type outside its list became
+  `@NA`) and knows `@Collection`.
+  [`LibCheck()`](https://github.com/ijapesigan/rProject/reference/LibCheck.md)
+  accepts `@Collection` (an edited volume; requires `editor`, `date`,
+  `title`, `publisher`) in book libraries.
 - [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md):
   without source `.bib` files, the existing `.setup/latex/bib/bib.bib`
   is copied to `vignettes/vignettes.bib` and
