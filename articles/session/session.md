@@ -30,7 +30,7 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.47`\
+`#> [1] rProject_0.0.48`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
@@ -564,7 +564,7 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/RtmpCC2tWO/temp_libpath13372c193bee" "0.0.47"    `\
+`#> rProject          "/tmp/RtmpbTVsub/temp_libpath133777bd58de" "0.0.48"    `\
 `#> askpass           "/__w/rProject/rProject/.library"          "1.2.1"     `\
 `#> base64enc         "/__w/rProject/rProject/.library"          "0.1-6"     `\
 `#> BiocManager       "/__w/rProject/rProject/.library"          "1.30.27"   `\
@@ -646,7 +646,7 @@
 `#> rlang             "/__w/rProject/rProject/.library"          "1.3.0"     `\
 `#> rmarkdown         "/__w/rProject/rProject/.library"          "2.32"      `\
 `#> roxygen2          "/__w/rProject/rProject/.library"          "8.1.1"     `\
-`#> rProject          "/__w/rProject/rProject/.library"          "0.0.47"    `\
+`#> rProject          "/__w/rProject/rProject/.library"          "0.0.48"    `\
 `#> rprojroot         "/__w/rProject/rProject/.library"          "2.1.1"     `\
 `#> rstudioapi        "/__w/rProject/rProject/.library"          "0.19.0"    `\
 `#> rversions         "/__w/rProject/rProject/.library"          "3.0.0"     `\
@@ -5226,7 +5226,7 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-15 19:05:33 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-16 01:10:23 UTC; unix"                   `\
 `#> askpass           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   `\
@@ -5244,7 +5244,7 @@
 `#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   `\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:19:08 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   `\
-`#> devtools          "R 4.6.1; ; 2026-10-15 19:03:24 UTC; unix"                   `\
+`#> devtools          "R 4.6.1; ; 2026-10-16 01:07:37 UTC; unix"                   `\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:19:38 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
 `#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   `\
@@ -5300,7 +5300,7 @@
 `#> R6                "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> ragg              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:49 UTC; unix"`\
 `#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> rcmdcheck         "R 4.6.1; ; 2026-10-15 19:03:21 UTC; unix"                   `\
+`#> rcmdcheck         "R 4.6.1; ; 2026-10-16 01:07:34 UTC; unix"                   `\
 `#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> rdtools           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-17 05:34:52 UTC; unix"`\
 `#> remotes           "R 4.6.0; ; 2026-04-24 21:36:51 UTC; unix"                   `\
@@ -5308,7 +5308,7 @@
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:00:02 UTC; unix"                   `\
 `#> roxygen2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-09 05:45:48 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-15 19:05:29 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-16 01:10:18 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rstudioapi        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> rversions         "R 4.6.0; ; 2026-04-24 21:11:46 UTC; unix"                   `\
@@ -5323,7 +5323,7 @@
 `#> testthat          "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 06:36:19 UTC; unix"`\
 `#> textshaping       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:09 UTC; unix"`\
 `#> tibble            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
-`#> tinytex           "R 4.6.1; ; 2026-10-15 19:03:14 UTC; unix"                   `\
+`#> tinytex           "R 4.6.1; ; 2026-10-16 01:07:24 UTC; unix"                   `\
 `#> urlchecker        "R 4.6.0; ; 2026-07-09 17:32:21 UTC; unix"                   `\
 `#> usethis           "R 4.6.0; ; 2026-09-11 04:12:24 UTC; unix"                   `\
 `#> utf8              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:36 UTC; unix"`\
@@ -5635,7 +5635,7 @@
 `#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 07:58:53 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:24:25 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:49 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-15 18:19:45 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-15 19:05:22 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:44 UTC; unix"`\

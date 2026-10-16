@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.47</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.48</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,14 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.48" id="rproject-0048">rProject 0.0.48<a class="anchor" aria-label="anchor" href="#rproject-0048"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-48">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-48"></a></h3>
+<ul><li>
+<code><a href="../reference/Bib.html">Bib()</a></code>: without source <code>.bib</code> files, the existing <code>.setup/latex/bib/bib.bib</code> is copied to <code>vignettes/vignettes.bib</code> and <code>.setup/quarto/bib/quarto.bib</code>. A clone of the private repository has only <code>bib.bib</code> (<code>vignettes.bib</code> is gitignored), so <code><a href="../reference/Site.html">Site()</a></code> could not rebuild <code>vignettes.bib</code> and pkgdown failed with “File ‘vignettes.bib’ not found”.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.47" id="rproject-0047">rProject 0.0.47<a class="anchor" aria-label="anchor" href="#rproject-0047"></a></h2>
 <div class="section level3">

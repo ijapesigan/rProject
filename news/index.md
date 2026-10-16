@@ -1,5 +1,18 @@
 # Changelog
 
+## rProject 0.0.48
+
+### Patch
+
+- [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md):
+  without source `.bib` files, the existing `.setup/latex/bib/bib.bib`
+  is copied to `vignettes/vignettes.bib` and
+  `.setup/quarto/bib/quarto.bib`. A clone of the private repository has
+  only `bib.bib` (`vignettes.bib` is gitignored), so
+  [`Site()`](https://github.com/ijapesigan/rProject/reference/Site.md)
+  could not rebuild `vignettes.bib` and pkgdown failed with “File
+  ‘vignettes.bib’ not found”.
+
 ## rProject 0.0.47
 
 ### Patch
