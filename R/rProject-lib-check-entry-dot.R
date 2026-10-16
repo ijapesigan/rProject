@@ -23,7 +23,7 @@
   }
   allowed <- list(
     article = c("Article", "Unpublished"),
-    book = c("Book", "InBook", "InCollection"),
+    book = c("Book", "Collection", "InBook", "InCollection"),
     manual = c(
       "Manual", "Misc", "Report", "Online", "Software", "Dataset",
       "Thesis", "PhdThesis", "MastersThesis", "Unpublished"
@@ -32,6 +32,7 @@
   required <- list(
     Article = c("author", "date", "journaltitle", "title"),
     Book = c("date", "title", "publisher"),
+    Collection = c("editor", "date", "title", "publisher"),
     InBook = c("author", "booktitle", "date", "title", "publisher"),
     InCollection = c("author", "booktitle", "date", "title", "publisher"),
     Unpublished = c("author", "date", "title")
