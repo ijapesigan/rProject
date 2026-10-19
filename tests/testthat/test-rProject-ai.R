@@ -34,7 +34,9 @@ lapply(
                   "AGENTS.md",
                   "CLAUDE.md",
                   ".github/copilot-instructions.md",
-                  ".setup/ai/project.md"
+                  ".setup/ai/project.md",
+                  ".setup/todo/todo.txt",
+                  ".setup/todo/.gitignore"
                 )
               )
             )
@@ -65,6 +67,29 @@ lapply(
         again <- suppressMessages(AI(path = root))
         testthat::expect_equal(readLines(project_md), "my notes")
         testthat::expect_length(again, 0L)
+      }
+    )
+    testthat::test_that(
+      paste(text, "creates .setup/todo/ only if the folder does not exist"),
+      {
+        todo <- file.path(root, ".setup", "todo")
+        testthat::expect_equal(readLines(file.path(todo, "todo.txt")), "TODO")
+        testthat::expect_equal(readLines(file.path(todo, ".gitignore")), "*")
+        testthat::expect_true(
+          any(grepl("`.setup/todo/`", agents, fixed = TRUE))
+        )
+        # the user's list is kept
+        writeLines(text = "1. my item", con = file.path(todo, "todo.txt"))
+        suppressMessages(AI(path = root))
+        testthat::expect_equal(
+          readLines(file.path(todo, "todo.txt")),
+          "1. my item"
+        )
+        # an existing folder is left alone, even without todo.txt
+        unlink(file.path(todo, c("todo.txt", ".gitignore")))
+        suppressMessages(AI(path = root))
+        testthat::expect_false(file.exists(file.path(todo, "todo.txt")))
+        testthat::expect_false(file.exists(file.path(todo, ".gitignore")))
       }
     )
     testthat::test_that(

@@ -5,6 +5,10 @@
 #'
 #' - `.setup/ai/project.md`: project facts that the user maintains.
 #'   Created once and never overwritten.
+#' - `.setup/todo/`: the user's to-do list, `todo.txt`, which agents read
+#'   when planning and never edit, with a `.gitignore` that keeps the
+#'   folder out of the public repository.
+#'   Created only if the folder does not exist.
 #' - `AGENTS.md` (Codex, Copilot CLI, Claude through `CLAUDE.md`),
 #'   `CLAUDE.md` (Claude Code), and `.github/copilot-instructions.md`
 #'   (Copilot in the IDE): generated, and rewritten when they change.
@@ -161,6 +165,15 @@ AI <- function(path,
         file = project_md,
         text = .AIFill(text = .AITemplate(file = "project.md"), values = values)
       )
+    )
+  }
+  # the user's to-do list: created only if the folder does not exist
+  todo <- file.path(path, ".setup", "todo")
+  if (!dir.exists(todo)) {
+    written <- c(
+      written,
+      .AIWrite(file = file.path(todo, "todo.txt"), text = "TODO"),
+      .AIWrite(file = file.path(todo, ".gitignore"), text = "*")
     )
   }
   message(

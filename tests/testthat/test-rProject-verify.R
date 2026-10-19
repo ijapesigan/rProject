@@ -217,6 +217,7 @@ lapply(
     write(x$private, "old.R", "y <- 1")
     write(x$path, "R/bar.R", "Bar <- function() 1")
     write(x$path, ".setup/notes/claude.txt", "claude --resume 1234")
+    write(x$path, ".setup/todo/todo.txt", "1. an item")
     checks <- suppressMessages(
       Verify(path = x$path, private = x$private, error = FALSE)
     )
@@ -233,6 +234,11 @@ lapply(
         testthat::expect_no_match(
           checks$detail[checks$check == "Unlisted changes"],
           "claude.txt"
+        )
+        # nor the user's to-do list
+        testthat::expect_no_match(
+          checks$detail[checks$check == "Unlisted changes"],
+          "todo.txt"
         )
       }
     )

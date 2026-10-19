@@ -78,6 +78,19 @@ lapply(
       }
     )
     testthat::test_that(
+      paste(text, "stops on .setup/todo in the export"),
+      {
+        testthat::skip_on_os("windows")
+        write(root, ".setup/todo/todo.txt", "1. an item")
+        testthat::expect_error(
+          suppressMessages(Public(path = root)),
+          ".setup/todo/todo.txt (private)",
+          fixed = TRUE
+        )
+        unlink(file.path(root, ".setup", "todo"), recursive = TRUE)
+      }
+    )
+    testthat::test_that(
       paste(text, "stops on .setup/repo in the export"),
       {
         testthat::skip_on_os("windows")

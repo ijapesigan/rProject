@@ -26,6 +26,10 @@ on top of the global instructions installed by \code{\link[=AIGlobal]{AIGlobal()
 \itemize{
 \item \code{.setup/ai/project.md}: project facts that the user maintains.
 Created once and never overwritten.
+\item \verb{.setup/todo/}: the user's to-do list, \code{todo.txt}, which agents read
+when planning and never edit, with a \code{.gitignore} that keeps the
+folder out of the public repository.
+Created only if the folder does not exist.
 \item \code{AGENTS.md} (Codex, Copilot CLI, Claude through \code{CLAUDE.md}),
 \code{CLAUDE.md} (Claude Code), and \code{.github/copilot-instructions.md}
 (Copilot in the IDE): generated, and rewritten when they change.
