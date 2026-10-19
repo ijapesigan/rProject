@@ -1,0 +1,10 @@
+# Docker projects for "build docs", in build order (images build on each
+# other). One per line; see build-docs.sh.
+docker-001-tidyverse
+docker-002-dplyr
+docker-003-tidymodels
+docker-004-sem
+docker-005-ssm
+docker-006-missing
+docker-007-dev
+docker-docs
