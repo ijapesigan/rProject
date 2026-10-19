@@ -1,5 +1,6 @@
 .VerifyLogFiles <- function(log_file,
-                            project) {
+                            project,
+                            subject = NULL) {
   lines <- readLines(
     con = log_file,
     warn = FALSE
@@ -10,6 +11,17 @@
   starts <- which(
     level > 0 & grepl(pattern = "Files to update in Overleaf", x = title)
   )
+  if (!is.null(subject)) {
+    scope <- .VerifyLogScope(
+      lines = lines,
+      level = level,
+      title = title,
+      subject = subject
+    )
+    if (!is.null(scope)) {
+      starts <- scope
+    }
+  }
   file <- character(0)
   action <- character(0)
   for (start in starts) {

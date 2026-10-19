@@ -49,6 +49,11 @@ The checks, and when each fails:
 (\code{.verify} is stale, or there was no new push). Nothing is recorded.
 \item \strong{Listed files:} a file listed under "Files to update in Overleaf"
 is missing from or differs in the private repository.
+The list is the one of the pushed commit: the section of the log
+with a code block that starts with the commit's first line (the
+top-level lists for the log's own commit message; the lists inside a
+later push's \verb{##} section, none for a push of records only). If no
+block matches, every list in the log is used.
 \item \strong{Deletions:} a file listed under "Delete in Overleaf"
 is still in the private repository.
 \item \strong{Unlisted changes:} (warning only) other files differ

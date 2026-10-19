@@ -4,12 +4,22 @@
 # docs-plus.sif. rProject only; run on the host (it needs SSH and gh):
 #
 #   bash .setup/scripts/build-docs.sh [--only <project>] [--no-images] <image> [first]
+#   bash .setup/scripts/build-docs.sh --images-only <image>
 #
 #   <image>    Apptainer image for rProject::Public() (e.g., ~/work/sif/docs.sif)
 #   [first]    resume the list from this project
 #   --only     run one project ("build docs only": --only docker-docs)
 #   --no-images  do not build docs.sif and docs-plus.sif after docker-docs
+#   --images-only  build docs.sif and docs-plus.sif only ("build sif"): no push
 #   DRY_RUN=1  download, clone.sh and Public() only: no push, no images
+#
+# Agents start it detached, so it survives an SSH disconnect or the end of
+# the session:
+#   setsid nohup bash .setup/scripts/build-docs.sh ... > /dev/null 2>&1 < /dev/null &
+# The log is <work>/tmp/YYYY-MM-DD-build-docs.log; the status file next to it
+# (.status) says "running <pid> <host> <start>", then "done <time>" or
+# "STOPPED <time>: <reason>". The script refuses to start while another run
+# is running.
 #
 # The projects and their order: .setup/scripts/build-docs.txt.
 # Per project, the steps of `make auto`: the private repository is
@@ -25,6 +35,7 @@
 set -Eeuo pipefail
 
 images=TRUE
+images_only=FALSE
 only=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -36,11 +47,15 @@ while [[ $# -gt 0 ]]; do
       images=FALSE
       shift
       ;;
+    --images-only)
+      images_only=TRUE
+      shift
+      ;;
     *) break ;;
   esac
 done
 if [[ $# -lt 1 ]]; then
-  sed -n '6,13p' "$0" >&2
+  sed -n '6,15p' "$0" >&2
   exit 2
 fi
 image="$1"
@@ -55,22 +70,55 @@ log_file="${dir}.log"
 gh="$(command -v gh || echo "${HOME}/.local/bin/gh")"
 sif_dir="/storage/home/${USER}/work/sif"
 
+status_file="${dir}.status"
+
+# one run at a time: a status file of any date that says "running", with
+# its process alive (or on another host, where it cannot be checked)
+for f in "${work}"/tmp/*-build-docs.status; do
+  [[ -f "${f}" ]] || continue
+  read -r state pid host _ < "${f}" || true
+  [[ "${state:-}" == running ]] || continue
+  if [[ "${host}" != "$(hostname)" ]] || kill -0 "${pid}" 2>/dev/null; then
+    echo "build-docs.sh: another run is running (${f}: $(cat "${f}"))" >&2
+    exit 1
+  fi
+done
+
 mkdir -p "${dir}"
 exec > >(tee -a "${log_file}") 2>&1
 
 log() { echo "[$(date '+%F %T')] $*"; }
+reason=""
 fail() {
+  reason="$*"
   log "STOPPED: $*"
   log "downloads kept in ${dir}"
   exit 1
 }
+finish() {
+  local code=$?
+  if [[ ${code} -eq 0 ]]; then
+    echo "done $(date '+%F %T')" > "${status_file}"
+  else
+    echo "STOPPED $(date '+%F %T'): ${reason:-exit ${code}}" > "${status_file}"
+  fi
+}
+trap finish EXIT
+trap 'reason="hangup"; exit 129' HUP
+trap 'reason="interrupted"; exit 130' INT
+trap 'reason="terminated"; exit 143' TERM
+echo "running $$ $(hostname) $(date '+%F %T')" > "${status_file}"
 
 [[ -f "${image}" ]] || fail "no image ${image}"
 [[ -x "${gh}" ]] || fail "gh not found"
 
 # projects to run
 mapfile -t projects < <(grep -v -e '^#' -e '^[[:space:]]*$' "${list}")
-if [[ -n "${only}" ]]; then
+if [[ "${images_only}" == TRUE ]]; then
+  [[ -z "${only}" && -z "${first}" && "${images}" == TRUE ]] ||
+    fail "--images-only takes no project, [first], or --no-images"
+  projects=()
+elif [[ -n "${only}" ]]; then
   printf '%s\n' "${projects[@]}" | grep -qx "${only}" || fail "${only} is not in ${list}"
   projects=("${only}")
 elif [[ -n "${first}" ]]; then
@@ -81,7 +129,7 @@ elif [[ -n "${first}" ]]; then
   [[ ${start} -ge 0 ]] || fail "${first} is not in ${list}"
   projects=("${projects[@]:${start}}")
 fi
-log "projects: ${projects[*]}"
+log "projects: ${projects[*]:-(none: images only)}"
 log "downloads: ${dir}"
 
 # GitHub over SSH: github.com, else the <owner> alias in ~/.ssh/config
@@ -196,10 +244,18 @@ for p in "${projects[@]}"; do
   summary+=("| ${p} | ${sha:0:8} | ${make_project} | ${multi} | ok |")
 done
 
-# docs.sif and docs-plus.sif, after docker-docs
+# docs.sif and docs-plus.sif, after docker-docs (or alone, --images-only:
+# the download only brings run-def.sh and docs-plus.def; nothing is pushed)
 built=""
+if [[ "${images_only}" == TRUE && "${dry_run}" != "1" ]]; then
+  rm -rf "${dir:?}/docker-docs"
+  git clone -q "git@${private_host}:jeksterslab-psu/docker-docs.git" "${dir}/docker-docs" ||
+    fail "cannot download jeksterslab-psu/docker-docs"
+  log "images only: docker-docs $(git -C "${dir}/docker-docs" rev-parse --short=8 HEAD)"
+fi
 if [[ "${images}" == TRUE && "${dry_run}" != "1" ]] &&
-  printf '%s\n' "${projects[@]}" | grep -qx docker-docs; then
+  { [[ "${images_only}" == TRUE ]] ||
+    printf '%s\n' "${projects[@]}" | grep -qx docker-docs; }; then
   notes="${dir}/docker-docs/.setup/notes"
   [[ -d "${sif_dir}" ]] || fail "images: no ${sif_dir} on this machine"
   grep -q 'SIF_DIR:-' "${notes}/run-def.sh" ||
@@ -209,8 +265,15 @@ if [[ "${images}" == TRUE && "${dry_run}" != "1" ]] &&
   log "images: building on one core into ${stage}"
   (cd "${notes}" && SIF_DIR="${stage}" nice -n 19 taskset -c 0 bash run-def.sh) ||
     fail "images: run-def.sh (staging kept: ${stage})"
-  apptainer exec "${stage}/docs.sif" Rscript -e \
-    'cat("rProject", as.character(packageVersion("rProject")), "\n")'
+  # --vanilla from /: a project's .Rprofile (e.g., rProject's .library)
+  # must not hide the rProject in the image
+  for f in docs.sif docs-plus.sif; do
+    in_image="$(cd / && apptainer exec "${stage}/${f}" Rscript --vanilla -e \
+      'cat(as.character(packageVersion("rProject")))')"
+    log "images: ${f} has rProject ${in_image}"
+    [[ "${in_image}" == "${version}" ]] ||
+      fail "images: ${f} has rProject ${in_image}, not ${version} (staging kept: ${stage})"
+  done
   apptainer exec "${stage}/docs-plus.sif" bash -c \
     'command -v mplus && test ! -e /usr/src/local/src && echo "installer removed"' ||
     fail "images: docs-plus.sif check (staging kept: ${stage})"
@@ -239,7 +302,7 @@ fi
 log "summary"
 echo "| Project | Pushed | Make Project | Docker Build and Push [multi] | Result |"
 echo "|---|---|---|---|---|"
-printf '%s\n' "${summary[@]}"
+[[ ${#summary[@]} -gt 0 ]] && printf '%s\n' "${summary[@]}"
 [[ -n "${built}" ]] && echo "Images:${built}"
 cd "${work}"
 rm -rf "${dir:?}"
