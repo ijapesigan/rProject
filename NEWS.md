@@ -1,3 +1,10 @@
+# rProject 0.0.50
+
+## Minor
+
+* `.setup/scripts/build-docs.sh` (rProject only, run on the host): "build docs" publishes the docker images in the order of `.setup/scripts/build-docs.txt` (the steps of `make auto` in a fresh download of each private repository; it waits for Make Project and "Docker Build and Push [multi]" before the next, retries failed multi jobs once, and stops at the first failure), then builds `docs.sif` and `docs-plus.sif` with docker-docs' `run-def.sh` on one core into a staging folder and replaces an image only if it is not in use. `--only docker-docs` is "build docs only"; `DRY_RUN=1` pushes nothing. It first checks that the public rProject has the version in `DESCRIPTION`.
+* Global instructions: the "build docs" and "build docs only" keywords.
+
 # rProject 0.0.49
 
 ## Minor
