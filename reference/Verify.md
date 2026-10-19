@@ -63,7 +63,8 @@ The checks, and when each fails:
 
 - **Unlisted changes:** (warning only) other files differ between the
   project and the private repository (`.setup/notes/claude.txt`, the
-  resume commands, is not counted).
+  resume commands, and `.setup/todo/`, the user's to-do list, are not
+  counted).
 
 - **Commit message:** (warning only) the last commit message does not
   end with `Log: .setup/logs/<log>`.

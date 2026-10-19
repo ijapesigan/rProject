@@ -31,6 +31,11 @@ Returns the paths of the files that were written, invisibly.
 - `.setup/ai/project.md`: project facts that the user maintains. Created
   once and never overwritten.
 
+- `.setup/todo/`: the user's to-do list, `todo.txt`, which agents read
+  when planning and never edit, with a `.gitignore` that keeps the
+  folder out of the public repository. Created only if the folder does
+  not exist.
+
 - `AGENTS.md` (Codex, Copilot CLI, Claude through `CLAUDE.md`),
   `CLAUDE.md` (Claude Code), and `.github/copilot-instructions.md`
   (Copilot in the IDE): generated, and rewritten when they change.

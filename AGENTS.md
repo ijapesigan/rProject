@@ -35,6 +35,7 @@ the user maintains (aims, data, notation, co-authors, open issues).
 | `.setup/ai/` | specs, the plan, `project.md` (private) |
 | `.setup/logs/` | one log per Overleaf push, and `index.md` (private) |
 | `.setup/repo/` | where the project lives (private) |
+| `.setup/todo/` | `todo.txt`: the user’s to-do list; read it when planning, never edit it (private) |
 
 ## Make targets
 

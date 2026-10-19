@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.48</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.49</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,17 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.49" id="rproject-0049">rProject 0.0.49<a class="anchor" aria-label="anchor" href="#rproject-0049"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-49">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-49"></a></h3>
+<ul><li>
+<code><a href="../reference/AI.html">AI()</a></code> creates <code>.setup/todo/</code> (<code>todo.txt</code>, the user’s to-do list, and a <code>.gitignore</code> that keeps the folder private) if and only if the folder does not exist, and the project’s <code>AGENTS.md</code> lists it in the folder map. Agents read <code>todo.txt</code> when planning and never edit it (global instructions).</li>
+<li>
+<code><a href="../reference/Public.html">Public()</a></code> and <code><a href="../reference/Verify.html">Verify()</a></code> treat <code>.setup/todo/</code> as private: the public export fails if it is published. <code><a href="../reference/Verify.html">Verify()</a></code> does not count changes under <code>.setup/todo/</code> as unlisted (the user edits the list on Overleaf at any time).</li>
+<li>Global instructions (<code>.setup/ai/global/AGENTS.md</code>): how agents use <code>.setup/todo/todo.txt</code>; <code>.setup/todo/</code> among the private folders. The root <code>.gitignore</code> lists <code>.setup/todo/</code>.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.48" id="rproject-0048">rProject 0.0.48<a class="anchor" aria-label="anchor" href="#rproject-0048"></a></h2>
 <div class="section level3">

@@ -9,7 +9,7 @@
 [`sessionInfo`](https://rdrr.io/r/utils/sessionInfo.html)`(``)`\
 `#> R version 4.6.1 (2026-06-24)`\
 `#> Platform: x86_64-pc-linux-gnu`\
-`#> Running under: Ubuntu 24.04.4 LTS`\
+`#> Running under: Ubuntu 24.04.5 LTS`\
 `#> `\
 `#> Matrix products: default`\
 `#> BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 `\
@@ -30,11 +30,11 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.48`\
+`#> [1] rProject_0.0.49`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
-`#>  [5] xfun_0.61         cachem_1.1.0      knitr_1.52        htmltools_0.5.9  `\
+`#>  [5] xfun_0.62         cachem_1.1.0      knitr_1.52        htmltools_0.5.9  `\
 `#>  [9] rmarkdown_2.32    lifecycle_1.0.5   cli_3.6.6         sass_0.4.10      `\
 `#> [13] pkgdown_2.2.1     textshaping_1.0.5 jquerylib_0.1.4   systemfonts_1.3.2`\
 `#> [17] compiler_4.6.1    tools_4.6.1       ragg_1.5.2        bslib_0.12.0     `\
@@ -45,1042 +45,1560 @@
 
 \
 [`installed.packages`](https://rdrr.io/r/utils/installed.packages.html)`(``)`\
-`#>                   Package             LibPath                                  `\
-`#> rProject          "rProject"          "/tmp/Rtmp1tS7IG/temp_libpath133740e3ee4"`\
-`#> askpass           "askpass"           "/__w/rProject/rProject/.library"        `\
-`#> base64enc         "base64enc"         "/__w/rProject/rProject/.library"        `\
-`#> BiocManager       "BiocManager"       "/__w/rProject/rProject/.library"        `\
-`#> brew              "brew"              "/__w/rProject/rProject/.library"        `\
-`#> brio              "brio"              "/__w/rProject/rProject/.library"        `\
-`#> bslib             "bslib"             "/__w/rProject/rProject/.library"        `\
-`#> cachem            "cachem"            "/__w/rProject/rProject/.library"        `\
-`#> callr             "callr"             "/__w/rProject/rProject/.library"        `\
-`#> cffr              "cffr"              "/__w/rProject/rProject/.library"        `\
-`#> cli               "cli"               "/__w/rProject/rProject/.library"        `\
-`#> clipr             "clipr"             "/__w/rProject/rProject/.library"        `\
-`#> commonmark        "commonmark"        "/__w/rProject/rProject/.library"        `\
-`#> covr              "covr"              "/__w/rProject/rProject/.library"        `\
-`#> crayon            "crayon"            "/__w/rProject/rProject/.library"        `\
-`#> credentials       "credentials"       "/__w/rProject/rProject/.library"        `\
-`#> curl              "curl"              "/__w/rProject/rProject/.library"        `\
-`#> desc              "desc"              "/__w/rProject/rProject/.library"        `\
-`#> devtools          "devtools"          "/__w/rProject/rProject/.library"        `\
-`#> diffobj           "diffobj"           "/__w/rProject/rProject/.library"        `\
-`#> digest            "digest"            "/__w/rProject/rProject/.library"        `\
-`#> distro            "distro"            "/__w/rProject/rProject/.library"        `\
-`#> downlit           "downlit"           "/__w/rProject/rProject/.library"        `\
-`#> ellipsis          "ellipsis"          "/__w/rProject/rProject/.library"        `\
-`#> evaluate          "evaluate"          "/__w/rProject/rProject/.library"        `\
-`#> fansi             "fansi"             "/__w/rProject/rProject/.library"        `\
-`#> fastmap           "fastmap"           "/__w/rProject/rProject/.library"        `\
-`#> fontawesome       "fontawesome"       "/__w/rProject/rProject/.library"        `\
-`#> fs                "fs"                "/__w/rProject/rProject/.library"        `\
-`#> gert              "gert"              "/__w/rProject/rProject/.library"        `\
-`#> gh                "gh"                "/__w/rProject/rProject/.library"        `\
-`#> gitcreds          "gitcreds"          "/__w/rProject/rProject/.library"        `\
-`#> glue              "glue"              "/__w/rProject/rProject/.library"        `\
-`#> highr             "highr"             "/__w/rProject/rProject/.library"        `\
-`#> htmltools         "htmltools"         "/__w/rProject/rProject/.library"        `\
-`#> htmlwidgets       "htmlwidgets"       "/__w/rProject/rProject/.library"        `\
-`#> httpuv            "httpuv"            "/__w/rProject/rProject/.library"        `\
-`#> httr              "httr"              "/__w/rProject/rProject/.library"        `\
-`#> httr2             "httr2"             "/__w/rProject/rProject/.library"        `\
-`#> ini               "ini"               "/__w/rProject/rProject/.library"        `\
-`#> jquerylib         "jquerylib"         "/__w/rProject/rProject/.library"        `\
-`#> jsonlite          "jsonlite"          "/__w/rProject/rProject/.library"        `\
-`#> jsonvalidate      "jsonvalidate"      "/__w/rProject/rProject/.library"        `\
-`#> knitr             "knitr"             "/__w/rProject/rProject/.library"        `\
-`#> later             "later"             "/__w/rProject/rProject/.library"        `\
-`#> lifecycle         "lifecycle"         "/__w/rProject/rProject/.library"        `\
-`#> lintr             "lintr"             "/__w/rProject/rProject/.library"        `\
-`#> magrittr          "magrittr"          "/__w/rProject/rProject/.library"        `\
-`#> memoise           "memoise"           "/__w/rProject/rProject/.library"        `\
-`#> mime              "mime"              "/__w/rProject/rProject/.library"        `\
-`#> miniUI            "miniUI"            "/__w/rProject/rProject/.library"        `\
-`#> openssl           "openssl"           "/__w/rProject/rProject/.library"        `\
-`#> otel              "otel"              "/__w/rProject/rProject/.library"        `\
-`#> pak               "pak"               "/__w/rProject/rProject/.library"        `\
-`#> pillar            "pillar"            "/__w/rProject/rProject/.library"        `\
-`#> pkgbuild          "pkgbuild"          "/__w/rProject/rProject/.library"        `\
-`#> pkgconfig         "pkgconfig"         "/__w/rProject/rProject/.library"        `\
-`#> pkgdown           "pkgdown"           "/__w/rProject/rProject/.library"        `\
-`#> pkgload           "pkgload"           "/__w/rProject/rProject/.library"        `\
-`#> praise            "praise"            "/__w/rProject/rProject/.library"        `\
-`#> prettyunits       "prettyunits"       "/__w/rProject/rProject/.library"        `\
-`#> processx          "processx"          "/__w/rProject/rProject/.library"        `\
-`#> profvis           "profvis"           "/__w/rProject/rProject/.library"        `\
-`#> promises          "promises"          "/__w/rProject/rProject/.library"        `\
-`#> ps                "ps"                "/__w/rProject/rProject/.library"        `\
-`#> purrr             "purrr"             "/__w/rProject/rProject/.library"        `\
-`#> quarto            "quarto"            "/__w/rProject/rProject/.library"        `\
-`#> R.cache           "R.cache"           "/__w/rProject/rProject/.library"        `\
-`#> R.methodsS3       "R.methodsS3"       "/__w/rProject/rProject/.library"        `\
-`#> R.oo              "R.oo"              "/__w/rProject/rProject/.library"        `\
-`#> R.utils           "R.utils"           "/__w/rProject/rProject/.library"        `\
-`#> R6                "R6"                "/__w/rProject/rProject/.library"        `\
-`#> ragg              "ragg"              "/__w/rProject/rProject/.library"        `\
-`#> rappdirs          "rappdirs"          "/__w/rProject/rProject/.library"        `\
-`#> rcmdcheck         "rcmdcheck"         "/__w/rProject/rProject/.library"        `\
-`#> Rcpp              "Rcpp"              "/__w/rProject/rProject/.library"        `\
-`#> rdtools           "rdtools"           "/__w/rProject/rProject/.library"        `\
-`#> remotes           "remotes"           "/__w/rProject/rProject/.library"        `\
-`#> rex               "rex"               "/__w/rProject/rProject/.library"        `\
-`#> rlang             "rlang"             "/__w/rProject/rProject/.library"        `\
-`#> rmarkdown         "rmarkdown"         "/__w/rProject/rProject/.library"        `\
-`#> roxygen2          "roxygen2"          "/__w/rProject/rProject/.library"        `\
-`#> rProject          "rProject"          "/__w/rProject/rProject/.library"        `\
-`#> rprojroot         "rprojroot"         "/__w/rProject/rProject/.library"        `\
-`#> rstudioapi        "rstudioapi"        "/__w/rProject/rProject/.library"        `\
-`#> rversions         "rversions"         "/__w/rProject/rProject/.library"        `\
-`#> sass              "sass"              "/__w/rProject/rProject/.library"        `\
-`#> sessioninfo       "sessioninfo"       "/__w/rProject/rProject/.library"        `\
-`#> shiny             "shiny"             "/__w/rProject/rProject/.library"        `\
-`#> sourcetools       "sourcetools"       "/__w/rProject/rProject/.library"        `\
-`#> stringi           "stringi"           "/__w/rProject/rProject/.library"        `\
-`#> styler            "styler"            "/__w/rProject/rProject/.library"        `\
-`#> sys               "sys"               "/__w/rProject/rProject/.library"        `\
-`#> systemfonts       "systemfonts"       "/__w/rProject/rProject/.library"        `\
-`#> testthat          "testthat"          "/__w/rProject/rProject/.library"        `\
-`#> textshaping       "textshaping"       "/__w/rProject/rProject/.library"        `\
-`#> tibble            "tibble"            "/__w/rProject/rProject/.library"        `\
-`#> tinytex           "tinytex"           "/__w/rProject/rProject/.library"        `\
-`#> urlchecker        "urlchecker"        "/__w/rProject/rProject/.library"        `\
-`#> usethis           "usethis"           "/__w/rProject/rProject/.library"        `\
-`#> utf8              "utf8"              "/__w/rProject/rProject/.library"        `\
-`#> V8                "V8"                "/__w/rProject/rProject/.library"        `\
-`#> vctrs             "vctrs"             "/__w/rProject/rProject/.library"        `\
-`#> waldo             "waldo"             "/__w/rProject/rProject/.library"        `\
-`#> whisker           "whisker"           "/__w/rProject/rProject/.library"        `\
-`#> withr             "withr"             "/__w/rProject/rProject/.library"        `\
-`#> xfun              "xfun"              "/__w/rProject/rProject/.library"        `\
-`#> xml2              "xml2"              "/__w/rProject/rProject/.library"        `\
-`#> xmlparsedata      "xmlparsedata"      "/__w/rProject/rProject/.library"        `\
-`#> xopen             "xopen"             "/__w/rProject/rProject/.library"        `\
-`#> xtable            "xtable"            "/__w/rProject/rProject/.library"        `\
-`#> yaml              "yaml"              "/__w/rProject/rProject/.library"        `\
-`#> zip               "zip"               "/__w/rProject/rProject/.library"        `\
-`#> abind             "abind"             "/usr/local/lib/R/site-library"          `\
-`#> Amelia            "Amelia"            "/usr/local/lib/R/site-library"          `\
-`#> arm               "arm"               "/usr/local/lib/R/site-library"          `\
-`#> arrow             "arrow"             "/usr/local/lib/R/site-library"          `\
-`#> ash               "ash"               "/usr/local/lib/R/site-library"          `\
-`#> AsioHeaders       "AsioHeaders"       "/usr/local/lib/R/site-library"          `\
-`#> askpass           "askpass"           "/usr/local/lib/R/site-library"          `\
-`#> assertthat        "assertthat"        "/usr/local/lib/R/site-library"          `\
-`#> backports         "backports"         "/usr/local/lib/R/site-library"          `\
-`#> base64enc         "base64enc"         "/usr/local/lib/R/site-library"          `\
-`#> betaDelta         "betaDelta"         "/usr/local/lib/R/site-library"          `\
-`#> betaMC            "betaMC"            "/usr/local/lib/R/site-library"          `\
-`#> betaNB            "betaNB"            "/usr/local/lib/R/site-library"          `\
-`#> betaSandwich      "betaSandwich"      "/usr/local/lib/R/site-library"          `\
-`#> BH                "BH"                "/usr/local/lib/R/site-library"          `\
-`#> bibtex            "bibtex"            "/usr/local/lib/R/site-library"          `\
-`#> biocmake          "biocmake"          "/usr/local/lib/R/site-library"          `\
-`#> BiocManager       "BiocManager"       "/usr/local/lib/R/site-library"          `\
-`#> BiocVersion       "BiocVersion"       "/usr/local/lib/R/site-library"          `\
-`#> bit               "bit"               "/usr/local/lib/R/site-library"          `\
-`#> bit64             "bit64"             "/usr/local/lib/R/site-library"          `\
-`#> bitops            "bitops"            "/usr/local/lib/R/site-library"          `\
-`#> blob              "blob"              "/usr/local/lib/R/site-library"          `\
-`#> bootStateSpace    "bootStateSpace"    "/usr/local/lib/R/site-library"          `\
-`#> brew              "brew"              "/usr/local/lib/R/site-library"          `\
-`#> brio              "brio"              "/usr/local/lib/R/site-library"          `\
-`#> broom             "broom"             "/usr/local/lib/R/site-library"          `\
-`#> bslib             "bslib"             "/usr/local/lib/R/site-library"          `\
-`#> cachem            "cachem"            "/usr/local/lib/R/site-library"          `\
-`#> callr             "callr"             "/usr/local/lib/R/site-library"          `\
-`#> car               "car"               "/usr/local/lib/R/site-library"          `\
-`#> caracas           "caracas"           "/usr/local/lib/R/site-library"          `\
-`#> carData           "carData"           "/usr/local/lib/R/site-library"          `\
-`#> cellranger        "cellranger"        "/usr/local/lib/R/site-library"          `\
-`#> cffr              "cffr"              "/usr/local/lib/R/site-library"          `\
-`#> checkmate         "checkmate"         "/usr/local/lib/R/site-library"          `\
-`#> cli               "cli"               "/usr/local/lib/R/site-library"          `\
-`#> clipr             "clipr"             "/usr/local/lib/R/site-library"          `\
-`#> clock             "clock"             "/usr/local/lib/R/site-library"          `\
-`#> clusterGeneration "clusterGeneration" "/usr/local/lib/R/site-library"          `\
-`#> coda              "coda"              "/usr/local/lib/R/site-library"          `\
-`#> cOde              "cOde"              "/usr/local/lib/R/site-library"          `\
-`#> collections       "collections"       "/usr/local/lib/R/site-library"          `\
-`#> colorspace        "colorspace"        "/usr/local/lib/R/site-library"          `\
-`#> commonmark        "commonmark"        "/usr/local/lib/R/site-library"          `\
-`#> conflicted        "conflicted"        "/usr/local/lib/R/site-library"          `\
-`#> corpcor           "corpcor"           "/usr/local/lib/R/site-library"          `\
-`#> covr              "covr"              "/usr/local/lib/R/site-library"          `\
-`#> cowplot           "cowplot"           "/usr/local/lib/R/site-library"          `\
-`#> cpp11             "cpp11"             "/usr/local/lib/R/site-library"          `\
-`#> crayon            "crayon"            "/usr/local/lib/R/site-library"          `\
-`#> credentials       "credentials"       "/usr/local/lib/R/site-library"          `\
-`#> crosstalk         "crosstalk"         "/usr/local/lib/R/site-library"          `\
-`#> cTMed             "cTMed"             "/usr/local/lib/R/site-library"          `\
-`#> ctsem             "ctsem"             "/usr/local/lib/R/site-library"          `\
-`#> curl              "curl"              "/usr/local/lib/R/site-library"          `\
-`#> data.table        "data.table"        "/usr/local/lib/R/site-library"          `\
-`#> DBI               "DBI"               "/usr/local/lib/R/site-library"          `\
-`#> dbplyr            "dbplyr"            "/usr/local/lib/R/site-library"          `\
-`#> Deriv             "Deriv"             "/usr/local/lib/R/site-library"          `\
-`#> desc              "desc"              "/usr/local/lib/R/site-library"          `\
-`#> deSolve           "deSolve"           "/usr/local/lib/R/site-library"          `\
-`#> devtools          "devtools"          "/usr/local/lib/R/site-library"          `\
-`#> diagram           "diagram"           "/usr/local/lib/R/site-library"          `\
-`#> dials             "dials"             "/usr/local/lib/R/site-library"          `\
-`#> DiceDesign        "DiceDesign"        "/usr/local/lib/R/site-library"          `\
-`#> diffobj           "diffobj"           "/usr/local/lib/R/site-library"          `\
-`#> digest            "digest"            "/usr/local/lib/R/site-library"          `\
-`#> dir.expiry        "dir.expiry"        "/usr/local/lib/R/site-library"          `\
-`#> distributional    "distributional"    "/usr/local/lib/R/site-library"          `\
-`#> distro            "distro"            "/usr/local/lib/R/site-library"          `\
-`#> doBy              "doBy"              "/usr/local/lib/R/site-library"          `\
-`#> docopt            "docopt"            "/usr/local/lib/R/site-library"          `\
-`#> downlit           "downlit"           "/usr/local/lib/R/site-library"          `\
-`#> dplyr             "dplyr"             "/usr/local/lib/R/site-library"          `\
-`#> DT                "DT"                "/usr/local/lib/R/site-library"          `\
-`#> dtplyr            "dtplyr"            "/usr/local/lib/R/site-library"          `\
-`#> duckdb            "duckdb"            "/usr/local/lib/R/site-library"          `\
-`#> dynr              "dynr"              "/usr/local/lib/R/site-library"          `\
-`#> dynTools          "dynTools"          "/usr/local/lib/R/site-library"          `\
-`#> dynUtils          "dynUtils"          "/usr/local/lib/R/site-library"          `\
-`#> ellipse           "ellipse"           "/usr/local/lib/R/site-library"          `\
-`#> ellipsis          "ellipsis"          "/usr/local/lib/R/site-library"          `\
-`#> evaluate          "evaluate"          "/usr/local/lib/R/site-library"          `\
-`#> expm              "expm"              "/usr/local/lib/R/site-library"          `\
-`#> fansi             "fansi"             "/usr/local/lib/R/site-library"          `\
-`#> farver            "farver"            "/usr/local/lib/R/site-library"          `\
-`#> fastDummies       "fastDummies"       "/usr/local/lib/R/site-library"          `\
-`#> fastmap           "fastmap"           "/usr/local/lib/R/site-library"          `\
-`#> fclust            "fclust"            "/usr/local/lib/R/site-library"          `\
-`#> fda               "fda"               "/usr/local/lib/R/site-library"          `\
-`#> fdrtool           "fdrtool"           "/usr/local/lib/R/site-library"          `\
-`#> fds               "fds"               "/usr/local/lib/R/site-library"          `\
-`#> filelock          "filelock"          "/usr/local/lib/R/site-library"          `\
-`#> fitVARMxID        "fitVARMxID"        "/usr/local/lib/R/site-library"          `\
-`#> FNN               "FNN"               "/usr/local/lib/R/site-library"          `\
-`#> fontawesome       "fontawesome"       "/usr/local/lib/R/site-library"          `\
-`#> forcats           "forcats"           "/usr/local/lib/R/site-library"          `\
-`#> foreach           "foreach"           "/usr/local/lib/R/site-library"          `\
-`#> forecast          "forecast"          "/usr/local/lib/R/site-library"          `\
-`#> Formula           "Formula"           "/usr/local/lib/R/site-library"          `\
-`#> fracdiff          "fracdiff"          "/usr/local/lib/R/site-library"          `\
-`#> fs                "fs"                "/usr/local/lib/R/site-library"          `\
-`#> fst               "fst"               "/usr/local/lib/R/site-library"          `\
-`#> fstcore           "fstcore"           "/usr/local/lib/R/site-library"          `\
-`#> furrr             "furrr"             "/usr/local/lib/R/site-library"          `\
-`#> future            "future"            "/usr/local/lib/R/site-library"          `\
-`#> future.apply      "future.apply"      "/usr/local/lib/R/site-library"          `\
-`#> gargle            "gargle"            "/usr/local/lib/R/site-library"          `\
-`#> GauPro            "GauPro"            "/usr/local/lib/R/site-library"          `\
-`#> generics          "generics"          "/usr/local/lib/R/site-library"          `\
-`#> gert              "gert"              "/usr/local/lib/R/site-library"          `\
-`#> ggplot2           "ggplot2"           "/usr/local/lib/R/site-library"          `\
-`#> ggrepel           "ggrepel"           "/usr/local/lib/R/site-library"          `\
-`#> gh                "gh"                "/usr/local/lib/R/site-library"          `\
-`#> gitcreds          "gitcreds"          "/usr/local/lib/R/site-library"          `\
-`#> glasso            "glasso"            "/usr/local/lib/R/site-library"          `\
-`#> glmnet            "glmnet"            "/usr/local/lib/R/site-library"          `\
-`#> globals           "globals"           "/usr/local/lib/R/site-library"          `\
-`#> glue              "glue"              "/usr/local/lib/R/site-library"          `\
-`#> googledrive       "googledrive"       "/usr/local/lib/R/site-library"          `\
-`#> googlesheets4     "googlesheets4"     "/usr/local/lib/R/site-library"          `\
-`#> gower             "gower"             "/usr/local/lib/R/site-library"          `\
-`#> GPArotation       "GPArotation"       "/usr/local/lib/R/site-library"          `\
-`#> graphicalVAR      "graphicalVAR"      "/usr/local/lib/R/site-library"          `\
-`#> gridExtra         "gridExtra"         "/usr/local/lib/R/site-library"          `\
-`#> gsubfn            "gsubfn"            "/usr/local/lib/R/site-library"          `\
-`#> gtable            "gtable"            "/usr/local/lib/R/site-library"          `\
-`#> gtools            "gtools"            "/usr/local/lib/R/site-library"          `\
-`#> hardhat           "hardhat"           "/usr/local/lib/R/site-library"          `\
-`#> haven             "haven"             "/usr/local/lib/R/site-library"          `\
-`#> hdrcde            "hdrcde"            "/usr/local/lib/R/site-library"          `\
-`#> here              "here"              "/usr/local/lib/R/site-library"          `\
-`#> highr             "highr"             "/usr/local/lib/R/site-library"          `\
-`#> Hmisc             "Hmisc"             "/usr/local/lib/R/site-library"          `\
-`#> hms               "hms"               "/usr/local/lib/R/site-library"          `\
-`#> htmlTable         "htmlTable"         "/usr/local/lib/R/site-library"          `\
-`#> htmltools         "htmltools"         "/usr/local/lib/R/site-library"          `\
-`#> htmlwidgets       "htmlwidgets"       "/usr/local/lib/R/site-library"          `\
-`#> httpgd            "httpgd"            "/usr/local/lib/R/site-library"          `\
-`#> httpuv            "httpuv"            "/usr/local/lib/R/site-library"          `\
-`#> httr              "httr"              "/usr/local/lib/R/site-library"          `\
-`#> httr2             "httr2"             "/usr/local/lib/R/site-library"          `\
-`#> ids               "ids"               "/usr/local/lib/R/site-library"          `\
-`#> ifaTools          "ifaTools"          "/usr/local/lib/R/site-library"          `\
-`#> igraph            "igraph"            "/usr/local/lib/R/site-library"          `\
-`#> infer             "infer"             "/usr/local/lib/R/site-library"          `\
-`#> ini               "ini"               "/usr/local/lib/R/site-library"          `\
-`#> inline            "inline"            "/usr/local/lib/R/site-library"          `\
-`#> ipred             "ipred"             "/usr/local/lib/R/site-library"          `\
-`#> isoband           "isoband"           "/usr/local/lib/R/site-library"          `\
-`#> iterators         "iterators"         "/usr/local/lib/R/site-library"          `\
-`#> jomo              "jomo"              "/usr/local/lib/R/site-library"          `\
-`#> jpeg              "jpeg"              "/usr/local/lib/R/site-library"          `\
-`#> jquerylib         "jquerylib"         "/usr/local/lib/R/site-library"          `\
-`#> jsonlite          "jsonlite"          "/usr/local/lib/R/site-library"          `\
-`#> jsonvalidate      "jsonvalidate"      "/usr/local/lib/R/site-library"          `\
-`#> kernlab           "kernlab"           "/usr/local/lib/R/site-library"          `\
-`#> knitr             "knitr"             "/usr/local/lib/R/site-library"          `\
-`#> ks                "ks"                "/usr/local/lib/R/site-library"          `\
-`#> labeling          "labeling"          "/usr/local/lib/R/site-library"          `\
-`#> Lahman            "Lahman"            "/usr/local/lib/R/site-library"          `\
-`#> languageserver    "languageserver"    "/usr/local/lib/R/site-library"          `\
-`#> later             "later"             "/usr/local/lib/R/site-library"          `\
-`#> latex2exp         "latex2exp"         "/usr/local/lib/R/site-library"          `\
-`#> lava              "lava"              "/usr/local/lib/R/site-library"          `\
-`#> lavaan            "lavaan"            "/usr/local/lib/R/site-library"          `\
-`#> lazyeval          "lazyeval"          "/usr/local/lib/R/site-library"          `\
-`#> lbfgs             "lbfgs"             "/usr/local/lib/R/site-library"          `\
-`#> lifecycle         "lifecycle"         "/usr/local/lib/R/site-library"          `\
-`#> lintr             "lintr"             "/usr/local/lib/R/site-library"          `\
-`#> listenv           "listenv"           "/usr/local/lib/R/site-library"          `\
-`#> litedown          "litedown"          "/usr/local/lib/R/site-library"          `\
-`#> littler           "littler"           "/usr/local/lib/R/site-library"          `\
-`#> lme4              "lme4"              "/usr/local/lib/R/site-library"          `\
-`#> lmtest            "lmtest"            "/usr/local/lib/R/site-library"          `\
-`#> locfit            "locfit"            "/usr/local/lib/R/site-library"          `\
-`#> longMI            "longMI"            "/usr/local/lib/R/site-library"          `\
-`#> loo               "loo"               "/usr/local/lib/R/site-library"          `\
-`#> lubridate         "lubridate"         "/usr/local/lib/R/site-library"          `\
-`#> magick            "magick"            "/usr/local/lib/R/site-library"          `\
-`#> magrittr          "magrittr"          "/usr/local/lib/R/site-library"          `\
-`#> markdown          "markdown"          "/usr/local/lib/R/site-library"          `\
-`#> MatrixModels      "MatrixModels"      "/usr/local/lib/R/site-library"          `\
-`#> matrixStats       "matrixStats"       "/usr/local/lib/R/site-library"          `\
-`#> mclust            "mclust"            "/usr/local/lib/R/site-library"          `\
-`#> memoise           "memoise"           "/usr/local/lib/R/site-library"          `\
-`#> metaDyn           "metaDyn"           "/usr/local/lib/R/site-library"          `\
-`#> metaSEM           "metaSEM"           "/usr/local/lib/R/site-library"          `\
-`#> mice              "mice"              "/usr/local/lib/R/site-library"          `\
-`#> microbenchmark    "microbenchmark"    "/usr/local/lib/R/site-library"          `\
-`#> mime              "mime"              "/usr/local/lib/R/site-library"          `\
-`#> miniUI            "miniUI"            "/usr/local/lib/R/site-library"          `\
-`#> minqa             "minqa"             "/usr/local/lib/R/site-library"          `\
-`#> mitml             "mitml"             "/usr/local/lib/R/site-library"          `\
-`#> mixopt            "mixopt"            "/usr/local/lib/R/site-library"          `\
-`#> mize              "mize"              "/usr/local/lib/R/site-library"          `\
-`#> mlVAR             "mlVAR"             "/usr/local/lib/R/site-library"          `\
-`#> mnormt            "mnormt"            "/usr/local/lib/R/site-library"          `\
-`#> modeldata         "modeldata"         "/usr/local/lib/R/site-library"          `\
-`#> modelenv          "modelenv"          "/usr/local/lib/R/site-library"          `\
-`#> modelr            "modelr"            "/usr/local/lib/R/site-library"          `\
-`#> MplusAutomation   "MplusAutomation"   "/usr/local/lib/R/site-library"          `\
-`#> multicool         "multicool"         "/usr/local/lib/R/site-library"          `\
-`#> mvtnorm           "mvtnorm"           "/usr/local/lib/R/site-library"          `\
-`#> nloptr            "nloptr"            "/usr/local/lib/R/site-library"          `\
-`#> numDeriv          "numDeriv"          "/usr/local/lib/R/site-library"          `\
-`#> nycflights13      "nycflights13"      "/usr/local/lib/R/site-library"          `\
-`#> OpenMx            "OpenMx"            "/usr/local/lib/R/site-library"          `\
-`#> openssl           "openssl"           "/usr/local/lib/R/site-library"          `\
-`#> ordinal           "ordinal"           "/usr/local/lib/R/site-library"          `\
-`#> otel              "otel"              "/usr/local/lib/R/site-library"          `\
-`#> pak               "pak"               "/usr/local/lib/R/site-library"          `\
-`#> pan               "pan"               "/usr/local/lib/R/site-library"          `\
-`#> pander            "pander"            "/usr/local/lib/R/site-library"          `\
-`#> parallelly        "parallelly"        "/usr/local/lib/R/site-library"          `\
-`#> parsnip           "parsnip"           "/usr/local/lib/R/site-library"          `\
-`#> patchwork         "patchwork"         "/usr/local/lib/R/site-library"          `\
-`#> pbapply           "pbapply"           "/usr/local/lib/R/site-library"          `\
-`#> pbivnorm          "pbivnorm"          "/usr/local/lib/R/site-library"          `\
-`#> pbkrtest          "pbkrtest"          "/usr/local/lib/R/site-library"          `\
-`#> pcaPP             "pcaPP"             "/usr/local/lib/R/site-library"          `\
-`#> pdftools          "pdftools"          "/usr/local/lib/R/site-library"          `\
-`#> pillar            "pillar"            "/usr/local/lib/R/site-library"          `\
-`#> pkgbuild          "pkgbuild"          "/usr/local/lib/R/site-library"          `\
-`#> pkgconfig         "pkgconfig"         "/usr/local/lib/R/site-library"          `\
-`#> pkgdown           "pkgdown"           "/usr/local/lib/R/site-library"          `\
-`#> pkgload           "pkgload"           "/usr/local/lib/R/site-library"          `\
-`#> plyr              "plyr"              "/usr/local/lib/R/site-library"          `\
-`#> png               "png"               "/usr/local/lib/R/site-library"          `\
-`#> posterior         "posterior"         "/usr/local/lib/R/site-library"          `\
-`#> pracma            "pracma"            "/usr/local/lib/R/site-library"          `\
-`#> praise            "praise"            "/usr/local/lib/R/site-library"          `\
-`#> prettyunits       "prettyunits"       "/usr/local/lib/R/site-library"          `\
-`#> printr            "printr"            "/usr/local/lib/R/site-library"          `\
-`#> processx          "processx"          "/usr/local/lib/R/site-library"          `\
-`#> prodlim           "prodlim"           "/usr/local/lib/R/site-library"          `\
-`#> profvis           "profvis"           "/usr/local/lib/R/site-library"          `\
-`#> progress          "progress"          "/usr/local/lib/R/site-library"          `\
-`#> progressr         "progressr"         "/usr/local/lib/R/site-library"          `\
-`#> promises          "promises"          "/usr/local/lib/R/site-library"          `\
-`#> proto             "proto"             "/usr/local/lib/R/site-library"          `\
-`#> ps                "ps"                "/usr/local/lib/R/site-library"          `\
-`#> psych             "psych"             "/usr/local/lib/R/site-library"          `\
-`#> purrr             "purrr"             "/usr/local/lib/R/site-library"          `\
-`#> qgraph            "qgraph"            "/usr/local/lib/R/site-library"          `\
-`#> qpdf              "qpdf"              "/usr/local/lib/R/site-library"          `\
-`#> quadprog          "quadprog"          "/usr/local/lib/R/site-library"          `\
-`#> quantreg          "quantreg"          "/usr/local/lib/R/site-library"          `\
-`#> quarto            "quarto"            "/usr/local/lib/R/site-library"          `\
-`#> QuickJSR          "QuickJSR"          "/usr/local/lib/R/site-library"          `\
-`#> R.cache           "R.cache"           "/usr/local/lib/R/site-library"          `\
-`#> R.methodsS3       "R.methodsS3"       "/usr/local/lib/R/site-library"          `\
-`#> R.oo              "R.oo"              "/usr/local/lib/R/site-library"          `\
-`#> R.utils           "R.utils"           "/usr/local/lib/R/site-library"          `\
-`#> R2jags            "R2jags"            "/usr/local/lib/R/site-library"          `\
-`#> R2WinBUGS         "R2WinBUGS"         "/usr/local/lib/R/site-library"          `\
-`#> R6                "R6"                "/usr/local/lib/R/site-library"          `\
-`#> ragg              "ragg"              "/usr/local/lib/R/site-library"          `\
-`#> rainbow           "rainbow"           "/usr/local/lib/R/site-library"          `\
-`#> rappdirs          "rappdirs"          "/usr/local/lib/R/site-library"          `\
-`#> rbibutils         "rbibutils"         "/usr/local/lib/R/site-library"          `\
-`#> rcmdcheck         "rcmdcheck"         "/usr/local/lib/R/site-library"          `\
-`#> RColorBrewer      "RColorBrewer"      "/usr/local/lib/R/site-library"          `\
-`#> Rcpp              "Rcpp"              "/usr/local/lib/R/site-library"          `\
-`#> RcppArmadillo     "RcppArmadillo"     "/usr/local/lib/R/site-library"          `\
-`#> RcppEigen         "RcppEigen"         "/usr/local/lib/R/site-library"          `\
-`#> RcppGSL           "RcppGSL"           "/usr/local/lib/R/site-library"          `\
-`#> RcppParallel      "RcppParallel"      "/usr/local/lib/R/site-library"          `\
-`#> RcppTOML          "RcppTOML"          "/usr/local/lib/R/site-library"          `\
-`#> RCurl             "RCurl"             "/usr/local/lib/R/site-library"          `\
-`#> Rdpack            "Rdpack"            "/usr/local/lib/R/site-library"          `\
-`#> rdtools           "rdtools"           "/usr/local/lib/R/site-library"          `\
-`#> readr             "readr"             "/usr/local/lib/R/site-library"          `\
-`#> readxl            "readxl"            "/usr/local/lib/R/site-library"          `\
-`#> recipes           "recipes"           "/usr/local/lib/R/site-library"          `\
-`#> RefManageR        "RefManageR"        "/usr/local/lib/R/site-library"          `\
-`#> reformulas        "reformulas"        "/usr/local/lib/R/site-library"          `\
-`#> rematch           "rematch"           "/usr/local/lib/R/site-library"          `\
-`#> rematch2          "rematch2"          "/usr/local/lib/R/site-library"          `\
-`#> remotes           "remotes"           "/usr/local/lib/R/site-library"          `\
-`#> reprex            "reprex"            "/usr/local/lib/R/site-library"          `\
-`#> reshape2          "reshape2"          "/usr/local/lib/R/site-library"          `\
-`#> reticulate        "reticulate"        "/usr/local/lib/R/site-library"          `\
-`#> rex               "rex"               "/usr/local/lib/R/site-library"          `\
-`#> rhdf5             "rhdf5"             "/usr/local/lib/R/site-library"          `\
-`#> rhdf5filters      "rhdf5filters"      "/usr/local/lib/R/site-library"          `\
-`#> Rhdf5lib          "Rhdf5lib"          "/usr/local/lib/R/site-library"          `\
-`#> rhub              "rhub"              "/usr/local/lib/R/site-library"          `\
-`#> rjags             "rjags"             "/usr/local/lib/R/site-library"          `\
-`#> rlang             "rlang"             "/usr/local/lib/R/site-library"          `\
-`#> RMariaDB          "RMariaDB"          "/usr/local/lib/R/site-library"          `\
-`#> rmarkdown         "rmarkdown"         "/usr/local/lib/R/site-library"          `\
-`#> roxygen2          "roxygen2"          "/usr/local/lib/R/site-library"          `\
-`#> rpf               "rpf"               "/usr/local/lib/R/site-library"          `\
-`#> RPostgres         "RPostgres"         "/usr/local/lib/R/site-library"          `\
-`#> rProject          "rProject"          "/usr/local/lib/R/site-library"          `\
-`#> rprojroot         "rprojroot"         "/usr/local/lib/R/site-library"          `\
-`#> rsample           "rsample"           "/usr/local/lib/R/site-library"          `\
-`#> RSQLite           "RSQLite"           "/usr/local/lib/R/site-library"          `\
-`#> rstan             "rstan"             "/usr/local/lib/R/site-library"          `\
-`#> rstantools        "rstantools"        "/usr/local/lib/R/site-library"          `\
-`#> rstudioapi        "rstudioapi"        "/usr/local/lib/R/site-library"          `\
-`#> rversions         "rversions"         "/usr/local/lib/R/site-library"          `\
-`#> rvest             "rvest"             "/usr/local/lib/R/site-library"          `\
-`#> Ryacas            "Ryacas"            "/usr/local/lib/R/site-library"          `\
-`#> S7                "S7"                "/usr/local/lib/R/site-library"          `\
-`#> sass              "sass"              "/usr/local/lib/R/site-library"          `\
-`#> scales            "scales"            "/usr/local/lib/R/site-library"          `\
-`#> selectr           "selectr"           "/usr/local/lib/R/site-library"          `\
-`#> semlbci           "semlbci"           "/usr/local/lib/R/site-library"          `\
-`#> semmcci           "semmcci"           "/usr/local/lib/R/site-library"          `\
-`#> semPlot           "semPlot"           "/usr/local/lib/R/site-library"          `\
-`#> sessioninfo       "sessioninfo"       "/usr/local/lib/R/site-library"          `\
-`#> sfd               "sfd"               "/usr/local/lib/R/site-library"          `\
-`#> shape             "shape"             "/usr/local/lib/R/site-library"          `\
-`#> shiny             "shiny"             "/usr/local/lib/R/site-library"          `\
-`#> simStateSpace     "simStateSpace"     "/usr/local/lib/R/site-library"          `\
-`#> slider            "slider"            "/usr/local/lib/R/site-library"          `\
-`#> snow              "snow"              "/usr/local/lib/R/site-library"          `\
-`#> snowfall          "snowfall"          "/usr/local/lib/R/site-library"          `\
-`#> sourcetools       "sourcetools"       "/usr/local/lib/R/site-library"          `\
-`#> SparseM           "SparseM"           "/usr/local/lib/R/site-library"          `\
-`#> sparsevctrs       "sparsevctrs"       "/usr/local/lib/R/site-library"          `\
-`#> splitfngr         "splitfngr"         "/usr/local/lib/R/site-library"          `\
-`#> SQUAREM           "SQUAREM"           "/usr/local/lib/R/site-library"          `\
-`#> StanHeaders       "StanHeaders"       "/usr/local/lib/R/site-library"          `\
-`#> stringi           "stringi"           "/usr/local/lib/R/site-library"          `\
-`#> stringr           "stringr"           "/usr/local/lib/R/site-library"          `\
-`#> styler            "styler"            "/usr/local/lib/R/site-library"          `\
-`#> symSEM            "symSEM"            "/usr/local/lib/R/site-library"          `\
-`#> sys               "sys"               "/usr/local/lib/R/site-library"          `\
-`#> systemfonts       "systemfonts"       "/usr/local/lib/R/site-library"          `\
-`#> tailor            "tailor"            "/usr/local/lib/R/site-library"          `\
-`#> tensorA           "tensorA"           "/usr/local/lib/R/site-library"          `\
-`#> testthat          "testthat"          "/usr/local/lib/R/site-library"          `\
-`#> texreg            "texreg"            "/usr/local/lib/R/site-library"          `\
-`#> textshaping       "textshaping"       "/usr/local/lib/R/site-library"          `\
-`#> tibble            "tibble"            "/usr/local/lib/R/site-library"          `\
-`#> tidymodels        "tidymodels"        "/usr/local/lib/R/site-library"          `\
-`#> tidyr             "tidyr"             "/usr/local/lib/R/site-library"          `\
-`#> tidyselect        "tidyselect"        "/usr/local/lib/R/site-library"          `\
-`#> tidyverse         "tidyverse"         "/usr/local/lib/R/site-library"          `\
-`#> timechange        "timechange"        "/usr/local/lib/R/site-library"          `\
-`#> timeDate          "timeDate"          "/usr/local/lib/R/site-library"          `\
-`#> tinytex           "tinytex"           "/usr/local/lib/R/site-library"          `\
-`#> tune              "tune"              "/usr/local/lib/R/site-library"          `\
-`#> tzdb              "tzdb"              "/usr/local/lib/R/site-library"          `\
-`#> ucminf            "ucminf"            "/usr/local/lib/R/site-library"          `\
-`#> unigd             "unigd"             "/usr/local/lib/R/site-library"          `\
-`#> urca              "urca"              "/usr/local/lib/R/site-library"          `\
-`#> urlchecker        "urlchecker"        "/usr/local/lib/R/site-library"          `\
-`#> usethis           "usethis"           "/usr/local/lib/R/site-library"          `\
-`#> utf8              "utf8"              "/usr/local/lib/R/site-library"          `\
-`#> uuid              "uuid"              "/usr/local/lib/R/site-library"          `\
-`#> V8                "V8"                "/usr/local/lib/R/site-library"          `\
-`#> vctrs             "vctrs"             "/usr/local/lib/R/site-library"          `\
-`#> viridisLite       "viridisLite"       "/usr/local/lib/R/site-library"          `\
-`#> vroom             "vroom"             "/usr/local/lib/R/site-library"          `\
-`#> waldo             "waldo"             "/usr/local/lib/R/site-library"          `\
-`#> warp              "warp"              "/usr/local/lib/R/site-library"          `\
-`#> whisker           "whisker"           "/usr/local/lib/R/site-library"          `\
-`#> whoami            "whoami"            "/usr/local/lib/R/site-library"          `\
-`#> withr             "withr"             "/usr/local/lib/R/site-library"          `\
-`#> workflows         "workflows"         "/usr/local/lib/R/site-library"          `\
-`#> workflowsets      "workflowsets"      "/usr/local/lib/R/site-library"          `\
-`#> xfun              "xfun"              "/usr/local/lib/R/site-library"          `\
-`#> xml2              "xml2"              "/usr/local/lib/R/site-library"          `\
-`#> xmlparsedata      "xmlparsedata"      "/usr/local/lib/R/site-library"          `\
-`#> xopen             "xopen"             "/usr/local/lib/R/site-library"          `\
-`#> xtable            "xtable"            "/usr/local/lib/R/site-library"          `\
-`#> yaml              "yaml"              "/usr/local/lib/R/site-library"          `\
-`#> yardstick         "yardstick"         "/usr/local/lib/R/site-library"          `\
-`#> zip               "zip"               "/usr/local/lib/R/site-library"          `\
-`#> zoo               "zoo"               "/usr/local/lib/R/site-library"          `\
-`#> base              "base"              "/usr/local/lib/R/library"               `\
-`#> boot              "boot"              "/usr/local/lib/R/library"               `\
-`#> class             "class"             "/usr/local/lib/R/library"               `\
-`#> cluster           "cluster"           "/usr/local/lib/R/library"               `\
-`#> codetools         "codetools"         "/usr/local/lib/R/library"               `\
-`#> compiler          "compiler"          "/usr/local/lib/R/library"               `\
-`#> datasets          "datasets"          "/usr/local/lib/R/library"               `\
-`#> foreign           "foreign"           "/usr/local/lib/R/library"               `\
-`#> graphics          "graphics"          "/usr/local/lib/R/library"               `\
-`#> grDevices         "grDevices"         "/usr/local/lib/R/library"               `\
-`#> grid              "grid"              "/usr/local/lib/R/library"               `\
-`#> KernSmooth        "KernSmooth"        "/usr/local/lib/R/library"               `\
-`#> lattice           "lattice"           "/usr/local/lib/R/library"               `\
-`#> MASS              "MASS"              "/usr/local/lib/R/library"               `\
-`#> Matrix            "Matrix"            "/usr/local/lib/R/library"               `\
-`#> methods           "methods"           "/usr/local/lib/R/library"               `\
-`#> mgcv              "mgcv"              "/usr/local/lib/R/library"               `\
-`#> nlme              "nlme"              "/usr/local/lib/R/library"               `\
-`#> nnet              "nnet"              "/usr/local/lib/R/library"               `\
-`#> parallel          "parallel"          "/usr/local/lib/R/library"               `\
-`#> rpart             "rpart"             "/usr/local/lib/R/library"               `\
-`#> spatial           "spatial"           "/usr/local/lib/R/library"               `\
-`#> splines           "splines"           "/usr/local/lib/R/library"               `\
-`#> stats             "stats"             "/usr/local/lib/R/library"               `\
-`#> stats4            "stats4"            "/usr/local/lib/R/library"               `\
-`#> survival          "survival"          "/usr/local/lib/R/library"               `\
-`#> tcltk             "tcltk"             "/usr/local/lib/R/library"               `\
-`#> tools             "tools"             "/usr/local/lib/R/library"               `\
-`#> utils             "utils"             "/usr/local/lib/R/library"               `\
-`#>                   Version      Priority     `\
-`#> rProject          "0.0.48"     NA           `\
-`#> askpass           "1.2.1"      NA           `\
-`#> base64enc         "0.1-6"      NA           `\
-`#> BiocManager       "1.30.27"    NA           `\
-`#> brew              "1.0-10"     NA           `\
-`#> brio              "1.1.5"      NA           `\
-`#> bslib             "0.12.0"     NA           `\
-`#> cachem            "1.1.0"      NA           `\
-`#> callr             "3.8.0"      NA           `\
-`#> cffr              "1.4.2"      NA           `\
-`#> cli               "3.6.6"      NA           `\
-`#> clipr             "0.8.1"      NA           `\
-`#> commonmark        "2.0.0"      NA           `\
-`#> covr              "3.6.5"      NA           `\
-`#> crayon            "1.5.3"      NA           `\
-`#> credentials       "2.0.3"      NA           `\
-`#> curl              "8.1.0"      NA           `\
-`#> desc              "1.4.3"      NA           `\
-`#> devtools          "2.5.2.9000" NA           `\
-`#> diffobj           "0.3.9"      NA           `\
-`#> digest            "0.6.39"     NA           `\
-`#> distro            "0.1.1"      NA           `\
-`#> downlit           "0.4.5"      NA           `\
-`#> ellipsis          "0.3.3"      NA           `\
-`#> evaluate          "1.0.5"      NA           `\
-`#> fansi             "1.0.7"      NA           `\
-`#> fastmap           "1.2.0"      NA           `\
-`#> fontawesome       "0.5.3"      NA           `\
-`#> fs                "2.1.0"      NA           `\
-`#> gert              "2.5.0"      NA           `\
-`#> gh                "1.6.1"      NA           `\
-`#> gitcreds          "0.1.2"      NA           `\
-`#> glue              "1.8.1"      NA           `\
-`#> highr             "0.12"       NA           `\
-`#> htmltools         "0.5.9"      NA           `\
-`#> htmlwidgets       "1.6.4"      NA           `\
-`#> httpuv            "1.6.17"     NA           `\
-`#> httr              "1.4.9"      NA           `\
-`#> httr2             "1.3.0"      NA           `\
-`#> ini               "0.3.1"      NA           `\
-`#> jquerylib         "0.1.4"      NA           `\
-`#> jsonlite          "2.0.0"      NA           `\
-`#> jsonvalidate      "1.5.0"      NA           `\
-`#> knitr             "1.52"       NA           `\
-`#> later             "1.4.8"      NA           `\
-`#> lifecycle         "1.0.5"      NA           `\
-`#> lintr             "3.4.0"      NA           `\
-`#> magrittr          "2.0.5"      NA           `\
-`#> memoise           "2.0.1"      NA           `\
-`#> mime              "0.13"       NA           `\
-`#> miniUI            "0.1.2"      NA           `\
-`#> openssl           "2.4.2"      NA           `\
-`#> otel              "0.2.0"      NA           `\
-`#> pak               "0.11.1"     NA           `\
-`#> pillar            "1.11.1"     NA           `\
-`#> pkgbuild          "1.4.8"      NA           `\
-`#> pkgconfig         "2.0.3"      NA           `\
-`#> pkgdown           "2.2.1"      NA           `\
-`#> pkgload           "1.5.3"      NA           `\
-`#> praise            "1.0.0"      NA           `\
-`#> prettyunits       "1.2.0"      NA           `\
-`#> processx          "3.9.0"      NA           `\
-`#> profvis           "0.4.0"      NA           `\
-`#> promises          "1.5.0"      NA           `\
-`#> ps                "1.9.3"      NA           `\
-`#> purrr             "1.2.2"      NA           `\
-`#> quarto            "1.5.1"      NA           `\
-`#> R.cache           "0.17.0"     NA           `\
-`#> R.methodsS3       "1.8.2"      NA           `\
-`#> R.oo              "1.27.1"     NA           `\
-`#> R.utils           "2.13.0"     NA           `\
-`#> R6                "2.6.1"      NA           `\
-`#> ragg              "1.5.2"      NA           `\
-`#> rappdirs          "0.3.4"      NA           `\
-`#> rcmdcheck         "1.4.0.9001" NA           `\
-`#> Rcpp              "1.1.2"      NA           `\
-`#> rdtools           "0.1.0"      NA           `\
-`#> remotes           "2.5.0"      NA           `\
-`#> rex               "1.2.2"      NA           `\
-`#> rlang             "1.3.0"      NA           `\
-`#> rmarkdown         "2.32"       NA           `\
-`#> roxygen2          "8.1.1"      NA           `\
-`#> rProject          "0.0.48"     NA           `\
-`#> rprojroot         "2.1.1"      NA           `\
-`#> rstudioapi        "0.19.0"     NA           `\
-`#> rversions         "3.0.0"      NA           `\
-`#> sass              "0.4.10"     NA           `\
-`#> sessioninfo       "1.2.4"      NA           `\
-`#> shiny             "1.14.0"     NA           `\
-`#> sourcetools       "0.1.7-2"    NA           `\
-`#> stringi           "1.8.9"      NA           `\
-`#> styler            "1.11.0"     NA           `\
-`#> sys               "3.4.3"      NA           `\
-`#> systemfonts       "1.3.2"      NA           `\
-`#> testthat          "3.3.2"      NA           `\
-`#> textshaping       "1.0.5"      NA           `\
-`#> tibble            "3.3.1"      NA           `\
-`#> tinytex           "0.61.1"     NA           `\
-`#> urlchecker        "2.0.0"      NA           `\
-`#> usethis           "3.2.2"      NA           `\
-`#> utf8              "1.2.6"      NA           `\
-`#> V8                "8.2.0"      NA           `\
-`#> vctrs             "0.7.3"      NA           `\
-`#> waldo             "0.6.2"      NA           `\
-`#> whisker           "0.4.1"      NA           `\
-`#> withr             "3.0.3"      NA           `\
-`#> xfun              "0.61"       NA           `\
-`#> xml2              "1.6.0"      NA           `\
-`#> xmlparsedata      "1.0.5"      NA           `\
-`#> xopen             "1.0.1"      NA           `\
-`#> xtable            "1.8-8"      NA           `\
-`#> yaml              "2.3.12"     NA           `\
-`#> zip               "3.0.2"      NA           `\
-`#> abind             "1.4-8"      NA           `\
-`#> Amelia            "1.8.3"      NA           `\
-`#> arm               "1.15-3"     NA           `\
-`#> arrow             "25.0.1"     NA           `\
-`#> ash               "1.0-15"     NA           `\
-`#> AsioHeaders       "1.30.2-1"   NA           `\
-`#> askpass           "1.2.1"      NA           `\
-`#> assertthat        "0.2.1"      NA           `\
-`#> backports         "1.5.1"      NA           `\
-`#> base64enc         "0.1-6"      NA           `\
-`#> betaDelta         "1.0.7.9000" NA           `\
-`#> betaMC            "1.3.4.9000" NA           `\
-`#> betaNB            "1.0.7.9000" NA           `\
-`#> betaSandwich      "1.0.9.9000" NA           `\
-`#> BH                "1.90.0-1"   NA           `\
-`#> bibtex            "0.5.3"      NA           `\
-`#> biocmake          "1.4.0"      NA           `\
-`#> BiocManager       "1.30.27"    NA           `\
-`#> BiocVersion       "3.23.1"     NA           `\
-`#> bit               "4.6.0"      NA           `\
-`#> bit64             "4.8.6"      NA           `\
-`#> bitops            "1.1-0"      NA           `\
-`#> blob              "1.3.0"      NA           `\
-`#> bootStateSpace    "1.0.3.9000" NA           `\
-`#> brew              "1.0-10"     NA           `\
-`#> brio              "1.1.5"      NA           `\
-`#> broom             "1.0.13"     NA           `\
-`#> bslib             "0.12.0"     NA           `\
-`#> cachem            "1.1.0"      NA           `\
-`#> callr             "3.8.0"      NA           `\
-`#> car               "3.1-5"      NA           `\
-`#> caracas           "2.1.1"      NA           `\
-`#> carData           "3.0-6"      NA           `\
-`#> cellranger        "1.1.0"      NA           `\
-`#> cffr              "1.4.2"      NA           `\
-`#> checkmate         "2.3.4"      NA           `\
-`#> cli               "3.6.6.9000" NA           `\
-`#> clipr             "0.8.1"      NA           `\
-`#> clock             "0.7.4"      NA           `\
-`#> clusterGeneration "1.3.8"      NA           `\
-`#> coda              "0.19-4.1"   NA           `\
-`#> cOde              "1.1.1"      NA           `\
-`#> collections       "0.3.12"     NA           `\
-`#> colorspace        "2.1-4"      NA           `\
-`#> commonmark        "2.0.0"      NA           `\
-`#> conflicted        "1.2.0"      NA           `\
-`#> corpcor           "1.6.10"     NA           `\
-`#> covr              "3.6.5"      NA           `\
-`#> cowplot           "1.2.0"      NA           `\
-`#> cpp11             "0.5.5"      NA           `\
-`#> crayon            "1.5.3"      NA           `\
-`#> credentials       "2.0.3"      NA           `\
-`#> crosstalk         "1.2.2"      NA           `\
-`#> cTMed             "1.0.10"     NA           `\
-`#> ctsem             "3.11.1"     NA           `\
-`#> curl              "8.1.0"      NA           `\
-`#> data.table        "1.18.6.1"   NA           `\
-`#> DBI               "1.3.0"      NA           `\
-`#> dbplyr            "2.6.0"      NA           `\
-`#> Deriv             "4.3.5"      NA           `\
-`#> desc              "1.4.3"      NA           `\
-`#> deSolve           "1.42"       NA           `\
-`#> devtools          "2.5.2.9000" NA           `\
-`#> diagram           "1.6.5"      NA           `\
-`#> dials             "1.4.4"      NA           `\
-`#> DiceDesign        "1.10"       NA           `\
-`#> diffobj           "0.3.9"      NA           `\
-`#> digest            "0.6.39"     NA           `\
-`#> dir.expiry        "1.20.0"     NA           `\
-`#> distributional    "0.9.0"      NA           `\
-`#> distro            "0.1.1"      NA           `\
-`#> doBy              "4.7.2"      NA           `\
-`#> docopt            "0.7.2"      NA           `\
-`#> downlit           "0.4.5"      NA           `\
-`#> dplyr             "1.2.1"      NA           `\
-`#> DT                "0.34.0"     NA           `\
-`#> dtplyr            "1.3.3"      NA           `\
-`#> duckdb            "1.5.6"      NA           `\
-`#> dynr              "0.1.16-114" NA           `\
-`#> dynTools          "0.0.0.9000" NA           `\
-`#> dynUtils          "0.9.2"      NA           `\
-`#> ellipse           "0.5.0"      NA           `\
-`#> ellipsis          "0.3.3"      NA           `\
-`#> evaluate          "1.0.5"      NA           `\
-`#> expm              "1.0-1"      NA           `\
-`#> fansi             "1.0.7"      NA           `\
-`#> farver            "2.1.2"      NA           `\
-`#> fastDummies       "1.7.6"      NA           `\
-`#> fastmap           "1.2.0"      NA           `\
-`#> fclust            "2.1.3"      NA           `\
-`#> fda               "6.3.0"      NA           `\
-`#> fdrtool           "1.2.18"     NA           `\
-`#> fds               "1.9"        NA           `\
-`#> filelock          "1.0.3"      NA           `\
-`#> fitVARMxID        "1.0.6"      NA           `\
-`#> FNN               "1.1.4.1"    NA           `\
-`#> fontawesome       "0.5.3"      NA           `\
-`#> forcats           "1.0.1"      NA           `\
-`#> foreach           "1.5.2"      NA           `\
-`#> forecast          "9.0.2"      NA           `\
-`#> Formula           "1.2-6"      NA           `\
-`#> fracdiff          "1.5-4"      NA           `\
-`#> fs                "2.1.0"      NA           `\
-`#> fst               "0.9.8"      NA           `\
-`#> fstcore           "0.10.0"     NA           `\
-`#> furrr             "0.4.0"      NA           `\
-`#> future            "1.76.0"     NA           `\
-`#> future.apply      "1.20.2"     NA           `\
-`#> gargle            "1.6.1"      NA           `\
-`#> GauPro            "0.2.17"     NA           `\
-`#> generics          "0.1.4"      NA           `\
-`#> gert              "2.5.0"      NA           `\
-`#> ggplot2           "4.0.3"      NA           `\
-`#> ggrepel           "0.9.8"      NA           `\
-`#> gh                "1.6.1"      NA           `\
-`#> gitcreds          "0.1.2"      NA           `\
-`#> glasso            "1.11"       NA           `\
-`#> glmnet            "5.1"        NA           `\
-`#> globals           "0.20.0"     NA           `\
-`#> glue              "1.8.1"      NA           `\
-`#> googledrive       "2.1.2"      NA           `\
-`#> googlesheets4     "1.1.2"      NA           `\
-`#> gower             "1.0.2"      NA           `\
-`#> GPArotation       "2026.8-2"   NA           `\
-`#> graphicalVAR      "0.4.1"      NA           `\
-`#> gridExtra         "2.3.1"      NA           `\
-`#> gsubfn            "0.7"        NA           `\
-`#> gtable            "0.3.6"      NA           `\
-`#> gtools            "3.9.5"      NA           `\
-`#> hardhat           "1.4.3"      NA           `\
-`#> haven             "2.5.5"      NA           `\
-`#> hdrcde            "3.5.0"      NA           `\
-`#> here              "1.0.2"      NA           `\
-`#> highr             "0.12"       NA           `\
-`#> Hmisc             "5.3-0"      NA           `\
-`#> hms               "1.1.4"      NA           `\
-`#> htmlTable         "2.5.0"      NA           `\
-`#> htmltools         "0.5.9"      NA           `\
-`#> htmlwidgets       "1.6.4"      NA           `\
-`#> httpgd            "2.1.4"      NA           `\
-`#> httpuv            "1.6.17"     NA           `\
-`#> httr              "1.4.9"      NA           `\
-`#> httr2             "1.3.0"      NA           `\
-`#> ids               "1.0.1"      NA           `\
-`#> ifaTools          "0.23"       NA           `\
-`#> igraph            "2.3.4"      NA           `\
-`#> infer             "1.1.0"      NA           `\
-`#> ini               "0.3.1"      NA           `\
-`#> inline            "0.3.21"     NA           `\
-`#> ipred             "0.9-16"     NA           `\
-`#> isoband           "0.3.0"      NA           `\
-`#> iterators         "1.0.14"     NA           `\
-`#> jomo              "2.7-6"      NA           `\
-`#> jpeg              "0.1-11"     NA           `\
-`#> jquerylib         "0.1.4"      NA           `\
-`#> jsonlite          "2.0.0"      NA           `\
-`#> jsonvalidate      "1.5.0"      NA           `\
-`#> kernlab           "0.9-33"     NA           `\
-`#> knitr             "1.52"       NA           `\
-`#> ks                "1.15.3"     NA           `\
-`#> labeling          "0.4.3"      NA           `\
-`#> Lahman            "14.0-0"     NA           `\
-`#> languageserver    "0.3.20"     NA           `\
-`#> later             "1.4.8"      NA           `\
-`#> latex2exp         "0.9.8"      NA           `\
-`#> lava              "1.9.3"      NA           `\
-`#> lavaan            "0.7-3"      NA           `\
-`#> lazyeval          "0.2.3"      NA           `\
-`#> lbfgs             "1.2.1.2"    NA           `\
-`#> lifecycle         "1.0.5"      NA           `\
-`#> lintr             "3.4.0"      NA           `\
-`#> listenv           "1.1.0"      NA           `\
-`#> litedown          "0.11"       NA           `\
-`#> littler           "0.3.23"     NA           `\
-`#> lme4              "2.0-6"      NA           `\
-`#> lmtest            "0.9-40"     NA           `\
-`#> locfit            "1.5-9.12"   NA           `\
-`#> longMI            "1.0.0"      NA           `\
-`#> loo               "2.10.1"     NA           `\
-`#> lubridate         "1.9.5"      NA           `\
-`#> magick            "2.9.1"      NA           `\
-`#> magrittr          "2.0.5"      NA           `\
-`#> markdown          "2.0"        NA           `\
-`#> MatrixModels      "0.5-4"      NA           `\
-`#> matrixStats       "1.5.0"      NA           `\
-`#> mclust            "6.1.3"      NA           `\
-`#> memoise           "2.0.1"      NA           `\
-`#> metaDyn           "1.0.4"      NA           `\
-`#> metaSEM           "1.5.0"      NA           `\
-`#> mice              "3.19.0"     NA           `\
-`#> microbenchmark    "1.5.0"      NA           `\
-`#> mime              "0.13"       NA           `\
-`#> miniUI            "0.1.2"      NA           `\
-`#> minqa             "1.2.8"      NA           `\
-`#> mitml             "0.4-5"      NA           `\
-`#> mixopt            "0.1.3"      NA           `\
-`#> mize              "0.2.5"      NA           `\
-`#> mlVAR             "0.7.3"      NA           `\
-`#> mnormt            "2.1.2"      NA           `\
-`#> modeldata         "1.6.0"      NA           `\
-`#> modelenv          "0.2.0"      NA           `\
-`#> modelr            "0.1.11"     NA           `\
-`#> MplusAutomation   "1.3"        NA           `\
-`#> multicool         "1.0.1"      NA           `\
-`#> mvtnorm           "1.4-2"      NA           `\
-`#> nloptr            "2.2.1"      NA           `\
-`#> numDeriv          "2016.8-1.1" NA           `\
-`#> nycflights13      "1.0.2"      NA           `\
-`#> OpenMx            "2.22.11"    NA           `\
-`#> openssl           "2.4.2"      NA           `\
-`#> ordinal           "2026.7-26"  NA           `\
-`#> otel              "0.2.0"      NA           `\
-`#> pak               "0.11.1"     NA           `\
-`#> pan               "2.0"        NA           `\
-`#> pander            "0.6.6"      NA           `\
-`#> parallelly        "1.48.0"     NA           `\
-`#> parsnip           "1.6.1"      NA           `\
-`#> patchwork         "1.3.2"      NA           `\
-`#> pbapply           "1.7-5"      NA           `\
-`#> pbivnorm          "0.6.0"      NA           `\
-`#> pbkrtest          "0.5.5"      NA           `\
-`#> pcaPP             "2.0-7"      NA           `\
-`#> pdftools          "3.9.1"      NA           `\
-`#> pillar            "1.11.1"     NA           `\
-`#> pkgbuild          "1.4.8"      NA           `\
-`#> pkgconfig         "2.0.3"      NA           `\
-`#> pkgdown           "2.2.1"      NA           `\
-`#> pkgload           "1.5.3"      NA           `\
-`#> plyr              "1.8.9"      NA           `\
-`#> png               "0.1-9"      NA           `\
-`#> posterior         "1.7.0"      NA           `\
-`#> pracma            "2.4.6"      NA           `\
-`#> praise            "1.0.0"      NA           `\
-`#> prettyunits       "1.2.0"      NA           `\
-`#> printr            "0.3"        NA           `\
-`#> processx          "3.9.0"      NA           `\
-`#> prodlim           "2026.03.11" NA           `\
-`#> profvis           "0.4.0"      NA           `\
-`#> progress          "1.2.3"      NA           `\
-`#> progressr         "1.0.0"      NA           `\
-`#> promises          "1.5.0"      NA           `\
-`#> proto             "1.0.0"      NA           `\
-`#> ps                "1.9.3"      NA           `\
-`#> psych             "2.6.9"      NA           `\
-`#> purrr             "1.2.2"      NA           `\
-`#> qgraph            "1.10.1"     NA           `\
-`#> qpdf              "1.4.1"      NA           `\
-`#> quadprog          "1.5-8"      NA           `\
-`#> quantreg          "6.1"        NA           `\
-`#> quarto            "1.5.1"      NA           `\
-`#> QuickJSR          "1.11.0"     NA           `\
-`#> R.cache           "0.17.0"     NA           `\
-`#> R.methodsS3       "1.8.2"      NA           `\
-`#> R.oo              "1.27.1"     NA           `\
-`#> R.utils           "2.13.0"     NA           `\
-`#> R2jags            "0.8-9"      NA           `\
-`#> R2WinBUGS         "2.1-24"     NA           `\
-`#> R6                "2.6.1"      NA           `\
-`#> ragg              "1.5.2"      NA           `\
-`#> rainbow           "3.8"        NA           `\
-`#> rappdirs          "0.3.4"      NA           `\
-`#> rbibutils         "2.4.1"      NA           `\
-`#> rcmdcheck         "1.4.0.9001" NA           `\
-`#> RColorBrewer      "1.1-3"      NA           `\
-`#> Rcpp              "1.1.2"      NA           `\
-`#> RcppArmadillo     "15.6.0-1"   NA           `\
-`#> RcppEigen         "0.3.4.0.2"  NA           `\
-`#> RcppGSL           "0.3.14"     NA           `\
-`#> RcppParallel      "6.2.1"      NA           `\
-`#> RcppTOML          "0.2.3"      NA           `\
-`#> RCurl             "1.98-1.20"  NA           `\
-`#> Rdpack            "2.6.6"      NA           `\
-`#> rdtools           "0.1.0"      NA           `\
-`#> readr             "2.2.0"      NA           `\
-`#> readxl            "1.5.0.1"    NA           `\
-`#> recipes           "1.4.0"      NA           `\
-`#> RefManageR        "1.4.0"      NA           `\
-`#> reformulas        "0.4.4"      NA           `\
-`#> rematch           "2.0.0"      NA           `\
-`#> rematch2          "2.1.2"      NA           `\
-`#> remotes           "2.5.0"      NA           `\
-`#> reprex            "2.1.1"      NA           `\
-`#> reshape2          "1.4.5"      NA           `\
-`#> reticulate        "1.47.0"     NA           `\
-`#> rex               "1.2.2"      NA           `\
-`#> rhdf5             "2.56.1"     NA           `\
-`#> rhdf5filters      "1.24.1"     NA           `\
-`#> Rhdf5lib          "2.0.0"      NA           `\
-`#> rhub              "2.0.1"      NA           `\
-`#> rjags             "4-17"       NA           `\
-`#> rlang             "1.3.0"      NA           `\
-`#> RMariaDB          "1.3.5"      NA           `\
-`#> rmarkdown         "2.32"       NA           `\
-`#> roxygen2          "8.1.1.9000" NA           `\
-`#> rpf               "1.0.15"     NA           `\
-`#> RPostgres         "1.4.10"     NA           `\
-`#> rProject          "0.0.48"     NA           `\
-`#> rprojroot         "2.1.1"      NA           `\
-`#> rsample           "1.3.2"      NA           `\
-`#> RSQLite           "3.53.3"     NA           `\
-`#> rstan             "2.32.7"     NA           `\
-`#> rstantools        "2.7.1"      NA           `\
-`#> rstudioapi        "0.19.0"     NA           `\
-`#> rversions         "3.0.0"      NA           `\
-`#> rvest             "1.0.5"      NA           `\
-`#> Ryacas            "1.1.6"      NA           `\
-`#> S7                "0.2.2"      NA           `\
-`#> sass              "0.4.10"     NA           `\
-`#> scales            "1.4.0"      NA           `\
-`#> selectr           "0.8-0"      NA           `\
-`#> semlbci           "0.12.1"     NA           `\
-`#> semmcci           "1.1.6.9000" NA           `\
-`#> semPlot           "1.2.0"      NA           `\
-`#> sessioninfo       "1.2.4"      NA           `\
-`#> sfd               "0.1.0"      NA           `\
-`#> shape             "1.4.6.1"    NA           `\
-`#> shiny             "1.14.0"     NA           `\
-`#> simStateSpace     "1.2.16"     NA           `\
-`#> slider            "0.3.3"      NA           `\
-`#> snow              "0.4-4"      NA           `\
-`#> snowfall          "1.84-6.3"   NA           `\
-`#> sourcetools       "0.1.7-2"    NA           `\
-`#> SparseM           "1.84-2"     NA           `\
-`#> sparsevctrs       "0.3.6"      NA           `\
-`#> splitfngr         "0.1.2"      NA           `\
-`#> SQUAREM           "2026.1"     NA           `\
-`#> StanHeaders       "2.39.1"     NA           `\
-`#> stringi           "1.8.9"      NA           `\
-`#> stringr           "1.6.0"      NA           `\
-`#> styler            "1.11.0"     NA           `\
-`#> symSEM            "0.4"        NA           `\
-`#> sys               "3.4.3"      NA           `\
-`#> systemfonts       "1.3.2"      NA           `\
-`#> tailor            "0.1.0"      NA           `\
-`#> tensorA           "0.36.2.1"   NA           `\
-`#> testthat          "3.3.2"      NA           `\
-`#> texreg            "1.40"       NA           `\
-`#> textshaping       "1.0.5"      NA           `\
-`#> tibble            "3.3.1"      NA           `\
-`#> tidymodels        "1.5.0"      NA           `\
-`#> tidyr             "1.3.2"      NA           `\
-`#> tidyselect        "1.2.1"      NA           `\
-`#> tidyverse         "2.0.0"      NA           `\
-`#> timechange        "0.4.0"      NA           `\
-`#> timeDate          "4052.112"   NA           `\
-`#> tinytex           "0.61.1"     NA           `\
-`#> tune              "2.1.0"      NA           `\
-`#> tzdb              "0.5.0"      NA           `\
-`#> ucminf            "1.2.3"      NA           `\
-`#> unigd             "0.2.0"      NA           `\
-`#> urca              "1.3-4"      NA           `\
-`#> urlchecker        "2.0.0"      NA           `\
-`#> usethis           "3.2.2"      NA           `\
-`#> utf8              "1.2.6"      NA           `\
-`#> uuid              "1.2-2"      NA           `\
-`#> V8                "8.2.0"      NA           `\
-`#> vctrs             "0.7.3"      NA           `\
-`#> viridisLite       "0.4.3"      NA           `\
-`#> vroom             "1.7.1"      NA           `\
-`#> waldo             "0.6.2"      NA           `\
-`#> warp              "0.2.3"      NA           `\
-`#> whisker           "0.4.1"      NA           `\
-`#> whoami            "1.3.0"      NA           `\
-`#> withr             "3.0.3"      NA           `\
-`#> workflows         "1.3.0"      NA           `\
-`#> workflowsets      "1.1.1"      NA           `\
-`#> xfun              "0.61"       NA           `\
-`#> xml2              "1.6.0"      NA           `\
-`#> xmlparsedata      "1.0.5"      NA           `\
-`#> xopen             "1.0.1"      NA           `\
-`#> xtable            "1.8-8"      NA           `\
-`#> yaml              "2.3.12"     NA           `\
-`#> yardstick         "1.4.0"      NA           `\
-`#> zip               "3.0.2"      NA           `\
-`#> zoo               "1.9-1"      NA           `\
-`#> base              "4.6.1"      "base"       `\
-`#> boot              "1.3-32"     "recommended"`\
-`#> class             "7.3-23"     "recommended"`\
-`#> cluster           "2.1.8.2"    "recommended"`\
-`#> codetools         "0.2-20"     "recommended"`\
-`#> compiler          "4.6.1"      "base"       `\
-`#> datasets          "4.6.1"      "base"       `\
-`#> foreign           "0.8-91"     "recommended"`\
-`#> graphics          "4.6.1"      "base"       `\
-`#> grDevices         "4.6.1"      "base"       `\
-`#> grid              "4.6.1"      "base"       `\
-`#> KernSmooth        "2.23-26"    "recommended"`\
-`#> lattice           "0.22-9"     "recommended"`\
-`#> MASS              "7.3-65"     "recommended"`\
-`#> Matrix            "1.7-5"      "recommended"`\
-`#> methods           "4.6.1"      "base"       `\
-`#> mgcv              "1.9-4"      "recommended"`\
-`#> nlme              "3.1-169"    "recommended"`\
-`#> nnet              "7.3-20"     "recommended"`\
-`#> parallel          "4.6.1"      "base"       `\
-`#> rpart             "4.1.27"     "recommended"`\
-`#> spatial           "7.3-18"     "recommended"`\
-`#> splines           "4.6.1"      "base"       `\
-`#> stats             "4.6.1"      "base"       `\
-`#> stats4            "4.6.1"      "base"       `\
-`#> survival          "3.8-6"      "recommended"`\
-`#> tcltk             "4.6.1"      "base"       `\
-`#> tools             "4.6.1"      "base"       `\
-`#> utils             "4.6.1"      "base"       `\
+`#>                   Package            `\
+`#> rProject          "rProject"         `\
+`#> askpass           "askpass"          `\
+`#> base64enc         "base64enc"        `\
+`#> BiocManager       "BiocManager"      `\
+`#> brew              "brew"             `\
+`#> brio              "brio"             `\
+`#> bslib             "bslib"            `\
+`#> cachem            "cachem"           `\
+`#> callr             "callr"            `\
+`#> cffr              "cffr"             `\
+`#> cli               "cli"              `\
+`#> clipr             "clipr"            `\
+`#> commonmark        "commonmark"       `\
+`#> covr              "covr"             `\
+`#> crayon            "crayon"           `\
+`#> credentials       "credentials"      `\
+`#> curl              "curl"             `\
+`#> desc              "desc"             `\
+`#> devtools          "devtools"         `\
+`#> diffobj           "diffobj"          `\
+`#> digest            "digest"           `\
+`#> distro            "distro"           `\
+`#> downlit           "downlit"          `\
+`#> ellipsis          "ellipsis"         `\
+`#> evaluate          "evaluate"         `\
+`#> fansi             "fansi"            `\
+`#> fastmap           "fastmap"          `\
+`#> fontawesome       "fontawesome"      `\
+`#> fs                "fs"               `\
+`#> gert              "gert"             `\
+`#> gh                "gh"               `\
+`#> gitcreds          "gitcreds"         `\
+`#> glue              "glue"             `\
+`#> highr             "highr"            `\
+`#> htmltools         "htmltools"        `\
+`#> htmlwidgets       "htmlwidgets"      `\
+`#> httpuv            "httpuv"           `\
+`#> httr              "httr"             `\
+`#> httr2             "httr2"            `\
+`#> ini               "ini"              `\
+`#> jquerylib         "jquerylib"        `\
+`#> jsonlite          "jsonlite"         `\
+`#> jsonvalidate      "jsonvalidate"     `\
+`#> knitr             "knitr"            `\
+`#> later             "later"            `\
+`#> lifecycle         "lifecycle"        `\
+`#> lintr             "lintr"            `\
+`#> magrittr          "magrittr"         `\
+`#> memoise           "memoise"          `\
+`#> mime              "mime"             `\
+`#> miniUI            "miniUI"           `\
+`#> openssl           "openssl"          `\
+`#> otel              "otel"             `\
+`#> pak               "pak"              `\
+`#> pillar            "pillar"           `\
+`#> pkgbuild          "pkgbuild"         `\
+`#> pkgconfig         "pkgconfig"        `\
+`#> pkgdown           "pkgdown"          `\
+`#> pkgload           "pkgload"          `\
+`#> praise            "praise"           `\
+`#> prettyunits       "prettyunits"      `\
+`#> processx          "processx"         `\
+`#> profvis           "profvis"          `\
+`#> promises          "promises"         `\
+`#> ps                "ps"               `\
+`#> purrr             "purrr"            `\
+`#> quarto            "quarto"           `\
+`#> R.cache           "R.cache"          `\
+`#> R.methodsS3       "R.methodsS3"      `\
+`#> R.oo              "R.oo"             `\
+`#> R.utils           "R.utils"          `\
+`#> R6                "R6"               `\
+`#> ragg              "ragg"             `\
+`#> rappdirs          "rappdirs"         `\
+`#> rcmdcheck         "rcmdcheck"        `\
+`#> Rcpp              "Rcpp"             `\
+`#> rdtools           "rdtools"          `\
+`#> remotes           "remotes"          `\
+`#> rex               "rex"              `\
+`#> rlang             "rlang"            `\
+`#> rmarkdown         "rmarkdown"        `\
+`#> roxygen2          "roxygen2"         `\
+`#> rProject          "rProject"         `\
+`#> rprojroot         "rprojroot"        `\
+`#> rstudioapi        "rstudioapi"       `\
+`#> rversions         "rversions"        `\
+`#> sass              "sass"             `\
+`#> sessioninfo       "sessioninfo"      `\
+`#> shiny             "shiny"            `\
+`#> sourcetools       "sourcetools"      `\
+`#> stringi           "stringi"          `\
+`#> styler            "styler"           `\
+`#> sys               "sys"              `\
+`#> systemfonts       "systemfonts"      `\
+`#> testthat          "testthat"         `\
+`#> textshaping       "textshaping"      `\
+`#> tibble            "tibble"           `\
+`#> tinytex           "tinytex"          `\
+`#> urlchecker        "urlchecker"       `\
+`#> usethis           "usethis"          `\
+`#> utf8              "utf8"             `\
+`#> V8                "V8"               `\
+`#> vctrs             "vctrs"            `\
+`#> waldo             "waldo"            `\
+`#> whisker           "whisker"          `\
+`#> withr             "withr"            `\
+`#> xfun              "xfun"             `\
+`#> xml2              "xml2"             `\
+`#> xmlparsedata      "xmlparsedata"     `\
+`#> xopen             "xopen"            `\
+`#> xtable            "xtable"           `\
+`#> yaml              "yaml"             `\
+`#> zip               "zip"              `\
+`#> abind             "abind"            `\
+`#> Amelia            "Amelia"           `\
+`#> arm               "arm"              `\
+`#> arrow             "arrow"            `\
+`#> ash               "ash"              `\
+`#> AsioHeaders       "AsioHeaders"      `\
+`#> askpass           "askpass"          `\
+`#> assertthat        "assertthat"       `\
+`#> backports         "backports"        `\
+`#> base64enc         "base64enc"        `\
+`#> betaDelta         "betaDelta"        `\
+`#> betaMC            "betaMC"           `\
+`#> betaNB            "betaNB"           `\
+`#> betaSandwich      "betaSandwich"     `\
+`#> BH                "BH"               `\
+`#> bibtex            "bibtex"           `\
+`#> biocmake          "biocmake"         `\
+`#> BiocManager       "BiocManager"      `\
+`#> BiocVersion       "BiocVersion"      `\
+`#> bit               "bit"              `\
+`#> bit64             "bit64"            `\
+`#> bitops            "bitops"           `\
+`#> blob              "blob"             `\
+`#> bootStateSpace    "bootStateSpace"   `\
+`#> brew              "brew"             `\
+`#> brio              "brio"             `\
+`#> broom             "broom"            `\
+`#> bslib             "bslib"            `\
+`#> cachem            "cachem"           `\
+`#> callr             "callr"            `\
+`#> car               "car"              `\
+`#> caracas           "caracas"          `\
+`#> carData           "carData"          `\
+`#> cellranger        "cellranger"       `\
+`#> cffr              "cffr"             `\
+`#> checkmate         "checkmate"        `\
+`#> cli               "cli"              `\
+`#> clipr             "clipr"            `\
+`#> clock             "clock"            `\
+`#> clusterGeneration "clusterGeneration"`\
+`#> coda              "coda"             `\
+`#> cOde              "cOde"             `\
+`#> collections       "collections"      `\
+`#> colorspace        "colorspace"       `\
+`#> commonmark        "commonmark"       `\
+`#> conflicted        "conflicted"       `\
+`#> corpcor           "corpcor"          `\
+`#> covr              "covr"             `\
+`#> cowplot           "cowplot"          `\
+`#> cpp11             "cpp11"            `\
+`#> crayon            "crayon"           `\
+`#> credentials       "credentials"      `\
+`#> crosstalk         "crosstalk"        `\
+`#> cTMed             "cTMed"            `\
+`#> ctsem             "ctsem"            `\
+`#> curl              "curl"             `\
+`#> data.table        "data.table"       `\
+`#> DBI               "DBI"              `\
+`#> dbplyr            "dbplyr"           `\
+`#> Deriv             "Deriv"            `\
+`#> desc              "desc"             `\
+`#> deSolve           "deSolve"          `\
+`#> devtools          "devtools"         `\
+`#> diagram           "diagram"          `\
+`#> dials             "dials"            `\
+`#> DiceDesign        "DiceDesign"       `\
+`#> diffobj           "diffobj"          `\
+`#> digest            "digest"           `\
+`#> dir.expiry        "dir.expiry"       `\
+`#> distributional    "distributional"   `\
+`#> distro            "distro"           `\
+`#> doBy              "doBy"             `\
+`#> docopt            "docopt"           `\
+`#> downlit           "downlit"          `\
+`#> dplyr             "dplyr"            `\
+`#> DT                "DT"               `\
+`#> dtplyr            "dtplyr"           `\
+`#> duckdb            "duckdb"           `\
+`#> dynr              "dynr"             `\
+`#> dynTools          "dynTools"         `\
+`#> dynUtils          "dynUtils"         `\
+`#> ellipse           "ellipse"          `\
+`#> ellipsis          "ellipsis"         `\
+`#> evaluate          "evaluate"         `\
+`#> expm              "expm"             `\
+`#> fansi             "fansi"            `\
+`#> farver            "farver"           `\
+`#> fastDummies       "fastDummies"      `\
+`#> fastmap           "fastmap"          `\
+`#> fclust            "fclust"           `\
+`#> fda               "fda"              `\
+`#> fdrtool           "fdrtool"          `\
+`#> fds               "fds"              `\
+`#> filelock          "filelock"         `\
+`#> fitVARMxID        "fitVARMxID"       `\
+`#> FNN               "FNN"              `\
+`#> fontawesome       "fontawesome"      `\
+`#> forcats           "forcats"          `\
+`#> foreach           "foreach"          `\
+`#> forecast          "forecast"         `\
+`#> Formula           "Formula"          `\
+`#> fracdiff          "fracdiff"         `\
+`#> fs                "fs"               `\
+`#> fst               "fst"              `\
+`#> fstcore           "fstcore"          `\
+`#> furrr             "furrr"            `\
+`#> future            "future"           `\
+`#> future.apply      "future.apply"     `\
+`#> gargle            "gargle"           `\
+`#> GauPro            "GauPro"           `\
+`#> generics          "generics"         `\
+`#> gert              "gert"             `\
+`#> ggplot2           "ggplot2"          `\
+`#> ggrepel           "ggrepel"          `\
+`#> gh                "gh"               `\
+`#> gitcreds          "gitcreds"         `\
+`#> glasso            "glasso"           `\
+`#> glmnet            "glmnet"           `\
+`#> globals           "globals"          `\
+`#> glue              "glue"             `\
+`#> googledrive       "googledrive"      `\
+`#> googlesheets4     "googlesheets4"    `\
+`#> gower             "gower"            `\
+`#> GPArotation       "GPArotation"      `\
+`#> graphicalVAR      "graphicalVAR"     `\
+`#> gridExtra         "gridExtra"        `\
+`#> gsubfn            "gsubfn"           `\
+`#> gtable            "gtable"           `\
+`#> gtools            "gtools"           `\
+`#> hardhat           "hardhat"          `\
+`#> haven             "haven"            `\
+`#> hdrcde            "hdrcde"           `\
+`#> here              "here"             `\
+`#> highr             "highr"            `\
+`#> Hmisc             "Hmisc"            `\
+`#> hms               "hms"              `\
+`#> htmlTable         "htmlTable"        `\
+`#> htmltools         "htmltools"        `\
+`#> htmlwidgets       "htmlwidgets"      `\
+`#> httpgd            "httpgd"           `\
+`#> httpuv            "httpuv"           `\
+`#> httr              "httr"             `\
+`#> httr2             "httr2"            `\
+`#> ids               "ids"              `\
+`#> ifaTools          "ifaTools"         `\
+`#> igraph            "igraph"           `\
+`#> infer             "infer"            `\
+`#> ini               "ini"              `\
+`#> inline            "inline"           `\
+`#> ipred             "ipred"            `\
+`#> isoband           "isoband"          `\
+`#> iterators         "iterators"        `\
+`#> jomo              "jomo"             `\
+`#> jpeg              "jpeg"             `\
+`#> jquerylib         "jquerylib"        `\
+`#> jsonlite          "jsonlite"         `\
+`#> jsonvalidate      "jsonvalidate"     `\
+`#> kernlab           "kernlab"          `\
+`#> knitr             "knitr"            `\
+`#> ks                "ks"               `\
+`#> labeling          "labeling"         `\
+`#> Lahman            "Lahman"           `\
+`#> languageserver    "languageserver"   `\
+`#> later             "later"            `\
+`#> latex2exp         "latex2exp"        `\
+`#> lava              "lava"             `\
+`#> lavaan            "lavaan"           `\
+`#> lazyeval          "lazyeval"         `\
+`#> lbfgs             "lbfgs"            `\
+`#> lifecycle         "lifecycle"        `\
+`#> lintr             "lintr"            `\
+`#> listenv           "listenv"          `\
+`#> litedown          "litedown"         `\
+`#> littler           "littler"          `\
+`#> lme4              "lme4"             `\
+`#> lmtest            "lmtest"           `\
+`#> locfit            "locfit"           `\
+`#> longMI            "longMI"           `\
+`#> loo               "loo"              `\
+`#> lubridate         "lubridate"        `\
+`#> magick            "magick"           `\
+`#> magrittr          "magrittr"         `\
+`#> markdown          "markdown"         `\
+`#> MatrixModels      "MatrixModels"     `\
+`#> matrixStats       "matrixStats"      `\
+`#> mclust            "mclust"           `\
+`#> memoise           "memoise"          `\
+`#> metaDyn           "metaDyn"          `\
+`#> metaSEM           "metaSEM"          `\
+`#> mice              "mice"             `\
+`#> microbenchmark    "microbenchmark"   `\
+`#> mime              "mime"             `\
+`#> miniUI            "miniUI"           `\
+`#> minqa             "minqa"            `\
+`#> mitml             "mitml"            `\
+`#> mixopt            "mixopt"           `\
+`#> mize              "mize"             `\
+`#> mlVAR             "mlVAR"            `\
+`#> mnormt            "mnormt"           `\
+`#> modeldata         "modeldata"        `\
+`#> modelenv          "modelenv"         `\
+`#> modelr            "modelr"           `\
+`#> MplusAutomation   "MplusAutomation"  `\
+`#> multicool         "multicool"        `\
+`#> mvtnorm           "mvtnorm"          `\
+`#> nloptr            "nloptr"           `\
+`#> numDeriv          "numDeriv"         `\
+`#> nycflights13      "nycflights13"     `\
+`#> OpenMx            "OpenMx"           `\
+`#> openssl           "openssl"          `\
+`#> ordinal           "ordinal"          `\
+`#> otel              "otel"             `\
+`#> pak               "pak"              `\
+`#> pan               "pan"              `\
+`#> pander            "pander"           `\
+`#> parallelly        "parallelly"       `\
+`#> parsnip           "parsnip"          `\
+`#> patchwork         "patchwork"        `\
+`#> pbapply           "pbapply"          `\
+`#> pbivnorm          "pbivnorm"         `\
+`#> pbkrtest          "pbkrtest"         `\
+`#> pcaPP             "pcaPP"            `\
+`#> pdftools          "pdftools"         `\
+`#> pillar            "pillar"           `\
+`#> pkgbuild          "pkgbuild"         `\
+`#> pkgconfig         "pkgconfig"        `\
+`#> pkgdown           "pkgdown"          `\
+`#> pkgload           "pkgload"          `\
+`#> plyr              "plyr"             `\
+`#> png               "png"              `\
+`#> posterior         "posterior"        `\
+`#> pracma            "pracma"           `\
+`#> praise            "praise"           `\
+`#> prettyunits       "prettyunits"      `\
+`#> printr            "printr"           `\
+`#> processx          "processx"         `\
+`#> prodlim           "prodlim"          `\
+`#> profvis           "profvis"          `\
+`#> progress          "progress"         `\
+`#> progressr         "progressr"        `\
+`#> promises          "promises"         `\
+`#> proto             "proto"            `\
+`#> ps                "ps"               `\
+`#> psych             "psych"            `\
+`#> purrr             "purrr"            `\
+`#> qgraph            "qgraph"           `\
+`#> qpdf              "qpdf"             `\
+`#> quadprog          "quadprog"         `\
+`#> quantreg          "quantreg"         `\
+`#> quarto            "quarto"           `\
+`#> QuickJSR          "QuickJSR"         `\
+`#> R.cache           "R.cache"          `\
+`#> R.methodsS3       "R.methodsS3"      `\
+`#> R.oo              "R.oo"             `\
+`#> R.utils           "R.utils"          `\
+`#> R2jags            "R2jags"           `\
+`#> R2WinBUGS         "R2WinBUGS"        `\
+`#> R6                "R6"               `\
+`#> ragg              "ragg"             `\
+`#> rainbow           "rainbow"          `\
+`#> rappdirs          "rappdirs"         `\
+`#> rbibutils         "rbibutils"        `\
+`#> rcmdcheck         "rcmdcheck"        `\
+`#> RColorBrewer      "RColorBrewer"     `\
+`#> Rcpp              "Rcpp"             `\
+`#> RcppArmadillo     "RcppArmadillo"    `\
+`#> RcppEigen         "RcppEigen"        `\
+`#> RcppGSL           "RcppGSL"          `\
+`#> RcppParallel      "RcppParallel"     `\
+`#> RcppTOML          "RcppTOML"         `\
+`#> RCurl             "RCurl"            `\
+`#> Rdpack            "Rdpack"           `\
+`#> rdtools           "rdtools"          `\
+`#> readr             "readr"            `\
+`#> readxl            "readxl"           `\
+`#> recipes           "recipes"          `\
+`#> RefManageR        "RefManageR"       `\
+`#> reformulas        "reformulas"       `\
+`#> rematch           "rematch"          `\
+`#> rematch2          "rematch2"         `\
+`#> remotes           "remotes"          `\
+`#> reprex            "reprex"           `\
+`#> reshape2          "reshape2"         `\
+`#> reticulate        "reticulate"       `\
+`#> rex               "rex"              `\
+`#> rhdf5             "rhdf5"            `\
+`#> rhdf5filters      "rhdf5filters"     `\
+`#> Rhdf5lib          "Rhdf5lib"         `\
+`#> rhub              "rhub"             `\
+`#> rjags             "rjags"            `\
+`#> rlang             "rlang"            `\
+`#> RMariaDB          "RMariaDB"         `\
+`#> rmarkdown         "rmarkdown"        `\
+`#> roxygen2          "roxygen2"         `\
+`#> rpf               "rpf"              `\
+`#> RPostgres         "RPostgres"        `\
+`#> rProject          "rProject"         `\
+`#> rprojroot         "rprojroot"        `\
+`#> rsample           "rsample"          `\
+`#> RSQLite           "RSQLite"          `\
+`#> rstan             "rstan"            `\
+`#> rstantools        "rstantools"       `\
+`#> rstudioapi        "rstudioapi"       `\
+`#> rversions         "rversions"        `\
+`#> rvest             "rvest"            `\
+`#> Ryacas            "Ryacas"           `\
+`#> S7                "S7"               `\
+`#> sass              "sass"             `\
+`#> scales            "scales"           `\
+`#> selectr           "selectr"          `\
+`#> semlbci           "semlbci"          `\
+`#> semmcci           "semmcci"          `\
+`#> semPlot           "semPlot"          `\
+`#> sessioninfo       "sessioninfo"      `\
+`#> sfd               "sfd"              `\
+`#> shape             "shape"            `\
+`#> shiny             "shiny"            `\
+`#> simStateSpace     "simStateSpace"    `\
+`#> slider            "slider"           `\
+`#> snow              "snow"             `\
+`#> snowfall          "snowfall"         `\
+`#> sourcetools       "sourcetools"      `\
+`#> SparseM           "SparseM"          `\
+`#> sparsevctrs       "sparsevctrs"      `\
+`#> splitfngr         "splitfngr"        `\
+`#> SQUAREM           "SQUAREM"          `\
+`#> StanHeaders       "StanHeaders"      `\
+`#> stringi           "stringi"          `\
+`#> stringr           "stringr"          `\
+`#> styler            "styler"           `\
+`#> symSEM            "symSEM"           `\
+`#> sys               "sys"              `\
+`#> systemfonts       "systemfonts"      `\
+`#> tailor            "tailor"           `\
+`#> tensorA           "tensorA"          `\
+`#> testthat          "testthat"         `\
+`#> texreg            "texreg"           `\
+`#> textshaping       "textshaping"      `\
+`#> tibble            "tibble"           `\
+`#> tidymodels        "tidymodels"       `\
+`#> tidyr             "tidyr"            `\
+`#> tidyselect        "tidyselect"       `\
+`#> tidyverse         "tidyverse"        `\
+`#> timechange        "timechange"       `\
+`#> timeDate          "timeDate"         `\
+`#> tinytex           "tinytex"          `\
+`#> tune              "tune"             `\
+`#> tzdb              "tzdb"             `\
+`#> ucminf            "ucminf"           `\
+`#> unigd             "unigd"            `\
+`#> urca              "urca"             `\
+`#> urlchecker        "urlchecker"       `\
+`#> usethis           "usethis"          `\
+`#> utf8              "utf8"             `\
+`#> uuid              "uuid"             `\
+`#> V8                "V8"               `\
+`#> vctrs             "vctrs"            `\
+`#> viridisLite       "viridisLite"      `\
+`#> vroom             "vroom"            `\
+`#> waldo             "waldo"            `\
+`#> warp              "warp"             `\
+`#> whisker           "whisker"          `\
+`#> whoami            "whoami"           `\
+`#> withr             "withr"            `\
+`#> workflows         "workflows"        `\
+`#> workflowsets      "workflowsets"     `\
+`#> xfun              "xfun"             `\
+`#> xml2              "xml2"             `\
+`#> xmlparsedata      "xmlparsedata"     `\
+`#> xopen             "xopen"            `\
+`#> xtable            "xtable"           `\
+`#> yaml              "yaml"             `\
+`#> yardstick         "yardstick"        `\
+`#> zip               "zip"              `\
+`#> zoo               "zoo"              `\
+`#> base              "base"             `\
+`#> boot              "boot"             `\
+`#> class             "class"            `\
+`#> cluster           "cluster"          `\
+`#> codetools         "codetools"        `\
+`#> compiler          "compiler"         `\
+`#> datasets          "datasets"         `\
+`#> foreign           "foreign"          `\
+`#> graphics          "graphics"         `\
+`#> grDevices         "grDevices"        `\
+`#> grid              "grid"             `\
+`#> KernSmooth        "KernSmooth"       `\
+`#> lattice           "lattice"          `\
+`#> MASS              "MASS"             `\
+`#> Matrix            "Matrix"           `\
+`#> methods           "methods"          `\
+`#> mgcv              "mgcv"             `\
+`#> nlme              "nlme"             `\
+`#> nnet              "nnet"             `\
+`#> parallel          "parallel"         `\
+`#> rpart             "rpart"            `\
+`#> spatial           "spatial"          `\
+`#> splines           "splines"          `\
+`#> stats             "stats"            `\
+`#> stats4            "stats4"           `\
+`#> survival          "survival"         `\
+`#> tcltk             "tcltk"            `\
+`#> tools             "tools"            `\
+`#> utils             "utils"            `\
+`#>                   LibPath                                    Version     `\
+`#> rProject          "/tmp/RtmpOknIPb/temp_libpath134f68810b57" "0.0.49"    `\
+`#> askpass           "/__w/rProject/rProject/.library"          "1.2.1"     `\
+`#> base64enc         "/__w/rProject/rProject/.library"          "0.1-6"     `\
+`#> BiocManager       "/__w/rProject/rProject/.library"          "1.30.27"   `\
+`#> brew              "/__w/rProject/rProject/.library"          "1.0-10"    `\
+`#> brio              "/__w/rProject/rProject/.library"          "1.1.5"     `\
+`#> bslib             "/__w/rProject/rProject/.library"          "0.12.0"    `\
+`#> cachem            "/__w/rProject/rProject/.library"          "1.1.0"     `\
+`#> callr             "/__w/rProject/rProject/.library"          "3.8.0"     `\
+`#> cffr              "/__w/rProject/rProject/.library"          "1.4.2"     `\
+`#> cli               "/__w/rProject/rProject/.library"          "3.6.6"     `\
+`#> clipr             "/__w/rProject/rProject/.library"          "0.8.1"     `\
+`#> commonmark        "/__w/rProject/rProject/.library"          "2.0.0"     `\
+`#> covr              "/__w/rProject/rProject/.library"          "3.6.5"     `\
+`#> crayon            "/__w/rProject/rProject/.library"          "1.5.3"     `\
+`#> credentials       "/__w/rProject/rProject/.library"          "2.0.3"     `\
+`#> curl              "/__w/rProject/rProject/.library"          "8.1.0"     `\
+`#> desc              "/__w/rProject/rProject/.library"          "1.4.3"     `\
+`#> devtools          "/__w/rProject/rProject/.library"          "2.5.2.9000"`\
+`#> diffobj           "/__w/rProject/rProject/.library"          "0.3.9"     `\
+`#> digest            "/__w/rProject/rProject/.library"          "0.6.39"    `\
+`#> distro            "/__w/rProject/rProject/.library"          "0.1.1"     `\
+`#> downlit           "/__w/rProject/rProject/.library"          "0.4.5"     `\
+`#> ellipsis          "/__w/rProject/rProject/.library"          "0.3.3"     `\
+`#> evaluate          "/__w/rProject/rProject/.library"          "1.0.5"     `\
+`#> fansi             "/__w/rProject/rProject/.library"          "1.0.7"     `\
+`#> fastmap           "/__w/rProject/rProject/.library"          "1.2.0"     `\
+`#> fontawesome       "/__w/rProject/rProject/.library"          "0.5.3"     `\
+`#> fs                "/__w/rProject/rProject/.library"          "2.1.0"     `\
+`#> gert              "/__w/rProject/rProject/.library"          "2.5.0"     `\
+`#> gh                "/__w/rProject/rProject/.library"          "1.6.1"     `\
+`#> gitcreds          "/__w/rProject/rProject/.library"          "0.1.2"     `\
+`#> glue              "/__w/rProject/rProject/.library"          "1.8.1"     `\
+`#> highr             "/__w/rProject/rProject/.library"          "0.12"      `\
+`#> htmltools         "/__w/rProject/rProject/.library"          "0.5.9"     `\
+`#> htmlwidgets       "/__w/rProject/rProject/.library"          "1.6.4"     `\
+`#> httpuv            "/__w/rProject/rProject/.library"          "1.6.17"    `\
+`#> httr              "/__w/rProject/rProject/.library"          "1.4.9"     `\
+`#> httr2             "/__w/rProject/rProject/.library"          "1.3.0"     `\
+`#> ini               "/__w/rProject/rProject/.library"          "0.3.1"     `\
+`#> jquerylib         "/__w/rProject/rProject/.library"          "0.1.4"     `\
+`#> jsonlite          "/__w/rProject/rProject/.library"          "2.0.0"     `\
+`#> jsonvalidate      "/__w/rProject/rProject/.library"          "1.5.0"     `\
+`#> knitr             "/__w/rProject/rProject/.library"          "1.52"      `\
+`#> later             "/__w/rProject/rProject/.library"          "1.4.8"     `\
+`#> lifecycle         "/__w/rProject/rProject/.library"          "1.0.5"     `\
+`#> lintr             "/__w/rProject/rProject/.library"          "3.4.0"     `\
+`#> magrittr          "/__w/rProject/rProject/.library"          "2.0.5"     `\
+`#> memoise           "/__w/rProject/rProject/.library"          "2.0.1"     `\
+`#> mime              "/__w/rProject/rProject/.library"          "0.13"      `\
+`#> miniUI            "/__w/rProject/rProject/.library"          "0.1.2"     `\
+`#> openssl           "/__w/rProject/rProject/.library"          "2.4.2"     `\
+`#> otel              "/__w/rProject/rProject/.library"          "0.2.0"     `\
+`#> pak               "/__w/rProject/rProject/.library"          "0.11.1"    `\
+`#> pillar            "/__w/rProject/rProject/.library"          "1.11.1"    `\
+`#> pkgbuild          "/__w/rProject/rProject/.library"          "1.4.8"     `\
+`#> pkgconfig         "/__w/rProject/rProject/.library"          "2.0.3"     `\
+`#> pkgdown           "/__w/rProject/rProject/.library"          "2.2.1"     `\
+`#> pkgload           "/__w/rProject/rProject/.library"          "1.5.3"     `\
+`#> praise            "/__w/rProject/rProject/.library"          "1.0.0"     `\
+`#> prettyunits       "/__w/rProject/rProject/.library"          "1.2.0"     `\
+`#> processx          "/__w/rProject/rProject/.library"          "3.9.0"     `\
+`#> profvis           "/__w/rProject/rProject/.library"          "0.4.0"     `\
+`#> promises          "/__w/rProject/rProject/.library"          "1.5.0"     `\
+`#> ps                "/__w/rProject/rProject/.library"          "1.9.3"     `\
+`#> purrr             "/__w/rProject/rProject/.library"          "1.2.2"     `\
+`#> quarto            "/__w/rProject/rProject/.library"          "1.5.1"     `\
+`#> R.cache           "/__w/rProject/rProject/.library"          "0.17.0"    `\
+`#> R.methodsS3       "/__w/rProject/rProject/.library"          "1.8.2"     `\
+`#> R.oo              "/__w/rProject/rProject/.library"          "1.27.1"    `\
+`#> R.utils           "/__w/rProject/rProject/.library"          "2.13.0"    `\
+`#> R6                "/__w/rProject/rProject/.library"          "2.6.1"     `\
+`#> ragg              "/__w/rProject/rProject/.library"          "1.5.2"     `\
+`#> rappdirs          "/__w/rProject/rProject/.library"          "0.3.4"     `\
+`#> rcmdcheck         "/__w/rProject/rProject/.library"          "1.4.0.9001"`\
+`#> Rcpp              "/__w/rProject/rProject/.library"          "1.1.2"     `\
+`#> rdtools           "/__w/rProject/rProject/.library"          "0.1.0"     `\
+`#> remotes           "/__w/rProject/rProject/.library"          "2.5.0"     `\
+`#> rex               "/__w/rProject/rProject/.library"          "1.2.2"     `\
+`#> rlang             "/__w/rProject/rProject/.library"          "1.3.0"     `\
+`#> rmarkdown         "/__w/rProject/rProject/.library"          "2.32"      `\
+`#> roxygen2          "/__w/rProject/rProject/.library"          "8.1.1"     `\
+`#> rProject          "/__w/rProject/rProject/.library"          "0.0.49"    `\
+`#> rprojroot         "/__w/rProject/rProject/.library"          "2.1.1"     `\
+`#> rstudioapi        "/__w/rProject/rProject/.library"          "0.19.0"    `\
+`#> rversions         "/__w/rProject/rProject/.library"          "3.0.0"     `\
+`#> sass              "/__w/rProject/rProject/.library"          "0.4.10"    `\
+`#> sessioninfo       "/__w/rProject/rProject/.library"          "1.2.4"     `\
+`#> shiny             "/__w/rProject/rProject/.library"          "1.14.0"    `\
+`#> sourcetools       "/__w/rProject/rProject/.library"          "0.1.7-2"   `\
+`#> stringi           "/__w/rProject/rProject/.library"          "1.8.9"     `\
+`#> styler            "/__w/rProject/rProject/.library"          "1.11.0"    `\
+`#> sys               "/__w/rProject/rProject/.library"          "3.4.3"     `\
+`#> systemfonts       "/__w/rProject/rProject/.library"          "1.3.2"     `\
+`#> testthat          "/__w/rProject/rProject/.library"          "3.3.2"     `\
+`#> textshaping       "/__w/rProject/rProject/.library"          "1.0.5"     `\
+`#> tibble            "/__w/rProject/rProject/.library"          "3.3.1"     `\
+`#> tinytex           "/__w/rProject/rProject/.library"          "0.61.1"    `\
+`#> urlchecker        "/__w/rProject/rProject/.library"          "2.0.0"     `\
+`#> usethis           "/__w/rProject/rProject/.library"          "3.2.2"     `\
+`#> utf8              "/__w/rProject/rProject/.library"          "1.2.6"     `\
+`#> V8                "/__w/rProject/rProject/.library"          "8.2.0"     `\
+`#> vctrs             "/__w/rProject/rProject/.library"          "0.7.3"     `\
+`#> waldo             "/__w/rProject/rProject/.library"          "0.6.2"     `\
+`#> whisker           "/__w/rProject/rProject/.library"          "0.4.1"     `\
+`#> withr             "/__w/rProject/rProject/.library"          "3.0.3"     `\
+`#> xfun              "/__w/rProject/rProject/.library"          "0.62"      `\
+`#> xml2              "/__w/rProject/rProject/.library"          "1.6.0"     `\
+`#> xmlparsedata      "/__w/rProject/rProject/.library"          "1.0.5"     `\
+`#> xopen             "/__w/rProject/rProject/.library"          "1.0.1"     `\
+`#> xtable            "/__w/rProject/rProject/.library"          "1.8-8"     `\
+`#> yaml              "/__w/rProject/rProject/.library"          "2.3.12"    `\
+`#> zip               "/__w/rProject/rProject/.library"          "3.0.2"     `\
+`#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
+`#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
+`#> arm               "/usr/local/lib/R/site-library"            "1.15-3"    `\
+`#> arrow             "/usr/local/lib/R/site-library"            "25.0.1"    `\
+`#> ash               "/usr/local/lib/R/site-library"            "1.0-15"    `\
+`#> AsioHeaders       "/usr/local/lib/R/site-library"            "1.30.2-1"  `\
+`#> askpass           "/usr/local/lib/R/site-library"            "1.2.1"     `\
+`#> assertthat        "/usr/local/lib/R/site-library"            "0.2.1"     `\
+`#> backports         "/usr/local/lib/R/site-library"            "1.5.1"     `\
+`#> base64enc         "/usr/local/lib/R/site-library"            "0.1-6"     `\
+`#> betaDelta         "/usr/local/lib/R/site-library"            "1.0.7.9000"`\
+`#> betaMC            "/usr/local/lib/R/site-library"            "1.3.4.9000"`\
+`#> betaNB            "/usr/local/lib/R/site-library"            "1.0.7.9000"`\
+`#> betaSandwich      "/usr/local/lib/R/site-library"            "1.0.9.9000"`\
+`#> BH                "/usr/local/lib/R/site-library"            "1.90.0-1"  `\
+`#> bibtex            "/usr/local/lib/R/site-library"            "0.5.3"     `\
+`#> biocmake          "/usr/local/lib/R/site-library"            "1.4.0"     `\
+`#> BiocManager       "/usr/local/lib/R/site-library"            "1.30.27"   `\
+`#> BiocVersion       "/usr/local/lib/R/site-library"            "3.23.1"    `\
+`#> bit               "/usr/local/lib/R/site-library"            "4.6.0"     `\
+`#> bit64             "/usr/local/lib/R/site-library"            "4.8.6"     `\
+`#> bitops            "/usr/local/lib/R/site-library"            "1.1-0"     `\
+`#> blob              "/usr/local/lib/R/site-library"            "1.3.0"     `\
+`#> bootStateSpace    "/usr/local/lib/R/site-library"            "1.0.3.9000"`\
+`#> brew              "/usr/local/lib/R/site-library"            "1.0-10"    `\
+`#> brio              "/usr/local/lib/R/site-library"            "1.1.5"     `\
+`#> broom             "/usr/local/lib/R/site-library"            "1.0.13"    `\
+`#> bslib             "/usr/local/lib/R/site-library"            "0.12.0"    `\
+`#> cachem            "/usr/local/lib/R/site-library"            "1.1.0"     `\
+`#> callr             "/usr/local/lib/R/site-library"            "3.8.0"     `\
+`#> car               "/usr/local/lib/R/site-library"            "3.1-5"     `\
+`#> caracas           "/usr/local/lib/R/site-library"            "2.1.1"     `\
+`#> carData           "/usr/local/lib/R/site-library"            "3.0-6"     `\
+`#> cellranger        "/usr/local/lib/R/site-library"            "1.1.0"     `\
+`#> cffr              "/usr/local/lib/R/site-library"            "1.4.2"     `\
+`#> checkmate         "/usr/local/lib/R/site-library"            "2.3.4"     `\
+`#> cli               "/usr/local/lib/R/site-library"            "3.6.6.9000"`\
+`#> clipr             "/usr/local/lib/R/site-library"            "0.8.1"     `\
+`#> clock             "/usr/local/lib/R/site-library"            "0.7.4"     `\
+`#> clusterGeneration "/usr/local/lib/R/site-library"            "1.3.8"     `\
+`#> coda              "/usr/local/lib/R/site-library"            "0.19-4.1"  `\
+`#> cOde              "/usr/local/lib/R/site-library"            "1.1.1"     `\
+`#> collections       "/usr/local/lib/R/site-library"            "0.3.12"    `\
+`#> colorspace        "/usr/local/lib/R/site-library"            "2.1-4"     `\
+`#> commonmark        "/usr/local/lib/R/site-library"            "2.0.0"     `\
+`#> conflicted        "/usr/local/lib/R/site-library"            "1.2.0"     `\
+`#> corpcor           "/usr/local/lib/R/site-library"            "1.6.10"    `\
+`#> covr              "/usr/local/lib/R/site-library"            "3.6.5"     `\
+`#> cowplot           "/usr/local/lib/R/site-library"            "1.2.0"     `\
+`#> cpp11             "/usr/local/lib/R/site-library"            "0.5.5"     `\
+`#> crayon            "/usr/local/lib/R/site-library"            "1.5.3"     `\
+`#> credentials       "/usr/local/lib/R/site-library"            "2.0.3"     `\
+`#> crosstalk         "/usr/local/lib/R/site-library"            "1.2.2"     `\
+`#> cTMed             "/usr/local/lib/R/site-library"            "1.0.10"    `\
+`#> ctsem             "/usr/local/lib/R/site-library"            "3.11.1"    `\
+`#> curl              "/usr/local/lib/R/site-library"            "8.1.0"     `\
+`#> data.table        "/usr/local/lib/R/site-library"            "1.18.6.1"  `\
+`#> DBI               "/usr/local/lib/R/site-library"            "1.3.0"     `\
+`#> dbplyr            "/usr/local/lib/R/site-library"            "2.6.0"     `\
+`#> Deriv             "/usr/local/lib/R/site-library"            "4.3.5"     `\
+`#> desc              "/usr/local/lib/R/site-library"            "1.4.3"     `\
+`#> deSolve           "/usr/local/lib/R/site-library"            "1.42"      `\
+`#> devtools          "/usr/local/lib/R/site-library"            "2.5.2.9000"`\
+`#> diagram           "/usr/local/lib/R/site-library"            "1.6.5"     `\
+`#> dials             "/usr/local/lib/R/site-library"            "1.4.4"     `\
+`#> DiceDesign        "/usr/local/lib/R/site-library"            "1.10"      `\
+`#> diffobj           "/usr/local/lib/R/site-library"            "0.3.9"     `\
+`#> digest            "/usr/local/lib/R/site-library"            "0.6.39"    `\
+`#> dir.expiry        "/usr/local/lib/R/site-library"            "1.20.0"    `\
+`#> distributional    "/usr/local/lib/R/site-library"            "0.9.0"     `\
+`#> distro            "/usr/local/lib/R/site-library"            "0.1.1"     `\
+`#> doBy              "/usr/local/lib/R/site-library"            "4.7.2"     `\
+`#> docopt            "/usr/local/lib/R/site-library"            "0.7.2"     `\
+`#> downlit           "/usr/local/lib/R/site-library"            "0.4.5"     `\
+`#> dplyr             "/usr/local/lib/R/site-library"            "1.2.1"     `\
+`#> DT                "/usr/local/lib/R/site-library"            "0.34.0"    `\
+`#> dtplyr            "/usr/local/lib/R/site-library"            "1.3.3"     `\
+`#> duckdb            "/usr/local/lib/R/site-library"            "1.5.6"     `\
+`#> dynr              "/usr/local/lib/R/site-library"            "0.1.16-114"`\
+`#> dynTools          "/usr/local/lib/R/site-library"            "0.0.0.9000"`\
+`#> dynUtils          "/usr/local/lib/R/site-library"            "0.9.2"     `\
+`#> ellipse           "/usr/local/lib/R/site-library"            "0.5.0"     `\
+`#> ellipsis          "/usr/local/lib/R/site-library"            "0.3.3"     `\
+`#> evaluate          "/usr/local/lib/R/site-library"            "1.0.5"     `\
+`#> expm              "/usr/local/lib/R/site-library"            "1.0-1"     `\
+`#> fansi             "/usr/local/lib/R/site-library"            "1.0.7"     `\
+`#> farver            "/usr/local/lib/R/site-library"            "2.1.2"     `\
+`#> fastDummies       "/usr/local/lib/R/site-library"            "1.7.6"     `\
+`#> fastmap           "/usr/local/lib/R/site-library"            "1.2.0"     `\
+`#> fclust            "/usr/local/lib/R/site-library"            "2.1.3"     `\
+`#> fda               "/usr/local/lib/R/site-library"            "6.3.0"     `\
+`#> fdrtool           "/usr/local/lib/R/site-library"            "1.2.18"    `\
+`#> fds               "/usr/local/lib/R/site-library"            "1.9"       `\
+`#> filelock          "/usr/local/lib/R/site-library"            "1.0.3"     `\
+`#> fitVARMxID        "/usr/local/lib/R/site-library"            "1.0.6"     `\
+`#> FNN               "/usr/local/lib/R/site-library"            "1.1.4.1"   `\
+`#> fontawesome       "/usr/local/lib/R/site-library"            "0.5.3"     `\
+`#> forcats           "/usr/local/lib/R/site-library"            "1.0.1"     `\
+`#> foreach           "/usr/local/lib/R/site-library"            "1.5.2"     `\
+`#> forecast          "/usr/local/lib/R/site-library"            "9.0.2"     `\
+`#> Formula           "/usr/local/lib/R/site-library"            "1.2-6"     `\
+`#> fracdiff          "/usr/local/lib/R/site-library"            "1.5-4"     `\
+`#> fs                "/usr/local/lib/R/site-library"            "2.1.0"     `\
+`#> fst               "/usr/local/lib/R/site-library"            "0.9.8"     `\
+`#> fstcore           "/usr/local/lib/R/site-library"            "0.10.0"    `\
+`#> furrr             "/usr/local/lib/R/site-library"            "0.4.0"     `\
+`#> future            "/usr/local/lib/R/site-library"            "1.80.0"    `\
+`#> future.apply      "/usr/local/lib/R/site-library"            "1.21.0"    `\
+`#> gargle            "/usr/local/lib/R/site-library"            "1.6.1"     `\
+`#> GauPro            "/usr/local/lib/R/site-library"            "0.2.17"    `\
+`#> generics          "/usr/local/lib/R/site-library"            "0.1.4"     `\
+`#> gert              "/usr/local/lib/R/site-library"            "2.5.0"     `\
+`#> ggplot2           "/usr/local/lib/R/site-library"            "4.0.3"     `\
+`#> ggrepel           "/usr/local/lib/R/site-library"            "0.9.8"     `\
+`#> gh                "/usr/local/lib/R/site-library"            "1.6.1"     `\
+`#> gitcreds          "/usr/local/lib/R/site-library"            "0.1.2"     `\
+`#> glasso            "/usr/local/lib/R/site-library"            "1.11"      `\
+`#> glmnet            "/usr/local/lib/R/site-library"            "5.1"       `\
+`#> globals           "/usr/local/lib/R/site-library"            "0.20.0"    `\
+`#> glue              "/usr/local/lib/R/site-library"            "1.8.1"     `\
+`#> googledrive       "/usr/local/lib/R/site-library"            "2.1.2"     `\
+`#> googlesheets4     "/usr/local/lib/R/site-library"            "1.1.2"     `\
+`#> gower             "/usr/local/lib/R/site-library"            "1.0.2"     `\
+`#> GPArotation       "/usr/local/lib/R/site-library"            "2026.8-2"  `\
+`#> graphicalVAR      "/usr/local/lib/R/site-library"            "0.4.1"     `\
+`#> gridExtra         "/usr/local/lib/R/site-library"            "2.3.1"     `\
+`#> gsubfn            "/usr/local/lib/R/site-library"            "0.7"       `\
+`#> gtable            "/usr/local/lib/R/site-library"            "0.3.6"     `\
+`#> gtools            "/usr/local/lib/R/site-library"            "3.9.5"     `\
+`#> hardhat           "/usr/local/lib/R/site-library"            "1.4.3"     `\
+`#> haven             "/usr/local/lib/R/site-library"            "2.5.5"     `\
+`#> hdrcde            "/usr/local/lib/R/site-library"            "3.5.0"     `\
+`#> here              "/usr/local/lib/R/site-library"            "1.0.2"     `\
+`#> highr             "/usr/local/lib/R/site-library"            "0.12"      `\
+`#> Hmisc             "/usr/local/lib/R/site-library"            "5.3-0"     `\
+`#> hms               "/usr/local/lib/R/site-library"            "1.1.4"     `\
+`#> htmlTable         "/usr/local/lib/R/site-library"            "2.5.0"     `\
+`#> htmltools         "/usr/local/lib/R/site-library"            "0.5.9"     `\
+`#> htmlwidgets       "/usr/local/lib/R/site-library"            "1.6.4"     `\
+`#> httpgd            "/usr/local/lib/R/site-library"            "2.1.4"     `\
+`#> httpuv            "/usr/local/lib/R/site-library"            "1.6.17"    `\
+`#> httr              "/usr/local/lib/R/site-library"            "1.4.9"     `\
+`#> httr2             "/usr/local/lib/R/site-library"            "1.3.0"     `\
+`#> ids               "/usr/local/lib/R/site-library"            "1.0.1"     `\
+`#> ifaTools          "/usr/local/lib/R/site-library"            "0.23"      `\
+`#> igraph            "/usr/local/lib/R/site-library"            "2.3.4"     `\
+`#> infer             "/usr/local/lib/R/site-library"            "1.1.0"     `\
+`#> ini               "/usr/local/lib/R/site-library"            "0.3.1"     `\
+`#> inline            "/usr/local/lib/R/site-library"            "0.3.21"    `\
+`#> ipred             "/usr/local/lib/R/site-library"            "0.9-16"    `\
+`#> isoband           "/usr/local/lib/R/site-library"            "0.3.0"     `\
+`#> iterators         "/usr/local/lib/R/site-library"            "1.0.14"    `\
+`#> jomo              "/usr/local/lib/R/site-library"            "2.7-6"     `\
+`#> jpeg              "/usr/local/lib/R/site-library"            "0.1-11"    `\
+`#> jquerylib         "/usr/local/lib/R/site-library"            "0.1.4"     `\
+`#> jsonlite          "/usr/local/lib/R/site-library"            "2.0.0"     `\
+`#> jsonvalidate      "/usr/local/lib/R/site-library"            "1.5.0"     `\
+`#> kernlab           "/usr/local/lib/R/site-library"            "0.9-33"    `\
+`#> knitr             "/usr/local/lib/R/site-library"            "1.52"      `\
+`#> ks                "/usr/local/lib/R/site-library"            "1.15.3"    `\
+`#> labeling          "/usr/local/lib/R/site-library"            "0.4.3"     `\
+`#> Lahman            "/usr/local/lib/R/site-library"            "14.0-0"    `\
+`#> languageserver    "/usr/local/lib/R/site-library"            "0.3.20"    `\
+`#> later             "/usr/local/lib/R/site-library"            "1.4.8"     `\
+`#> latex2exp         "/usr/local/lib/R/site-library"            "0.9.8"     `\
+`#> lava              "/usr/local/lib/R/site-library"            "1.9.3"     `\
+`#> lavaan            "/usr/local/lib/R/site-library"            "0.7-3"     `\
+`#> lazyeval          "/usr/local/lib/R/site-library"            "0.2.3"     `\
+`#> lbfgs             "/usr/local/lib/R/site-library"            "1.2.1.2"   `\
+`#> lifecycle         "/usr/local/lib/R/site-library"            "1.0.5"     `\
+`#> lintr             "/usr/local/lib/R/site-library"            "3.4.0"     `\
+`#> listenv           "/usr/local/lib/R/site-library"            "1.1.0"     `\
+`#> litedown          "/usr/local/lib/R/site-library"            "0.11"      `\
+`#> littler           "/usr/local/lib/R/site-library"            "0.3.23"    `\
+`#> lme4              "/usr/local/lib/R/site-library"            "2.0-6"     `\
+`#> lmtest            "/usr/local/lib/R/site-library"            "0.9-40"    `\
+`#> locfit            "/usr/local/lib/R/site-library"            "1.5-9.12"  `\
+`#> longMI            "/usr/local/lib/R/site-library"            "1.0.0"     `\
+`#> loo               "/usr/local/lib/R/site-library"            "2.10.1"    `\
+`#> lubridate         "/usr/local/lib/R/site-library"            "1.9.5"     `\
+`#> magick            "/usr/local/lib/R/site-library"            "2.9.1"     `\
+`#> magrittr          "/usr/local/lib/R/site-library"            "2.0.5"     `\
+`#> markdown          "/usr/local/lib/R/site-library"            "2.0"       `\
+`#> MatrixModels      "/usr/local/lib/R/site-library"            "0.5-4"     `\
+`#> matrixStats       "/usr/local/lib/R/site-library"            "1.5.0"     `\
+`#> mclust            "/usr/local/lib/R/site-library"            "6.1.3"     `\
+`#> memoise           "/usr/local/lib/R/site-library"            "2.0.1"     `\
+`#> metaDyn           "/usr/local/lib/R/site-library"            "1.0.4"     `\
+`#> metaSEM           "/usr/local/lib/R/site-library"            "1.5.0"     `\
+`#> mice              "/usr/local/lib/R/site-library"            "3.19.0"    `\
+`#> microbenchmark    "/usr/local/lib/R/site-library"            "1.5.0"     `\
+`#> mime              "/usr/local/lib/R/site-library"            "0.13"      `\
+`#> miniUI            "/usr/local/lib/R/site-library"            "0.1.2"     `\
+`#> minqa             "/usr/local/lib/R/site-library"            "1.2.8"     `\
+`#> mitml             "/usr/local/lib/R/site-library"            "0.4-5"     `\
+`#> mixopt            "/usr/local/lib/R/site-library"            "0.1.3"     `\
+`#> mize              "/usr/local/lib/R/site-library"            "0.2.5"     `\
+`#> mlVAR             "/usr/local/lib/R/site-library"            "0.7.3"     `\
+`#> mnormt            "/usr/local/lib/R/site-library"            "2.1.2"     `\
+`#> modeldata         "/usr/local/lib/R/site-library"            "1.6.0"     `\
+`#> modelenv          "/usr/local/lib/R/site-library"            "0.2.0"     `\
+`#> modelr            "/usr/local/lib/R/site-library"            "0.1.11"    `\
+`#> MplusAutomation   "/usr/local/lib/R/site-library"            "1.3"       `\
+`#> multicool         "/usr/local/lib/R/site-library"            "1.0.1"     `\
+`#> mvtnorm           "/usr/local/lib/R/site-library"            "1.4-2"     `\
+`#> nloptr            "/usr/local/lib/R/site-library"            "2.2.1"     `\
+`#> numDeriv          "/usr/local/lib/R/site-library"            "2016.8-1.1"`\
+`#> nycflights13      "/usr/local/lib/R/site-library"            "1.0.2"     `\
+`#> OpenMx            "/usr/local/lib/R/site-library"            "2.22.11"   `\
+`#> openssl           "/usr/local/lib/R/site-library"            "2.4.2"     `\
+`#> ordinal           "/usr/local/lib/R/site-library"            "2026.7-26" `\
+`#> otel              "/usr/local/lib/R/site-library"            "0.2.0"     `\
+`#> pak               "/usr/local/lib/R/site-library"            "0.11.1"    `\
+`#> pan               "/usr/local/lib/R/site-library"            "2.0"       `\
+`#> pander            "/usr/local/lib/R/site-library"            "0.6.6"     `\
+`#> parallelly        "/usr/local/lib/R/site-library"            "1.48.0"    `\
+`#> parsnip           "/usr/local/lib/R/site-library"            "1.6.1"     `\
+`#> patchwork         "/usr/local/lib/R/site-library"            "1.3.2"     `\
+`#> pbapply           "/usr/local/lib/R/site-library"            "1.7-5"     `\
+`#> pbivnorm          "/usr/local/lib/R/site-library"            "0.6.0"     `\
+`#> pbkrtest          "/usr/local/lib/R/site-library"            "0.5.5"     `\
+`#> pcaPP             "/usr/local/lib/R/site-library"            "2.0-7"     `\
+`#> pdftools          "/usr/local/lib/R/site-library"            "3.9.1"     `\
+`#> pillar            "/usr/local/lib/R/site-library"            "1.11.1"    `\
+`#> pkgbuild          "/usr/local/lib/R/site-library"            "1.4.8"     `\
+`#> pkgconfig         "/usr/local/lib/R/site-library"            "2.0.3"     `\
+`#> pkgdown           "/usr/local/lib/R/site-library"            "2.2.1"     `\
+`#> pkgload           "/usr/local/lib/R/site-library"            "1.5.3"     `\
+`#> plyr              "/usr/local/lib/R/site-library"            "1.8.9"     `\
+`#> png               "/usr/local/lib/R/site-library"            "0.1-9"     `\
+`#> posterior         "/usr/local/lib/R/site-library"            "1.7.0"     `\
+`#> pracma            "/usr/local/lib/R/site-library"            "2.4.6"     `\
+`#> praise            "/usr/local/lib/R/site-library"            "1.0.0"     `\
+`#> prettyunits       "/usr/local/lib/R/site-library"            "1.2.0"     `\
+`#> printr            "/usr/local/lib/R/site-library"            "0.3"       `\
+`#> processx          "/usr/local/lib/R/site-library"            "3.9.0"     `\
+`#> prodlim           "/usr/local/lib/R/site-library"            "2026.03.11"`\
+`#> profvis           "/usr/local/lib/R/site-library"            "0.4.0"     `\
+`#> progress          "/usr/local/lib/R/site-library"            "1.2.3"     `\
+`#> progressr         "/usr/local/lib/R/site-library"            "1.0.0"     `\
+`#> promises          "/usr/local/lib/R/site-library"            "1.5.0"     `\
+`#> proto             "/usr/local/lib/R/site-library"            "1.0.0"     `\
+`#> ps                "/usr/local/lib/R/site-library"            "1.9.3"     `\
+`#> psych             "/usr/local/lib/R/site-library"            "2.6.9"     `\
+`#> purrr             "/usr/local/lib/R/site-library"            "1.2.2"     `\
+`#> qgraph            "/usr/local/lib/R/site-library"            "1.10.1"    `\
+`#> qpdf              "/usr/local/lib/R/site-library"            "1.4.1"     `\
+`#> quadprog          "/usr/local/lib/R/site-library"            "1.5-8"     `\
+`#> quantreg          "/usr/local/lib/R/site-library"            "6.1"       `\
+`#> quarto            "/usr/local/lib/R/site-library"            "1.5.1"     `\
+`#> QuickJSR          "/usr/local/lib/R/site-library"            "1.11.0"    `\
+`#> R.cache           "/usr/local/lib/R/site-library"            "0.17.0"    `\
+`#> R.methodsS3       "/usr/local/lib/R/site-library"            "1.8.2"     `\
+`#> R.oo              "/usr/local/lib/R/site-library"            "1.27.1"    `\
+`#> R.utils           "/usr/local/lib/R/site-library"            "2.13.0"    `\
+`#> R2jags            "/usr/local/lib/R/site-library"            "0.8-9"     `\
+`#> R2WinBUGS         "/usr/local/lib/R/site-library"            "2.1-24"    `\
+`#> R6                "/usr/local/lib/R/site-library"            "2.6.1"     `\
+`#> ragg              "/usr/local/lib/R/site-library"            "1.5.2"     `\
+`#> rainbow           "/usr/local/lib/R/site-library"            "3.8"       `\
+`#> rappdirs          "/usr/local/lib/R/site-library"            "0.3.4"     `\
+`#> rbibutils         "/usr/local/lib/R/site-library"            "2.4.1"     `\
+`#> rcmdcheck         "/usr/local/lib/R/site-library"            "1.4.0.9001"`\
+`#> RColorBrewer      "/usr/local/lib/R/site-library"            "1.1-3"     `\
+`#> Rcpp              "/usr/local/lib/R/site-library"            "1.1.2"     `\
+`#> RcppArmadillo     "/usr/local/lib/R/site-library"            "15.6.0-1"  `\
+`#> RcppEigen         "/usr/local/lib/R/site-library"            "0.3.4.0.2" `\
+`#> RcppGSL           "/usr/local/lib/R/site-library"            "0.3.14"    `\
+`#> RcppParallel      "/usr/local/lib/R/site-library"            "6.2.1"     `\
+`#> RcppTOML          "/usr/local/lib/R/site-library"            "0.2.3"     `\
+`#> RCurl             "/usr/local/lib/R/site-library"            "1.98-1.20" `\
+`#> Rdpack            "/usr/local/lib/R/site-library"            "2.6.6"     `\
+`#> rdtools           "/usr/local/lib/R/site-library"            "0.1.0"     `\
+`#> readr             "/usr/local/lib/R/site-library"            "2.2.0"     `\
+`#> readxl            "/usr/local/lib/R/site-library"            "1.5.0.1"   `\
+`#> recipes           "/usr/local/lib/R/site-library"            "1.4.0"     `\
+`#> RefManageR        "/usr/local/lib/R/site-library"            "1.4.0"     `\
+`#> reformulas        "/usr/local/lib/R/site-library"            "0.4.4"     `\
+`#> rematch           "/usr/local/lib/R/site-library"            "2.0.0"     `\
+`#> rematch2          "/usr/local/lib/R/site-library"            "2.1.2"     `\
+`#> remotes           "/usr/local/lib/R/site-library"            "2.5.0"     `\
+`#> reprex            "/usr/local/lib/R/site-library"            "2.1.1"     `\
+`#> reshape2          "/usr/local/lib/R/site-library"            "1.4.5"     `\
+`#> reticulate        "/usr/local/lib/R/site-library"            "1.47.0"    `\
+`#> rex               "/usr/local/lib/R/site-library"            "1.2.2"     `\
+`#> rhdf5             "/usr/local/lib/R/site-library"            "2.56.1"    `\
+`#> rhdf5filters      "/usr/local/lib/R/site-library"            "1.24.1"    `\
+`#> Rhdf5lib          "/usr/local/lib/R/site-library"            "2.0.0"     `\
+`#> rhub              "/usr/local/lib/R/site-library"            "2.0.1"     `\
+`#> rjags             "/usr/local/lib/R/site-library"            "4-17"      `\
+`#> rlang             "/usr/local/lib/R/site-library"            "1.3.0"     `\
+`#> RMariaDB          "/usr/local/lib/R/site-library"            "1.3.5"     `\
+`#> rmarkdown         "/usr/local/lib/R/site-library"            "2.32"      `\
+`#> roxygen2          "/usr/local/lib/R/site-library"            "8.1.1.9000"`\
+`#> rpf               "/usr/local/lib/R/site-library"            "1.0.15"    `\
+`#> RPostgres         "/usr/local/lib/R/site-library"            "1.4.10"    `\
+`#> rProject          "/usr/local/lib/R/site-library"            "0.0.48"    `\
+`#> rprojroot         "/usr/local/lib/R/site-library"            "2.1.1"     `\
+`#> rsample           "/usr/local/lib/R/site-library"            "1.3.2"     `\
+`#> RSQLite           "/usr/local/lib/R/site-library"            "3.53.3"    `\
+`#> rstan             "/usr/local/lib/R/site-library"            "2.32.7"    `\
+`#> rstantools        "/usr/local/lib/R/site-library"            "2.7.1"     `\
+`#> rstudioapi        "/usr/local/lib/R/site-library"            "0.19.0"    `\
+`#> rversions         "/usr/local/lib/R/site-library"            "3.0.0"     `\
+`#> rvest             "/usr/local/lib/R/site-library"            "1.0.5"     `\
+`#> Ryacas            "/usr/local/lib/R/site-library"            "1.1.6"     `\
+`#> S7                "/usr/local/lib/R/site-library"            "0.2.2"     `\
+`#> sass              "/usr/local/lib/R/site-library"            "0.4.10"    `\
+`#> scales            "/usr/local/lib/R/site-library"            "1.4.0"     `\
+`#> selectr           "/usr/local/lib/R/site-library"            "0.8-0"     `\
+`#> semlbci           "/usr/local/lib/R/site-library"            "0.12.1"    `\
+`#> semmcci           "/usr/local/lib/R/site-library"            "1.1.6.9000"`\
+`#> semPlot           "/usr/local/lib/R/site-library"            "1.2.0"     `\
+`#> sessioninfo       "/usr/local/lib/R/site-library"            "1.2.4"     `\
+`#> sfd               "/usr/local/lib/R/site-library"            "0.1.0"     `\
+`#> shape             "/usr/local/lib/R/site-library"            "1.4.6.1"   `\
+`#> shiny             "/usr/local/lib/R/site-library"            "1.14.0"    `\
+`#> simStateSpace     "/usr/local/lib/R/site-library"            "1.2.17"    `\
+`#> slider            "/usr/local/lib/R/site-library"            "0.3.3"     `\
+`#> snow              "/usr/local/lib/R/site-library"            "0.4-4"     `\
+`#> snowfall          "/usr/local/lib/R/site-library"            "1.84-6.3"  `\
+`#> sourcetools       "/usr/local/lib/R/site-library"            "0.1.7-2"   `\
+`#> SparseM           "/usr/local/lib/R/site-library"            "1.84-2"    `\
+`#> sparsevctrs       "/usr/local/lib/R/site-library"            "0.3.6"     `\
+`#> splitfngr         "/usr/local/lib/R/site-library"            "0.1.2"     `\
+`#> SQUAREM           "/usr/local/lib/R/site-library"            "2026.1"    `\
+`#> StanHeaders       "/usr/local/lib/R/site-library"            "2.39.1"    `\
+`#> stringi           "/usr/local/lib/R/site-library"            "1.8.9"     `\
+`#> stringr           "/usr/local/lib/R/site-library"            "1.6.0"     `\
+`#> styler            "/usr/local/lib/R/site-library"            "1.11.0"    `\
+`#> symSEM            "/usr/local/lib/R/site-library"            "0.4"       `\
+`#> sys               "/usr/local/lib/R/site-library"            "3.4.3"     `\
+`#> systemfonts       "/usr/local/lib/R/site-library"            "1.3.2"     `\
+`#> tailor            "/usr/local/lib/R/site-library"            "0.1.0"     `\
+`#> tensorA           "/usr/local/lib/R/site-library"            "0.36.2.1"  `\
+`#> testthat          "/usr/local/lib/R/site-library"            "3.3.2"     `\
+`#> texreg            "/usr/local/lib/R/site-library"            "1.40"      `\
+`#> textshaping       "/usr/local/lib/R/site-library"            "1.0.5"     `\
+`#> tibble            "/usr/local/lib/R/site-library"            "3.3.1"     `\
+`#> tidymodels        "/usr/local/lib/R/site-library"            "1.5.0"     `\
+`#> tidyr             "/usr/local/lib/R/site-library"            "1.3.2"     `\
+`#> tidyselect        "/usr/local/lib/R/site-library"            "1.2.1"     `\
+`#> tidyverse         "/usr/local/lib/R/site-library"            "2.0.0"     `\
+`#> timechange        "/usr/local/lib/R/site-library"            "0.4.0"     `\
+`#> timeDate          "/usr/local/lib/R/site-library"            "4052.112"  `\
+`#> tinytex           "/usr/local/lib/R/site-library"            "0.61.1"    `\
+`#> tune              "/usr/local/lib/R/site-library"            "2.1.0"     `\
+`#> tzdb              "/usr/local/lib/R/site-library"            "0.5.0"     `\
+`#> ucminf            "/usr/local/lib/R/site-library"            "1.2.3"     `\
+`#> unigd             "/usr/local/lib/R/site-library"            "0.2.0"     `\
+`#> urca              "/usr/local/lib/R/site-library"            "1.3-4"     `\
+`#> urlchecker        "/usr/local/lib/R/site-library"            "2.0.0"     `\
+`#> usethis           "/usr/local/lib/R/site-library"            "3.2.2"     `\
+`#> utf8              "/usr/local/lib/R/site-library"            "1.2.6"     `\
+`#> uuid              "/usr/local/lib/R/site-library"            "1.2-2"     `\
+`#> V8                "/usr/local/lib/R/site-library"            "8.2.0"     `\
+`#> vctrs             "/usr/local/lib/R/site-library"            "0.7.3"     `\
+`#> viridisLite       "/usr/local/lib/R/site-library"            "0.4.3"     `\
+`#> vroom             "/usr/local/lib/R/site-library"            "1.7.1"     `\
+`#> waldo             "/usr/local/lib/R/site-library"            "0.6.2"     `\
+`#> warp              "/usr/local/lib/R/site-library"            "0.2.3"     `\
+`#> whisker           "/usr/local/lib/R/site-library"            "0.4.1"     `\
+`#> whoami            "/usr/local/lib/R/site-library"            "1.3.0"     `\
+`#> withr             "/usr/local/lib/R/site-library"            "3.0.3"     `\
+`#> workflows         "/usr/local/lib/R/site-library"            "1.3.0"     `\
+`#> workflowsets      "/usr/local/lib/R/site-library"            "1.1.1"     `\
+`#> xfun              "/usr/local/lib/R/site-library"            "0.62"      `\
+`#> xml2              "/usr/local/lib/R/site-library"            "1.6.0"     `\
+`#> xmlparsedata      "/usr/local/lib/R/site-library"            "1.0.5"     `\
+`#> xopen             "/usr/local/lib/R/site-library"            "1.0.1"     `\
+`#> xtable            "/usr/local/lib/R/site-library"            "1.8-8"     `\
+`#> yaml              "/usr/local/lib/R/site-library"            "2.3.12"    `\
+`#> yardstick         "/usr/local/lib/R/site-library"            "1.4.0"     `\
+`#> zip               "/usr/local/lib/R/site-library"            "3.0.2"     `\
+`#> zoo               "/usr/local/lib/R/site-library"            "1.9-1"     `\
+`#> base              "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> boot              "/usr/local/lib/R/library"                 "1.3-32"    `\
+`#> class             "/usr/local/lib/R/library"                 "7.3-23"    `\
+`#> cluster           "/usr/local/lib/R/library"                 "2.1.8.2"   `\
+`#> codetools         "/usr/local/lib/R/library"                 "0.2-20"    `\
+`#> compiler          "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> datasets          "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> foreign           "/usr/local/lib/R/library"                 "0.8-91"    `\
+`#> graphics          "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> grDevices         "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> grid              "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> KernSmooth        "/usr/local/lib/R/library"                 "2.23-26"   `\
+`#> lattice           "/usr/local/lib/R/library"                 "0.22-9"    `\
+`#> MASS              "/usr/local/lib/R/library"                 "7.3-65"    `\
+`#> Matrix            "/usr/local/lib/R/library"                 "1.7-5"     `\
+`#> methods           "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> mgcv              "/usr/local/lib/R/library"                 "1.9-4"     `\
+`#> nlme              "/usr/local/lib/R/library"                 "3.1-169"   `\
+`#> nnet              "/usr/local/lib/R/library"                 "7.3-20"    `\
+`#> parallel          "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> rpart             "/usr/local/lib/R/library"                 "4.1.27"    `\
+`#> spatial           "/usr/local/lib/R/library"                 "7.3-18"    `\
+`#> splines           "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> stats             "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> stats4            "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> survival          "/usr/local/lib/R/library"                 "3.8-6"     `\
+`#> tcltk             "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> tools             "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> utils             "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#>                   Priority     `\
+`#> rProject          NA           `\
+`#> askpass           NA           `\
+`#> base64enc         NA           `\
+`#> BiocManager       NA           `\
+`#> brew              NA           `\
+`#> brio              NA           `\
+`#> bslib             NA           `\
+`#> cachem            NA           `\
+`#> callr             NA           `\
+`#> cffr              NA           `\
+`#> cli               NA           `\
+`#> clipr             NA           `\
+`#> commonmark        NA           `\
+`#> covr              NA           `\
+`#> crayon            NA           `\
+`#> credentials       NA           `\
+`#> curl              NA           `\
+`#> desc              NA           `\
+`#> devtools          NA           `\
+`#> diffobj           NA           `\
+`#> digest            NA           `\
+`#> distro            NA           `\
+`#> downlit           NA           `\
+`#> ellipsis          NA           `\
+`#> evaluate          NA           `\
+`#> fansi             NA           `\
+`#> fastmap           NA           `\
+`#> fontawesome       NA           `\
+`#> fs                NA           `\
+`#> gert              NA           `\
+`#> gh                NA           `\
+`#> gitcreds          NA           `\
+`#> glue              NA           `\
+`#> highr             NA           `\
+`#> htmltools         NA           `\
+`#> htmlwidgets       NA           `\
+`#> httpuv            NA           `\
+`#> httr              NA           `\
+`#> httr2             NA           `\
+`#> ini               NA           `\
+`#> jquerylib         NA           `\
+`#> jsonlite          NA           `\
+`#> jsonvalidate      NA           `\
+`#> knitr             NA           `\
+`#> later             NA           `\
+`#> lifecycle         NA           `\
+`#> lintr             NA           `\
+`#> magrittr          NA           `\
+`#> memoise           NA           `\
+`#> mime              NA           `\
+`#> miniUI            NA           `\
+`#> openssl           NA           `\
+`#> otel              NA           `\
+`#> pak               NA           `\
+`#> pillar            NA           `\
+`#> pkgbuild          NA           `\
+`#> pkgconfig         NA           `\
+`#> pkgdown           NA           `\
+`#> pkgload           NA           `\
+`#> praise            NA           `\
+`#> prettyunits       NA           `\
+`#> processx          NA           `\
+`#> profvis           NA           `\
+`#> promises          NA           `\
+`#> ps                NA           `\
+`#> purrr             NA           `\
+`#> quarto            NA           `\
+`#> R.cache           NA           `\
+`#> R.methodsS3       NA           `\
+`#> R.oo              NA           `\
+`#> R.utils           NA           `\
+`#> R6                NA           `\
+`#> ragg              NA           `\
+`#> rappdirs          NA           `\
+`#> rcmdcheck         NA           `\
+`#> Rcpp              NA           `\
+`#> rdtools           NA           `\
+`#> remotes           NA           `\
+`#> rex               NA           `\
+`#> rlang             NA           `\
+`#> rmarkdown         NA           `\
+`#> roxygen2          NA           `\
+`#> rProject          NA           `\
+`#> rprojroot         NA           `\
+`#> rstudioapi        NA           `\
+`#> rversions         NA           `\
+`#> sass              NA           `\
+`#> sessioninfo       NA           `\
+`#> shiny             NA           `\
+`#> sourcetools       NA           `\
+`#> stringi           NA           `\
+`#> styler            NA           `\
+`#> sys               NA           `\
+`#> systemfonts       NA           `\
+`#> testthat          NA           `\
+`#> textshaping       NA           `\
+`#> tibble            NA           `\
+`#> tinytex           NA           `\
+`#> urlchecker        NA           `\
+`#> usethis           NA           `\
+`#> utf8              NA           `\
+`#> V8                NA           `\
+`#> vctrs             NA           `\
+`#> waldo             NA           `\
+`#> whisker           NA           `\
+`#> withr             NA           `\
+`#> xfun              NA           `\
+`#> xml2              NA           `\
+`#> xmlparsedata      NA           `\
+`#> xopen             NA           `\
+`#> xtable            NA           `\
+`#> yaml              NA           `\
+`#> zip               NA           `\
+`#> abind             NA           `\
+`#> Amelia            NA           `\
+`#> arm               NA           `\
+`#> arrow             NA           `\
+`#> ash               NA           `\
+`#> AsioHeaders       NA           `\
+`#> askpass           NA           `\
+`#> assertthat        NA           `\
+`#> backports         NA           `\
+`#> base64enc         NA           `\
+`#> betaDelta         NA           `\
+`#> betaMC            NA           `\
+`#> betaNB            NA           `\
+`#> betaSandwich      NA           `\
+`#> BH                NA           `\
+`#> bibtex            NA           `\
+`#> biocmake          NA           `\
+`#> BiocManager       NA           `\
+`#> BiocVersion       NA           `\
+`#> bit               NA           `\
+`#> bit64             NA           `\
+`#> bitops            NA           `\
+`#> blob              NA           `\
+`#> bootStateSpace    NA           `\
+`#> brew              NA           `\
+`#> brio              NA           `\
+`#> broom             NA           `\
+`#> bslib             NA           `\
+`#> cachem            NA           `\
+`#> callr             NA           `\
+`#> car               NA           `\
+`#> caracas           NA           `\
+`#> carData           NA           `\
+`#> cellranger        NA           `\
+`#> cffr              NA           `\
+`#> checkmate         NA           `\
+`#> cli               NA           `\
+`#> clipr             NA           `\
+`#> clock             NA           `\
+`#> clusterGeneration NA           `\
+`#> coda              NA           `\
+`#> cOde              NA           `\
+`#> collections       NA           `\
+`#> colorspace        NA           `\
+`#> commonmark        NA           `\
+`#> conflicted        NA           `\
+`#> corpcor           NA           `\
+`#> covr              NA           `\
+`#> cowplot           NA           `\
+`#> cpp11             NA           `\
+`#> crayon            NA           `\
+`#> credentials       NA           `\
+`#> crosstalk         NA           `\
+`#> cTMed             NA           `\
+`#> ctsem             NA           `\
+`#> curl              NA           `\
+`#> data.table        NA           `\
+`#> DBI               NA           `\
+`#> dbplyr            NA           `\
+`#> Deriv             NA           `\
+`#> desc              NA           `\
+`#> deSolve           NA           `\
+`#> devtools          NA           `\
+`#> diagram           NA           `\
+`#> dials             NA           `\
+`#> DiceDesign        NA           `\
+`#> diffobj           NA           `\
+`#> digest            NA           `\
+`#> dir.expiry        NA           `\
+`#> distributional    NA           `\
+`#> distro            NA           `\
+`#> doBy              NA           `\
+`#> docopt            NA           `\
+`#> downlit           NA           `\
+`#> dplyr             NA           `\
+`#> DT                NA           `\
+`#> dtplyr            NA           `\
+`#> duckdb            NA           `\
+`#> dynr              NA           `\
+`#> dynTools          NA           `\
+`#> dynUtils          NA           `\
+`#> ellipse           NA           `\
+`#> ellipsis          NA           `\
+`#> evaluate          NA           `\
+`#> expm              NA           `\
+`#> fansi             NA           `\
+`#> farver            NA           `\
+`#> fastDummies       NA           `\
+`#> fastmap           NA           `\
+`#> fclust            NA           `\
+`#> fda               NA           `\
+`#> fdrtool           NA           `\
+`#> fds               NA           `\
+`#> filelock          NA           `\
+`#> fitVARMxID        NA           `\
+`#> FNN               NA           `\
+`#> fontawesome       NA           `\
+`#> forcats           NA           `\
+`#> foreach           NA           `\
+`#> forecast          NA           `\
+`#> Formula           NA           `\
+`#> fracdiff          NA           `\
+`#> fs                NA           `\
+`#> fst               NA           `\
+`#> fstcore           NA           `\
+`#> furrr             NA           `\
+`#> future            NA           `\
+`#> future.apply      NA           `\
+`#> gargle            NA           `\
+`#> GauPro            NA           `\
+`#> generics          NA           `\
+`#> gert              NA           `\
+`#> ggplot2           NA           `\
+`#> ggrepel           NA           `\
+`#> gh                NA           `\
+`#> gitcreds          NA           `\
+`#> glasso            NA           `\
+`#> glmnet            NA           `\
+`#> globals           NA           `\
+`#> glue              NA           `\
+`#> googledrive       NA           `\
+`#> googlesheets4     NA           `\
+`#> gower             NA           `\
+`#> GPArotation       NA           `\
+`#> graphicalVAR      NA           `\
+`#> gridExtra         NA           `\
+`#> gsubfn            NA           `\
+`#> gtable            NA           `\
+`#> gtools            NA           `\
+`#> hardhat           NA           `\
+`#> haven             NA           `\
+`#> hdrcde            NA           `\
+`#> here              NA           `\
+`#> highr             NA           `\
+`#> Hmisc             NA           `\
+`#> hms               NA           `\
+`#> htmlTable         NA           `\
+`#> htmltools         NA           `\
+`#> htmlwidgets       NA           `\
+`#> httpgd            NA           `\
+`#> httpuv            NA           `\
+`#> httr              NA           `\
+`#> httr2             NA           `\
+`#> ids               NA           `\
+`#> ifaTools          NA           `\
+`#> igraph            NA           `\
+`#> infer             NA           `\
+`#> ini               NA           `\
+`#> inline            NA           `\
+`#> ipred             NA           `\
+`#> isoband           NA           `\
+`#> iterators         NA           `\
+`#> jomo              NA           `\
+`#> jpeg              NA           `\
+`#> jquerylib         NA           `\
+`#> jsonlite          NA           `\
+`#> jsonvalidate      NA           `\
+`#> kernlab           NA           `\
+`#> knitr             NA           `\
+`#> ks                NA           `\
+`#> labeling          NA           `\
+`#> Lahman            NA           `\
+`#> languageserver    NA           `\
+`#> later             NA           `\
+`#> latex2exp         NA           `\
+`#> lava              NA           `\
+`#> lavaan            NA           `\
+`#> lazyeval          NA           `\
+`#> lbfgs             NA           `\
+`#> lifecycle         NA           `\
+`#> lintr             NA           `\
+`#> listenv           NA           `\
+`#> litedown          NA           `\
+`#> littler           NA           `\
+`#> lme4              NA           `\
+`#> lmtest            NA           `\
+`#> locfit            NA           `\
+`#> longMI            NA           `\
+`#> loo               NA           `\
+`#> lubridate         NA           `\
+`#> magick            NA           `\
+`#> magrittr          NA           `\
+`#> markdown          NA           `\
+`#> MatrixModels      NA           `\
+`#> matrixStats       NA           `\
+`#> mclust            NA           `\
+`#> memoise           NA           `\
+`#> metaDyn           NA           `\
+`#> metaSEM           NA           `\
+`#> mice              NA           `\
+`#> microbenchmark    NA           `\
+`#> mime              NA           `\
+`#> miniUI            NA           `\
+`#> minqa             NA           `\
+`#> mitml             NA           `\
+`#> mixopt            NA           `\
+`#> mize              NA           `\
+`#> mlVAR             NA           `\
+`#> mnormt            NA           `\
+`#> modeldata         NA           `\
+`#> modelenv          NA           `\
+`#> modelr            NA           `\
+`#> MplusAutomation   NA           `\
+`#> multicool         NA           `\
+`#> mvtnorm           NA           `\
+`#> nloptr            NA           `\
+`#> numDeriv          NA           `\
+`#> nycflights13      NA           `\
+`#> OpenMx            NA           `\
+`#> openssl           NA           `\
+`#> ordinal           NA           `\
+`#> otel              NA           `\
+`#> pak               NA           `\
+`#> pan               NA           `\
+`#> pander            NA           `\
+`#> parallelly        NA           `\
+`#> parsnip           NA           `\
+`#> patchwork         NA           `\
+`#> pbapply           NA           `\
+`#> pbivnorm          NA           `\
+`#> pbkrtest          NA           `\
+`#> pcaPP             NA           `\
+`#> pdftools          NA           `\
+`#> pillar            NA           `\
+`#> pkgbuild          NA           `\
+`#> pkgconfig         NA           `\
+`#> pkgdown           NA           `\
+`#> pkgload           NA           `\
+`#> plyr              NA           `\
+`#> png               NA           `\
+`#> posterior         NA           `\
+`#> pracma            NA           `\
+`#> praise            NA           `\
+`#> prettyunits       NA           `\
+`#> printr            NA           `\
+`#> processx          NA           `\
+`#> prodlim           NA           `\
+`#> profvis           NA           `\
+`#> progress          NA           `\
+`#> progressr         NA           `\
+`#> promises          NA           `\
+`#> proto             NA           `\
+`#> ps                NA           `\
+`#> psych             NA           `\
+`#> purrr             NA           `\
+`#> qgraph            NA           `\
+`#> qpdf              NA           `\
+`#> quadprog          NA           `\
+`#> quantreg          NA           `\
+`#> quarto            NA           `\
+`#> QuickJSR          NA           `\
+`#> R.cache           NA           `\
+`#> R.methodsS3       NA           `\
+`#> R.oo              NA           `\
+`#> R.utils           NA           `\
+`#> R2jags            NA           `\
+`#> R2WinBUGS         NA           `\
+`#> R6                NA           `\
+`#> ragg              NA           `\
+`#> rainbow           NA           `\
+`#> rappdirs          NA           `\
+`#> rbibutils         NA           `\
+`#> rcmdcheck         NA           `\
+`#> RColorBrewer      NA           `\
+`#> Rcpp              NA           `\
+`#> RcppArmadillo     NA           `\
+`#> RcppEigen         NA           `\
+`#> RcppGSL           NA           `\
+`#> RcppParallel      NA           `\
+`#> RcppTOML          NA           `\
+`#> RCurl             NA           `\
+`#> Rdpack            NA           `\
+`#> rdtools           NA           `\
+`#> readr             NA           `\
+`#> readxl            NA           `\
+`#> recipes           NA           `\
+`#> RefManageR        NA           `\
+`#> reformulas        NA           `\
+`#> rematch           NA           `\
+`#> rematch2          NA           `\
+`#> remotes           NA           `\
+`#> reprex            NA           `\
+`#> reshape2          NA           `\
+`#> reticulate        NA           `\
+`#> rex               NA           `\
+`#> rhdf5             NA           `\
+`#> rhdf5filters      NA           `\
+`#> Rhdf5lib          NA           `\
+`#> rhub              NA           `\
+`#> rjags             NA           `\
+`#> rlang             NA           `\
+`#> RMariaDB          NA           `\
+`#> rmarkdown         NA           `\
+`#> roxygen2          NA           `\
+`#> rpf               NA           `\
+`#> RPostgres         NA           `\
+`#> rProject          NA           `\
+`#> rprojroot         NA           `\
+`#> rsample           NA           `\
+`#> RSQLite           NA           `\
+`#> rstan             NA           `\
+`#> rstantools        NA           `\
+`#> rstudioapi        NA           `\
+`#> rversions         NA           `\
+`#> rvest             NA           `\
+`#> Ryacas            NA           `\
+`#> S7                NA           `\
+`#> sass              NA           `\
+`#> scales            NA           `\
+`#> selectr           NA           `\
+`#> semlbci           NA           `\
+`#> semmcci           NA           `\
+`#> semPlot           NA           `\
+`#> sessioninfo       NA           `\
+`#> sfd               NA           `\
+`#> shape             NA           `\
+`#> shiny             NA           `\
+`#> simStateSpace     NA           `\
+`#> slider            NA           `\
+`#> snow              NA           `\
+`#> snowfall          NA           `\
+`#> sourcetools       NA           `\
+`#> SparseM           NA           `\
+`#> sparsevctrs       NA           `\
+`#> splitfngr         NA           `\
+`#> SQUAREM           NA           `\
+`#> StanHeaders       NA           `\
+`#> stringi           NA           `\
+`#> stringr           NA           `\
+`#> styler            NA           `\
+`#> symSEM            NA           `\
+`#> sys               NA           `\
+`#> systemfonts       NA           `\
+`#> tailor            NA           `\
+`#> tensorA           NA           `\
+`#> testthat          NA           `\
+`#> texreg            NA           `\
+`#> textshaping       NA           `\
+`#> tibble            NA           `\
+`#> tidymodels        NA           `\
+`#> tidyr             NA           `\
+`#> tidyselect        NA           `\
+`#> tidyverse         NA           `\
+`#> timechange        NA           `\
+`#> timeDate          NA           `\
+`#> tinytex           NA           `\
+`#> tune              NA           `\
+`#> tzdb              NA           `\
+`#> ucminf            NA           `\
+`#> unigd             NA           `\
+`#> urca              NA           `\
+`#> urlchecker        NA           `\
+`#> usethis           NA           `\
+`#> utf8              NA           `\
+`#> uuid              NA           `\
+`#> V8                NA           `\
+`#> vctrs             NA           `\
+`#> viridisLite       NA           `\
+`#> vroom             NA           `\
+`#> waldo             NA           `\
+`#> warp              NA           `\
+`#> whisker           NA           `\
+`#> whoami            NA           `\
+`#> withr             NA           `\
+`#> workflows         NA           `\
+`#> workflowsets      NA           `\
+`#> xfun              NA           `\
+`#> xml2              NA           `\
+`#> xmlparsedata      NA           `\
+`#> xopen             NA           `\
+`#> xtable            NA           `\
+`#> yaml              NA           `\
+`#> yardstick         NA           `\
+`#> zip               NA           `\
+`#> zoo               NA           `\
+`#> base              "base"       `\
+`#> boot              "recommended"`\
+`#> class             "recommended"`\
+`#> cluster           "recommended"`\
+`#> codetools         "recommended"`\
+`#> compiler          "base"       `\
+`#> datasets          "base"       `\
+`#> foreign           "recommended"`\
+`#> graphics          "base"       `\
+`#> grDevices         "base"       `\
+`#> grid              "base"       `\
+`#> KernSmooth        "recommended"`\
+`#> lattice           "recommended"`\
+`#> MASS              "recommended"`\
+`#> Matrix            "recommended"`\
+`#> methods           "base"       `\
+`#> mgcv              "recommended"`\
+`#> nlme              "recommended"`\
+`#> nnet              "recommended"`\
+`#> parallel          "base"       `\
+`#> rpart             "recommended"`\
+`#> spatial           "recommended"`\
+`#> splines           "base"       `\
+`#> stats             "base"       `\
+`#> stats4            "base"       `\
+`#> survival          "recommended"`\
+`#> tcltk             "base"       `\
+`#> tools             "base"       `\
+`#> utils             "base"       `\
 `#>                   Depends                                                                               `\
 `#> rProject          "R (>= 3.5.0)"                                                                        `\
 `#> askpass           NA                                                                                    `\
@@ -1302,7 +1820,7 @@
 `#> fstcore           "R (>= 3.0.0)"                                                                        `\
 `#> furrr             "future (>= 1.70.0), R (>= 4.1.0)"                                                    `\
 `#> future            "R (>= 3.2.0)"                                                                        `\
-`#> future.apply      "R (>= 3.2.0), future (>= 1.49.0)"                                                    `\
+`#> future.apply      "R (>= 3.2.0), future (>= 1.80.0)"                                                    `\
 `#> gargle            "R (>= 4.1)"                                                                          `\
 `#> GauPro            "mixopt (> 0.1.0), numDeriv, rmarkdown, tidyr"                                        `\
 `#> generics          "R (>= 3.6)"                                                                          `\
@@ -1820,7 +2338,7 @@
 `#> fstcore           "Rcpp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> furrr             "globals (>= 0.19.1), purrr (>= 1.2.1), rlang (>= 1.1.7), vctrs\n(>= 0.7.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
 `#> future            "digest, globals (>= 0.18.0), listenv (>= 0.8.0), parallel,\nparallelly (>= 1.44.0), tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> future.apply      "globals, parallel, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
+`#> future.apply      "globals, parallel, stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> gargle            "cli (>= 3.0.1), fs (>= 1.3.1), glue (>= 1.3.0), httr (>=\n1.4.5), jsonlite, lifecycle (>= 0.2.0), openssl, rappdirs,\nrlang (>= 1.1.0), stats, utils, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> GauPro            "ggplot2, Rcpp, R6, lbfgs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> generics          "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
@@ -2742,7 +3260,7 @@
 `#> waldo             "bit64, R6, S7, testthat (>= 3.0.0), withr, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> whisker           "markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> withr             "callr, DBI, knitr, methods, rlang, rmarkdown (>= 2.12),\nRSQLite, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
-`#> xfun              "testit, parallel, codetools, methods, rstudioapi, tinytex (>=\n0.30), mime, litedown (>= 0.6), commonmark, knitr (>= 1.50),\nremotes, pak, curl, xml2, jsonlite, magick, yaml, data.table,\nqs2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
+`#> xfun              "testit, parallel, codetools, methods, rstudioapi, tinytex (>=\n0.30), mime, litedown (>= 0.6), knitr (>= 1.50), remotes, pak,\ncurl, xml2, jsonlite, magick, yaml, data.table, qs2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> xml2              "covr, curl, httr, knitr, mockery, rmarkdown, testthat (>=\n3.2.0), xslt"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> xmlparsedata      "covr, testthat, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> xopen             "ps, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
@@ -2856,7 +3374,7 @@
 `#> fstcore           "testthat, lintr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> furrr             "carrier, covr, dplyr (>= 1.1.4), knitr, parallelly (>=\n1.46.1), testthat (>= 3.3.2), tidyselect"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> future            "methods, RhpcBLASctl, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
-`#> future.apply      "datasets, stats, tools, listenv, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
+`#> future.apply      "datasets, tools, listenv, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> gargle            "aws.ec2metadata, aws.signature, covr, httpuv, knitr,\nrmarkdown, sodium, spelling, testthat (>= 3.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> GauPro            "ContourFunctions, dplyr, ggrepel, gridExtra, knitr, lhs,\nMASS, microbenchmark, rlang, splitfngr, testthat, testthatmulti"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> generics          "covr, pkgload, testthat (>= 3.0.0), tibble, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `\
@@ -3066,7 +3584,7 @@
 `#> sfd               "ggplot2, spelling, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> shape             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> shiny             "Cairo (>= 1.5-5), coro (>= 1.1.0), datasets, DT, dygraphs,\nfuture, ggplot2, knitr (>= 1.6), magrittr, markdown, mirai,\notelsdk (>= 0.2.0), ragg, reactlog (>= 1.0.0), rmarkdown, sass,\nshinytest2, showtext, testthat (>= 3.2.1), watcher, yaml"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
-`#> simStateSpace     "knitr, rmarkdown, testthat, expm, dynr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
+`#> simStateSpace     "knitr, rmarkdown, testthat, dynr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> slider            "covr, dplyr (>= 1.0.0), knitr, lubridate, rmarkdown, testthat\n(>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> snow              "rlecuyer"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> snowfall          "Rmpi"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
@@ -3115,7 +3633,7 @@
 `#> withr             "callr, DBI, knitr, methods, rlang, rmarkdown (>= 2.12),\nRSQLite, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> workflows         "butcher (>= 0.2.0), covr, dials (>= 1.0.0), glmnet, knitr,\nmagrittr, Matrix, methods, modeldata (>= 1.0.0), probably,\nrmarkdown, tailor (>= 0.1.0), testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> workflowsets      "covr, dials (>= 0.1.0), finetune, kknn, knitr, modeldata,\nrecipes (>= 1.1.0), rmarkdown, spelling, testthat (>= 3.0.0),\ntidyclust, yardstick (>= 1.3.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
-`#> xfun              "testit, parallel, codetools, methods, rstudioapi, tinytex (>=\n0.30), mime, litedown (>= 0.6), commonmark, knitr (>= 1.50),\nremotes, pak, curl, xml2, jsonlite, magick, yaml, data.table,\nqs2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
+`#> xfun              "testit, parallel, codetools, methods, rstudioapi, tinytex (>=\n0.30), mime, litedown (>= 0.6), knitr (>= 1.50), remotes, pak,\ncurl, xml2, jsonlite, magick, yaml, data.table, qs2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> xml2              "covr, curl, httr, knitr, mockery, rmarkdown, testthat (>=\n3.2.0), xslt"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> xmlparsedata      "covr, testthat, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> xopen             "ps, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
@@ -4708,7 +5226,7 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-16 05:11:22 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-19 03:04:22 UTC; unix"                   `\
 `#> askpass           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   `\
@@ -4726,7 +5244,7 @@
 `#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   `\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:19:08 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   `\
-`#> devtools          "R 4.6.1; ; 2026-10-16 05:08:20 UTC; unix"                   `\
+`#> devtools          "R 4.6.1; ; 2026-10-19 03:01:49 UTC; unix"                   `\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:19:38 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
 `#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   `\
@@ -4782,7 +5300,7 @@
 `#> R6                "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> ragg              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:49 UTC; unix"`\
 `#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> rcmdcheck         "R 4.6.1; ; 2026-10-16 05:08:17 UTC; unix"                   `\
+`#> rcmdcheck         "R 4.6.1; ; 2026-10-19 03:01:46 UTC; unix"                   `\
 `#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> rdtools           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-17 05:34:52 UTC; unix"`\
 `#> remotes           "R 4.6.0; ; 2026-04-24 21:36:51 UTC; unix"                   `\
@@ -4790,7 +5308,7 @@
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:00:02 UTC; unix"                   `\
 `#> roxygen2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-09 05:45:48 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-16 05:11:16 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-19 03:04:18 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rstudioapi        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> rversions         "R 4.6.0; ; 2026-04-24 21:11:46 UTC; unix"                   `\
@@ -4805,7 +5323,7 @@
 `#> testthat          "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 06:36:19 UTC; unix"`\
 `#> textshaping       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:09 UTC; unix"`\
 `#> tibble            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
-`#> tinytex           "R 4.6.1; ; 2026-10-16 05:08:08 UTC; unix"                   `\
+`#> tinytex           "R 4.6.1; ; 2026-10-19 03:01:38 UTC; unix"                   `\
 `#> urlchecker        "R 4.6.0; ; 2026-07-09 17:32:21 UTC; unix"                   `\
 `#> usethis           "R 4.6.0; ; 2026-09-11 04:12:24 UTC; unix"                   `\
 `#> utf8              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:36 UTC; unix"`\
@@ -4814,7 +5332,7 @@
 `#> waldo             "R 4.6.0; ; 2026-04-24 02:10:14 UTC; unix"                   `\
 `#> whisker           "R 4.6.0; ; 2026-08-12 20:21:40 UTC; unix"                   `\
 `#> withr             "R 4.6.0; ; 2026-08-12 20:21:40 UTC; unix"                   `\
-`#> xfun              "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-17 04:24:25 UTC; unix"`\
+`#> xfun              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-17 04:51:47 UTC; unix"`\
 `#> xml2              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:55 UTC; unix"`\
 `#> xmlparsedata      "R 4.6.0; ; 2026-04-24 22:36:57 UTC; unix"                   `\
 `#> xopen             "R 4.6.0; ; 2026-04-24 21:34:04 UTC; unix"                   `\
@@ -4831,20 +5349,20 @@
 `#> assertthat        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> betaDelta         "R 4.6.1; ; 2026-10-15 07:59:09 UTC; unix"                   `\
-`#> betaMC            "R 4.6.1; ; 2026-10-15 07:59:17 UTC; unix"                   `\
-`#> betaNB            "R 4.6.1; ; 2026-10-15 07:59:15 UTC; unix"                   `\
-`#> betaSandwich      "R 4.6.1; ; 2026-10-15 07:59:12 UTC; unix"                   `\
+`#> betaDelta         "R 4.6.1; ; 2026-10-18 07:45:47 UTC; unix"                   `\
+`#> betaMC            "R 4.6.1; ; 2026-10-18 07:45:56 UTC; unix"                   `\
+`#> betaNB            "R 4.6.1; ; 2026-10-18 07:45:53 UTC; unix"                   `\
+`#> betaSandwich      "R 4.6.1; ; 2026-10-18 07:45:50 UTC; unix"                   `\
 `#> BH                "R 4.6.0; ; 2026-08-12 20:21:37 UTC; unix"                   `\
 `#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:32 UTC; unix"                   `\
-`#> biocmake          "R 4.6.1; ; 2026-10-15 04:57:29 UTC; unix"                   `\
+`#> biocmake          "R 4.6.1; ; 2026-10-18 04:52:54 UTC; unix"                   `\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   `\
-`#> BiocVersion       "R 4.6.1; ; 2026-10-15 04:57:27 UTC; unix"                   `\
+`#> BiocVersion       "R 4.6.1; ; 2026-10-18 04:52:53 UTC; unix"                   `\
 `#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
 `#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:12 UTC; unix"`\
 `#> bitops            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-31 07:27:38 UTC; unix"`\
 `#> blob              "R 4.6.0; ; 2026-08-12 20:22:28 UTC; unix"                   `\
-`#> bootStateSpace    "R 4.6.1; ; 2026-10-15 08:00:06 UTC; unix"                   `\
+`#> bootStateSpace    "R 4.6.1; ; 2026-10-18 07:46:37 UTC; unix"                   `\
 `#> brew              "R 4.6.0; ; 2026-08-12 20:21:48 UTC; unix"                   `\
 `#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"`\
 `#> broom             "R 4.6.0; ; 2026-08-12 20:23:52 UTC; unix"                   `\
@@ -4857,7 +5375,7 @@
 `#> cellranger        "R 4.6.0; ; 2026-09-26 06:35:53 UTC; unix"                   `\
 `#> cffr              "R 4.6.0; ; 2026-08-25 04:31:41 UTC; unix"                   `\
 `#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
-`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 07:58:29 UTC; unix"`\
+`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-18 07:45:11 UTC; unix"`\
 `#> clipr             "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
 `#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:21 UTC; unix"`\
 `#> clusterGeneration "R 4.6.0; ; 2026-04-24 21:00:44 UTC; unix"                   `\
@@ -4874,7 +5392,7 @@
 `#> crayon            "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   `\
 `#> crosstalk         "R 4.6.0; ; 2026-08-12 20:22:17 UTC; unix"                   `\
-`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 08:00:19 UTC; unix"`\
+`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-18 07:46:47 UTC; unix"`\
 `#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:31:26 UTC; unix"`\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:19:08 UTC; unix"`\
 `#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:30:51 UTC; unix"`\
@@ -4883,25 +5401,25 @@
 `#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:22:17 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   `\
 `#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:50 UTC; unix"`\
-`#> devtools          "R 4.6.1; ; 2026-10-15 07:58:46 UTC; unix"                   `\
+`#> devtools          "R 4.6.1; ; 2026-10-18 07:45:26 UTC; unix"                   `\
 `#> diagram           "R 4.6.0; ; 2026-04-24 01:28:57 UTC; unix"                   `\
 `#> dials             "R 4.6.0; ; 2026-06-23 05:17:57 UTC; unix"                   `\
 `#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:56:50 UTC; unix"`\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:19:38 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
-`#> dir.expiry        "R 4.6.1; ; 2026-10-15 04:57:28 UTC; unix"                   `\
+`#> dir.expiry        "R 4.6.1; ; 2026-10-18 04:52:53 UTC; unix"                   `\
 `#> distributional    "R 4.6.0; ; 2026-09-09 09:18:45 UTC; unix"                   `\
 `#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   `\
 `#> doBy              "R 4.6.0; ; 2026-08-12 20:24:57 UTC; unix"                   `\
-`#> docopt            "R 4.6.1; ; 2026-09-11 13:11:31 UTC; unix"                   `\
+`#> docopt            "R 4.6.1; ; 2026-10-15 15:57:23 UTC; unix"                   `\
 `#> downlit           "R 4.6.0; ; 2026-04-24 22:45:05 UTC; unix"                   `\
 `#> dplyr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:54 UTC; unix"`\
 `#> DT                "R 4.6.0; ; 2026-08-12 20:25:47 UTC; unix"                   `\
 `#> dtplyr            "R 4.6.0; ; 2026-10-02 08:11:50 UTC; unix"                   `\
 `#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-30 05:47:53 UTC; unix"`\
-`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 07:59:51 UTC; unix"`\
-`#> dynTools          "R 4.6.1; ; 2026-10-15 08:00:39 UTC; unix"                   `\
-`#> dynUtils          "R 4.6.1; ; 2026-10-15 07:17:49 UTC; unix"                   `\
+`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-18 07:46:24 UTC; unix"`\
+`#> dynTools          "R 4.6.1; ; 2026-10-18 07:47:04 UTC; unix"                   `\
+`#> dynUtils          "R 4.6.1; ; 2026-10-18 07:10:46 UTC; unix"                   `\
 `#> ellipse           "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> ellipsis          "R 4.6.0; ; 2026-04-24 21:36:12 UTC; unix"                   `\
 `#> evaluate          "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
@@ -4915,7 +5433,7 @@
 `#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:15:12 UTC; unix"`\
 `#> fds               "R 4.6.0; ; 2026-05-06 05:19:49 UTC; unix"                   `\
 `#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:36 UTC; unix"`\
-`#> fitVARMxID        "R 4.6.1; ; 2026-10-15 08:00:48 UTC; unix"                   `\
+`#> fitVARMxID        "R 4.6.1; ; 2026-10-18 07:47:12 UTC; unix"                   `\
 `#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
 `#> fontawesome       "R 4.6.0; ; 2026-08-12 20:22:14 UTC; unix"                   `\
 `#> forcats           "R 4.6.0; ; 2026-08-12 20:22:52 UTC; unix"                   `\
@@ -4927,8 +5445,8 @@
 `#> fst               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:39:02 UTC; unix"`\
 `#> fstcore           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:37:58 UTC; unix"`\
 `#> furrr             "R 4.6.0; ; 2026-04-24 21:39:32 UTC; unix"                   `\
-`#> future            "R 4.6.0; ; 2026-09-25 04:23:16 UTC; unix"                   `\
-`#> future.apply      "R 4.6.0; ; 2026-08-12 20:22:17 UTC; unix"                   `\
+`#> future            "R 4.6.0; ; 2026-10-16 04:15:04 UTC; unix"                   `\
+`#> future.apply      "R 4.6.0; ; 2026-10-17 04:53:18 UTC; unix"                   `\
 `#> gargle            "R 4.6.0; ; 2026-08-12 20:22:42 UTC; unix"                   `\
 `#> GauPro            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:37:08 UTC; unix"`\
 `#> generics          "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
@@ -4960,7 +5478,7 @@
 `#> htmlTable         "R 4.6.0; ; 2026-08-12 20:25:44 UTC; unix"                   `\
 `#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:04 UTC; unix"`\
 `#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:25:06 UTC; unix"                   `\
-`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 07:57:55 UTC; unix"`\
+`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-18 07:44:40 UTC; unix"`\
 `#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
 `#> httr              "R 4.6.0; ; 2026-09-02 03:59:46 UTC; unix"                   `\
 `#> httr2             "R 4.6.0; ; 2026-07-14 05:11:28 UTC; unix"                   `\
@@ -4994,11 +5512,11 @@
 `#> lintr             "R 4.6.0; ; 2026-07-16 05:10:48 UTC; unix"                   `\
 `#> listenv           "R 4.6.0; ; 2026-10-05 04:19:47 UTC; unix"                   `\
 `#> litedown          "R 4.6.0; ; 2026-08-27 05:32:48 UTC; unix"                   `\
-`#> littler           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 13:11:29 UTC; unix"`\
+`#> littler           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:57:21 UTC; unix"`\
 `#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:11 UTC; unix"`\
 `#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:00 UTC; unix"`\
 `#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:06:27 UTC; unix"`\
-`#> longMI            "R 4.6.1; ; 2026-10-15 06:04:34 UTC; unix"                   `\
+`#> longMI            "R 4.6.1; ; 2026-10-18 06:11:46 UTC; unix"                   `\
 `#> loo               "R 4.6.0; ; 2026-07-25 05:23:32 UTC; unix"                   `\
 `#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:14 UTC; unix"`\
 `#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:00:10 UTC; unix"`\
@@ -5008,7 +5526,7 @@
 `#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
 `#> memoise           "R 4.6.0; ; 2026-08-12 20:21:58 UTC; unix"                   `\
-`#> metaDyn           "R 4.6.1; ; 2026-10-15 08:00:58 UTC; unix"                   `\
+`#> metaDyn           "R 4.6.1; ; 2026-10-18 07:47:21 UTC; unix"                   `\
 `#> metaSEM           "R 4.6.0; ; 2026-04-28 05:58:02 UTC; unix"                   `\
 `#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:13:40 UTC; unix"`\
 `#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:51 UTC; unix"`\
@@ -5083,7 +5601,7 @@
 `#> rainbow           "R 4.6.0; ; 2026-09-26 06:36:28 UTC; unix"                   `\
 `#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
 `#> rbibutils         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> rcmdcheck         "R 4.6.1; ; 2026-10-15 07:58:43 UTC; unix"                   `\
+`#> rcmdcheck         "R 4.6.1; ; 2026-10-18 07:45:23 UTC; unix"                   `\
 `#> RColorBrewer      "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-09 09:16:41 UTC; unix"`\
@@ -5106,18 +5624,18 @@
 `#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:13 UTC; unix"`\
 `#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:23:09 UTC; unix"`\
 `#> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   `\
-`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 05:00:17 UTC; unix"`\
-`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 04:59:58 UTC; unix"`\
-`#> Rhdf5lib          "R 4.6.1; ; 2026-10-15 04:59:56 UTC; unix"                   `\
+`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-18 04:55:18 UTC; unix"`\
+`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-18 04:55:02 UTC; unix"`\
+`#> Rhdf5lib          "R 4.6.1; ; 2026-10-18 04:54:59 UTC; unix"                   `\
 `#> rhub              "R 4.6.0; ; 2026-04-24 22:27:49 UTC; unix"                   `\
 `#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:38:21 UTC; unix"`\
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:03 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:00:02 UTC; unix"                   `\
-`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 07:58:53 UTC; unix"`\
+`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-18 07:45:32 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:24:25 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:49 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-16 01:32:09 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-18 04:07:38 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:44 UTC; unix"`\
@@ -5132,13 +5650,13 @@
 `#> scales            "R 4.6.0; ; 2026-08-12 20:22:07 UTC; unix"                   `\
 `#> selectr           "R 4.6.0; ; 2026-09-28 04:40:54 UTC; unix"                   `\
 `#> semlbci           "R 4.6.0; ; 2026-07-28 08:48:55 UTC; unix"                   `\
-`#> semmcci           "R 4.6.1; ; 2026-10-15 07:59:06 UTC; unix"                   `\
+`#> semmcci           "R 4.6.1; ; 2026-10-18 07:45:44 UTC; unix"                   `\
 `#> semPlot           "R 4.6.0; ; 2026-07-18 12:17:16 UTC; unix"                   `\
 `#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:25:12 UTC; unix"                   `\
 `#> sfd               "R 4.6.0; ; 2026-04-24 22:06:59 UTC; unix"                   `\
 `#> shape             "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> shiny             "R 4.6.0; ; 2026-08-12 20:24:30 UTC; unix"                   `\
-`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 07:59:26 UTC; unix"`\
+`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-18 07:46:02 UTC; unix"`\
 `#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:14:38 UTC; unix"`\
 `#> snow              "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> snowfall          "R 4.6.0; ; 2026-04-24 21:41:41 UTC; unix"                   `\
@@ -5166,7 +5684,7 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:27:55 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
-`#> tinytex           "R 4.6.1; ; 2026-10-15 07:58:25 UTC; unix"                   `\
+`#> tinytex           "R 4.6.1; ; 2026-10-18 07:45:07 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 15:45:43 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:40:31 UTC; unix"`\
@@ -5187,7 +5705,7 @@
 `#> withr             "R 4.6.0; ; 2026-08-12 20:21:40 UTC; unix"                   `\
 `#> workflows         "R 4.6.0; ; 2026-04-24 23:57:21 UTC; unix"                   `\
 `#> workflowsets      "R 4.6.0; ; 2026-04-25 16:00:24 UTC; unix"                   `\
-`#> xfun              "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-17 04:24:25 UTC; unix"`\
+`#> xfun              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-17 04:51:47 UTC; unix"`\
 `#> xml2              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:55 UTC; unix"`\
 `#> xmlparsedata      "R 4.6.0; ; 2026-04-24 22:36:57 UTC; unix"                   `\
 `#> xopen             "R 4.6.0; ; 2026-04-24 21:34:04 UTC; unix"                   `\
@@ -5196,35 +5714,35 @@
 `#> yardstick         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:18:47 UTC; unix"`\
 `#> zip               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> zoo               "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 04:26:52 UTC; unix"`\
-`#> base              "R 4.6.1; ; 2026-09-11 12:43:09 UTC; unix"                   `\
-`#> boot              "R 4.6.1; ; 2026-09-11 12:47:04 UTC; unix"                   `\
-`#> class             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:22 UTC; unix"`\
-`#> cluster           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:07 UTC; unix"`\
-`#> codetools         "R 4.6.1; ; 2026-09-11 12:47:12 UTC; unix"                   `\
-`#> compiler          "R 4.6.1; ; 2026-09-11 12:41:20 UTC; unix"                   `\
-`#> datasets          "R 4.6.1; ; 2026-09-11 12:42:45 UTC; unix"                   `\
-`#> foreign           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:13 UTC; unix"`\
-`#> graphics          "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:42:05 UTC; unix"`\
-`#> grDevices         "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:41:58 UTC; unix"`\
-`#> grid              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:42:58 UTC; unix"`\
-`#> KernSmooth        "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:17 UTC; unix"`\
-`#> lattice           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:44:00 UTC; unix"`\
-`#> MASS              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:43:55 UTC; unix"`\
-`#> Matrix            "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:44:08 UTC; unix"`\
-`#> methods           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:42:46 UTC; unix"`\
-`#> mgcv              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:27 UTC; unix"`\
-`#> nlme              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:46:27 UTC; unix"`\
-`#> nnet              "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:24 UTC; unix"`\
-`#> parallel          "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:43:08 UTC; unix"`\
-`#> rpart             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:19 UTC; unix"`\
-`#> spatial           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:47:25 UTC; unix"`\
-`#> splines           "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:43:05 UTC; unix"`\
-`#> stats             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:42:14 UTC; unix"`\
-`#> stats4            "R 4.6.1; ; 2026-09-11 12:43:06 UTC; unix"                   `\
-`#> survival          "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:46:39 UTC; unix"`\
-`#> tcltk             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:43:06 UTC; unix"`\
-`#> tools             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:41:20 UTC; unix"`\
-`#> utils             "R 4.6.1; x86_64-pc-linux-gnu; 2026-09-11 12:41:49 UTC; unix"`\
+`#> base              "R 4.6.1; ; 2026-10-15 15:51:01 UTC; unix"                   `\
+`#> boot              "R 4.6.1; ; 2026-10-15 15:55:20 UTC; unix"                   `\
+`#> class             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:40 UTC; unix"`\
+`#> cluster           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:24 UTC; unix"`\
+`#> codetools         "R 4.6.1; ; 2026-10-15 15:55:28 UTC; unix"                   `\
+`#> compiler          "R 4.6.1; ; 2026-10-15 15:49:02 UTC; unix"                   `\
+`#> datasets          "R 4.6.1; ; 2026-10-15 15:50:35 UTC; unix"                   `\
+`#> foreign           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:30 UTC; unix"`\
+`#> graphics          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:49:51 UTC; unix"`\
+`#> grDevices         "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:49:43 UTC; unix"`\
+`#> grid              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:49 UTC; unix"`\
+`#> KernSmooth        "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:34 UTC; unix"`\
+`#> lattice           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:52:00 UTC; unix"`\
+`#> MASS              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:51:54 UTC; unix"`\
+`#> Matrix            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:52:09 UTC; unix"`\
+`#> methods           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:36 UTC; unix"`\
+`#> mgcv              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:45 UTC; unix"`\
+`#> nlme              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:54:39 UTC; unix"`\
+`#> nnet              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:41 UTC; unix"`\
+`#> parallel          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:51:00 UTC; unix"`\
+`#> rpart             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:36 UTC; unix"`\
+`#> spatial           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:43 UTC; unix"`\
+`#> splines           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:57 UTC; unix"`\
+`#> stats             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:01 UTC; unix"`\
+`#> stats4            "R 4.6.1; ; 2026-10-15 15:50:58 UTC; unix"                   `\
+`#> survival          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:54:53 UTC; unix"`\
+`#> tcltk             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:59 UTC; unix"`\
+`#> tools             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:49:02 UTC; unix"`\
+`#> utils             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:49:34 UTC; unix"`\
 `#>                   Published`\
 `#> rProject          NA       `\
 `#> askpass           NA       `\
