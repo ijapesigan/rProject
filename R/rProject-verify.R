@@ -9,6 +9,11 @@
 #'   (`.verify` is stale, or there was no new push). Nothing is recorded.
 #' - **Listed files:** a file listed under "Files to update in Overleaf"
 #'   is missing from or differs in the private repository.
+#'   The list is the one of the pushed commit: the section of the log
+#'   with a code block that starts with the commit's first line (the
+#'   top-level lists for the log's own commit message; the lists inside a
+#'   later push's `##` section, none for a push of records only). If no
+#'   block matches, every list in the log is used.
 #' - **Deletions:** a file listed under "Delete in Overleaf"
 #'   is still in the private repository.
 #' - **Unlisted changes:** (warning only) other files differ
@@ -95,9 +100,15 @@ Verify <- function(path,
       call. = FALSE
     )
   }
+  message_body <- .VerifyGit(
+    private = private,
+    args = c("log", "-1", "--format=%B")
+  )
+  # the file list of this push (by its commit message), else every list
   listed <- .VerifyLogFiles(
     log_file = log_file,
-    project = .VerifyProject(path = path)
+    project = .VerifyProject(path = path),
+    subject = message_body[1]
   )
   upload <- listed$file[listed$action == "upload"]
   delete <- listed$file[listed$action == "delete"]
@@ -126,10 +137,6 @@ Verify <- function(path,
   sha <- .VerifyGit(
     private = private,
     args = c("rev-parse", "--short", "HEAD")
-  )
-  message_body <- .VerifyGit(
-    private = private,
-    args = c("log", "-1", "--format=%B")
   )
   # a commit already in index.md means a stale clone or no new push
   recorded <- .VerifyRecorded(

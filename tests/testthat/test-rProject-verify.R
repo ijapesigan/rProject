@@ -369,6 +369,70 @@ lapply(
         unlink(file)
       }
     )
+    # 8. the file list of the pushed commit only
+    testthat::test_that(
+      paste(text, "reads the file list of the pushed commit"),
+      {
+        file <- tempfile(fileext = ".md")
+        writeLines(
+          text = c(
+            "# 2026-01-01: topic",
+            "## Commit message (paste only the block below)",
+            "```",
+            "First change set",
+            "",
+            "Log: .setup/logs/2026-01-01-topic.md",
+            "```",
+            "## Files to update in Overleaf",
+            "### Edited",
+            "- R/a.R",
+            "- .setup/logs/index.md",
+            "## Second push",
+            "### Commit message",
+            "```",
+            "Second change set",
+            "```",
+            "### Files to update in Overleaf",
+            "- R/b.R",
+            "## Record push (fix-up)",
+            "```",
+            "Record the second push",
+            "```",
+            "## Needs compute node"
+          ),
+          con = file
+        )
+        first <- .VerifyLogFiles(
+          log_file = file,
+          project = "proj",
+          subject = "First change set"
+        )
+        testthat::expect_equal(first$file, c("R/a.R", ".setup/logs/index.md"))
+        second <- .VerifyLogFiles(
+          log_file = file,
+          project = "proj",
+          subject = "Second change set"
+        )
+        testthat::expect_equal(second$file, "R/b.R")
+        record <- .VerifyLogFiles(
+          log_file = file,
+          project = "proj",
+          subject = "Record the second push"
+        )
+        testthat::expect_equal(nrow(record), 0L)
+        # no block with the subject: every list, as before
+        other <- .VerifyLogFiles(
+          log_file = file,
+          project = "proj",
+          subject = "Edited on Overleaf"
+        )
+        testthat::expect_equal(
+          other$file,
+          c("R/a.R", ".setup/logs/index.md", "R/b.R")
+        )
+        unlink(file)
+      }
+    )
   },
   text = "test-rProject-verify"
 )
