@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.50</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.51</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,22 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.51" id="rproject-0051">rProject 0.0.51<a class="anchor" aria-label="anchor" href="#rproject-0051"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-51">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-51"></a></h3>
+<ul><li>
+<code>.setup/scripts/build-docs.sh</code> runs detached (<code>setsid nohup</code>, so it survives an SSH disconnect or the end of the agent’s session) and writes a status file next to its log (<code>running &lt;pid&gt; &lt;host&gt; &lt;start&gt;</code>, then <code>done</code> or <code>STOPPED: &lt;reason&gt;</code>, also when it is killed). It refuses to start while another run is running. <code>--images-only</code> builds <code>docs.sif</code> and <code>docs-plus.sif</code> alone, without a push. It checks rProject in both images with <code>Rscript --vanilla</code> from <code>/</code> (a project <code>.Rprofile</code> could hide it) and stops before the rename on a version mismatch.</li>
+<li>Global instructions: “build docs” and “build docs only” start the script detached and watch its status file; a new keyword, “build sif” (<code>--images-only</code>).</li>
+<li>
+<code>.setup/scripts/o2g-watch.sh</code> (rProject only, run on the host): after an upload folder, the agent watches the private repository (<code>git ls-remote</code> every 60 seconds, up to 8 hours) and verifies and records the push when a commit with the expected first line lands, without the user’s “O2G” (global instructions).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="patch-0-0-51">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-51"></a></h3>
+<ul><li>
+<code><a href="../reference/Verify.html">Verify()</a></code> reads only the file list of the pushed commit: the log section with a code block that starts with the commit’s first line (the top-level lists for the log’s own commit message; the lists inside a later push’s <code>##</code> section, none for a push of records only). Before, it read every list in the log, so a later push in the same log failed “Listed files” on files of an earlier list that had changed since. If no block matches, every list is used, as before.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.50" id="rproject-0050">rProject 0.0.50<a class="anchor" aria-label="anchor" href="#rproject-0050"></a></h2>
 <div class="section level3">

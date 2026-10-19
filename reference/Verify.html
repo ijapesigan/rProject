@@ -9,7 +9,7 @@ against the change-set log in .setup/logs."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.50</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.51</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,7 +102,12 @@ with the columns <code>check</code>, <code>status</code>, and <code>detail</code
     <p>The checks, and when each fails:</p><ul><li><p><strong>New commit:</strong> the commit is already recorded in <code>index.md</code>
 (<code>.verify</code> is stale, or there was no new push). Nothing is recorded.</p></li>
 <li><p><strong>Listed files:</strong> a file listed under "Files to update in Overleaf"
-is missing from or differs in the private repository.</p></li>
+is missing from or differs in the private repository.
+The list is the one of the pushed commit: the section of the log
+with a code block that starts with the commit's first line (the
+top-level lists for the log's own commit message; the lists inside a
+later push's <code>##</code> section, none for a push of records only). If no
+block matches, every list in the log is used.</p></li>
 <li><p><strong>Deletions:</strong> a file listed under "Delete in Overleaf"
 is still in the private repository.</p></li>
 <li><p><strong>Unlisted changes:</strong> (warning only) other files differ

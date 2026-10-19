@@ -1,5 +1,38 @@
 # Changelog
 
+## rProject 0.0.51
+
+### Minor
+
+- `.setup/scripts/build-docs.sh` runs detached (`setsid nohup`, so it
+  survives an SSH disconnect or the end of the agent’s session) and
+  writes a status file next to its log (`running <pid> <host> <start>`,
+  then `done` or `STOPPED: <reason>`, also when it is killed). It
+  refuses to start while another run is running. `--images-only` builds
+  `docs.sif` and `docs-plus.sif` alone, without a push. It checks
+  rProject in both images with `Rscript --vanilla` from `/` (a project
+  `.Rprofile` could hide it) and stops before the rename on a version
+  mismatch.
+- Global instructions: “build docs” and “build docs only” start the
+  script detached and watch its status file; a new keyword, “build sif”
+  (`--images-only`).
+- `.setup/scripts/o2g-watch.sh` (rProject only, run on the host): after
+  an upload folder, the agent watches the private repository
+  (`git ls-remote` every 60 seconds, up to 8 hours) and verifies and
+  records the push when a commit with the expected first line lands,
+  without the user’s “O2G” (global instructions).
+
+### Patch
+
+- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  reads only the file list of the pushed commit: the log section with a
+  code block that starts with the commit’s first line (the top-level
+  lists for the log’s own commit message; the lists inside a later
+  push’s `##` section, none for a push of records only). Before, it read
+  every list in the log, so a later push in the same log failed “Listed
+  files” on files of an earlier list that had changed since. If no block
+  matches, every list is used, as before.
+
 ## rProject 0.0.50
 
 ### Minor
