@@ -9,6 +9,7 @@
       "^\\.setup/data-external/",
       "^\\.setup/data-cache/",
       "^\\.setup/repo/",
+      "^\\.setup/todo/",
       "(^|/)AGENTS\\.md$",
       "(^|/)CLAUDE(\\.local)?\\.md$",
       "(^|/)GEMINI\\.md$",

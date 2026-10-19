@@ -93,6 +93,7 @@ src/*.dll
 .setup/data-private/
 .setup/data-external/
 .setup/data-cache/
+.setup/todo/
 AGENTS.md
 CLAUDE.md
 .claude/

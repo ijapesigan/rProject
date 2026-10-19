@@ -1,3 +1,11 @@
+# rProject 0.0.49
+
+## Minor
+
+* `AI()` creates `.setup/todo/` (`todo.txt`, the user's to-do list, and a `.gitignore` that keeps the folder private) if and only if the folder does not exist, and the project's `AGENTS.md` lists it in the folder map. Agents read `todo.txt` when planning and never edit it (global instructions).
+* `Public()` and `Verify()` treat `.setup/todo/` as private: the public export fails if it is published. `Verify()` does not count changes under `.setup/todo/` as unlisted (the user edits the list on Overleaf at any time).
+* Global instructions (`.setup/ai/global/AGENTS.md`): how agents use `.setup/todo/todo.txt`; `.setup/todo/` among the private folders. The root `.gitignore` lists `.setup/todo/`.
+
 # rProject 0.0.48
 
 ## Patch
