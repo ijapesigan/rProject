@@ -1,5 +1,20 @@
 # Changelog
 
+## rProject 0.0.52
+
+### Patch
+
+- `.github/workflows/check-full.yml`: the R-CMD-check-full matrix drops
+  `windows-latest (3.6)` (below the minimum R of the template’s
+  packages) and `windows-latest (oldrel-4)` (r-lib/actions dropped it
+  too; RcppArmadillo code fails to link there), adds
+  `windows-latest (oldrel-1)` (CRAN’s r-oldrel-windows flavor), and
+  replaces `ubuntu-22.04-arm` with `ubuntu-26.04-arm` (devel and
+  release). The job sets `PKG_INCLUDE_LINKINGTO: true`, so pak builds
+  packages such as glmnet from source with their `LinkingTo`
+  dependencies. `use-public-rspm: true` is removed; it is the default in
+  `r-lib/actions/setup-r@v2`.
+
 ## rProject 0.0.51
 
 ### Minor
@@ -517,7 +532,7 @@
 ### Patch
 
 - Address
-  [`remotes::install_github()`](https://remotes.r-lib.org/reference/install_github.html)
+  [`remotes::install_github()`](https://rdrr.io/pkg/remotes/man/install_github.html)
   deprecation by using
   [`pak::pkg_install()`](https://pak.r-lib.org/reference/pkg_install.html).
 

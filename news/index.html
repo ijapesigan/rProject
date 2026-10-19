@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.51</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.52</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,14 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.52" id="rproject-0052">rProject 0.0.52<a class="anchor" aria-label="anchor" href="#rproject-0052"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-52">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-52"></a></h3>
+<ul><li>
+<code>.github/workflows/check-full.yml</code>: the R-CMD-check-full matrix drops <code>windows-latest (3.6)</code> (below the minimum R of the template’s packages) and <code>windows-latest (oldrel-4)</code> (r-lib/actions dropped it too; RcppArmadillo code fails to link there), adds <code>windows-latest (oldrel-1)</code> (CRAN’s r-oldrel-windows flavor), and replaces <code>ubuntu-22.04-arm</code> with <code>ubuntu-26.04-arm</code> (devel and release). The job sets <code>PKG_INCLUDE_LINKINGTO: true</code>, so pak builds packages such as glmnet from source with their <code>LinkingTo</code> dependencies. <code>use-public-rspm: true</code> is removed; it is the default in <code>r-lib/actions/setup-r@v2</code>.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.51" id="rproject-0051">rProject 0.0.51<a class="anchor" aria-label="anchor" href="#rproject-0051"></a></h2>
 <div class="section level3">
@@ -330,7 +338,7 @@
 <h2 class="pkg-version" data-toc-text="0.0.24" id="rproject-0024">rProject 0.0.24<a class="anchor" aria-label="anchor" href="#rproject-0024"></a></h2>
 <div class="section level3">
 <h3 id="patch-0-0-24">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-24"></a></h3>
-<ul><li>Address <code><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">remotes::install_github()</a></code> deprecation by using <code><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pak::pkg_install()</a></code>.</li>
+<ul><li>Address <code><a href="https://rdrr.io/pkg/remotes/man/install_github.html" class="external-link">remotes::install_github()</a></code> deprecation by using <code><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pak::pkg_install()</a></code>.</li>
 </ul></div>
 </div>
     <div class="section level2">
