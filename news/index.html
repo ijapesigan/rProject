@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.49</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.50</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,15 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.50" id="rproject-0050">rProject 0.0.50<a class="anchor" aria-label="anchor" href="#rproject-0050"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-50">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-50"></a></h3>
+<ul><li>
+<code>.setup/scripts/build-docs.sh</code> (rProject only, run on the host): “build docs” publishes the docker images in the order of <code>.setup/scripts/build-docs.txt</code> (the steps of <code>make auto</code> in a fresh download of each private repository; it waits for Make Project and “Docker Build and Push [multi]” before the next, retries failed multi jobs once, and stops at the first failure), then builds <code>docs.sif</code> and <code>docs-plus.sif</code> with docker-docs’ <code>run-def.sh</code> on one core into a staging folder and replaces an image only if it is not in use. <code>--only docker-docs</code> is “build docs only”; <code>DRY_RUN=1</code> pushes nothing. It first checks that the public rProject has the version in <code>DESCRIPTION</code>.</li>
+<li>Global instructions: the “build docs” and “build docs only” keywords.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.49" id="rproject-0049">rProject 0.0.49<a class="anchor" aria-label="anchor" href="#rproject-0049"></a></h2>
 <div class="section level3">
