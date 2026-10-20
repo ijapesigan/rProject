@@ -532,7 +532,7 @@
 ### Patch
 
 - Address
-  [`remotes::install_github()`](https://rdrr.io/pkg/remotes/man/install_github.html)
+  [`remotes::install_github()`](https://remotes.r-lib.org/reference/install_github.html)
   deprecation by using
   [`pak::pkg_install()`](https://pak.r-lib.org/reference/pkg_install.html).
 
