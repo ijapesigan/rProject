@@ -36,6 +36,10 @@ Returns the paths of the files that were written.
 | `AGENTS.md`            | `~/.copilot/copilot-instructions.md` |
 | `claude-settings.json` | `~/.claude/settings.json`            |
 
+`claude-settings.json` is merged into an existing `settings.json`: its
+keys win, permission rules are added to the existing ones, and other
+keys are kept.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan

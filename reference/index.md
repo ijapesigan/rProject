@@ -188,6 +188,9 @@
 - [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
   : Style Project
 
+- [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  : Write the Template Files
+
 - [`TinyTex()`](https://github.com/ijapesigan/rProject/reference/TinyTex.md)
   :
 

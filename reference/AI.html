@@ -9,7 +9,7 @@ on top of the global instructions installed by AIGlobal()."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.52</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.53</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,6 +87,8 @@ Created only if the folder does not exist.</p></li>
 <p>The project type comes from <code>type</code>,
 else from an <code>ai</code> list in <code>.setup/scripts/project.R</code>
 (e.g., <code>ai &lt;- list(type = c("manuscript", "simulation"))</code>),
+else from the template type in <code>.setup/scripts/project.R</code>
+(<code>type &lt;- "cran"</code>; see <code><a href="Template.html">Template()</a></code>),
 else it is detected:
 <code>"simulation"</code> if <code>.sim/README.md</code> (which describes the simulation)
 exists,

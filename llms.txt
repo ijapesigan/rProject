@@ -1,6 +1,6 @@
 # rProject
 
-Ivan Jacob Agaloos Pesigan 2026-10-20
+Ivan Jacob Agaloos Pesigan 2026-10-21
 
 ## Description
 
@@ -219,6 +219,9 @@ computing*. R Foundation for Statistical Computing.
 
 - [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
   : Style Project
+
+- [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  : Write the Template Files
 
 - [`TinyTex()`](https://github.com/ijapesigan/rProject/reference/TinyTex.md)
   :

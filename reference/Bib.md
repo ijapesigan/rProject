@@ -24,8 +24,10 @@ Bib(path, bib_lib = FALSE)
 
 - bib_lib:
 
-  Logical. If `bib_lib = TRUE`, build `bib.bib` from `lib-*` GitHub
-  repositories.
+  Logical. If `bib_lib = TRUE`, build `bib.bib` from the public `lib-*`
+  GitHub repositories (`make bib` does so in rProject,
+  `make bibrproject` anywhere). If none can be cloned, the previous
+  `bib.bib` is kept.
 
 ## Author
 

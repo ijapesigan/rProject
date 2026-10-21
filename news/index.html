@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.52</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.53</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,29 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.53" id="rproject-0053">rProject 0.0.53<a class="anchor" aria-label="anchor" href="#rproject-0053"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-53">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-53"></a></h3>
+<ul><li>
+<code><a href="../reference/Template.html">Template()</a></code> (new; <code>make template</code>, and <code>make project</code> runs it) writes the template files of the project’s type from rProject’s <code>inst/template/</code>, so a template change reaches a project with <code>make</code> and no Overleaf refresh. The type is a new line in <code>.setup/scripts/project.R</code> (<code>type &lt;- "cran"</code>; one of <code>"rProject"</code>, <code>"cran"</code>, <code>"man"</code>, <code>"lib"</code>, <code>"talk"</code>, <code>"docker"</code>). Tier 2 files (workflows, scripts, …) are written when missing or different, and an overwritten file is named. Tier 1 files (<code>Makefile</code>, <code>latexmkrc</code>, the LaTeX preamble, …) stay Overleaf links: <code><a href="../reference/Template.html">Template()</a></code> lists the ones that differ as links to refresh. <code>check = TRUE</code> writes nothing. Nothing is written in GitHub Actions. <code>inst/template/manifest.tsv</code> lists the files; <code>inst/template/README.md</code> explains the layout and the sources. The apa7 class is not a template: manuscripts use the copy in the TeX distribution (CTAN), and the man projects drop their <code>.setup/latex/apa7/</code> during the rollout.</li>
+<li>
+<code>make project</code> writes the template files first when <code>.setup/scripts/make-project.R</code> is missing (a fresh copy from Overleaf), using the image’s rProject.</li>
+<li>
+<code><a href="../reference/Verify.html">Verify()</a></code> skips the tier 2 template files of the project’s type: they are written by make and are not uploaded.</li>
+<li>
+<code><a href="../reference/AI.html">AI()</a></code> reads the project type from the <code>type</code> line in <code>project.R</code> when it is present.</li>
+<li>
+<code><a href="../reference/AIGlobal.html">AIGlobal()</a></code> merges <code>claude-settings.json</code> into an existing <code>~/.claude/settings.json</code>: its keys win, permission rules are added to the existing ones, and other keys (e.g., an MCP allow, <code>autoMode</code>) are kept. Before, it replaced the file.</li>
+<li>Docker, lib, and manuscript templates now live in rProject (<code>inst/template/docker</code>, <code>lib</code>, <code>man</code>).</li>
+<li>rProject’s <code>make bib</code> (so <code>make all</code>) rebuilds <code>bib.bib</code> from the public <code>lib-*</code> repositories (<code>Bib(bib_lib = TRUE)</code>; the Makefile checks <code>type &lt;- "rProject"</code> in <code>project.R</code>); other projects are unchanged. If no repository can be cloned (e.g., offline), the previous <code>bib.bib</code> is kept, with a warning.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="patch-0-0-53">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-53"></a></h3>
+<ul><li>
+<code><a href="../reference/BibLib.html">BibLib()</a></code> clones without the user’s git config (<code>GIT_CONFIG_GLOBAL=/dev/null</code>; a config that rewrites https to ssh made the clones hang in the container), never prompts, clones shallow and quietly, and copies only the <code>lib-*.bib</code> entries (before, a clone’s own <code>quarto.bib</code> was left in <code>.setup/latex/bib/</code>). The <code>bib</code> target sets the same git environment, so it also works with an older installed rProject.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.52" id="rproject-0052">rProject 0.0.52<a class="anchor" aria-label="anchor" href="#rproject-0052"></a></h2>
 <div class="section level3">

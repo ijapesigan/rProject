@@ -25,7 +25,7 @@ LibCheck() validates them with biber."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.52</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.53</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,7 +87,9 @@ Project path.</p></dd>
 <dt id="arg-bib-lib">bib_lib<a class="anchor" aria-label="anchor" href="#arg-bib-lib"></a></dt>
 <dd><p>Logical.
 If <code>bib_lib = TRUE</code>,
-build <code>bib.bib</code> from <code>lib-*</code> GitHub repositories.</p></dd>
+build <code>bib.bib</code> from the public <code>lib-*</code> GitHub repositories
+(<code>make bib</code> does so in rProject, <code>make bibrproject</code> anywhere).
+If none can be cloned, the previous <code>bib.bib</code> is kept.</p></dd>
 
 </dl></div>
     <div class="section level2">

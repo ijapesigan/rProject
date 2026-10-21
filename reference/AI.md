@@ -45,10 +45,12 @@ build).
 
 The project type comes from `type`, else from an `ai` list in
 `.setup/scripts/project.R` (e.g.,
-`ai <- list(type = c("manuscript", "simulation"))`), else it is
-detected: `"simulation"` if `.sim/README.md` (which describes the
-simulation) exists, `"manuscript"` if a `*-manuscript*.Rtex` exists or
-the name starts with `man`, `"package"` and `"cran"` for a `cran-*`
+`ai <- list(type = c("manuscript", "simulation"))`), else from the
+template type in `.setup/scripts/project.R` (`type <- "cran"`; see
+[`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)),
+else it is detected: `"simulation"` if `.sim/README.md` (which describes
+the simulation) exists, `"manuscript"` if a `*-manuscript*.Rtex` exists
+or the name starts with `man`, `"package"` and `"cran"` for a `cran-*`
 folder (its `project.R` names the package), `"library"` for `lib-*`,
 `"talk"` for `talks*`, `"container"` for `docker-*`, otherwise
 `"package"`.
