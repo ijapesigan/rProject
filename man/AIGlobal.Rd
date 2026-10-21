@@ -32,6 +32,11 @@ Existing files that differ are backed up with the suffix \code{.bak}.
    \code{AGENTS.md} \tab \verb{~/.copilot/copilot-instructions.md} \cr
    \code{claude-settings.json} \tab \verb{~/.claude/settings.json} \cr
 }
+
+
+\code{claude-settings.json} is merged into an existing \code{settings.json}:
+its keys win, permission rules are added to the existing ones,
+and other keys are kept.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

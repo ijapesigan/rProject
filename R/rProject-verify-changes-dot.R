@@ -54,6 +54,15 @@
     out[!grepl(pattern = skip, x = out)]
   }
   candidates <- sort(union(files(path), files(private)))
+  # tier 2 template files are written by make (Template()), not uploaded
+  type <- .TemplateType(path = path)
+  if (!is.null(type)) {
+    files <- .TemplateFiles(type = type)
+    candidates <- setdiff(
+      candidates,
+      files$path[files$tier == "2"]
+    )
+  }
   status <- vapply(
     X = candidates,
     FUN = function(file) {

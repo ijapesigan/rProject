@@ -40,6 +40,8 @@ All of them are private (gitignored and excluded from the package build).
 The project type comes from \code{type},
 else from an \code{ai} list in \code{.setup/scripts/project.R}
 (e.g., \code{ai <- list(type = c("manuscript", "simulation"))}),
+else from the template type in \code{.setup/scripts/project.R}
+(\code{type <- "cran"}; see \code{\link[=Template]{Template()}}),
 else it is detected:
 \code{"simulation"} if \code{.sim/README.md} (which describes the simulation)
 exists,

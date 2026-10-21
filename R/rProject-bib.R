@@ -15,7 +15,9 @@
 #'
 #' @param bib_lib Logical.
 #'   If `bib_lib = TRUE`,
-#'   build `bib.bib` from `lib-*` GitHub repositories.
+#'   build `bib.bib` from the public `lib-*` GitHub repositories
+#'   (`make bib` does so in rProject, `make bibrproject` anywhere).
+#'   If none can be cloned, the previous `bib.bib` is kept.
 #' @inheritParams LibPaths
 #' @export
 Bib <- function(path,
@@ -26,7 +28,16 @@ Bib <- function(path,
     "latex",
     "bib"
   )
+  latex_bib <- file.path(
+    latex_bib_dir,
+    "bib.bib"
+  )
   if (bib_lib) {
+    # kept in case the lib-* repositories cannot be cloned (e.g., offline)
+    previous <- NULL
+    if (file.exists(latex_bib)) {
+      previous <- readLines(con = latex_bib, warn = FALSE)
+    }
     unlink(
       x = c(
         list.files(
@@ -50,11 +61,24 @@ Bib <- function(path,
       )
     )
     BibLib(path = path)
+    cloned <- list.files(
+      path = latex_bib_dir,
+      pattern = "^lib-.*\\.bib$"
+    )
+    if (length(cloned) == 0L && !is.null(previous)) {
+      writeLines(
+        text = previous,
+        con = latex_bib
+      )
+      warning(
+        paste0(
+          "\n\nThe lib-* repositories could not be cloned;",
+          " keeping the previous bib.bib.\n\n"
+        ),
+        call. = FALSE
+      )
+    }
   }
-  latex_bib <- file.path(
-    latex_bib_dir,
-    "bib.bib"
-  )
   bib_src <- list.files(
     path = latex_bib_dir,
     pattern = ".*\\.bib$",
