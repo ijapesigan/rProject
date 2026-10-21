@@ -1,3 +1,19 @@
+# rProject 0.0.53
+
+## Minor
+
+* `Template()` (new; `make template`, and `make project` runs it) writes the template files of the project's type from rProject's `inst/template/`, so a template change reaches a project with `make` and no Overleaf refresh. The type is a new line in `.setup/scripts/project.R` (`type <- "cran"`; one of `"rProject"`, `"cran"`, `"man"`, `"lib"`, `"talk"`, `"docker"`). Tier 2 files (workflows, scripts, ...) are written when missing or different, and an overwritten file is named. Tier 1 files (`Makefile`, `latexmkrc`, the LaTeX preamble, ...) stay Overleaf links: `Template()` lists the ones that differ as links to refresh. `check = TRUE` writes nothing. Nothing is written in GitHub Actions. `inst/template/manifest.tsv` lists the files; `inst/template/README.md` explains the layout and the sources. The apa7 class is not a template: manuscripts use the copy in the TeX distribution (CTAN), and the man projects drop their `.setup/latex/apa7/` during the rollout.
+* `make project` writes the template files first when `.setup/scripts/make-project.R` is missing (a fresh copy from Overleaf), using the image's rProject.
+* `Verify()` skips the tier 2 template files of the project's type: they are written by make and are not uploaded.
+* `AI()` reads the project type from the `type` line in `project.R` when it is present.
+* `AIGlobal()` merges `claude-settings.json` into an existing `~/.claude/settings.json`: its keys win, permission rules are added to the existing ones, and other keys (e.g., an MCP allow, `autoMode`) are kept. Before, it replaced the file.
+* Docker, lib, and manuscript templates now live in rProject (`inst/template/docker`, `lib`, `man`).
+* rProject's `make bib` (so `make all`) rebuilds `bib.bib` from the public `lib-*` repositories (`Bib(bib_lib = TRUE)`; the Makefile checks `type <- "rProject"` in `project.R`); other projects are unchanged. If no repository can be cloned (e.g., offline), the previous `bib.bib` is kept, with a warning.
+
+## Patch
+
+* `BibLib()` clones without the user's git config (`GIT_CONFIG_GLOBAL=/dev/null`; a config that rewrites https to ssh made the clones hang in the container), never prompts, clones shallow and quietly, and copies only the `lib-*.bib` entries (before, a clone's own `quarto.bib` was left in `.setup/latex/bib/`). The `bib` target sets the same git environment, so it also works with an older installed rProject.
+
 # rProject 0.0.52
 
 ## Patch

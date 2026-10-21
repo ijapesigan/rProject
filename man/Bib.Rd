@@ -12,7 +12,9 @@ Project path.}
 
 \item{bib_lib}{Logical.
 If \code{bib_lib = TRUE},
-build \code{bib.bib} from \verb{lib-*} GitHub repositories.}
+build \code{bib.bib} from the public \verb{lib-*} GitHub repositories
+(\verb{make bib} does so in rProject, \verb{make bibrproject} anywhere).
+If none can be cloned, the previous \code{bib.bib} is kept.}
 }
 \description{
 Joins the \code{.bib} files in \code{.setup/latex/bib} into \code{bib.bib},

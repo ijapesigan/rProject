@@ -14,6 +14,10 @@
 #' | `AGENTS.md` | `~/.copilot/copilot-instructions.md` |
 #' | `claude-settings.json` | `~/.claude/settings.json` |
 #'
+#' `claude-settings.json` is merged into an existing `settings.json`:
+#' its keys win, permission rules are added to the existing ones,
+#' and other keys are kept.
+#'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
@@ -73,15 +77,50 @@ AIGlobal <- function(path,
     )
   )
   if (file.exists(settings)) {
+    settings_file <- file.path(home, ".claude", "settings.json")
+    settings_text <- readLines(
+      con = settings,
+      warn = FALSE
+    )
+    # merge into the installed settings: keys and permission rules
+    # added on this machine (e.g., an MCP allow) are kept
+    if (file.exists(settings_file)) {
+      installed <- tryCatch(
+        expr = jsonlite::fromJSON(
+          txt = settings_file,
+          simplifyVector = FALSE
+        ),
+        error = function(e) {
+          NULL
+        }
+      )
+      if (!is.null(installed)) {
+        settings_text <- strsplit(
+          x = as.character(
+            jsonlite::toJSON(
+              x = .AIGlobalMerge(
+                existing = installed,
+                source = jsonlite::fromJSON(
+                  txt = settings,
+                  simplifyVector = FALSE
+                )
+              ),
+              auto_unbox = TRUE,
+              pretty = TRUE,
+              null = "null"
+            )
+          ),
+          split = "\n",
+          fixed = TRUE
+        )[[1]]
+      }
+    }
     targets <- c(
       targets,
       list(
         list(
-          file = file.path(home, ".claude", "settings.json"),
-          text = readLines(
-            con = settings,
-            warn = FALSE
-          )
+          file = settings_file,
+          text = settings_text
         )
       )
     )

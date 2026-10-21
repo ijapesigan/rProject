@@ -63,12 +63,21 @@ BibLib <- function(path) {
     expr = clean(libs = libs, path = path),
     add = TRUE
   )
-  # clone into the bib folder, without changing the working directory
+  # clone into the bib folder, without changing the working directory;
+  # without the user's git config (it may rewrite https to ssh, which
+  # waits for a key or a prompt), and never prompt
   for (i in seq_along(libs)) {
     system2(
       command = "git",
+      env = c(
+        "GIT_CONFIG_GLOBAL=/dev/null",
+        "GIT_TERMINAL_PROMPT=0"
+      ),
       args = c(
         "clone",
+        "--depth",
+        "1",
+        "--quiet",
         paste0(
           "https://github.com/ijapesigan/",
           libs[i],
@@ -83,9 +92,10 @@ BibLib <- function(path) {
       )
     )
   }
+  # the entries only (a clone also holds its own bib.bib and quarto.bib)
   bib_src <- list.files(
     path = latex_bib_dir,
-    pattern = ".*\\.bib$",
+    pattern = "^lib-.*\\.bib$",
     all.files = TRUE,
     full.names = TRUE,
     recursive = TRUE,

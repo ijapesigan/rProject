@@ -1,0 +1,12 @@
+https://cran.r-project.org/web/packages/credentials/vignettes/intro.html#:~:text=The%20credentials%20package%20contains%20tools,authenticate%20with%20existing%20user%20credentials.
+
+git config --global user.email "learn.jeksterslab@gmail.com"
+git config --global user.name "jeksterslab"
+
+credentials::credential_helper_get()
+credentials::git_credential_ask('https://example.com')
+credentials::git_credential_update('https://example.com')
+credentials::set_github_pat()
+credentials::ssh_key_info()
+
+ssh-keygen -t rsa -b 4096 -C "learn.jeksterslab@gmail.com"

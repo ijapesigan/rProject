@@ -323,6 +323,12 @@ rProject::License(
   path = path,
   type = license
 )
+# template files of the project's type (rProject 0.0.53 or later)
+if (exists("Template", envir = asNamespace("rProject"))) {
+  rProject::Template(
+    path = path
+  )
+}
 # per-project AI instructions (rProject 0.0.34 or later)
 if (exists("AI", envir = asNamespace("rProject"))) {
   rProject::AI(

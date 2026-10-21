@@ -18,9 +18,14 @@
 #' |                    | written by `rProject::AI()`, e.g.,                  |
 #' |                    | `list(type = c("manuscript", "simulation"))`.       |
 #' |                    | Types are detected when omitted.                    |
+#' | `type`             | Template type for `rProject::Template()`: one of    |
+#' |                    | `"rProject"`, `"cran"`, `"man"`, `"lib"`,           |
+#' |                    | `"talk"`, `"docker"`.                               |
 #'
 
 project <- "rProject"
+
+type <- "rProject"
 
 rproject_ver <- NULL
 

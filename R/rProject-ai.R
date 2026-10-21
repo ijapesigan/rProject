@@ -18,6 +18,8 @@
 #' The project type comes from `type`,
 #' else from an `ai` list in `.setup/scripts/project.R`
 #' (e.g., `ai <- list(type = c("manuscript", "simulation"))`),
+#' else from the template type in `.setup/scripts/project.R`
+#' (`type <- "cran"`; see [Template()]),
 #' else it is detected:
 #' `"simulation"` if `.sim/README.md` (which describes the simulation)
 #' exists,

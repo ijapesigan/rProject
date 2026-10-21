@@ -1,10 +1,15 @@
-.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log sizecheck public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes
+.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log sizecheck template public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes
 
 push: build docs latex coverage cleanpush
 
 project:
 	@echo "\n\nBuilding project...\n\n"
+	@test -f .setup/scripts/make-project.R || Rscript -e "rProject::Template(\"${PWD}\")"
 	@Rscript .setup/scripts/make-project.R ${PWD}
+
+template:
+	@echo "\n\nWriting template files...\n\n"
+	@Rscript -e "rProject::Template(\"${PWD}\")"
 
 pkg:
 	@echo "\n\nInstalling packages...\n\n"
@@ -39,9 +44,12 @@ cleanproj:
 	@echo "\n\nCleaning project...\n\n"
 	@Rscript -e "rProject::CleanProj(\"${PWD}\")"
 
+# rProject (type <- "rProject" in project.R) rebuilds bib.bib
+# from the public lib-* repositories at every build; git runs without
+# the user's config (it may rewrite https to ssh) and never prompts
 bib:
-	@echo "\n\nCleaning project...\n\n"
-	@Rscript -e "rProject::Bib(\"${PWD}\", bib_lib = FALSE)"
+	@echo "\n\nBuilding bib.bib...\n\n"
+	@GIT_CONFIG_GLOBAL=/dev/null GIT_TERMINAL_PROMPT=0 Rscript -e "rProject::Bib(\"${PWD}\", bib_lib = $$(grep -q '^type <- \"rProject\"' .setup/scripts/project.R && echo TRUE || echo FALSE))"
 
 libcheck:
 	@echo "\n\nChecking the lib-* entries...\n\n"
