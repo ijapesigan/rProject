@@ -3,8 +3,13 @@
 
 - This project builds a Docker image. `Dockerfile` and `scripts/` are specific
   to this image; `scripts/setup.sh` runs the other scripts in order.
-- The workflows in `.github/workflows/` are linked from rProject
-  (`.setup/docker/.github/workflows/`). Change them there, not here.
+- The workflows in `.github/workflows/` are written by `make`
+  (`rProject::Template()`) from rProject's `inst/template/`: `make`,
+  `shellcheck`, and `non-ascii-check` for every image, plus the ones named
+  in `workflows` in `.setup/scripts/project.R` (the catalog is
+  `inst/template/workflows/`). The daily build's title, cron, and file
+  suffix are `workflow_title`, `workflow_cron`, and `workflow_daily`.
+  Change workflows in rProject, not here.
 - Images build for linux/amd64 and linux/arm64. Every download must pick the
   right binary for `uname -m`; skip software that has no arm64 build (and say
   so in the build log) instead of installing the x86_64 one.

@@ -1,0 +1,211 @@
+---
+title: "How an rProject Project Works"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How an rProject Project Works}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+template <- system.file("template", package = "rProject")
+folders <- utils::read.delim(
+  file = file.path(template, "folders.tsv"),
+  colClasses = "character",
+  quote = ""
+)
+```
+
+Every project is an R project built from the rProject template:
+a CRAN package, a manuscript, a library of references, a talk, or a
+container image.
+This vignette describes how such a project is laid out,
+which files `make` writes,
+and how a change travels from Overleaf to the public repository.
+It is written for the user, for co-authors, and for AI agents.
+
+## Types
+
+The type is a line in `.setup/scripts/project.R`, for example
+`type <- "cran"`.
+Each type uses a few sets of template files
+(`inst/template/<set>/`).
+
+```{r}
+#| echo = FALSE
+sets <- rProject:::.TemplateSets()
+knitr::kable(
+  data.frame(
+    type = names(sets),
+    sets = vapply(
+      X = sets,
+      FUN = paste,
+      FUN.VALUE = character(1),
+      collapse = ", "
+    ),
+    use = c(
+      "rProject itself",
+      "R packages (cran-*, devel-*)",
+      "manuscripts (man*), which are R packages too",
+      "biblatex libraries (lib-*)",
+      "talks",
+      "container images (docker-*)"
+    )
+  ),
+  row.names = FALSE
+)
+```
+
+## Folders
+
+The standard folders, the types that have them, and what they are for
+(`inst/template/folders.tsv`).
+Private folders stay on Overleaf and in the private repository;
+they never go public.
+`make` creates the folders marked "created" (with an empty `.gitignore`);
+the others appear when they are needed.
+`make tree` lists the folders of a project and flags the ones that are
+missing or not standard for its type.
+
+```{r}
+#| echo = FALSE
+knitr::kable(
+  data.frame(
+    folder = paste0("`", folders$folder, "`"),
+    types = gsub(pattern = ",", replacement = ", ", x = folders$types),
+    private = ifelse(as.logical(folders$private), "yes", ""),
+    created = ifelse(as.logical(folders$create), "yes", ""),
+    purpose = folders$purpose
+  ),
+  row.names = FALSE
+)
+```
+
+Notes:
+
+- `.setup/notes/` is private.
+  Library projects keep the reference PDFs there.
+- `.setup/bin/` is optional:
+  `Binary()` runs its R scripts at `make project`
+  (for example, to build a bespoke binary).
+- Code coverage: to leave files out, put covr's `.covrignore` at the
+  project root and add it to `.Rbuildignore`
+  (`ignore` in `.setup/scripts/project.R`).
+- The naming rules for files in `R/`, `tests/testthat/`,
+  `.setup/r-dependencies/`, and the test folders are in the R style guide
+  (`.setup/latex/rProject-002-style-R.Rtex`).
+
+## Template files
+
+`rProject::Template()` (run by `make project` and `make template`)
+keeps the template files of a project in step with rProject.
+Each file has a tier:
+
+- **Tier 1, links.** Files that Overleaf or `make` needs
+  (`Makefile`, `latexmkrc`, the LaTeX preamble, ...).
+  They are linked into the Overleaf project from rProject's Overleaf
+  project.
+  `Template()` never writes them; it lists those that differ as links to
+  refresh.
+- **Tier 2, written by `make`.** Everything else: the workflows,
+  the make scripts, the Quarto pages, the folder skeleton.
+  `Template()` writes a file that is missing or differs
+  (the template wins: change it in rProject).
+  These files are not uploaded to Overleaf.
+
+Workflows that only some projects run are in a catalog
+(`inst/template/workflows/`).
+A project names the ones it runs in `project.R`:
+
+```r
+workflows <- c("docker-build-push-multi", "docker-build-push-daily-multi")
+workflow_daily <- "docs"
+workflow_title <- "Docker Build and Push Docs [multi] (Daily)"
+workflow_cron <- "30 3 * * *"
+```
+
+The daily docker workflow is written as
+`docker-build-push-daily-multi-<workflow_daily>.yml`,
+with its title and cron filled in.
+
+Files that leave the template are listed in
+`inst/template/removed.tsv`.
+`Template()` deletes them (a folder only when nothing but `.gitignore`
+files is left in it) and names them, so that they can be deleted in
+Overleaf too.
+
+```{r}
+#| echo = FALSE
+removed <- utils::read.delim(
+  file = file.path(template, "removed.tsv"),
+  colClasses = "character"
+)
+knitr::kable(
+  data.frame(
+    path = paste0("`", removed$path, "`"),
+    since = removed$since
+  ),
+  row.names = FALSE
+)
+```
+
+## From Overleaf to the public repository
+
+1. **Edit on Overleaf.**
+   Overleaf is the main editor.
+   Co-authors edit there.
+   Agents edit a local clone; the user uploads the changed files.
+2. **Log.**
+   Every change set (one Overleaf push) has a log in
+   `.setup/logs/YYYY-MM-DD-<topic>.md` (`make log`),
+   with the commit message and the files to upload or delete.
+3. **O2G.**
+   The user pushes from Overleaf to the private GitHub repository.
+   `make verify RECORD=TRUE` checks that the private repository matches
+   the local clone and records the push in the log and in
+   `.setup/logs/index.md`.
+4. **PUB.**
+   `make all` builds and checks everything;
+   `make auto` checks the public export
+   (no private files, nothing over 50 MB, no tokens)
+   and pushes to the public repository.
+
+## Make targets
+
+| Target | Does |
+|---|---|
+| `make project` | settings, template files, AI files |
+| `make all` | build, docs, LaTeX, pkgdown, Quarto, coverage |
+| `make lint` | style and lint the R code; report Overleaf limits |
+| `make sizecheck` | check Overleaf limits |
+| `make spec TOPIC=<topic>` | start a spec for a change set |
+| `make log TOPIC=<topic> SUMMARY="..."` | write the change-set log |
+| `make verify RECORD=TRUE` | verify and record a push from Overleaf |
+| `make auto` | publish to the public repository |
+| `make tree` | the project's folders and what each is for |
+| `make template` | write the template files only |
+| `make latex`, `make pdf` | knit and compile the LaTeX sources |
+
+R runs only inside an Apptainer image:
+`apptainer exec <image> make <target>`.
+
+## Keywords
+
+Short messages from the user to an AI agent:
+
+| Keyword | Means |
+|---|---|
+| "O2G" | the user pushed from Overleaf to GitHub: verify and record the push |
+| "PUB" | the user ran `make all` and `make auto`: check the public repository and its CI |
+| "build docs" | publish the docker images in order and rebuild the `docs` images |
+| "EX" | the user is leaving: update `.setup/notes/claude.txt` and the handoff |
+| "handoff" | rewrite `.setup/ai/handoff.md` without leaving |
+
+The private files that agents read (`AGENTS.md`, `.setup/ai/`) are
+written by `rProject::AI()`.

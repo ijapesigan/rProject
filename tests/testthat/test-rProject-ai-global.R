@@ -116,6 +116,34 @@ lapply(
       c(root, home),
       recursive = TRUE
     )
+    # in the source tree: the vignette's keywords match the global
+    # instructions (.setup/ai/global/AGENTS.md is private)
+    project <- file.path("..", "..")
+    global <- file.path(project, ".setup", "ai", "global", "AGENTS.md")
+    vignette <- file.path(project, "vignettes", "structure.Rmd")
+    if (file.exists(global) && file.exists(vignette)) {
+      testthat::test_that(
+        paste(text, "the vignette's keywords match the instructions"),
+        {
+          keywords <- function(lines, pattern) {
+            sub(
+              pattern = pattern,
+              replacement = "\\1",
+              x = grep(pattern = pattern, x = lines, value = TRUE)
+            )
+          }
+          defined <- keywords(
+            lines = readLines(global, warn = FALSE),
+            pattern = "^- \"([^\"]+)\".*"
+          )
+          listed <- keywords(
+            lines = readLines(vignette, warn = FALSE),
+            pattern = "^\\| \"([^\"]+)\" \\|.*"
+          )
+          testthat::expect_setequal(listed, c(defined, "handoff"))
+        }
+      )
+    }
   },
   text = "test-rProject-ai-global"
 )

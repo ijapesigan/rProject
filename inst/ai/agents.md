@@ -26,15 +26,6 @@ maintains (aims, data, notation, co-authors, open issues).
 
 | Folder | Contents |
 |---|---|
-| `R/` | package functions, one per file |
-| `tests/testthat/` | tests |
-| `.setup/scripts/` | `project.R` (project settings) and the make scripts |
-| `.setup/data-raw/` | shareable raw data |
-| `.setup/data-private/` | restricted data: never public |
-| `.setup/ai/` | specs, the plan, `project.md` (private) |
-| `.setup/logs/` | one log per Overleaf push, and `index.md` (private) |
-| `.setup/repo/` | where the project lives (private) |
-| `.setup/todo/` | `todo.txt`: the user's to-do list; read it when planning, never edit it (private) |
 {{folders}}
 
 ## Make targets
@@ -48,6 +39,7 @@ maintains (aims, data, notation, co-authors, open issues).
 | `make log TOPIC=<topic> SUMMARY="..."` | write the change-set log and its file list (`UPDATE=TRUE` refreshes the list) |
 | `make verify RECORD=TRUE` | after the user pushes from Overleaf (O2G): verify and record the push. On Roar, run `bash .setup/scripts/verify.sh` on the host first to pull. |
 | `make auto` | publish to the public repository (checks the export first) |
+| `make tree` | the project's folders and what each is for; flags missing and non-standard folders |
 {{targets}}
 
 ## Generated files: never edit by hand

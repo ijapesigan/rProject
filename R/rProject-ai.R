@@ -82,18 +82,9 @@ AI <- function(path,
         missing = "not recorded (`.setup/repo/public-github.md`)"
       )
     ),
-    folders = .AIRows(
-      type = type,
-      rows = list(
-        manuscript = paste(
-          "| `.setup/latex/` |",
-          "manuscript sources (`.Rtex`) and figures |"
-        ),
-        simulation = c(
-          "| `.sim/` | simulation scripts (SLURM, GNU Parallel) |",
-          "| `.sif/` | images or links to them (local only; never uploaded) |"
-        )
-      )
+    folders = .AIFolders(
+      path = path,
+      type = type
     ),
     targets = .AIRows(
       type = type,

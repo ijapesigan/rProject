@@ -19,12 +19,30 @@
 #'   file is named (the template wins; change it in rProject).
 #'   These files are not in Overleaf or the private repository.
 #'
+#' Besides the files of its sets, a project gets:
+#'
+#' - The workflows it chooses from the catalog
+#'   (`inst/template/workflows/`), named in `project.R`:
+#'   for example `workflows <- c("docker-build-push-multi")`.
+#'   The daily docker workflow (the one with `{{title}}`) is written as
+#'   `<workflow>-<workflow_daily>.yml`, with `{{title}}` and `{{cron}}`
+#'   filled from `workflow_title` and `workflow_cron` in `project.R`.
+#' - The folder skeleton of its type: an empty `.gitignore` in each
+#'   standard folder marked `create` in `inst/template/folders.tsv`, if
+#'   the folder has none.
+#'
+#' Files the template no longer has (`inst/template/removed.tsv`) are
+#' deleted and named, so that they can be deleted in Overleaf too. A
+#' folder on that list is deleted only when nothing but `.gitignore`
+#' files is left in it; otherwise it is named and kept. Nothing in a
+#' private folder is deleted.
+#'
 #' In rProject itself, the tier 1 files are copied into `inst/template/`
 #' first, and the tier 2 files are written from `inst/template/` in the
 #' project folder, not from the installed package.
 #'
-#' Nothing is written in GitHub Actions (`GITHUB_ACTIONS` is `"true"`):
-#' CI uses the files already in the public repository.
+#' Nothing is written or deleted in GitHub Actions (`GITHUB_ACTIONS` is
+#' `"true"`): CI uses the files already in the public repository.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -34,7 +52,9 @@
 #' @param check Logical.
 #'   If `TRUE`, write nothing and report what would change.
 #' @return Returns the paths of the tier 2 files that were written
-#'   (with `check = TRUE`, that would be written), invisibly.
+#'   (with `check = TRUE`, that would be written), invisibly, with the
+#'   deleted files (or those that would be deleted) in the attribute
+#'   `removed`.
 #' @export
 Template <- function(path,
                      type = NULL,

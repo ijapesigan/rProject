@@ -5,7 +5,20 @@
 - `<set>/`: the files of each set at their project paths. A path
   component `.x` is stored as `dot-x` (hidden files in `inst/` give an
   R CMD check note).
-- Sets per type: see `.TemplateSets()`.
+- Sets per type: see `.TemplateSets()`. `rproject` holds rProject's own
+  files (its extra workflows).
+- `workflows/`: the workflow catalog. A project names the ones it runs in
+  `project.R` (`workflows <- c(...)`). A workflow with `{{title}}` is the
+  daily docker build: written as `<name>-<workflow_daily>.yml`, with
+  `{{title}}` and `{{cron}}` filled from `workflow_title` and
+  `workflow_cron`.
+- `folders.tsv`: the standard folders (`folder`, `types`, `private`,
+  `create`, `writer`, `reader`, `purpose`). `Template()` creates the
+  folders marked `create` (an empty `.gitignore`); `AI()` writes the
+  AGENTS.md folder map from it; `make tree` and the vignette show it;
+  the public export check reads the private ones.
+- `removed.tsv`: files that left the template (`path`, `since`; a path
+  may be a glob, a folder ends in `/`). `Template()` deletes them.
 - Sources. Tier 2: these files (edit them here). Tier 1 that rProject
   uses itself (`common`, `package`, `cran`): rProject's own copy, which
   the projects link to; `make project` in rProject copies it here.

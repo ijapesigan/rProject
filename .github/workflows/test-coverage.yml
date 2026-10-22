@@ -27,13 +27,6 @@ jobs:
           extra-packages: any::covr, any::xml2
           needs: coverage
 
-      - name: .covignore
-        run: |
-          FILE=.setup/coverage/.covignore
-          if [[ -f "$FILE" ]]; then
-            cp "$FILE" .
-          fi
-
       - name: Test coverage
         run: |
           cov <- covr::package_coverage(

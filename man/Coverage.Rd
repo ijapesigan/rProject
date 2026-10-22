@@ -11,7 +11,9 @@ Coverage(path)
 Project path.}
 }
 \description{
-Code Coverage
+Runs \code{covr::package_coverage()} on the package. To leave files out,
+put covr's \code{.covrignore} at the project root (and add it to
+\code{.Rbuildignore} with \code{ignore} in \code{.setup/scripts/project.R}).
 }
 \author{
 Ivan Jacob Agaloos Pesigan

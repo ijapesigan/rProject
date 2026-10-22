@@ -37,7 +37,7 @@ lapply(
           any(grepl(pattern = "(^|/)dot-", x = all_paths))
         )
         testthat::expect_true(
-          all(file.exists(manifest$source))
+          all(file.exists(manifest$source[manifest$kind == "file"]))
         )
       }
     )
@@ -146,7 +146,68 @@ lapply(
         )
       }
     )
+    testthat::test_that(
+      paste(text, "keeps a folder's own .gitignore"),
+      {
+        own <- file.path(root, ".setup", "cpp", ".gitignore")
+        writeLines(text = "*.o", con = own)
+        suppressMessages(Template(path = root))
+        testthat::expect_equal(readLines(own), "*.o")
+      }
+    )
     unlink(root, recursive = TRUE)
+    docker <- project(type = "docker")
+    cat(
+      c(
+        "workflows <- c(\"docker-build-push-daily-multi\")",
+        "workflow_daily <- \"docs\"",
+        "workflow_title <- \"Docker Build and Push Docs [multi] (Daily)\"",
+        "workflow_cron <- \"30 3 * * *\""
+      ),
+      file = file.path(docker, ".setup", "scripts", "project.R"),
+      sep = "\n",
+      append = TRUE
+    )
+    testthat::test_that(
+      paste(text, "fills the daily workflow"),
+      {
+        suppressMessages(Template(path = docker))
+        daily <- readLines(
+          file.path(
+            docker,
+            ".github",
+            "workflows",
+            "docker-build-push-daily-multi-docs.yml"
+          )
+        )
+        testthat::expect_true(
+          "name: Docker Build and Push Docs [multi] (Daily)" %in% daily
+        )
+        testthat::expect_true("    - cron: \"30 3 * * *\"" %in% daily)
+        testthat::expect_false(any(grepl("{{title}}", daily, fixed = TRUE)))
+        testthat::expect_length(
+          suppressMessages(Template(path = docker, check = TRUE)),
+          0L
+        )
+      }
+    )
+    testthat::test_that(
+      paste(text, "stops when the daily workflow has no title"),
+      {
+        writeLines(
+          text = c(
+            "type <- \"docker\"",
+            "workflows <- \"docker-build-push-daily-multi\""
+          ),
+          con = file.path(docker, ".setup", "scripts", "project.R")
+        )
+        testthat::expect_error(
+          Template(path = docker),
+          regexp = "workflow_title"
+        )
+      }
+    )
+    unlink(docker, recursive = TRUE)
     Sys.setenv(GITHUB_ACTIONS = github_actions)
   },
   text = "test-rProject-template"
