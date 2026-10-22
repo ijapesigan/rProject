@@ -196,6 +196,9 @@
 
   Install `~/.TinyTex`
 
+- [`Tree()`](https://github.com/ijapesigan/rProject/reference/Tree.md) :
+  Project Folders and What They Are For
+
 - [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
   : Verify an Overleaf Push
 

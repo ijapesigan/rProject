@@ -1,5 +1,70 @@
 # Changelog
 
+## rProject 0.0.54
+
+### Minor
+
+- One template source: every workflow now lives in `inst/template/`.
+  rProject’s own workflows come from a new set, `rproject`
+  (`.TemplateSets()$rProject` is `common package cran rproject`), so
+  `make` writes rProject’s `.github/workflows/` too. `.setup/docker/`
+  (with `archive/`) and `.setup/lib/` are gone.
+- Workflow catalog (`inst/template/workflows/`): workflows that only
+  some projects run (docker builds, `make-topics`). A project names them
+  in `project.R` (`workflows <- c(...)`). The daily docker build is one
+  template, `docker-build-push-daily-multi.yml`, written as
+  `docker-build-push-daily-multi-<workflow_daily>.yml` with `{{title}}`
+  and `{{cron}}` filled from `workflow_title` and `workflow_cron`. Only
+  these keys are filled; other braces (e.g. `{{version}}`) are kept. An
+  unknown workflow name stops with the list of valid ones.
+  `docker-build-push-multi` moves from the `docker` set to the catalog.
+  `docker-build-push-daily-docs.yml` (unused) is dropped.
+- Shared workflows are the same for every type: `lint`,
+  `pkgdown-gh-pages`, and `source` move from `cran` to `package` (cran,
+  man, rProject); man and talk get the current versions (man’s
+  `make.yml` without `make bibrproject`).
+- Standard folders (`inst/template/folders.tsv`): each folder, its
+  types, whether it is private, who writes and reads it, and its
+  purpose.
+  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  creates the folder skeleton of the type (an empty `.gitignore` in each
+  folder marked `create`; an existing `.gitignore` is kept).
+- Removed files (`inst/template/removed.tsv`):
+  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  deletes files that left the template and names them (to delete in
+  Overleaf too); a folder is deleted only when nothing but `.gitignore`
+  files is left in it, and nothing in a private folder is touched.
+  0.0.54 removes `.devcontainer/`, `.setup/cran/`, `.setup/coverage/`,
+  `.setup/latex/apa7/`, `.setup/scripts/secrets.R`, and an empty
+  `.setup/bin/`.
+  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  returns the deleted files in the attribute `removed`.
+- [`Tree()`](https://github.com/ijapesigan/rProject/reference/Tree.md)
+  (new; `make tree`): the project’s folders and what each is for; flags
+  missing standard folders, and folders that are not standard for the
+  type.
+- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md): the
+  AGENTS.md folder map comes from `folders.tsv` for the project’s type;
+  `make tree` is in the make targets; the container section says
+  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  writes the workflows.
+- New vignette, “How an rProject Project Works”: types, folders,
+  template tiers, the Overleaf protocol, make targets, and keywords.
+- `.VerifyPublic()` (so `make auto` and
+  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md))
+  reads the private folders from `folders.tsv`; `.setup/notes/` and
+  `.setup/repo/` are added to the template `.gitignore`.
+- `.setup/latex/pdf/` is left out of the public export (cran
+  `.gitignore`); the CI builds it.
+- [`Coverage()`](https://github.com/ijapesigan/rProject/reference/Coverage.md)
+  no longer copies `.setup/coverage/.covrignore`, and
+  `test-coverage.yml` drops its `.covignore` step (a typo; it never
+  ran). Put covr’s `.covrignore` at the project root.
+- [`Binary()`](https://github.com/ijapesigan/rProject/reference/Binary.md)
+  stays: `.setup/bin/` is an optional folder for R scripts run at
+  `make project` (for example, to build a bespoke binary); `make` no
+  longer creates it.
+
 ## rProject 0.0.53
 
 ### Minor

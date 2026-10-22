@@ -228,6 +228,9 @@ computing*. R Foundation for Statistical Computing.
 
   Install `~/.TinyTex`
 
+- [`Tree()`](https://github.com/ijapesigan/rProject/reference/Tree.md) :
+  Project Folders and What They Are For
+
 - [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
   : Verify an Overleaf Push
 
@@ -245,5 +248,7 @@ computing*. R Foundation for Statistical Computing.
   Project](https://github.com/ijapesigan/rProject/articles/rProject.md):
 - [rProject:
   Session](https://github.com/ijapesigan/rProject/articles/session/session.md):
+- [How an rProject Project
+  Works](https://github.com/ijapesigan/rProject/articles/structure.md):
 - [Library
   Tags](https://github.com/ijapesigan/rProject/articles/tags.md):

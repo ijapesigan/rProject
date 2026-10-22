@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.53</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.54</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,7 @@
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/session/session.html">rProject: Session</a></li>
+    <li><a class="dropdown-item" href="../articles/structure.html">How an rProject Project Works</a></li>
     <li><a class="dropdown-item" href="../articles/tags.html">Library Tags</a></li>
   </ul></li>
 <li class="active nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
@@ -38,6 +39,30 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.54" id="rproject-0054">rProject 0.0.54<a class="anchor" aria-label="anchor" href="#rproject-0054"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-54">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-54"></a></h3>
+<ul><li>One template source: every workflow now lives in <code>inst/template/</code>. rProject’s own workflows come from a new set, <code>rproject</code> (<code>.TemplateSets()$rProject</code> is <code>common package cran rproject</code>), so <code>make</code> writes rProject’s <code>.github/workflows/</code> too. <code>.setup/docker/</code> (with <code>archive/</code>) and <code>.setup/lib/</code> are gone.</li>
+<li>Workflow catalog (<code>inst/template/workflows/</code>): workflows that only some projects run (docker builds, <code>make-topics</code>). A project names them in <code>project.R</code> (<code>workflows &lt;- c(...)</code>). The daily docker build is one template, <code>docker-build-push-daily-multi.yml</code>, written as <code>docker-build-push-daily-multi-&lt;workflow_daily&gt;.yml</code> with <code>{{title}}</code> and <code>{{cron}}</code> filled from <code>workflow_title</code> and <code>workflow_cron</code>. Only these keys are filled; other braces (e.g. <code>{{version}}</code>) are kept. An unknown workflow name stops with the list of valid ones. <code>docker-build-push-multi</code> moves from the <code>docker</code> set to the catalog. <code>docker-build-push-daily-docs.yml</code> (unused) is dropped.</li>
+<li>Shared workflows are the same for every type: <code>lint</code>, <code>pkgdown-gh-pages</code>, and <code>source</code> move from <code>cran</code> to <code>package</code> (cran, man, rProject); man and talk get the current versions (man’s <code>make.yml</code> without <code>make bibrproject</code>).</li>
+<li>Standard folders (<code>inst/template/folders.tsv</code>): each folder, its types, whether it is private, who writes and reads it, and its purpose. <code><a href="../reference/Template.html">Template()</a></code> creates the folder skeleton of the type (an empty <code>.gitignore</code> in each folder marked <code>create</code>; an existing <code>.gitignore</code> is kept).</li>
+<li>Removed files (<code>inst/template/removed.tsv</code>): <code><a href="../reference/Template.html">Template()</a></code> deletes files that left the template and names them (to delete in Overleaf too); a folder is deleted only when nothing but <code>.gitignore</code> files is left in it, and nothing in a private folder is touched. 0.0.54 removes <code>.devcontainer/</code>, <code>.setup/cran/</code>, <code>.setup/coverage/</code>, <code>.setup/latex/apa7/</code>, <code>.setup/scripts/secrets.R</code>, and an empty <code>.setup/bin/</code>. <code><a href="../reference/Template.html">Template()</a></code> returns the deleted files in the attribute <code>removed</code>.</li>
+<li>
+<code><a href="../reference/Tree.html">Tree()</a></code> (new; <code>make tree</code>): the project’s folders and what each is for; flags missing standard folders, and folders that are not standard for the type.</li>
+<li>
+<code><a href="../reference/AI.html">AI()</a></code>: the AGENTS.md folder map comes from <code>folders.tsv</code> for the project’s type; <code>make tree</code> is in the make targets; the container section says <code><a href="../reference/Template.html">Template()</a></code> writes the workflows.</li>
+<li>New vignette, “How an rProject Project Works”: types, folders, template tiers, the Overleaf protocol, make targets, and keywords.</li>
+<li>
+<code>.VerifyPublic()</code> (so <code>make auto</code> and <code><a href="../reference/Verify.html">Verify()</a></code>) reads the private folders from <code>folders.tsv</code>; <code>.setup/notes/</code> and <code>.setup/repo/</code> are added to the template <code>.gitignore</code>.</li>
+<li>
+<code>.setup/latex/pdf/</code> is left out of the public export (cran <code>.gitignore</code>); the CI builds it.</li>
+<li>
+<code><a href="../reference/Coverage.html">Coverage()</a></code> no longer copies <code>.setup/coverage/.covrignore</code>, and <code>test-coverage.yml</code> drops its <code>.covignore</code> step (a typo; it never ran). Put covr’s <code>.covrignore</code> at the project root.</li>
+<li>
+<code><a href="../reference/Binary.html">Binary()</a></code> stays: <code>.setup/bin/</code> is an optional folder for R scripts run at <code>make project</code> (for example, to build a bespoke binary); <code>make</code> no longer creates it.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.53" id="rproject-0053">rProject 0.0.53<a class="anchor" aria-label="anchor" href="#rproject-0053"></a></h2>
 <div class="section level3">
