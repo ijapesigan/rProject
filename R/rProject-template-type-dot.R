@@ -1,22 +1,7 @@
 .TemplateType <- function(path) {
-  project_r <- file.path(path, ".setup", "scripts", "project.R")
-  type <- NULL
-  if (file.exists(project_r)) {
-    lines <- readLines(
-      con = project_r,
-      warn = FALSE
-    )
-    hit <- regmatches(
-      x = lines,
-      m = regexpr(pattern = "^type <- \"[^\"]+\"", text = lines)
-    )
-    if (length(hit) > 0L) {
-      type <- sub(
-        pattern = "^type <- \"([^\"]+)\"",
-        replacement = "\\1",
-        x = hit[1]
-      )
-    }
+  type <- .TemplateSettings(path = path)$type
+  if (!is.null(type)) {
+    type <- type[1]
   }
   if (!is.null(type) && !(type %in% names(.TemplateSets()))) {
     stop(

@@ -1,15 +1,19 @@
 .VerifyPublic <- function(private,
                           max_size = 50 * 1024^2) {
   exported <- .PublicExport(root = private)
+  # the private folders come from inst/template/folders.tsv
+  folders <- .TemplateFolders()
   private_paths <- paste(
     c(
-      "^\\.setup/ai/",
-      "^\\.setup/logs/",
-      "^\\.setup/data-private/",
-      "^\\.setup/data-external/",
-      "^\\.setup/data-cache/",
-      "^\\.setup/repo/",
-      "^\\.setup/todo/",
+      paste0(
+        "^",
+        gsub(
+          pattern = ".",
+          replacement = "\\.",
+          x = folders$folder[folders$private],
+          fixed = TRUE
+        )
+      ),
       "(^|/)AGENTS\\.md$",
       "(^|/)CLAUDE(\\.local)?\\.md$",
       "(^|/)GEMINI\\.md$",

@@ -1,5 +1,9 @@
 #' Code Coverage
 #'
+#' Runs `covr::package_coverage()` on the package. To leave files out,
+#' put covr's `.covrignore` at the project root (and add it to
+#' `.Rbuildignore` with `ignore` in `.setup/scripts/project.R`).
+#'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
@@ -24,25 +28,7 @@ Coverage <- function(path) {
         quiet = TRUE
       )
     }
-    output <- file.path(
-      path,
-      ".setup",
-      "coverage",
-      ".covrignore"
-    )
-    if (file.exists(output)) {
-      file.copy(
-        from = output,
-        to = path
-      )
-    }
     covr::package_coverage(path = path)
-    on.exit(
-      expr = unlink(
-        x = output
-      ),
-      add = TRUE
-    )
   } else {
     message(
       paste(

@@ -1,4 +1,4 @@
-.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log sizecheck public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes template
+.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log sizecheck public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes template tree
 
 push: build docs latex coverage cleanpush
 
@@ -10,6 +10,9 @@ project:
 template:
 	@echo "\n\nWriting template files...\n\n"
 	@Rscript -e "rProject::Template(\"${PWD}\")"
+
+tree:
+	@Rscript -e "rProject::Tree(\"${PWD}\")"
 
 pkg:
 	@echo "\n\nInstalling packages...\n\n"

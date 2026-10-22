@@ -3,7 +3,8 @@
                              "template",
                              package = "rProject",
                              mustWork = TRUE
-                           )) {
+                           ),
+                           settings = list()) {
   manifest <- utils::read.delim(
     file = file.path(root, "manifest.tsv"),
     colClasses = "character"
@@ -25,6 +26,86 @@
       FUN.VALUE = character(1)
     )
   )
+  manifest$kind <- rep(x = "file", times = nrow(manifest))
+  manifest$fill <- rep(x = FALSE, times = nrow(manifest))
+  # workflows the project chooses (workflows in project.R),
+  # from the catalog in inst/template/workflows/
+  workflows <- settings$workflows
+  if (length(workflows) > 0L) {
+    catalog <- sub(
+      pattern = "\\.yml$",
+      replacement = "",
+      x = list.files(
+        path = file.path(root, "workflows"),
+        pattern = "\\.yml$"
+      )
+    )
+    unknown <- setdiff(workflows, catalog)
+    if (length(unknown) > 0L) {
+      stop(
+        paste0(
+          "\n\nUnknown workflows in .setup/scripts/project.R: ",
+          paste(unknown, collapse = ", "),
+          "\nUse any of:\n",
+          paste(catalog, collapse = "\n"),
+          "\n\n"
+        ),
+        call. = FALSE
+      )
+    }
+    source <- file.path(root, "workflows", paste0(workflows, ".yml"))
+    # a workflow with {{title}} is the project's own daily build:
+    # named <workflow>-<workflow_daily>.yml (or <workflow>.yml)
+    daily <- vapply(
+      X = source,
+      FUN = function(x) {
+        any(
+          grepl(
+            pattern = "{{title}}",
+            x = readLines(con = x, warn = FALSE),
+            fixed = TRUE
+          )
+        )
+      },
+      FUN.VALUE = logical(1),
+      USE.NAMES = FALSE
+    )
+    suffix <- settings$workflow_daily
+    name <- workflows
+    if (any(daily) && length(suffix) > 0L && nzchar(suffix[1])) {
+      name[daily] <- paste0(workflows[daily], "-", suffix[1])
+    }
+    manifest <- rbind(
+      manifest,
+      data.frame(
+        set = "workflows",
+        tier = "2",
+        path = file.path(".github", "workflows", paste0(name, ".yml")),
+        source = source,
+        kind = "file",
+        fill = daily
+      )
+    )
+  }
+  # the folder skeleton of the type: an empty .gitignore in each folder
+  # marked create in inst/template/folders.tsv
+  folders <- .TemplateFolders(type = type, root = root)
+  folders <- folders[folders$create, ]
+  dirs <- paste0(folders$folder, ".gitignore")
+  dirs <- dirs[!(dirs %in% manifest$path)]
+  if (length(dirs) > 0L) {
+    manifest <- rbind(
+      manifest,
+      data.frame(
+        set = "folders",
+        tier = "2",
+        path = dirs,
+        source = NA_character_,
+        kind = "dir",
+        fill = FALSE
+      )
+    )
+  }
   rownames(manifest) <- NULL
   manifest
 }

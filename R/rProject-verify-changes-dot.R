@@ -57,7 +57,10 @@
   # tier 2 template files are written by make (Template()), not uploaded
   type <- .TemplateType(path = path)
   if (!is.null(type)) {
-    files <- .TemplateFiles(type = type)
+    files <- .TemplateFiles(
+      type = type,
+      settings = .TemplateSettings(path = path)
+    )
     candidates <- setdiff(
       candidates,
       files$path[files$tier == "2"]

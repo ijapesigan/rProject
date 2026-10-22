@@ -11,7 +11,10 @@ Binary(path)
 Project path.}
 }
 \description{
-Setup Binaries not Included in the Package
+Runs (sources) every R script in \verb{.setup/bin/}, at \verb{make project}; for
+example, a script that builds a bespoke binary the project needs.
+\verb{.setup/bin/} is optional: \code{make} does not create it, and without it
+\code{Binary()} does nothing.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

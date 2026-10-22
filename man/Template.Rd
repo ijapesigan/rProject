@@ -18,7 +18,9 @@ If \code{TRUE}, write nothing and report what would change.}
 }
 \value{
 Returns the paths of the tier 2 files that were written
-(with \code{check = TRUE}, that would be written), invisibly.
+(with \code{check = TRUE}, that would be written), invisibly, with the
+deleted files (or those that would be deleted) in the attribute
+\code{removed}.
 }
 \description{
 Writes the template files of the project's type from rProject
@@ -42,12 +44,31 @@ file is named (the template wins; change it in rProject).
 These files are not in Overleaf or the private repository.
 }
 
+Besides the files of its sets, a project gets:
+\itemize{
+\item The workflows it chooses from the catalog
+(\verb{inst/template/workflows/}), named in \code{project.R}:
+for example \code{workflows <- c("docker-build-push-multi")}.
+The daily docker workflow (the one with \code{{{title}}}) is written as
+\verb{<workflow>-<workflow_daily>.yml}, with \code{{{title}}} and \code{{{cron}}}
+filled from \code{workflow_title} and \code{workflow_cron} in \code{project.R}.
+\item The folder skeleton of its type: an empty \code{.gitignore} in each
+standard folder marked \code{create} in \code{inst/template/folders.tsv}, if
+the folder has none.
+}
+
+Files the template no longer has (\code{inst/template/removed.tsv}) are
+deleted and named, so that they can be deleted in Overleaf too. A
+folder on that list is deleted only when nothing but \code{.gitignore}
+files is left in it; otherwise it is named and kept. Nothing in a
+private folder is deleted.
+
 In rProject itself, the tier 1 files are copied into \verb{inst/template/}
 first, and the tier 2 files are written from \verb{inst/template/} in the
 project folder, not from the installed package.
 
-Nothing is written in GitHub Actions (\code{GITHUB_ACTIONS} is \code{"true"}):
-CI uses the files already in the public repository.
+Nothing is written or deleted in GitHub Actions (\code{GITHUB_ACTIONS} is
+\code{"true"}): CI uses the files already in the public repository.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

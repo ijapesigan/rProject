@@ -94,6 +94,8 @@ src/*.dll
 .setup/data-external/
 .setup/data-cache/
 .setup/todo/
+.setup/notes/
+.setup/repo/
 AGENTS.md
 CLAUDE.md
 .claude/

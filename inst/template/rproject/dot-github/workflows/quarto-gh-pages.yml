@@ -1,4 +1,4 @@
-name: Package Website (GitHub Pages)
+name: Quarto Website (GitHub Pages)
 
 on:
   workflow_run:
@@ -15,29 +15,30 @@ jobs:
       image: ijapesigan/docs
     # Only restrict concurrency for non-PR jobs
     concurrency:
-      group: pkgdown-gh-pages-${{ github.event_name != 'pull_request' || github.run_id }}
+      group: quarto-gh-pages-${{ github.event_name != 'pull_request' || github.run_id }}
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.PAT }}
+      GITHUB_ACTIONS: "true"
     permissions:
       contents: write
 
     steps:
       -
         name: Checkout 
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       -
         name: Build Project
         run: make build
       -
-        name: Build pkgdown Site
-        run: make pkgdown
+        name: Build Quarto Project
+        run: make quarto
       -
         name: Add .nojekyll
-        run: touch pkgdown/.nojekyll
+        run: touch quarto/.nojekyll
       -
-        name: Deploy to GitHub pages ��
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           clean: true
-          branch: pkgdown
-          folder: pkgdown
+          branch: quarto
+          folder: quarto
