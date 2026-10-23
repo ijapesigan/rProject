@@ -25,7 +25,6 @@ PkgDevel <- function(path) {
     "quarto",
     "ragg",
     "Rcpp",
-    "RefManageR",
     "remotes",
     "rhub",
     "rmarkdown",

@@ -15,7 +15,6 @@ install2.r --error --skipinstalled -n -1 \
     quarto      \
     Rcpp        \
     remotes     \
-    RefManageR  \
     rmarkdown   \
     roxygen2    \
     rprojroot   \

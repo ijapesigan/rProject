@@ -9,9 +9,11 @@
   files (its extra workflows).
 - `workflows/`: the workflow catalog. A project names the ones it runs in
   `project.R` (`workflows <- c(...)`). A workflow with `{{title}}` is the
-  daily docker build: written as `<name>-<workflow_daily>.yml`, with
-  `{{title}}` and `{{cron}}` filled from `workflow_title` and
-  `workflow_cron`.
+  daily docker build: written as `<name>-<workflow_daily>.yml`; `{{title}}`
+  from `workflow_title`, `{{schedule}}` from `workflow_cron` (none when
+  empty), and `{{next}}`, a step that starts the next image's build, from
+  `workflow_next` (none when empty). A line that holds only an empty
+  placeholder is dropped.
 - `folders.tsv`: the standard folders (`folder`, `types`, `private`,
   `create`, `writer`, `reader`, `purpose`). `Template()` creates the
   folders marked `create` (an empty `.gitignore`); `AI()` writes the

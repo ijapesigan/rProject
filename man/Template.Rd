@@ -33,9 +33,10 @@ The type comes from a line in \code{.setup/scripts/project.R},
 \code{"talk"}, and \code{"docker"}. Each type uses a few sets of files
 (\code{inst/template/manifest.tsv}). Each file has a tier:
 \itemize{
-\item Tier 1, links: files that must be in Overleaf for make to run or for
-Overleaf to compile (\code{Makefile}, \code{latexmkrc}, the LaTeX preamble,
-...). They stay Overleaf links that the user refreshes.
+\item Tier 1, links: the files Overleaf needs to compile the PDFs (the
+LaTeX preamble, \verb{.setup/latex/r-scripts/}, \code{.setup/load/load.R},
+style files, the lib documents; \code{latexmkrc} is linked to
+\code{inst/latexmk/latexmkrc}). They stay Overleaf links that the user refreshes.
 \code{Template()} never writes them; it lists the ones that differ
 from rProject as links to refresh.
 \item Tier 2, written by make: everything else (workflows, scripts, ...).
@@ -50,8 +51,12 @@ Besides the files of its sets, a project gets:
 (\verb{inst/template/workflows/}), named in \code{project.R}:
 for example \code{workflows <- c("docker-build-push-multi")}.
 The daily docker workflow (the one with \code{{{title}}}) is written as
-\verb{<workflow>-<workflow_daily>.yml}, with \code{{{title}}} and \code{{{cron}}}
-filled from \code{workflow_title} and \code{workflow_cron} in \code{project.R}.
+\verb{<workflow>-<workflow_daily>.yml}, titled \code{workflow_title}. The daily
+builds run as a chain: an image with \code{workflow_cron} runs on that
+schedule; every image also starts when the image before it sends a
+\code{base-image-built} event; and an image with \code{workflow_next}
+(\code{"owner/repository"}) sends that event to the next image when its
+build succeeds (with the \code{PAT} secret).
 \item The folder skeleton of its type: an empty \code{.gitignore} in each
 standard folder marked \code{create} in \code{inst/template/folders.tsv}, if
 the folder has none.

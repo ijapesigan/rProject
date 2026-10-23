@@ -16,6 +16,11 @@ lapply(
         ),
         con = file.path(root, ".setup", "scripts", "project.R")
       )
+      dir.create(file.path(root, ".setup", "repo"))
+      writeLines(
+        text = "ijapesigan/test",
+        con = file.path(root, ".setup", "repo", "public-github.md")
+      )
       root
     }
     # CI sets GITHUB_ACTIONS, where Template() writes nothing
@@ -82,7 +87,8 @@ lapply(
     suppressMessages(Template(path = root))
     edited <- file.path(root, ".github", "workflows", "make.yml")
     writeLines(text = "edited", con = edited)
-    linked <- file.path(root, "Makefile")
+    linked <- file.path(root, ".setup", "latex", "preamble", "preamble.tex")
+    dir.create(dirname(linked), recursive = TRUE, showWarnings = FALSE)
     writeLines(text = "old", con = linked)
     testthat::test_that(
       paste(text, "names and overwrites an edited file"),
@@ -147,6 +153,34 @@ lapply(
       }
     )
     testthat::test_that(
+      paste(text, "fills the project and its public repository"),
+      {
+        clone <- readLines(file.path(root, ".setup", "scripts", "clone.sh"))
+        testthat::expect_true(
+          "git clone \"git@github.com:ijapesigan/test.git\"" %in% clone
+        )
+        testthat::expect_true("rm -rf \"test\"" %in% clone)
+        lib <- project(type = "lib")
+        suppressMessages(Template(path = lib))
+        quarto <- readLines(file.path(lib, ".setup", "quarto", "_quarto.yml"))
+        testthat::expect_true("  title: \"test\"" %in% quarto)
+        testthat::expect_true(
+          "  site-url: https://ijapesigan.github.io/test/index.html" %in% quarto
+        )
+        # without a public repository, clone.sh is not written
+        unlink(file.path(lib, ".setup", "repo"), recursive = TRUE)
+        unlink(file.path(lib, ".setup", "scripts", "clone.sh"))
+        testthat::expect_message(
+          Template(path = lib),
+          regexp = "No public repository"
+        )
+        testthat::expect_false(
+          file.exists(file.path(lib, ".setup", "scripts", "clone.sh"))
+        )
+        unlink(lib, recursive = TRUE)
+      }
+    )
+    testthat::test_that(
       paste(text, "keeps a folder's own .gitignore"),
       {
         own <- file.path(root, ".setup", "cpp", ".gitignore")
@@ -188,6 +222,79 @@ lapply(
         testthat::expect_length(
           suppressMessages(Template(path = docker, check = TRUE)),
           0L
+        )
+      }
+    )
+    chain <- function(lines) {
+      writeLines(
+        text = c(
+          "type <- \"docker\"",
+          "workflows <- \"docker-build-push-daily-multi\"",
+          "workflow_daily <- \"x\"",
+          "workflow_title <- \"Daily\"",
+          lines
+        ),
+        con = file.path(docker, ".setup", "scripts", "project.R")
+      )
+      suppressMessages(Template(path = docker))
+      readLines(
+        file.path(
+          docker,
+          ".github",
+          "workflows",
+          "docker-build-push-daily-multi-x.yml"
+        )
+      )
+    }
+    testthat::test_that(
+      paste(text, "chains the daily builds"),
+      {
+        # the head: a schedule and the next image
+        head <- chain(
+          c(
+            "workflow_cron <- \"0 0 * * *\"",
+            "workflow_next <- \"ijapesigan/docker-dplyr\""
+          )
+        )
+        testthat::expect_true("  schedule:" %in% head)
+        testthat::expect_true("  repository_dispatch:" %in% head)
+        testthat::expect_true(
+          any(
+            grepl(
+              "repos/ijapesigan/docker-dplyr/dispatches",
+              head,
+              fixed = TRUE
+            )
+          )
+        )
+        step <- which(head == "      - name: Trigger the next image")
+        testthat::expect_equal(head[step + 1], "        run: |")
+        testthat::expect_true(any(grepl("{{version}}", head, fixed = TRUE)))
+        # a middle image: no schedule
+        middle <- chain("workflow_next <- \"ijapesigan/docker-sem\"")
+        testthat::expect_false("  schedule:" %in% middle)
+        testthat::expect_true("  repository_dispatch:" %in% middle)
+        # the last image: neither, and no stray placeholder lines
+        last <- chain(character(0))
+        testthat::expect_false(any(grepl("dispatches", last, fixed = TRUE)))
+        testthat::expect_false(
+          any(grepl(pattern = "\\{\\{(title|schedule|next)\\}\\}", x = last))
+        )
+        testthat::expect_true(
+          grepl(pattern = "imagetools inspect", x = last[length(last)])
+        )
+        testthat::expect_length(
+          suppressMessages(Template(path = docker, check = TRUE)),
+          0L
+        )
+      }
+    )
+    testthat::test_that(
+      paste(text, "stops on an invalid workflow_next"),
+      {
+        testthat::expect_error(
+          chain("workflow_next <- \"docker-dplyr\""),
+          regexp = "owner/repository"
         )
       }
     )

@@ -49,9 +49,9 @@
 #'   By default `.verify` in the project.
 #' @param log Character string.
 #'   File name of the change-set log in `.setup/logs`.
-#'   If `NULL`, the newest log with a pending push in `.setup/logs/index.md`,
-#'   else the log named in the pushed commit message
-#'   (`Log: .setup/logs/<log>`), as for a fix-up push.
+#'   If `NULL`, the log named in the pushed commit message
+#'   (`Log: .setup/logs/<log>`), else the newest log with a pending push
+#'   in `.setup/logs/index.md`.
 #' @param record Logical.
 #'   If `TRUE`, write the commit and the result
 #'   in the log's "Pushes" table and in `.setup/logs/index.md`,
@@ -67,11 +67,15 @@ Verify <- function(path,
                    record = FALSE,
                    error = TRUE) {
   if (is.null(log)) {
-    log <- .VerifyLogPending(path = path)
+    # the log named in the commit message ("Log: .setup/logs/<log>") wins:
+    # two logs may have a pending push (a deletions-only push first)
+    log <- .VerifyLogMessage(private = private)
+    if (!is.na(log) && !file.exists(file.path(path, ".setup", "logs", log))) {
+      log <- NA_character_
+    }
   }
   if (is.na(log)) {
-    # a fix-up push: no pending row, but the commit message names the log
-    log <- .VerifyLogMessage(private = private)
+    log <- .VerifyLogPending(path = path)
   }
   if (is.na(log)) {
     stop(

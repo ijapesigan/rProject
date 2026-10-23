@@ -26,7 +26,8 @@ Build <- function(path,
     if (!("devtools" %in% pkg_installed)) {
       pak::pkg_install(
         pkg = "r-lib/devtools",
-        lib = lib
+        lib = lib,
+        upgrade = FALSE
       )
     }
     bib <- file.path(
@@ -105,7 +106,11 @@ Build <- function(path,
     }
     devtools::document(pkg = path)
     devtools::check(pkg = path, cran = FALSE)
-    devtools::install(pkg = path, dependencies = dependencies)
+    devtools::install(
+      pkg = path,
+      dependencies = dependencies,
+      upgrade = FALSE
+    )
     output <- file.path(
       path,
       ".setup",

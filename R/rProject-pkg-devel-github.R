@@ -28,14 +28,8 @@ PkgDevelGitHub <- function(path) {
   )
   colnames(repo_pkg) <- c("repo", "pkg")
   for (i in seq_along(pkg)) {
-    run <- FALSE
-    if (!(repo_pkg[i, "pkg"] %in% pkg_installed)) {
-      run <- TRUE
-    } else {
-      if (is.null(utils::packageDescription(repo_pkg[i, "pkg"])$GithubRepo)) {
-        run <- TRUE
-      }
-    }
+    # never upgrade: only a package missing from every library
+    run <- !(repo_pkg[i, "pkg"] %in% pkg_installed)
     if (run) {
       cat(
         paste0(
@@ -45,9 +39,12 @@ PkgDevelGitHub <- function(path) {
           "\n"
         )
       )
-      pak::pkg_install(
-        pkg = pkg[i],
-        lib = lib
+      remotes::install_github(
+        repo = pkg[i],
+        lib = lib,
+        upgrade = "never",
+        repos = c(REPO_NAME = PkgRepo(path = path)),
+        quiet = TRUE
       )
     }
   }

@@ -22,9 +22,9 @@ By default \code{.verify} in the project.}
 
 \item{log}{Character string.
 File name of the change-set log in \code{.setup/logs}.
-If \code{NULL}, the newest log with a pending push in \code{.setup/logs/index.md},
-else the log named in the pushed commit message
-(\verb{Log: .setup/logs/<log>}), as for a fix-up push.}
+If \code{NULL}, the log named in the pushed commit message
+(\verb{Log: .setup/logs/<log>}), else the newest log with a pending push
+in \code{.setup/logs/index.md}.}
 
 \item{record}{Logical.
 If \code{TRUE}, write the commit and the result

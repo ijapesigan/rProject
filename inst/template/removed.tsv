@@ -16,3 +16,12 @@ path	since
 .setup/latex/apa7/config/	0.0.54
 .setup/latex/apa7/	0.0.54
 .setup/scripts/secrets.R	0.0.54
+.github/workflows/docker-apptainer-build-push-amd64.yml	0.0.57
+.github/workflows/docker-apptainer-build-push-daily-amd64-arm64.yml	0.0.57
+.github/workflows/docker-apptainer-build-push-daily-amd64.yml	0.0.57
+.github/workflows/docker-apptainer-build-push-monthly-amd64-arm64.yml	0.0.57
+.github/workflows/docker-apptainer-build-push-monthly-amd64.yml	0.0.57
+.github/workflows/docker-build-amd64.yml	0.0.57
+.github/workflows/docker-build-push-amd64.yml	0.0.57
+.github/workflows/docker-build-push-monthly-amd64.yml	0.0.57
+.github/workflows/docker-build-push-weekly-amd64.yml	0.0.57

@@ -9,9 +9,10 @@
 #' `"talk"`, and `"docker"`. Each type uses a few sets of files
 #' (`inst/template/manifest.tsv`). Each file has a tier:
 #'
-#' - Tier 1, links: files that must be in Overleaf for make to run or for
-#'   Overleaf to compile (`Makefile`, `latexmkrc`, the LaTeX preamble,
-#'   ...). They stay Overleaf links that the user refreshes.
+#' - Tier 1, links: the files Overleaf needs to compile the PDFs (the
+#'   LaTeX preamble, `.setup/latex/r-scripts/`, `.setup/load/load.R`,
+#'   style files, the lib documents; `latexmkrc` is linked to
+#'   `inst/latexmk/latexmkrc`). They stay Overleaf links that the user refreshes.
 #'   `Template()` never writes them; it lists the ones that differ
 #'   from rProject as links to refresh.
 #' - Tier 2, written by make: everything else (workflows, scripts, ...).
@@ -25,8 +26,12 @@
 #'   (`inst/template/workflows/`), named in `project.R`:
 #'   for example `workflows <- c("docker-build-push-multi")`.
 #'   The daily docker workflow (the one with `{{title}}`) is written as
-#'   `<workflow>-<workflow_daily>.yml`, with `{{title}}` and `{{cron}}`
-#'   filled from `workflow_title` and `workflow_cron` in `project.R`.
+#'   `<workflow>-<workflow_daily>.yml`, titled `workflow_title`. The daily
+#'   builds run as a chain: an image with `workflow_cron` runs on that
+#'   schedule; every image also starts when the image before it sends a
+#'   `base-image-built` event; and an image with `workflow_next`
+#'   (`"owner/repository"`) sends that event to the next image when its
+#'   build succeeds (with the `PAT` secret).
 #' - The folder skeleton of its type: an empty `.gitignore` in each
 #'   standard folder marked `create` in `inst/template/folders.tsv`, if
 #'   the folder has none.

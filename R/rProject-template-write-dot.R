@@ -19,20 +19,49 @@
     root = root,
     settings = settings
   )
-  # the project's daily workflow: title and cron from project.R
-  values <- list(
-    title = settings$workflow_title,
-    cron = settings$workflow_cron
+  # placeholder values: the project, its public repository, and the
+  # daily docker workflow's settings (project.R)
+  info <- .RepoInfo(path = path)
+  public <- info$public_github
+  values <- .TemplateKeys(settings = settings, public = public)
+  # a file that names the public repository is not written without one
+  needs_public <- rep(x = FALSE, times = nrow(files))
+  needs_public[files$fill] <- .TemplateHas(
+    files = files$source[files$fill],
+    keys = c("public", "owner", "repo")
   )
-  if (any(files$fill)) {
-    missing <- names(values)[lengths(values) == 0L]
-    if (length(missing) > 0L) {
+  if (!nzchar(values$public) && any(needs_public)) {
+    message(
+      paste0(
+        "\n\nNo public repository (.setup/repo/public-github.md);",
+        " not written:\n",
+        paste(files$path[needs_public], collapse = "\n"),
+        "\n\n"
+      )
+    )
+    files <- files[!needs_public, ]
+  }
+  if (any(files$daily)) {
+    following <- settings$workflow_next
+    following <- ifelse(length(following) > 0L, following[1], "")
+    problems <- character(0)
+    if (!nzchar(values$title)) {
+      problems <- "workflow_title is missing"
+    }
+    valid <- grepl(pattern = "^[^/ ]+/[^/ ]+$", x = following)
+    if (nzchar(following) && !valid) {
+      problems <- c(
+        problems,
+        paste0("workflow_next \"", following, "\" is not owner/repository")
+      )
+    }
+    if (length(problems) > 0L) {
       stop(
         paste0(
           "\n\n",
-          paste(files$path[files$fill], collapse = ", "),
-          " needs ",
-          paste0("workflow_", missing, collapse = " and "),
+          paste(files$path[files$daily], collapse = ", "),
+          ": ",
+          paste(problems, collapse = "; "),
           " in .setup/scripts/project.R.\n\n"
         ),
         call. = FALSE
@@ -45,7 +74,7 @@
     } else {
       .TemplateFill(
         text = readLines(con = files$source[i], warn = FALSE),
-        values = lapply(X = values, FUN = `[`, 1L)
+        values = values
       )
     }
   }
@@ -110,7 +139,8 @@
         ifelse(check, "To overwrite", "Overwritten"),
         " (the template wins; change it in rProject's inst/template/):\n",
         paste(files$path[edited], collapse = "\n"),
-        "\n\n"
+        "\nIf one is an Overleaf link (for example Makefile), delete the",
+        " link in Overleaf and upload the written file.\n\n"
       )
     )
   }

@@ -23,7 +23,8 @@ CleanTinyTex <- function(path) {
     }
     pak::pkg_install(
       pkg = "rstudio/tinytex",
-      lib = lib
+      lib = lib,
+      upgrade = FALSE
     )
   }
   try(

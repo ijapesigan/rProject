@@ -14,10 +14,13 @@ Project path.}
 GitHub packages.}
 
 \item{ref}{Character vector.
-Git branch.}
+Git branch, tag, or commit SHA (only a SHA reinstalls).}
 }
 \description{
-Install Project Packages from GitHub
+A package found in any library is never upgraded. It is installed when
+it is missing, or when its \code{ref} is a commit SHA that differs from the
+installed commit (\code{RemoteSha}). Dependencies are installed only when
+missing.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

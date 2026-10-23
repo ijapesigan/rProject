@@ -3,8 +3,8 @@ lapply(
   X = 1,
   FUN = function(i,
                  text) {
-    # CleanPkg() removes every non-base package in every library path. To be
-    # safe it runs in a separate base-R process (no site or user library),
+    # CleanPkg() removes .library only; a package in another library path
+    # stays. It runs in a separate base-R process (no site or user library),
     # with only a temporary library and base R on the path, and stops unless
     # that holds.
     testthat::skip_on_cran()
@@ -51,7 +51,7 @@ lapply(
       con = script
     )
     testthat::test_that(
-      paste(text, "empties .library and removes packages in other libraries"),
+      paste(text, "empties .library and keeps packages in other libraries"),
       {
         testthat::skip_if_not(
           dir.exists(file.path(other, "dummyPkg")),
@@ -70,7 +70,7 @@ lapply(
         )
         testthat::expect_false(any(grepl("unsafe library paths", out)))
         testthat::expect_true("done" %in% out)
-        testthat::expect_false(dir.exists(file.path(other, "dummyPkg")))
+        testthat::expect_true(dir.exists(file.path(other, "dummyPkg")))
         testthat::expect_false(
           file.exists(file.path(root, ".library", "old.txt"))
         )

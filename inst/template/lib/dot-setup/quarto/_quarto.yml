@@ -1,0 +1,29 @@
+project:
+  type: book
+  output-dir: quarto
+
+book:
+  title: "{{project}}"
+  author: "Ivan Jacob Agaloos Pesigan"
+  date: today
+  search: true
+  repo-url: https://github.com/{{public}}
+  repo-actions: [edit]
+  site-url: https://{{owner}}.github.io/{{repo}}/index.html
+  sidebar:
+    collapse-level: 3
+    pinned: true
+  chapters:
+    - index.qmd
+    - .setup/quarto/tags/tags.qmd
+  appendices:
+    - .setup/quarto/session/session.qmd
+bibliography: .setup/quarto/bib/quarto.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+
+format:
+  html:
+    theme:
+      - flatly
+      - .setup/quarto/scss/custom.scss
+    number-sections: false

@@ -1,3 +1,37 @@
+# rProject 0.0.57
+
+## Minor
+
+* Our own lock, not renv. `Lock()` (`make auto`) also records the image (`image`, a registry digest read from the running sif's labels, and `image_name`), the Posit Package Manager snapshot (`snapshot`, the image's date), `r_version`, and the packages the project adds (`extra_cran`, `extra_github`). For a proprietary add-on sif it records the sif's name, source, checksum (`sif_sha256`), and date; CI runs the public image. docker-* projects get no lock.
+* `make project` restores the lock by default, locally and in GitHub Actions (was: CI only, or `LOCK=TRUE`); `make upgrade` (new; or `make project LOCK=FALSE`) follows the newest rProject, and the next `make auto` updates the lock. `make project` says when a newer rProject exists or when the running sif is not the locked image, checks that the image provides rProject's imports before installing it, and names packages in `.library` that hide the image's. docker-* always follow the newest rProject.
+* No upgrades anywhere: a package found in any library is never upgraded. `PkgProjectGitHub()` reinstalls only for a commit SHA that differs from the installed one (a branch or tag never does) and uses `remotes::install_github(upgrade = "never")`; `PkgDevelGitHub()` installs only missing packages; `Build()`, `make install`, and every `pak::pkg_install()` pass `upgrade = FALSE`.
+* `PkgRepo()` uses the snapshot of the image's date (`RPROJECT_SNAPSHOT`, the running sif, the lock, or `latest`) and knows Ubuntu noble.
+* GitHub Actions: each workflow that runs the image starts with a job, `image` (`.setup/scripts/image-lock.sh`), that reads the lock; the main job runs that image. A scheduled run, a manual run with the new input `latest`, no lock, or a digest gone from the registry runs the latest image. The setup-r workflows (check-full, check-standard, check-oldrel, test-coverage, lint) and the r-hub workflows install packages from the snapshot (not on R-devel); check-full's `release` rows run the lock's R version.
+* `CleanPkg()` (`make cleanpkg`) removes the project's `.library` only; it no longer uninstalls the image's packages. `make-all.yml` no longer runs it, and `make-project.R` installs rProject without its dependencies in GitHub Actions too.
+* Convention for images with proprietary software: the public image `ijapesigan/<name>` never holds it; an add-on is built locally from `<name>.sif` with `Bootstrap: localimage` into `<name>-plus.sif` and never pushed (template `inst/plus/plus.def`).
+* In rProject itself, `make project` documents and installs the working copy into `.library` (rProject builds itself from source; its GitHub HEAD is the last release).
+* `make-project.R` is one file for every type (the `common` set; the docker set keeps an identical copy); talk gets the template `Makefile` (the same as the package one). `Template()` says to delete an Overleaf link when it overwrites a linked file.
+* Nine unused docker workflows leave the catalog (`removed.tsv`).
+* `Verify()` compares hand-written vignettes; only those knitted from `.setup/vignettes/` are skipped. `Verify()` takes the log named in the commit message (`Log:`) first, then the newest pending log (two logs may be pending, e.g. a deletions-only push first).
+* `LatexCompile()` gives pdfTeX 10 million more words of main memory (`extra_mem_bot`): `lib-apa` (biblatex-apa over the whole library) ran out of memory with biblatex 3.22 and compiled to a one-page stub.
+* Vignette "How an rProject Project Works": section "Reproducible builds".
+
+# rProject 0.0.56
+
+## Minor
+
+* `Tags()` (new) lists the key, annotation, and keywords of `quarto.bib` with rProject's own parser; the "Library Tags" page (`tags.qmd`, lib, man, talk) uses it. `RefManageR` is dropped from `PkgDevel()` and the docker image.
+* Overleaf keeps only the files its PDF compile needs (LaTeX preamble, `r-scripts`, `load.R` (now a link), style files, lib documents, `latexmkrc`). `Makefile` and `.setup/latex/.gitignore` are now written by make; so are the lib `.gitignore` and `_quarto.yml`, and every `clone.sh`. A fresh copy from Overleaf runs `Rscript -e 'rProject::Template(getwd())'` once.
+* Placeholders `{{project}}`, `{{public}}`, `{{owner}}`, `{{repo}}` in any tier 2 template file; a file that needs the public repository is skipped without one.
+* `Lock()` (new): `make auto` writes `.setup/scripts/rproject.lock` (the rProject commit and version); `make project` installs that rProject in GitHub Actions and locally with `make project LOCK=TRUE`. `rproject_ver` is removed. `make auto` also tags `v<Version>` once per version.
+
+# rProject 0.0.55
+
+## Minor
+
+* The daily docker builds run as a chain instead of on staggered crons. The template `docker-build-push-daily-multi.yml` always listens for a `base-image-built` event (`repository_dispatch`) and `workflow_dispatch`; it has a schedule only when `workflow_cron` is set in `project.R`, and, when `workflow_next` (`"owner/repository"`) is set, a last step that sends the event to the next image after a successful build (with the `PAT` secret). So each image builds right after its base, and a failure stops the chain. `workflow_cron` is now optional; an invalid `workflow_next` stops `Template()`.
+* `.TemplateFill()`: a value may span several lines, and a line that holds only an empty placeholder is dropped.
+
 # rProject 0.0.54
 
 ## Minor

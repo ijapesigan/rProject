@@ -1,6 +1,6 @@
 .TemplateSettings <- function(path) {
   # the template settings in project.R: project, type, workflows,
-  # workflow_daily, workflow_title, workflow_cron
+  # workflow_daily, workflow_title, workflow_cron, workflow_next
   # only assignments of character constants (or c() of them) are read;
   # nothing in project.R is run
   names <- c(
@@ -9,7 +9,8 @@
     "workflows",
     "workflow_daily",
     "workflow_title",
-    "workflow_cron"
+    "workflow_cron",
+    "workflow_next"
   )
   settings <- list()
   project_r <- file.path(path, ".setup", "scripts", "project.R")

@@ -1,6 +1,8 @@
 #' Clean R Packages
 #'
-#' Uninstall R packages with `priority = "NA"`.
+#' Remove the project's R library (`.library`).
+#' Packages outside the project (the image's site library,
+#' the user library) are never touched.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -13,25 +15,5 @@ CleanPkg <- function(path) {
     recursive = TRUE,
     force = FALSE
   )
-  other_libs <- .libPaths()
-  for (i in seq_along(other_libs)) {
-    if (other_libs[i] == lib) {
-      other_libs[i] <- NA
-    }
-  }
-  other_libs <- other_libs[stats::complete.cases(other_libs)]
-  for (i in seq_along(other_libs)) {
-    pkgs_i <- utils::installed.packages(
-      priority = "NA",
-      lib = other_libs[i]
-    )
-    pkgs_i <- pkgs_i[, "Package"]
-    if (length(pkgs_i) != 0) {
-      utils::remove.packages(
-        pkgs = pkgs_i,
-        lib = other_libs[i]
-      )
-    }
-  }
   invisible(LibPaths(path = path))
 }

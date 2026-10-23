@@ -1,0 +1,31 @@
+Bootstrap: localimage
+From: {{ SIF_DIR }}/{{ NAME }}.sif
+
+# A proprietary add-on to a public image (rProject's convention, 0.0.57):
+#   ~/work/sif/<name>.sif       the public image, a plain pull:
+#                               apptainer pull <name>.sif docker://ijapesigan/<name>:latest
+#   ~/work/sif/<name>-plus.sif  this file: the public image plus the add-on
+#
+# Build without Docker, from the folder that holds scripts/ (the installer
+# and setup.sh; keep them private, never in a public repository):
+#   apptainer build --fakeroot \
+#     --build-arg SIF_DIR=$HOME/work/sif --build-arg NAME=<name> \
+#     $HOME/work/sif/<name>-plus.sif plus.def
+#
+# Bootstrap: localimage keeps the public image's labels
+# (org.opencontainers.image.base.name and .base.digest), so rProject::Lock()
+# records the public image by digest and CI runs it. Never push this image.
+
+%files
+    scripts /usr/src/local/src
+
+%post
+    cd /usr/src/local/src
+    bash setup.sh
+    cd /
+    rm -rf /usr/src/local/src
+
+%labels
+    org.opencontainers.image.source https://github.com/ijapesigan/docker-{{ NAME }}-mplus
+    io.github.ijapesigan.proprietary mplus
+    org.opencontainers.image.authors Ivan Jacob Agaloos Pesigan <ijapesigan@gmail.com>
