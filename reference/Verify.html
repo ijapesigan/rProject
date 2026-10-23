@@ -9,7 +9,7 @@ against the change-set log in .setup/logs."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.54</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.57</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,9 +76,9 @@ By default <code>.verify</code> in the project.</p></dd>
 <dt id="arg-log">log<a class="anchor" aria-label="anchor" href="#arg-log"></a></dt>
 <dd><p>Character string.
 File name of the change-set log in <code>.setup/logs</code>.
-If <code>NULL</code>, the newest log with a pending push in <code>.setup/logs/index.md</code>,
-else the log named in the pushed commit message
-(<code>Log: .setup/logs/&lt;log&gt;</code>), as for a fix-up push.</p></dd>
+If <code>NULL</code>, the log named in the pushed commit message
+(<code>Log: .setup/logs/&lt;log&gt;</code>), else the newest log with a pending push
+in <code>.setup/logs/index.md</code>.</p></dd>
 
 
 <dt id="arg-record">record<a class="anchor" aria-label="anchor" href="#arg-record"></a></dt>

@@ -128,6 +128,9 @@
 - [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md) :
   Lint Project
 
+- [`Lock()`](https://github.com/ijapesigan/rProject/reference/Lock.md) :
+  Record What Built the Project
+
 - [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md) :
   Create or Update a Change-Set Log
 
@@ -187,6 +190,9 @@
 
 - [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
   : Style Project
+
+- [`Tags()`](https://github.com/ijapesigan/rProject/reference/Tags.md) :
+  Library Tags
 
 - [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
   : Write the Template Files

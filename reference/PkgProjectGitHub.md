@@ -1,6 +1,9 @@
 # Install Project Packages from GitHub
 
-Install Project Packages from GitHub
+A package found in any library is never upgraded. It is installed when
+it is missing, or when its `ref` is a commit SHA that differs from the
+installed commit (`RemoteSha`). Dependencies are installed only when
+missing.
 
 ## Usage
 
@@ -20,7 +23,8 @@ PkgProjectGitHub(path, pkg, ref = "HEAD")
 
 - ref:
 
-  Character vector. Git branch.
+  Character vector. Git branch, tag, or commit SHA (only a SHA
+  reinstalls).
 
 ## Author
 

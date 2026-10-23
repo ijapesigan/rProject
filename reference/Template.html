@@ -11,7 +11,7 @@ make and no Overleaf refresh."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.54</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.57</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,9 +86,10 @@ deleted files (or those that would be deleted) in the attribute
     <p>The type comes from a line in <code>.setup/scripts/project.R</code>,
 <code>type &lt;- "cran"</code>; one of <code>"rProject"</code>, <code>"cran"</code>, <code>"man"</code>, <code>"lib"</code>,
 <code>"talk"</code>, and <code>"docker"</code>. Each type uses a few sets of files
-(<code>inst/template/manifest.tsv</code>). Each file has a tier:</p><ul><li><p>Tier 1, links: files that must be in Overleaf for make to run or for
-Overleaf to compile (<code>Makefile</code>, <code>latexmkrc</code>, the LaTeX preamble,
-...). They stay Overleaf links that the user refreshes.
+(<code>inst/template/manifest.tsv</code>). Each file has a tier:</p><ul><li><p>Tier 1, links: the files Overleaf needs to compile the PDFs (the
+LaTeX preamble, <code>.setup/latex/r-scripts/</code>, <code>.setup/load/load.R</code>,
+style files, the lib documents; <code>latexmkrc</code> is linked to
+<code>inst/latexmk/latexmkrc</code>). They stay Overleaf links that the user refreshes.
 <code>Template()</code> never writes them; it lists the ones that differ
 from rProject as links to refresh.</p></li>
 <li><p>Tier 2, written by make: everything else (workflows, scripts, ...).
@@ -99,8 +100,12 @@ These files are not in Overleaf or the private repository.</p></li>
 (<code>inst/template/workflows/</code>), named in <code>project.R</code>:
 for example <code>workflows &lt;- c("docker-build-push-multi")</code>.
 The daily docker workflow (the one with <code>{{title}}</code>) is written as
-<code>&lt;workflow&gt;-&lt;workflow_daily&gt;.yml</code>, with <code>{{title}}</code> and <code>{{cron}}</code>
-filled from <code>workflow_title</code> and <code>workflow_cron</code> in <code>project.R</code>.</p></li>
+<code>&lt;workflow&gt;-&lt;workflow_daily&gt;.yml</code>, titled <code>workflow_title</code>. The daily
+builds run as a chain: an image with <code>workflow_cron</code> runs on that
+schedule; every image also starts when the image before it sends a
+<code>base-image-built</code> event; and an image with <code>workflow_next</code>
+(<code>"owner/repository"</code>) sends that event to the next image when its
+build succeeds (with the <code>PAT</code> secret).</p></li>
 <li><p>The folder skeleton of its type: an empty <code>.gitignore</code> in each
 standard folder marked <code>create</code> in <code>inst/template/folders.tsv</code>, if
 the folder has none.</p></li>

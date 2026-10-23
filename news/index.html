@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.54</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.57</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,52 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.57" id="rproject-0057">rProject 0.0.57<a class="anchor" aria-label="anchor" href="#rproject-0057"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-57">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-57"></a></h3>
+<ul><li>Our own lock, not renv. <code><a href="../reference/Lock.html">Lock()</a></code> (<code>make auto</code>) also records the image (<code>image</code>, a registry digest read from the running sif’s labels, and <code>image_name</code>), the Posit Package Manager snapshot (<code>snapshot</code>, the image’s date), <code>r_version</code>, and the packages the project adds (<code>extra_cran</code>, <code>extra_github</code>). For a proprietary add-on sif it records the sif’s name, source, checksum (<code>sif_sha256</code>), and date; CI runs the public image. docker-* projects get no lock.</li>
+<li>
+<code>make project</code> restores the lock by default, locally and in GitHub Actions (was: CI only, or <code>LOCK=TRUE</code>); <code>make upgrade</code> (new; or <code>make project LOCK=FALSE</code>) follows the newest rProject, and the next <code>make auto</code> updates the lock. <code>make project</code> says when a newer rProject exists or when the running sif is not the locked image, checks that the image provides rProject’s imports before installing it, and names packages in <code>.library</code> that hide the image’s. docker-* always follow the newest rProject.</li>
+<li>No upgrades anywhere: a package found in any library is never upgraded. <code><a href="../reference/PkgProjectGitHub.html">PkgProjectGitHub()</a></code> reinstalls only for a commit SHA that differs from the installed one (a branch or tag never does) and uses <code>remotes::install_github(upgrade = "never")</code>; <code><a href="../reference/PkgDevelGitHub.html">PkgDevelGitHub()</a></code> installs only missing packages; <code><a href="../reference/Build.html">Build()</a></code>, <code>make install</code>, and every <code><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pak::pkg_install()</a></code> pass <code>upgrade = FALSE</code>.</li>
+<li>
+<code><a href="../reference/PkgRepo.html">PkgRepo()</a></code> uses the snapshot of the image’s date (<code>RPROJECT_SNAPSHOT</code>, the running sif, the lock, or <code>latest</code>) and knows Ubuntu noble.</li>
+<li>GitHub Actions: each workflow that runs the image starts with a job, <code>image</code> (<code>.setup/scripts/image-lock.sh</code>), that reads the lock; the main job runs that image. A scheduled run, a manual run with the new input <code>latest</code>, no lock, or a digest gone from the registry runs the latest image. The setup-r workflows (check-full, check-standard, check-oldrel, test-coverage, lint) and the r-hub workflows install packages from the snapshot (not on R-devel); check-full’s <code>release</code> rows run the lock’s R version.</li>
+<li>
+<code><a href="../reference/CleanPkg.html">CleanPkg()</a></code> (<code>make cleanpkg</code>) removes the project’s <code>.library</code> only; it no longer uninstalls the image’s packages. <code>make-all.yml</code> no longer runs it, and <code>make-project.R</code> installs rProject without its dependencies in GitHub Actions too.</li>
+<li>Convention for images with proprietary software: the public image <code>ijapesigan/&lt;name&gt;</code> never holds it; an add-on is built locally from <code>&lt;name&gt;.sif</code> with <code>Bootstrap: localimage</code> into <code>&lt;name&gt;-plus.sif</code> and never pushed (template <code>inst/plus/plus.def</code>).</li>
+<li>In rProject itself, <code>make project</code> documents and installs the working copy into <code>.library</code> (rProject builds itself from source; its GitHub HEAD is the last release).</li>
+<li>
+<code>make-project.R</code> is one file for every type (the <code>common</code> set; the docker set keeps an identical copy); talk gets the template <code>Makefile</code> (the same as the package one). <code><a href="../reference/Template.html">Template()</a></code> says to delete an Overleaf link when it overwrites a linked file.</li>
+<li>Nine unused docker workflows leave the catalog (<code>removed.tsv</code>).</li>
+<li>
+<code><a href="../reference/Verify.html">Verify()</a></code> compares hand-written vignettes; only those knitted from <code>.setup/vignettes/</code> are skipped. <code><a href="../reference/Verify.html">Verify()</a></code> takes the log named in the commit message (<code>Log:</code>) first, then the newest pending log (two logs may be pending, e.g. a deletions-only push first).</li>
+<li>
+<code><a href="../reference/LatexCompile.html">LatexCompile()</a></code> gives pdfTeX 10 million more words of main memory (<code>extra_mem_bot</code>): <code>lib-apa</code> (biblatex-apa over the whole library) ran out of memory with biblatex 3.22 and compiled to a one-page stub.</li>
+<li>Vignette “How an rProject Project Works”: section “Reproducible builds”.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.56" id="rproject-0056">rProject 0.0.56<a class="anchor" aria-label="anchor" href="#rproject-0056"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-56">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-56"></a></h3>
+<ul><li>
+<code><a href="../reference/Tags.html">Tags()</a></code> (new) lists the key, annotation, and keywords of <code>quarto.bib</code> with rProject’s own parser; the “Library Tags” page (<code>tags.qmd</code>, lib, man, talk) uses it. <code>RefManageR</code> is dropped from <code><a href="../reference/PkgDevel.html">PkgDevel()</a></code> and the docker image.</li>
+<li>Overleaf keeps only the files its PDF compile needs (LaTeX preamble, <code>r-scripts</code>, <code>load.R</code> (now a link), style files, lib documents, <code>latexmkrc</code>). <code>Makefile</code> and <code>.setup/latex/.gitignore</code> are now written by make; so are the lib <code>.gitignore</code> and <code>_quarto.yml</code>, and every <code>clone.sh</code>. A fresh copy from Overleaf runs <code>Rscript -e 'rProject::Template(getwd())'</code> once.</li>
+<li>Placeholders <code>{{project}}</code>, <code>{{public}}</code>, <code>{{owner}}</code>, <code>{{repo}}</code> in any tier 2 template file; a file that needs the public repository is skipped without one.</li>
+<li>
+<code><a href="../reference/Lock.html">Lock()</a></code> (new): <code>make auto</code> writes <code>.setup/scripts/rproject.lock</code> (the rProject commit and version); <code>make project</code> installs that rProject in GitHub Actions and locally with <code>make project LOCK=TRUE</code>. <code>rproject_ver</code> is removed. <code>make auto</code> also tags <code>v&lt;Version&gt;</code> once per version.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.55" id="rproject-0055">rProject 0.0.55<a class="anchor" aria-label="anchor" href="#rproject-0055"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-55">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-55"></a></h3>
+<ul><li>The daily docker builds run as a chain instead of on staggered crons. The template <code>docker-build-push-daily-multi.yml</code> always listens for a <code>base-image-built</code> event (<code>repository_dispatch</code>) and <code>workflow_dispatch</code>; it has a schedule only when <code>workflow_cron</code> is set in <code>project.R</code>, and, when <code>workflow_next</code> (<code>"owner/repository"</code>) is set, a last step that sends the event to the next image after a successful build (with the <code>PAT</code> secret). So each image builds right after its base, and a failure stops the chain. <code>workflow_cron</code> is now optional; an invalid <code>workflow_next</code> stops <code><a href="../reference/Template.html">Template()</a></code>.</li>
+<li>
+<code>.TemplateFill()</code>: a value may span several lines, and a line that holds only an empty placeholder is dropped.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.54" id="rproject-0054">rProject 0.0.54<a class="anchor" aria-label="anchor" href="#rproject-0054"></a></h2>
 <div class="section level3">

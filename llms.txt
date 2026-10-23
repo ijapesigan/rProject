@@ -1,6 +1,6 @@
 # rProject
 
-Ivan Jacob Agaloos Pesigan 2026-10-22
+Ivan Jacob Agaloos Pesigan 2026-10-23
 
 ## Description
 
@@ -160,6 +160,9 @@ computing*. R Foundation for Statistical Computing.
 - [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md) :
   Lint Project
 
+- [`Lock()`](https://github.com/ijapesigan/rProject/reference/Lock.md) :
+  Record What Built the Project
+
 - [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md) :
   Create or Update a Change-Set Log
 
@@ -219,6 +222,9 @@ computing*. R Foundation for Statistical Computing.
 
 - [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
   : Style Project
+
+- [`Tags()`](https://github.com/ijapesigan/rProject/reference/Tags.md) :
+  Library Tags
 
 - [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
   : Write the Template Files

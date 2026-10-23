@@ -29,9 +29,9 @@ Verify(
 - log:
 
   Character string. File name of the change-set log in `.setup/logs`. If
-  `NULL`, the newest log with a pending push in `.setup/logs/index.md`,
-  else the log named in the pushed commit message
-  (`Log: .setup/logs/<log>`), as for a fix-up push.
+  `NULL`, the log named in the pushed commit message
+  (`Log: .setup/logs/<log>`), else the newest log with a pending push in
+  `.setup/logs/index.md`.
 
 - record:
 

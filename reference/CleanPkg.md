@@ -1,6 +1,7 @@
 # Clean R Packages
 
-Uninstall R packages with `priority = "NA"`.
+Remove the project's R library (`.library`). Packages outside the
+project (the image's site library, the user library) are never touched.
 
 ## Usage
 

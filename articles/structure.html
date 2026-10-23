@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.54</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.57</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -538,35 +538,53 @@ and <code>make template</code>) keeps the template files of a project in
 step with rProject. Each file has a tier:</p>
 <ul>
 <li>
-<strong>Tier 1, links.</strong> Files that Overleaf or
-<code>make</code> needs (<code>Makefile</code>, <code>latexmkrc</code>,
-the LaTeX preamble, …). They are linked into the Overleaf project from
-rProject’s Overleaf project. <code><a href="../reference/Template.html">Template()</a></code> never writes them;
-it lists those that differ as links to refresh.</li>
+<strong>Tier 1, links.</strong> Only the files Overleaf needs to
+compile the PDFs: the LaTeX preamble,
+<code>.setup/latex/r-scripts/</code>, <code>.setup/load/load.R</code>,
+style files, the lib documents, and <code>latexmkrc</code>
+(<code>inst/latexmk/latexmkrc</code>). <code>project.Rproj</code>
+(written by <code>make</code>) must be in Overleaf too:
+<code>knitr.R</code> finds the project root with it. They are linked
+into the Overleaf project from rProject’s Overleaf project.
+<code><a href="../reference/Template.html">Template()</a></code> never writes them; it lists those that differ as
+links to refresh.</li>
 <li>
 <strong>Tier 2, written by <code>make</code>.</strong> Everything
-else: the workflows, the make scripts, the Quarto pages, the folder
-skeleton. <code><a href="../reference/Template.html">Template()</a></code> writes a file that is missing or
-differs (the template wins: change it in rProject). These files are not
-uploaded to Overleaf.</li>
+else: the <code>Makefile</code>, the workflows, the make scripts,
+<code>.gitignore</code>, <code>clone.sh</code>, the Quarto pages, the
+folder skeleton. A fresh copy from Overleaf has no
+<code>Makefile</code>: run
+<code>apptainer exec &lt;image&gt; Rscript -e 'rProject::Template(getwd())'</code>
+once, then <code>make</code>. <code><a href="../reference/Template.html">Template()</a></code> writes a file that
+is missing or differs (the template wins: change it in rProject). These
+files are not uploaded to Overleaf.</li>
 </ul>
 <p>Workflows that only some projects run are in a catalog
 (<code>inst/template/workflows/</code>). A project names the ones it
 runs in <code>project.R</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">workflows</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"docker-build-push-multi"</span>, <span class="st">"docker-build-push-daily-multi"</span><span class="op">)</span></span>
-<span><span class="va">workflow_daily</span> <span class="op">&lt;-</span> <span class="st">"docs"</span></span>
-<span><span class="va">workflow_title</span> <span class="op">&lt;-</span> <span class="st">"Docker Build and Push Docs [multi] (Daily)"</span></span>
-<span><span class="va">workflow_cron</span> <span class="op">&lt;-</span> <span class="st">"30 3 * * *"</span></span></code></pre></div>
+<span><span class="va">workflow_daily</span> <span class="op">&lt;-</span> <span class="st">"dplyr"</span></span>
+<span><span class="va">workflow_title</span> <span class="op">&lt;-</span> <span class="st">"Docker Build and Push Dplyr [multi] (Daily)"</span></span>
+<span><span class="va">workflow_next</span> <span class="op">&lt;-</span> <span class="st">"ijapesigan/docker-tidymodels"</span></span></code></pre></div>
 <p>The daily docker workflow is written as
-<code>docker-build-push-daily-multi-&lt;workflow_daily&gt;.yml</code>,
-with its title and cron filled in.</p>
+<code>docker-build-push-daily-multi-&lt;workflow_daily&gt;.yml</code>.
+The daily builds run as a chain, because each image builds on the one
+before it: only the first image has a schedule
+(<code>workflow_cron</code>); when a build succeeds, it starts the next
+image’s build (<code>workflow_next</code>, a
+<code>repository_dispatch</code> event), so a failure stops the chain
+and no image builds on a stale base.</p>
 <p>Files that leave the template are listed in
 <code>inst/template/removed.tsv</code>. <code><a href="../reference/Template.html">Template()</a></code> deletes
 them (a folder only when nothing but <code>.gitignore</code> files is
 left in it) and names them, so that they can be deleted in Overleaf
 too.</p>
 <table class="table">
+<colgroup>
+<col width="91%">
+<col width="8%">
+</colgroup>
 <thead><tr class="header">
 <th align="left">path</th>
 <th align="left">since</th>
@@ -640,6 +658,42 @@ too.</p>
 <td align="left"><code>.setup/scripts/secrets.R</code></td>
 <td align="left">0.0.54</td>
 </tr>
+<tr class="even">
+<td align="left"><code>.github/workflows/docker-apptainer-build-push-amd64.yml</code></td>
+<td align="left">0.0.57</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>.github/workflows/docker-apptainer-build-push-daily-amd64-arm64.yml</code></td>
+<td align="left">0.0.57</td>
+</tr>
+<tr class="even">
+<td align="left"><code>.github/workflows/docker-apptainer-build-push-daily-amd64.yml</code></td>
+<td align="left">0.0.57</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>.github/workflows/docker-apptainer-build-push-monthly-amd64-arm64.yml</code></td>
+<td align="left">0.0.57</td>
+</tr>
+<tr class="even">
+<td align="left"><code>.github/workflows/docker-apptainer-build-push-monthly-amd64.yml</code></td>
+<td align="left">0.0.57</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>.github/workflows/docker-build-amd64.yml</code></td>
+<td align="left">0.0.57</td>
+</tr>
+<tr class="even">
+<td align="left"><code>.github/workflows/docker-build-push-amd64.yml</code></td>
+<td align="left">0.0.57</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>.github/workflows/docker-build-push-monthly-amd64.yml</code></td>
+<td align="left">0.0.57</td>
+</tr>
+<tr class="even">
+<td align="left"><code>.github/workflows/docker-build-push-weekly-amd64.yml</code></td>
+<td align="left">0.0.57</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -672,6 +726,10 @@ repository.</li>
 <h2 id="make-targets">Make targets<a class="anchor" aria-label="anchor" href="#make-targets"></a>
 </h2>
 <table class="table">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
 <thead><tr class="header">
 <th>Target</th>
 <th>Does</th>
@@ -679,7 +737,17 @@ repository.</li>
 <tbody>
 <tr class="odd">
 <td><code>make project</code></td>
-<td>settings, template files, AI files</td>
+<td>settings, template files, AI files; restores the lock</td>
+</tr>
+<tr class="even">
+<td><code>make upgrade</code></td>
+<td>move to the newest rProject (the next <code>make auto</code> updates
+the lock)</td>
+</tr>
+<tr class="odd">
+<td><code>make cleanpkg</code></td>
+<td>remove the project’s <code>.library</code> (nothing outside the
+project)</td>
 </tr>
 <tr class="even">
 <td><code>make all</code></td>
@@ -727,6 +795,93 @@ repository.</li>
 </table>
 <p>R runs only inside an Apptainer image:
 <code>apptainer exec &lt;image&gt; make &lt;target&gt;</code>.</p>
+</div>
+<div class="section level2">
+<h2 id="reproducible-builds">Reproducible builds<a class="anchor" aria-label="anchor" href="#reproducible-builds"></a>
+</h2>
+<p><code>make auto</code> writes
+<code>.setup/scripts/rproject.lock</code>
+(<code><a href="../reference/Lock.html">rProject::Lock()</a></code>), and <code>make project</code> restores
+it, locally and in GitHub Actions. The lock records four things, not a
+whole library, because the image already holds almost every package:</p>
+<table class="table">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th>Field</th>
+<th>Pins</th>
+<th>Restore</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>rproject_sha</code></td>
+<td>rProject</td>
+<td>installed at that commit into <code>.library</code>
+</td>
+</tr>
+<tr class="even">
+<td><code>image</code></td>
+<td>R, the image’s packages, TeX, Quarto</td>
+<td>CI runs
+<code>docker.io/ijapesigan/&lt;name&gt;@sha256:...</code>
+</td>
+</tr>
+<tr class="odd">
+<td><code>snapshot</code></td>
+<td>the image’s date</td>
+<td>packages the image lacks come from that Posit Package Manager
+snapshot</td>
+</tr>
+<tr class="even">
+<td>
+<code>extra_cran</code>, <code>extra_github</code>
+</td>
+<td>packages the project adds in <code>project.R</code>
+</td>
+<td>their versions and commits</td>
+</tr>
+</tbody>
+</table>
+<p>Rules:</p>
+<ul>
+<li>A package found in any library is never upgraded. Only an explicit
+pin changes it (<code>pkg_ver</code>/<code>ver</code>, or a commit SHA
+in <code>pkg_github_ref</code>). A project that needs a newer version of
+a package the image has adds it to the image.</li>
+<li>
+<code>make project</code> says when a newer rProject exists, or when
+the running sif is not the image in the lock; <code>make upgrade</code>
+moves forward, and the next <code>make auto</code> records the running
+image.</li>
+<li>Before installing an rProject, <code>make project</code> checks that
+the image provides its imports; otherwise it stops (“rebuild
+docs.sif”).</li>
+<li>Each workflow that uses the image starts with a job,
+<code>image</code>, that reads the lock. A scheduled run, a manual run
+with <code>latest</code>, a project without a lock, or a digest that is
+gone from the registry runs the latest image. The R CMD check workflows
+(setup-r and r-hub) install packages from the snapshot, except on
+R-devel.</li>
+<li>docker-* projects have no lock: their recurring builds take the
+newest upstream base and the newest rProject.</li>
+</ul>
+<p><strong>Public images and proprietary add-ons.</strong> A public
+image <code>ijapesigan/&lt;name&gt;</code> (Docker Hub, GHCR), built
+from <code>ijapesigan/docker-&lt;name&gt;</code>, never holds
+proprietary software; its sif is a plain pull,
+<code>~/work/sif/&lt;name&gt;.sif</code>. An add-on such as Mplus is
+built locally from that sif with <code>Bootstrap: localimage</code> into
+<code>~/work/sif/&lt;name&gt;-plus.sif</code> (template:
+<code>system.file("plus", "plus.def", package = "rProject")</code>) and
+is never pushed. It keeps the public image’s labels, so the lock records
+the public image by digest (CI runs it) and the add-on’s checksum
+(<code>sif_sha256</code>); keep each release’s add-on sif in
+<code>~/work/sif/archive/</code>. CI cannot rerun the proprietary steps:
+their results come from caches (knitr cache,
+<code>.setup/data-dependencies/</code>).</p>
 </div>
 <div class="section level2">
 <h2 id="keywords">Keywords<a class="anchor" aria-label="anchor" href="#keywords"></a>
