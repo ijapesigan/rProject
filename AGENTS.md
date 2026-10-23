@@ -14,7 +14,8 @@ the user maintains (aims, data, notation, co-authors, open issues).
 - Type: package
 - Private repository: `jeksterslab-psu/rProject` (Overleaf pushes here)
 - Overleaf project: not recorded (`.setup/repo/private-overleaf.md`)
-- Public repository: `ijapesigan/rProject` (`make auto` pushes here)
+- Public repository: not recorded (`.setup/repo/public-github.md`)
+  (`make auto` pushes here)
 - These come from `.setup/repo/` (private). O2G checks the private
   repository; PUB checks the public one.
 - Image: **the user chooses it** and runs

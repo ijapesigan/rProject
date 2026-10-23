@@ -239,6 +239,10 @@ Rules:
   packages from the snapshot, except on R-devel.
 - docker-\* projects have no lock: their recurring builds take the
   newest upstream base and the newest rProject.
+- Publishing never skips `make project`: the files make writes
+  (workflows, `Makefile`, scripts) are not in the private repository.
+  `make auto` assumes a built project, and “build docs” builds each
+  project before it pushes it.
 
 **Public images and proprietary add-ons.** A public image
 `ijapesigan/<name>` (Docker Hub, GHCR), built from

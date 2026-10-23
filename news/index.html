@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.57</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.58</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,22 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.58" id="rproject-0058">rProject 0.0.58<a class="anchor" aria-label="anchor" href="#rproject-0058"></a></h2>
+<div class="section level3">
+<h3 id="minor-0-0-58">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-58"></a></h3>
+<ul><li>
+<code>build-docs.sh</code> (“build docs”) runs <code>make project</code> (and <code>make readme</code>) in each project before it publishes, so the files make writes (workflows, <code>Makefile</code>, scripts, <code>README.md</code>) are in the push; a push that would delete a workflow stops the run, and a dry run prints the whole change. Before, it would have published docker-docs without its workflows.</li>
+<li>
+<code>clone.sh</code> (<code>make auto</code>) clones through the SSH alias <code>github-&lt;owner&gt;</code> when <code>~/.ssh/config</code> defines it (as on Roar), else <code>github.com</code>.</li>
+<li>The template files pass lint in rProject: <code>lint_dir()</code> skips hidden folders, so they were first linted when 0.0.54 moved them to <code>inst/template/</code> (Lint R Package had failed since 2026-10-21). <code>detritus.R</code> and the knitr option scripts drop <code><a href="https://rdrr.io/r/base/function.html" class="external-link">return()</a></code>; <code>KnitrOptionsDefault()</code> takes <code><a href="../reference/Detritus.html">Detritus()</a></code> from <code><a href="https://rdrr.io/r/base/source.html" class="external-link">source()</a></code>’s value; <code>load.R</code>’s comments are prose. <code>make lint</code> and the lint workflow skip only <code>indentation_linter</code> on <code>.Rtex</code> files: lintr counts the <code>%</code> of a chunk-option line (<code>% #| label = ...</code>) as indentation (the manuscripts had the same false positive).</li>
+<li>Template sets: docker gains <code>make-install.R</code>, <code>make-packages.R</code>, and <code>.setup/scripts/.gitignore</code> (its Makefile uses them); talk gains <code>make-config.R</code> and <code>verify.sh</code> (<code>make verify</code>). So in every type, <code>.setup/scripts/</code> holds only generated files and <code>project.R</code>; keep the <code>Makefile</code> (the entry point) as a regular file, not a link.</li>
+<li>
+<code>build-docs.sh</code> writes the template files first (<code><a href="../reference/Template.html">Template()</a></code>) when a download has no <code>Makefile</code> or <code>make-project.R</code>.</li>
+<li>
+<code><a href="../reference/LatexCompile.html">LatexCompile()</a></code> (<code>make latex</code>) checks each log: a document whose last run failed (fatal error, TeX capacity exceeded) stops the build in GitHub Actions and gives a warning locally. <code>latexmk -f</code> had left lib-apa as a one-page stub for two days while CI reported success.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.57" id="rproject-0057">rProject 0.0.57<a class="anchor" aria-label="anchor" href="#rproject-0057"></a></h2>
 <div class="section level3">

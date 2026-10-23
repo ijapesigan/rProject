@@ -11,7 +11,7 @@ make and no Overleaf refresh."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.57</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.58</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,8 @@ deleted files (or those that would be deleted) in the attribute
 (<code>inst/template/manifest.tsv</code>). Each file has a tier:</p><ul><li><p>Tier 1, links: the files Overleaf needs to compile the PDFs (the
 LaTeX preamble, <code>.setup/latex/r-scripts/</code>, <code>.setup/load/load.R</code>,
 style files, the lib documents; <code>latexmkrc</code> is linked to
-<code>inst/latexmk/latexmkrc</code>). They stay Overleaf links that the user refreshes.
+<code>inst/latexmk/latexmkrc</code>). They stay Overleaf links that the user
+refreshes.
 <code>Template()</code> never writes them; it lists the ones that differ
 from rProject as links to refresh.</p></li>
 <li><p>Tier 2, written by make: everything else (workflows, scripts, ...).

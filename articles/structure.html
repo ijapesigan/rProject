@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.57</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.58</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -867,6 +867,10 @@ gone from the registry runs the latest image. The R CMD check workflows
 R-devel.</li>
 <li>docker-* projects have no lock: their recurring builds take the
 newest upstream base and the newest rProject.</li>
+<li>Publishing never skips <code>make project</code>: the files make
+writes (workflows, <code>Makefile</code>, scripts) are not in the
+private repository. <code>make auto</code> assumes a built project, and
+“build docs” builds each project before it pushes it.</li>
 </ul>
 <p><strong>Public images and proprietary add-ons.</strong> A public
 image <code>ijapesigan/&lt;name&gt;</code> (Docker Hub, GHCR), built
