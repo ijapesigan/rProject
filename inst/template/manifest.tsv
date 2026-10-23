@@ -93,6 +93,8 @@ talk	2	.setup/quarto/references/references.qmd
 talk	2	.setup/quarto/scss/custom.scss
 talk	2	.setup/quarto/session/session.qmd
 talk	2	.setup/quarto/tags/tags.qmd
+talk	2	.setup/scripts/make-config.R
+talk	2	.setup/scripts/verify.sh
 talk	2	.sif/.gitignore
 talk	2	.sim/.gitignore
 talk	2	Makefile
@@ -103,8 +105,11 @@ docker	2	.gitignore
 docker	2	.setup/notes/.gitignore
 docker	2	.setup/notes/notes
 docker	2	.setup/repo/.gitignore
+docker	2	.setup/scripts/.gitignore
 docker	2	.setup/scripts/clone.sh
 docker	2	.setup/scripts/make-config.R
+docker	2	.setup/scripts/make-install.R
+docker	2	.setup/scripts/make-packages.R
 docker	2	.setup/scripts/make-project.R
 docker	2	.setup/scripts/verify.sh
 docker	2	Makefile

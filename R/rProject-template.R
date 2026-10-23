@@ -12,7 +12,8 @@
 #' - Tier 1, links: the files Overleaf needs to compile the PDFs (the
 #'   LaTeX preamble, `.setup/latex/r-scripts/`, `.setup/load/load.R`,
 #'   style files, the lib documents; `latexmkrc` is linked to
-#'   `inst/latexmk/latexmkrc`). They stay Overleaf links that the user refreshes.
+#'   `inst/latexmk/latexmkrc`). They stay Overleaf links that the user
+#'   refreshes.
 #'   `Template()` never writes them; it lists the ones that differ
 #'   from rProject as links to refresh.
 #' - Tier 2, written by make: everything else (workflows, scripts, ...).

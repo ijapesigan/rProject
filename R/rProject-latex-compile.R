@@ -2,7 +2,9 @@
 #'
 #' Runs `latexmk` on every `.tex` file, with 10 million extra words of
 #' pdfTeX main memory (`extra_mem_bot`), so that a long bibliography
-#' compiles.
+#' compiles. A document whose last run failed (fatal error, TeX capacity
+#' exceeded) stops `make latex` in GitHub Actions and gives a warning
+#' locally: `latexmk -f` would otherwise leave a stub PDF and succeed.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -79,6 +81,24 @@ LatexCompile <- function(path,
         env = "extra_mem_bot=10000000"
       )
     )
+    failed <- .LatexLogCheck(
+      logs = file.path(
+        pdf_folder,
+        sub(pattern = "\\.tex$", replacement = ".log", x = basename(tex_files))
+      )
+    )
+    if (length(failed) > 0) {
+      problem <- paste0(
+        "\n\nLaTeX failed (a stub PDF or none): ",
+        paste(basename(failed), collapse = ", "),
+        ". See the log.\n\n"
+      )
+      if (identical(Sys.getenv("GITHUB_ACTIONS"), "true")) {
+        stop(problem, call. = FALSE)
+      } else {
+        warning(problem, call. = FALSE)
+      }
+    }
   }
   if (clean) {
     invisible(

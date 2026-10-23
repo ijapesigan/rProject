@@ -1,3 +1,14 @@
+# rProject 0.0.58
+
+## Minor
+
+* `build-docs.sh` ("build docs") runs `make project` (and `make readme`) in each project before it publishes, so the files make writes (workflows, `Makefile`, scripts, `README.md`) are in the push; a push that would delete a workflow stops the run, and a dry run prints the whole change. Before, it would have published docker-docs without its workflows.
+* `clone.sh` (`make auto`) clones through the SSH alias `github-<owner>` when `~/.ssh/config` defines it (as on Roar), else `github.com`.
+* The template files pass lint in rProject: `lint_dir()` skips hidden folders, so they were first linted when 0.0.54 moved them to `inst/template/` (Lint R Package had failed since 2026-10-21). `detritus.R` and the knitr option scripts drop `return()`; `KnitrOptionsDefault()` takes `Detritus()` from `source()`'s value; `load.R`'s comments are prose. `make lint` and the lint workflow skip only `indentation_linter` on `.Rtex` files: lintr counts the `%` of a chunk-option line (`% #| label = ...`) as indentation (the manuscripts had the same false positive).
+* Template sets: docker gains `make-install.R`, `make-packages.R`, and `.setup/scripts/.gitignore` (its Makefile uses them); talk gains `make-config.R` and `verify.sh` (`make verify`). So in every type, `.setup/scripts/` holds only generated files and `project.R`; keep the `Makefile` (the entry point) as a regular file, not a link.
+* `build-docs.sh` writes the template files first (`Template()`) when a download has no `Makefile` or `make-project.R`.
+* `LatexCompile()` (`make latex`) checks each log: a document whose last run failed (fatal error, TeX capacity exceeded) stops the build in GitHub Actions and gives a warning locally. `latexmk -f` had left lib-apa as a one-page stub for two days while CI reported success.
+
 # rProject 0.0.57
 
 ## Minor

@@ -23,8 +23,10 @@
 #
 # The projects and their order: .setup/scripts/build-docs.txt.
 # Per project, the steps of `make auto`: the private repository is
-# downloaded, its clone.sh brings in the public .git, Public() checks the
-# export, then git add, commit "Automated build.", and push. The script waits
+# downloaded, its clone.sh brings in the public .git, make project (and
+# make readme) write the generated files, Public() checks the export, then
+# git add, commit "Automated build.", and push; a push that would delete a
+# workflow stops the run. The script waits
 # for Make Project on the pushed commit, then for "Docker Build and Push
 # [multi]" (it runs on the commit that Make Project pushes), retries failed
 # multi jobs once, and stops at the first failure.
@@ -206,9 +208,28 @@ for p in "${projects[@]}"; do
   repo="$(tr -d '[:space:]' < .setup/repo/public-github.md)"
   bash .setup/scripts/clone.sh || fail "${p}: clone.sh"
   log "${p}: public .git from ${repo}"
+  # the files make writes (workflows, Makefile, scripts: Template(); the
+  # README) are not in the private repository: build them first, as make
+  # auto assumes (rProject 0.0.58)
+  # a copy without the Makefile or make-project.R (tier 2): write the
+  # template files first, with the image's rProject
+  if [[ ! -f Makefile || ! -f .setup/scripts/make-project.R ]]; then
+    apptainer exec "${image}" Rscript -e "rProject::Template(\"${PWD}\")" ||
+      fail "${p}: Template()"
+  fi
+  apptainer exec "${image}" make project || fail "${p}: make project"
+  if [[ -f .setup/readme/README.Rmd ]]; then
+    apptainer exec "${image}" make readme || fail "${p}: make readme"
+  fi
+  log "${p}: make project done"
   apptainer exec "${image}" Rscript -e "rProject::Public(\"${PWD}\")" ||
     fail "${p}: Public()"
   git add --all
+  # never publish a project without its workflows
+  lost="$(git diff --cached --name-only --diff-filter=D -- .github/workflows)"
+  if [[ -n "${lost}" ]]; then
+    fail "${p}: the push would delete workflows: $(echo "${lost}" | tr '\n' ' ')"
+  fi
   if git diff --cached --quiet; then
     log "${p}: nothing to commit"
     summary+=("| ${p} | (nothing to commit) | | | skipped |")
@@ -216,7 +237,7 @@ for p in "${projects[@]}"; do
   fi
   if [[ "${dry_run}" == "1" ]]; then
     log "${p}: DRY_RUN, would commit:"
-    git diff --cached --stat | tail -n 5
+    git diff --cached --stat
     summary+=("| ${p} | (dry run) | | | |")
     continue
   fi
