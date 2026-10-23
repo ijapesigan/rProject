@@ -377,14 +377,29 @@ rproject_target <- ifelse(
 rproject_self <- identical(rproject_type, "rProject")
 if (rproject_self) {
   message("\n\nInstalling rProject from this folder into .library.\n\n")
-  devtools::document(pkg = path)
-  devtools::install(
-    pkg = path,
-    dependencies = FALSE,
-    upgrade = FALSE,
-    quick = TRUE,
-    reload = FALSE
+  # in a separate R process, so that this one loads the installed rProject
+  # (not a namespace left by roxygen); GitHub Actions only installs, with
+  # NAMESPACE and man/ as published (make all wrote them)
+  rproject_self_code <- paste0(
+    ".libPaths(c(\"", dot_library_folder, "\", .libPaths())); ",
+    if (identical(Sys.getenv("GITHUB_ACTIONS"), "true")) {
+      ""
+    } else {
+      paste0("devtools::document(pkg = \"", path, "\"); ")
+    },
+    "install.packages(\"", path, "\", repos = NULL, type = \"source\", ",
+    "lib = \"", dot_library_folder, "\")"
   )
+  rproject_self_status <- system2(
+    command = file.path(R.home("bin"), "Rscript"),
+    args = c("-e", shQuote(rproject_self_code))
+  )
+  if (!identical(as.integer(rproject_self_status), 0L)) {
+    stop(
+      "\n\nrProject could not be installed from this folder.\n\n",
+      call. = FALSE
+    )
+  }
 } else if (is.na(rproject_target)) {
   if (is.na(rproject_sha)) {
     rproject_install(ref = "ijapesigan/rProject")
