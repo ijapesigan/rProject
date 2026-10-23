@@ -107,14 +107,21 @@ Notes:
 keeps the template files of a project in step with rProject.
 Each file has a tier:
 
-- **Tier 1, links.** Files that Overleaf or `make` needs
-  (`Makefile`, `latexmkrc`, the LaTeX preamble, ...).
+- **Tier 1, links.** Only the files Overleaf needs to compile the PDFs:
+  the LaTeX preamble, `.setup/latex/r-scripts/`, `.setup/load/load.R`,
+  style files, the lib documents, and `latexmkrc`
+  (`inst/latexmk/latexmkrc`). `project.Rproj` (written by `make`) must be
+  in Overleaf too: `knitr.R` finds the project root with it.
   They are linked into the Overleaf project from rProject's Overleaf
   project.
   `Template()` never writes them; it lists those that differ as links to
   refresh.
-- **Tier 2, written by `make`.** Everything else: the workflows,
-  the make scripts, the Quarto pages, the folder skeleton.
+- **Tier 2, written by `make`.** Everything else: the `Makefile`, the
+  workflows, the make scripts, `.gitignore`, `clone.sh`, the Quarto
+  pages, the folder skeleton. A fresh copy from Overleaf has no
+  `Makefile`: run
+  `apptainer exec <image> Rscript -e 'rProject::Template(getwd())'`
+  once, then `make`.
   `Template()` writes a file that is missing or differs
   (the template wins: change it in rProject).
   These files are not uploaded to Overleaf.
@@ -125,14 +132,19 @@ A project names the ones it runs in `project.R`:
 
 ```r
 workflows <- c("docker-build-push-multi", "docker-build-push-daily-multi")
-workflow_daily <- "docs"
-workflow_title <- "Docker Build and Push Docs [multi] (Daily)"
-workflow_cron <- "30 3 * * *"
+workflow_daily <- "dplyr"
+workflow_title <- "Docker Build and Push Dplyr [multi] (Daily)"
+workflow_next <- "ijapesigan/docker-tidymodels"
 ```
 
 The daily docker workflow is written as
-`docker-build-push-daily-multi-<workflow_daily>.yml`,
-with its title and cron filled in.
+`docker-build-push-daily-multi-<workflow_daily>.yml`.
+The daily builds run as a chain, because each image builds on the one
+before it:
+only the first image has a schedule (`workflow_cron`);
+when a build succeeds, it starts the next image's build
+(`workflow_next`, a `repository_dispatch` event),
+so a failure stops the chain and no image builds on a stale base.
 
 Files that leave the template are listed in
 `inst/template/removed.tsv`.
@@ -180,7 +192,9 @@ knitr::kable(
 
 | Target | Does |
 |---|---|
-| `make project` | settings, template files, AI files |
+| `make project` | settings, template files, AI files; restores the lock |
+| `make upgrade` | move to the newest rProject (the next `make auto` updates the lock) |
+| `make cleanpkg` | remove the project's `.library` (nothing outside the project) |
 | `make all` | build, docs, LaTeX, pkgdown, Quarto, coverage |
 | `make lint` | style and lint the R code; report Overleaf limits |
 | `make sizecheck` | check Overleaf limits |
@@ -194,6 +208,53 @@ knitr::kable(
 
 R runs only inside an Apptainer image:
 `apptainer exec <image> make <target>`.
+
+## Reproducible builds
+
+`make auto` writes `.setup/scripts/rproject.lock` (`rProject::Lock()`),
+and `make project` restores it, locally and in GitHub Actions.
+The lock records four things, not a whole library,
+because the image already holds almost every package:
+
+| Field | Pins | Restore |
+|---|---|---|
+| `rproject_sha` | rProject | installed at that commit into `.library` |
+| `image` | R, the image's packages, TeX, Quarto | CI runs `docker.io/ijapesigan/<name>@sha256:...` |
+| `snapshot` | the image's date | packages the image lacks come from that Posit Package Manager snapshot |
+| `extra_cran`, `extra_github` | packages the project adds in `project.R` | their versions and commits |
+
+Rules:
+
+- A package found in any library is never upgraded.
+  Only an explicit pin changes it
+  (`pkg_ver`/`ver`, or a commit SHA in `pkg_github_ref`).
+  A project that needs a newer version of a package the image has
+  adds it to the image.
+- `make project` says when a newer rProject exists, or when the running
+  sif is not the image in the lock; `make upgrade` moves forward, and the
+  next `make auto` records the running image.
+- Before installing an rProject, `make project` checks that the image
+  provides its imports; otherwise it stops ("rebuild docs.sif").
+- Each workflow that uses the image starts with a job, `image`, that reads
+  the lock. A scheduled run, a manual run with `latest`, a project without
+  a lock, or a digest that is gone from the registry runs the latest image.
+  The R CMD check workflows (setup-r and r-hub) install packages from the
+  snapshot, except on R-devel.
+- docker-* projects have no lock: their recurring builds take the newest
+  upstream base and the newest rProject.
+
+**Public images and proprietary add-ons.**
+A public image `ijapesigan/<name>` (Docker Hub, GHCR), built from
+`ijapesigan/docker-<name>`, never holds proprietary software;
+its sif is a plain pull, `~/work/sif/<name>.sif`.
+An add-on such as Mplus is built locally from that sif with
+`Bootstrap: localimage` into `~/work/sif/<name>-plus.sif`
+(template: `system.file("plus", "plus.def", package = "rProject")`)
+and is never pushed. It keeps the public image's labels, so the lock
+records the public image by digest (CI runs it) and the add-on's checksum
+(`sif_sha256`); keep each release's add-on sif in `~/work/sif/archive/`.
+CI cannot rerun the proprietary steps: their results come from caches
+(knitr cache, `.setup/data-dependencies/`).
 
 ## Keywords
 

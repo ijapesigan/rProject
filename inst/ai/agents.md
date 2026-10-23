@@ -40,6 +40,8 @@ maintains (aims, data, notation, co-authors, open issues).
 | `make verify RECORD=TRUE` | after the user pushes from Overleaf (O2G): verify and record the push. On Roar, run `bash .setup/scripts/verify.sh` on the host first to pull. |
 | `make auto` | publish to the public repository (checks the export first) |
 | `make tree` | the project's folders and what each is for; flags missing and non-standard folders |
+| `make project` | settings, template files; restores `.setup/scripts/rproject.lock` (rProject, image, snapshot) |
+| `make upgrade` | move to the newest rProject; the next `make auto` updates the lock. Never upgrade a package the image has: add it to the image |
 {{targets}}
 
 ## Generated files: never edit by hand

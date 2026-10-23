@@ -1,11 +1,16 @@
-.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log sizecheck public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes template tree
+.PHONY: all build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log sizecheck public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes template tree upgrade
 
 push: build docs latex coverage cleanpush
 
 project:
 	@echo "\n\nBuilding project...\n\n"
 	@test -f .setup/scripts/make-project.R || Rscript -e "rProject::Template(\"${PWD}\")"
-	@Rscript .setup/scripts/make-project.R ${PWD}
+	@Rscript .setup/scripts/make-project.R ${PWD} ${LOCK}
+
+upgrade:
+	@echo "\n\nUpgrading rProject (the next make auto updates the lock)...\n\n"
+	@test -f .setup/scripts/make-project.R || Rscript -e "rProject::Template(\"${PWD}\")"
+	@Rscript .setup/scripts/make-project.R ${PWD} UPGRADE
 
 template:
 	@echo "\n\nWriting template files...\n\n"
@@ -195,6 +200,11 @@ clone:
 
 auto: clone
 	@Rscript -e "if (exists('Public', envir = asNamespace('rProject'))) rProject::Public(\"${PWD}\") else message('\n\nWARNING: rProject is older than 0.0.33; the public export was NOT checked. Run make project.\n\n')"
+	@Rscript -e "if (exists('Lock', envir = asNamespace('rProject'))) rProject::Lock(\"${PWD}\")"
 	@git add --all
 	@git commit -m "Automated build."
 	@git push origin main
+	@V=$$(sed -n 's/^Version: *//p' DESCRIPTION 2> /dev/null); \
+	if [ -n "$$V" ] && ! git rev-parse -q --verify "refs/tags/v$$V" > /dev/null; then \
+		git tag -a "v$$V" -m "v$$V" && git push origin "v$$V"; \
+	fi

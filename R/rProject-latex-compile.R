@@ -1,5 +1,9 @@
 #' Compile Output of `LatexKnit`
 #'
+#' Runs `latexmk` on every `.tex` file, with 10 million extra words of
+#' pdfTeX main memory (`extra_mem_bot`), so that a long bibliography
+#' compiles.
+#'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
@@ -69,7 +73,10 @@ LatexCompile <- function(path,
           "-interaction=nonstopmode",
           paste0("-output-directory=", .ShellQuote(x = pdf_folder)),
           .ShellQuote(x = tex_files)
-        )
+        ),
+        # pdflatex's main memory (5M words) is too small for a long
+        # bibliography (lib-apa with biblatex 3.22): add 10M words (~80 MB)
+        env = "extra_mem_bot=10000000"
       )
     )
   }

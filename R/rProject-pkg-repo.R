@@ -1,6 +1,12 @@
 #' Setup RStudio Package Manager Repository
 #' Based on the Current Operating System
 #'
+#' The repository is the Posit Package Manager snapshot of the image's
+#' date, so that a package the image lacks matches the image's other
+#' packages: the environment variable `RPROJECT_SNAPSHOT` (set in GitHub
+#' Actions from the lock), the date of the running sif, the lock's
+#' `snapshot`, or `latest`.
+#'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
@@ -9,9 +15,11 @@
 PkgRepo <- function(path) {
   # source
   all <- "https://packagemanager.rstudio.com/all/"
+  snapshot <- .PkgSnapshot(path = path)
   src <- paste0(
     all,
-    "latest/"
+    snapshot,
+    "/"
   )
   repos <- src
 
@@ -27,7 +35,8 @@ PkgRepo <- function(path) {
     return(
       paste0(
         all,
-        "latest/bin/windows"
+        snapshot,
+        "/bin/windows"
       )
     )
     # nolint end
@@ -45,11 +54,12 @@ PkgRepo <- function(path) {
     } else {
       repos <- src
       if (tolower(distro$id) == "ubuntu") {
-        if (distro$codename %in% c("bionic", "focal", "jammy")) {
+        if (distro$codename %in% c("bionic", "focal", "jammy", "noble")) {
           repos <- paste0(
             linux,
             distro$codename,
-            "/latest"
+            "/",
+            snapshot
           )
         }
       }
@@ -58,14 +68,16 @@ PkgRepo <- function(path) {
           repos <- paste0(
             linux,
             "rhel9",
-            "/latest"
+            "/",
+            snapshot
           )
         }
         if (distro$short_version == "8") {
           repos <- paste0(
             linux,
             "centos8",
-            "/latest"
+            "/",
+            snapshot
           )
         }
       }

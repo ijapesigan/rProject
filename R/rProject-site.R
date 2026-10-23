@@ -20,7 +20,8 @@ Site <- function(path) {
     if (!("devtools" %in% pkg_installed)) {
       pak::pkg_install(
         pkg = "r-lib/devtools",
-        lib = lib
+        lib = lib,
+        upgrade = FALSE
       )
     }
     if (!("pkgdown" %in% pkg_installed)) {

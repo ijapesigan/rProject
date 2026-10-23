@@ -17,11 +17,14 @@
       "^pkgdown/",
       "^quarto/",
       "^\\.setup/build/",
+      "^\\.setup/scripts/rproject\\.lock$",
       "^\\.setup/quarto/bib/",
       "^latexmkrc$",
       "^man/",
       "^src/",
-      "^vignettes/",
+      "^vignettes/vignettes\\.bib$",
+      "^vignettes/fig-vignettes-",
+      "^vignettes/.*\\.orig$",
       "^\\.setup/latex/pdf/",
       "^\\.setup/latex/figures/",
       "^\\.setup/data-analysis/.*\\.txt$",
@@ -54,6 +57,16 @@
     out[!grepl(pattern = skip, x = out)]
   }
   candidates <- sort(union(files(path), files(private)))
+  # vignettes knitted from .setup/vignettes/*.orig are generated;
+  # hand-written vignettes are compared
+  orig <- list.files(
+    path = file.path(c(path, private), ".setup", "vignettes"),
+    pattern = "\\.orig$"
+  )
+  candidates <- setdiff(
+    candidates,
+    file.path("vignettes", sub(pattern = "\\.orig$", "", x = orig))
+  )
   # tier 2 template files are written by make (Template()), not uploaded
   type <- .TemplateType(path = path)
   if (!is.null(type)) {

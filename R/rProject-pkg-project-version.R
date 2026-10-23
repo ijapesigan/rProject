@@ -48,6 +48,7 @@ PkgProjectVersion <- function(path,
           version = ver[i],
           repos = repos,
           lib = lib,
+          upgrade = "never",
           quiet = TRUE
         )
       }

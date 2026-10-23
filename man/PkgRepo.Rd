@@ -15,8 +15,11 @@ Project path.}
 Returns the repository url.
 }
 \description{
-Setup RStudio Package Manager Repository
-Based on the Current Operating System
+The repository is the Posit Package Manager snapshot of the image's
+date, so that a package the image lacks matches the image's other
+packages: the environment variable \code{RPROJECT_SNAPSHOT} (set in GitHub
+Actions from the lock), the date of the running sif, the lock's
+\code{snapshot}, or \code{latest}.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

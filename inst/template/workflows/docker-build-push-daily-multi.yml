@@ -3,8 +3,9 @@
 name: {{title}}
 
 on:
-  schedule:
-    - cron: "{{cron}}"
+{{schedule}}
+  repository_dispatch:
+    types: [base-image-built]
   workflow_dispatch:
 
 env:
@@ -141,3 +142,4 @@ jobs:
         run: |
           docker buildx imagetools inspect ${{ env.DOCKER_HUB_REPO }}:latest
           docker buildx imagetools inspect ${{ env.GHCR_REPO }}:latest
+{{next}}

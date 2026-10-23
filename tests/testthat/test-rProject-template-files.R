@@ -47,6 +47,23 @@ lapply(
       }
     )
     testthat::test_that(
+      paste(text, "shared files are the same in every set"),
+      {
+        same <- function(files) {
+          length(unique(tools::md5sum(file.path(root, files)))) == 1
+        }
+        testthat::expect_true(same(c("package/Makefile", "talk/Makefile")))
+        testthat::expect_true(
+          same(
+            c(
+              "common/dot-setup/scripts/make-project.R",
+              "docker/dot-setup/scripts/make-project.R"
+            )
+          )
+        )
+      }
+    )
+    testthat::test_that(
       paste(text, "folders.tsv names valid types"),
       {
         folders <- .TemplateFolders()

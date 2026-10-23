@@ -52,6 +52,8 @@ Project <- function(path) {
   close(con)
   # where the project lives (private GitHub, Overleaf, public GitHub)
   .RepoInfoWrite(path = path)
+  # packages in .library that hide the image's (rProject 0.0.57)
+  .LibShadowed(path = path)
   root <- rprojroot::is_rstudio_project
   cat(
     paste(

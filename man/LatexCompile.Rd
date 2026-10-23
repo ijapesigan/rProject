@@ -14,7 +14,9 @@ Project path.}
 Clean \code{latexmk} output except \verb{*.pdf}}
 }
 \description{
-Compile Output of \code{LatexKnit}
+Runs \code{latexmk} on every \code{.tex} file, with 10 million extra words of
+pdfTeX main memory (\code{extra_mem_bot}), so that a long bibliography
+compiles.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

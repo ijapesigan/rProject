@@ -21,13 +21,19 @@
 #' | `type`             | Template type for `rProject::Template()`: one of    |
 #' |                    | `"rProject"`, `"cran"`, `"man"`, `"lib"`,           |
 #' |                    | `"talk"`, `"docker"`.                               |
+#' | `workflows`        | Optional. Workflows from the catalog               |
+#' |                    | (`inst/template/workflows/`), e.g.,                 |
+#' |                    | `c("docker-build-push-multi")`.                     |
+#' | `workflow_daily`   | Docker: suffix of the daily workflow file.          |
+#' | `workflow_title`   | Docker: title of the daily workflow.                |
+#' | `workflow_cron`    | Docker: schedule of the first image in the chain.   |
+#' | `workflow_next`    | Docker: next image in the chain (`owner/repo`).     |
 #'
 
 project <- "rProject"
 
 type <- "rProject"
 
-rproject_ver <- NULL
 
 pkg_cran <- c(
   "betaDelta",

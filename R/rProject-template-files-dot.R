@@ -56,20 +56,7 @@
     source <- file.path(root, "workflows", paste0(workflows, ".yml"))
     # a workflow with {{title}} is the project's own daily build:
     # named <workflow>-<workflow_daily>.yml (or <workflow>.yml)
-    daily <- vapply(
-      X = source,
-      FUN = function(x) {
-        any(
-          grepl(
-            pattern = "{{title}}",
-            x = readLines(con = x, warn = FALSE),
-            fixed = TRUE
-          )
-        )
-      },
-      FUN.VALUE = logical(1),
-      USE.NAMES = FALSE
-    )
+    daily <- .TemplateHas(files = source, keys = "title")
     suffix <- settings$workflow_daily
     name <- workflows
     if (any(daily) && length(suffix) > 0L && nzchar(suffix[1])) {
@@ -83,7 +70,7 @@
         path = file.path(".github", "workflows", paste0(name, ".yml")),
         source = source,
         kind = "file",
-        fill = daily
+        fill = FALSE
       )
     )
   }
@@ -106,6 +93,18 @@
       )
     )
   }
+  # tier 2 files with a placeholder ({{project}}, {{public}}, ...) are
+  # filled when written; a file with {{title}} is the daily workflow
+  text <- manifest$kind == "file" & manifest$tier == "2"
+  manifest$fill[text] <- .TemplateHas(
+    files = manifest$source[text],
+    keys = names(.TemplateKeys())
+  )
+  manifest$daily <- FALSE
+  manifest$daily[text] <- .TemplateHas(
+    files = manifest$source[text],
+    keys = "title"
+  )
   rownames(manifest) <- NULL
   manifest
 }

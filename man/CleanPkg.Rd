@@ -11,7 +11,9 @@ CleanPkg(path)
 Project path.}
 }
 \description{
-Uninstall R packages with \code{priority = "NA"}.
+Remove the project's R library (\code{.library}).
+Packages outside the project (the image's site library,
+the user library) are never touched.
 }
 \author{
 Ivan Jacob Agaloos Pesigan
