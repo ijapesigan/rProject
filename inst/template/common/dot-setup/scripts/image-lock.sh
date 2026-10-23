@@ -48,7 +48,9 @@ else
   fi
 fi
 
-echo "image=${image}" >> "${GITHUB_OUTPUT}"
-echo "snapshot=${snapshot:-latest}" >> "${GITHUB_OUTPUT}"
-echo "r_version=${r_version:-release}" >> "${GITHUB_OUTPUT}"
+{
+  echo "image=${image}"
+  echo "snapshot=${snapshot:-latest}"
+  echo "r_version=${r_version:-release}"
+} >> "${GITHUB_OUTPUT}"
 echo "Image: ${image}; packages: ${snapshot:-latest}; R: ${r_version:-release}"

@@ -157,9 +157,9 @@ lapply(
       {
         clone <- readLines(file.path(root, ".setup", "scripts", "clone.sh"))
         testthat::expect_true(
-          "git clone git@github.com:ijapesigan/test.git" %in% clone
+          "git clone \"git@github.com:ijapesigan/test.git\"" %in% clone
         )
-        testthat::expect_true("rm -rf test" %in% clone)
+        testthat::expect_true("rm -rf \"test\"" %in% clone)
         lib <- project(type = "lib")
         suppressMessages(Template(path = lib))
         quarto <- readLines(file.path(lib, ".setup", "quarto", "_quarto.yml"))
