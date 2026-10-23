@@ -53,14 +53,16 @@ lapply(
           length(unique(tools::md5sum(file.path(root, files)))) == 1
         }
         testthat::expect_true(same(c("package/Makefile", "talk/Makefile")))
-        testthat::expect_true(
-          same(
-            c(
-              "common/dot-setup/scripts/make-project.R",
-              "docker/dot-setup/scripts/make-project.R"
-            )
+        for (f in c("make-project.R", "make-install.R", "make-packages.R")) {
+          testthat::expect_true(
+            same(paste0(c("common", "docker"), "/dot-setup/scripts/", f))
           )
-        )
+        }
+        for (f in c("make-config.R", "verify.sh")) {
+          testthat::expect_true(
+            same(paste0(c("package", "talk"), "/dot-setup/scripts/", f))
+          )
+        }
       }
     )
     testthat::test_that(

@@ -157,7 +157,10 @@ lapply(
       {
         clone <- readLines(file.path(root, ".setup", "scripts", "clone.sh"))
         testthat::expect_true(
-          "git clone \"git@github.com:ijapesigan/test.git\"" %in% clone
+          "git clone \"git@${host}:ijapesigan/test.git\"" %in% clone
+        )
+        testthat::expect_true(
+          "  host=\"github-ijapesigan\"" %in% clone
         )
         testthat::expect_true("rm -rf \"test\"" %in% clone)
         lib <- project(type = "lib")

@@ -16,7 +16,9 @@ Clean \code{latexmk} output except \verb{*.pdf}}
 \description{
 Runs \code{latexmk} on every \code{.tex} file, with 10 million extra words of
 pdfTeX main memory (\code{extra_mem_bot}), so that a long bibliography
-compiles.
+compiles. A document whose last run failed (fatal error, TeX capacity
+exceeded) stops \verb{make latex} in GitHub Actions and gives a warning
+locally: \code{latexmk -f} would otherwise leave a stub PDF and succeed.
 }
 \author{
 Ivan Jacob Agaloos Pesigan

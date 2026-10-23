@@ -100,6 +100,23 @@ jobs:
             FUN.VALUE = logical(1)
           )
           exclusions <- exclusions[keep]
+          # .Rtex chunk options (`% #| label = ...`): lintr counts the `%`
+          # as indentation; every other linter still checks the .Rtex files
+          rtex <- list.files(
+            path = ".",
+            pattern = "\\.Rtex$",
+            recursive = TRUE
+          )
+          exclusions <- c(
+            exclusions,
+            stats::setNames(
+              object = rep(
+                x = list(list(indentation_linter = Inf)),
+                times = length(rtex)
+              ),
+              nm = rtex
+            )
+          )
           if (length(exclusions) == 0L) {
             lintr::lint_dir(
               path = ".",

@@ -36,7 +36,8 @@ The type comes from a line in \code{.setup/scripts/project.R},
 \item Tier 1, links: the files Overleaf needs to compile the PDFs (the
 LaTeX preamble, \verb{.setup/latex/r-scripts/}, \code{.setup/load/load.R},
 style files, the lib documents; \code{latexmkrc} is linked to
-\code{inst/latexmk/latexmkrc}). They stay Overleaf links that the user refreshes.
+\code{inst/latexmk/latexmkrc}). They stay Overleaf links that the user
+refreshes.
 \code{Template()} never writes them; it lists the ones that differ
 from rProject as links to refresh.
 \item Tier 2, written by make: everything else (workflows, scripts, ...).

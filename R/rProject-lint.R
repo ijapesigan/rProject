@@ -42,6 +42,24 @@ Lint <- function(path) {
     file.path(path, "R", "RcppExports.R")
   )
   exclusions <- exclusions[file.exists(exclusions)]
+  # .Rtex chunk options (`% #| label = ...`): lintr (3.4.0) counts the `%`
+  # as indentation; every other linter still checks the .Rtex files
+  rtex <- list.files(
+    path = path,
+    pattern = "\\.Rtex$",
+    recursive = TRUE,
+    full.names = TRUE
+  )
+  exclusions <- c(
+    as.list(exclusions),
+    stats::setNames(
+      object = rep(
+        x = list(list(indentation_linter = Inf)),
+        times = length(rtex)
+      ),
+      nm = rtex
+    )
+  )
   # no try(): an error in lintr stops make lint
   if (length(exclusions) == 0L) {
     lints <- lintr::lint_dir(
