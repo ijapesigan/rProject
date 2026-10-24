@@ -230,8 +230,8 @@ for p in "${projects[@]}"; do
   version="$(sed -n 's/^Version: *//p' DESCRIPTION 2> /dev/null || true)"
   tag=""
   if [[ -n "${version}" ]] && ! git rev-parse -q --verify "refs/tags/v${version}" > /dev/null; then
-    git tag -a "v${version}" -m "v${version}" && git push -q origin "v${version}" ||
-      fail "${p}: tag v${version}"
+    git tag -a "v${version}" -m "v${version}" || fail "${p}: tag v${version}"
+    git push -q origin "v${version}" || fail "${p}: push tag v${version}"
     tag="v${version}"
   fi
   log "${p}: pushed ${sha:0:8} ${tag}"
