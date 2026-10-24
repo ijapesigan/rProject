@@ -12,7 +12,7 @@
   daily docker build: written as `<name>-<workflow_daily>.yml`; `{{title}}`
   from `workflow_title`, `{{schedule}}` from `workflow_cron` (none when
   empty), and `{{next}}`, a step that starts the next image's build, from
-  `workflow_next` (none when empty). A line that holds only an empty
+  `workflow_next` (one or more images; none when empty). A line that holds only an empty
   placeholder is dropped.
 - `folders.tsv`: the standard folders (`folder`, `types`, `private`,
   `create`, `writer`, `reader`, `purpose`). `Template()` creates the

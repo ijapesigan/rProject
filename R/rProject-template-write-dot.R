@@ -43,16 +43,20 @@
   }
   if (any(files$daily)) {
     following <- settings$workflow_next
-    following <- ifelse(length(following) > 0L, following[1], "")
+    following <- following[nzchar(following)]
     problems <- character(0)
     if (!nzchar(values$title)) {
       problems <- "workflow_title is missing"
     }
     valid <- grepl(pattern = "^[^/ ]+/[^/ ]+$", x = following)
-    if (nzchar(following) && !valid) {
+    if (any(!valid)) {
       problems <- c(
         problems,
-        paste0("workflow_next \"", following, "\" is not owner/repository")
+        paste0(
+          "workflow_next \"",
+          following[!valid],
+          "\" is not owner/repository"
+        )
       )
     }
     if (length(problems) > 0L) {

@@ -66,8 +66,9 @@ BibLib <- function(path) {
   # clone into the bib folder, without changing the working directory;
   # without the user's git config (it may rewrite https to ssh, which
   # waits for a key or a prompt), and never prompt
+  status <- integer(length(libs))
   for (i in seq_along(libs)) {
-    system2(
+    status[i] <- system2(
       command = "git",
       env = c(
         "GIT_CONFIG_GLOBAL=/dev/null",
@@ -90,6 +91,19 @@ BibLib <- function(path) {
           )
         )
       )
+    )
+  }
+  # all or nothing: a bib.bib without some lib-* would look complete.
+  # When none can be cloned (offline), Bib() keeps the previous bib.bib
+  failed <- libs[status != 0L]
+  if (length(failed) > 0L && length(failed) < length(libs)) {
+    stop(
+      paste0(
+        "\n\nCould not clone ",
+        paste(failed, collapse = ", "),
+        "; bib.bib not built.\n\n"
+      ),
+      call. = FALSE
     )
   }
   # the entries only (a clone also holds its own bib.bib and quarto.bib)

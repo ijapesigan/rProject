@@ -104,6 +104,7 @@ docker	2	.github/workflows/shellcheck.yml
 docker	2	.gitignore
 docker	2	.setup/notes/.gitignore
 docker	2	.setup/notes/notes
+docker	2	.setup/readme/README.Rmd
 docker	2	.setup/repo/.gitignore
 docker	2	.setup/scripts/.gitignore
 docker	2	.setup/scripts/clone.sh
@@ -113,5 +114,9 @@ docker	2	.setup/scripts/make-packages.R
 docker	2	.setup/scripts/make-project.R
 docker	2	.setup/scripts/verify.sh
 docker	2	Makefile
+docker	2	scripts/check.sh
+docker	2	scripts/install-apt.sh
+docker	2	scripts/install-cran.sh
+docker	2	scripts/install-github.sh
 docker	2	scripts/rproject.sh
 docker	2	scripts/rproject_sys.sh
