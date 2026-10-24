@@ -31,8 +31,8 @@
 #'   builds run as a chain: an image with `workflow_cron` runs on that
 #'   schedule; every image also starts when the image before it sends a
 #'   `base-image-built` event; and an image with `workflow_next`
-#'   (`"owner/repository"`) sends that event to the next image when its
-#'   build succeeds (with the `PAT` secret).
+#'   (`"owner/repository"`, or several) sends that event to each next
+#'   image when its build succeeds (with the `PAT` secret).
 #' - The folder skeleton of its type: an empty `.gitignore` in each
 #'   standard folder marked `create` in `inst/template/folders.tsv`, if
 #'   the folder has none.

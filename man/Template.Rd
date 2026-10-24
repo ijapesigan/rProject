@@ -56,8 +56,8 @@ The daily docker workflow (the one with \code{{{title}}}) is written as
 builds run as a chain: an image with \code{workflow_cron} runs on that
 schedule; every image also starts when the image before it sends a
 \code{base-image-built} event; and an image with \code{workflow_next}
-(\code{"owner/repository"}) sends that event to the next image when its
-build succeeds (with the \code{PAT} secret).
+(\code{"owner/repository"}, or several) sends that event to each next
+image when its build succeeds (with the \code{PAT} secret).
 \item The folder skeleton of its type: an empty \code{.gitignore} in each
 standard folder marked \code{create} in \code{inst/template/folders.tsv}, if
 the folder has none.

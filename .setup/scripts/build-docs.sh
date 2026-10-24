@@ -23,8 +23,9 @@
 #
 # The projects and their order: .setup/scripts/build-docs.txt.
 # Per project, the steps of `make auto`: the private repository is
-# downloaded, its clone.sh brings in the public .git, make project (and
-# make readme) write the generated files, Public() checks the export, then
+# downloaded, make project (and make readme) write the generated files
+# (Template() first when the Makefile or make-project.R is missing), the
+# written clone.sh brings in the public .git, Public() checks the export, then
 # git add, commit "Automated build.", and push; a push that would delete a
 # workflow stops the run. The script waits
 # for Make Project on the pushed commit, then for "Docker Build and Push
@@ -206,8 +207,6 @@ for p in "${projects[@]}"; do
     fail "cannot download jeksterslab-psu/${p}"
   cd "${dir}/${p}"
   repo="$(tr -d '[:space:]' < .setup/repo/public-github.md)"
-  bash .setup/scripts/clone.sh || fail "${p}: clone.sh"
-  log "${p}: public .git from ${repo}"
   # the files make writes (workflows, Makefile, scripts: Template(); the
   # README) are not in the private repository: build them first, as make
   # auto assumes (rProject 0.0.58)
@@ -222,6 +221,9 @@ for p in "${projects[@]}"; do
     apptainer exec "${image}" make readme || fail "${p}: make readme"
   fi
   log "${p}: make project done"
+  # clone.sh is one of the written files: it brings in the public .git
+  bash .setup/scripts/clone.sh || fail "${p}: clone.sh"
+  log "${p}: public .git from ${repo}"
   apptainer exec "${image}" Rscript -e "rProject::Public(\"${PWD}\")" ||
     fail "${p}: Public()"
   git add --all

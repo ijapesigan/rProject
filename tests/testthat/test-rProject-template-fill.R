@@ -50,6 +50,28 @@ lapply(
         )
       }
     )
+    testthat::test_that(
+      paste(text, "workflow_next starts each image it names"),
+      {
+        keys <- .TemplateKeys(
+          settings = list(
+            workflow_next = c(
+              "ijapesigan/docker-docs",
+              "ijapesigan/docker-rocker"
+            )
+          )
+        )
+        out <- .TemplateFill(text = "{{next}}", values = keys["next"])
+        testthat::expect_equal(
+          sum(out == "      - name: Trigger the next image"),
+          2L
+        )
+        testthat::expect_true(
+          any(grepl(pattern = "repos/ijapesigan/docker-rocker/", x = out))
+        )
+        testthat::expect_identical(.TemplateKeys()[["next"]], "")
+      }
+    )
   },
   text = "test-rProject-template-fill"
 )
