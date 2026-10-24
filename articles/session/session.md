@@ -356,6 +356,7 @@
 `#> rvest             "rvest"            `\
 `#> Ryacas            "Ryacas"           `\
 `#> S7                "S7"               `\
+`#> sandwich          "sandwich"         `\
 `#> sass              "sass"             `\
 `#> scales            "scales"           `\
 `#> selectr           "selectr"          `\
@@ -378,6 +379,7 @@
 `#> StanHeaders       "StanHeaders"      `\
 `#> stringi           "stringi"          `\
 `#> stringr           "stringr"          `\
+`#> strucchange       "strucchange"      `\
 `#> styler            "styler"           `\
 `#> symSEM            "symSEM"           `\
 `#> sys               "sys"              `\
@@ -405,6 +407,7 @@
 `#> utf8              "utf8"             `\
 `#> uuid              "uuid"             `\
 `#> V8                "V8"               `\
+`#> vars              "vars"             `\
 `#> vctrs             "vctrs"            `\
 `#> viridisLite       "viridisLite"      `\
 `#> vroom             "vroom"            `\
@@ -454,7 +457,7 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/Rtmp8ptHyc/temp_libpath113b749466cd" "0.0.58"    `\
+`#> rProject          "/tmp/RtmpPwwoVF/temp_libpath113b55e6cb37" "0.0.58"    `\
 `#> rProject          "/__w/rProject/rProject/.library"          "0.0.58"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
@@ -753,7 +756,7 @@
 `#> roxygen2          "/usr/local/lib/R/site-library"            "8.1.1.9000"`\
 `#> rpf               "/usr/local/lib/R/site-library"            "1.0.15"    `\
 `#> RPostgres         "/usr/local/lib/R/site-library"            "1.4.10"    `\
-`#> rProject          "/usr/local/lib/R/site-library"            "0.0.57"    `\
+`#> rProject          "/usr/local/lib/R/site-library"            "0.0.58"    `\
 `#> rprojroot         "/usr/local/lib/R/site-library"            "2.1.1"     `\
 `#> rsample           "/usr/local/lib/R/site-library"            "1.3.2"     `\
 `#> RSQLite           "/usr/local/lib/R/site-library"            "3.53.3"    `\
@@ -764,6 +767,7 @@
 `#> rvest             "/usr/local/lib/R/site-library"            "1.0.5"     `\
 `#> Ryacas            "/usr/local/lib/R/site-library"            "1.1.6"     `\
 `#> S7                "/usr/local/lib/R/site-library"            "0.2.2"     `\
+`#> sandwich          "/usr/local/lib/R/site-library"            "3.1-3"     `\
 `#> sass              "/usr/local/lib/R/site-library"            "0.4.10"    `\
 `#> scales            "/usr/local/lib/R/site-library"            "1.4.0"     `\
 `#> selectr           "/usr/local/lib/R/site-library"            "0.8-0"     `\
@@ -786,6 +790,7 @@
 `#> StanHeaders       "/usr/local/lib/R/site-library"            "2.39.1"    `\
 `#> stringi           "/usr/local/lib/R/site-library"            "1.8.9"     `\
 `#> stringr           "/usr/local/lib/R/site-library"            "1.6.0"     `\
+`#> strucchange       "/usr/local/lib/R/site-library"            "1.6-0"     `\
 `#> styler            "/usr/local/lib/R/site-library"            "1.11.0"    `\
 `#> symSEM            "/usr/local/lib/R/site-library"            "0.4"       `\
 `#> sys               "/usr/local/lib/R/site-library"            "3.4.3"     `\
@@ -813,6 +818,7 @@
 `#> utf8              "/usr/local/lib/R/site-library"            "1.2.6"     `\
 `#> uuid              "/usr/local/lib/R/site-library"            "1.2-2"     `\
 `#> V8                "/usr/local/lib/R/site-library"            "8.2.0"     `\
+`#> vars              "/usr/local/lib/R/site-library"            "1.6-1"     `\
 `#> vctrs             "/usr/local/lib/R/site-library"            "0.7.3"     `\
 `#> viridisLite       "/usr/local/lib/R/site-library"            "0.4.3"     `\
 `#> vroom             "/usr/local/lib/R/site-library"            "1.7.1"     `\
@@ -1172,6 +1178,7 @@
 `#> rvest             NA           `\
 `#> Ryacas            NA           `\
 `#> S7                NA           `\
+`#> sandwich          NA           `\
 `#> sass              NA           `\
 `#> scales            NA           `\
 `#> selectr           NA           `\
@@ -1194,6 +1201,7 @@
 `#> StanHeaders       NA           `\
 `#> stringi           NA           `\
 `#> stringr           NA           `\
+`#> strucchange       NA           `\
 `#> styler            NA           `\
 `#> symSEM            NA           `\
 `#> sys               NA           `\
@@ -1221,6 +1229,7 @@
 `#> utf8              NA           `\
 `#> uuid              NA           `\
 `#> V8                NA           `\
+`#> vars              NA           `\
 `#> vctrs             NA           `\
 `#> viridisLite       NA           `\
 `#> vroom             NA           `\
@@ -1269,414 +1278,417 @@
 `#> tcltk             "base"       `\
 `#> tools             "base"       `\
 `#> utils             "base"       `\
-`#>                   Depends                                                                               `\
-`#> rProject          "R (>= 3.5.0)"                                                                        `\
-`#> rProject          "R (>= 3.5.0)"                                                                        `\
-`#> abind             "R (>= 1.5.0)"                                                                        `\
-`#> Amelia            "R (>= 3.0.2), Rcpp (>= 0.11)"                                                        `\
-`#> arm               "R (>= 3.1.0), MASS, Matrix (>= 1.6-1.1), stats, lme4 (>= 1.0)"                       `\
-`#> arrow             "R (>= 4.2)"                                                                          `\
-`#> ash               NA                                                                                    `\
-`#> AsioHeaders       NA                                                                                    `\
-`#> askpass           NA                                                                                    `\
-`#> assertthat        NA                                                                                    `\
-`#> backports         "R (>= 3.0.0)"                                                                        `\
-`#> base64enc         "R (>= 2.9.0)"                                                                        `\
-`#> betaDelta         "R (>= 3.5.0)"                                                                        `\
-`#> betaMC            "R (>= 3.5.0)"                                                                        `\
-`#> betaNB            "R (>= 3.5.0)"                                                                        `\
-`#> betaSandwich      "R (>= 3.5.0)"                                                                        `\
-`#> BH                NA                                                                                    `\
-`#> bibtex            "R (>= 3.6.0)"                                                                        `\
-`#> biocmake          NA                                                                                    `\
-`#> BiocManager       NA                                                                                    `\
-`#> BiocVersion       "R (>= 4.6.0)"                                                                        `\
-`#> bit               "R (>= 3.4.0)"                                                                        `\
-`#> bit64             "R (>= 3.5.0)"                                                                        `\
-`#> bitops            NA                                                                                    `\
-`#> blob              NA                                                                                    `\
-`#> bootStateSpace    "R (>= 3.5.0)"                                                                        `\
-`#> brew              NA                                                                                    `\
-`#> brio              "R (>= 3.6)"                                                                          `\
-`#> broom             "R (>= 4.1)"                                                                          `\
-`#> bslib             "R (>= 2.10)"                                                                         `\
-`#> cachem            NA                                                                                    `\
-`#> callr             "R (>= 3.4)"                                                                          `\
-`#> car               "R (>= 3.5.0), carData (>= 3.0-0)"                                                    `\
-`#> caracas           "R (>= 3.0), methods"                                                                 `\
-`#> carData           "R (>= 3.5.0)"                                                                        `\
-`#> cellranger        "R (>= 3.0.0)"                                                                        `\
-`#> cffr              "R (>= 4.1.0)"                                                                        `\
-`#> checkmate         "R (>= 3.0.0)"                                                                        `\
-`#> cli               "R (>= 3.4)"                                                                          `\
-`#> clipr             NA                                                                                    `\
-`#> clock             "R (>= 4.0.0)"                                                                        `\
-`#> clusterGeneration "R (>= 3.5.0), MASS"                                                                  `\
-`#> coda              "R (>= 2.14.0)"                                                                       `\
-`#> cOde              "R (>= 3.0)"                                                                          `\
-`#> collections       NA                                                                                    `\
-`#> colorspace        "R (>= 3.0.0), methods"                                                               `\
-`#> commonmark        NA                                                                                    `\
-`#> conflicted        "R (>= 3.2)"                                                                          `\
-`#> corpcor           "R (>= 3.0.2)"                                                                        `\
-`#> covr              "R (>= 3.1.0), methods"                                                               `\
-`#> cowplot           "R (>= 3.5.0)"                                                                        `\
-`#> cpp11             "R (>= 4.0.0)"                                                                        `\
-`#> crayon            NA                                                                                    `\
-`#> credentials       NA                                                                                    `\
-`#> crosstalk         NA                                                                                    `\
-`#> cTMed             "R (>= 3.5.0)"                                                                        `\
-`#> ctsem             "R (>= 4.2.0), Rcpp (>= 0.12.16)"                                                     `\
-`#> curl              "R (>= 3.0.0)"                                                                        `\
-`#> data.table        "R (>= 3.4.0)"                                                                        `\
-`#> DBI               "methods, R (>= 3.0.0)"                                                               `\
-`#> dbplyr            "R (>= 4.1)"                                                                          `\
-`#> Deriv             "Rcpp, R (>= 4.5)"                                                                    `\
-`#> desc              "R (>= 3.4)"                                                                          `\
-`#> deSolve           "R (>= 3.3.0)"                                                                        `\
-`#> devtools          "R (>= 4.1), usethis (>= 3.2.1)"                                                      `\
-`#> diagram           "R (>= 2.01), shape"                                                                  `\
-`#> dials             "R (>= 4.1), scales (>= 1.3.0)"                                                       `\
-`#> DiceDesign        "R (>= 2.10)"                                                                         `\
-`#> diffobj           "R (>= 4.1.0)"                                                                        `\
-`#> digest            "R (>= 3.3.0)"                                                                        `\
-`#> dir.expiry        NA                                                                                    `\
-`#> distributional    "R (>= 4.0.0)"                                                                        `\
-`#> distro            NA                                                                                    `\
-`#> doBy              "R (>= 4.2.0), methods"                                                               `\
-`#> docopt            NA                                                                                    `\
-`#> downlit           "R (>= 4.0.0)"                                                                        `\
-`#> dplyr             "R (>= 4.1.0)"                                                                        `\
-`#> DT                NA                                                                                    `\
-`#> dtplyr            "R (>= 4.0)"                                                                          `\
-`#> duckdb            "DBI, R (>= 4.2.0)"                                                                   `\
-`#> dynr              "R (>= 3.0.0), ggplot2"                                                               `\
-`#> dynTools          "R (>= 4.1.0)"                                                                        `\
-`#> dynUtils          "R (>= 3.5.0)"                                                                        `\
-`#> ellipse           "R (>= 2.0.0),graphics,stats"                                                         `\
-`#> ellipsis          "R (>= 3.2)"                                                                          `\
-`#> evaluate          "R (>= 3.6.0)"                                                                        `\
-`#> expm              "Matrix"                                                                              `\
-`#> fansi             "R (>= 3.1.0)"                                                                        `\
-`#> farver            NA                                                                                    `\
-`#> fastDummies       "R (>= 2.10)"                                                                         `\
-`#> fastmap           NA                                                                                    `\
-`#> fclust            "R (>= 4.5), base, stats, graphics, grDevices, utils"                                 `\
-`#> fda               "R (>= 3.5), splines, fds, deSolve"                                                   `\
-`#> fdrtool           "R (>= 3.4.0)"                                                                        `\
-`#> fds               "R (>= 3.4.0), rainbow, RCurl"                                                        `\
-`#> filelock          "R (>= 3.4)"                                                                          `\
-`#> fitVARMxID        "R (>= 4.1.0), OpenMx (>= 2.22.10)"                                                   `\
-`#> FNN               "R (>= 4.0.0)"                                                                        `\
-`#> fontawesome       "R (>= 3.3.0)"                                                                        `\
-`#> forcats           "R (>= 4.1)"                                                                          `\
-`#> foreach           "R (>= 2.5.0)"                                                                        `\
-`#> forecast          "R (>= 4.1.0)"                                                                        `\
-`#> Formula           "R (>= 2.0.0), stats"                                                                 `\
-`#> fracdiff          NA                                                                                    `\
-`#> fs                "R (>= 4.1)"                                                                          `\
-`#> fst               "R (>= 3.0.0)"                                                                        `\
-`#> fstcore           "R (>= 3.0.0)"                                                                        `\
-`#> furrr             "future (>= 1.70.0), R (>= 4.1.0)"                                                    `\
-`#> future            "R (>= 3.2.0)"                                                                        `\
-`#> future.apply      "R (>= 3.2.0), future (>= 1.80.0)"                                                    `\
-`#> gargle            "R (>= 4.1)"                                                                          `\
-`#> GauPro            "mixopt (> 0.1.0), numDeriv, rmarkdown, tidyr"                                        `\
-`#> generics          "R (>= 3.6)"                                                                          `\
-`#> gert              NA                                                                                    `\
-`#> ggplot2           "R (>= 4.1)"                                                                          `\
-`#> ggrepel           "R (>= 4.1.0), ggplot2 (>= 3.5.2)"                                                    `\
-`#> gh                "R (>= 4.1)"                                                                          `\
-`#> gitcreds          "R (>= 3.4)"                                                                          `\
-`#> glasso            NA                                                                                    `\
-`#> glmnet            "R (>= 3.6.0), Matrix (>= 1.0-6)"                                                     `\
-`#> globals           "R (>= 3.1.2)"                                                                        `\
-`#> glue              "R (>= 4.1)"                                                                          `\
-`#> gmp               "R (>= 3.5.0)"                                                                        `\
-`#> googledrive       "R (>= 4.1)"                                                                          `\
-`#> googlesheets4     "R (>= 3.6)"                                                                          `\
-`#> gower             NA                                                                                    `\
-`#> GPArotation       "R (>= 3.5.0)"                                                                        `\
-`#> graphicalVAR      "R (>= 3.1.0)"                                                                        `\
-`#> gridExtra         NA                                                                                    `\
-`#> gsubfn            "proto"                                                                               `\
-`#> gtable            "R (>= 4.0)"                                                                          `\
-`#> gtools            "methods, stats, utils"                                                               `\
-`#> hardhat           "R (>= 4.1)"                                                                          `\
-`#> haven             "R (>= 3.6)"                                                                          `\
-`#> hdrcde            "R (>= 2.15)"                                                                         `\
-`#> here              NA                                                                                    `\
-`#> highr             "R (>= 3.3.0)"                                                                        `\
-`#> Hmisc             "R (>= 4.2.0)"                                                                        `\
-`#> hms               NA                                                                                    `\
-`#> htmlTable         "R (>= 4.1)"                                                                          `\
-`#> htmltools         "R (>= 2.14.1)"                                                                       `\
-`#> htmlwidgets       NA                                                                                    `\
-`#> httpgd            "R (>= 4.2.0)"                                                                        `\
-`#> httpuv            "R (>= 2.15.1)"                                                                       `\
-`#> httr              "R (>= 3.6)"                                                                          `\
-`#> httr2             "R (>= 4.1)"                                                                          `\
-`#> ids               NA                                                                                    `\
-`#> ifaTools          "shiny (>= 0.10), ggplot2, reshape2, rpf (>= 0.48), OpenMx (>=\n2.3.1), R (>= 2.14.0)"`\
-`#> igraph            "methods, R (>= 3.5.0)"                                                               `\
-`#> infer             "R (>= 4.1)"                                                                          `\
-`#> ini               NA                                                                                    `\
-`#> inline            NA                                                                                    `\
-`#> ipred             "R (>= 2.10)"                                                                         `\
-`#> isoband           NA                                                                                    `\
-`#> iterators         "R (>= 2.5.0), utils"                                                                 `\
-`#> jomo              NA                                                                                    `\
-`#> jpeg              "R (>= 2.9.0)"                                                                        `\
-`#> jquerylib         NA                                                                                    `\
-`#> jsonlite          "methods"                                                                             `\
-`#> jsonvalidate      NA                                                                                    `\
-`#> kernlab           "R (>= 2.10)"                                                                         `\
-`#> knitr             "R (>= 3.6.0)"                                                                        `\
-`#> ks                "R (>= 2.10.0)"                                                                       `\
-`#> labeling          NA                                                                                    `\
-`#> Lahman            "R (>= 3.5.0)"                                                                        `\
-`#> languageserver    "R (>= 3.4.0)"                                                                        `\
-`#> later             "R (>= 3.5)"                                                                          `\
-`#> latex2exp         NA                                                                                    `\
-`#> lava              "R (>= 3.5.0)"                                                                        `\
-`#> lavaan            "R(>= 3.4)"                                                                           `\
-`#> lazyeval          "R (>= 3.1.0)"                                                                        `\
-`#> lbfgs             NA                                                                                    `\
-`#> lifecycle         "R (>= 3.6)"                                                                          `\
-`#> lintr             "R (>= 4.1.0)"                                                                        `\
-`#> listenv           "R (>= 3.1.2)"                                                                        `\
-`#> litedown          "R (>= 3.2.0)"                                                                        `\
-`#> littler           NA                                                                                    `\
-`#> lme4              "R (>= 3.6), Matrix, methods, stats"                                                  `\
-`#> lmtest            "R (>= 3.0.0), stats, zoo"                                                            `\
-`#> locfit            "R (>= 4.1.0)"                                                                        `\
-`#> longMI            "R (>= 3.5.0)"                                                                        `\
-`#> loo               "R (>= 3.5)"                                                                          `\
-`#> lubridate         "methods, R (>= 3.2)"                                                                 `\
-`#> magick            "R (>= 4.1.0)"                                                                        `\
-`#> magrittr          "R (>= 3.4.0)"                                                                        `\
-`#> markdown          "R (>= 2.11.1)"                                                                       `\
-`#> MatrixModels      "R (>= 3.6.0)"                                                                        `\
-`#> matrixStats       "R (>= 3.4.0)"                                                                        `\
-`#> mclust            "R (>= 3.0)"                                                                          `\
-`#> memoise           NA                                                                                    `\
-`#> metaDyn           "R (>= 4.1.0), OpenMx (>= 2.22.10)"                                                   `\
-`#> metaSEM           "R (>= 3.4.0), OpenMx"                                                                `\
-`#> mice              "R (>= 2.10.0)"                                                                       `\
-`#> microbenchmark    "R (>= 3.2.0)"                                                                        `\
-`#> mime              NA                                                                                    `\
-`#> miniUI            NA                                                                                    `\
-`#> minqa             NA                                                                                    `\
-`#> mitml             NA                                                                                    `\
-`#> mixopt            "dplyr, ggplot2, splitfngr"                                                           `\
-`#> mize              NA                                                                                    `\
-`#> mlVAR             "R (>= 3.3.0)"                                                                        `\
-`#> mnormt            "R (>= 3.0.0)"                                                                        `\
-`#> modeldata         "R (>= 4.1)"                                                                          `\
-`#> modelenv          NA                                                                                    `\
-`#> modelr            "R (>= 3.2)"                                                                          `\
-`#> MplusAutomation   "R (>= 3.5.0), methods"                                                               `\
-`#> multicool         "methods, Rcpp (>= 0.11.2)"                                                           `\
-`#> mvtnorm           "R(>= 3.5.0)"                                                                         `\
-`#> nloptr            NA                                                                                    `\
-`#> numDeriv          "R (>= 2.11.1)"                                                                       `\
-`#> nycflights13      "R (>= 3.2)"                                                                          `\
-`#> OpenMx            "R (>= 3.5.0)"                                                                        `\
-`#> openssl           NA                                                                                    `\
-`#> ordinal           "R (>= 2.13.0), stats, methods"                                                       `\
-`#> otel              "R (>= 3.6.0)"                                                                        `\
-`#> pak               "R (>= 3.5)"                                                                          `\
-`#> pan               NA                                                                                    `\
-`#> pander            "R (>= 2.15.0)"                                                                       `\
-`#> parallelly        NA                                                                                    `\
-`#> parsnip           "R (>= 4.1)"                                                                          `\
-`#> patchwork         NA                                                                                    `\
-`#> pbapply           "R (>= 3.2.0)"                                                                        `\
-`#> pbivnorm          NA                                                                                    `\
-`#> pbkrtest          "R (>= 4.2.0), lme4 (>= 1.1.31)"                                                      `\
-`#> pcaPP             "R(>= 3.6.2)"                                                                         `\
-`#> pdftools          NA                                                                                    `\
-`#> pillar            NA                                                                                    `\
-`#> pkgbuild          "R (>= 3.5)"                                                                          `\
-`#> pkgconfig         NA                                                                                    `\
-`#> pkgdown           "R (>= 4.1)"                                                                          `\
-`#> pkgload           "R (>= 3.4.0)"                                                                        `\
-`#> plyr              "R (>= 3.1.0)"                                                                        `\
-`#> png               "R (>= 2.9.0)"                                                                        `\
-`#> posterior         "R (>= 3.2.0)"                                                                        `\
-`#> pracma            "R (>= 3.1.0)"                                                                        `\
-`#> praise            NA                                                                                    `\
-`#> prettyunits       "R(>= 2.10)"                                                                          `\
-`#> printr            NA                                                                                    `\
-`#> processx          "R (>= 3.4.0)"                                                                        `\
-`#> prodlim           "R (>= 4.1.0)"                                                                        `\
-`#> profvis           "R (>= 4.0)"                                                                          `\
-`#> progress          "R (>= 3.6)"                                                                          `\
-`#> progressr         "R (>= 3.5.0)"                                                                        `\
-`#> promises          "R (>= 4.1.0)"                                                                        `\
-`#> proto             NA                                                                                    `\
-`#> ps                "R (>= 3.4)"                                                                          `\
-`#> psych             NA                                                                                    `\
-`#> purrr             "R (>= 4.1)"                                                                          `\
-`#> qgraph            "R (>= 3.0.0)"                                                                        `\
-`#> qpdf              NA                                                                                    `\
-`#> quadprog          "R (>= 3.1.0)"                                                                        `\
-`#> quantreg          "R (>= 3.5), stats, SparseM"                                                          `\
-`#> quarto            "R (>= 4.1.0)"                                                                        `\
-`#> QuickJSR          NA                                                                                    `\
-`#> R.cache           "R (>= 2.14.0)"                                                                       `\
-`#> R.methodsS3       "R (>= 2.13.0)"                                                                       `\
-`#> R.oo              "R (>= 2.13.0), R.methodsS3 (>= 1.8.2)"                                               `\
-`#> R.utils           "R (>= 2.14.0), R.oo"                                                                 `\
-`#> R2jags            "R (>= 2.14.0), rjags (>= 3-3)"                                                       `\
-`#> R2WinBUGS         "R (>= 2.13.0), coda (>= 0.11-0), boot"                                               `\
-`#> R6                "R (>= 3.6)"                                                                          `\
-`#> ragg              NA                                                                                    `\
-`#> rainbow           "R (>= 4.0.0), MASS, pcaPP"                                                           `\
-`#> rappdirs          "R (>= 4.1)"                                                                          `\
-`#> rbibutils         "R (>= 2.10)"                                                                         `\
-`#> rcmdcheck         "R (>= 3.4)"                                                                          `\
-`#> RColorBrewer      "R (>= 2.0.0)"                                                                        `\
-`#> Rcpp              "R (>= 3.5.0)"                                                                        `\
-`#> RcppArmadillo     "R (>= 3.3.0)"                                                                        `\
-`#> RcppEigen         "R (>= 3.6.0)"                                                                        `\
-`#> RcppGSL           NA                                                                                    `\
-`#> RcppParallel      "R (>= 3.6.0)"                                                                        `\
-`#> RcppTOML          "R (>= 3.3.0)"                                                                        `\
-`#> RCurl             "R (>= 3.4.0), methods"                                                               `\
-`#> Rdpack            "R (>= 2.15.0), methods"                                                              `\
-`#> rdtools           "R (>= 4.0)"                                                                          `\
-`#> readr             "R (>= 4.1)"                                                                          `\
-`#> readxl            "R (>= 4.2)"                                                                          `\
-`#> recipes           "dplyr (>= 1.1.0), R (>= 4.1)"                                                        `\
-`#> RefManageR        "R (>= 3.0)"                                                                          `\
-`#> reformulas        NA                                                                                    `\
-`#> rematch           NA                                                                                    `\
-`#> rematch2          NA                                                                                    `\
-`#> remotes           "R (>= 3.0.0)"                                                                        `\
-`#> reprex            "R (>= 3.6)"                                                                          `\
-`#> reshape2          "R (>= 3.1)"                                                                          `\
-`#> reticulate        "R (>= 3.5)"                                                                          `\
-`#> rex               NA                                                                                    `\
-`#> rhdf5             "methods, R (>= 4.0.0)"                                                               `\
-`#> rhdf5filters      NA                                                                                    `\
-`#> Rhdf5lib          "R (>= 4.2.0)"                                                                        `\
-`#> rhub              "R (>= 4.0)"                                                                          `\
-`#> rjags             "R (>= 2.14.0), coda (>= 0.13)"                                                       `\
-`#> rlang             "R (>= 4.0.0)"                                                                        `\
-`#> RMariaDB          "R (>= 2.8.0)"                                                                        `\
-`#> rmarkdown         "R (>= 3.0)"                                                                          `\
-`#> roxygen2          "R (>= 4.1)"                                                                          `\
-`#> rpf               "methods, parallel, R (>= 2.14.0)"                                                    `\
-`#> RPostgres         "R (>= 3.1.0)"                                                                        `\
-`#> rProject          "R (>= 3.5.0)"                                                                        `\
-`#> rprojroot         "R (>= 3.0.0)"                                                                        `\
-`#> rsample           "R (>= 4.1)"                                                                          `\
-`#> RSQLite           "R (>= 3.1.0)"                                                                        `\
-`#> rstan             "R (>= 3.4.0), StanHeaders (>= 2.32.0)"                                               `\
-`#> rstantools        NA                                                                                    `\
-`#> rstudioapi        NA                                                                                    `\
-`#> rversions         NA                                                                                    `\
-`#> rvest             "R (>= 4.1)"                                                                          `\
-`#> Ryacas            "R (>= 3.3.0)"                                                                        `\
-`#> S7                "R (>= 3.5.0)"                                                                        `\
-`#> sass              NA                                                                                    `\
-`#> scales            "R (>= 4.1)"                                                                          `\
-`#> selectr           "R (>= 3.6)"                                                                          `\
-`#> semlbci           "R (>= 4.0.0)"                                                                        `\
-`#> semmcci           "R (>= 3.5.0)"                                                                        `\
-`#> semPlot           "R (>= 2.15.0)"                                                                       `\
-`#> sessioninfo       "R (>= 3.4)"                                                                          `\
-`#> sfd               "R (>= 2.10), tibble"                                                                 `\
-`#> shape             "R (>= 2.01)"                                                                         `\
-`#> shiny             "methods, R (>= 3.1.2)"                                                               `\
-`#> simStateSpace     "R (>= 4.1.0)"                                                                        `\
-`#> slider            "R (>= 4.0.0)"                                                                        `\
-`#> snow              "R (>= 2.13.1), utils"                                                                `\
-`#> snowfall          "R (>= 2.10), snow"                                                                   `\
-`#> sourcetools       "R (>= 3.0.2)"                                                                        `\
-`#> SparseM           "R (>= 2.15), methods"                                                                `\
-`#> sparsevctrs       "R (>= 4.1)"                                                                          `\
-`#> splitfngr         NA                                                                                    `\
-`#> SQUAREM           "R (>= 4.0)"                                                                          `\
-`#> StanHeaders       "R (>= 3.4.0)"                                                                        `\
-`#> stringi           "R (>= 3.4)"                                                                          `\
-`#> stringr           "R (>= 4.1.0)"                                                                        `\
-`#> styler            "R (>= 4.0.0)"                                                                        `\
-`#> symSEM            "caracas"                                                                             `\
-`#> sys               NA                                                                                    `\
-`#> systemfonts       "R (>= 3.2.0)"                                                                        `\
-`#> tailor            "R (>= 4.1)"                                                                          `\
-`#> tensorA           "R (>= 2.2.0), stats"                                                                 `\
-`#> testthat          "R (>= 4.1.0)"                                                                        `\
-`#> texreg            "R (>= 3.5)"                                                                          `\
-`#> textshaping       "R (>= 3.2.0)"                                                                        `\
-`#> tibble            "R (>= 3.4.0)"                                                                        `\
-`#> tidymodels        "R (>= 4.1)"                                                                          `\
-`#> tidyr             "R (>= 4.1.0)"                                                                        `\
-`#> tidyselect        "R (>= 3.4)"                                                                          `\
-`#> tidyverse         "R (>= 3.3)"                                                                          `\
-`#> timechange        "R (>= 3.3)"                                                                          `\
-`#> timeDate          "R (>= 3.6.0), methods"                                                               `\
-`#> tinytex           NA                                                                                    `\
-`#> tune              "R (>= 4.1)"                                                                          `\
-`#> tzdb              "R (>= 4.0.0)"                                                                        `\
-`#> ucminf            "R (>= 3.5.0)"                                                                        `\
-`#> unigd             "R (>= 4.2.0)"                                                                        `\
-`#> urca              "R (>= 2.0.0), methods"                                                               `\
-`#> urlchecker        "R (>= 4.1)"                                                                          `\
-`#> usethis           "R (>= 4.1)"                                                                          `\
-`#> utf8              "R (>= 2.10)"                                                                         `\
-`#> uuid              "R (>= 2.9.0)"                                                                        `\
-`#> V8                NA                                                                                    `\
-`#> vctrs             "R (>= 4.0.0)"                                                                        `\
-`#> viridisLite       "R (>= 2.10)"                                                                         `\
-`#> vroom             "R (>= 4.1)"                                                                          `\
-`#> waldo             "R (>= 4.0)"                                                                          `\
-`#> warp              "R (>= 4.0.0)"                                                                        `\
-`#> whisker           NA                                                                                    `\
-`#> whoami            NA                                                                                    `\
-`#> withr             "R (>= 3.6.0)"                                                                        `\
-`#> workflows         "R (>= 4.1)"                                                                          `\
-`#> workflowsets      "R (>= 4.1)"                                                                          `\
-`#> xfun              "R (>= 3.2.0)"                                                                        `\
-`#> xml2              "R (>= 3.6.0)"                                                                        `\
-`#> xmlparsedata      "R (>= 3.0.0)"                                                                        `\
-`#> xopen             "R (>= 3.1)"                                                                          `\
-`#> xtable            "R (>= 2.10.0)"                                                                       `\
-`#> yaml              NA                                                                                    `\
-`#> yardstick         "R (>= 4.1)"                                                                          `\
-`#> zip               NA                                                                                    `\
-`#> zoo               "R (>= 3.1.0), stats"                                                                 `\
-`#> base              NA                                                                                    `\
-`#> boot              "R (>= 3.0.0), graphics, stats"                                                       `\
-`#> class             "R (>= 3.0.0), stats, utils"                                                          `\
-`#> cluster           "R (>= 3.5.0)"                                                                        `\
-`#> codetools         "R (>= 2.1)"                                                                          `\
-`#> compiler          NA                                                                                    `\
-`#> datasets          NA                                                                                    `\
-`#> foreign           "R (>= 4.0.0)"                                                                        `\
-`#> graphics          NA                                                                                    `\
-`#> grDevices         NA                                                                                    `\
-`#> grid              NA                                                                                    `\
-`#> KernSmooth        "R (>= 2.5.0), stats"                                                                 `\
-`#> lattice           "R (>= 4.0.0)"                                                                        `\
-`#> MASS              "R (>= 4.4.0), grDevices, graphics, stats, utils"                                     `\
-`#> Matrix            "R (>= 4.4), methods"                                                                 `\
-`#> methods           NA                                                                                    `\
-`#> mgcv              "R (>= 4.4.0), nlme (>= 3.1-64)"                                                      `\
-`#> nlme              "R (>= 3.6.0)"                                                                        `\
-`#> nnet              "R (>= 3.0.0), stats, utils"                                                          `\
-`#> parallel          NA                                                                                    `\
-`#> rpart             "R (>= 2.15.0), graphics, stats, grDevices"                                           `\
-`#> spatial           "R (>= 3.0.0), graphics, stats, utils"                                                `\
-`#> splines           NA                                                                                    `\
-`#> stats             NA                                                                                    `\
-`#> stats4            NA                                                                                    `\
-`#> survival          "R (>= 3.5.0)"                                                                        `\
-`#> tcltk             NA                                                                                    `\
-`#> tools             NA                                                                                    `\
-`#> utils             NA                                                                                    `\
+`#>                   Depends                                                                                     `\
+`#> rProject          "R (>= 3.5.0)"                                                                              `\
+`#> rProject          "R (>= 3.5.0)"                                                                              `\
+`#> abind             "R (>= 1.5.0)"                                                                              `\
+`#> Amelia            "R (>= 3.0.2), Rcpp (>= 0.11)"                                                              `\
+`#> arm               "R (>= 3.1.0), MASS, Matrix (>= 1.6-1.1), stats, lme4 (>= 1.0)"                             `\
+`#> arrow             "R (>= 4.2)"                                                                                `\
+`#> ash               NA                                                                                          `\
+`#> AsioHeaders       NA                                                                                          `\
+`#> askpass           NA                                                                                          `\
+`#> assertthat        NA                                                                                          `\
+`#> backports         "R (>= 3.0.0)"                                                                              `\
+`#> base64enc         "R (>= 2.9.0)"                                                                              `\
+`#> betaDelta         "R (>= 3.5.0)"                                                                              `\
+`#> betaMC            "R (>= 3.5.0)"                                                                              `\
+`#> betaNB            "R (>= 3.5.0)"                                                                              `\
+`#> betaSandwich      "R (>= 3.5.0)"                                                                              `\
+`#> BH                NA                                                                                          `\
+`#> bibtex            "R (>= 3.6.0)"                                                                              `\
+`#> biocmake          NA                                                                                          `\
+`#> BiocManager       NA                                                                                          `\
+`#> BiocVersion       "R (>= 4.6.0)"                                                                              `\
+`#> bit               "R (>= 3.4.0)"                                                                              `\
+`#> bit64             "R (>= 3.5.0)"                                                                              `\
+`#> bitops            NA                                                                                          `\
+`#> blob              NA                                                                                          `\
+`#> bootStateSpace    "R (>= 3.5.0)"                                                                              `\
+`#> brew              NA                                                                                          `\
+`#> brio              "R (>= 3.6)"                                                                                `\
+`#> broom             "R (>= 4.1)"                                                                                `\
+`#> bslib             "R (>= 2.10)"                                                                               `\
+`#> cachem            NA                                                                                          `\
+`#> callr             "R (>= 3.4)"                                                                                `\
+`#> car               "R (>= 3.5.0), carData (>= 3.0-0)"                                                          `\
+`#> caracas           "R (>= 3.0), methods"                                                                       `\
+`#> carData           "R (>= 3.5.0)"                                                                              `\
+`#> cellranger        "R (>= 3.0.0)"                                                                              `\
+`#> cffr              "R (>= 4.1.0)"                                                                              `\
+`#> checkmate         "R (>= 3.0.0)"                                                                              `\
+`#> cli               "R (>= 3.4)"                                                                                `\
+`#> clipr             NA                                                                                          `\
+`#> clock             "R (>= 4.0.0)"                                                                              `\
+`#> clusterGeneration "R (>= 3.5.0), MASS"                                                                        `\
+`#> coda              "R (>= 2.14.0)"                                                                             `\
+`#> cOde              "R (>= 3.0)"                                                                                `\
+`#> collections       NA                                                                                          `\
+`#> colorspace        "R (>= 3.0.0), methods"                                                                     `\
+`#> commonmark        NA                                                                                          `\
+`#> conflicted        "R (>= 3.2)"                                                                                `\
+`#> corpcor           "R (>= 3.0.2)"                                                                              `\
+`#> covr              "R (>= 3.1.0), methods"                                                                     `\
+`#> cowplot           "R (>= 3.5.0)"                                                                              `\
+`#> cpp11             "R (>= 4.0.0)"                                                                              `\
+`#> crayon            NA                                                                                          `\
+`#> credentials       NA                                                                                          `\
+`#> crosstalk         NA                                                                                          `\
+`#> cTMed             "R (>= 3.5.0)"                                                                              `\
+`#> ctsem             "R (>= 4.2.0), Rcpp (>= 0.12.16)"                                                           `\
+`#> curl              "R (>= 3.0.0)"                                                                              `\
+`#> data.table        "R (>= 3.4.0)"                                                                              `\
+`#> DBI               "methods, R (>= 3.0.0)"                                                                     `\
+`#> dbplyr            "R (>= 4.1)"                                                                                `\
+`#> Deriv             "Rcpp, R (>= 4.5)"                                                                          `\
+`#> desc              "R (>= 3.4)"                                                                                `\
+`#> deSolve           "R (>= 3.3.0)"                                                                              `\
+`#> devtools          "R (>= 4.1), usethis (>= 3.2.1)"                                                            `\
+`#> diagram           "R (>= 2.01), shape"                                                                        `\
+`#> dials             "R (>= 4.1), scales (>= 1.3.0)"                                                             `\
+`#> DiceDesign        "R (>= 2.10)"                                                                               `\
+`#> diffobj           "R (>= 4.1.0)"                                                                              `\
+`#> digest            "R (>= 3.3.0)"                                                                              `\
+`#> dir.expiry        NA                                                                                          `\
+`#> distributional    "R (>= 4.0.0)"                                                                              `\
+`#> distro            NA                                                                                          `\
+`#> doBy              "R (>= 4.2.0), methods"                                                                     `\
+`#> docopt            NA                                                                                          `\
+`#> downlit           "R (>= 4.0.0)"                                                                              `\
+`#> dplyr             "R (>= 4.1.0)"                                                                              `\
+`#> DT                NA                                                                                          `\
+`#> dtplyr            "R (>= 4.0)"                                                                                `\
+`#> duckdb            "DBI, R (>= 4.2.0)"                                                                         `\
+`#> dynr              "R (>= 3.0.0), ggplot2"                                                                     `\
+`#> dynTools          "R (>= 4.1.0)"                                                                              `\
+`#> dynUtils          "R (>= 3.5.0)"                                                                              `\
+`#> ellipse           "R (>= 2.0.0),graphics,stats"                                                               `\
+`#> ellipsis          "R (>= 3.2)"                                                                                `\
+`#> evaluate          "R (>= 3.6.0)"                                                                              `\
+`#> expm              "Matrix"                                                                                    `\
+`#> fansi             "R (>= 3.1.0)"                                                                              `\
+`#> farver            NA                                                                                          `\
+`#> fastDummies       "R (>= 2.10)"                                                                               `\
+`#> fastmap           NA                                                                                          `\
+`#> fclust            "R (>= 4.5), base, stats, graphics, grDevices, utils"                                       `\
+`#> fda               "R (>= 3.5), splines, fds, deSolve"                                                         `\
+`#> fdrtool           "R (>= 3.4.0)"                                                                              `\
+`#> fds               "R (>= 3.4.0), rainbow, RCurl"                                                              `\
+`#> filelock          "R (>= 3.4)"                                                                                `\
+`#> fitVARMxID        "R (>= 4.1.0), OpenMx (>= 2.22.10)"                                                         `\
+`#> FNN               "R (>= 4.0.0)"                                                                              `\
+`#> fontawesome       "R (>= 3.3.0)"                                                                              `\
+`#> forcats           "R (>= 4.1)"                                                                                `\
+`#> foreach           "R (>= 2.5.0)"                                                                              `\
+`#> forecast          "R (>= 4.1.0)"                                                                              `\
+`#> Formula           "R (>= 2.0.0), stats"                                                                       `\
+`#> fracdiff          NA                                                                                          `\
+`#> fs                "R (>= 4.1)"                                                                                `\
+`#> fst               "R (>= 3.0.0)"                                                                              `\
+`#> fstcore           "R (>= 3.0.0)"                                                                              `\
+`#> furrr             "future (>= 1.70.0), R (>= 4.1.0)"                                                          `\
+`#> future            "R (>= 3.2.0)"                                                                              `\
+`#> future.apply      "R (>= 3.2.0), future (>= 1.80.0)"                                                          `\
+`#> gargle            "R (>= 4.1)"                                                                                `\
+`#> GauPro            "mixopt (> 0.1.0), numDeriv, rmarkdown, tidyr"                                              `\
+`#> generics          "R (>= 3.6)"                                                                                `\
+`#> gert              NA                                                                                          `\
+`#> ggplot2           "R (>= 4.1)"                                                                                `\
+`#> ggrepel           "R (>= 4.1.0), ggplot2 (>= 3.5.2)"                                                          `\
+`#> gh                "R (>= 4.1)"                                                                                `\
+`#> gitcreds          "R (>= 3.4)"                                                                                `\
+`#> glasso            NA                                                                                          `\
+`#> glmnet            "R (>= 3.6.0), Matrix (>= 1.0-6)"                                                           `\
+`#> globals           "R (>= 3.1.2)"                                                                              `\
+`#> glue              "R (>= 4.1)"                                                                                `\
+`#> gmp               "R (>= 3.5.0)"                                                                              `\
+`#> googledrive       "R (>= 4.1)"                                                                                `\
+`#> googlesheets4     "R (>= 3.6)"                                                                                `\
+`#> gower             NA                                                                                          `\
+`#> GPArotation       "R (>= 3.5.0)"                                                                              `\
+`#> graphicalVAR      "R (>= 3.1.0)"                                                                              `\
+`#> gridExtra         NA                                                                                          `\
+`#> gsubfn            "proto"                                                                                     `\
+`#> gtable            "R (>= 4.0)"                                                                                `\
+`#> gtools            "methods, stats, utils"                                                                     `\
+`#> hardhat           "R (>= 4.1)"                                                                                `\
+`#> haven             "R (>= 3.6)"                                                                                `\
+`#> hdrcde            "R (>= 2.15)"                                                                               `\
+`#> here              NA                                                                                          `\
+`#> highr             "R (>= 3.3.0)"                                                                              `\
+`#> Hmisc             "R (>= 4.2.0)"                                                                              `\
+`#> hms               NA                                                                                          `\
+`#> htmlTable         "R (>= 4.1)"                                                                                `\
+`#> htmltools         "R (>= 2.14.1)"                                                                             `\
+`#> htmlwidgets       NA                                                                                          `\
+`#> httpgd            "R (>= 4.2.0)"                                                                              `\
+`#> httpuv            "R (>= 2.15.1)"                                                                             `\
+`#> httr              "R (>= 3.6)"                                                                                `\
+`#> httr2             "R (>= 4.1)"                                                                                `\
+`#> ids               NA                                                                                          `\
+`#> ifaTools          "shiny (>= 0.10), ggplot2, reshape2, rpf (>= 0.48), OpenMx (>=\n2.3.1), R (>= 2.14.0)"      `\
+`#> igraph            "methods, R (>= 3.5.0)"                                                                     `\
+`#> infer             "R (>= 4.1)"                                                                                `\
+`#> ini               NA                                                                                          `\
+`#> inline            NA                                                                                          `\
+`#> ipred             "R (>= 2.10)"                                                                               `\
+`#> isoband           NA                                                                                          `\
+`#> iterators         "R (>= 2.5.0), utils"                                                                       `\
+`#> jomo              NA                                                                                          `\
+`#> jpeg              "R (>= 2.9.0)"                                                                              `\
+`#> jquerylib         NA                                                                                          `\
+`#> jsonlite          "methods"                                                                                   `\
+`#> jsonvalidate      NA                                                                                          `\
+`#> kernlab           "R (>= 2.10)"                                                                               `\
+`#> knitr             "R (>= 3.6.0)"                                                                              `\
+`#> ks                "R (>= 2.10.0)"                                                                             `\
+`#> labeling          NA                                                                                          `\
+`#> Lahman            "R (>= 3.5.0)"                                                                              `\
+`#> languageserver    "R (>= 3.4.0)"                                                                              `\
+`#> later             "R (>= 3.5)"                                                                                `\
+`#> latex2exp         NA                                                                                          `\
+`#> lava              "R (>= 3.5.0)"                                                                              `\
+`#> lavaan            "R(>= 3.4)"                                                                                 `\
+`#> lazyeval          "R (>= 3.1.0)"                                                                              `\
+`#> lbfgs             NA                                                                                          `\
+`#> lifecycle         "R (>= 3.6)"                                                                                `\
+`#> lintr             "R (>= 4.1.0)"                                                                              `\
+`#> listenv           "R (>= 3.1.2)"                                                                              `\
+`#> litedown          "R (>= 3.2.0)"                                                                              `\
+`#> littler           NA                                                                                          `\
+`#> lme4              "R (>= 3.6), Matrix, methods, stats"                                                        `\
+`#> lmtest            "R (>= 3.0.0), stats, zoo"                                                                  `\
+`#> locfit            "R (>= 4.1.0)"                                                                              `\
+`#> longMI            "R (>= 3.5.0)"                                                                              `\
+`#> loo               "R (>= 3.5)"                                                                                `\
+`#> lubridate         "methods, R (>= 3.2)"                                                                       `\
+`#> magick            "R (>= 4.1.0)"                                                                              `\
+`#> magrittr          "R (>= 3.4.0)"                                                                              `\
+`#> markdown          "R (>= 2.11.1)"                                                                             `\
+`#> MatrixModels      "R (>= 3.6.0)"                                                                              `\
+`#> matrixStats       "R (>= 3.4.0)"                                                                              `\
+`#> mclust            "R (>= 3.0)"                                                                                `\
+`#> memoise           NA                                                                                          `\
+`#> metaDyn           "R (>= 4.1.0), OpenMx (>= 2.22.10)"                                                         `\
+`#> metaSEM           "R (>= 3.4.0), OpenMx"                                                                      `\
+`#> mice              "R (>= 2.10.0)"                                                                             `\
+`#> microbenchmark    "R (>= 3.2.0)"                                                                              `\
+`#> mime              NA                                                                                          `\
+`#> miniUI            NA                                                                                          `\
+`#> minqa             NA                                                                                          `\
+`#> mitml             NA                                                                                          `\
+`#> mixopt            "dplyr, ggplot2, splitfngr"                                                                 `\
+`#> mize              NA                                                                                          `\
+`#> mlVAR             "R (>= 3.3.0)"                                                                              `\
+`#> mnormt            "R (>= 3.0.0)"                                                                              `\
+`#> modeldata         "R (>= 4.1)"                                                                                `\
+`#> modelenv          NA                                                                                          `\
+`#> modelr            "R (>= 3.2)"                                                                                `\
+`#> MplusAutomation   "R (>= 3.5.0), methods"                                                                     `\
+`#> multicool         "methods, Rcpp (>= 0.11.2)"                                                                 `\
+`#> mvtnorm           "R(>= 3.5.0)"                                                                               `\
+`#> nloptr            NA                                                                                          `\
+`#> numDeriv          "R (>= 2.11.1)"                                                                             `\
+`#> nycflights13      "R (>= 3.2)"                                                                                `\
+`#> OpenMx            "R (>= 3.5.0)"                                                                              `\
+`#> openssl           NA                                                                                          `\
+`#> ordinal           "R (>= 2.13.0), stats, methods"                                                             `\
+`#> otel              "R (>= 3.6.0)"                                                                              `\
+`#> pak               "R (>= 3.5)"                                                                                `\
+`#> pan               NA                                                                                          `\
+`#> pander            "R (>= 2.15.0)"                                                                             `\
+`#> parallelly        NA                                                                                          `\
+`#> parsnip           "R (>= 4.1)"                                                                                `\
+`#> patchwork         NA                                                                                          `\
+`#> pbapply           "R (>= 3.2.0)"                                                                              `\
+`#> pbivnorm          NA                                                                                          `\
+`#> pbkrtest          "R (>= 4.2.0), lme4 (>= 1.1.31)"                                                            `\
+`#> pcaPP             "R(>= 3.6.2)"                                                                               `\
+`#> pdftools          NA                                                                                          `\
+`#> pillar            NA                                                                                          `\
+`#> pkgbuild          "R (>= 3.5)"                                                                                `\
+`#> pkgconfig         NA                                                                                          `\
+`#> pkgdown           "R (>= 4.1)"                                                                                `\
+`#> pkgload           "R (>= 3.4.0)"                                                                              `\
+`#> plyr              "R (>= 3.1.0)"                                                                              `\
+`#> png               "R (>= 2.9.0)"                                                                              `\
+`#> posterior         "R (>= 3.2.0)"                                                                              `\
+`#> pracma            "R (>= 3.1.0)"                                                                              `\
+`#> praise            NA                                                                                          `\
+`#> prettyunits       "R(>= 2.10)"                                                                                `\
+`#> printr            NA                                                                                          `\
+`#> processx          "R (>= 3.4.0)"                                                                              `\
+`#> prodlim           "R (>= 4.1.0)"                                                                              `\
+`#> profvis           "R (>= 4.0)"                                                                                `\
+`#> progress          "R (>= 3.6)"                                                                                `\
+`#> progressr         "R (>= 3.5.0)"                                                                              `\
+`#> promises          "R (>= 4.1.0)"                                                                              `\
+`#> proto             NA                                                                                          `\
+`#> ps                "R (>= 3.4)"                                                                                `\
+`#> psych             NA                                                                                          `\
+`#> purrr             "R (>= 4.1)"                                                                                `\
+`#> qgraph            "R (>= 3.0.0)"                                                                              `\
+`#> qpdf              NA                                                                                          `\
+`#> quadprog          "R (>= 3.1.0)"                                                                              `\
+`#> quantreg          "R (>= 3.5), stats, SparseM"                                                                `\
+`#> quarto            "R (>= 4.1.0)"                                                                              `\
+`#> QuickJSR          NA                                                                                          `\
+`#> R.cache           "R (>= 2.14.0)"                                                                             `\
+`#> R.methodsS3       "R (>= 2.13.0)"                                                                             `\
+`#> R.oo              "R (>= 2.13.0), R.methodsS3 (>= 1.8.2)"                                                     `\
+`#> R.utils           "R (>= 2.14.0), R.oo"                                                                       `\
+`#> R2jags            "R (>= 2.14.0), rjags (>= 3-3)"                                                             `\
+`#> R2WinBUGS         "R (>= 2.13.0), coda (>= 0.11-0), boot"                                                     `\
+`#> R6                "R (>= 3.6)"                                                                                `\
+`#> ragg              NA                                                                                          `\
+`#> rainbow           "R (>= 4.0.0), MASS, pcaPP"                                                                 `\
+`#> rappdirs          "R (>= 4.1)"                                                                                `\
+`#> rbibutils         "R (>= 2.10)"                                                                               `\
+`#> rcmdcheck         "R (>= 3.4)"                                                                                `\
+`#> RColorBrewer      "R (>= 2.0.0)"                                                                              `\
+`#> Rcpp              "R (>= 3.5.0)"                                                                              `\
+`#> RcppArmadillo     "R (>= 3.3.0)"                                                                              `\
+`#> RcppEigen         "R (>= 3.6.0)"                                                                              `\
+`#> RcppGSL           NA                                                                                          `\
+`#> RcppParallel      "R (>= 3.6.0)"                                                                              `\
+`#> RcppTOML          "R (>= 3.3.0)"                                                                              `\
+`#> RCurl             "R (>= 3.4.0), methods"                                                                     `\
+`#> Rdpack            "R (>= 2.15.0), methods"                                                                    `\
+`#> rdtools           "R (>= 4.0)"                                                                                `\
+`#> readr             "R (>= 4.1)"                                                                                `\
+`#> readxl            "R (>= 4.2)"                                                                                `\
+`#> recipes           "dplyr (>= 1.1.0), R (>= 4.1)"                                                              `\
+`#> RefManageR        "R (>= 3.0)"                                                                                `\
+`#> reformulas        NA                                                                                          `\
+`#> rematch           NA                                                                                          `\
+`#> rematch2          NA                                                                                          `\
+`#> remotes           "R (>= 3.0.0)"                                                                              `\
+`#> reprex            "R (>= 3.6)"                                                                                `\
+`#> reshape2          "R (>= 3.1)"                                                                                `\
+`#> reticulate        "R (>= 3.5)"                                                                                `\
+`#> rex               NA                                                                                          `\
+`#> rhdf5             "methods, R (>= 4.0.0)"                                                                     `\
+`#> rhdf5filters      NA                                                                                          `\
+`#> Rhdf5lib          "R (>= 4.2.0)"                                                                              `\
+`#> rhub              "R (>= 4.0)"                                                                                `\
+`#> rjags             "R (>= 2.14.0), coda (>= 0.13)"                                                             `\
+`#> rlang             "R (>= 4.0.0)"                                                                              `\
+`#> RMariaDB          "R (>= 2.8.0)"                                                                              `\
+`#> rmarkdown         "R (>= 3.0)"                                                                                `\
+`#> roxygen2          "R (>= 4.1)"                                                                                `\
+`#> rpf               "methods, parallel, R (>= 2.14.0)"                                                          `\
+`#> RPostgres         "R (>= 3.1.0)"                                                                              `\
+`#> rProject          "R (>= 3.5.0)"                                                                              `\
+`#> rprojroot         "R (>= 3.0.0)"                                                                              `\
+`#> rsample           "R (>= 4.1)"                                                                                `\
+`#> RSQLite           "R (>= 3.1.0)"                                                                              `\
+`#> rstan             "R (>= 3.4.0), StanHeaders (>= 2.32.0)"                                                     `\
+`#> rstantools        NA                                                                                          `\
+`#> rstudioapi        NA                                                                                          `\
+`#> rversions         NA                                                                                          `\
+`#> rvest             "R (>= 4.1)"                                                                                `\
+`#> Ryacas            "R (>= 3.3.0)"                                                                              `\
+`#> S7                "R (>= 3.5.0)"                                                                              `\
+`#> sandwich          "R (>= 3.0.0)"                                                                              `\
+`#> sass              NA                                                                                          `\
+`#> scales            "R (>= 4.1)"                                                                                `\
+`#> selectr           "R (>= 3.6)"                                                                                `\
+`#> semlbci           "R (>= 4.0.0)"                                                                              `\
+`#> semmcci           "R (>= 3.5.0)"                                                                              `\
+`#> semPlot           "R (>= 2.15.0)"                                                                             `\
+`#> sessioninfo       "R (>= 3.4)"                                                                                `\
+`#> sfd               "R (>= 2.10), tibble"                                                                       `\
+`#> shape             "R (>= 2.01)"                                                                               `\
+`#> shiny             "methods, R (>= 3.1.2)"                                                                     `\
+`#> simStateSpace     "R (>= 4.1.0)"                                                                              `\
+`#> slider            "R (>= 4.0.0)"                                                                              `\
+`#> snow              "R (>= 2.13.1), utils"                                                                      `\
+`#> snowfall          "R (>= 2.10), snow"                                                                         `\
+`#> sourcetools       "R (>= 3.0.2)"                                                                              `\
+`#> SparseM           "R (>= 2.15), methods"                                                                      `\
+`#> sparsevctrs       "R (>= 4.1)"                                                                                `\
+`#> splitfngr         NA                                                                                          `\
+`#> SQUAREM           "R (>= 4.0)"                                                                                `\
+`#> StanHeaders       "R (>= 3.4.0)"                                                                              `\
+`#> stringi           "R (>= 3.4)"                                                                                `\
+`#> stringr           "R (>= 4.1.0)"                                                                              `\
+`#> strucchange       "R (>= 2.10.0), zoo, sandwich"                                                              `\
+`#> styler            "R (>= 4.0.0)"                                                                              `\
+`#> symSEM            "caracas"                                                                                   `\
+`#> sys               NA                                                                                          `\
+`#> systemfonts       "R (>= 3.2.0)"                                                                              `\
+`#> tailor            "R (>= 4.1)"                                                                                `\
+`#> tensorA           "R (>= 2.2.0), stats"                                                                       `\
+`#> testthat          "R (>= 4.1.0)"                                                                              `\
+`#> texreg            "R (>= 3.5)"                                                                                `\
+`#> textshaping       "R (>= 3.2.0)"                                                                              `\
+`#> tibble            "R (>= 3.4.0)"                                                                              `\
+`#> tidymodels        "R (>= 4.1)"                                                                                `\
+`#> tidyr             "R (>= 4.1.0)"                                                                              `\
+`#> tidyselect        "R (>= 3.4)"                                                                                `\
+`#> tidyverse         "R (>= 3.3)"                                                                                `\
+`#> timechange        "R (>= 3.3)"                                                                                `\
+`#> timeDate          "R (>= 3.6.0), methods"                                                                     `\
+`#> tinytex           NA                                                                                          `\
+`#> tune              "R (>= 4.1)"                                                                                `\
+`#> tzdb              "R (>= 4.0.0)"                                                                              `\
+`#> ucminf            "R (>= 3.5.0)"                                                                              `\
+`#> unigd             "R (>= 4.2.0)"                                                                              `\
+`#> urca              "R (>= 2.0.0), methods"                                                                     `\
+`#> urlchecker        "R (>= 4.1)"                                                                                `\
+`#> usethis           "R (>= 4.1)"                                                                                `\
+`#> utf8              "R (>= 2.10)"                                                                               `\
+`#> uuid              "R (>= 2.9.0)"                                                                              `\
+`#> V8                NA                                                                                          `\
+`#> vars              "R (>= 2.0.0), MASS, strucchange, urca (>= 1.1-6), lmtest (>=\n0.9-26), sandwich (>= 2.2-4)"`\
+`#> vctrs             "R (>= 4.0.0)"                                                                              `\
+`#> viridisLite       "R (>= 2.10)"                                                                               `\
+`#> vroom             "R (>= 4.1)"                                                                                `\
+`#> waldo             "R (>= 4.0)"                                                                                `\
+`#> warp              "R (>= 4.0.0)"                                                                              `\
+`#> whisker           NA                                                                                          `\
+`#> whoami            NA                                                                                          `\
+`#> withr             "R (>= 3.6.0)"                                                                              `\
+`#> workflows         "R (>= 4.1)"                                                                                `\
+`#> workflowsets      "R (>= 4.1)"                                                                                `\
+`#> xfun              "R (>= 3.2.0)"                                                                              `\
+`#> xml2              "R (>= 3.6.0)"                                                                              `\
+`#> xmlparsedata      "R (>= 3.0.0)"                                                                              `\
+`#> xopen             "R (>= 3.1)"                                                                                `\
+`#> xtable            "R (>= 2.10.0)"                                                                             `\
+`#> yaml              NA                                                                                          `\
+`#> yardstick         "R (>= 4.1)"                                                                                `\
+`#> zip               NA                                                                                          `\
+`#> zoo               "R (>= 3.1.0), stats"                                                                       `\
+`#> base              NA                                                                                          `\
+`#> boot              "R (>= 3.0.0), graphics, stats"                                                             `\
+`#> class             "R (>= 3.0.0), stats, utils"                                                                `\
+`#> cluster           "R (>= 3.5.0)"                                                                              `\
+`#> codetools         "R (>= 2.1)"                                                                                `\
+`#> compiler          NA                                                                                          `\
+`#> datasets          NA                                                                                          `\
+`#> foreign           "R (>= 4.0.0)"                                                                              `\
+`#> graphics          NA                                                                                          `\
+`#> grDevices         NA                                                                                          `\
+`#> grid              NA                                                                                          `\
+`#> KernSmooth        "R (>= 2.5.0), stats"                                                                       `\
+`#> lattice           "R (>= 4.0.0)"                                                                              `\
+`#> MASS              "R (>= 4.4.0), grDevices, graphics, stats, utils"                                           `\
+`#> Matrix            "R (>= 4.4), methods"                                                                       `\
+`#> methods           NA                                                                                          `\
+`#> mgcv              "R (>= 4.4.0), nlme (>= 3.1-64)"                                                            `\
+`#> nlme              "R (>= 3.6.0)"                                                                              `\
+`#> nnet              "R (>= 3.0.0), stats, utils"                                                                `\
+`#> parallel          NA                                                                                          `\
+`#> rpart             "R (>= 2.15.0), graphics, stats, grDevices"                                                 `\
+`#> spatial           "R (>= 3.0.0), graphics, stats, utils"                                                      `\
+`#> splines           NA                                                                                          `\
+`#> stats             NA                                                                                          `\
+`#> stats4            NA                                                                                          `\
+`#> survival          "R (>= 3.5.0)"                                                                              `\
+`#> tcltk             NA                                                                                          `\
+`#> tools             NA                                                                                          `\
+`#> utils             NA                                                                                          `\
 `#>                   Imports                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> rProject          "BiocManager,\ncffr,\ncovr,\ndevtools,\ndistro,\njsonlite,\nknitr,\nlintr,\npak,\npkgdown,\nquarto,\nRcpp,\nremotes,\nrmarkdown,\nroxygen2,\nrprojroot,\nstats,\nstyler,\ntinytex,\nutils"                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> rProject          "BiocManager, cffr, covr, devtools, distro, jsonlite, knitr,\nlintr, pak, pkgdown, quarto, Rcpp, remotes, rmarkdown,\nroxygen2, rprojroot, stats, styler, tinytex, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
@@ -1988,6 +2000,7 @@
 `#> rvest             "cli, glue, httr (>= 0.5), lifecycle (>= 1.0.3), magrittr,\nrlang (>= 1.1.0), selectr, tibble, xml2 (>= 1.4.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> Ryacas            "Rcpp (>= 0.12.0), stats, methods, magrittr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
 `#> S7                "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
+`#> sandwich          "stats, utils, zoo"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `\
 `#> sass              "fs (>= 1.2.4), rlang (>= 0.4.10), htmltools (>= 0.5.1), R6,\nrappdirs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> scales            "cli, farver (>= 2.0.3), glue, labeling, lifecycle, R6,\nRColorBrewer, rlang (>= 1.1.0), viridisLite"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> selectr           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -2010,6 +2023,7 @@
 `#> StanHeaders       "RcppParallel (>= 5.1.4)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> stringi           "tools, utils, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> stringr           "cli, glue (>= 1.6.1), lifecycle (>= 1.0.3), magrittr, rlang\n(>= 1.0.0), stringi (>= 1.5.3), vctrs (>= 0.4.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
+`#> strucchange       "graphics, stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> styler            "cli (>= 3.1.1), magrittr (>= 2.0.0), purrr (>= 1.0.2), R.cache\n(>= 0.15.0), rlang (>= 1.0.0), rprojroot (>= 1.1), tools, vctrs\n(>= 0.4.1), withr (>= 2.3.0),"                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> symSEM            "OpenMx, metaSEM"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> sys               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -2037,6 +2051,7 @@
 `#> utf8              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> uuid              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> V8                "Rcpp (>= 0.12.12), jsonlite (>= 1.0), curl (>= 1.0), utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
+`#> vars              "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> vctrs             "cli (>= 3.4.0), glue, lifecycle (>= 1.0.3), rlang (>= 1.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> viridisLite       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> vroom             "bit64, cli (>= 3.2.0), crayon, glue, hms, lifecycle (>=\n1.0.3), methods, rlang (>= 1.1.0), stats, tibble (>= 2.0.0),\ntidyselect, tzdb (>= 0.1.1), vctrs (>= 0.2.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -2396,6 +2411,7 @@
 `#> rvest             NA                                                                                                                                                           `\
 `#> Ryacas            "Rcpp"                                                                                                                                                       `\
 `#> S7                NA                                                                                                                                                           `\
+`#> sandwich          NA                                                                                                                                                           `\
 `#> sass              NA                                                                                                                                                           `\
 `#> scales            NA                                                                                                                                                           `\
 `#> selectr           NA                                                                                                                                                           `\
@@ -2418,6 +2434,7 @@
 `#> StanHeaders       "RcppEigen (>= 0.3.3.9.3), RcppParallel (>= 5.1.4)"                                                                                                          `\
 `#> stringi           NA                                                                                                                                                           `\
 `#> stringr           NA                                                                                                                                                           `\
+`#> strucchange       NA                                                                                                                                                           `\
 `#> styler            NA                                                                                                                                                           `\
 `#> symSEM            NA                                                                                                                                                           `\
 `#> sys               NA                                                                                                                                                           `\
@@ -2445,6 +2462,7 @@
 `#> utf8              NA                                                                                                                                                           `\
 `#> uuid              NA                                                                                                                                                           `\
 `#> V8                "Rcpp"                                                                                                                                                       `\
+`#> vars              NA                                                                                                                                                           `\
 `#> vctrs             NA                                                                                                                                                           `\
 `#> viridisLite       NA                                                                                                                                                           `\
 `#> vroom             "cpp11 (>= 0.2.0), progress (>= 1.2.3), tzdb (>= 0.1.1)"                                                                                                     `\
@@ -2804,6 +2822,7 @@
 `#> rvest             "chromote, covr, knitr, purrr, R6, readr, repurrrsive,\nrmarkdown, spelling, stringi (>= 0.3.1), testthat (>= 3.0.2),\ntidyr, webfakes"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> Ryacas            "devtools, exams, knitr, Matrix, pkgload, rmarkdown, igraph,\ntestthat (>= 2.1.0), unix, Rmpfr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> S7                "bench, callr, covr, knitr, methods, rmarkdown, testthat (>=\n3.2.0), tibble"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
+`#> sandwich          "AER, car, geepack, lattice, lme4, lmtest, MASS, multiwayvcov,\nparallel, pcse, plm, pscl, scatterplot3d, stats4, strucchange,\nsurvival"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> sass              "testthat, knitr, rmarkdown, withr, shiny, curl"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> scales            "bit64, covr, dichromat, ggplot2, hms (>= 0.5.0), stringi,\ntestthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> selectr           "testthat (>= 3.0.0), XML, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
@@ -2826,6 +2845,7 @@
 `#> StanHeaders       "Rcpp, BH (>= 1.75.0-0), knitr (>= 1.36), rmarkdown, Matrix,\nmethods, rstan, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> stringi           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> stringr           "covr, dplyr, gt, htmltools, htmlwidgets, knitr, rmarkdown,\ntestthat (>= 3.0.0), tibble"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
+`#> strucchange       "stats4, car, dynlm, e1071, foreach, lmtest, mvtnorm, tseries,\nknitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> styler            "data.tree (>= 0.1.6), digest, here, knitr, prettycode,\nrmarkdown, roxygen2, rstudioapi (>= 0.7), tibble (>= 1.4.2),\ntestthat (>= 3.2.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> symSEM            "testthat, roxygen2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> sys               "unix (>= 1.4), spelling, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `\
@@ -2853,6 +2873,7 @@
 `#> utf8              "cli, covr, knitr, rlang, rmarkdown, testthat (>= 3.0.0),\nwithr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> uuid              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> V8                "testthat, knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
+`#> vars              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> vctrs             "bit64, covr, crayon, dplyr (>= 0.8.5), generics, knitr,\npillar (>= 1.4.4), pkgdown (>= 2.0.1), rmarkdown, testthat (>=\n3.0.0), tibble (>= 3.1.3), waldo (>= 0.2.0), withr, xml2,\nzeallot"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> viridisLite       "hexbin (>= 1.27.0), ggplot2 (>= 1.0.1), testthat, covr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> vroom             "archive, bench (>= 1.1.0), covr, curl, dplyr, forcats, fs,\nggplot2, knitr, patchwork, prettyunits, purrr, rmarkdown,\nrstudioapi, scales, spelling, testthat (>= 2.1.0), tidyr,\nutils, waldo, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
@@ -3212,6 +3233,7 @@
 `#> rvest             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> Ryacas            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> S7                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
+`#> sandwich          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> sass              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> scales            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> selectr           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3234,6 +3256,7 @@
 `#> StanHeaders       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> stringi           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> stringr           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
+`#> strucchange       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> styler            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> symSEM            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> sys               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3261,6 +3284,7 @@
 `#> utf8              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> uuid              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> V8                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
+`#> vars              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> vctrs             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> viridisLite       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> vroom             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3620,6 +3644,7 @@
 `#> rvest             "MIT + file LICENSE"                          NA             `\
 `#> Ryacas            "GPL"                                         NA             `\
 `#> S7                "MIT + file LICENSE"                          NA             `\
+`#> sandwich          "GPL-2 | GPL-3"                               NA             `\
 `#> sass              "MIT + file LICENSE"                          NA             `\
 `#> scales            "MIT + file LICENSE"                          NA             `\
 `#> selectr           "BSD_3_clause + file LICENCE"                 NA             `\
@@ -3642,6 +3667,7 @@
 `#> StanHeaders       "BSD_3_clause + file LICENSE"                 NA             `\
 `#> stringi           "file LICENSE"                                "yes"          `\
 `#> stringr           "MIT + file LICENSE"                          NA             `\
+`#> strucchange       "GPL-2 | GPL-3"                               NA             `\
 `#> styler            "MIT + file LICENSE"                          NA             `\
 `#> symSEM            "GPL (>= 2)"                                  NA             `\
 `#> sys               "MIT + file LICENSE"                          NA             `\
@@ -3669,6 +3695,7 @@
 `#> utf8              "Apache License (== 2.0) | file LICENSE"      NA             `\
 `#> uuid              "MIT + file LICENSE"                          NA             `\
 `#> V8                "MIT + file LICENSE"                          NA             `\
+`#> vars              "GPL (>= 2)"                                  NA             `\
 `#> vctrs             "MIT + file LICENSE"                          NA             `\
 `#> viridisLite       "MIT + file LICENSE"                          NA             `\
 `#> vroom             "MIT + file LICENSE"                          NA             `\
@@ -4028,6 +4055,7 @@
 `#> rvest             NA                    NA      NA     "no"            `\
 `#> Ryacas            NA                    NA      NA     "yes"           `\
 `#> S7                NA                    NA      NA     "yes"           `\
+`#> sandwich          NA                    NA      NA     "no"            `\
 `#> sass              NA                    NA      NA     "yes"           `\
 `#> scales            NA                    NA      NA     "no"            `\
 `#> selectr           NA                    NA      NA     "no"            `\
@@ -4050,6 +4078,7 @@
 `#> StanHeaders       NA                    NA      NA     "yes"           `\
 `#> stringi           NA                    NA      NA     "yes"           `\
 `#> stringr           NA                    NA      NA     "no"            `\
+`#> strucchange       NA                    NA      NA     "yes"           `\
 `#> styler            NA                    NA      NA     "no"            `\
 `#> symSEM            NA                    NA      NA     "no"            `\
 `#> sys               NA                    NA      NA     "yes"           `\
@@ -4077,6 +4106,7 @@
 `#> utf8              NA                    NA      NA     "yes"           `\
 `#> uuid              NA                    NA      NA     "yes"           `\
 `#> V8                NA                    NA      NA     "yes"           `\
+`#> vars              NA                    NA      NA     "no"            `\
 `#> vctrs             NA                    NA      NA     "yes"           `\
 `#> viridisLite       NA                    NA      NA     "no"            `\
 `#> vroom             NA                    NA      NA     "yes"           `\
@@ -4126,8 +4156,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-23 10:00:13 UTC; unix"                   `\
-`#> rProject          "R 4.6.1; ; 2026-10-23 10:00:10 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-24 16:54:45 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-24 16:54:40 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:20:09 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   `\
@@ -4138,20 +4168,20 @@
 `#> assertthat        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
 `#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> betaDelta         "R 4.6.1; ; 2026-10-23 08:14:54 UTC; unix"                   `\
-`#> betaMC            "R 4.6.1; ; 2026-10-23 08:15:03 UTC; unix"                   `\
-`#> betaNB            "R 4.6.1; ; 2026-10-23 08:15:00 UTC; unix"                   `\
-`#> betaSandwich      "R 4.6.1; ; 2026-10-23 08:14:57 UTC; unix"                   `\
+`#> betaDelta         "R 4.6.1; ; 2026-10-24 03:40:10 UTC; unix"                   `\
+`#> betaMC            "R 4.6.1; ; 2026-10-24 03:40:19 UTC; unix"                   `\
+`#> betaNB            "R 4.6.1; ; 2026-10-24 03:40:16 UTC; unix"                   `\
+`#> betaSandwich      "R 4.6.1; ; 2026-10-24 03:40:13 UTC; unix"                   `\
 `#> BH                "R 4.6.0; ; 2026-08-12 20:21:37 UTC; unix"                   `\
 `#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:32 UTC; unix"                   `\
-`#> biocmake          "R 4.6.1; ; 2026-10-23 05:08:37 UTC; unix"                   `\
+`#> biocmake          "R 4.6.1; ; 2026-10-24 03:20:53 UTC; unix"                   `\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   `\
-`#> BiocVersion       "R 4.6.1; ; 2026-10-23 05:08:35 UTC; unix"                   `\
+`#> BiocVersion       "R 4.6.1; ; 2026-10-24 03:20:51 UTC; unix"                   `\
 `#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
 `#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:12 UTC; unix"`\
 `#> bitops            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-31 07:27:38 UTC; unix"`\
 `#> blob              "R 4.6.0; ; 2026-08-12 20:22:28 UTC; unix"                   `\
-`#> bootStateSpace    "R 4.6.1; ; 2026-10-23 08:15:56 UTC; unix"                   `\
+`#> bootStateSpace    "R 4.6.1; ; 2026-10-24 03:41:08 UTC; unix"                   `\
 `#> brew              "R 4.6.0; ; 2026-08-12 20:21:48 UTC; unix"                   `\
 `#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"`\
 `#> broom             "R 4.6.0; ; 2026-08-12 20:23:52 UTC; unix"                   `\
@@ -4164,7 +4194,7 @@
 `#> cellranger        "R 4.6.0; ; 2026-09-26 06:35:53 UTC; unix"                   `\
 `#> cffr              "R 4.6.0; ; 2026-08-25 04:31:41 UTC; unix"                   `\
 `#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
-`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-23 08:14:13 UTC; unix"`\
+`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-24 03:39:31 UTC; unix"`\
 `#> clipr             "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
 `#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:21 UTC; unix"`\
 `#> clusterGeneration "R 4.6.0; ; 2026-04-24 21:00:44 UTC; unix"                   `\
@@ -4181,7 +4211,7 @@
 `#> crayon            "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   `\
 `#> crosstalk         "R 4.6.0; ; 2026-08-12 20:22:17 UTC; unix"                   `\
-`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-23 08:16:12 UTC; unix"`\
+`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-24 03:41:18 UTC; unix"`\
 `#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:31:26 UTC; unix"`\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:19:08 UTC; unix"`\
 `#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:30:51 UTC; unix"`\
@@ -4190,13 +4220,13 @@
 `#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-22 04:16:01 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   `\
 `#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:50 UTC; unix"`\
-`#> devtools          "R 4.6.1; ; 2026-10-23 08:14:30 UTC; unix"                   `\
+`#> devtools          "R 4.6.1; ; 2026-10-24 03:39:47 UTC; unix"                   `\
 `#> diagram           "R 4.6.0; ; 2026-04-24 01:28:57 UTC; unix"                   `\
 `#> dials             "R 4.6.0; ; 2026-06-23 05:17:57 UTC; unix"                   `\
 `#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:56:50 UTC; unix"`\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:19:38 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
-`#> dir.expiry        "R 4.6.1; ; 2026-10-23 05:08:36 UTC; unix"                   `\
+`#> dir.expiry        "R 4.6.1; ; 2026-10-24 03:20:52 UTC; unix"                   `\
 `#> distributional    "R 4.6.0; ; 2026-09-09 09:18:45 UTC; unix"                   `\
 `#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   `\
 `#> doBy              "R 4.6.0; ; 2026-08-12 20:24:57 UTC; unix"                   `\
@@ -4206,9 +4236,9 @@
 `#> DT                "R 4.6.0; ; 2026-08-12 20:25:47 UTC; unix"                   `\
 `#> dtplyr            "R 4.6.0; ; 2026-10-02 08:11:50 UTC; unix"                   `\
 `#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-30 05:47:53 UTC; unix"`\
-`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-23 08:15:40 UTC; unix"`\
-`#> dynTools          "R 4.6.1; ; 2026-10-23 08:16:35 UTC; unix"                   `\
-`#> dynUtils          "R 4.6.1; ; 2026-10-23 07:20:20 UTC; unix"                   `\
+`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-24 03:40:52 UTC; unix"`\
+`#> dynTools          "R 4.6.1; ; 2026-10-24 03:41:39 UTC; unix"                   `\
+`#> dynUtils          "R 4.6.1; ; 2026-10-24 03:32:40 UTC; unix"                   `\
 `#> ellipse           "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> ellipsis          "R 4.6.0; ; 2026-04-24 21:36:12 UTC; unix"                   `\
 `#> evaluate          "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
@@ -4222,7 +4252,7 @@
 `#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:15:12 UTC; unix"`\
 `#> fds               "R 4.6.0; ; 2026-05-06 05:19:49 UTC; unix"                   `\
 `#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:36 UTC; unix"`\
-`#> fitVARMxID        "R 4.6.1; ; 2026-10-23 08:16:45 UTC; unix"                   `\
+`#> fitVARMxID        "R 4.6.1; ; 2026-10-24 03:41:48 UTC; unix"                   `\
 `#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
 `#> fontawesome       "R 4.6.0; ; 2026-08-12 20:22:14 UTC; unix"                   `\
 `#> forcats           "R 4.6.0; ; 2026-08-12 20:22:52 UTC; unix"                   `\
@@ -4268,7 +4298,7 @@
 `#> htmlTable         "R 4.6.0; ; 2026-08-12 20:25:44 UTC; unix"                   `\
 `#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:04 UTC; unix"`\
 `#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:25:06 UTC; unix"                   `\
-`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-23 08:13:36 UTC; unix"`\
+`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-24 03:38:54 UTC; unix"`\
 `#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
 `#> httr              "R 4.6.0; ; 2026-09-02 03:59:46 UTC; unix"                   `\
 `#> httr2             "R 4.6.0; ; 2026-07-14 05:11:28 UTC; unix"                   `\
@@ -4306,7 +4336,7 @@
 `#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:11 UTC; unix"`\
 `#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:00 UTC; unix"`\
 `#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:06:27 UTC; unix"`\
-`#> longMI            "R 4.6.1; ; 2026-10-23 06:11:20 UTC; unix"                   `\
+`#> longMI            "R 4.6.1; ; 2026-10-24 03:28:02 UTC; unix"                   `\
 `#> loo               "R 4.6.0; ; 2026-07-25 05:23:32 UTC; unix"                   `\
 `#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:14 UTC; unix"`\
 `#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:00:10 UTC; unix"`\
@@ -4316,7 +4346,7 @@
 `#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
 `#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
 `#> memoise           "R 4.6.0; ; 2026-08-12 20:21:58 UTC; unix"                   `\
-`#> metaDyn           "R 4.6.1; ; 2026-10-23 08:16:56 UTC; unix"                   `\
+`#> metaDyn           "R 4.6.1; ; 2026-10-24 03:41:58 UTC; unix"                   `\
 `#> metaSEM           "R 4.6.0; ; 2026-04-28 05:58:02 UTC; unix"                   `\
 `#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:13:40 UTC; unix"`\
 `#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:51 UTC; unix"`\
@@ -4391,7 +4421,7 @@
 `#> rainbow           "R 4.6.0; ; 2026-09-26 06:36:28 UTC; unix"                   `\
 `#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
 `#> rbibutils         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> rcmdcheck         "R 4.6.1; ; 2026-10-23 08:14:27 UTC; unix"                   `\
+`#> rcmdcheck         "R 4.6.1; ; 2026-10-24 03:39:44 UTC; unix"                   `\
 `#> RColorBrewer      "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
 `#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
 `#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 10:49:15 UTC; unix"`\
@@ -4414,18 +4444,18 @@
 `#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:13 UTC; unix"`\
 `#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:23:09 UTC; unix"`\
 `#> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   `\
-`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-23 05:11:45 UTC; unix"`\
-`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-23 05:11:24 UTC; unix"`\
-`#> Rhdf5lib          "R 4.6.1; ; 2026-10-23 05:11:21 UTC; unix"                   `\
+`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-24 03:23:08 UTC; unix"`\
+`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-24 03:22:54 UTC; unix"`\
+`#> Rhdf5lib          "R 4.6.1; ; 2026-10-24 03:22:51 UTC; unix"                   `\
 `#> rhub              "R 4.6.0; ; 2026-04-24 22:27:49 UTC; unix"                   `\
 `#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:38:21 UTC; unix"`\
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
 `#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:03 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:00:02 UTC; unix"                   `\
-`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-23 08:14:37 UTC; unix"`\
+`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-24 03:39:53 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:24:25 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:49 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-23 05:11:59 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-24 03:19:02 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:44 UTC; unix"`\
@@ -4436,17 +4466,18 @@
 `#> rvest             "R 4.6.0; ; 2026-10-18 19:50:01 UTC; unix"                   `\
 `#> Ryacas            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:06:00 UTC; unix"`\
 `#> S7                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
+`#> sandwich          "R 4.6.0; ; 2026-08-04 05:05:03 UTC; unix"                   `\
 `#> sass              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:23 UTC; unix"`\
 `#> scales            "R 4.6.0; ; 2026-08-12 20:22:07 UTC; unix"                   `\
 `#> selectr           "R 4.6.0; ; 2026-09-28 04:40:54 UTC; unix"                   `\
 `#> semlbci           "R 4.6.0; ; 2026-07-28 08:48:55 UTC; unix"                   `\
-`#> semmcci           "R 4.6.1; ; 2026-10-23 08:14:51 UTC; unix"                   `\
+`#> semmcci           "R 4.6.1; ; 2026-10-24 03:40:07 UTC; unix"                   `\
 `#> semPlot           "R 4.6.0; ; 2026-07-18 12:17:16 UTC; unix"                   `\
 `#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:25:12 UTC; unix"                   `\
 `#> sfd               "R 4.6.0; ; 2026-04-24 22:06:59 UTC; unix"                   `\
 `#> shape             "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
 `#> shiny             "R 4.6.0; ; 2026-08-12 20:24:30 UTC; unix"                   `\
-`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-23 08:15:10 UTC; unix"`\
+`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-24 03:40:25 UTC; unix"`\
 `#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:14:38 UTC; unix"`\
 `#> snow              "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
 `#> snowfall          "R 4.6.0; ; 2026-04-24 21:41:41 UTC; unix"                   `\
@@ -4458,6 +4489,7 @@
 `#> StanHeaders       "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:11:27 UTC; unix"`\
 `#> stringi           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
 `#> stringr           "R 4.6.0; ; 2026-08-12 20:22:54 UTC; unix"                   `\
+`#> strucchange       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-05 05:51:55 UTC; unix"`\
 `#> styler            "R 4.6.0; ; 2026-04-24 22:07:55 UTC; unix"                   `\
 `#> symSEM            "R 4.6.0; ; 2026-04-28 06:11:30 UTC; unix"                   `\
 `#> sys               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
@@ -4474,7 +4506,7 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:27:55 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
-`#> tinytex           "R 4.6.1; ; 2026-10-23 08:14:09 UTC; unix"                   `\
+`#> tinytex           "R 4.6.1; ; 2026-10-24 03:39:26 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 15:45:43 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:40:31 UTC; unix"`\
@@ -4485,6 +4517,7 @@
 `#> utf8              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:36 UTC; unix"`\
 `#> uuid              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:38 UTC; unix"`\
 `#> V8                "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:27:42 UTC; unix"`\
+`#> vars              "R 4.6.0; ; 2026-04-24 21:25:32 UTC; unix"                   `\
 `#> vctrs             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:02 UTC; unix"`\
 `#> viridisLite       "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
 `#> vroom             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 06:36:05 UTC; unix"`\
@@ -4844,6 +4877,7 @@
 `#> rvest             NA       `\
 `#> Ryacas            NA       `\
 `#> S7                NA       `\
+`#> sandwich          NA       `\
 `#> sass              NA       `\
 `#> scales            NA       `\
 `#> selectr           NA       `\
@@ -4866,6 +4900,7 @@
 `#> StanHeaders       NA       `\
 `#> stringi           NA       `\
 `#> stringr           NA       `\
+`#> strucchange       NA       `\
 `#> styler            NA       `\
 `#> symSEM            NA       `\
 `#> sys               NA       `\
@@ -4893,6 +4928,7 @@
 `#> utf8              NA       `\
 `#> uuid              NA       `\
 `#> V8                NA       `\
+`#> vars              NA       `\
 `#> vctrs             NA       `\
 `#> viridisLite       NA       `\
 `#> vroom             NA       `\
