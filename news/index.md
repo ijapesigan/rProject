@@ -4,6 +4,27 @@
 
 ### Minor
 
+- cran set: `check-oldrel.yml`, `check-standard.yml`,
+  `non-ascii-check.yml`, `rhub-cran-add-03.yml`, and
+  `rhub-cran-add-04.yml` move from the rproject set to the cran set, so
+  every cran project gets the 19 workflows the cran-\* repositories run
+  (rProject keeps them through the cran set). With `type <- "cran"` in
+  `project.R`, a cran project can delete its workflows in Overleaf:
+  `make project` writes them.
+- docker set: system dependencies are installed with an `apt_install()`
+  function (skips packages already installed; updates the apt lists only
+  when they are empty), and R packages with
+  `install2.r --error --skipinstalled -n -1`. `install-cran.sh` and
+  `install-github.sh` look up the system dependencies of the listed
+  packages and of their R dependencies with
+  [`pak::pkg_sysreqs()`](https://pak.r-lib.org/reference/pkg_sysreqs.html)
+  (the r-hub system requirements database) before installing, so a
+  rocker-based image (PPM binaries without system libraries) gets them
+  without hand-written `*_sys.sh` lists; `install-github.sh` installs
+  the CRAN dependencies from each DESCRIPTION
+  ([`pak::pkg_deps()`](https://pak.r-lib.org/reference/pkg_deps.html))
+  with `install2.r`, then the packages without dependencies.
+  `install-apt.sh` uses `apt_install()`.
 - `build-docs.sh` (“build docs”) runs `make project` (and `make readme`)
   in each project before it publishes, so the files make writes
   (workflows, `Makefile`, scripts, `README.md`) are in the push; a push
