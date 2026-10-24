@@ -109,13 +109,20 @@ a project in step with rProject. Each file has a tier:
   never writes them; it lists those that differ as links to refresh.
 - **Tier 2, written by `make`.** Everything else: the `Makefile`, the
   workflows, the make scripts, `.gitignore`, `clone.sh`, the Quarto
-  pages, the folder skeleton. A fresh copy from Overleaf has no
-  `Makefile`: run
-  `apptainer exec <image> Rscript -e 'rProject::Template(getwd())'`
-  once, then `make`.
+  pages, the folder skeleton.
   [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
   writes a file that is missing or differs (the template wins: change it
-  in rProject). These files are not uploaded to Overleaf.
+  in rProject). In Overleaf, a tier 2 file may stay as a regular file,
+  never as a link; a template change reaches it with the project’s next
+  upload
+  ([`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  skips tier 2, so a stale copy is not an error). Keep the `Makefile`
+  (the entry point: a copy without it cannot run `make`),
+  `project.Rproj`, the `.gitignore` files, and the scripts the project’s
+  own build uses (docker: `scripts/rproject*.sh`); remove only
+  `.setup/scripts/` except `project.R`. A copy without the `Makefile`
+  runs `apptainer exec <image> Rscript -e 'rProject::Template(getwd())'`
+  once, then `make`.
 
 Workflows that only some projects run are in a catalog
 (`inst/template/workflows/`). A project names the ones it runs in
@@ -132,8 +139,20 @@ The daily docker workflow is written as
 run as a chain, because each image builds on the one before it: only the
 first image has a schedule (`workflow_cron`); when a build succeeds, it
 starts the next image’s build (`workflow_next`, a `repository_dispatch`
-event), so a failure stops the chain and no image builds on a stale
-base.
+event; it may name several images, as docker-dev starts docker-docs and
+docker-rocker), so a failure stops the chain and no image builds on a
+stale base.
+
+A docker project lists what its image installs in `scripts/`: `apt.txt`
+(system packages), `cran.txt` (CRAN packages), and `github.txt`
+(`owner/repo`, installed after CRAN). The lists name only the packages
+wanted, never their dependencies, which change upstream:
+`install-cran.sh` and `install-github.sh` resolve them at every build,
+and `check.sh` fails the build naming any listed package that does not
+load. Builds that are not plain installs (a package from source, a
+proprietary installer, CUDA) stay as the project’s own scripts, run by
+its `scripts/setup.sh`. The README is written from these lists, the
+workflows, and `.setup/readme/description.md`.
 
 Files that leave the template are listed in `inst/template/removed.tsv`.
 [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
@@ -266,8 +285,10 @@ Short messages from the user to an AI agent:
 | “O2G” | the user pushed from Overleaf to GitHub: verify and record the push |
 | “PUB” | the user ran `make all` and `make auto`: check the public repository and its CI |
 | “build docs” | publish the docker images in order and rebuild the `docs` images |
+| “build lib” | publish the lib-\* libraries, then rebuild `bib.bib` on rProject’s `main` and `latex` branches from them |
 | “EX” | the user is leaving: update `.setup/notes/claude.txt` and the handoff |
 | “handoff” | rewrite `.setup/ai/handoff.md` without leaving |
+| “start” | a fresh session: read the handoff and `todo.txt`, check pending pushes, report, and wait |
 
 The private files that agents read (`AGENTS.md`, `.setup/ai/`) are
 written by

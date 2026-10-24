@@ -552,12 +552,19 @@ links to refresh.</li>
 <strong>Tier 2, written by <code>make</code>.</strong> Everything
 else: the <code>Makefile</code>, the workflows, the make scripts,
 <code>.gitignore</code>, <code>clone.sh</code>, the Quarto pages, the
-folder skeleton. A fresh copy from Overleaf has no
-<code>Makefile</code>: run
+folder skeleton. <code><a href="../reference/Template.html">Template()</a></code> writes a file that is missing
+or differs (the template wins: change it in rProject). In Overleaf, a
+tier 2 file may stay as a regular file, never as a link; a template
+change reaches it with the project’s next upload (<code><a href="../reference/Verify.html">Verify()</a></code>
+skips tier 2, so a stale copy is not an error). Keep the
+<code>Makefile</code> (the entry point: a copy without it cannot run
+<code>make</code>), <code>project.Rproj</code>, the
+<code>.gitignore</code> files, and the scripts the project’s own build
+uses (docker: <code>scripts/rproject*.sh</code>); remove only
+<code>.setup/scripts/</code> except <code>project.R</code>. A copy
+without the <code>Makefile</code> runs
 <code>apptainer exec &lt;image&gt; Rscript -e 'rProject::Template(getwd())'</code>
-once, then <code>make</code>. <code><a href="../reference/Template.html">Template()</a></code> writes a file that
-is missing or differs (the template wins: change it in rProject). These
-files are not uploaded to Overleaf.</li>
+once, then <code>make</code>.</li>
 </ul>
 <p>Workflows that only some projects run are in a catalog
 (<code>inst/template/workflows/</code>). A project names the ones it
@@ -573,8 +580,21 @@ The daily builds run as a chain, because each image builds on the one
 before it: only the first image has a schedule
 (<code>workflow_cron</code>); when a build succeeds, it starts the next
 image’s build (<code>workflow_next</code>, a
-<code>repository_dispatch</code> event), so a failure stops the chain
-and no image builds on a stale base.</p>
+<code>repository_dispatch</code> event; it may name several images, as
+docker-dev starts docker-docs and docker-rocker), so a failure stops the
+chain and no image builds on a stale base.</p>
+<p>A docker project lists what its image installs in
+<code>scripts/</code>: <code>apt.txt</code> (system packages),
+<code>cran.txt</code> (CRAN packages), and <code>github.txt</code>
+(<code>owner/repo</code>, installed after CRAN). The lists name only the
+packages wanted, never their dependencies, which change upstream:
+<code>install-cran.sh</code> and <code>install-github.sh</code> resolve
+them at every build, and <code>check.sh</code> fails the build naming
+any listed package that does not load. Builds that are not plain
+installs (a package from source, a proprietary installer, CUDA) stay as
+the project’s own scripts, run by its <code>scripts/setup.sh</code>. The
+README is written from these lists, the workflows, and
+<code>.setup/readme/description.md</code>.</p>
 <p>Files that leave the template are listed in
 <code>inst/template/removed.tsv</code>. <code><a href="../reference/Template.html">Template()</a></code> deletes
 them (a folder only when nothing but <code>.gitignore</code> files is
@@ -917,13 +937,24 @@ the public repository and its CI</td>
 images</td>
 </tr>
 <tr class="even">
+<td>“build lib”</td>
+<td>publish the lib-* libraries, then rebuild <code>bib.bib</code> on
+rProject’s <code>main</code> and <code>latex</code> branches from
+them</td>
+</tr>
+<tr class="odd">
 <td>“EX”</td>
 <td>the user is leaving: update <code>.setup/notes/claude.txt</code> and
 the handoff</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>“handoff”</td>
 <td>rewrite <code>.setup/ai/handoff.md</code> without leaving</td>
+</tr>
+<tr class="odd">
+<td>“start”</td>
+<td>a fresh session: read the handoff and <code>todo.txt</code>, check
+pending pushes, report, and wait</td>
 </tr>
 </tbody>
 </table>

@@ -27,11 +27,54 @@
 - Template sets: docker gains `make-install.R`, `make-packages.R`, and
   `.setup/scripts/.gitignore` (its Makefile uses them); talk gains
   `make-config.R` and `verify.sh` (`make verify`). So in every type,
-  `.setup/scripts/` holds only generated files and `project.R`; keep the
-  `Makefile` (the entry point) as a regular file, not a link.
+  `.setup/scripts/` holds `project.R` plus generated files. In Overleaf,
+  generated files may stay as regular files, never as links; only
+  `.setup/scripts/` (all but `project.R`) is removed. The `Makefile`
+  (the entry point), `project.Rproj` (knitr finds the root by it), and
+  the `.gitignore` files stay.
 - `build-docs.sh` writes the template files first
   ([`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md))
   when a download has no `Makefile` or `make-project.R`.
+- docker set: the install scripts are generic and read the project’s
+  lists. `scripts/install-apt.sh` (`apt.txt`), `install-cran.sh`
+  (`cran.txt`, one `install2.r` call), `install-github.sh`
+  (`github.txt`, one `install_github()` call after CRAN; stops without
+  `GITHUB_PAT`, as the anonymous GitHub limit of 60 calls an hour had
+  broken docker-r2u’s daily build since 2026-10-20), and `check.sh`
+  (loads every listed package and fails naming each one that does not
+  load). The lists name only the packages wanted, never their
+  dependencies: those change upstream, and `install2.r` (bspm binaries
+  on r2u, PPM elsewhere) and each DESCRIPTION resolve them at every
+  build. Each script does nothing without its list.
+- docker set: `.setup/readme/README.Rmd` is a template file. The README
+  shows the image, a badge for each workflow the project runs, the
+  project’s own paragraph (`.setup/readme/description.md`), how to run
+  the image with Docker and Apptainer (`apptainer pull docker://`), the
+  packages in `cran.txt` and `github.txt`, and each workflow with its
+  trigger, all read when `make readme` runs.
+- `workflow_next` may name several images (`c("owner/a", "owner/b")`):
+  the daily build starts each one (docker-dev starts docker-docs and
+  docker-rocker).
+- Workflow catalog: `docker-build-push-amd64-only` and
+  `docker-build-push-daily-amd64-only`, for images with x86-only parts
+  (docker-torch: CUDA).
+- “build lib” (`.setup/scripts/build-lib.sh`): publishes every lib-\* in
+  [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md)
+  (`make all` on a compute node, then `make auto`’s steps and the tag),
+  waits for their CI, then dispatches rProject’s Make Project
+  (`bib.bib`, `quarto.bib` on `main`) and Compile LaTeX (rProject Daily)
+  (the `latex` branch) and checks that each bibliography has every entry
+  of the public lib-\*. `--bib-only` (“build lib only”) rebuilds the
+  bibliographies alone.
+- Keyword “start” (global instructions): a fresh session reads the
+  handoff and `todo.txt`, checks what is pending (a push it waits for is
+  verified and recorded as for “O2G”), reports, and waits. Not `/init`,
+  Claude Code’s own command.
+- [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md)
+  stops when some lib-\* cannot be cloned (a `bib.bib` without them
+  would look complete); when none can (offline),
+  [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md)
+  still keeps the previous `bib.bib`.
 - [`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
   (`make latex`) checks each log: a document whose last run failed
   (fatal error, TeX capacity exceeded) stops the build in GitHub Actions
