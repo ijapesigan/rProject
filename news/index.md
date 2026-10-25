@@ -4,6 +4,13 @@
 
 ### Minor
 
+- docker set: the README names the image from
+  `.setup/repo/public-github.md` locally and from `GITHUB_REPOSITORY` in
+  GitHub Actions, and stops when it has neither. Make Project renders
+  the README in the public repository, where `.setup/repo/` (private) is
+  absent, so docker-r2u’s README read `NA/NA` and its badges pointed to
+  `github.com/NA`. `rproject_sys.sh` installs `libfreetype-dev` (Ubuntu
+  24.04 and 26.04; 26.04 has no `libfreetype6-dev`).
 - cran set: `check-oldrel.yml`, `check-standard.yml`,
   `non-ascii-check.yml`, `rhub-cran-add-03.yml`, and
   `rhub-cran-add-04.yml` move from the rproject set to the cran set, so
