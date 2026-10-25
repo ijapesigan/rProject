@@ -21,7 +21,7 @@ apt_install                    \
     libharfbuzz-dev            \
     libfribidi-dev             \
     libgit2-dev                \
-    libfreetype6-dev           \
+    libfreetype-dev            \
     libpng-dev                 \
     libtiff5-dev               \
     libjpeg-dev

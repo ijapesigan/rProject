@@ -20,7 +20,23 @@ Read <- function(file) {
   x <- readLines(file, warn = FALSE)
   trimws(x[!grepl(pattern = "^[[:space:]]*(#|$)", x = x)])
 }
+# the public repository (owner/repository) names the image: locally from
+# .setup/repo/public-github.md (private), in GitHub Actions (Make Project
+# renders the README in the public repository) from GITHUB_REPOSITORY;
+# without either the README would read NA/NA, so stop
 public <- Read(file.path(".setup", "repo", "public-github.md"))[1]
+if (is.na(public) || !nzchar(public)) {
+  public <- Sys.getenv("GITHUB_REPOSITORY")
+}
+if (!grepl(pattern = "^[^/]+/[^/]+$", x = public)) {
+  stop(
+    paste0(
+      "\n\nNo public repository (.setup/repo/public-github.md or",
+      " GITHUB_REPOSITORY): the README cannot name the image.\n\n"
+    ),
+    call. = FALSE
+  )
+}
 owner <- sub(pattern = "/.*$", replacement = "", x = public)
 repo <- sub(pattern = "^.*/", replacement = "", x = public)
 image <- paste0(
