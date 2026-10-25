@@ -8,3 +8,4 @@ docker-005-ssm
 docker-006-missing
 docker-007-dev
 docker-docs
+docker-rocker
