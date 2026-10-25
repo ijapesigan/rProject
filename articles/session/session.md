@@ -457,7 +457,7 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/Rtmp5ghVZ8/temp_libpath113b6616a391" "0.0.58"    `\
+`#> rProject          "/tmp/Rtmptxq1cu/temp_libpath113e45cc2e91" "0.0.58"    `\
 `#> rProject          "/__w/rProject/rProject/.library"          "0.0.58"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
@@ -4156,8 +4156,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-25 00:20:23 UTC; unix"                   `\
-`#> rProject          "R 4.6.1; ; 2026-10-25 00:20:18 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-25 03:14:14 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-25 03:14:11 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:20:09 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   `\
@@ -4455,7 +4455,7 @@
 `#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-24 03:39:53 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:24:25 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:49 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-24 23:17:18 UTC; unix"                   `\
+`#> rProject          "R 4.6.1; ; 2026-10-25 02:40:36 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:44 UTC; unix"`\

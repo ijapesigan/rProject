@@ -4,6 +4,15 @@
 
 ### Minor
 
+- Makefiles (package, lib, talk, docker): a project without
+  `.setup/scripts/make-project.R` downloads the current one from
+  rProject on GitHub before anything else (it installs the newest
+  rProject), and falls back to the image’s
+  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  only when offline. Before, the image’s rProject wrote the template
+  files, so an image older than a workflow stopped `make project`
+  (“Unknown workflows”: docker-torch and docker-rarch with docs built
+  before the amd64-only workflows).
 - docker set: the README names the image from
   `.setup/repo/public-github.md` locally and from `GITHUB_REPOSITORY` in
   GitHub Actions, and stops when it has neither. Make Project renders
