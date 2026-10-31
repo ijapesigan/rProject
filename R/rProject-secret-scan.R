@@ -23,8 +23,9 @@ SecretScan <- function(path,
     docker_hub = "dckr_pat_[A-Za-z0-9_-]{20,}",
     quarto_pub = "qpa_[A-Za-z0-9]{20,}",
     overleaf = "olp_[A-Za-z0-9]{20,}",
-    anthropic = "sk-ant-[A-Za-z0-9_-]{20,}",
-    openai = "sk-(proj-)?[A-Za-z0-9_-]{32,}",
+    # the lookbehind skips "sk-" inside a longer name (task-1-rep-1-...)
+    anthropic = "(?<![A-Za-z0-9_-])sk-ant-[A-Za-z0-9_-]{20,}",
+    openai = "(?<![A-Za-z0-9_-])sk-(proj-)?[A-Za-z0-9_-]{32,}",
     codecov = paste0(
       "CODECOV_TOKEN[^A-Za-z0-9]{1,8}",
       "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"

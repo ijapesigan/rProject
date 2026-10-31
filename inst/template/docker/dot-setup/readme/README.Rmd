@@ -149,6 +149,33 @@ cat(
 ## Use
 
 ```{r}
+# RStudio Server: the image publishes port 8787 or installs it
+dockerfile <- readLines("Dockerfile", warn = FALSE)
+rstudio <- any(
+  grepl(pattern = "EXPOSE[[:space:]]+8787|install_rstudio", x = dockerfile)
+)
+if (rstudio) {
+  user <- sub(
+    pattern = "^.*DEFAULT_USER=\"?([^\" ]+)\"?.*$",
+    replacement = "\\1",
+    x = grep(pattern = "DEFAULT_USER=", x = dockerfile, value = TRUE)[1]
+  )
+  if (is.na(user)) {
+    user <- "rstudio"
+  }
+  cat(
+    "RStudio Server (Docker):\n\n",
+    "```bash\n",
+    "docker run --rm -ti -e PASSWORD=yourpassword",
+    " -p 127.0.0.1:8787:8787 ", image, "\n",
+    "```\n\n",
+    "Open `http://localhost:8787` in a web browser to launch",
+    " RStudio Server (`127.0.0.1` keeps it on this computer).\n\n",
+    "- username: ", user, "\n",
+    "- password: yourpassword\n\n",
+    sep = ""
+  )
+}
 cat(
   "Docker (Docker Hub or the GitHub Container Registry):\n\n",
   "```bash\n",

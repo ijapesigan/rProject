@@ -86,6 +86,33 @@ lapply(
         )
       }
     )
+    testthat::test_that(
+      paste(text, "skips sk- inside a longer name"),
+      {
+        fake_openai <- paste0("sk-", strrep("a", 40))
+        writeLines(
+          text = c(
+            # split, so the scanner in an older image does not flag it
+            paste0(
+              "dsem-smoke/task-1-rep-1-",
+              "alternative-200-20261027-183325/"
+            ),
+            paste0("OPENAI_API_KEY=", fake_openai),
+            paste0("\"", fake_openai, "\""),
+            fake_openai
+          ),
+          con = file.path(root, "names.md")
+        )
+        findings <- suppressWarnings(
+          SecretScan(path = root, error = FALSE)
+        )
+        testthat::expect_equal(
+          findings$line[findings$file == "names.md"],
+          2:4
+        )
+        unlink(file.path(root, "names.md"))
+      }
+    )
     unlink(root, recursive = TRUE)
   },
   text = "test-rProject-secret-scan"
