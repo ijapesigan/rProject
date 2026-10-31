@@ -25,5 +25,15 @@
   uses itself (`common`, `package`, `cran`): rProject's own copy, which
   the projects link to; `make project` in rProject copies it here.
   Tier 1 of the other sets: these files, which the projects link to.
+- Overleaf. A project's Overleaf holds, as regular files (uploaded),
+  what it needs to compile its documents and to run `make`: the tier 1
+  files, `latexmkrc`, the `Makefile` (`make` needs it to run at all), the
+  `.gitignore` files (a fresh clone keeps its export rules), and
+  `project.Rproj` (`knitr.R` finds the root by it). `make` writes
+  everything else, which is not in Overleaf. `Template()` names the kept
+  files it writes, for upload; when rProject changes one, the agent names
+  the affected projects and gives an upload folder for each. The only
+  links: `.setup/r-dependencies/*` (from the functions project) and
+  `bib.bib`.
 - The apa7 class is not a template: manuscripts use the copy in the TeX
   distribution (CTAN; TinyTeX-2 in `docs.sif`, TeX Live in Overleaf).

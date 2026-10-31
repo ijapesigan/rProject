@@ -17,7 +17,7 @@ Project type. If \code{NULL}, it is read from \code{.setup/scripts/project.R}.}
 If \code{TRUE}, write nothing and report what would change.}
 }
 \value{
-Returns the paths of the tier 2 files that were written
+Returns the paths of the files that were written
 (with \code{check = TRUE}, that would be written), invisibly, with the
 deleted files (or those that would be deleted) in the attribute
 \code{removed}.
@@ -33,18 +33,22 @@ The type comes from a line in \code{.setup/scripts/project.R},
 \code{"talk"}, and \code{"docker"}. Each type uses a few sets of files
 (\code{inst/template/manifest.tsv}). Each file has a tier:
 \itemize{
-\item Tier 1, links: the files Overleaf needs to compile the PDFs (the
-LaTeX preamble, \verb{.setup/latex/r-scripts/}, \code{.setup/load/load.R},
-style files, the lib documents; \code{latexmkrc} is linked to
-\code{inst/latexmk/latexmkrc}). They stay Overleaf links that the user
-refreshes.
-\code{Template()} never writes them; it lists the ones that differ
-from rProject as links to refresh.
+\item Tier 1, kept in Overleaf: the files Overleaf needs to compile the
+PDFs (the LaTeX preamble, \verb{.setup/latex/r-scripts/},
+\code{.setup/load/load.R}, style files, the lib documents).
 \item Tier 2, written by make: everything else (workflows, scripts, ...).
-A file is written when it is missing or differs; an overwritten
-file is named (the template wins; change it in rProject).
-These files are not in Overleaf or the private repository.
+These files are not in Overleaf or the private repository, but the
+\code{Makefile} (\code{make} needs it to run at all) and the \code{.gitignore}
+files (a fresh clone keeps its export rules), kept in Overleaf.
 }
+
+Every file is written when it is missing or differs (the template
+wins; change it in rProject). An overwritten tier 2 file is named; the
+files kept in Overleaf are named for upload. They are regular files
+in Overleaf, not links (if one still is, delete the link first);
+only \verb{.setup/r-dependencies/} link to the functions project.
+\code{latexmkrc} and \code{project.Rproj}, also regular files in Overleaf, are
+written by \code{LatexCompile()} and \code{Project()}.
 
 Besides the files of its sets, a project gets:
 \itemize{
@@ -70,7 +74,7 @@ files is left in it; otherwise it is named and kept. Nothing in a
 private folder is deleted.
 
 In rProject itself, the tier 1 files are copied into \verb{inst/template/}
-first, and the tier 2 files are written from \verb{inst/template/} in the
+first, and the files are written from \verb{inst/template/} in the
 project folder, not from the installed package.
 
 Nothing is written or deleted in GitHub Actions (\code{GITHUB_ACTIONS} is

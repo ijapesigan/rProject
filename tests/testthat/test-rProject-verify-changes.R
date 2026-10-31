@@ -23,6 +23,25 @@ lapply(
     writeLines("knitted", file.path(path, "vignettes", "a.Rmd"))
     writeLines("local", file.path(path, "vignettes", "b.Rmd"))
     writeLines("overleaf", file.path(private, "vignettes", "b.Rmd"))
+    # a cran project: the Makefile is kept in Overleaf (compared), a
+    # workflow is written by make (skipped)
+    for (dir in c(path, private)) {
+      dir.create(file.path(dir, ".setup", "scripts"), recursive = TRUE)
+      dir.create(file.path(dir, ".github", "workflows"), recursive = TRUE)
+    }
+    for (dir in c(path, private)) {
+      writeLines(
+        text = 'type <- "cran"',
+        con = file.path(dir, ".setup", "scripts", "project.R")
+      )
+    }
+    writeLines("local", file.path(path, "Makefile"))
+    writeLines("overleaf", file.path(private, "Makefile"))
+    workflow <- file.path(".github", "workflows", "make.yml")
+    writeLines("local", file.path(path, workflow))
+    writeLines("overleaf", file.path(private, workflow))
+    writeLines("local", file.path(path, ".github", ".gitignore"))
+    writeLines("overleaf", file.path(private, ".github", ".gitignore"))
     out <- rProject:::.VerifyChanges(path = path, private = private)
     testthat::test_that(
       paste(text, "compares inst/latexmk/latexmkrc"),
@@ -35,6 +54,14 @@ lapply(
       {
         testthat::expect_false("latexmkrc" %in% names(out))
         testthat::expect_false("R.R" %in% names(out))
+      }
+    )
+    testthat::test_that(
+      paste(text, "compares the Makefile, skips a generated workflow"),
+      {
+        testthat::expect_true("Makefile" %in% names(out))
+        testthat::expect_false(".github/workflows/make.yml" %in% names(out))
+        testthat::expect_false(".github/.gitignore" %in% names(out))
       }
     )
     testthat::test_that(

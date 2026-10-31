@@ -95,10 +95,11 @@
       content(i)
     )
   }
-  tier2 <- files$tier == "2"
-  write <- tier2 & differs
-  edited <- write & exists
-  refresh <- !tier2 & differs
+  # every template file is written (the template wins); the ones kept in
+  # Overleaf as regular files are named for upload
+  write <- differs
+  kept <- write & .TemplateKept(files = files)
+  edited <- write & exists & !kept
   removed <- .TemplateRemove(
     path = path,
     root = root,
@@ -143,21 +144,21 @@
         ifelse(check, "To overwrite", "Overwritten"),
         " (the template wins; change it in rProject's inst/template/):\n",
         paste(files$path[edited], collapse = "\n"),
-        "\nIf one is an Overleaf link (for example Makefile), delete the",
-        " link in Overleaf and upload the written file.\n\n"
-      )
-    )
-  }
-  if (any(refresh)) {
-    message(
-      paste0(
-        "\n\nLinks to refresh in Overleaf (they differ from rProject):\n",
-        paste(files$path[refresh], collapse = "\n"),
         "\n\n"
       )
     )
   }
-  if (!any(write) && !any(refresh) && length(removed) == 0L) {
+  if (any(kept)) {
+    message(
+      paste0(
+        "\n\nTo upload to Overleaf (kept there as regular files; if one",
+        " is still a link, delete the link first):\n",
+        paste(files$path[kept], collapse = "\n"),
+        "\n\n"
+      )
+    )
+  }
+  if (!any(write) && length(removed) == 0L) {
     message("\n\nTemplate files are up to date.\n\n")
   }
   written <- files$path[write]

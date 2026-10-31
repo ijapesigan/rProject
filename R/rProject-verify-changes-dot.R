@@ -67,7 +67,8 @@
     candidates,
     file.path("vignettes", sub(pattern = "\\.orig$", "", x = orig))
   )
-  # tier 2 template files are written by make (Template()), not uploaded
+  # tier 2 template files are written by make (Template()), not uploaded,
+  # but the Makefile and the .gitignore files, kept in Overleaf
   type <- .TemplateType(path = path)
   if (!is.null(type)) {
     files <- .TemplateFiles(
@@ -76,7 +77,7 @@
     )
     candidates <- setdiff(
       candidates,
-      files$path[files$tier == "2"]
+      files$path[!.TemplateKept(files = files)]
     )
   }
   status <- vapply(

@@ -49,16 +49,16 @@ lapply(
     for (type in setdiff(names(.TemplateSets()), "rProject")) {
       root <- project(type = type)
       files <- .TemplateFiles(type = type)
-      tier2 <- files$path[files$tier == "2"]
+      all_files <- files$path
       pending <- suppressMessages(
         Template(path = root, check = TRUE)
       )
       testthat::test_that(
         paste(text, type, "check writes nothing"),
         {
-          testthat::expect_equal(sort(pending), sort(tier2))
+          testthat::expect_equal(sort(pending), sort(all_files))
           testthat::expect_false(
-            any(file.exists(file.path(root, tier2)))
+            any(file.exists(file.path(root, all_files)))
           )
         }
       )
@@ -66,14 +66,11 @@ lapply(
         Template(path = root)
       )
       testthat::test_that(
-        paste(text, type, "writes tier 2 only"),
+        paste(text, type, "writes every template file"),
         {
-          testthat::expect_equal(sort(written), sort(tier2))
+          testthat::expect_equal(sort(written), sort(all_files))
           testthat::expect_true(
-            all(file.exists(file.path(root, tier2)))
-          )
-          testthat::expect_false(
-            any(file.exists(file.path(root, files$path[files$tier == "1"])))
+            all(file.exists(file.path(root, all_files)))
           )
           testthat::expect_length(
             suppressMessages(Template(path = root, check = TRUE)),
@@ -103,13 +100,14 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "reports a differing link and leaves it"),
+      paste(text, "names a differing kept file for upload and writes it"),
       {
+        writeLines(text = "old", con = linked)
         testthat::expect_message(
           Template(path = root),
-          regexp = "Links to refresh"
+          regexp = "To upload to Overleaf"
         )
-        testthat::expect_equal(readLines(linked), "old")
+        testthat::expect_false(identical(readLines(linked), "old"))
       }
     )
     testthat::test_that(
