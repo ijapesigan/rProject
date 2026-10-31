@@ -450,7 +450,7 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/Rtmpm20IpY/temp_libpath115246369e60" "0.0.59"    `\
+`#> rProject          "/tmp/RtmpvYYSnV/temp_libpath11525f61c6d8" "0.0.59"    `\
 `#> rProject          "/__w/rProject/rProject/.library"          "0.0.59"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
@@ -745,7 +745,7 @@
 `#> roxygen2          "/usr/local/lib/R/site-library"            "8.1.1.9000"`\
 `#> rpf               "/usr/local/lib/R/site-library"            "1.0.15"    `\
 `#> RPostgres         "/usr/local/lib/R/site-library"            "1.4.10"    `\
-`#> rProject          "/usr/local/lib/R/site-library"            "0.0.58"    `\
+`#> rProject          "/usr/local/lib/R/site-library"            "0.0.59"    `\
 `#> rprojroot         "/usr/local/lib/R/site-library"            "2.1.1"     `\
 `#> rsample           "/usr/local/lib/R/site-library"            "1.3.2"     `\
 `#> RSQLite           "/usr/local/lib/R/site-library"            "3.53.3"    `\
@@ -4086,8 +4086,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.2; ; 2026-10-31 07:44:43 UTC; unix"                   `\
-`#> rProject          "R 4.6.2; ; 2026-10-31 07:44:38 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-10-31 21:35:01 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-10-31 21:34:56 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:14:25 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-25 01:17:55 UTC; unix"                   `\
@@ -4381,7 +4381,7 @@
 `#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-31 04:28:53 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:42:36 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:37 UTC; unix"`\
-`#> rProject          "R 4.6.2; ; 2026-10-31 04:04:46 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-10-31 07:34:03 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 04:10:28 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-25 03:00:58 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:22 UTC; unix"`\
