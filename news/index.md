@@ -1,5 +1,18 @@
 # Changelog
 
+## rProject 0.0.59
+
+### Patch
+
+- [`Dependencies()`](https://github.com/ijapesigan/rProject/reference/Dependencies.md)
+  and the template `make-install.R` copy `.setup/r-dependencies/` into
+  `R/` with `overwrite = TRUE`, and `make-install.R` copies
+  `.setup/cpp/Makevars` and `Makevars.win` into `src/` the same way.
+  Before, [`file.copy()`](https://rdrr.io/r/base/files.html) kept the
+  copy already in `R/` (or `src/`), so an updated helper never reached
+  the build: metaDyn ran stale `mxHelper-run-dot.R` and
+  `mxHelper-ensure-good-hessian-dot.R`.
+
 ## rProject 0.0.58
 
 ### Minor
@@ -14,8 +27,9 @@
 - [`SecretScan()`](https://github.com/ijapesigan/rProject/reference/SecretScan.md):
   the OpenAI and Anthropic key patterns need a left boundary (no letter,
   digit, `_`, or `-` before `sk-`), so `sk-` inside a longer name is not
-  a key. Simulation run folders such as `task-1-rep-1-alternative-200-…`
-  matched from `ta[sk-1-…]`: manMetaVARMed’s push 09bbf46 failed
+  a key. Simulation run folders such as
+  `task-1-rep-1-alternative-200-...` matched from `ta[sk-1-...]`:
+  manMetaVARMed’s push 09bbf46 failed
   [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
   on 14 such false positives.
 - Makefiles (package, lib, talk, docker): a project without

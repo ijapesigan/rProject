@@ -30,7 +30,7 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.58`\
+`#> [1] rProject_0.0.59`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
@@ -450,8 +450,8 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/RtmpfAOccu/temp_libpath115211936a9a" "0.0.58"    `\
-`#> rProject          "/__w/rProject/rProject/.library"          "0.0.58"    `\
+`#> rProject          "/tmp/Rtmpm20IpY/temp_libpath115246369e60" "0.0.59"    `\
+`#> rProject          "/__w/rProject/rProject/.library"          "0.0.59"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
 `#> arm               "/usr/local/lib/R/site-library"            "1.15-3"    `\
@@ -571,8 +571,8 @@
 `#> globals           "/usr/local/lib/R/site-library"            "0.20.0"    `\
 `#> glue              "/usr/local/lib/R/site-library"            "1.8.1"     `\
 `#> gmp               "/usr/local/lib/R/site-library"            "0.7-5.1"   `\
-`#> googledrive       "/usr/local/lib/R/site-library"            "2.1.2"     `\
-`#> googlesheets4     "/usr/local/lib/R/site-library"            "1.1.2"     `\
+`#> googledrive       "/usr/local/lib/R/site-library"            "2.2.0"     `\
+`#> googlesheets4     "/usr/local/lib/R/site-library"            "1.1.3"     `\
 `#> gower             "/usr/local/lib/R/site-library"            "1.0.2"     `\
 `#> GPArotation       "/usr/local/lib/R/site-library"            "2026.8-2"  `\
 `#> graphicalVAR      "/usr/local/lib/R/site-library"            "0.4.1"     `\
@@ -1379,8 +1379,8 @@
 `#> globals           "R (>= 3.1.2)"                                                                              `\
 `#> glue              "R (>= 4.1)"                                                                                `\
 `#> gmp               "R (>= 3.5.0)"                                                                              `\
-`#> googledrive       "R (>= 4.1)"                                                                                `\
-`#> googlesheets4     "R (>= 3.6)"                                                                                `\
+`#> googledrive       "R (>= 4.2)"                                                                                `\
+`#> googlesheets4     "R (>= 4.2)"                                                                                `\
 `#> gower             NA                                                                                          `\
 `#> GPArotation       "R (>= 3.5.0)"                                                                              `\
 `#> graphicalVAR      "R (>= 3.1.0)"                                                                              `\
@@ -1783,8 +1783,8 @@
 `#> globals           "codetools"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> glue              "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> gmp               "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
-`#> googledrive       "cli (>= 3.0.0), gargle (>= 1.6.0), glue (>= 1.4.2), httr,\njsonlite, lifecycle, magrittr, pillar (>= 1.9.0), purrr (>=\n1.0.1), rlang (>= 1.0.2), tibble (>= 2.0.0), utils, uuid, vctrs\n(>= 0.3.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                 `\
-`#> googlesheets4     "cellranger, cli (>= 3.0.0), curl, gargle (>= 1.6.0), glue (>=\n1.3.0), googledrive (>= 2.1.0), httr, ids, lifecycle, magrittr,\nmethods, purrr, rematch2, rlang (>= 1.0.2), tibble (>= 2.1.1),\nutils, vctrs (>= 0.2.3), withr"                                                                                                                                                                                                                                                                                                                                                                             `\
+`#> googledrive       "cli (>= 3.0.0), gargle (>= 1.7.0), glue (>= 1.4.2), httr,\njsonlite, lifecycle, magrittr, pillar (>= 1.9.0), purrr (>=\n1.0.1), rlang (>= 1.2.0), tibble (>= 2.0.0), utils, uuid, vctrs\n(>= 0.3.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                 `\
+`#> googlesheets4     "cellranger, cli (>= 3.0.0), curl, gargle (>= 1.7.0), glue (>=\n1.3.0), googledrive (>= 2.1.0), httr, ids, magrittr, methods,\npurrr, rematch2, rlang (>= 1.0.2), tibble (>= 2.1.1), utils,\nvctrs (>= 0.2.3), withr"                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> gower             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> GPArotation       "stats,grDevices,graphics, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> graphicalVAR      "Rcpp (>= 0.11.3), Matrix, glasso, glmnet, mvtnorm, qgraph (>=\n1.3.1), dplyr, methods, igraph, rlang"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
@@ -2591,7 +2591,7 @@
 `#> globals           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> glue              "crayon, DBI (>= 1.2.0), dplyr, knitr, rlang, rmarkdown,\nRSQLite, testthat (>= 3.2.0), vctrs (>= 0.3.0), waldo (>=\n0.5.3), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `\
 `#> gmp               "Rmpfr, MASS, round"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
-`#> googledrive       "curl, dplyr (>= 1.0.0), knitr, rmarkdown, spelling, testthat\n(>= 3.1.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
+`#> googledrive       "curl, dplyr (>= 1.0.0), spelling, testthat (>= 3.1.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> googlesheets4     "readr, rmarkdown, spelling, testthat (>= 3.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> gower             "tinytest (>= 0.9.3),"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> GPArotation       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -4086,8 +4086,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.2; ; 2026-10-31 02:59:48 UTC; unix"                   `\
-`#> rProject          "R 4.6.2; ; 2026-10-31 02:59:43 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-10-31 07:44:43 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-10-31 07:44:38 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:14:25 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-25 01:17:55 UTC; unix"                   `\
@@ -4098,19 +4098,19 @@
 `#> assertthat        "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
 `#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
-`#> betaDelta         "R 4.6.2; ; 2026-10-30 04:50:32 UTC; unix"                   `\
-`#> betaMC            "R 4.6.2; ; 2026-10-30 04:50:42 UTC; unix"                   `\
-`#> betaNB            "R 4.6.2; ; 2026-10-30 04:50:39 UTC; unix"                   `\
-`#> betaSandwich      "R 4.6.2; ; 2026-10-30 04:50:35 UTC; unix"                   `\
+`#> betaDelta         "R 4.6.2; ; 2026-10-31 04:29:06 UTC; unix"                   `\
+`#> betaMC            "R 4.6.2; ; 2026-10-31 04:29:14 UTC; unix"                   `\
+`#> betaNB            "R 4.6.2; ; 2026-10-31 04:29:12 UTC; unix"                   `\
+`#> betaSandwich      "R 4.6.2; ; 2026-10-31 04:29:09 UTC; unix"                   `\
 `#> BH                "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
 `#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:50 UTC; unix"                   `\
-`#> biocmake          "R 4.6.2; ; 2026-10-30 04:27:38 UTC; unix"                   `\
+`#> biocmake          "R 4.6.2; ; 2026-10-31 04:07:19 UTC; unix"                   `\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 04:10:10 UTC; unix"                   `\
-`#> BiocVersion       "R 4.6.2; ; 2026-10-30 04:27:36 UTC; unix"                   `\
+`#> BiocVersion       "R 4.6.2; ; 2026-10-31 04:07:17 UTC; unix"                   `\
 `#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
 `#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:27 UTC; unix"`\
 `#> blob              "R 4.6.0; ; 2026-08-12 20:25:54 UTC; unix"                   `\
-`#> bootStateSpace    "R 4.6.2; ; 2026-10-30 04:51:16 UTC; unix"                   `\
+`#> bootStateSpace    "R 4.6.2; ; 2026-10-31 04:29:39 UTC; unix"                   `\
 `#> brew              "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
 `#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:10 UTC; unix"`\
 `#> broom             "R 4.6.0; ; 2026-08-12 20:28:45 UTC; unix"                   `\
@@ -4123,7 +4123,7 @@
 `#> cellranger        "R 4.6.0; ; 2026-08-12 20:26:50 UTC; unix"                   `\
 `#> cffr              "R 4.6.0; ; 2026-08-25 04:32:41 UTC; unix"                   `\
 `#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:49 UTC; unix"`\
-`#> cli               "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:49:56 UTC; unix"`\
+`#> cli               "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-31 04:28:41 UTC; unix"`\
 `#> clipr             "R 4.6.0; ; 2026-08-12 20:24:44 UTC; unix"                   `\
 `#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:36 UTC; unix"`\
 `#> clusterGeneration "R 4.6.0; ; 2026-04-25 00:28:07 UTC; unix"                   `\
@@ -4140,7 +4140,7 @@
 `#> crayon            "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
 `#> credentials       "R 4.6.0; ; 2026-04-24 04:13:25 UTC; unix"                   `\
 `#> crosstalk         "R 4.6.0; ; 2026-08-12 20:25:32 UTC; unix"                   `\
-`#> cTMed             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:51:24 UTC; unix"`\
+`#> cTMed             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-31 04:29:47 UTC; unix"`\
 `#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:31:19 UTC; unix"`\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:19:50 UTC; unix"`\
 `#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:32:28 UTC; unix"`\
@@ -4149,13 +4149,13 @@
 `#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-22 04:18:07 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 04:10:49 UTC; unix"                   `\
 `#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:57 UTC; unix"`\
-`#> devtools          "R 4.6.2; ; 2026-10-30 04:50:08 UTC; unix"                   `\
+`#> devtools          "R 4.6.2; ; 2026-10-31 04:28:49 UTC; unix"                   `\
 `#> diagram           "R 4.6.0; ; 2026-04-24 04:11:06 UTC; unix"                   `\
 `#> dials             "R 4.6.0; ; 2026-06-23 05:17:55 UTC; unix"                   `\
 `#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:25:52 UTC; unix"`\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:20:30 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
-`#> dir.expiry        "R 4.6.2; ; 2026-10-30 04:27:37 UTC; unix"                   `\
+`#> dir.expiry        "R 4.6.2; ; 2026-10-31 04:07:18 UTC; unix"                   `\
 `#> distributional    "R 4.6.0; ; 2026-09-09 09:31:05 UTC; unix"                   `\
 `#> distro            "R 4.6.0; ; 2026-04-25 00:45:33 UTC; unix"                   `\
 `#> doBy              "R 4.6.0; ; 2026-08-12 20:30:54 UTC; unix"                   `\
@@ -4165,9 +4165,9 @@
 `#> DT                "R 4.6.0; ; 2026-08-12 20:30:29 UTC; unix"                   `\
 `#> dtplyr            "R 4.6.0; ; 2026-10-29 06:40:00 UTC; unix"                   `\
 `#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:11:54 UTC; unix"`\
-`#> dynr              "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:40:45 UTC; unix"`\
-`#> dynTools          "R 4.6.2; ; 2026-10-30 04:51:47 UTC; unix"                   `\
-`#> dynUtils          "R 4.6.2; ; 2026-10-30 04:42:00 UTC; unix"                   `\
+`#> dynr              "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-31 04:19:52 UTC; unix"`\
+`#> dynTools          "R 4.6.2; ; 2026-10-31 04:30:04 UTC; unix"                   `\
+`#> dynUtils          "R 4.6.2; ; 2026-10-31 04:21:05 UTC; unix"                   `\
 `#> ellipse           "R 4.6.0; ; 2026-08-12 20:24:42 UTC; unix"                   `\
 `#> ellipsis          "R 4.6.0; ; 2026-04-25 01:21:15 UTC; unix"                   `\
 `#> evaluate          "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
@@ -4180,7 +4180,7 @@
 `#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:47:34 UTC; unix"`\
 `#> fds               "R 4.6.0; ; 2026-10-27 04:26:16 UTC; unix"                   `\
 `#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:54 UTC; unix"`\
-`#> fitVARMxID        "R 4.6.2; ; 2026-10-30 04:51:55 UTC; unix"                   `\
+`#> fitVARMxID        "R 4.6.2; ; 2026-10-31 04:30:11 UTC; unix"                   `\
 `#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
 `#> fontawesome       "R 4.6.0; ; 2026-08-12 20:25:29 UTC; unix"                   `\
 `#> forcats           "R 4.6.0; ; 2026-08-12 20:26:56 UTC; unix"                   `\
@@ -4194,7 +4194,7 @@
 `#> furrr             "R 4.6.0; ; 2026-09-26 06:36:01 UTC; unix"                   `\
 `#> future            "R 4.6.0; ; 2026-10-16 04:15:47 UTC; unix"                   `\
 `#> future.apply      "R 4.6.0; ; 2026-10-17 04:55:33 UTC; unix"                   `\
-`#> gargle            "R 4.6.0; ; 2026-10-29 04:02:56 UTC; unix"                   `\
+`#> gargle            "R 4.6.0; ; 2026-10-29 06:40:16 UTC; unix"                   `\
 `#> GauPro            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:13:37 UTC; unix"`\
 `#> generics          "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
 `#> gert              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:27:10 UTC; unix"`\
@@ -4207,8 +4207,8 @@
 `#> globals           "R 4.6.0; ; 2026-10-12 04:31:08 UTC; unix"                   `\
 `#> glue              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
 `#> gmp               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:28 UTC; unix"`\
-`#> googledrive       "R 4.6.0; ; 2026-08-12 20:27:24 UTC; unix"                   `\
-`#> googlesheets4     "R 4.6.0; ; 2026-08-12 20:28:32 UTC; unix"                   `\
+`#> googledrive       "R 4.6.0; ; 2026-10-30 04:11:27 UTC; unix"                   `\
+`#> googlesheets4     "R 4.6.0; ; 2026-10-30 04:12:31 UTC; unix"                   `\
 `#> gower             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:57 UTC; unix"`\
 `#> GPArotation       "R 4.6.0; ; 2026-08-23 04:29:53 UTC; unix"                   `\
 `#> graphicalVAR      "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:23:59 UTC; unix"`\
@@ -4226,7 +4226,7 @@
 `#> htmlTable         "R 4.6.0; ; 2026-08-12 20:30:32 UTC; unix"                   `\
 `#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:12 UTC; unix"`\
 `#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:29:22 UTC; unix"                   `\
-`#> httpgd            "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:49:19 UTC; unix"`\
+`#> httpgd            "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-31 04:28:11 UTC; unix"`\
 `#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:13 UTC; unix"`\
 `#> httr              "R 4.6.0; ; 2026-09-02 04:00:13 UTC; unix"                   `\
 `#> httr2             "R 4.6.0; ; 2026-07-14 05:11:56 UTC; unix"                   `\
@@ -4264,7 +4264,7 @@
 `#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:12:18 UTC; unix"`\
 `#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:09 UTC; unix"`\
 `#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:40 UTC; unix"`\
-`#> longMI            "R 4.6.2; ; 2026-10-30 04:36:01 UTC; unix"                   `\
+`#> longMI            "R 4.6.2; ; 2026-10-31 04:15:20 UTC; unix"                   `\
 `#> loo               "R 4.6.0; ; 2026-07-25 05:26:19 UTC; unix"                   `\
 `#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:21 UTC; unix"`\
 `#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:44:24 UTC; unix"`\
@@ -4274,7 +4274,7 @@
 `#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
 `#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
 `#> memoise           "R 4.6.0; ; 2026-08-12 20:25:23 UTC; unix"                   `\
-`#> metaDyn           "R 4.6.2; ; 2026-10-30 04:52:04 UTC; unix"                   `\
+`#> metaDyn           "R 4.6.2; ; 2026-10-31 04:30:18 UTC; unix"                   `\
 `#> metaSEM           "R 4.6.0; ; 2026-04-25 02:03:48 UTC; unix"                   `\
 `#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 15:25:38 UTC; unix"`\
 `#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:08 UTC; unix"`\
@@ -4370,18 +4370,18 @@
 `#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:31 UTC; unix"`\
 `#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:22:48 UTC; unix"`\
 `#> rex               "R 4.6.0; ; 2026-04-25 01:47:01 UTC; unix"                   `\
-`#> rhdf5             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:31:01 UTC; unix"`\
-`#> rhdf5filters      "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:30:37 UTC; unix"`\
-`#> Rhdf5lib          "R 4.6.2; ; 2026-10-30 04:30:34 UTC; unix"                   `\
+`#> rhdf5             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-31 04:10:20 UTC; unix"`\
+`#> rhdf5filters      "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-31 04:10:00 UTC; unix"`\
+`#> Rhdf5lib          "R 4.6.2; ; 2026-10-31 04:09:56 UTC; unix"                   `\
 `#> rhub              "R 4.6.0; ; 2026-04-25 01:56:40 UTC; unix"                   `\
 `#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:12:12 UTC; unix"`\
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
 `#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:14 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:01:02 UTC; unix"                   `\
-`#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:50:14 UTC; unix"`\
+`#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-31 04:28:53 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:42:36 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:37 UTC; unix"`\
-`#> rProject          "R 4.6.2; ; 2026-10-30 04:25:10 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-10-31 04:04:46 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 04:10:28 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-25 03:00:58 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:22 UTC; unix"`\
@@ -4396,13 +4396,13 @@
 `#> scales            "R 4.6.0; ; 2026-08-12 20:25:26 UTC; unix"                   `\
 `#> selectr           "R 4.6.0; ; 2026-09-28 04:40:24 UTC; unix"                   `\
 `#> semlbci           "R 4.6.0; ; 2026-07-28 08:49:07 UTC; unix"                   `\
-`#> semmcci           "R 4.6.2; ; 2026-10-30 04:50:29 UTC; unix"                   `\
+`#> semmcci           "R 4.6.2; ; 2026-10-31 04:29:04 UTC; unix"                   `\
 `#> semPlot           "R 4.6.0; ; 2026-09-04 06:56:03 UTC; unix"                   `\
 `#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:26:48 UTC; unix"                   `\
 `#> sfd               "R 4.6.0; ; 2026-04-25 02:06:33 UTC; unix"                   `\
 `#> shape             "R 4.6.0; ; 2026-08-12 20:24:42 UTC; unix"                   `\
 `#> shiny             "R 4.6.0; ; 2026-08-12 20:28:26 UTC; unix"                   `\
-`#> simStateSpace     "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:50:48 UTC; unix"`\
+`#> simStateSpace     "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-31 04:29:20 UTC; unix"`\
 `#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 01:45:04 UTC; unix"`\
 `#> sourcetools       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:43 UTC; unix"`\
 `#> SparseM           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
@@ -4429,7 +4429,7 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:33:11 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
-`#> tinytex           "R 4.6.2; ; 2026-10-30 04:49:52 UTC; unix"                   `\
+`#> tinytex           "R 4.6.2; ; 2026-10-31 04:28:37 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 03:11:58 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:36 UTC; unix"`\

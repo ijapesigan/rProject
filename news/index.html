@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.58</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.59</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,12 +40,20 @@
     </div>
 
     <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.59" id="rproject-0059">rProject 0.0.59<a class="anchor" aria-label="anchor" href="#rproject-0059"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-59">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-59"></a></h3>
+<ul><li>
+<code><a href="../reference/Dependencies.html">Dependencies()</a></code> and the template <code>make-install.R</code> copy <code>.setup/r-dependencies/</code> into <code>R/</code> with <code>overwrite = TRUE</code>, and <code>make-install.R</code> copies <code>.setup/cpp/Makevars</code> and <code>Makevars.win</code> into <code>src/</code> the same way. Before, <code><a href="https://rdrr.io/r/base/files.html" class="external-link">file.copy()</a></code> kept the copy already in <code>R/</code> (or <code>src/</code>), so an updated helper never reached the build: metaDyn ran stale <code>mxHelper-run-dot.R</code> and <code>mxHelper-ensure-good-hessian-dot.R</code>.</li>
+</ul></div>
+</div>
+    <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.58" id="rproject-0058">rProject 0.0.58<a class="anchor" aria-label="anchor" href="#rproject-0058"></a></h2>
 <div class="section level3">
 <h3 id="minor-0-0-58">Minor<a class="anchor" aria-label="anchor" href="#minor-0-0-58"></a></h3>
 <ul><li>docker set: the README’s “Use” part starts with RStudio Server when the <code>Dockerfile</code> publishes port 8787 or installs RStudio (<code>install_rstudio.sh</code>): <code>docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 &lt;image&gt;</code>, the address <code>http://localhost:8787</code>, the username (<code>DEFAULT_USER</code>, else <code>rstudio</code>), and the password, as docker-docs’ and docker-rocker’s READMEs had before the template.</li>
 <li>
-<code><a href="../reference/SecretScan.html">SecretScan()</a></code>: the OpenAI and Anthropic key patterns need a left boundary (no letter, digit, <code>_</code>, or <code>-</code> before <code>sk-</code>), so <code>sk-</code> inside a longer name is not a key. Simulation run folders such as <code>task-1-rep-1-alternative-200-…</code> matched from <code>ta[sk-1-…]</code>: manMetaVARMed’s push 09bbf46 failed <code><a href="../reference/Verify.html">Verify()</a></code> on 14 such false positives.</li>
+<code><a href="../reference/SecretScan.html">SecretScan()</a></code>: the OpenAI and Anthropic key patterns need a left boundary (no letter, digit, <code>_</code>, or <code>-</code> before <code>sk-</code>), so <code>sk-</code> inside a longer name is not a key. Simulation run folders such as <code>task-1-rep-1-alternative-200-...</code> matched from <code>ta[sk-1-...]</code>: manMetaVARMed’s push 09bbf46 failed <code><a href="../reference/Verify.html">Verify()</a></code> on 14 such false positives.</li>
 <li>Makefiles (package, lib, talk, docker): a project without <code>.setup/scripts/make-project.R</code> downloads the current one from rProject on GitHub before anything else (it installs the newest rProject), and falls back to the image’s <code><a href="../reference/Template.html">Template()</a></code> only when offline. Before, the image’s rProject wrote the template files, so an image older than a workflow stopped <code>make project</code> (“Unknown workflows”: docker-torch and docker-rarch with docs built before the amd64-only workflows).</li>
 <li>docker set: the README names the image from <code>.setup/repo/public-github.md</code> locally and from <code>GITHUB_REPOSITORY</code> in GitHub Actions, and stops when it has neither. Make Project renders the README in the public repository, where <code>.setup/repo/</code> (private) is absent, so docker-r2u’s README read <code>NA/NA</code> and its badges pointed to <code>github.com/NA</code>. <code>rproject_sys.sh</code> installs <code>libfreetype-dev</code> (Ubuntu 24.04 and 26.04; 26.04 has no <code>libfreetype6-dev</code>).</li>
 <li>cran set: <code>check-oldrel.yml</code>, <code>check-standard.yml</code>, <code>non-ascii-check.yml</code>, <code>rhub-cran-add-03.yml</code>, and <code>rhub-cran-add-04.yml</code> move from the rproject set to the cran set, so every cran project gets the 19 workflows the cran-* repositories run (rProject keeps them through the cran set). With <code>type &lt;- "cran"</code> in <code>project.R</code>, a cran project can delete its workflows in Overleaf: <code>make project</code> writes them.</li>
