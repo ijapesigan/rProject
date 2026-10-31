@@ -1,9 +1,15 @@
+# rProject 0.0.59
+
+## Patch
+
+* `Dependencies()` and the template `make-install.R` copy `.setup/r-dependencies/` into `R/` with `overwrite = TRUE`, and `make-install.R` copies `.setup/cpp/Makevars` and `Makevars.win` into `src/` the same way. Before, `file.copy()` kept the copy already in `R/` (or `src/`), so an updated helper never reached the build: metaDyn ran stale `mxHelper-run-dot.R` and `mxHelper-ensure-good-hessian-dot.R`.
+
 # rProject 0.0.58
 
 ## Minor
 
 * docker set: the README's "Use" part starts with RStudio Server when the `Dockerfile` publishes port 8787 or installs RStudio (`install_rstudio.sh`): `docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 <image>`, the address `http://localhost:8787`, the username (`DEFAULT_USER`, else `rstudio`), and the password, as docker-docs' and docker-rocker's READMEs had before the template.
-* `SecretScan()`: the OpenAI and Anthropic key patterns need a left boundary (no letter, digit, `_`, or `-` before `sk-`), so `sk-` inside a longer name is not a key. Simulation run folders such as `task-1-rep-1-alternative-200-…` matched from `ta[sk-1-…]`: manMetaVARMed's push 09bbf46 failed `Verify()` on 14 such false positives.
+* `SecretScan()`: the OpenAI and Anthropic key patterns need a left boundary (no letter, digit, `_`, or `-` before `sk-`), so `sk-` inside a longer name is not a key. Simulation run folders such as `task-1-rep-1-alternative-200-...` matched from `ta[sk-1-...]`: manMetaVARMed's push 09bbf46 failed `Verify()` on 14 such false positives.
 * Makefiles (package, lib, talk, docker): a project without `.setup/scripts/make-project.R` downloads the current one from rProject on GitHub before anything else (it installs the newest rProject), and falls back to the image's `Template()` only when offline. Before, the image's rProject wrote the template files, so an image older than a workflow stopped `make project` ("Unknown workflows": docker-torch and docker-rarch with docs built before the amd64-only workflows).
 * docker set: the README names the image from `.setup/repo/public-github.md` locally and from `GITHUB_REPOSITORY` in GitHub Actions, and stops when it has neither. Make Project renders the README in the public repository, where `.setup/repo/` (private) is absent, so docker-r2u's README read `NA/NA` and its badges pointed to `github.com/NA`. `rproject_sys.sh` installs `libfreetype-dev` (Ubuntu 24.04 and 26.04; 26.04 has no `libfreetype6-dev`).
 * cran set: `check-oldrel.yml`, `check-standard.yml`, `non-ascii-check.yml`, `rhub-cran-add-03.yml`, and `rhub-cran-add-04.yml` move from the rproject set to the cran set, so every cran project gets the 19 workflows the cran-* repositories run (rProject keeps them through the cran set). With `type <- "cran"` in `project.R`, a cran project can delete its workflows in Overleaf: `make project` writes them.
