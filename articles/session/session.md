@@ -7,13 +7,13 @@
 
 \
 [`sessionInfo`](https://rdrr.io/r/utils/sessionInfo.html)`(``)`\
-`#> R version 4.6.1 (2026-06-24)`\
+`#> R version 4.6.2 (2026-10-29)`\
 `#> Platform: x86_64-pc-linux-gnu`\
-`#> Running under: Ubuntu 24.04.5 LTS`\
+`#> Running under: Ubuntu 26.04.1 LTS`\
 `#> `\
 `#> Matrix products: default`\
 `#> BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 `\
-`#> LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.26.so;  LAPACK version 3.12.0`\
+`#> LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0`\
 `#> `\
 `#> locale:`\
 `#>  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              `\
@@ -37,7 +37,7 @@
 `#>  [5] xfun_0.62         cachem_1.1.0      knitr_1.52        htmltools_0.5.9  `\
 `#>  [9] rmarkdown_2.32    lifecycle_1.0.5   cli_3.6.6.9000    sass_0.4.10      `\
 `#> [13] pkgdown_2.2.1     textshaping_1.0.5 jquerylib_0.1.4   systemfonts_1.3.2`\
-`#> [17] compiler_4.6.1    tools_4.6.1       ragg_1.5.2        bslib_0.12.0     `\
+`#> [17] compiler_4.6.2    tools_4.6.2       ragg_1.5.2        bslib_0.12.0     `\
 `#> [21] evaluate_1.0.5    yaml_2.3.12       otel_0.2.0        jsonlite_2.0.0   `\
 `#> [25] rlang_1.3.0       fs_2.1.0          htmlwidgets_1.6.4`
 
@@ -69,7 +69,6 @@
 `#> BiocVersion       "BiocVersion"      `\
 `#> bit               "bit"              `\
 `#> bit64             "bit64"            `\
-`#> bitops            "bitops"           `\
 `#> blob              "blob"             `\
 `#> bootStateSpace    "bootStateSpace"   `\
 `#> brew              "brew"             `\
@@ -317,7 +316,6 @@
 `#> RcppEigen         "RcppEigen"        `\
 `#> RcppParallel      "RcppParallel"     `\
 `#> RcppTOML          "RcppTOML"         `\
-`#> RCurl             "RCurl"            `\
 `#> Rdpack            "Rdpack"           `\
 `#> rdtools           "rdtools"          `\
 `#> readr             "readr"            `\
@@ -452,7 +450,7 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/RtmpXdX6t0/temp_libpath113e2e7afe54" "0.0.58"    `\
+`#> rProject          "/tmp/RtmpfAOccu/temp_libpath115211936a9a" "0.0.58"    `\
 `#> rProject          "/__w/rProject/rProject/.library"          "0.0.58"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
@@ -475,7 +473,6 @@
 `#> BiocVersion       "/usr/local/lib/R/site-library"            "3.23.1"    `\
 `#> bit               "/usr/local/lib/R/site-library"            "4.6.0"     `\
 `#> bit64             "/usr/local/lib/R/site-library"            "4.8.6"     `\
-`#> bitops            "/usr/local/lib/R/site-library"            "1.1-0"     `\
 `#> blob              "/usr/local/lib/R/site-library"            "1.3.0"     `\
 `#> bootStateSpace    "/usr/local/lib/R/site-library"            "1.0.3.9000"`\
 `#> brew              "/usr/local/lib/R/site-library"            "1.0-10"    `\
@@ -545,7 +542,7 @@
 `#> fastmap           "/usr/local/lib/R/site-library"            "1.2.0"     `\
 `#> fda               "/usr/local/lib/R/site-library"            "6.3.0"     `\
 `#> fdrtool           "/usr/local/lib/R/site-library"            "1.2.18"    `\
-`#> fds               "/usr/local/lib/R/site-library"            "1.9"       `\
+`#> fds               "/usr/local/lib/R/site-library"            "2.0"       `\
 `#> filelock          "/usr/local/lib/R/site-library"            "1.0.3"     `\
 `#> fitVARMxID        "/usr/local/lib/R/site-library"            "1.0.6"     `\
 `#> FNN               "/usr/local/lib/R/site-library"            "1.1.4.1"   `\
@@ -561,7 +558,7 @@
 `#> furrr             "/usr/local/lib/R/site-library"            "0.4.0"     `\
 `#> future            "/usr/local/lib/R/site-library"            "1.80.0"    `\
 `#> future.apply      "/usr/local/lib/R/site-library"            "1.21.0"    `\
-`#> gargle            "/usr/local/lib/R/site-library"            "1.6.1"     `\
+`#> gargle            "/usr/local/lib/R/site-library"            "1.7.0"     `\
 `#> GauPro            "/usr/local/lib/R/site-library"            "0.2.17"    `\
 `#> generics          "/usr/local/lib/R/site-library"            "0.1.4"     `\
 `#> gert              "/usr/local/lib/R/site-library"            "2.5.0"     `\
@@ -570,7 +567,7 @@
 `#> gh                "/usr/local/lib/R/site-library"            "1.6.1"     `\
 `#> gitcreds          "/usr/local/lib/R/site-library"            "0.1.2"     `\
 `#> glasso            "/usr/local/lib/R/site-library"            "1.11"      `\
-`#> glmnet            "/usr/local/lib/R/site-library"            "5.1"       `\
+`#> glmnet            "/usr/local/lib/R/site-library"            "5.2"       `\
 `#> globals           "/usr/local/lib/R/site-library"            "0.20.0"    `\
 `#> glue              "/usr/local/lib/R/site-library"            "1.8.1"     `\
 `#> gmp               "/usr/local/lib/R/site-library"            "0.7-5.1"   `\
@@ -636,7 +633,7 @@
 `#> lubridate         "/usr/local/lib/R/site-library"            "1.9.5"     `\
 `#> magick            "/usr/local/lib/R/site-library"            "2.9.1"     `\
 `#> magrittr          "/usr/local/lib/R/site-library"            "2.0.5"     `\
-`#> markdown          "/usr/local/lib/R/site-library"            "2.0"       `\
+`#> markdown          "/usr/local/lib/R/site-library"            "2.1"       `\
 `#> MatrixModels      "/usr/local/lib/R/site-library"            "0.5-4"     `\
 `#> matrixStats       "/usr/local/lib/R/site-library"            "1.5.0"     `\
 `#> mclust            "/usr/local/lib/R/site-library"            "6.1.3"     `\
@@ -723,7 +720,6 @@
 `#> RcppEigen         "/usr/local/lib/R/site-library"            "0.3.4.0.2" `\
 `#> RcppParallel      "/usr/local/lib/R/site-library"            "6.2.1"     `\
 `#> RcppTOML          "/usr/local/lib/R/site-library"            "0.2.3"     `\
-`#> RCurl             "/usr/local/lib/R/site-library"            "1.98-1.20" `\
 `#> Rdpack            "/usr/local/lib/R/site-library"            "2.6.6"     `\
 `#> rdtools           "/usr/local/lib/R/site-library"            "0.1.0"     `\
 `#> readr             "/usr/local/lib/R/site-library"            "2.2.0"     `\
@@ -807,7 +803,7 @@
 `#> usethis           "/usr/local/lib/R/site-library"            "3.2.2"     `\
 `#> utf8              "/usr/local/lib/R/site-library"            "1.2.6"     `\
 `#> uuid              "/usr/local/lib/R/site-library"            "1.2-2"     `\
-`#> V8                "/usr/local/lib/R/site-library"            "8.2.0"     `\
+`#> V8                "/usr/local/lib/R/site-library"            "8.2.1"     `\
 `#> vars              "/usr/local/lib/R/site-library"            "1.6-1"     `\
 `#> vctrs             "/usr/local/lib/R/site-library"            "0.7.3"     `\
 `#> viridisLite       "/usr/local/lib/R/site-library"            "0.4.3"     `\
@@ -828,35 +824,35 @@
 `#> yardstick         "/usr/local/lib/R/site-library"            "1.4.0"     `\
 `#> zip               "/usr/local/lib/R/site-library"            "3.0.2"     `\
 `#> zoo               "/usr/local/lib/R/site-library"            "1.9-1"     `\
-`#> base              "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> base              "/usr/local/lib/R/library"                 "4.6.2"     `\
 `#> boot              "/usr/local/lib/R/library"                 "1.3-32"    `\
-`#> class             "/usr/local/lib/R/library"                 "7.3-23"    `\
-`#> cluster           "/usr/local/lib/R/library"                 "2.1.8.2"   `\
+`#> class             "/usr/local/lib/R/library"                 "7.3-24"    `\
+`#> cluster           "/usr/local/lib/R/library"                 "2.1.8.3"   `\
 `#> codetools         "/usr/local/lib/R/library"                 "0.2-20"    `\
-`#> compiler          "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> datasets          "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> foreign           "/usr/local/lib/R/library"                 "0.8-91"    `\
-`#> graphics          "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> grDevices         "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> grid              "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> KernSmooth        "/usr/local/lib/R/library"                 "2.23-26"   `\
-`#> lattice           "/usr/local/lib/R/library"                 "0.22-9"    `\
-`#> MASS              "/usr/local/lib/R/library"                 "7.3-65"    `\
-`#> Matrix            "/usr/local/lib/R/library"                 "1.7-5"     `\
-`#> methods           "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> compiler          "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> datasets          "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> foreign           "/usr/local/lib/R/library"                 "0.8-92"    `\
+`#> graphics          "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> grDevices         "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> grid              "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> KernSmooth        "/usr/local/lib/R/library"                 "2.23-27"   `\
+`#> lattice           "/usr/local/lib/R/library"                 "0.23-1"    `\
+`#> MASS              "/usr/local/lib/R/library"                 "7.3-66"    `\
+`#> Matrix            "/usr/local/lib/R/library"                 "1.7-6"     `\
+`#> methods           "/usr/local/lib/R/library"                 "4.6.2"     `\
 `#> mgcv              "/usr/local/lib/R/library"                 "1.9-4"     `\
-`#> nlme              "/usr/local/lib/R/library"                 "3.1-169"   `\
-`#> nnet              "/usr/local/lib/R/library"                 "7.3-20"    `\
-`#> parallel          "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> nlme              "/usr/local/lib/R/library"                 "3.1-171"   `\
+`#> nnet              "/usr/local/lib/R/library"                 "7.3-21"    `\
+`#> parallel          "/usr/local/lib/R/library"                 "4.6.2"     `\
 `#> rpart             "/usr/local/lib/R/library"                 "4.1.27"    `\
-`#> spatial           "/usr/local/lib/R/library"                 "7.3-18"    `\
-`#> splines           "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> stats             "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> stats4            "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> survival          "/usr/local/lib/R/library"                 "3.8-6"     `\
-`#> tcltk             "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> tools             "/usr/local/lib/R/library"                 "4.6.1"     `\
-`#> utils             "/usr/local/lib/R/library"                 "4.6.1"     `\
+`#> spatial           "/usr/local/lib/R/library"                 "7.3-19"    `\
+`#> splines           "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> stats             "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> stats4            "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> survival          "/usr/local/lib/R/library"                 "3.8-12"    `\
+`#> tcltk             "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> tools             "/usr/local/lib/R/library"                 "4.6.2"     `\
+`#> utils             "/usr/local/lib/R/library"                 "4.6.2"     `\
 `#>                   Priority     `\
 `#> rProject          NA           `\
 `#> rProject          NA           `\
@@ -881,7 +877,6 @@
 `#> BiocVersion       NA           `\
 `#> bit               NA           `\
 `#> bit64             NA           `\
-`#> bitops            NA           `\
 `#> blob              NA           `\
 `#> bootStateSpace    NA           `\
 `#> brew              NA           `\
@@ -1129,7 +1124,6 @@
 `#> RcppEigen         NA           `\
 `#> RcppParallel      NA           `\
 `#> RcppTOML          NA           `\
-`#> RCurl             NA           `\
 `#> Rdpack            NA           `\
 `#> rdtools           NA           `\
 `#> readr             NA           `\
@@ -1287,7 +1281,6 @@
 `#> BiocVersion       "R (>= 4.6.0)"                                                                              `\
 `#> bit               "R (>= 3.4.0)"                                                                              `\
 `#> bit64             "R (>= 3.5.0)"                                                                              `\
-`#> bitops            NA                                                                                          `\
 `#> blob              NA                                                                                          `\
 `#> bootStateSpace    "R (>= 3.5.0)"                                                                              `\
 `#> brew              NA                                                                                          `\
@@ -1357,7 +1350,7 @@
 `#> fastmap           NA                                                                                          `\
 `#> fda               "R (>= 3.5), splines, fds, deSolve"                                                         `\
 `#> fdrtool           "R (>= 3.4.0)"                                                                              `\
-`#> fds               "R (>= 3.4.0), rainbow, RCurl"                                                              `\
+`#> fds               "R (>= 3.5.0), rainbow"                                                                     `\
 `#> filelock          "R (>= 3.4)"                                                                                `\
 `#> fitVARMxID        "R (>= 4.1.0), OpenMx (>= 2.22.10)"                                                         `\
 `#> FNN               "R (>= 4.0.0)"                                                                              `\
@@ -1373,7 +1366,7 @@
 `#> furrr             "future (>= 1.70.0), R (>= 4.1.0)"                                                          `\
 `#> future            "R (>= 3.2.0)"                                                                              `\
 `#> future.apply      "R (>= 3.2.0), future (>= 1.80.0)"                                                          `\
-`#> gargle            "R (>= 4.1)"                                                                                `\
+`#> gargle            "R (>= 4.2)"                                                                                `\
 `#> GauPro            "mixopt (> 0.1.0), numDeriv, rmarkdown, tidyr"                                              `\
 `#> generics          "R (>= 3.6)"                                                                                `\
 `#> gert              NA                                                                                          `\
@@ -1448,7 +1441,7 @@
 `#> lubridate         "methods, R (>= 3.2)"                                                                       `\
 `#> magick            "R (>= 4.1.0)"                                                                              `\
 `#> magrittr          "R (>= 3.4.0)"                                                                              `\
-`#> markdown          "R (>= 2.11.1)"                                                                             `\
+`#> markdown          "R (>= 3.2.0)"                                                                              `\
 `#> MatrixModels      "R (>= 3.6.0)"                                                                              `\
 `#> matrixStats       "R (>= 3.4.0)"                                                                              `\
 `#> mclust            "R (>= 3.0)"                                                                                `\
@@ -1535,7 +1528,6 @@
 `#> RcppEigen         "R (>= 3.6.0)"                                                                              `\
 `#> RcppParallel      "R (>= 3.6.0)"                                                                              `\
 `#> RcppTOML          "R (>= 3.3.0)"                                                                              `\
-`#> RCurl             "R (>= 3.4.0), methods"                                                                     `\
 `#> Rdpack            "R (>= 2.15.0), methods"                                                                    `\
 `#> rdtools           "R (>= 4.0)"                                                                                `\
 `#> readr             "R (>= 4.1)"                                                                                `\
@@ -1665,7 +1657,7 @@
 `#> splines           NA                                                                                          `\
 `#> stats             NA                                                                                          `\
 `#> stats4            NA                                                                                          `\
-`#> survival          "R (>= 3.5.0)"                                                                              `\
+`#> survival          "R (>= 4.1.0)"                                                                              `\
 `#> tcltk             NA                                                                                          `\
 `#> tools             NA                                                                                          `\
 `#> utils             NA                                                                                          `\
@@ -1693,7 +1685,6 @@
 `#> BiocVersion       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> bit               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> bit64             "bit (>= 4.0.0), graphics, methods, stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
-`#> bitops            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> blob              "methods, rlang, vctrs (>= 0.2.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> bootStateSpace    "stats, simStateSpace, dynr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
 `#> brew              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -1763,7 +1754,7 @@
 `#> fastmap           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> fda               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> fdrtool           "graphics, grDevices, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
-`#> fds               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
+`#> fds               "httr, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> filelock          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> fitVARMxID        "stats, simStateSpace (>= 1.2.14)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> FNN               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -1779,7 +1770,7 @@
 `#> furrr             "globals (>= 0.19.1), purrr (>= 1.2.1), rlang (>= 1.1.7), vctrs\n(>= 0.7.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
 `#> future            "digest, globals (>= 0.18.0), listenv (>= 0.8.0), parallel,\nparallelly (>= 1.44.0), tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> future.apply      "globals, parallel, stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
-`#> gargle            "cli (>= 3.0.1), fs (>= 1.3.1), glue (>= 1.3.0), httr (>=\n1.4.5), jsonlite, lifecycle (>= 0.2.0), openssl, rappdirs,\nrlang (>= 1.1.0), stats, utils, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
+`#> gargle            "cli (>= 3.0.1), fs (>= 1.3.1), glue (>= 1.3.0), httr (>=\n1.4.5), jsonlite, lifecycle, openssl, R6, rappdirs, rlang (>=\n1.1.0), stats, utils, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> GauPro            "ggplot2, Rcpp, R6, lbfgs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> generics          "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> gert              "askpass, credentials (>= 1.2.1), openssl (>= 2.0.3),\nrstudioapi (>= 0.11), sys, zip (>= 2.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
@@ -1941,7 +1932,6 @@
 `#> RcppEigen         "Rcpp (>= 0.11.0), stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> RcppParallel      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> RcppTOML          "Rcpp (>= 1.0.8)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
-`#> RCurl             "bitops"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> Rdpack            "tools, utils, rbibutils (> 2.4)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> rdtools           "stats, tools"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> readr             "cli, clipr, crayon, glue, hms (>= 0.4.1), lifecycle, methods,\nR6, rlang, tibble, utils, vroom (>= 1.7.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -2048,7 +2038,7 @@
 `#> zoo               "utils, graphics, grDevices, lattice (>= 0.20-27)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> base              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> boot              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> class             "MASS"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
+`#> class             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> cluster           "graphics, grDevices, stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `\
 `#> codetools         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> compiler          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -2065,7 +2055,7 @@
 `#> mgcv              "methods, stats, graphics, Matrix, splines, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> nlme              "graphics, stats, utils, lattice"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> nnet              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> parallel          "tools, compiler"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
+`#> parallel          "tools, compiler, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> rpart             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> spatial           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> splines           "graphics, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
@@ -2099,7 +2089,6 @@
 `#> BiocVersion       NA                                                                                                                                                           `\
 `#> bit               NA                                                                                                                                                           `\
 `#> bit64             NA                                                                                                                                                           `\
-`#> bitops            NA                                                                                                                                                           `\
 `#> blob              NA                                                                                                                                                           `\
 `#> bootStateSpace    NA                                                                                                                                                           `\
 `#> brew              NA                                                                                                                                                           `\
@@ -2347,7 +2336,6 @@
 `#> RcppEigen         "Rcpp"                                                                                                                                                       `\
 `#> RcppParallel      NA                                                                                                                                                           `\
 `#> RcppTOML          "Rcpp"                                                                                                                                                       `\
-`#> RCurl             NA                                                                                                                                                           `\
 `#> Rdpack            NA                                                                                                                                                           `\
 `#> rdtools           NA                                                                                                                                                           `\
 `#> readr             "cpp11, tzdb (>= 0.1.1)"                                                                                                                                     `\
@@ -2505,7 +2493,6 @@
 `#> BiocVersion       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> bit               "testthat (>= 3.0.0), roxygen2, knitr, markdown, rmarkdown,\nmicrobenchmark, bit64 (>= 4.0.0), ff (>= 4.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> bit64             "patrick (>= 0.3.0), testthat (>= 3.3.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
-`#> bitops            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> blob              "covr, crayon, pillar (>= 1.2.1), testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> bootStateSpace    "knitr, rmarkdown, testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
 `#> brew              "testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
@@ -2591,7 +2578,7 @@
 `#> furrr             "carrier, covr, dplyr (>= 1.1.4), knitr, parallelly (>=\n1.46.1), testthat (>= 3.3.2), tidyselect"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> future            "methods, RhpcBLASctl, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> future.apply      "datasets, tools, listenv, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
-`#> gargle            "aws.ec2metadata, aws.signature, covr, httpuv, knitr,\nrmarkdown, sodium, spelling, testthat (>= 3.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
+`#> gargle            "aws.ec2metadata, aws.signature, covr, httpuv, knitr,\nrmarkdown, spelling, testthat (>= 3.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> GauPro            "ContourFunctions, dplyr, ggrepel, gridExtra, knitr, lhs,\nMASS, microbenchmark, rlang, splitfngr, testthat, testthatmulti"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> generics          "covr, pkgload, testthat (>= 3.0.0), tibble, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `\
 `#> gert              "spelling, knitr, rmarkdown, testthat (>= 3.0.0), roxygen2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
@@ -2753,7 +2740,6 @@
 `#> RcppEigen         "Matrix, inline, tinytest, pkgKitten, microbenchmark"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> RcppParallel      "Rcpp, knitr, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> RcppTOML          "tinytest"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
-`#> RCurl             "XML"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        `\
 `#> Rdpack            "grDevices, testthat, rstudioapi, rprojroot, gbRd"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> rdtools           "testthat (>= 3.0.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
 `#> readr             "covr, curl, datasets, knitr, rmarkdown, spelling, stringi,\ntestthat (>= 3.2.0), tzdb (>= 0.1.1), waldo, xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
@@ -2860,7 +2846,7 @@
 `#> zoo               "AER, coda, chron, ggplot2 (>= 3.5.0), knitr, mondate, scales,\nstinepack, strucchange, timeDate, timeSeries (>= 4021.104),\ntinyplot, tis, tseries, xts"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> base              "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> boot              "MASS, survival"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
-`#> class             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
+`#> class             "MASS"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> cluster           "MASS, Matrix"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> codetools         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> compiler          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -2875,11 +2861,11 @@
 `#> Matrix            "MASS, datasets, sfsmisc, tools"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> methods           "codetools"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> mgcv              "parallel, survival, MASS"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
-`#> nlme              "MASS, SASmixed"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
+`#> nlme              "MASS"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> nnet              "MASS"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> parallel          "methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> rpart             "survival"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
-`#> spatial           "MASS"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
+`#> spatial           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> splines           "Matrix, methods"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> stats             "MASS, Matrix, SuppDists, methods, stats4"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> stats4            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
@@ -2911,7 +2897,6 @@
 `#> BiocVersion       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> bit               NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> bit64             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
-`#> bitops            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> blob              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> bootStateSpace    NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> brew              NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3159,7 +3144,6 @@
 `#> RcppEigen         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> RcppParallel      NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> RcppTOML          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
-`#> RCurl             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> Rdpack            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> rdtools           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> readr             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3317,7 +3301,6 @@
 `#> BiocVersion       "Artistic-2.0"                                NA             `\
 `#> bit               "GPL-2 | GPL-3"                               NA             `\
 `#> bit64             "GPL-2 | GPL-3"                               NA             `\
-`#> bitops            "GPL (>= 2)"                                  NA             `\
 `#> blob              "MIT + file LICENSE"                          NA             `\
 `#> bootStateSpace    "GPL (>= 3)"                                  NA             `\
 `#> brew              "GPL (>= 2)"                                  NA             `\
@@ -3565,7 +3548,6 @@
 `#> RcppEigen         "GPL (>= 2) | file LICENSE"                   NA             `\
 `#> RcppParallel      "GPL (>= 3)"                                  NA             `\
 `#> RcppTOML          "GPL (>= 2)"                                  NA             `\
-`#> RCurl             "BSD_3_clause + file LICENSE"                 NA             `\
 `#> Rdpack            "GPL (>= 2)"                                  NA             `\
 `#> rdtools           "MIT + file LICENSE"                          NA             `\
 `#> readr             "MIT + file LICENSE"                          NA             `\
@@ -3670,35 +3652,35 @@
 `#> yardstick         "MIT + file LICENSE"                          NA             `\
 `#> zip               "MIT + file LICENSE"                          NA             `\
 `#> zoo               "GPL-2 | GPL-3"                               NA             `\
-`#> base              "Part of R 4.6.1"                             NA             `\
+`#> base              "Part of R 4.6.2"                             NA             `\
 `#> boot              "Unlimited"                                   NA             `\
 `#> class             "GPL-2 | GPL-3"                               NA             `\
 `#> cluster           "GPL (>= 2)"                                  NA             `\
 `#> codetools         "GPL"                                         NA             `\
-`#> compiler          "Part of R 4.6.1"                             NA             `\
-`#> datasets          "Part of R 4.6.1"                             NA             `\
+`#> compiler          "Part of R 4.6.2"                             NA             `\
+`#> datasets          "Part of R 4.6.2"                             NA             `\
 `#> foreign           "GPL (>= 2)"                                  NA             `\
-`#> graphics          "Part of R 4.6.1"                             NA             `\
-`#> grDevices         "Part of R 4.6.1"                             NA             `\
-`#> grid              "Part of R 4.6.1"                             NA             `\
+`#> graphics          "Part of R 4.6.2"                             NA             `\
+`#> grDevices         "Part of R 4.6.2"                             NA             `\
+`#> grid              "Part of R 4.6.2"                             NA             `\
 `#> KernSmooth        "Unlimited"                                   NA             `\
 `#> lattice           "GPL (>= 2)"                                  NA             `\
 `#> MASS              "GPL-2 | GPL-3"                               NA             `\
 `#> Matrix            "GPL (>= 2) | file LICENCE"                   NA             `\
-`#> methods           "Part of R 4.6.1"                             NA             `\
+`#> methods           "Part of R 4.6.2"                             NA             `\
 `#> mgcv              "GPL (>= 2)"                                  NA             `\
 `#> nlme              "GPL (>= 2)"                                  NA             `\
 `#> nnet              "GPL-2 | GPL-3"                               NA             `\
-`#> parallel          "Part of R 4.6.1"                             NA             `\
+`#> parallel          "Part of R 4.6.2"                             NA             `\
 `#> rpart             "GPL-2 | GPL-3"                               NA             `\
 `#> spatial           "GPL-2 | GPL-3"                               NA             `\
-`#> splines           "Part of R 4.6.1"                             NA             `\
-`#> stats             "Part of R 4.6.1"                             NA             `\
-`#> stats4            "Part of R 4.6.1"                             NA             `\
+`#> splines           "Part of R 4.6.2"                             NA             `\
+`#> stats             "Part of R 4.6.2"                             NA             `\
+`#> stats4            "Part of R 4.6.2"                             NA             `\
 `#> survival          "LGPL (>= 2)"                                 NA             `\
-`#> tcltk             "Part of R 4.6.1"                             NA             `\
-`#> tools             "Part of R 4.6.1"                             NA             `\
-`#> utils             "Part of R 4.6.1"                             NA             `\
+`#> tcltk             "Part of R 4.6.2"                             NA             `\
+`#> tools             "Part of R 4.6.2"                             NA             `\
+`#> utils             "Part of R 4.6.2"                             NA             `\
 `#>                   License_restricts_use OS_type MD5sum NeedsCompilation`\
 `#> rProject          NA                    NA      NA     NA              `\
 `#> rProject          NA                    NA      NA     "no"            `\
@@ -3723,7 +3705,6 @@
 `#> BiocVersion       NA                    NA      NA     "no"            `\
 `#> bit               NA                    NA      NA     "yes"           `\
 `#> bit64             NA                    NA      NA     "yes"           `\
-`#> bitops            NA                    NA      NA     "yes"           `\
 `#> blob              NA                    NA      NA     "no"            `\
 `#> bootStateSpace    NA                    NA      NA     "no"            `\
 `#> brew              NA                    NA      NA     "no"            `\
@@ -3971,7 +3952,6 @@
 `#> RcppEigen         NA                    NA      NA     "yes"           `\
 `#> RcppParallel      NA                    NA      NA     "yes"           `\
 `#> RcppTOML          NA                    NA      NA     "yes"           `\
-`#> RCurl             NA                    NA      NA     "yes"           `\
 `#> Rdpack            NA                    NA      NA     "no"            `\
 `#> rdtools           NA                    NA      NA     "yes"           `\
 `#> readr             NA                    NA      NA     "yes"           `\
@@ -4106,411 +4086,409 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.1; ; 2026-10-26 05:23:04 UTC; unix"                   `\
-`#> rProject          "R 4.6.1; ; 2026-10-26 05:23:01 UTC; unix"                   `\
-`#> abind             "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
-`#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:20:09 UTC; unix"`\
-`#> arm               "R 4.6.0; ; 2026-04-24 21:38:02 UTC; unix"                   `\
-`#> arrow             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-25 04:15:36 UTC; unix"`\
-`#> ash               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:16:50 UTC; unix"`\
-`#> AsioHeaders       "R 4.6.0; ; 2026-04-24 01:29:02 UTC; unix"                   `\
-`#> askpass           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
-`#> assertthat        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
-`#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> betaDelta         "R 4.6.1; ; 2026-10-26 03:39:46 UTC; unix"                   `\
-`#> betaMC            "R 4.6.1; ; 2026-10-26 03:39:55 UTC; unix"                   `\
-`#> betaNB            "R 4.6.1; ; 2026-10-26 03:39:52 UTC; unix"                   `\
-`#> betaSandwich      "R 4.6.1; ; 2026-10-26 03:39:49 UTC; unix"                   `\
-`#> BH                "R 4.6.0; ; 2026-08-12 20:21:37 UTC; unix"                   `\
-`#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:32 UTC; unix"                   `\
-`#> biocmake          "R 4.6.1; ; 2026-10-26 03:17:51 UTC; unix"                   `\
-`#> BiocManager       "R 4.6.0; ; 2026-04-24 01:12:09 UTC; unix"                   `\
-`#> BiocVersion       "R 4.6.1; ; 2026-10-26 03:17:49 UTC; unix"                   `\
-`#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
-`#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:12 UTC; unix"`\
-`#> bitops            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-31 07:27:38 UTC; unix"`\
-`#> blob              "R 4.6.0; ; 2026-08-12 20:22:28 UTC; unix"                   `\
-`#> bootStateSpace    "R 4.6.1; ; 2026-10-26 03:40:22 UTC; unix"                   `\
-`#> brew              "R 4.6.0; ; 2026-08-12 20:21:48 UTC; unix"                   `\
-`#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:12:08 UTC; unix"`\
-`#> broom             "R 4.6.0; ; 2026-08-12 20:23:52 UTC; unix"                   `\
-`#> bslib             "R 4.6.0; ; 2026-08-12 20:23:52 UTC; unix"                   `\
-`#> cachem            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
-`#> callr             "R 4.6.0; ; 2026-08-12 20:22:01 UTC; unix"                   `\
-`#> car               "R 4.6.0; ; 2026-08-12 20:27:00 UTC; unix"                   `\
-`#> caracas           "R 4.6.0; ; 2026-04-24 23:34:23 UTC; unix"                   `\
-`#> carData           "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
-`#> cellranger        "R 4.6.0; ; 2026-09-26 06:35:53 UTC; unix"                   `\
-`#> cffr              "R 4.6.0; ; 2026-08-25 04:31:41 UTC; unix"                   `\
-`#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
-`#> cli               "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-26 03:39:18 UTC; unix"`\
-`#> clipr             "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
-`#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:21 UTC; unix"`\
-`#> clusterGeneration "R 4.6.0; ; 2026-04-24 21:00:44 UTC; unix"                   `\
-`#> coda              "R 4.6.0; ; 2026-04-24 02:33:58 UTC; unix"                   `\
-`#> cOde              "R 4.6.0; ; 2026-04-24 21:09:27 UTC; unix"                   `\
-`#> collections       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:10:42 UTC; unix"`\
-`#> colorspace        "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-09 05:44:49 UTC; unix"`\
-`#> commonmark        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> conflicted        "R 4.6.0; ; 2026-08-12 20:22:07 UTC; unix"                   `\
-`#> corpcor           "R 4.6.0; ; 2026-04-24 02:29:40 UTC; unix"                   `\
-`#> covr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:26:55 UTC; unix"`\
-`#> cowplot           "R 4.6.0; ; 2026-08-12 20:23:06 UTC; unix"                   `\
-`#> cpp11             "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
-`#> crayon            "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
-`#> credentials       "R 4.6.0; ; 2026-04-24 01:37:50 UTC; unix"                   `\
-`#> crosstalk         "R 4.6.0; ; 2026-08-12 20:22:17 UTC; unix"                   `\
-`#> cTMed             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-26 03:40:30 UTC; unix"`\
-`#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:31:26 UTC; unix"`\
-`#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:19:08 UTC; unix"`\
-`#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:30:51 UTC; unix"`\
-`#> DBI               "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
-`#> dbplyr            "R 4.6.0; ; 2026-10-18 19:49:53 UTC; unix"                   `\
-`#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-22 04:16:01 UTC; unix"`\
-`#> desc              "R 4.6.0; ; 2026-04-24 01:58:25 UTC; unix"                   `\
-`#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:22:50 UTC; unix"`\
-`#> devtools          "R 4.6.1; ; 2026-10-26 03:39:28 UTC; unix"                   `\
-`#> diagram           "R 4.6.0; ; 2026-04-24 01:28:57 UTC; unix"                   `\
-`#> dials             "R 4.6.0; ; 2026-06-23 05:17:57 UTC; unix"                   `\
-`#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 20:56:50 UTC; unix"`\
-`#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:19:38 UTC; unix"`\
-`#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
-`#> dir.expiry        "R 4.6.1; ; 2026-10-26 03:17:50 UTC; unix"                   `\
-`#> distributional    "R 4.6.0; ; 2026-09-09 09:18:45 UTC; unix"                   `\
-`#> distro            "R 4.6.0; ; 2026-04-24 21:12:52 UTC; unix"                   `\
-`#> doBy              "R 4.6.0; ; 2026-08-12 20:24:57 UTC; unix"                   `\
-`#> docopt            "R 4.6.1; ; 2026-10-15 15:57:23 UTC; unix"                   `\
-`#> downlit           "R 4.6.0; ; 2026-04-24 22:45:05 UTC; unix"                   `\
-`#> dplyr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:54 UTC; unix"`\
-`#> DT                "R 4.6.0; ; 2026-08-12 20:25:47 UTC; unix"                   `\
-`#> dtplyr            "R 4.6.0; ; 2026-10-02 08:11:50 UTC; unix"                   `\
-`#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:06:42 UTC; unix"`\
-`#> dynr              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-26 03:30:45 UTC; unix"`\
-`#> dynTools          "R 4.6.1; ; 2026-10-26 03:40:48 UTC; unix"                   `\
-`#> dynUtils          "R 4.6.1; ; 2026-10-26 03:32:01 UTC; unix"                   `\
-`#> ellipse           "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
-`#> ellipsis          "R 4.6.0; ; 2026-04-24 21:36:12 UTC; unix"                   `\
-`#> evaluate          "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
-`#> expm              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-24 04:54:21 UTC; unix"`\
-`#> fansi             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:16:37 UTC; unix"`\
-`#> farver            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> fastDummies       "R 4.6.0; ; 2026-09-26 06:40:39 UTC; unix"                   `\
-`#> fastmap           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
-`#> fda               "R 4.6.0; ; 2026-08-24 07:10:42 UTC; unix"                   `\
-`#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:15:12 UTC; unix"`\
-`#> fds               "R 4.6.0; ; 2026-05-06 05:19:49 UTC; unix"                   `\
-`#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:36 UTC; unix"`\
-`#> fitVARMxID        "R 4.6.1; ; 2026-10-26 03:40:56 UTC; unix"                   `\
-`#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
-`#> fontawesome       "R 4.6.0; ; 2026-08-12 20:22:14 UTC; unix"                   `\
-`#> forcats           "R 4.6.0; ; 2026-08-12 20:22:52 UTC; unix"                   `\
-`#> foreach           "R 4.6.0; ; 2026-08-12 20:21:42 UTC; unix"                   `\
-`#> forecast          "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:46:39 UTC; unix"`\
-`#> Formula           "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
-`#> fracdiff          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> fs                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:37 UTC; unix"`\
-`#> fst               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:39:02 UTC; unix"`\
-`#> fstcore           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:37:58 UTC; unix"`\
-`#> furrr             "R 4.6.0; ; 2026-04-24 21:39:32 UTC; unix"                   `\
-`#> future            "R 4.6.0; ; 2026-10-16 04:15:04 UTC; unix"                   `\
-`#> future.apply      "R 4.6.0; ; 2026-10-17 04:53:18 UTC; unix"                   `\
-`#> gargle            "R 4.6.0; ; 2026-10-18 19:50:19 UTC; unix"                   `\
-`#> GauPro            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:01:15 UTC; unix"`\
-`#> generics          "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
-`#> gert              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:26:46 UTC; unix"`\
-`#> ggplot2           "R 4.6.0; ; 2026-08-12 20:22:35 UTC; unix"                   `\
-`#> ggrepel           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:06 UTC; unix"`\
-`#> gh                "R 4.6.0; ; 2026-07-21 05:26:50 UTC; unix"                   `\
-`#> gitcreds          "R 4.6.0; ; 2026-04-24 01:13:09 UTC; unix"                   `\
-`#> glasso            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:17:49 UTC; unix"`\
-`#> glmnet            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-25 04:24:30 UTC; unix"`\
-`#> globals           "R 4.6.0; ; 2026-10-12 04:29:40 UTC; unix"                   `\
-`#> glue              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> gmp               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:31:51 UTC; unix"`\
-`#> googledrive       "R 4.6.0; ; 2026-08-12 20:23:12 UTC; unix"                   `\
-`#> googlesheets4     "R 4.6.0; ; 2026-08-12 20:23:44 UTC; unix"                   `\
-`#> gower             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:20 UTC; unix"`\
-`#> GPArotation       "R 4.6.0; ; 2026-08-23 04:29:28 UTC; unix"                   `\
-`#> graphicalVAR      "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:25:44 UTC; unix"`\
-`#> gridExtra         "R 4.6.0; ; 2026-08-12 20:22:12 UTC; unix"                   `\
-`#> gsubfn            "R 4.6.0; ; 2026-04-24 21:33:54 UTC; unix"                   `\
-`#> gtable            "R 4.6.0; ; 2026-08-12 20:22:02 UTC; unix"                   `\
-`#> gtools            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> hardhat           "R 4.6.0; ; 2026-04-24 03:24:35 UTC; unix"                   `\
-`#> haven             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:24 UTC; unix"`\
-`#> hdrcde            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 23:03:05 UTC; unix"`\
-`#> here              "R 4.6.0; ; 2026-04-24 02:03:23 UTC; unix"                   `\
-`#> highr             "R 4.6.0; ; 2026-08-12 20:21:52 UTC; unix"                   `\
-`#> Hmisc             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 19:54:36 UTC; unix"`\
-`#> hms               "R 4.6.0; ; 2026-08-12 20:22:26 UTC; unix"                   `\
-`#> htmlTable         "R 4.6.0; ; 2026-08-12 20:25:44 UTC; unix"                   `\
-`#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:04 UTC; unix"`\
-`#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:25:06 UTC; unix"                   `\
-`#> httpgd            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-26 03:38:48 UTC; unix"`\
-`#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
-`#> httr              "R 4.6.0; ; 2026-09-02 03:59:46 UTC; unix"                   `\
-`#> httr2             "R 4.6.0; ; 2026-07-14 05:11:28 UTC; unix"                   `\
-`#> ids               "R 4.6.0; ; 2026-08-12 20:22:12 UTC; unix"                   `\
-`#> ifaTools          "R 4.6.0; ; 2026-04-28 06:09:37 UTC; unix"                   `\
-`#> igraph            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-01 04:59:54 UTC; unix"`\
-`#> infer             "R 4.6.0; ; 2026-04-24 23:35:58 UTC; unix"                   `\
-`#> ini               "R 4.6.0; ; 2026-04-24 01:22:01 UTC; unix"                   `\
-`#> inline            "R 4.6.0; ; 2026-04-24 01:31:45 UTC; unix"                   `\
-`#> ipred             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 06:42:41 UTC; unix"`\
-`#> isoband           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:53 UTC; unix"`\
-`#> iterators         "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
-`#> jomo              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:09:34 UTC; unix"`\
-`#> jpeg              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:39 UTC; unix"`\
-`#> jquerylib         "R 4.6.0; ; 2026-08-12 20:22:16 UTC; unix"                   `\
-`#> jsonlite          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> jsonvalidate      "R 4.6.0; ; 2026-04-24 21:21:59 UTC; unix"                   `\
-`#> kernlab           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> knitr             "R 4.6.0; ; 2026-09-07 03:56:59 UTC; unix"                   `\
-`#> ks                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:40 UTC; unix"`\
-`#> labeling          "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
-`#> Lahman            "R 4.6.0; ; 2026-04-24 22:13:49 UTC; unix"                   `\
-`#> languageserver    "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-25 04:24:46 UTC; unix"`\
-`#> later             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:57 UTC; unix"`\
-`#> latex2exp         "R 4.6.0; ; 2026-04-24 02:36:33 UTC; unix"                   `\
-`#> lava              "R 4.6.0; ; 2026-10-23 04:21:42 UTC; unix"                   `\
-`#> lavaan            "R 4.6.0; ; 2026-10-09 05:44:52 UTC; unix"                   `\
-`#> lazyeval          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:48 UTC; unix"`\
-`#> lbfgs             "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:53:20 UTC; unix"`\
-`#> lifecycle         "R 4.6.0; ; 2026-08-12 20:21:53 UTC; unix"                   `\
-`#> lintr             "R 4.6.0; ; 2026-07-16 05:10:48 UTC; unix"                   `\
-`#> listenv           "R 4.6.0; ; 2026-10-05 04:19:47 UTC; unix"                   `\
-`#> litedown          "R 4.6.0; ; 2026-08-27 05:32:48 UTC; unix"                   `\
-`#> littler           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:57:21 UTC; unix"`\
-`#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:07:20 UTC; unix"`\
-`#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:00 UTC; unix"`\
-`#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:06:27 UTC; unix"`\
-`#> longMI            "R 4.6.1; ; 2026-10-26 03:25:53 UTC; unix"                   `\
-`#> loo               "R 4.6.0; ; 2026-07-25 05:23:32 UTC; unix"                   `\
-`#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:14 UTC; unix"`\
-`#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:00:10 UTC; unix"`\
-`#> magrittr          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
-`#> markdown          "R 4.6.0; ; 2026-08-12 20:22:05 UTC; unix"                   `\
-`#> MatrixModels      "R 4.6.0; ; 2026-08-12 20:23:44 UTC; unix"                   `\
-`#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:50 UTC; unix"`\
-`#> memoise           "R 4.6.0; ; 2026-08-12 20:21:58 UTC; unix"                   `\
-`#> metaDyn           "R 4.6.1; ; 2026-10-26 03:41:04 UTC; unix"                   `\
-`#> metaSEM           "R 4.6.0; ; 2026-04-28 05:58:02 UTC; unix"                   `\
-`#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:13:40 UTC; unix"`\
-`#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:13:51 UTC; unix"`\
-`#> mime              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
-`#> miniUI            "R 4.6.0; ; 2026-04-24 22:47:52 UTC; unix"                   `\
-`#> minqa             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:58 UTC; unix"`\
-`#> mitml             "R 4.6.0; ; 2026-04-24 22:15:54 UTC; unix"                   `\
-`#> mixopt            "R 4.6.0; ; 2026-04-24 23:13:13 UTC; unix"                   `\
-`#> mize              "R 4.6.0; ; 2026-04-24 21:27:06 UTC; unix"                   `\
-`#> mlVAR             "R 4.6.0; ; 2026-07-18 12:20:38 UTC; unix"                   `\
-`#> mnormt            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:16:31 UTC; unix"`\
-`#> modeldata         "R 4.6.0; ; 2026-08-22 05:02:51 UTC; unix"                   `\
-`#> modelenv          "R 4.6.0; ; 2026-04-24 22:11:08 UTC; unix"                   `\
-`#> modelr            "R 4.6.0; ; 2026-10-02 08:07:59 UTC; unix"                   `\
-`#> MplusAutomation   "R 4.6.0; ; 2026-06-25 05:35:34 UTC; unix"                   `\
-`#> multicool         "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-22 04:16:06 UTC; unix"`\
-`#> mvtnorm           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:46 UTC; unix"`\
-`#> nloptr            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:20 UTC; unix"`\
-`#> numDeriv          "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
-`#> nycflights13      "R 4.6.0; ; 2026-04-24 22:10:40 UTC; unix"                   `\
-`#> OpenMx            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:14:05 UTC; unix"`\
-`#> openssl           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:57 UTC; unix"`\
-`#> ordinal           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-28 08:47:21 UTC; unix"`\
-`#> otel              "R 4.6.0; ; 2026-08-12 20:21:45 UTC; unix"                   `\
-`#> pak               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-23 16:10:20 UTC; unix"`\
-`#> pan               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-01 05:56:16 UTC; unix"`\
-`#> pander            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:07:44 UTC; unix"`\
-`#> parallelly        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> parsnip           "R 4.6.0; ; 2026-09-28 04:42:22 UTC; unix"                   `\
-`#> patchwork         "R 4.6.0; ; 2026-04-24 03:00:27 UTC; unix"                   `\
-`#> pbapply           "R 4.6.0; ; 2026-09-02 04:00:10 UTC; unix"                   `\
-`#> pbivnorm          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 21:31:28 UTC; unix"`\
-`#> pbkrtest          "R 4.6.0; ; 2026-08-12 20:25:57 UTC; unix"                   `\
-`#> pcaPP             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-08 04:10:38 UTC; unix"`\
-`#> pdftools          "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:01:07 UTC; unix"`\
-`#> pillar            "R 4.6.0; ; 2026-08-12 20:22:26 UTC; unix"                   `\
-`#> pkgbuild          "R 4.6.0; ; 2026-04-24 02:21:47 UTC; unix"                   `\
-`#> pkgconfig         "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
-`#> pkgdown           "R 4.6.0; ; 2026-07-08 05:15:06 UTC; unix"                   `\
-`#> pkgload           "R 4.6.0; ; 2026-06-16 05:19:55 UTC; unix"                   `\
-`#> plyr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:56 UTC; unix"`\
-`#> png               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:34 UTC; unix"`\
-`#> posterior         "R 4.6.0; ; 2026-04-24 02:46:24 UTC; unix"                   `\
-`#> pracma            "R 4.6.0; ; 2026-08-12 20:21:30 UTC; unix"                   `\
-`#> praise            "R 4.6.0; ; 2026-04-24 01:16:13 UTC; unix"                   `\
-`#> prettyunits       "R 4.6.0; ; 2026-08-12 20:21:29 UTC; unix"                   `\
-`#> printr            "R 4.6.0; ; 2026-04-24 22:25:06 UTC; unix"                   `\
-`#> processx          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:47 UTC; unix"`\
-`#> prodlim           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:04:03 UTC; unix"`\
-`#> profvis           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:19:47 UTC; unix"`\
-`#> progress          "R 4.6.0; ; 2026-08-12 20:22:39 UTC; unix"                   `\
-`#> progressr         "R 4.6.0; ; 2026-10-19 04:23:16 UTC; unix"                   `\
-`#> promises          "R 4.6.0; ; 2026-08-12 20:22:20 UTC; unix"                   `\
-`#> proto             "R 4.6.0; ; 2026-04-24 21:33:12 UTC; unix"                   `\
-`#> ps                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> psych             "R 4.6.0; ; 2026-10-01 04:58:41 UTC; unix"                   `\
-`#> purrr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:27 UTC; unix"`\
-`#> qgraph            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-18 12:10:26 UTC; unix"`\
-`#> qpdf              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:09:25 UTC; unix"`\
-`#> quadprog          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:21:03 UTC; unix"`\
-`#> quantreg          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:15 UTC; unix"`\
-`#> quarto            "R 4.6.0; ; 2026-04-24 22:18:55 UTC; unix"                   `\
-`#> QuickJSR          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-22 04:58:10 UTC; unix"`\
-`#> R.cache           "R 4.6.0; ; 2026-04-24 21:12:21 UTC; unix"                   `\
-`#> R.methodsS3       "R 4.6.0; ; 2026-04-24 01:34:58 UTC; unix"                   `\
-`#> R.oo              "R 4.6.0; ; 2026-04-24 01:37:41 UTC; unix"                   `\
-`#> R.utils           "R 4.6.0; ; 2026-04-24 01:39:00 UTC; unix"                   `\
-`#> R2jags            "R 4.6.0; ; 2026-04-24 02:46:58 UTC; unix"                   `\
-`#> R2WinBUGS         "R 4.6.0; ; 2026-04-24 02:38:04 UTC; unix"                   `\
-`#> R6                "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
-`#> ragg              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:49 UTC; unix"`\
-`#> rainbow           "R 4.6.0; ; 2026-09-26 06:36:28 UTC; unix"                   `\
-`#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> rbibutils         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> rcmdcheck         "R 4.6.0; ; 2026-04-24 22:11:24 UTC; unix"                   `\
-`#> RColorBrewer      "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
-`#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:31 UTC; unix"`\
-`#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 10:49:15 UTC; unix"`\
-`#> RcppEigen         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:57 UTC; unix"`\
-`#> RcppParallel      "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-28 08:10:27 UTC; unix"`\
-`#> RcppTOML          "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:19:13 UTC; unix"`\
-`#> RCurl             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-22 04:58:36 UTC; unix"`\
-`#> Rdpack            "R 4.6.0; ; 2026-08-12 20:21:50 UTC; unix"                   `\
-`#> rdtools           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-17 05:34:52 UTC; unix"`\
-`#> readr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-02 08:08:54 UTC; unix"`\
-`#> readxl            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 10:40:40 UTC; unix"`\
-`#> recipes           "R 4.6.0; ; 2026-10-18 19:54:28 UTC; unix"                   `\
-`#> RefManageR        "R 4.6.0; ; 2026-08-12 20:23:27 UTC; unix"                   `\
-`#> reformulas        "R 4.6.0; ; 2026-08-12 20:23:46 UTC; unix"                   `\
-`#> rematch           "R 4.6.0; ; 2026-08-12 20:21:34 UTC; unix"                   `\
-`#> rematch2          "R 4.6.0; ; 2026-08-12 20:22:52 UTC; unix"                   `\
-`#> remotes           "R 4.6.0; ; 2026-04-24 21:36:51 UTC; unix"                   `\
-`#> reprex            "R 4.6.0; ; 2026-08-12 20:25:14 UTC; unix"                   `\
-`#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:13 UTC; unix"`\
-`#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:23:09 UTC; unix"`\
-`#> rex               "R 4.6.0; ; 2026-04-24 22:06:31 UTC; unix"                   `\
-`#> rhdf5             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-26 03:21:00 UTC; unix"`\
-`#> rhdf5filters      "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-26 03:20:39 UTC; unix"`\
-`#> Rhdf5lib          "R 4.6.1; ; 2026-10-26 03:20:36 UTC; unix"                   `\
-`#> rhub              "R 4.6.0; ; 2026-04-24 22:27:49 UTC; unix"                   `\
-`#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 02:38:21 UTC; unix"`\
-`#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:29 UTC; unix"`\
-`#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:03 UTC; unix"`\
-`#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:00:02 UTC; unix"                   `\
-`#> roxygen2          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-26 03:39:32 UTC; unix"`\
-`#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:24:25 UTC; unix"`\
-`#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:49 UTC; unix"`\
-`#> rProject          "R 4.6.1; ; 2026-10-26 03:15:21 UTC; unix"                   `\
-`#> rprojroot         "R 4.6.0; ; 2026-04-24 01:29:06 UTC; unix"                   `\
-`#> rsample           "R 4.6.0; ; 2026-04-24 23:57:37 UTC; unix"                   `\
-`#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:44 UTC; unix"`\
-`#> rstan             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:14:11 UTC; unix"`\
-`#> rstantools        "R 4.6.0; ; 2026-08-30 04:16:54 UTC; unix"                   `\
-`#> rstudioapi        "R 4.6.0; ; 2026-08-12 20:21:35 UTC; unix"                   `\
-`#> rversions         "R 4.6.0; ; 2026-04-24 21:11:46 UTC; unix"                   `\
-`#> rvest             "R 4.6.0; ; 2026-10-18 19:50:01 UTC; unix"                   `\
-`#> S7                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> sandwich          "R 4.6.0; ; 2026-08-04 05:05:03 UTC; unix"                   `\
-`#> sass              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:23 UTC; unix"`\
-`#> scales            "R 4.6.0; ; 2026-08-12 20:22:07 UTC; unix"                   `\
-`#> selectr           "R 4.6.0; ; 2026-09-28 04:40:54 UTC; unix"                   `\
-`#> semlbci           "R 4.6.0; ; 2026-07-28 08:48:55 UTC; unix"                   `\
-`#> semmcci           "R 4.6.1; ; 2026-10-26 03:39:44 UTC; unix"                   `\
-`#> semPlot           "R 4.6.0; ; 2026-07-18 12:17:16 UTC; unix"                   `\
-`#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:25:12 UTC; unix"                   `\
-`#> sfd               "R 4.6.0; ; 2026-04-24 22:06:59 UTC; unix"                   `\
-`#> shape             "R 4.6.0; ; 2026-08-12 20:21:31 UTC; unix"                   `\
-`#> shiny             "R 4.6.0; ; 2026-08-12 20:24:30 UTC; unix"                   `\
-`#> simStateSpace     "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-26 03:40:01 UTC; unix"`\
-`#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:14:38 UTC; unix"`\
-`#> sourcetools       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:35 UTC; unix"`\
-`#> SparseM           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> sparsevctrs       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 03:05:27 UTC; unix"`\
-`#> splitfngr         "R 4.6.0; ; 2026-04-24 21:07:07 UTC; unix"                   `\
-`#> SQUAREM           "R 4.6.0; ; 2026-04-24 01:50:37 UTC; unix"                   `\
-`#> StanHeaders       "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:11:27 UTC; unix"`\
-`#> stringi           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:43 UTC; unix"`\
-`#> stringr           "R 4.6.0; ; 2026-08-12 20:22:54 UTC; unix"                   `\
-`#> strucchange       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-05 05:51:55 UTC; unix"`\
-`#> styler            "R 4.6.0; ; 2026-04-24 22:07:55 UTC; unix"                   `\
-`#> symSEM            "R 4.6.0; ; 2026-04-28 06:11:30 UTC; unix"                   `\
-`#> sys               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:30 UTC; unix"`\
-`#> systemfonts       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:13 UTC; unix"`\
-`#> tailor            "R 4.6.0; ; 2026-04-24 23:15:27 UTC; unix"                   `\
-`#> tensorA           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:25:54 UTC; unix"`\
-`#> testthat          "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 06:36:19 UTC; unix"`\
-`#> texreg            "R 4.6.0; ; 2026-08-26 04:40:34 UTC; unix"                   `\
-`#> textshaping       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:09 UTC; unix"`\
-`#> tibble            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:38 UTC; unix"`\
-`#> tidymodels        "R 4.6.0; ; 2026-04-25 16:12:18 UTC; unix"                   `\
-`#> tidyr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:23:24 UTC; unix"`\
-`#> tidyselect        "R 4.6.0; ; 2026-08-12 20:22:29 UTC; unix"                   `\
-`#> tidyverse         "R 4.6.0; ; 2026-08-12 20:27:55 UTC; unix"                   `\
-`#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
-`#> timeDate          "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
-`#> tinytex           "R 4.6.1; ; 2026-10-26 03:39:15 UTC; unix"                   `\
-`#> tune              "R 4.6.0; ; 2026-04-25 15:45:43 UTC; unix"                   `\
-`#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
-`#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 01:40:31 UTC; unix"`\
-`#> unigd             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:34 UTC; unix"`\
-`#> urca              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:04 UTC; unix"`\
-`#> urlchecker        "R 4.6.0; ; 2026-07-09 17:32:21 UTC; unix"                   `\
-`#> usethis           "R 4.6.0; ; 2026-09-11 04:12:24 UTC; unix"                   `\
-`#> utf8              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:36 UTC; unix"`\
-`#> uuid              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:38 UTC; unix"`\
-`#> V8                "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:27:42 UTC; unix"`\
-`#> vars              "R 4.6.0; ; 2026-04-24 21:25:32 UTC; unix"                   `\
-`#> vctrs             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:22:02 UTC; unix"`\
-`#> viridisLite       "R 4.6.0; ; 2026-08-12 20:21:36 UTC; unix"                   `\
-`#> vroom             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 06:36:05 UTC; unix"`\
-`#> waldo             "R 4.6.0; ; 2026-04-24 02:10:14 UTC; unix"                   `\
-`#> warp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:13:09 UTC; unix"`\
-`#> whisker           "R 4.6.0; ; 2026-08-12 20:21:40 UTC; unix"                   `\
-`#> whoami            "R 4.6.0; ; 2026-04-24 21:56:37 UTC; unix"                   `\
-`#> withr             "R 4.6.0; ; 2026-08-12 20:21:40 UTC; unix"                   `\
-`#> workflows         "R 4.6.0; ; 2026-04-24 23:57:21 UTC; unix"                   `\
-`#> workflowsets      "R 4.6.0; ; 2026-04-25 16:00:24 UTC; unix"                   `\
-`#> xfun              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-17 04:51:47 UTC; unix"`\
-`#> xml2              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:55 UTC; unix"`\
-`#> xmlparsedata      "R 4.6.0; ; 2026-04-24 22:36:57 UTC; unix"                   `\
-`#> xopen             "R 4.6.0; ; 2026-04-24 21:34:04 UTC; unix"                   `\
-`#> xtable            "R 4.6.0; ; 2026-08-12 20:21:42 UTC; unix"                   `\
-`#> yaml              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:42 UTC; unix"`\
-`#> yardstick         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 22:18:47 UTC; unix"`\
-`#> zip               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:21:49 UTC; unix"`\
-`#> zoo               "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 04:26:52 UTC; unix"`\
-`#> base              "R 4.6.1; ; 2026-10-15 15:51:01 UTC; unix"                   `\
-`#> boot              "R 4.6.1; ; 2026-10-15 15:55:20 UTC; unix"                   `\
-`#> class             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:40 UTC; unix"`\
-`#> cluster           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:24 UTC; unix"`\
-`#> codetools         "R 4.6.1; ; 2026-10-15 15:55:28 UTC; unix"                   `\
-`#> compiler          "R 4.6.1; ; 2026-10-15 15:49:02 UTC; unix"                   `\
-`#> datasets          "R 4.6.1; ; 2026-10-15 15:50:35 UTC; unix"                   `\
-`#> foreign           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:30 UTC; unix"`\
-`#> graphics          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:49:51 UTC; unix"`\
-`#> grDevices         "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:49:43 UTC; unix"`\
-`#> grid              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:49 UTC; unix"`\
-`#> KernSmooth        "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:34 UTC; unix"`\
-`#> lattice           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:52:00 UTC; unix"`\
-`#> MASS              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:51:54 UTC; unix"`\
-`#> Matrix            "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:52:09 UTC; unix"`\
-`#> methods           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:36 UTC; unix"`\
-`#> mgcv              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:45 UTC; unix"`\
-`#> nlme              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:54:39 UTC; unix"`\
-`#> nnet              "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:41 UTC; unix"`\
-`#> parallel          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:51:00 UTC; unix"`\
-`#> rpart             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:36 UTC; unix"`\
-`#> spatial           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:55:43 UTC; unix"`\
-`#> splines           "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:57 UTC; unix"`\
-`#> stats             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:01 UTC; unix"`\
-`#> stats4            "R 4.6.1; ; 2026-10-15 15:50:58 UTC; unix"                   `\
-`#> survival          "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:54:53 UTC; unix"`\
-`#> tcltk             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:50:59 UTC; unix"`\
-`#> tools             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:49:02 UTC; unix"`\
-`#> utils             "R 4.6.1; x86_64-pc-linux-gnu; 2026-10-15 15:49:34 UTC; unix"`\
+`#> rProject          "R 4.6.2; ; 2026-10-31 02:59:48 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-10-31 02:59:43 UTC; unix"                   `\
+`#> abind             "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
+`#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:14:25 UTC; unix"`\
+`#> arm               "R 4.6.0; ; 2026-04-25 01:17:55 UTC; unix"                   `\
+`#> arrow             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-25 04:18:30 UTC; unix"`\
+`#> ash               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:55 UTC; unix"`\
+`#> AsioHeaders       "R 4.6.0; ; 2026-04-24 04:09:53 UTC; unix"                   `\
+`#> askpass           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:07 UTC; unix"`\
+`#> assertthat        "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
+`#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
+`#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
+`#> betaDelta         "R 4.6.2; ; 2026-10-30 04:50:32 UTC; unix"                   `\
+`#> betaMC            "R 4.6.2; ; 2026-10-30 04:50:42 UTC; unix"                   `\
+`#> betaNB            "R 4.6.2; ; 2026-10-30 04:50:39 UTC; unix"                   `\
+`#> betaSandwich      "R 4.6.2; ; 2026-10-30 04:50:35 UTC; unix"                   `\
+`#> BH                "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
+`#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:50 UTC; unix"                   `\
+`#> biocmake          "R 4.6.2; ; 2026-10-30 04:27:38 UTC; unix"                   `\
+`#> BiocManager       "R 4.6.0; ; 2026-04-24 04:10:10 UTC; unix"                   `\
+`#> BiocVersion       "R 4.6.2; ; 2026-10-30 04:27:36 UTC; unix"                   `\
+`#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
+`#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:27 UTC; unix"`\
+`#> blob              "R 4.6.0; ; 2026-08-12 20:25:54 UTC; unix"                   `\
+`#> bootStateSpace    "R 4.6.2; ; 2026-10-30 04:51:16 UTC; unix"                   `\
+`#> brew              "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
+`#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:10 UTC; unix"`\
+`#> broom             "R 4.6.0; ; 2026-08-12 20:28:45 UTC; unix"                   `\
+`#> bslib             "R 4.6.0; ; 2026-08-12 20:27:26 UTC; unix"                   `\
+`#> cachem            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:08 UTC; unix"`\
+`#> callr             "R 4.6.0; ; 2026-08-12 20:25:19 UTC; unix"                   `\
+`#> car               "R 4.6.0; ; 2026-08-12 20:34:42 UTC; unix"                   `\
+`#> caracas           "R 4.6.0; ; 2026-04-25 02:45:47 UTC; unix"                   `\
+`#> carData           "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
+`#> cellranger        "R 4.6.0; ; 2026-08-12 20:26:50 UTC; unix"                   `\
+`#> cffr              "R 4.6.0; ; 2026-08-25 04:32:41 UTC; unix"                   `\
+`#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:49 UTC; unix"`\
+`#> cli               "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:49:56 UTC; unix"`\
+`#> clipr             "R 4.6.0; ; 2026-08-12 20:24:44 UTC; unix"                   `\
+`#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:36 UTC; unix"`\
+`#> clusterGeneration "R 4.6.0; ; 2026-04-25 00:28:07 UTC; unix"                   `\
+`#> coda              "R 4.6.0; ; 2026-04-24 04:11:12 UTC; unix"                   `\
+`#> cOde              "R 4.6.0; ; 2026-04-25 00:40:58 UTC; unix"                   `\
+`#> collections       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:42:23 UTC; unix"`\
+`#> colorspace        "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-09 05:44:59 UTC; unix"`\
+`#> commonmark        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
+`#> conflicted        "R 4.6.0; ; 2026-08-12 20:25:39 UTC; unix"                   `\
+`#> corpcor           "R 4.6.0; ; 2026-04-24 04:09:57 UTC; unix"                   `\
+`#> covr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 01:57:11 UTC; unix"`\
+`#> cowplot           "R 4.6.0; ; 2026-08-12 20:26:51 UTC; unix"                   `\
+`#> cpp11             "R 4.6.0; ; 2026-08-12 20:24:38 UTC; unix"                   `\
+`#> crayon            "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
+`#> credentials       "R 4.6.0; ; 2026-04-24 04:13:25 UTC; unix"                   `\
+`#> crosstalk         "R 4.6.0; ; 2026-08-12 20:25:32 UTC; unix"                   `\
+`#> cTMed             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:51:24 UTC; unix"`\
+`#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:31:19 UTC; unix"`\
+`#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:19:50 UTC; unix"`\
+`#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:32:28 UTC; unix"`\
+`#> DBI               "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
+`#> dbplyr            "R 4.6.0; ; 2026-08-12 20:28:52 UTC; unix"                   `\
+`#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-22 04:18:07 UTC; unix"`\
+`#> desc              "R 4.6.0; ; 2026-04-24 04:10:49 UTC; unix"                   `\
+`#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:57 UTC; unix"`\
+`#> devtools          "R 4.6.2; ; 2026-10-30 04:50:08 UTC; unix"                   `\
+`#> diagram           "R 4.6.0; ; 2026-04-24 04:11:06 UTC; unix"                   `\
+`#> dials             "R 4.6.0; ; 2026-06-23 05:17:55 UTC; unix"                   `\
+`#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:25:52 UTC; unix"`\
+`#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:20:30 UTC; unix"`\
+`#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
+`#> dir.expiry        "R 4.6.2; ; 2026-10-30 04:27:37 UTC; unix"                   `\
+`#> distributional    "R 4.6.0; ; 2026-09-09 09:31:05 UTC; unix"                   `\
+`#> distro            "R 4.6.0; ; 2026-04-25 00:45:33 UTC; unix"                   `\
+`#> doBy              "R 4.6.0; ; 2026-08-12 20:30:54 UTC; unix"                   `\
+`#> docopt            "R 4.6.2; ; 2026-10-29 16:32:58 UTC; unix"                   `\
+`#> downlit           "R 4.6.0; ; 2026-04-25 01:55:25 UTC; unix"                   `\
+`#> dplyr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:27:01 UTC; unix"`\
+`#> DT                "R 4.6.0; ; 2026-08-12 20:30:29 UTC; unix"                   `\
+`#> dtplyr            "R 4.6.0; ; 2026-10-29 06:40:00 UTC; unix"                   `\
+`#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:11:54 UTC; unix"`\
+`#> dynr              "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:40:45 UTC; unix"`\
+`#> dynTools          "R 4.6.2; ; 2026-10-30 04:51:47 UTC; unix"                   `\
+`#> dynUtils          "R 4.6.2; ; 2026-10-30 04:42:00 UTC; unix"                   `\
+`#> ellipse           "R 4.6.0; ; 2026-08-12 20:24:42 UTC; unix"                   `\
+`#> ellipsis          "R 4.6.0; ; 2026-04-25 01:21:15 UTC; unix"                   `\
+`#> evaluate          "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
+`#> expm              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-24 04:57:15 UTC; unix"`\
+`#> fansi             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:47:27 UTC; unix"`\
+`#> farver            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:43 UTC; unix"`\
+`#> fastDummies       "R 4.6.0; ; 2026-04-24 04:26:41 UTC; unix"                   `\
+`#> fastmap           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:40 UTC; unix"`\
+`#> fda               "R 4.6.0; ; 2026-04-24 04:28:41 UTC; unix"                   `\
+`#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:47:34 UTC; unix"`\
+`#> fds               "R 4.6.0; ; 2026-10-27 04:26:16 UTC; unix"                   `\
+`#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:54 UTC; unix"`\
+`#> fitVARMxID        "R 4.6.2; ; 2026-10-30 04:51:55 UTC; unix"                   `\
+`#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
+`#> fontawesome       "R 4.6.0; ; 2026-08-12 20:25:29 UTC; unix"                   `\
+`#> forcats           "R 4.6.0; ; 2026-08-12 20:26:56 UTC; unix"                   `\
+`#> foreach           "R 4.6.0; ; 2026-08-12 20:25:08 UTC; unix"                   `\
+`#> forecast          "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 12:01:22 UTC; unix"`\
+`#> Formula           "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
+`#> fracdiff          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
+`#> fs                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:47 UTC; unix"`\
+`#> fst               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:35:35 UTC; unix"`\
+`#> fstcore           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:26:09 UTC; unix"`\
+`#> furrr             "R 4.6.0; ; 2026-09-26 06:36:01 UTC; unix"                   `\
+`#> future            "R 4.6.0; ; 2026-10-16 04:15:47 UTC; unix"                   `\
+`#> future.apply      "R 4.6.0; ; 2026-10-17 04:55:33 UTC; unix"                   `\
+`#> gargle            "R 4.6.0; ; 2026-10-29 04:02:56 UTC; unix"                   `\
+`#> GauPro            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:13:37 UTC; unix"`\
+`#> generics          "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
+`#> gert              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:27:10 UTC; unix"`\
+`#> ggplot2           "R 4.6.0; ; 2026-08-12 20:26:08 UTC; unix"                   `\
+`#> ggrepel           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:27:02 UTC; unix"`\
+`#> gh                "R 4.6.0; ; 2026-07-21 05:28:43 UTC; unix"                   `\
+`#> gitcreds          "R 4.6.0; ; 2026-04-24 04:10:06 UTC; unix"                   `\
+`#> glasso            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:49:59 UTC; unix"`\
+`#> glmnet            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-29 04:02:50 UTC; unix"`\
+`#> globals           "R 4.6.0; ; 2026-10-12 04:31:08 UTC; unix"                   `\
+`#> glue              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
+`#> gmp               "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:28 UTC; unix"`\
+`#> googledrive       "R 4.6.0; ; 2026-08-12 20:27:24 UTC; unix"                   `\
+`#> googlesheets4     "R 4.6.0; ; 2026-08-12 20:28:32 UTC; unix"                   `\
+`#> gower             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:57 UTC; unix"`\
+`#> GPArotation       "R 4.6.0; ; 2026-08-23 04:29:53 UTC; unix"                   `\
+`#> graphicalVAR      "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:23:59 UTC; unix"`\
+`#> gridExtra         "R 4.6.0; ; 2026-08-12 20:25:37 UTC; unix"                   `\
+`#> gsubfn            "R 4.6.0; ; 2026-04-25 01:07:54 UTC; unix"                   `\
+`#> gtable            "R 4.6.0; ; 2026-08-12 20:25:20 UTC; unix"                   `\
+`#> gtools            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
+`#> hardhat           "R 4.6.0; ; 2026-04-24 04:15:32 UTC; unix"                   `\
+`#> haven             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:30:08 UTC; unix"`\
+`#> hdrcde            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:20:06 UTC; unix"`\
+`#> here              "R 4.6.0; ; 2026-04-24 04:11:00 UTC; unix"                   `\
+`#> highr             "R 4.6.0; ; 2026-08-12 20:25:05 UTC; unix"                   `\
+`#> Hmisc             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-07 04:04:34 UTC; unix"`\
+`#> hms               "R 4.6.0; ; 2026-08-12 20:25:58 UTC; unix"                   `\
+`#> htmlTable         "R 4.6.0; ; 2026-08-12 20:30:32 UTC; unix"                   `\
+`#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:12 UTC; unix"`\
+`#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:29:22 UTC; unix"                   `\
+`#> httpgd            "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:49:19 UTC; unix"`\
+`#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:13 UTC; unix"`\
+`#> httr              "R 4.6.0; ; 2026-09-02 04:00:13 UTC; unix"                   `\
+`#> httr2             "R 4.6.0; ; 2026-07-14 05:11:56 UTC; unix"                   `\
+`#> ids               "R 4.6.0; ; 2026-08-12 20:25:44 UTC; unix"                   `\
+`#> ifaTools          "R 4.6.0; ; 2026-04-25 01:52:35 UTC; unix"                   `\
+`#> igraph            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-01 05:02:45 UTC; unix"`\
+`#> infer             "R 4.6.0; ; 2026-04-25 02:57:29 UTC; unix"                   `\
+`#> ini               "R 4.6.0; ; 2026-04-24 04:10:02 UTC; unix"                   `\
+`#> inline            "R 4.6.0; ; 2026-04-24 04:10:03 UTC; unix"                   `\
+`#> ipred             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-23 04:31:16 UTC; unix"`\
+`#> isoband           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:11 UTC; unix"`\
+`#> iterators         "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
+`#> jomo              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:21:22 UTC; unix"`\
+`#> jpeg              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:41 UTC; unix"`\
+`#> jquerylib         "R 4.6.0; ; 2026-08-12 20:25:28 UTC; unix"                   `\
+`#> jsonlite          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
+`#> jsonvalidate      "R 4.6.0; ; 2026-04-25 00:57:29 UTC; unix"                   `\
+`#> kernlab           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
+`#> knitr             "R 4.6.0; ; 2026-09-07 03:58:01 UTC; unix"                   `\
+`#> ks                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:28:03 UTC; unix"`\
+`#> labeling          "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
+`#> Lahman            "R 4.6.0; ; 2026-04-25 01:46:31 UTC; unix"                   `\
+`#> languageserver    "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-25 04:26:14 UTC; unix"`\
+`#> later             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:13 UTC; unix"`\
+`#> latex2exp         "R 4.6.0; ; 2026-04-24 04:10:09 UTC; unix"                   `\
+`#> lava              "R 4.6.0; ; 2026-10-23 04:23:42 UTC; unix"                   `\
+`#> lavaan            "R 4.6.0; ; 2026-10-09 05:45:14 UTC; unix"                   `\
+`#> lazyeval          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:09 UTC; unix"`\
+`#> lbfgs             "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:37:04 UTC; unix"`\
+`#> lifecycle         "R 4.6.0; ; 2026-08-12 20:25:06 UTC; unix"                   `\
+`#> lintr             "R 4.6.0; ; 2026-07-16 05:13:09 UTC; unix"                   `\
+`#> listenv           "R 4.6.0; ; 2026-10-05 04:21:39 UTC; unix"                   `\
+`#> litedown          "R 4.6.0; ; 2026-09-26 06:35:38 UTC; unix"                   `\
+`#> littler           "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:32:56 UTC; unix"`\
+`#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:12:18 UTC; unix"`\
+`#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:09 UTC; unix"`\
+`#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:40 UTC; unix"`\
+`#> longMI            "R 4.6.2; ; 2026-10-30 04:36:01 UTC; unix"                   `\
+`#> loo               "R 4.6.0; ; 2026-07-25 05:26:19 UTC; unix"                   `\
+`#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:21 UTC; unix"`\
+`#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:44:24 UTC; unix"`\
+`#> magrittr          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:40 UTC; unix"`\
+`#> markdown          "R 4.6.0; ; 2026-10-28 04:20:59 UTC; unix"                   `\
+`#> MatrixModels      "R 4.6.0; ; 2026-08-12 20:26:53 UTC; unix"                   `\
+`#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
+`#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
+`#> memoise           "R 4.6.0; ; 2026-08-12 20:25:23 UTC; unix"                   `\
+`#> metaDyn           "R 4.6.2; ; 2026-10-30 04:52:04 UTC; unix"                   `\
+`#> metaSEM           "R 4.6.0; ; 2026-04-25 02:03:48 UTC; unix"                   `\
+`#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 15:25:38 UTC; unix"`\
+`#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:08 UTC; unix"`\
+`#> mime              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:54 UTC; unix"`\
+`#> miniUI            "R 4.6.0; ; 2026-04-24 04:23:03 UTC; unix"                   `\
+`#> minqa             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:14 UTC; unix"`\
+`#> mitml             "R 4.6.0; ; 2026-04-24 04:27:09 UTC; unix"                   `\
+`#> mixopt            "R 4.6.0; ; 2026-04-25 02:48:38 UTC; unix"                   `\
+`#> mize              "R 4.6.0; ; 2026-04-25 00:59:07 UTC; unix"                   `\
+`#> mlVAR             "R 4.6.0; ; 2026-07-18 12:22:37 UTC; unix"                   `\
+`#> mnormt            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:07 UTC; unix"`\
+`#> modeldata         "R 4.6.0; ; 2026-08-22 05:03:01 UTC; unix"                   `\
+`#> modelenv          "R 4.6.0; ; 2026-04-25 02:02:08 UTC; unix"                   `\
+`#> modelr            "R 4.6.0; ; 2026-08-12 20:29:32 UTC; unix"                   `\
+`#> MplusAutomation   "R 4.6.0; ; 2026-06-25 05:37:05 UTC; unix"                   `\
+`#> multicool         "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-22 04:18:14 UTC; unix"`\
+`#> mvtnorm           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
+`#> nloptr            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:20 UTC; unix"`\
+`#> numDeriv          "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
+`#> nycflights13      "R 4.6.0; ; 2026-04-25 02:05:12 UTC; unix"                   `\
+`#> OpenMx            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:14:03 UTC; unix"`\
+`#> openssl           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-23 06:07:17 UTC; unix"`\
+`#> ordinal           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-28 08:45:39 UTC; unix"`\
+`#> otel              "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
+`#> pak               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-23 16:11:05 UTC; unix"`\
+`#> pan               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-01 06:00:35 UTC; unix"`\
+`#> pander            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 15:01:12 UTC; unix"`\
+`#> parallelly        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
+`#> parsnip           "R 4.6.0; ; 2026-09-28 04:43:22 UTC; unix"                   `\
+`#> patchwork         "R 4.6.0; ; 2026-04-24 04:15:30 UTC; unix"                   `\
+`#> pbapply           "R 4.6.0; ; 2026-09-02 04:00:27 UTC; unix"                   `\
+`#> pbivnorm          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 01:03:16 UTC; unix"`\
+`#> pbkrtest          "R 4.6.0; ; 2026-08-12 20:32:42 UTC; unix"                   `\
+`#> pcaPP             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-08 04:11:46 UTC; unix"`\
+`#> pdftools          "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:01:51 UTC; unix"`\
+`#> pillar            "R 4.6.0; ; 2026-08-12 20:25:56 UTC; unix"                   `\
+`#> pkgbuild          "R 4.6.0; ; 2026-09-26 06:36:31 UTC; unix"                   `\
+`#> pkgconfig         "R 4.6.0; ; 2026-08-12 20:24:38 UTC; unix"                   `\
+`#> pkgdown           "R 4.6.0; ; 2026-07-08 05:10:33 UTC; unix"                   `\
+`#> pkgload           "R 4.6.0; ; 2026-06-16 05:20:05 UTC; unix"                   `\
+`#> plyr              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:09 UTC; unix"`\
+`#> png               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:43 UTC; unix"`\
+`#> posterior         "R 4.6.0; ; 2026-04-24 04:17:36 UTC; unix"                   `\
+`#> pracma            "R 4.6.0; ; 2026-08-12 20:24:38 UTC; unix"                   `\
+`#> praise            "R 4.6.0; ; 2026-04-24 04:10:27 UTC; unix"                   `\
+`#> prettyunits       "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
+`#> printr            "R 4.6.0; ; 2026-04-25 01:51:27 UTC; unix"                   `\
+`#> processx          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:55 UTC; unix"`\
+`#> prodlim           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 15:02:05 UTC; unix"`\
+`#> profvis           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 02:07:08 UTC; unix"`\
+`#> progress          "R 4.6.0; ; 2026-08-12 20:26:27 UTC; unix"                   `\
+`#> progressr         "R 4.6.0; ; 2026-10-19 04:23:35 UTC; unix"                   `\
+`#> promises          "R 4.6.0; ; 2026-08-12 20:25:46 UTC; unix"                   `\
+`#> proto             "R 4.6.0; ; 2026-04-25 01:07:19 UTC; unix"                   `\
+`#> ps                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
+`#> psych             "R 4.6.0; ; 2026-10-01 05:01:45 UTC; unix"                   `\
+`#> purrr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:58 UTC; unix"`\
+`#> qgraph            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-18 12:11:38 UTC; unix"`\
+`#> qpdf              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-23 06:10:29 UTC; unix"`\
+`#> quadprog          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:28 UTC; unix"`\
+`#> quantreg          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:27:41 UTC; unix"`\
+`#> quarto            "R 4.6.0; ; 2026-04-25 01:51:14 UTC; unix"                   `\
+`#> QuickJSR          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-22 04:59:53 UTC; unix"`\
+`#> R.cache           "R 4.6.0; ; 2026-04-25 00:46:07 UTC; unix"                   `\
+`#> R.methodsS3       "R 4.6.0; ; 2026-04-24 04:10:01 UTC; unix"                   `\
+`#> R.oo              "R 4.6.0; ; 2026-04-24 04:10:14 UTC; unix"                   `\
+`#> R.utils           "R 4.6.0; ; 2026-04-24 04:10:48 UTC; unix"                   `\
+`#> R2jags            "R 4.6.0; ; 2026-04-24 04:26:48 UTC; unix"                   `\
+`#> R2WinBUGS         "R 4.6.0; ; 2026-04-24 04:12:16 UTC; unix"                   `\
+`#> R6                "R 4.6.0; ; 2026-08-12 20:24:38 UTC; unix"                   `\
+`#> ragg              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:27:14 UTC; unix"`\
+`#> rainbow           "R 4.6.0; ; 2026-04-24 04:21:22 UTC; unix"                   `\
+`#> rappdirs          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
+`#> rbibutils         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:40 UTC; unix"`\
+`#> rcmdcheck         "R 4.6.0; ; 2026-04-25 01:43:34 UTC; unix"                   `\
+`#> RColorBrewer      "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
+`#> Rcpp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:40 UTC; unix"`\
+`#> RcppArmadillo     "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 10:56:40 UTC; unix"`\
+`#> RcppEigen         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:10 UTC; unix"`\
+`#> RcppParallel      "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-28 08:15:37 UTC; unix"`\
+`#> RcppTOML          "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:30:29 UTC; unix"`\
+`#> Rdpack            "R 4.6.0; ; 2026-08-12 20:25:08 UTC; unix"                   `\
+`#> rdtools           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-17 05:38:22 UTC; unix"`\
+`#> readr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:28:52 UTC; unix"`\
+`#> readxl            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 10:55:09 UTC; unix"`\
+`#> recipes           "R 4.6.0; ; 2026-08-25 04:36:52 UTC; unix"                   `\
+`#> RefManageR        "R 4.6.0; ; 2026-08-12 20:26:56 UTC; unix"                   `\
+`#> reformulas        "R 4.6.0; ; 2026-08-12 20:26:57 UTC; unix"                   `\
+`#> rematch           "R 4.6.0; ; 2026-08-12 20:24:38 UTC; unix"                   `\
+`#> rematch2          "R 4.6.0; ; 2026-08-12 20:26:52 UTC; unix"                   `\
+`#> remotes           "R 4.6.0; ; 2026-04-25 01:19:57 UTC; unix"                   `\
+`#> reprex            "R 4.6.0; ; 2026-08-12 20:29:36 UTC; unix"                   `\
+`#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:31 UTC; unix"`\
+`#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:22:48 UTC; unix"`\
+`#> rex               "R 4.6.0; ; 2026-04-25 01:47:01 UTC; unix"                   `\
+`#> rhdf5             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:31:01 UTC; unix"`\
+`#> rhdf5filters      "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:30:37 UTC; unix"`\
+`#> Rhdf5lib          "R 4.6.2; ; 2026-10-30 04:30:34 UTC; unix"                   `\
+`#> rhub              "R 4.6.0; ; 2026-04-25 01:56:40 UTC; unix"                   `\
+`#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:12:12 UTC; unix"`\
+`#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
+`#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:14 UTC; unix"`\
+`#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:01:02 UTC; unix"                   `\
+`#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:50:14 UTC; unix"`\
+`#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:42:36 UTC; unix"`\
+`#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:37 UTC; unix"`\
+`#> rProject          "R 4.6.2; ; 2026-10-30 04:25:10 UTC; unix"                   `\
+`#> rprojroot         "R 4.6.0; ; 2026-04-24 04:10:28 UTC; unix"                   `\
+`#> rsample           "R 4.6.0; ; 2026-04-25 03:00:58 UTC; unix"                   `\
+`#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:22 UTC; unix"`\
+`#> rstan             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:14:26 UTC; unix"`\
+`#> rstantools        "R 4.6.0; ; 2026-08-30 04:14:03 UTC; unix"                   `\
+`#> rstudioapi        "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
+`#> rversions         "R 4.6.0; ; 2026-04-25 00:44:10 UTC; unix"                   `\
+`#> rvest             "R 4.6.0; ; 2026-08-12 20:27:19 UTC; unix"                   `\
+`#> S7                "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
+`#> sandwich          "R 4.6.0; ; 2026-08-04 05:07:49 UTC; unix"                   `\
+`#> sass              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:43 UTC; unix"`\
+`#> scales            "R 4.6.0; ; 2026-08-12 20:25:26 UTC; unix"                   `\
+`#> selectr           "R 4.6.0; ; 2026-09-28 04:40:24 UTC; unix"                   `\
+`#> semlbci           "R 4.6.0; ; 2026-07-28 08:49:07 UTC; unix"                   `\
+`#> semmcci           "R 4.6.2; ; 2026-10-30 04:50:29 UTC; unix"                   `\
+`#> semPlot           "R 4.6.0; ; 2026-09-04 06:56:03 UTC; unix"                   `\
+`#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:26:48 UTC; unix"                   `\
+`#> sfd               "R 4.6.0; ; 2026-04-25 02:06:33 UTC; unix"                   `\
+`#> shape             "R 4.6.0; ; 2026-08-12 20:24:42 UTC; unix"                   `\
+`#> shiny             "R 4.6.0; ; 2026-08-12 20:28:26 UTC; unix"                   `\
+`#> simStateSpace     "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-30 04:50:48 UTC; unix"`\
+`#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 01:45:04 UTC; unix"`\
+`#> sourcetools       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:43 UTC; unix"`\
+`#> SparseM           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
+`#> sparsevctrs       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:13:48 UTC; unix"`\
+`#> splitfngr         "R 4.6.0; ; 2026-04-25 00:37:41 UTC; unix"                   `\
+`#> SQUAREM           "R 4.6.0; ; 2026-04-24 04:09:54 UTC; unix"                   `\
+`#> StanHeaders       "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:11:28 UTC; unix"`\
+`#> stringi           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:48 UTC; unix"`\
+`#> stringr           "R 4.6.0; ; 2026-08-12 20:26:00 UTC; unix"                   `\
+`#> strucchange       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-05 05:57:16 UTC; unix"`\
+`#> styler            "R 4.6.0; ; 2026-09-26 06:37:11 UTC; unix"                   `\
+`#> symSEM            "R 4.6.0; ; 2026-04-25 02:57:30 UTC; unix"                   `\
+`#> sys               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:43 UTC; unix"`\
+`#> systemfonts       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:32 UTC; unix"`\
+`#> tailor            "R 4.6.0; ; 2026-04-25 01:59:55 UTC; unix"                   `\
+`#> tensorA           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:32 UTC; unix"`\
+`#> testthat          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:16:13 UTC; unix"`\
+`#> texreg            "R 4.6.0; ; 2026-08-26 04:52:17 UTC; unix"                   `\
+`#> textshaping       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:25 UTC; unix"`\
+`#> tibble            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-23 06:07:13 UTC; unix"`\
+`#> tidymodels        "R 4.6.0; ; 2026-04-25 19:15:49 UTC; unix"                   `\
+`#> tidyr             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-29 06:40:06 UTC; unix"`\
+`#> tidyselect        "R 4.6.0; ; 2026-08-12 20:25:58 UTC; unix"                   `\
+`#> tidyverse         "R 4.6.0; ; 2026-08-12 20:33:11 UTC; unix"                   `\
+`#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
+`#> timeDate          "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
+`#> tinytex           "R 4.6.2; ; 2026-10-30 04:49:52 UTC; unix"                   `\
+`#> tune              "R 4.6.0; ; 2026-04-25 03:11:58 UTC; unix"                   `\
+`#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
+`#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:36 UTC; unix"`\
+`#> unigd             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:48:21 UTC; unix"`\
+`#> urca              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:13 UTC; unix"`\
+`#> urlchecker        "R 4.6.0; ; 2026-07-09 17:33:39 UTC; unix"                   `\
+`#> usethis           "R 4.6.0; ; 2026-09-11 04:14:23 UTC; unix"                   `\
+`#> utf8              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:48 UTC; unix"`\
+`#> uuid              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:49 UTC; unix"`\
+`#> V8                "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-27 04:22:22 UTC; unix"`\
+`#> vars              "R 4.6.0; ; 2026-04-25 00:58:21 UTC; unix"                   `\
+`#> vctrs             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:22 UTC; unix"`\
+`#> viridisLite       "R 4.6.0; ; 2026-08-12 20:24:48 UTC; unix"                   `\
+`#> vroom             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:27:10 UTC; unix"`\
+`#> waldo             "R 4.6.0; ; 2026-04-24 04:11:27 UTC; unix"                   `\
+`#> warp              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 01:42:00 UTC; unix"`\
+`#> whisker           "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
+`#> whoami            "R 4.6.0; ; 2026-04-25 01:39:48 UTC; unix"                   `\
+`#> withr             "R 4.6.0; ; 2026-08-12 20:24:48 UTC; unix"                   `\
+`#> workflows         "R 4.6.0; ; 2026-04-25 03:03:00 UTC; unix"                   `\
+`#> workflowsets      "R 4.6.0; ; 2026-04-25 03:16:45 UTC; unix"                   `\
+`#> xfun              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-17 04:55:20 UTC; unix"`\
+`#> xml2              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:11 UTC; unix"`\
+`#> xmlparsedata      "R 4.6.0; ; 2026-04-25 02:05:10 UTC; unix"                   `\
+`#> xopen             "R 4.6.0; ; 2026-04-25 01:06:35 UTC; unix"                   `\
+`#> xtable            "R 4.6.0; ; 2026-08-12 20:24:49 UTC; unix"                   `\
+`#> yaml              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:48 UTC; unix"`\
+`#> yardstick         "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 02:02:41 UTC; unix"`\
+`#> zip               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:05 UTC; unix"`\
+`#> zoo               "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-26 04:27:04 UTC; unix"`\
+`#> base              "R 4.6.2; ; 2026-10-29 16:28:24 UTC; unix"                   `\
+`#> boot              "R 4.6.2; ; 2026-10-29 16:31:18 UTC; unix"                   `\
+`#> class             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:31:32 UTC; unix"`\
+`#> cluster           "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:31:20 UTC; unix"`\
+`#> codetools         "R 4.6.2; ; 2026-10-29 16:31:24 UTC; unix"                   `\
+`#> compiler          "R 4.6.2; ; 2026-10-29 16:27:06 UTC; unix"                   `\
+`#> datasets          "R 4.6.2; ; 2026-10-29 16:28:08 UTC; unix"                   `\
+`#> foreign           "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:31:25 UTC; unix"`\
+`#> graphics          "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:27:38 UTC; unix"`\
+`#> grDevices         "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:27:32 UTC; unix"`\
+`#> grid              "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:28:17 UTC; unix"`\
+`#> KernSmooth        "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:31:27 UTC; unix"`\
+`#> lattice           "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:29:02 UTC; unix"`\
+`#> MASS              "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:28:59 UTC; unix"`\
+`#> Matrix            "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:29:07 UTC; unix"`\
+`#> methods           "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:28:08 UTC; unix"`\
+`#> mgcv              "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:31:35 UTC; unix"`\
+`#> nlme              "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:30:52 UTC; unix"`\
+`#> nnet              "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:31:33 UTC; unix"`\
+`#> parallel          "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:28:23 UTC; unix"`\
+`#> rpart             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:31:29 UTC; unix"`\
+`#> spatial           "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:31:34 UTC; unix"`\
+`#> splines           "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:28:21 UTC; unix"`\
+`#> stats             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:27:45 UTC; unix"`\
+`#> stats4            "R 4.6.2; ; 2026-10-29 16:28:22 UTC; unix"                   `\
+`#> survival          "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:31:01 UTC; unix"`\
+`#> tcltk             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:28:22 UTC; unix"`\
+`#> tools             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:27:06 UTC; unix"`\
+`#> utils             "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:27:26 UTC; unix"`\
 `#>                   Published`\
 `#> rProject          NA       `\
 `#> rProject          NA       `\
@@ -4535,7 +4513,6 @@
 `#> BiocVersion       NA       `\
 `#> bit               NA       `\
 `#> bit64             NA       `\
-`#> bitops            NA       `\
 `#> blob              NA       `\
 `#> bootStateSpace    NA       `\
 `#> brew              NA       `\
@@ -4783,7 +4760,6 @@
 `#> RcppEigen         NA       `\
 `#> RcppParallel      NA       `\
 `#> RcppTOML          NA       `\
-`#> RCurl             NA       `\
 `#> Rdpack            NA       `\
 `#> rdtools           NA       `\
 `#> readr             NA       `\

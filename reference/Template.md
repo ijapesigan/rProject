@@ -27,9 +27,9 @@ Template(path, type = NULL, check = FALSE)
 
 ## Value
 
-Returns the paths of the tier 2 files that were written (with
-`check = TRUE`, that would be written), invisibly, with the deleted
-files (or those that would be deleted) in the attribute `removed`.
+Returns the paths of the files that were written (with `check = TRUE`,
+that would be written), invisibly, with the deleted files (or those that
+would be deleted) in the attribute `removed`.
 
 ## Details
 
@@ -38,17 +38,24 @@ The type comes from a line in `.setup/scripts/project.R`,
 `"talk"`, and `"docker"`. Each type uses a few sets of files
 (`inst/template/manifest.tsv`). Each file has a tier:
 
-- Tier 1, links: the files Overleaf needs to compile the PDFs (the LaTeX
-  preamble, `.setup/latex/r-scripts/`, `.setup/load/load.R`, style
-  files, the lib documents; `latexmkrc` is linked to
-  `inst/latexmk/latexmkrc`). They stay Overleaf links that the user
-  refreshes. `Template()` never writes them; it lists the ones that
-  differ from rProject as links to refresh.
+- Tier 1, kept in Overleaf: the files Overleaf needs to compile the PDFs
+  (the LaTeX preamble, `.setup/latex/r-scripts/`, `.setup/load/load.R`,
+  style files, the lib documents).
 
-- Tier 2, written by make: everything else (workflows, scripts, ...). A
-  file is written when it is missing or differs; an overwritten file is
-  named (the template wins; change it in rProject). These files are not
-  in Overleaf or the private repository.
+- Tier 2, written by make: everything else (workflows, scripts, ...).
+  These files are not in Overleaf or the private repository, but the
+  `Makefile` (`make` needs it to run at all) and the `.gitignore` files
+  (a fresh clone keeps its export rules), kept in Overleaf.
+
+Every file is written when it is missing or differs (the template wins;
+change it in rProject). An overwritten tier 2 file is named; the files
+kept in Overleaf are named for upload. They are regular files in
+Overleaf, not links (if one still is, delete the link first); only
+`.setup/r-dependencies/` link to the functions project. `latexmkrc` and
+`project.Rproj`, also regular files in Overleaf, are written by
+[`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
+and
+[`Project()`](https://github.com/ijapesigan/rProject/reference/Project.md).
 
 Besides the files of its sets, a project gets:
 
@@ -74,8 +81,8 @@ in it; otherwise it is named and kept. Nothing in a private folder is
 deleted.
 
 In rProject itself, the tier 1 files are copied into `inst/template/`
-first, and the tier 2 files are written from `inst/template/` in the
-project folder, not from the installed package.
+first, and the files are written from `inst/template/` in the project
+folder, not from the installed package.
 
 Nothing is written or deleted in GitHub Actions (`GITHUB_ACTIONS` is
 `"true"`): CI uses the files already in the public repository.

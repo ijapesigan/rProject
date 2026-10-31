@@ -4,6 +4,20 @@
 
 ### Minor
 
+- docker set: the README’s “Use” part starts with RStudio Server when
+  the `Dockerfile` publishes port 8787 or installs RStudio
+  (`install_rstudio.sh`):
+  `docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 <image>`,
+  the address `http://localhost:8787`, the username (`DEFAULT_USER`,
+  else `rstudio`), and the password, as docker-docs’ and docker-rocker’s
+  READMEs had before the template.
+- [`SecretScan()`](https://github.com/ijapesigan/rProject/reference/SecretScan.md):
+  the OpenAI and Anthropic key patterns need a left boundary (no letter,
+  digit, `_`, or `-` before `sk-`), so `sk-` inside a longer name is not
+  a key. Simulation run folders such as `task-1-rep-1-alternative-200-…`
+  matched from `ta[sk-1-…]`: manMetaVARMed’s push 09bbf46 failed
+  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  on 14 such false positives.
 - Makefiles (package, lib, talk, docker): a project without
   `.setup/scripts/make-project.R` downloads the current one from
   rProject on GitHub before anything else (it installs the newest
@@ -65,10 +79,20 @@
   `.setup/scripts/.gitignore` (its Makefile uses them); talk gains
   `make-config.R` and `verify.sh` (`make verify`). So in every type,
   `.setup/scripts/` holds `project.R` plus generated files. In Overleaf,
-  generated files may stay as regular files, never as links; only
-  `.setup/scripts/` (all but `project.R`) is removed. The `Makefile`
-  (the entry point), `project.Rproj` (knitr finds the root by it), and
-  the `.gitignore` files stay.
+  a project keeps only the files it needs to compile and to run `make`:
+  the compile files (tier 1), `latexmkrc`, the `Makefile` (the entry
+  point), the `.gitignore` files (a fresh clone keeps its export rules),
+  and `project.Rproj` (knitr finds the root by it), all as regular
+  files, uploaded when the template changes (the agent names the
+  affected projects); everything else `make` writes is removed from
+  Overleaf. The only links are `.setup/r-dependencies/*` (the functions
+  project) and `bib.bib` (`inst/template/README.md`, “Overleaf”).
+  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  writes the tier 1 files too and names the kept files it writes for
+  upload (no more “Links to refresh”);
+  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  compares the `Makefile` and the `.gitignore` files with the private
+  repository.
 - `build-docs.sh` writes the template files first
   ([`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md))
   when a download has no `Makefile` or `make-project.R`.
