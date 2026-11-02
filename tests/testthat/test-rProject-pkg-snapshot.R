@@ -26,7 +26,7 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "takes the lock, then the day before the sif, then the variable"),
+      paste(text, "takes the lock, the day before the sif, then the variable"),
       {
         writeLines(
           text = "snapshot <- \"2026-01-02\"",
