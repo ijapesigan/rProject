@@ -1,6 +1,6 @@
 # Library Tags
 
-    ## Ignoring entry 'Pesigan-2022'  (line9801) because:
+    ## Ignoring entry 'Pesigan-2022'  (line10080) because:
     ##  A bibentry of bibtype 'PhdThesis' has to specify the fields: school, year
 
 |  | key | annotation | keywords |
@@ -22,6 +22,7 @@
 | Kalman-1960 | Kalman-1960 | NULL | NULL |
 | Alwin-Hauser-1975 | Alwin-Hauser-1975 | NULL | NULL |
 | Bradley-1978 | Bradley-1978 | robustness | NULL |
+| Breusch-Pagan-1979 | Breusch-Pagan-1979 | NULL | NULL |
 | Cronbach-Furby-1970 | Cronbach-Furby-1970 | NULL | NULL |
 | Efron-1979a | Efron-1979a | NULL | bootstrap, discriminant analysis, error rate estimation, jackknife, nonlinear regression, nonparametric variance estimation, resampling, subsample values |
 | Efron-1979b | Efron-1979b | NULL | NULL |
@@ -58,6 +59,7 @@
 | James-Brett-1984 | James-Brett-1984 | mediation, mediation-causalsteps | NULL |
 | Judd-Kenny-1981 | Judd-Kenny-1981 | mediation, mediation-causalsteps | NULL |
 | Kaplan-Martin-Robbins-1984 | Kaplan-Martin-Robbins-1984 | NULL | NULL |
+| Koenker-1981 | Koenker-1981 | NULL | NULL |
 | Kunsch-1989 | Kunsch-1989 | NULL | NULL |
 | MacKinnon-White-1985 | MacKinnon-White-1985 | regression, regression-hc | NULL |
 | McArdle-McDonald-1984 | McArdle-McDonald-1984 | NULL | NULL |
@@ -111,6 +113,7 @@
 | Muthen-Curran-1997 | Muthen-Curran-1997 | NULL | NULL |
 | Muthen-Shedden-1999 | Muthen-Shedden-1999 | NULL | NULL |
 | Oehlert-1992 | Oehlert-1992 | NULL | approximate moments, asymptotic approximations, Taylor series |
+| Olkin-Finn-1995 | Olkin-Finn-1995 | NULL | NULL |
 | Oud-vandenBercken-Essers-1990 | Oud-vandenBercken-Essers-1990 | NULL | NULL |
 | Politis-Romano-1994 | Politis-Romano-1994 | NULL | NULL |
 | Robey-Barcikowski-1992 | Robey-Barcikowski-1992 | robustness | NULL |
@@ -125,6 +128,7 @@
 | vanHouwelingen-Zwinderman-Stijnen-1993 | vanHouwelingen-Zwinderman-Stijnen-1993 | NULL | NULL |
 | VonKorff-Simon-1996 | VonKorff-Simon-1996 | NULL | NULL |
 | Wechsler-Dowdall-Davenport-etal-1995 | Wechsler-Dowdall-Davenport-etal-1995 | NULL | NULL |
+| Wilkinson-TaskForceonStatisticalInference-1999 | Wilkinson-TaskForceonStatisticalInference-1999 | NULL | NULL |
 | Arbuckle-1996 | Arbuckle-1996 | NULL | NULL |
 | Brockwell-Davis-1991 | Brockwell-Davis-1991 | NULL | NULL |
 | Collins-Horn-1991 | Collins-Horn-1991 | NULL | Change (Psychology), Psychometrics |
@@ -145,6 +149,7 @@
 | Schafer-1997 | Schafer-1997 | NULL | NULL |
 | Wills-Filer-1996 | Wills-Filer-1996 | NULL | NULL |
 | Costa-McCrae-1992 | Costa-McCrae-1992 | NULL | NULL |
+| Algina-Keselman-Penfield-2008 | Algina-Keselman-Penfield-2008 | NULL | NULL |
 | Almeida-2005 | Almeida-2005 | NULL | NULL |
 | Andrews-2000 | Andrews-2000 | NULL | NULL |
 | Arnett-2005 | Arnett-2005 | NULL | NULL |
@@ -270,6 +275,7 @@
 | Skrondal-Laake-2001 | Skrondal-Laake-2001 | NULL | NULL |
 | Sliwinski-2008 | Sliwinski-2008 | NULL | NULL |
 | Sliwinski-Almeida-Smyth-etal-2009 | Sliwinski-Almeida-Smyth-etal-2009 | NULL | NULL |
+| Smithson-2001 | Smithson-2001 | NULL | NULL |
 | Soltis-Soltis-2003 | Soltis-Soltis-2003 | NULL | bootstrap, jackknife, phylogeny, support |
 | Squeglia-Jacobus-Tapert-2009 | Squeglia-Jacobus-Tapert-2009 | NULL | NULL |
 | Stattin-Kerr-2000 | Stattin-Kerr-2000 | NULL | NULL |
@@ -297,6 +303,7 @@
 | Casella-Berger-2002 | Casella-Berger-2002 | NULL | mathematical statistics, probabilities |
 | Chassin-Hussong-Beltran-2009 | Chassin-Hussong-Beltran-2009 | NULL | NULL |
 | Chatfield-2003 | Chatfield-2003 | NULL | NULL |
+| Cohen-Cohen-West-etal-2003 | Cohen-Cohen-West-etal-2003 | regression | NULL |
 | Collins-Sayer-2002 | Collins-Sayer-2002 | NULL | NULL |
 | Feitelson-Rudolph-Schwiegelshohn-2003 | Feitelson-Rudolph-Schwiegelshohn-2003 | NULL | NULL |
 | Fernandez-2002 | Fernandez-2002 | NULL | NULL |
@@ -319,6 +326,7 @@
 | Aalen-Roysland-Gran-etal-2012 | Aalen-Roysland-Gran-etal-2012 | NULL | NULL |
 | Aalen-Roysland-Gran-etal-2016 | Aalen-Roysland-Gran-etal-2016 | NULL | NULL |
 | Albert-Li-Sun-etal-2019 | Albert-Li-Sun-etal-2019 | NULL | NULL |
+| Algina-Keselman-Penfield-2010 | Algina-Keselman-Penfield-2010 | NULL | NULL |
 | Appelbaum-Cooper-Kline-etal-2018 | Appelbaum-Cooper-Kline-etal-2018 | NULL | NULL |
 | Asparouhov-Hamaker-Muthen-2018 | Asparouhov-Hamaker-Muthen-2018 | NULL | Bayesian methods, dynamic factor analysis, intensive longitudinal data, time series analysis |
 | Asparouhov-Muthen-2019 | Asparouhov-Muthen-2019 | NULL | NULL |
@@ -362,6 +370,7 @@
 | Clapp-Madden-Mooney-etal-2017 | Clapp-Madden-Mooney-etal-2017 | NULL | NULL |
 | CribariNeto-daSilva-2011 | CribariNeto-daSilva-2011 | regression, regression-hc | NULL |
 | Crocetti-Hale-Dimitrova-etal-2015 | Crocetti-Hale-Dimitrova-etal-2015 | NULL | NULL |
+| Cumming-2014 | Cumming-2014 | NULL | NULL |
 | Curran-Bauer-2011 | Curran-Bauer-2011 | NULL | multilevel modeling, growth modeling, trajectory analysis, within-person effects |
 | Curran-Howard-Bainter-etal-2014 | Curran-Howard-Bainter-etal-2014 | NULL | NULL |
 | Deboeck-Boulton-2016 | Deboeck-Boulton-2016 | NULL | NULL |
@@ -377,6 +386,7 @@
 | Donamayor-Strelchuk-Baek-etal-2018 | Donamayor-Strelchuk-Baek-etal-2018 | NULL | NULL |
 | Driver-Oud-Voelkle-2017 | Driver-Oud-Voelkle-2017 | NULL | NULL |
 | Driver-Voelkle-2018 | Driver-Voelkle-2018 | NULL | NULL |
+| Dudgeon-2016 | Dudgeon-2016 | NULL | NULL |
 | Dudgeon-2017 | Dudgeon-2017 | NULL | standardized regression coefficients, robust confidence intervals, non-normality |
 | Eddelbuettel-Balamuta-2017 | Eddelbuettel-Balamuta-2017 | r, r-packages | NULL |
 | Eddelbuettel-Francois-2011 | Eddelbuettel-Francois-2011 | r, r-packages | NULL |
@@ -489,6 +499,7 @@
 | Rast-Ferrer-2018 | Rast-Ferrer-2018 | NULL | NULL |
 | Reichardt-2011 | Reichardt-2011 | NULL | NULL |
 | Roache-KarnsWright-Goros-etal-2019 | Roache-KarnsWright-Goros-etal-2019 | NULL | NULL |
+| Rosopa-Schaffer-Schroeder-2013 | Rosopa-Schaffer-Schroeder-2013 | NULL | NULL |
 | Rosseel-2012 | Rosseel-2012 | r, r-packages, sem, sem-software | NULL |
 | Rush-Rast-Almeida-etal-2019 | Rush-Rast-Almeida-etal-2019 | NULL | NULL |
 | Russell-Wang-Odgers-2016 | Russell-Wang-Odgers-2016 | NULL | NULL |
@@ -574,12 +585,14 @@
 | PQ-2017 | PQ-2017 | NULL | NULL |
 | Abbott-Dempsey-NahumShani-etal-2025 | Abbott-Dempsey-NahumShani-etal-2025 | NULL | NULL |
 | Adolf-Loossens-Tuerlinckx-etal-2021 | Adolf-Loossens-Tuerlinckx-etal-2021 | NULL | NULL |
+| Anderson-2024 | Anderson-2024 | NULL | NULL |
 | Antonakis-Bastardoz-Ronkko-2021 | Antonakis-Bastardoz-Ronkko-2021 | NULL | NULL |
 | Ash-Gueorguieva-Barnett-etal-2022 | Ash-Gueorguieva-Barnett-etal-2022 | NULL | NULL |
 | Baek-Luo-Lam-2023 | Baek-Luo-Lam-2023 | NULL | NULL |
 | Bakk-Kuha-2021 | Bakk-Kuha-2021 | NULL | NULL |
 | Berli-Inauen-Stadler-etal-2021 | Berli-Inauen-Stadler-etal-2021 | NULL | NULL |
 | Boker-Daniel-Orzek-2024 | Boker-Daniel-Orzek-2024 | NULL | NULL |
+| Bolt-Nomi-Bzdok-etal-2021 | Bolt-Nomi-Bzdok-etal-2021 | NULL | NULL |
 | Borenstein-2024 | Borenstein-2024 | NULL | NULL |
 | Borghuis-Bleidorn-Sijtsma-etal-2020 | Borghuis-Bleidorn-Sijtsma-etal-2020 | NULL | NULL |
 | Bringmann-2021 | Bringmann-2021 | NULL | NULL |
@@ -594,6 +607,7 @@
 | Cho-Chow-Marini-etal-2024 | Cho-Chow-Marini-etal-2024 | NULL | NULL |
 | Courtney-Russell-2021 | Courtney-Russell-2021 | NULL | NULL |
 | Declercq-Jamshidi-FernandezCastilla-etal-2022 | Declercq-Jamshidi-FernandezCastilla-etal-2022 | NULL | NULL |
+| Dedecker-Guedj-Taupin-2025 | Dedecker-Guedj-Taupin-2025 | NULL | NULL |
 | DeMartini-Gueorguieva-Taylor-etal-2022 | DeMartini-Gueorguieva-Taylor-etal-2022 | NULL | alcohol, alcohol habit, Bayesian modeling, habit learning, heavy drinking |
 | Didier-King-Polley-etal-2024 | Didier-King-Polley-etal-2024 | NULL | NULL |
 | Don-VanCappellen-Fredrickson-2022 | Don-VanCappellen-Fredrickson-2022 | NULL | NULL |
@@ -607,8 +621,10 @@
 | Georgeson-AlvarezBartolo-MacKinnon-2025 | Georgeson-AlvarezBartolo-MacKinnon-2025 | mediation | mediation, cross-sectional mediation, sensitivity analysis |
 | Gistelinck-Loeys-2020 | Gistelinck-Loeys-2020 | NULL | NULL |
 | Goldberg-Hanley-Baldwin-etal-2020 | Goldberg-Hanley-Baldwin-etal-2020 | NULL | NULL |
+| Gonzales-Li-2024 | Gonzales-Li-2024 | NULL | NULL |
 | Grayson-Harari-Matz-2026 | Grayson-Harari-Matz-2026 | NULL | NULL |
 | Groot-Kan-Jak-2024 | Groot-Kan-Jak-2024 | NULL | NULL |
+| Gu-Punjatewakupt-Sattayathamrongthian-etal-2026 | Gu-Punjatewakupt-Sattayathamrongthian-etal-2026 | NULL | NULL |
 | Gunn-Steingrimsson-Merrill-etal-2021 | Gunn-Steingrimsson-Merrill-etal-2021 | NULL | NULL |
 | Hallquist-Wright-Molenaar-2021 | Hallquist-Wright-Molenaar-2021 | NULL | NULL |
 | Hamaker-2025 | Hamaker-2025 | NULL | NULL |
@@ -678,6 +694,8 @@
 | Pesigan-Russell-Chow-2026 | Pesigan-Russell-Chow-2026 | NULL | NULL |
 | Pesigan-Sun-Cheung-2023 | Pesigan-Sun-Cheung-2023 | r, r-packages | standardized regression coefficients, confidence intervals, delta method standard errors, heteroskedasticity-consistent standard errors, R package |
 | Pick-Kasper-Allegue-etal-2023 | Pick-Kasper-Allegue-etal-2023 | NULL | NULL |
+| RajhWeber-Huber-Arendasy-2025 | RajhWeber-Huber-Arendasy-2025 | NULL | NULL |
+| RajhWeber-Huber-Arendasy-2026 | RajhWeber-Huber-Arendasy-2026 | NULL | NULL |
 | Ray-Du-Grodin-etal-2020 | Ray-Du-Grodin-etal-2020 | NULL | habit, alcohol, cigarette, smoking, drinking, human |
 | Revol-Ariens-Lafit-etal-2025 | Revol-Ariens-Lafit-etal-2025 | NULL | NULL |
 | Rhemtulla-vanBork-Borsboom-2020 | Rhemtulla-vanBork-Borsboom-2020 | NULL | NULL |
@@ -699,12 +717,15 @@
 | Schneider-Junghaenel-2023 | Schneider-Junghaenel-2023 | NULL | NULL |
 | Shao-Ong-2026 | Shao-Ong-2026 | NULL | NULL |
 | Shaygan-Karami-2020 | Shaygan-Karami-2020 | NULL | NULL |
+| Sladekova-Poupa-Field-2026 | Sladekova-Poupa-Field-2026 | NULL | NULL |
+| Sun-Chang-Yang-etal-2026 | Sun-Chang-Yang-etal-2026 | NULL | NULL |
 | Tofighi-Kelley-2020a | Tofighi-Kelley-2020a | mediation, mediation-bayesian, mediation-bootstrap, mediation-likelihood, mediation-montecarlo | indirect effect, confidence interval, sequential mediation, Bayesian credible interval |
 | Tofighi-Kelley-2020b | Tofighi-Kelley-2020b | NULL | NULL |
 | Usami-2021 | Usami-2021 | NULL | NULL |
 | Usami-2023 | Usami-2023 | NULL | NULL |
 | VanCappellen-Catalino-Fredrickson-2020 | VanCappellen-Catalino-Fredrickson-2020 | NULL | NULL |
 | vanEgmond-Wright-Livingston-etal-2020 | vanEgmond-Wright-Livingston-etal-2020 | NULL | NULL |
+| vanGinkel-2020 | vanGinkel-2020 | NULL | NULL |
 | Wang-Fang-Bergeman-2026 | Wang-Fang-Bergeman-2026 | NULL | NULL |
 | Wang-Liu-2026 | Wang-Liu-2026 | NULL | NULL |
 | Wang-Zhang-2020 | Wang-Zhang-2020 | ild, ild-mediation | longitudinal mediation, autoregressive mediation modeling, time interval selection, time-specific indirect effect, overall indirect effect |
@@ -736,12 +757,15 @@
 | Kurtzer-cclerget-Bauer-etal-2021 | Kurtzer-cclerget-Bauer-etal-2021 | container, container-singularity | NULL |
 | Patrick-Miech-Johnston-etal-2023 | Patrick-Miech-Johnston-etal-2023 | NULL | NULL |
 | Patrick-Miech-Johnston-etal-2025 | Patrick-Miech-Johnston-etal-2025 | NULL | NULL |
+| Pesigan-2026a | Pesigan-2026a | r, r-package | NULL |
+| Pesigan-2026b | Pesigan-2026b | r, r-package | NULL |
 | RCoreTeam-2021 | RCoreTeam-2021 | r, r-manual | NULL |
 | RCoreTeam-2022 | RCoreTeam-2022 | r, r-manual | NULL |
 | RCoreTeam-2023 | RCoreTeam-2023 | r, r-manual | NULL |
 | RCoreTeam-2024 | RCoreTeam-2024 | r, r-manual | NULL |
 | RCoreTeam-2025 | RCoreTeam-2025 | r, r-manual | NULL |
 | RCoreTeam-2026 | RCoreTeam-2026 | r, r-manual | NULL |
+| Revelle-2026 | Revelle-2026 | r, r-package | NULL |
 | SAMHSA-2020 | SAMHSA-2020 | NULL | NULL |
 | SAMHSA-2023 | SAMHSA-2023 | NULL | NULL |
 | Schulenberg-Patrick-Johnston-etal-2021 | Schulenberg-Patrick-Johnston-etal-2021 | NULL | NULL |
