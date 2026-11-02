@@ -14,10 +14,12 @@
 #' @export
 PkgRepo <- function(path) {
   # source
-  all <- "https://packagemanager.rstudio.com/all/"
+  # the cran repository: the all repository (CRAN and Bioconductor) no
+  # longer serves date snapshots
+  ppm <- "https://packagemanager.posit.co/cran/"
   snapshot <- .PkgSnapshot(path = path)
   src <- paste0(
-    all,
+    ppm,
     snapshot,
     "/"
   )
@@ -34,7 +36,7 @@ PkgRepo <- function(path) {
     # nolint start
     return(
       paste0(
-        all,
+        ppm,
         snapshot,
         "/bin/windows"
       )
@@ -43,7 +45,7 @@ PkgRepo <- function(path) {
   }
   if (os == "linux") {
     linux <- paste0(
-      all,
+      ppm,
       "__linux__/"
     )
     distro <- distro::distro()
