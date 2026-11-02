@@ -6,8 +6,10 @@
 #'   \item{the rProject that is running (`rproject_sha`, `rproject_version`);}
 #'   \item{the image (`image`, a registry digest, and `image_name`),
 #'     read from the running sif's labels;}
-#'   \item{the Posit Package Manager snapshot (`snapshot`, the image's date)
-#'     for packages the image lacks, and the R version (`r_version`);}
+#'   \item{the Posit Package Manager snapshot (`snapshot`, the day before
+#'     the image's date, the newest snapshot published when the image was
+#'     built) for packages the image lacks, and the R version
+#'     (`r_version`);}
 #'   \item{the packages the project adds in `project.R` (`extra_cran`,
 #'     `extra_github`), with their versions or commits;}
 #'   \item{for a proprietary add-on sif (`<name>-plus.sif`, built from the

@@ -26,7 +26,7 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "takes the lock, then the sif, then the variable"),
+      paste(text, "takes the lock, then the day before the sif, then the variable"),
       {
         writeLines(
           text = "snapshot <- \"2026-01-02\"",
@@ -38,7 +38,7 @@ lapply(
         )
         testthat::expect_equal(
           .PkgSnapshot(path = root, labels = labels),
-          "2026-10-22"
+          "2026-10-21"
         )
         Sys.setenv(RPROJECT_SNAPSHOT = "2025-05-05")
         testthat::expect_equal(
@@ -48,7 +48,7 @@ lapply(
         Sys.setenv(RPROJECT_SNAPSHOT = "latest")
         testthat::expect_equal(
           .PkgSnapshot(path = root, labels = labels),
-          "2026-10-22"
+          "2026-10-21"
         )
       }
     )
