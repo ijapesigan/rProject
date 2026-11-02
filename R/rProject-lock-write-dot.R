@@ -49,7 +49,13 @@
       ),
       paste0(
         "snapshot <- ",
-        quote(ifelse(is.null(sif$created), NA_character_, sif$created))
+        quote(
+          ifelse(
+            is.null(sif$created),
+            NA_character_,
+            .SnapshotDate(created = sif$created)
+          )
+        )
       ),
       paste0("r_version <- ", quote(r_version)),
       "# packages the project adds (project.R): version or commit",

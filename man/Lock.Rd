@@ -21,8 +21,10 @@ is published. The lock records
 \item{the rProject that is running (\code{rproject_sha}, \code{rproject_version});}
 \item{the image (\code{image}, a registry digest, and \code{image_name}),
 read from the running sif's labels;}
-\item{the Posit Package Manager snapshot (\code{snapshot}, the image's date)
-for packages the image lacks, and the R version (\code{r_version});}
+\item{the Posit Package Manager snapshot (\code{snapshot}, the day before
+the image's date, the newest snapshot published when the image was
+built) for packages the image lacks, and the R version
+(\code{r_version});}
 \item{the packages the project adds in \code{project.R} (\code{extra_cran},
 \code{extra_github}), with their versions or commits;}
 \item{for a proprietary add-on sif (\verb{<name>-plus.sif}, built from the

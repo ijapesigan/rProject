@@ -43,7 +43,7 @@ lapply(
           paste0("docker.io/ijapesigan/docs@", digest)
         )
         testthat::expect_equal(lock$image_name, "docker.io/ijapesigan/docs")
-        testthat::expect_equal(lock$snapshot, "2026-10-22")
+        testthat::expect_equal(lock$snapshot, "2026-10-21")
         testthat::expect_equal(lock$r_version, "4.5.1")
         testthat::expect_equal(lock$extra_cran, c(betaDelta = "1.0.6"))
         testthat::expect_equal(
@@ -51,7 +51,7 @@ lapply(
           c("jeksterslab/betaMC" = "deadbeef")
         )
         testthat::expect_false(exists("sif_sha256", envir = lock))
-        testthat::expect_equal(.LockRead(path = root)$snapshot, "2026-10-22")
+        testthat::expect_equal(.LockRead(path = root)$snapshot, "2026-10-21")
       }
     )
     testthat::test_that(

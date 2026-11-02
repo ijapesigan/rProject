@@ -1,3 +1,10 @@
+# rProject 0.0.61
+
+## Patch
+
+* The Posit Package Manager snapshot is the day before the image's date (`.SnapshotDate()`), in the lock (`snapshot`) and in `PkgRepo()`. The lock took the image's own date (UTC), and a day's snapshot is published only after that day ends: docs.sif built on 2026-11-01 (EDT) was dated 2026-11-02, the cran-beta* locks said `snapshot <- "2026-11-02"`, and every CI job that installs from the snapshot failed. At build time the image installs the newest packages, which is the previous day's snapshot.
+* `image-lock.sh` (CI) checks that the lock's snapshot is published and otherwise uses the newest earlier one (up to a week back), with a warning, so locks from before 0.0.61 work too.
+
 # rProject 0.0.60
 
 ## Minor
