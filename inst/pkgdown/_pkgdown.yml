@@ -1,0 +1,26 @@
+# rProject as a pkgdown template package: a site whose _pkgdown.yml sets
+#
+#   template:
+#     package: rProject
+#
+# takes the settings below as defaults (its own template: settings win).
+# Penn State identity, as the talk theme (psu-colors.sty, psu-fonts.sty).
+template:
+  bootstrap: 5
+  math-rendering: mathjax
+  bslib:
+    base_font: {google: "Roboto"}
+    heading_font: {google: "Roboto Slab"}
+    code_font: {google: "Roboto Mono"}
+    primary: "#1E407C"        # Beaver Blue
+    secondary: "#96BEE6"      # Pugh Blue
+    link-color: "#1E407C"
+    body-color: "#262626"     # Coaly
+    headings-color: "#001E44" # Nittany Navy
+    dark: "#001E44"           # Nittany Navy (the navbar below)
+    code-color: "#1E407C"
+
+# the navbar takes a Bootstrap bg-* class (bg-dark is Nittany Navy above);
+# pkgdown then sets light text (data-bs-theme="dark")
+navbar:
+  bg: dark

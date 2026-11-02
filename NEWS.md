@@ -1,3 +1,14 @@
+# rProject 0.0.60
+
+## Minor
+
+* rProject is a pkgdown template package: `inst/pkgdown/_pkgdown.yml` holds the shared site look (Bootstrap 5, `math-rendering: mathjax`, Roboto, Roboto Slab, and Roboto Mono, and the Penn State colors Nittany Navy, Beaver Blue, Pugh Blue, and Coaly). A project's `.setup/pkgdown/_pkgdown.yml` sets `template: package: rProject` in place of its own `template:` block; its own settings still win. rProject's site uses it, and its `url` is the GitHub Pages site.
+* The Quarto `custom.scss` (the `lib`, `man`, and `talk` sets, and rProject's own) uses the same fonts and colors, including the book sidebar. The Fira Sans and Fira Code imports are gone (Fira Code came from cdn.rawgit.com, which is shut down). Projects get it at their next `make project`.
+
+## Patch
+
+* `PkgRepo()` and the template `make-project.R` use Posit Package Manager's `cran` repository (`https://packagemanager.posit.co/cran/`). The `all` repository (CRAN and Bioconductor) no longer serves date snapshots: `/all/2026-10-31/` returned 404, so `R CMD check` could not read `PACKAGES` and packages the image lacks could not be installed from the snapshot. Bioconductor packages still come through `BiocManager`.
+
 # rProject 0.0.59
 
 ## Patch

@@ -1,10 +1,27 @@
 /*-- scss:defaults --*/
 
-// fonts
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i");
-@import url("https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|JetBrains+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+// Penn State identity (as the pkgdown template and the talk theme)
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Slab:wght@500;700&family=Roboto+Mono:wght@400;500&display=swap");
 
-$font-family-sans-serif: "Roboto", "Fira Sans", "Droid Serif", serif !default;
-$font-family-monospace: "JetBrains Mono", "Fira Code", monospace;
+$psu-navy: #001E44;   // Nittany Navy
+$psu-beaver: #1E407C; // Beaver Blue
+$psu-pugh: #96BEE6;   // Pugh Blue
+$psu-coaly: #262626;
+$psu-limestone-max: #F2F2F4;
+
+$font-family-sans-serif: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+$headings-font-family: "Roboto Slab", Georgia, serif;
+$font-family-monospace: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
+
+$primary: $psu-beaver;
+$link-color: $psu-beaver;
+$body-color: $psu-coaly;
+$headings-color: $psu-navy;
+$navbar-bg: $psu-navy;
+$navbar-fg: #FFFFFF;
+$navbar-hl: $psu-pugh;
+// a book shows its chapters in the sidebar (the navbar only on phones)
+$sidebar-fg: $psu-coaly;
+$sidebar-hl: $psu-beaver;
+$code-color: $psu-beaver;
+$code-block-bg: $psu-limestone-max;
