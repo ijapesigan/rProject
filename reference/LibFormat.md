@@ -45,7 +45,7 @@ Returns the names of the files that change (or changed), invisibly.
 
 Files that do not parse, or that hold more than one entry, are left as
 they are (see
-[`LibCheck()`](https://github.com/ijapesigan/rProject/reference/LibCheck.md)).
+[`LibCheck()`](https://ijapesigan.github.io/rProject/reference/LibCheck.md)).
 
 ## Author
 

@@ -2,7 +2,7 @@
 
 Lists the key, `annotation`, and `keywords` of every entry in the
 project's Quarto bibliography (`.setup/quarto/bib/quarto.bib`, written
-by [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md)),
+by [`Bib()`](https://ijapesigan.github.io/rProject/reference/Bib.md)),
 for the "Library Tags" page of the Quarto site.
 
 ## Usage

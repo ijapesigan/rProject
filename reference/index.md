@@ -2,214 +2,214 @@
 
 ## All functions
 
-- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md) :
+- [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md) :
   Write the Project's AI Instructions
 
-- [`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md)
+- [`AIGlobal()`](https://ijapesigan.github.io/rProject/reference/AIGlobal.md)
   : Install Global AI Instructions
 
-- [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md) :
+- [`Bib()`](https://ijapesigan.github.io/rProject/reference/Bib.md) :
   Consolidate .bib Files into a Single File
 
-- [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md)
+- [`BibLib()`](https://ijapesigan.github.io/rProject/reference/BibLib.md)
   : Copy .bib Files from lib-\* GitHUb Repositories
 
-- [`Binary()`](https://github.com/ijapesigan/rProject/reference/Binary.md)
+- [`Binary()`](https://ijapesigan.github.io/rProject/reference/Binary.md)
   : Setup Binaries not Included in the Package
 
-- [`Build()`](https://github.com/ijapesigan/rProject/reference/Build.md)
+- [`Build()`](https://ijapesigan.github.io/rProject/reference/Build.md)
   : Build Package
 
-- [`BuildIgnore()`](https://github.com/ijapesigan/rProject/reference/BuildIgnore.md)
+- [`BuildIgnore()`](https://ijapesigan.github.io/rProject/reference/BuildIgnore.md)
   :
 
   Build `.Rbuildignore`
 
-- [`CFF()`](https://github.com/ijapesigan/rProject/reference/CFF.md) :
+- [`CFF()`](https://ijapesigan.github.io/rProject/reference/CFF.md) :
 
   Build `CITATION.cff`
 
-- [`Clean()`](https://github.com/ijapesigan/rProject/reference/Clean.md)
+- [`Clean()`](https://ijapesigan.github.io/rProject/reference/Clean.md)
   : Clean Files Generated on Build
 
-- [`CleanPkg()`](https://github.com/ijapesigan/rProject/reference/CleanPkg.md)
+- [`CleanPkg()`](https://ijapesigan.github.io/rProject/reference/CleanPkg.md)
   : Clean R Packages
 
-- [`CleanProj()`](https://github.com/ijapesigan/rProject/reference/CleanProj.md)
+- [`CleanProj()`](https://ijapesigan.github.io/rProject/reference/CleanProj.md)
   : Clean Project
 
-- [`CleanTinyTex()`](https://github.com/ijapesigan/rProject/reference/CleanTinyTex.md)
+- [`CleanTinyTex()`](https://ijapesigan.github.io/rProject/reference/CleanTinyTex.md)
   :
 
   Clean `~/.TinyTex`
 
-- [`ConfigFiles()`](https://github.com/ijapesigan/rProject/reference/ConfigFiles.md)
+- [`ConfigFiles()`](https://ijapesigan.github.io/rProject/reference/ConfigFiles.md)
   : Setup Config Files
 
-- [`Coverage()`](https://github.com/ijapesigan/rProject/reference/Coverage.md)
+- [`Coverage()`](https://ijapesigan.github.io/rProject/reference/Coverage.md)
   : Code Coverage
 
-- [`DataAnalysis()`](https://github.com/ijapesigan/rProject/reference/DataAnalysis.md)
+- [`DataAnalysis()`](https://ijapesigan.github.io/rProject/reference/DataAnalysis.md)
   : Data Analysis
 
-- [`DataCompress()`](https://github.com/ijapesigan/rProject/reference/DataCompress.md)
+- [`DataCompress()`](https://ijapesigan.github.io/rProject/reference/DataCompress.md)
   : Compress Data Files
 
-- [`DataManifest()`](https://github.com/ijapesigan/rProject/reference/DataManifest.md)
+- [`DataManifest()`](https://ijapesigan.github.io/rProject/reference/DataManifest.md)
   : Write the Data Manifest
 
-- [`DataPath()`](https://github.com/ijapesigan/rProject/reference/DataPath.md)
+- [`DataPath()`](https://ijapesigan.github.io/rProject/reference/DataPath.md)
   : Find a Data File in the Data Tiers
 
-- [`DataProcess()`](https://github.com/ijapesigan/rProject/reference/DataProcess.md)
+- [`DataProcess()`](https://ijapesigan.github.io/rProject/reference/DataProcess.md)
   : Process Data
 
-- [`Dependencies()`](https://github.com/ijapesigan/rProject/reference/Dependencies.md)
+- [`Dependencies()`](https://ijapesigan.github.io/rProject/reference/Dependencies.md)
   :
 
   Copy Dependencies to from `.setup/r-dependencies` to `R`
 
-- [`Detritus()`](https://github.com/ijapesigan/rProject/reference/Detritus.md)
+- [`Detritus()`](https://ijapesigan.github.io/rProject/reference/Detritus.md)
   :
 
   Create `detritus/tex/tex-fig-*`
 
-- [`Environment()`](https://github.com/ijapesigan/rProject/reference/Environment.md)
+- [`Environment()`](https://ijapesigan.github.io/rProject/reference/Environment.md)
   :
 
   Setup `.Renviron`
 
-- [`EnvironmentProject()`](https://github.com/ijapesigan/rProject/reference/EnvironmentProject.md)
+- [`EnvironmentProject()`](https://ijapesigan.github.io/rProject/reference/EnvironmentProject.md)
   :
 
   Set `PROJECT` Environment Variable
 
-- [`EnvironmentTokens()`](https://github.com/ijapesigan/rProject/reference/EnvironmentTokens.md)
+- [`EnvironmentTokens()`](https://ijapesigan.github.io/rProject/reference/EnvironmentTokens.md)
   : Set Tokens
 
-- [`InstallLocal()`](https://github.com/ijapesigan/rProject/reference/InstallLocal.md)
+- [`InstallLocal()`](https://ijapesigan.github.io/rProject/reference/InstallLocal.md)
   : Install Applications on Local Machine
 
-- [`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
+- [`LatexCompile()`](https://ijapesigan.github.io/rProject/reference/LatexCompile.md)
   :
 
   Compile Output of `LatexKnit`
 
-- [`LatexKnit()`](https://github.com/ijapesigan/rProject/reference/LatexKnit.md)
+- [`LatexKnit()`](https://ijapesigan.github.io/rProject/reference/LatexKnit.md)
   :
 
   Knit `.setup/latex/*.Rtex`
 
-- [`LatexMake()`](https://github.com/ijapesigan/rProject/reference/LatexMake.md)
+- [`LatexMake()`](https://ijapesigan.github.io/rProject/reference/LatexMake.md)
   :
 
   Compile Output of `LatexKnit`
 
-- [`LatexTikzCompile()`](https://github.com/ijapesigan/rProject/reference/LatexTikzCompile.md)
+- [`LatexTikzCompile()`](https://ijapesigan.github.io/rProject/reference/LatexTikzCompile.md)
   : Compile Tikz
 
-- [`LibAdd()`](https://github.com/ijapesigan/rProject/reference/LibAdd.md)
+- [`LibAdd()`](https://ijapesigan.github.io/rProject/reference/LibAdd.md)
   : Add an Entry to the lib-\* Library from a DOI
 
-- [`LibCheck()`](https://github.com/ijapesigan/rProject/reference/LibCheck.md)
+- [`LibCheck()`](https://ijapesigan.github.io/rProject/reference/LibCheck.md)
   : Check the Entries of a lib-\* Library
 
-- [`LibFormat()`](https://github.com/ijapesigan/rProject/reference/LibFormat.md)
+- [`LibFormat()`](https://ijapesigan.github.io/rProject/reference/LibFormat.md)
   : Put the Entries of a lib-\* Library in the House Layout
 
-- [`LibPaths()`](https://github.com/ijapesigan/rProject/reference/LibPaths.md)
+- [`LibPaths()`](https://ijapesigan.github.io/rProject/reference/LibPaths.md)
   :
 
   Add `.library` to Library Paths
 
-- [`License()`](https://github.com/ijapesigan/rProject/reference/License.md)
+- [`License()`](https://ijapesigan.github.io/rProject/reference/License.md)
   : Generate License File
 
-- [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md) :
+- [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md) :
   Lint Project
 
-- [`Lock()`](https://github.com/ijapesigan/rProject/reference/Lock.md) :
+- [`Lock()`](https://ijapesigan.github.io/rProject/reference/Lock.md) :
   Record What Built the Project
 
-- [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md) :
+- [`Log()`](https://ijapesigan.github.io/rProject/reference/Log.md) :
   Create or Update a Change-Set Log
 
-- [`Manual()`](https://github.com/ijapesigan/rProject/reference/Manual.md)
+- [`Manual()`](https://ijapesigan.github.io/rProject/reference/Manual.md)
   : Package Manual
 
-- [`PkgDevel()`](https://github.com/ijapesigan/rProject/reference/PkgDevel.md)
+- [`PkgDevel()`](https://ijapesigan.github.io/rProject/reference/PkgDevel.md)
   : Install Development Packages from CRAN
 
-- [`PkgDevelGitHub()`](https://github.com/ijapesigan/rProject/reference/PkgDevelGitHub.md)
+- [`PkgDevelGitHub()`](https://ijapesigan.github.io/rProject/reference/PkgDevelGitHub.md)
   : Install Development Packages from GitHub
 
-- [`PkgProject()`](https://github.com/ijapesigan/rProject/reference/PkgProject.md)
+- [`PkgProject()`](https://ijapesigan.github.io/rProject/reference/PkgProject.md)
   : Install Project Packages from CRAN
 
-- [`PkgProjectBioconductor()`](https://github.com/ijapesigan/rProject/reference/PkgProjectBioconductor.md)
+- [`PkgProjectBioconductor()`](https://ijapesigan.github.io/rProject/reference/PkgProjectBioconductor.md)
   : Install Project Packages from Bioconductor
 
-- [`PkgProjectGitHub()`](https://github.com/ijapesigan/rProject/reference/PkgProjectGitHub.md)
+- [`PkgProjectGitHub()`](https://ijapesigan.github.io/rProject/reference/PkgProjectGitHub.md)
   : Install Project Packages from GitHub
 
-- [`PkgProjectVersion()`](https://github.com/ijapesigan/rProject/reference/PkgProjectVersion.md)
+- [`PkgProjectVersion()`](https://ijapesigan.github.io/rProject/reference/PkgProjectVersion.md)
   : Install Project Packages with Specific Version
 
-- [`PkgRepo()`](https://github.com/ijapesigan/rProject/reference/PkgRepo.md)
+- [`PkgRepo()`](https://ijapesigan.github.io/rProject/reference/PkgRepo.md)
   : Setup RStudio Package Manager Repository Based on the Current
   Operating System
 
-- [`Profile()`](https://github.com/ijapesigan/rProject/reference/Profile.md)
+- [`Profile()`](https://ijapesigan.github.io/rProject/reference/Profile.md)
   :
 
   Setup `.Rprofile`
 
-- [`Project()`](https://github.com/ijapesigan/rProject/reference/Project.md)
+- [`Project()`](https://ijapesigan.github.io/rProject/reference/Project.md)
   : Setup the project.Rproj file
 
-- [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+- [`Public()`](https://ijapesigan.github.io/rProject/reference/Public.md)
   : Check the Public Export
 
-- [`Quarto()`](https://github.com/ijapesigan/rProject/reference/Quarto.md)
+- [`Quarto()`](https://ijapesigan.github.io/rProject/reference/Quarto.md)
   : Render Quarto Project
 
-- [`ReadMe()`](https://github.com/ijapesigan/rProject/reference/ReadMe.md)
+- [`ReadMe()`](https://ijapesigan.github.io/rProject/reference/ReadMe.md)
   : Build README.md
 
-- [`SecretScan()`](https://github.com/ijapesigan/rProject/reference/SecretScan.md)
+- [`SecretScan()`](https://ijapesigan.github.io/rProject/reference/SecretScan.md)
   : Scan Project for Secrets
 
-- [`Site()`](https://github.com/ijapesigan/rProject/reference/Site.md) :
+- [`Site()`](https://ijapesigan.github.io/rProject/reference/Site.md) :
   Build Website
 
-- [`SizeCheck()`](https://github.com/ijapesigan/rProject/reference/SizeCheck.md)
+- [`SizeCheck()`](https://ijapesigan.github.io/rProject/reference/SizeCheck.md)
   : Check a Project Against Overleaf's Limits
 
-- [`Spec()`](https://github.com/ijapesigan/rProject/reference/Spec.md) :
+- [`Spec()`](https://ijapesigan.github.io/rProject/reference/Spec.md) :
   Create a Spec
 
-- [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
+- [`Style()`](https://ijapesigan.github.io/rProject/reference/Style.md)
   : Style Project
 
-- [`Tags()`](https://github.com/ijapesigan/rProject/reference/Tags.md) :
+- [`Tags()`](https://ijapesigan.github.io/rProject/reference/Tags.md) :
   Library Tags
 
-- [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+- [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   : Write the Template Files
 
-- [`TinyTex()`](https://github.com/ijapesigan/rProject/reference/TinyTex.md)
+- [`TinyTex()`](https://ijapesigan.github.io/rProject/reference/TinyTex.md)
   :
 
   Install `~/.TinyTex`
 
-- [`Tree()`](https://github.com/ijapesigan/rProject/reference/Tree.md) :
+- [`Tree()`](https://ijapesigan.github.io/rProject/reference/Tree.md) :
   Project Folders and What They Are For
 
-- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   : Verify an Overleaf Push
 
-- [`VignettesPrecompile()`](https://github.com/ijapesigan/rProject/reference/VignettesPrecompile.md)
+- [`VignettesPrecompile()`](https://ijapesigan.github.io/rProject/reference/VignettesPrecompile.md)
   : Precompile Vignettes
 
-- [`z`](https://github.com/ijapesigan/rProject/reference/z.md) : Data
+- [`z`](https://ijapesigan.github.io/rProject/reference/z.md) : Data
   from the Standard Normal Distribution

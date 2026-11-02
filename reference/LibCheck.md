@@ -44,7 +44,7 @@ Returns a data frame with the columns `file`, `key`, `severity`,
   suffix (`b` without `a`); other biber datamodel warnings.
 
 - **STYLE:** not in the house layout (see
-  [`LibFormat()`](https://github.com/ijapesigan/rProject/reference/LibFormat.md));
+  [`LibFormat()`](https://ijapesigan.github.io/rProject/reference/LibFormat.md));
   `\a'`-style accents; a page range with one hyphen; a DOI with a
   prefix; no final newline.
 

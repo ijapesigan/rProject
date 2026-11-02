@@ -37,7 +37,7 @@ LibAdd(doi, root, key = NULL, title = NULL, fields = NULL, write = FALSE)
 - write:
 
   Logical. If `TRUE`, write the file and run
-  [`LibCheck()`](https://github.com/ijapesigan/rProject/reference/LibCheck.md)
+  [`LibCheck()`](https://ijapesigan.github.io/rProject/reference/LibCheck.md)
   on its repository.
 
 ## Value

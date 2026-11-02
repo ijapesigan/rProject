@@ -53,9 +53,9 @@ kept in Overleaf are named for upload. They are regular files in
 Overleaf, not links (if one still is, delete the link first); only
 `.setup/r-dependencies/` link to the functions project. `latexmkrc` and
 `project.Rproj`, also regular files in Overleaf, are written by
-[`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
+[`LatexCompile()`](https://ijapesigan.github.io/rProject/reference/LatexCompile.md)
 and
-[`Project()`](https://github.com/ijapesigan/rProject/reference/Project.md).
+[`Project()`](https://ijapesigan.github.io/rProject/reference/Project.md).
 
 Besides the files of its sets, a project gets:
 

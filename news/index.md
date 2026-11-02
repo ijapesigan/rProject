@@ -1,10 +1,37 @@
 # Changelog
 
+## rProject 0.0.60
+
+### Minor
+
+- rProject is a pkgdown template package: `inst/pkgdown/_pkgdown.yml`
+  holds the shared site look (Bootstrap 5, `math-rendering: mathjax`,
+  Roboto, Roboto Slab, and Roboto Mono, and the Penn State colors
+  Nittany Navy, Beaver Blue, Pugh Blue, and Coaly). A project’s
+  `.setup/pkgdown/_pkgdown.yml` sets `template: package: rProject` in
+  place of its own `template:` block; its own settings still win.
+  rProject’s site uses it, and its `url` is the GitHub Pages site.
+- The Quarto `custom.scss` (the `lib`, `man`, and `talk` sets, and
+  rProject’s own) uses the same fonts and colors, including the book
+  sidebar. The Fira Sans and Fira Code imports are gone (Fira Code came
+  from cdn.rawgit.com, which is shut down). Projects get it at their
+  next `make project`.
+
+### Patch
+
+- [`PkgRepo()`](https://ijapesigan.github.io/rProject/reference/PkgRepo.md)
+  and the template `make-project.R` use Posit Package Manager’s `cran`
+  repository (`https://packagemanager.posit.co/cran/`). The `all`
+  repository (CRAN and Bioconductor) no longer serves date snapshots:
+  `/all/2026-10-31/` returned 404, so `R CMD check` could not read
+  `PACKAGES` and packages the image lacks could not be installed from
+  the snapshot. Bioconductor packages still come through `BiocManager`.
+
 ## rProject 0.0.59
 
 ### Patch
 
-- [`Dependencies()`](https://github.com/ijapesigan/rProject/reference/Dependencies.md)
+- [`Dependencies()`](https://ijapesigan.github.io/rProject/reference/Dependencies.md)
   and the template `make-install.R` copy `.setup/r-dependencies/` into
   `R/` with `overwrite = TRUE`, and `make-install.R` copies
   `.setup/cpp/Makevars` and `Makevars.win` into `src/` the same way.
@@ -24,19 +51,19 @@
   the address `http://localhost:8787`, the username (`DEFAULT_USER`,
   else `rstudio`), and the password, as docker-docs’ and docker-rocker’s
   READMEs had before the template.
-- [`SecretScan()`](https://github.com/ijapesigan/rProject/reference/SecretScan.md):
+- [`SecretScan()`](https://ijapesigan.github.io/rProject/reference/SecretScan.md):
   the OpenAI and Anthropic key patterns need a left boundary (no letter,
   digit, `_`, or `-` before `sk-`), so `sk-` inside a longer name is not
   a key. Simulation run folders such as
   `task-1-rep-1-alternative-200-...` matched from `ta[sk-1-...]`:
   manMetaVARMed’s push 09bbf46 failed
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   on 14 such false positives.
 - Makefiles (package, lib, talk, docker): a project without
   `.setup/scripts/make-project.R` downloads the current one from
   rProject on GitHub before anything else (it installs the newest
   rProject), and falls back to the image’s
-  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   only when offline. Before, the image’s rProject wrote the template
   files, so an image older than a workflow stopped `make project`
   (“Unknown workflows”: docker-torch and docker-rarch with docs built
@@ -83,7 +110,7 @@
   `detritus.R` and the knitr option scripts drop
   [`return()`](https://rdrr.io/r/base/function.html);
   `KnitrOptionsDefault()` takes
-  [`Detritus()`](https://github.com/ijapesigan/rProject/reference/Detritus.md)
+  [`Detritus()`](https://ijapesigan.github.io/rProject/reference/Detritus.md)
   from [`source()`](https://rdrr.io/r/base/source.html)’s value;
   `load.R`’s comments are prose. `make lint` and the lint workflow skip
   only `indentation_linter` on `.Rtex` files: lintr counts the `%` of a
@@ -101,14 +128,14 @@
   affected projects); everything else `make` writes is removed from
   Overleaf. The only links are `.setup/r-dependencies/*` (the functions
   project) and `bib.bib` (`inst/template/README.md`, “Overleaf”).
-  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   writes the tier 1 files too and names the kept files it writes for
   upload (no more “Links to refresh”);
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   compares the `Makefile` and the `.gitignore` files with the private
   repository.
 - `build-docs.sh` writes the template files first
-  ([`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md))
+  ([`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md))
   when a download has no `Makefile` or `make-project.R`.
 - docker set: the install scripts are generic and read the project’s
   lists. `scripts/install-apt.sh` (`apt.txt`), `install-cran.sh`
@@ -134,7 +161,7 @@
   `docker-build-push-daily-amd64-only`, for images with x86-only parts
   (docker-torch: CUDA).
 - “build lib” (`.setup/scripts/build-lib.sh`): publishes every lib-\* in
-  [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md)
+  [`BibLib()`](https://ijapesigan.github.io/rProject/reference/BibLib.md)
   (`make all` on a compute node, then `make auto`’s steps and the tag),
   waits for their CI, then dispatches rProject’s Make Project
   (`bib.bib`, `quarto.bib` on `main`) and Compile LaTeX (rProject Daily)
@@ -145,12 +172,12 @@
   handoff and `todo.txt`, checks what is pending (a push it waits for is
   verified and recorded as for “O2G”), reports, and waits. Not `/init`,
   Claude Code’s own command.
-- [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md)
+- [`BibLib()`](https://ijapesigan.github.io/rProject/reference/BibLib.md)
   stops when some lib-\* cannot be cloned (a `bib.bib` without them
   would look complete); when none can (offline),
-  [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md)
+  [`Bib()`](https://ijapesigan.github.io/rProject/reference/Bib.md)
   still keeps the previous `bib.bib`.
-- [`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
+- [`LatexCompile()`](https://ijapesigan.github.io/rProject/reference/LatexCompile.md)
   (`make latex`) checks each log: a document whose last run failed
   (fatal error, TeX capacity exceeded) stops the build in GitHub Actions
   and gives a warning locally. `latexmk -f` had left lib-apa as a
@@ -161,7 +188,7 @@
 ### Minor
 
 - Our own lock, not renv.
-  [`Lock()`](https://github.com/ijapesigan/rProject/reference/Lock.md)
+  [`Lock()`](https://ijapesigan.github.io/rProject/reference/Lock.md)
   (`make auto`) also records the image (`image`, a registry digest read
   from the running sif’s labels, and `image_name`), the Posit Package
   Manager snapshot (`snapshot`, the image’s date), `r_version`, and the
@@ -179,17 +206,17 @@
   always follow the newest rProject.
 - No upgrades anywhere: a package found in any library is never
   upgraded.
-  [`PkgProjectGitHub()`](https://github.com/ijapesigan/rProject/reference/PkgProjectGitHub.md)
+  [`PkgProjectGitHub()`](https://ijapesigan.github.io/rProject/reference/PkgProjectGitHub.md)
   reinstalls only for a commit SHA that differs from the installed one
   (a branch or tag never does) and uses
   `remotes::install_github(upgrade = "never")`;
-  [`PkgDevelGitHub()`](https://github.com/ijapesigan/rProject/reference/PkgDevelGitHub.md)
+  [`PkgDevelGitHub()`](https://ijapesigan.github.io/rProject/reference/PkgDevelGitHub.md)
   installs only missing packages;
-  [`Build()`](https://github.com/ijapesigan/rProject/reference/Build.md),
+  [`Build()`](https://ijapesigan.github.io/rProject/reference/Build.md),
   `make install`, and every
   [`pak::pkg_install()`](https://pak.r-lib.org/reference/pkg_install.html)
   pass `upgrade = FALSE`.
-- [`PkgRepo()`](https://github.com/ijapesigan/rProject/reference/PkgRepo.md)
+- [`PkgRepo()`](https://ijapesigan.github.io/rProject/reference/PkgRepo.md)
   uses the snapshot of the image’s date (`RPROJECT_SNAPSHOT`, the
   running sif, the lock, or `latest`) and knows Ubuntu noble.
 - GitHub Actions: each workflow that runs the image starts with a job,
@@ -200,7 +227,7 @@
   check-oldrel, test-coverage, lint) and the r-hub workflows install
   packages from the snapshot (not on R-devel); check-full’s `release`
   rows run the lock’s R version.
-- [`CleanPkg()`](https://github.com/ijapesigan/rProject/reference/CleanPkg.md)
+- [`CleanPkg()`](https://ijapesigan.github.io/rProject/reference/CleanPkg.md)
   (`make cleanpkg`) removes the project’s `.library` only; it no longer
   uninstalls the image’s packages. `make-all.yml` no longer runs it, and
   `make-project.R` installs rProject without its dependencies in GitHub
@@ -215,17 +242,17 @@
 - `make-project.R` is one file for every type (the `common` set; the
   docker set keeps an identical copy); talk gets the template `Makefile`
   (the same as the package one).
-  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   says to delete an Overleaf link when it overwrites a linked file.
 - Nine unused docker workflows leave the catalog (`removed.tsv`).
-- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   compares hand-written vignettes; only those knitted from
   `.setup/vignettes/` are skipped.
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   takes the log named in the commit message (`Log:`) first, then the
   newest pending log (two logs may be pending, e.g. a deletions-only
   push first).
-- [`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
+- [`LatexCompile()`](https://ijapesigan.github.io/rProject/reference/LatexCompile.md)
   gives pdfTeX 10 million more words of main memory (`extra_mem_bot`):
   `lib-apa` (biblatex-apa over the whole library) ran out of memory with
   biblatex 3.22 and compiled to a one-page stub.
@@ -236,11 +263,11 @@
 
 ### Minor
 
-- [`Tags()`](https://github.com/ijapesigan/rProject/reference/Tags.md)
+- [`Tags()`](https://ijapesigan.github.io/rProject/reference/Tags.md)
   (new) lists the key, annotation, and keywords of `quarto.bib` with
   rProject’s own parser; the “Library Tags” page (`tags.qmd`, lib, man,
   talk) uses it. `RefManageR` is dropped from
-  [`PkgDevel()`](https://github.com/ijapesigan/rProject/reference/PkgDevel.md)
+  [`PkgDevel()`](https://ijapesigan.github.io/rProject/reference/PkgDevel.md)
   and the docker image.
 - Overleaf keeps only the files its PDF compile needs (LaTeX preamble,
   `r-scripts`, `load.R` (now a link), style files, lib documents,
@@ -251,7 +278,7 @@
 - Placeholders `{{project}}`, `{{public}}`, `{{owner}}`, `{{repo}}` in
   any tier 2 template file; a file that needs the public repository is
   skipped without one.
-- [`Lock()`](https://github.com/ijapesigan/rProject/reference/Lock.md)
+- [`Lock()`](https://ijapesigan.github.io/rProject/reference/Lock.md)
   (new): `make auto` writes `.setup/scripts/rproject.lock` (the rProject
   commit and version); `make project` installs that rProject in GitHub
   Actions and locally with `make project LOCK=TRUE`. `rproject_ver` is
@@ -270,7 +297,7 @@
   successful build (with the `PAT` secret). So each image builds right
   after its base, and a failure stops the chain. `workflow_cron` is now
   optional; an invalid `workflow_next` stops
-  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md).
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md).
 - `.TemplateFill()`: a value may span several lines, and a line that
   holds only an empty placeholder is dropped.
 
@@ -300,41 +327,41 @@
 - Standard folders (`inst/template/folders.tsv`): each folder, its
   types, whether it is private, who writes and reads it, and its
   purpose.
-  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   creates the folder skeleton of the type (an empty `.gitignore` in each
   folder marked `create`; an existing `.gitignore` is kept).
 - Removed files (`inst/template/removed.tsv`):
-  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   deletes files that left the template and names them (to delete in
   Overleaf too); a folder is deleted only when nothing but `.gitignore`
   files is left in it, and nothing in a private folder is touched.
   0.0.54 removes `.devcontainer/`, `.setup/cran/`, `.setup/coverage/`,
   `.setup/latex/apa7/`, `.setup/scripts/secrets.R`, and an empty
   `.setup/bin/`.
-  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   returns the deleted files in the attribute `removed`.
-- [`Tree()`](https://github.com/ijapesigan/rProject/reference/Tree.md)
+- [`Tree()`](https://ijapesigan.github.io/rProject/reference/Tree.md)
   (new; `make tree`): the project’s folders and what each is for; flags
   missing standard folders, and folders that are not standard for the
   type.
-- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md): the
+- [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md): the
   AGENTS.md folder map comes from `folders.tsv` for the project’s type;
   `make tree` is in the make targets; the container section says
-  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   writes the workflows.
 - New vignette, “How an rProject Project Works”: types, folders,
   template tiers, the Overleaf protocol, make targets, and keywords.
 - `.VerifyPublic()` (so `make auto` and
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md))
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md))
   reads the private folders from `folders.tsv`; `.setup/notes/` and
   `.setup/repo/` are added to the template `.gitignore`.
 - `.setup/latex/pdf/` is left out of the public export (cran
   `.gitignore`); the CI builds it.
-- [`Coverage()`](https://github.com/ijapesigan/rProject/reference/Coverage.md)
+- [`Coverage()`](https://ijapesigan.github.io/rProject/reference/Coverage.md)
   no longer copies `.setup/coverage/.covrignore`, and
   `test-coverage.yml` drops its `.covignore` step (a typo; it never
   ran). Put covr’s `.covrignore` at the project root.
-- [`Binary()`](https://github.com/ijapesigan/rProject/reference/Binary.md)
+- [`Binary()`](https://ijapesigan.github.io/rProject/reference/Binary.md)
   stays: `.setup/bin/` is an optional folder for R scripts run at
   `make project` (for example, to build a bespoke binary); `make` no
   longer creates it.
@@ -343,7 +370,7 @@
 
 ### Minor
 
-- [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+- [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   (new; `make template`, and `make project` runs it) writes the template
   files of the project’s type from rProject’s `inst/template/`, so a
   template change reaches a project with `make` and no Overleaf refresh.
@@ -353,7 +380,7 @@
   written when missing or different, and an overwritten file is named.
   Tier 1 files (`Makefile`, `latexmkrc`, the LaTeX preamble, …) stay
   Overleaf links:
-  [`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
   lists the ones that differ as links to refresh. `check = TRUE` writes
   nothing. Nothing is written in GitHub Actions.
   `inst/template/manifest.tsv` lists the files;
@@ -364,13 +391,13 @@
 - `make project` writes the template files first when
   `.setup/scripts/make-project.R` is missing (a fresh copy from
   Overleaf), using the image’s rProject.
-- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   skips the tier 2 template files of the project’s type: they are
   written by make and are not uploaded.
-- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md) reads
+- [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md) reads
   the project type from the `type` line in `project.R` when it is
   present.
-- [`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md)
+- [`AIGlobal()`](https://ijapesigan.github.io/rProject/reference/AIGlobal.md)
   merges `claude-settings.json` into an existing
   `~/.claude/settings.json`: its keys win, permission rules are added to
   the existing ones, and other keys (e.g., an MCP allow, `autoMode`) are
@@ -385,7 +412,7 @@
 
 ### Patch
 
-- [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md)
+- [`BibLib()`](https://ijapesigan.github.io/rProject/reference/BibLib.md)
   clones without the user’s git config (`GIT_CONFIG_GLOBAL=/dev/null`; a
   config that rewrites https to ssh made the clones hang in the
   container), never prompts, clones shallow and quietly, and copies only
@@ -432,7 +459,7 @@
 
 ### Patch
 
-- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   reads only the file list of the pushed commit: the log section with a
   code block that starts with the commit’s first line (the top-level
   lists for the log’s own commit message; the lists inside a later
@@ -462,18 +489,18 @@
 
 ### Minor
 
-- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md)
+- [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md)
   creates `.setup/todo/` (`todo.txt`, the user’s to-do list, and a
   `.gitignore` that keeps the folder private) if and only if the folder
   does not exist, and the project’s `AGENTS.md` lists it in the folder
   map. Agents read `todo.txt` when planning and never edit it (global
   instructions).
-- [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+- [`Public()`](https://ijapesigan.github.io/rProject/reference/Public.md)
   and
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   treat `.setup/todo/` as private: the public export fails if it is
   published.
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   does not count changes under `.setup/todo/` as unlisted (the user
   edits the list on Overleaf at any time).
 - Global instructions (`.setup/ai/global/AGENTS.md`): how agents use
@@ -484,18 +511,18 @@
 
 ### Patch
 
-- [`LibFormat()`](https://github.com/ijapesigan/rProject/reference/LibFormat.md)
+- [`LibFormat()`](https://ijapesigan.github.io/rProject/reference/LibFormat.md)
   keeps entry types it does not list (a type outside its list became
   `@NA`) and knows `@Collection`.
-  [`LibCheck()`](https://github.com/ijapesigan/rProject/reference/LibCheck.md)
+  [`LibCheck()`](https://ijapesigan.github.io/rProject/reference/LibCheck.md)
   accepts `@Collection` (an edited volume; requires `editor`, `date`,
   `title`, `publisher`) in book libraries.
-- [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md):
+- [`Bib()`](https://ijapesigan.github.io/rProject/reference/Bib.md):
   without source `.bib` files, the existing `.setup/latex/bib/bib.bib`
   is copied to `vignettes/vignettes.bib` and
   `.setup/quarto/bib/quarto.bib`. A clone of the private repository has
   only `bib.bib` (`vignettes.bib` is gitignored), so
-  [`Site()`](https://github.com/ijapesigan/rProject/reference/Site.md)
+  [`Site()`](https://ijapesigan.github.io/rProject/reference/Site.md)
   could not rebuild `vignettes.bib` and pkgdown failed with “File
   ‘vignettes.bib’ not found”.
 
@@ -503,7 +530,7 @@
 
 ### Patch
 
-- [`BuildIgnore()`](https://github.com/ijapesigan/rProject/reference/BuildIgnore.md):
+- [`BuildIgnore()`](https://ijapesigan.github.io/rProject/reference/BuildIgnore.md):
   `.Rbuildignore` ignores the root `latexmkrc` (Overleaf’s copy, kept in
   every Overleaf project). Built from an Overleaf clone, `R CMD check`
   noted “Non-standard file/directory found at top level: ‘latexmkrc’”.
@@ -513,18 +540,18 @@
 
 ### Minor
 
-- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md): a
-  new project type, `"cran"`, for `cran-*` folders (R packages on CRAN
-  or headed there; their `project.R` names the package). They get the
+- [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md): a new
+  project type, `"cran"`, for `cran-*` folders (R packages on CRAN or
+  headed there; their `project.R` names the package). They get the
   package and the new CRAN section (`R CMD check --as-cran` clean,
   version and NEWS for every change,
   [`tempdir()`](https://rdrr.io/r/base/tempfile.html) only, the user
   submits).
-- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md): a
+- [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md): a
   project is a simulation when `.sim/README.md` (which describes the
   simulation) exists; `.sim/` alone (the template’s `make.sh`) is not
   one. rProject and plain packages were labelled “simulation”.
-- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md):
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md):
   `.setup/notes/claude.txt` (the resume commands, which the agent keeps
   current when the user leaves) is not counted as an unlisted change.
 - `make-project.R` (linked into every project): installs rProject alone
@@ -536,7 +563,7 @@
 ### Patch
 
 - `.LibLatex()` (used by
-  [`LibAdd()`](https://github.com/ijapesigan/rProject/reference/LibAdd.md))
+  [`LibAdd()`](https://ijapesigan.github.io/rProject/reference/LibAdd.md))
   keeps its character map as a two-column matrix instead of a named
   vector. Names become symbols, which R without a UTF-8 locale (R 3.6
   and R 4.1 on Windows) could not translate: `R CMD check` warned, and
@@ -546,12 +573,12 @@
 
 ### Patch
 
-- [`LibCheck()`](https://github.com/ijapesigan/rProject/reference/LibCheck.md)
+- [`LibCheck()`](https://ijapesigan.github.io/rProject/reference/LibCheck.md)
   no longer reports a layout difference for an entry checked out with
   CRLF line endings (Windows);
-  [`LibFormat()`](https://github.com/ijapesigan/rProject/reference/LibFormat.md)
+  [`LibFormat()`](https://ijapesigan.github.io/rProject/reference/LibFormat.md)
   and
-  [`LibAdd()`](https://github.com/ijapesigan/rProject/reference/LibAdd.md)
+  [`LibAdd()`](https://ijapesigan.github.io/rProject/reference/LibAdd.md)
   write LF line endings on every platform. This fixes the
   `test-rProject-lib.R` failure on the Windows R CMD check jobs.
 
@@ -559,29 +586,29 @@
 
 ### Minor
 
-- [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md)
+- [`Bib()`](https://ijapesigan.github.io/rProject/reference/Bib.md)
   joins the `.bib` files into `bib.bib` verbatim and no longer rewrites
   them with RefManageR (which turned `{\'e}` into `{\a'e}`, reordered
   fields, and silently dropped entries it could not read). RefManageR is
   no longer imported; `jsonlite` is (for Crossref).
 - New
-  [`LibCheck()`](https://github.com/ijapesigan/rProject/reference/LibCheck.md)
+  [`LibCheck()`](https://ijapesigan.github.io/rProject/reference/LibCheck.md)
   (and `make libcheck`): checks a `lib-*` library’s entries (one per
   file, file name, key and `-etal` rule, year and decade, entry type,
   required fields, ASCII, unescaped `%`, keys and DOIs used twice across
   repositories, lone suffixes, biber’s datamodel, house layout).
   `make lint` runs it in `lib-*` projects.
 - New
-  [`LibFormat()`](https://github.com/ijapesigan/rProject/reference/LibFormat.md)
+  [`LibFormat()`](https://ijapesigan.github.io/rProject/reference/LibFormat.md)
   (and `make libformat`): puts every entry in the house layout and field
   order, with `{\'e}` accents, `--` page ranges, and bare DOIs, without
   changing what the entries say.
 - New
-  [`LibAdd()`](https://github.com/ijapesigan/rProject/reference/LibAdd.md):
+  [`LibAdd()`](https://ijapesigan.github.io/rProject/reference/LibAdd.md):
   drafts an entry from a DOI’s Crossref record (issue date, LaTeX
   accents, key, repository, abstract, the library’s ISSN and publisher
   for the journal) and lists what it cannot decide.
-- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md): the
+- [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md): the
   library section states the conventions; the manuscript section says to
   check citations against the `lib-*` library and to add missing
   references there first.
@@ -593,42 +620,42 @@
 - `.setup/repo/` records where a project lives: `private-github.md`,
   `private-overleaf.md` (the project URL, never a share link), and
   `public-github.md` (`owner/repo`, or `none`).
-  [`Project()`](https://github.com/ijapesigan/rProject/reference/Project.md)
+  [`Project()`](https://ijapesigan.github.io/rProject/reference/Project.md)
   creates it when it is missing, with the two GitHub repositories filled
   in.
 - `verify.sh` clones the private repository named in
   `.setup/repo/private-github.md` (needed when `project.R` and the
   repository name differ, as in the docker projects).
-- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   checks `.setup/repo/` (“Repo info”): an Overleaf share link fails; a
   missing file, or a repository that differs from the `.verify` remote
   or from `clone.sh`, warns.
 - `Verify(record = TRUE)` records a fix-up push without a pending row:
   it finds the log from the commit message (`Log: .setup/logs/<log>`)
   and adds rows to the log and to `index.md`.
-- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md)
-  writes the three locations into `AGENTS.md`, and has a `"container"`
-  type for `docker-*` projects (`inst/ai/section-container.md`).
-- [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+- [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md) writes
+  the three locations into `AGENTS.md`, and has a `"container"` type for
+  `docker-*` projects (`inst/ai/section-container.md`).
+- [`Public()`](https://ijapesigan.github.io/rProject/reference/Public.md)
   and
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   treat `.setup/repo/` as private, and
-  [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+  [`Public()`](https://ijapesigan.github.io/rProject/reference/Public.md)
   applies `.gitignore` outside a git repository (for example, a folder
   downloaded from Overleaf).
-- [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md)
+- [`Log()`](https://ijapesigan.github.io/rProject/reference/Log.md)
   lists the files to delete in Overleaf (in the private repository but
   not in the project), and names the
-  [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md) files
+  [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md) files
   as generated.
 
 ### Patch
 
-- [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md)
+- [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
   and
-  [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
+  [`Style()`](https://ijapesigan.github.io/rProject/reference/Style.md)
   skip `.verify/`;
-  [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md)
+  [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
   resolves its exclusions relative to the project and no longer hides
   errors with [`try()`](https://rdrr.io/r/base/try.html).
 - `.DataManifestUsedBy()` keeps the `.setup/data-analysis/` and
@@ -640,7 +667,7 @@
 
 ### Patch
 
-- [`CFF()`](https://github.com/ijapesigan/rProject/reference/CFF.md)
+- [`CFF()`](https://ijapesigan.github.io/rProject/reference/CFF.md)
   works from any working directory: it passes cffr the project’s
   `DESCRIPTION` file and writes `CITATION.cff` into the project folder.
 
@@ -649,46 +676,46 @@
 ### Patch
 
 - Paths and shell calls work across platforms, and with spaces in paths:
-  - [`Profile()`](https://github.com/ijapesigan/rProject/reference/Profile.md)
+  - [`Profile()`](https://ijapesigan.github.io/rProject/reference/Profile.md)
     writes the library path with
     [`deparse()`](https://rdrr.io/r/base/deparse.html), and
-    [`Environment()`](https://github.com/ijapesigan/rProject/reference/Environment.md)
+    [`Environment()`](https://ijapesigan.github.io/rProject/reference/Environment.md)
     writes paths with forward slashes.
-  - [`DataManifest()`](https://github.com/ijapesigan/rProject/reference/DataManifest.md)
+  - [`DataManifest()`](https://ijapesigan.github.io/rProject/reference/DataManifest.md)
     makes paths relative by prefix, not by a regular expression built
     from the path.
   - Shell commands go through
     [`system2()`](https://rdrr.io/r/base/system2.html), with each path
     quoted for the platform’s shell:
-    [`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
+    [`LatexCompile()`](https://ijapesigan.github.io/rProject/reference/LatexCompile.md)
     and
-    [`LatexTikzCompile()`](https://github.com/ijapesigan/rProject/reference/LatexTikzCompile.md)
+    [`LatexTikzCompile()`](https://ijapesigan.github.io/rProject/reference/LatexTikzCompile.md)
     pass the `.tex` files to latexmk explicitly (no shell glob);
-    [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md)
+    [`Style()`](https://ijapesigan.github.io/rProject/reference/Style.md)
     finds the C++ files in R (no `find`);
-    [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md)
+    [`BibLib()`](https://ijapesigan.github.io/rProject/reference/BibLib.md)
     clones into the bib folder without changing the working directory;
     plus
-    [`Manual()`](https://github.com/ijapesigan/rProject/reference/Manual.md),
-    [`InstallLocal()`](https://github.com/ijapesigan/rProject/reference/InstallLocal.md),
-    [`ConfigFiles()`](https://github.com/ijapesigan/rProject/reference/ConfigFiles.md)
+    [`Manual()`](https://ijapesigan.github.io/rProject/reference/Manual.md),
+    [`InstallLocal()`](https://ijapesigan.github.io/rProject/reference/InstallLocal.md),
+    [`ConfigFiles()`](https://ijapesigan.github.io/rProject/reference/ConfigFiles.md)
     (`make -C`),
-    [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md),
+    [`Public()`](https://ijapesigan.github.io/rProject/reference/Public.md),
     and
-    [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md).
+    [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md).
   - New internal helpers: `.PathSlash()` and `.ShellQuote()`.
 - Tests pass on the plain GitHub runners (ubuntu, macOS, Windows) and
   under covr. Tests of functions that need the container layout
-  ([`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md),
-  [`Style()`](https://github.com/ijapesigan/rProject/reference/Style.md),
-  [`PkgProjectVersion()`](https://github.com/ijapesigan/rProject/reference/PkgProjectVersion.md))
+  ([`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md),
+  [`Style()`](https://ijapesigan.github.io/rProject/reference/Style.md),
+  [`PkgProjectVersion()`](https://ijapesigan.github.io/rProject/reference/PkgProjectVersion.md))
   skip when their packages are not in the site library. Tests of
   Unix-only behavior (file modes, `clang-format`,
-  [`CleanPkg()`](https://github.com/ijapesigan/rProject/reference/CleanPkg.md))
+  [`CleanPkg()`](https://ijapesigan.github.io/rProject/reference/CleanPkg.md))
   skip on Windows, as do
-  [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+  [`Public()`](https://ijapesigan.github.io/rProject/reference/Public.md)
   and
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   until a Windows run confirms them. Tests now use paths with spaces.
 - `inst/shell/install-*.sh`: a ShellCheck directive for the sourced
   `install-common.sh` (SC1091).
@@ -700,27 +727,27 @@
 - Unit tests for every exported function. Slow tests (installers,
   network, full LaTeX and Quarto builds) run only with
   `RPROJECT_SLOW_TESTS=true`. Functions that change the machine
-  ([`TinyTex()`](https://github.com/ijapesigan/rProject/reference/TinyTex.md),
-  [`CleanTinyTex()`](https://github.com/ijapesigan/rProject/reference/CleanTinyTex.md),
-  [`PkgDevel()`](https://github.com/ijapesigan/rProject/reference/PkgDevel.md),
-  [`PkgDevelGitHub()`](https://github.com/ijapesigan/rProject/reference/PkgDevelGitHub.md))
+  ([`TinyTex()`](https://ijapesigan.github.io/rProject/reference/TinyTex.md),
+  [`CleanTinyTex()`](https://ijapesigan.github.io/rProject/reference/CleanTinyTex.md),
+  [`PkgDevel()`](https://ijapesigan.github.io/rProject/reference/PkgDevel.md),
+  [`PkgDevelGitHub()`](https://ijapesigan.github.io/rProject/reference/PkgDevelGitHub.md))
   are checked for their interface only.
-  [`CleanPkg()`](https://github.com/ijapesigan/rProject/reference/CleanPkg.md)
+  [`CleanPkg()`](https://ijapesigan.github.io/rProject/reference/CleanPkg.md)
   is tested in a separate R process whose library paths are temporary.
-- [`CleanProj()`](https://github.com/ijapesigan/rProject/reference/CleanProj.md)
+- [`CleanProj()`](https://ijapesigan.github.io/rProject/reference/CleanProj.md)
   keeps `.sim` and `.sif` unless `sim = TRUE` or `sif = TRUE`, as
   documented. It used to delete them.
 - The package ships `inst/latexmk/latexmkrc` again (Overleaf’s latexmk
   configuration), so
-  [`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md)
+  [`LatexCompile()`](https://ijapesigan.github.io/rProject/reference/LatexCompile.md)
   and
-  [`LatexTikzCompile()`](https://github.com/ijapesigan/rProject/reference/LatexTikzCompile.md)
+  [`LatexTikzCompile()`](https://ijapesigan.github.io/rProject/reference/LatexTikzCompile.md)
   use the same latexmk rules on GitHub Actions and locally as on
   Overleaf. `.gitignore` now ignores only the root `latexmkrc`, and
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   compares `inst/latexmk/latexmkrc`.
 - The
-  [`Clean()`](https://github.com/ijapesigan/rProject/reference/Clean.md)
+  [`Clean()`](https://ijapesigan.github.io/rProject/reference/Clean.md)
   documentation says that `push = TRUE` does not delete `*secrets*`
   files in hidden folders such as `.setup`.
 
@@ -730,18 +757,18 @@
 
 - The user chooses the Apptainer image and runs
   `apptainer exec <image>`.
-  [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md)
+  [`Log()`](https://ijapesigan.github.io/rProject/reference/Log.md)
   records the image that actually ran (its name, build date, and base
   digest, from the container’s labels) under “Make commands run”.
 - The project instructions
-  ([`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md))
-  tell agents not to pick an image; `.setup/ai/project.md` has a line
-  for the image a project usually uses.
-- [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md) no
+  ([`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md)) tell
+  agents not to pick an image; `.setup/ai/project.md` has a line for the
+  image a project usually uses.
+- [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md) no
   longer takes `sif`.
-- [`SizeCheck()`](https://github.com/ijapesigan/rProject/reference/SizeCheck.md)
+- [`SizeCheck()`](https://ijapesigan.github.io/rProject/reference/SizeCheck.md)
   and
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   skip `.sif/`.
 
 ## rProject 0.0.37
@@ -768,7 +795,7 @@
   `apptainer exec <sif> make verify RECORD=TRUE`) pulls the private
   repository into `.verify` and checks the push.
   `.setup/scripts/verify.sh` only pulls (git; no R, no Apptainer).
-- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   has a new check, “New commit”, which fails, and records nothing, when
   the commit is already in `.setup/logs/index.md` (a stale `.verify` or
   no new push).
@@ -783,16 +810,16 @@
   (restricted; never public), `.setup/data-external` (local only), and
   `.setup/data-cache` (local only).
 - Added the
-  [`DataPath()`](https://github.com/ijapesigan/rProject/reference/DataPath.md)
+  [`DataPath()`](https://ijapesigan.github.io/rProject/reference/DataPath.md)
   function to find a data file by its plain name in the tiers, stored as
   is or compressed (`.xz`, `.gz`); `plain = TRUE` returns an
   uncompressed copy for tools such as Mplus.
 - Added the
-  [`DataCompress()`](https://github.com/ijapesigan/rProject/reference/DataCompress.md)
+  [`DataCompress()`](https://ijapesigan.github.io/rProject/reference/DataCompress.md)
   function to compress data files with xz, so they do not count as
   editable text in Overleaf.
 - Added the
-  [`DataManifest()`](https://github.com/ijapesigan/rProject/reference/DataManifest.md)
+  [`DataManifest()`](https://ijapesigan.github.io/rProject/reference/DataManifest.md)
   function and the `make manifest` target to write `.setup/ai/data.md`
   (private): tier, size, MD5, status, source, location, and the scripts
   that use each file.
@@ -802,10 +829,10 @@
 ### Patch
 
 - Added the
-  [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md)
+  [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md)
   function and the `make ai` target.
-  [`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md)
-  writes the project’s AI instructions (`AGENTS.md`, `CLAUDE.md`,
+  [`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md) writes
+  the project’s AI instructions (`AGENTS.md`, `CLAUDE.md`,
   `.github/copilot-instructions.md`) from templates in `inst/ai`, and
   creates `.setup/ai/project.md` for project facts once. Project types
   are detected (package, manuscript, simulation, library, talk) or set
@@ -813,8 +840,8 @@
   it.
 - `make project` upgrades rProject in other projects when GitHub has a
   newer commit (a pinned `rproject_ver` is still honored).
-- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
-  and [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md)
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
+  and [`Log()`](https://ijapesigan.github.io/rProject/reference/Log.md)
   treat the generated AI instruction files as generated.
 
 ## rProject 0.0.33
@@ -822,14 +849,14 @@
 ### Patch
 
 - Added the
-  [`SizeCheck()`](https://github.com/ijapesigan/rProject/reference/SizeCheck.md)
+  [`SizeCheck()`](https://ijapesigan.github.io/rProject/reference/SizeCheck.md)
   function and the `make sizecheck` target to check a project against
   Overleaf’s limits (editable text, file sizes, number of files, total
   size, duplicates). `make lint` reports it.
 - Added the
-  [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+  [`Public()`](https://ijapesigan.github.io/rProject/reference/Public.md)
   function and the `make public` target. `make auto` calls
-  [`Public()`](https://github.com/ijapesigan/rProject/reference/Public.md)
+  [`Public()`](https://ijapesigan.github.io/rProject/reference/Public.md)
   before `git add`, so private files, files over 50 MB, and tokens are
   never published.
 
@@ -838,17 +865,17 @@
 ### Patch
 
 - Added the
-  [`Spec()`](https://github.com/ijapesigan/rProject/reference/Spec.md)
-  and [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md)
+  [`Spec()`](https://ijapesigan.github.io/rProject/reference/Spec.md)
+  and [`Log()`](https://ijapesigan.github.io/rProject/reference/Log.md)
   functions and the `make spec` and `make log` targets.
-  [`Log()`](https://github.com/ijapesigan/rProject/reference/Log.md)
+  [`Log()`](https://ijapesigan.github.io/rProject/reference/Log.md)
   writes the change-set log, adds a pending row to
   `.setup/logs/index.md`, and lists the files to update in Overleaf by
   comparing the project with the private repository.
 - `.setup/scripts/verify.sh` keeps the clone of the private repository
   in `.verify` (local only), so `make verify` and `make log` work inside
   the container.
-- [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   ignores the generated `Config/roxygen2/version` line in `DESCRIPTION`.
 
 ## rProject 0.0.31
@@ -856,7 +883,7 @@
 ### Patch
 
 - Added the
-  [`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md)
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   function, the `make verify` target, and `.setup/scripts/verify.sh` to
   check an Overleaf push against its change-set log: listed files,
   deletions, unlisted changes, the commit message, secrets, and the
@@ -867,7 +894,7 @@
 
 ### Patch
 
-- [`BuildIgnore()`](https://github.com/ijapesigan/rProject/reference/BuildIgnore.md)
+- [`BuildIgnore()`](https://ijapesigan.github.io/rProject/reference/BuildIgnore.md)
   excludes AI tool files from package builds: `.claude`, `CLAUDE.md`,
   `CLAUDE.local.md`, `.mcp.json`, `AGENTS.md`, `.codex`, `GEMINI.md`,
   and `.gemini`.
@@ -876,7 +903,7 @@
 
 ### Patch
 
-- [`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md)
+- [`AIGlobal()`](https://ijapesigan.github.io/rProject/reference/AIGlobal.md)
   installs the GitHub Copilot instructions to
   `~/.copilot/copilot-instructions.md`, which Copilot loads in every
   session. `COPILOT_CUSTOM_INSTRUCTIONS_DIRS` is no longer needed.
@@ -885,7 +912,7 @@
 
 ### Patch
 
-- [`ConfigFiles()`](https://github.com/ijapesigan/rProject/reference/ConfigFiles.md)
+- [`ConfigFiles()`](https://ijapesigan.github.io/rProject/reference/ConfigFiles.md)
   no longer takes `git_user`. It clones `repo` (default
   `ijapesigan/dotfiles`) anonymously over HTTPS, ignoring Git URL
   rewrites, so `make dotfiles` works inside containers. It stops with an
@@ -896,7 +923,7 @@
 ### Patch
 
 - Added the
-  [`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md)
+  [`AIGlobal()`](https://ijapesigan.github.io/rProject/reference/AIGlobal.md)
   function and the `make aiglobal` target to install global AI
   instructions for Claude Code, Codex, and GitHub Copilot.
 
@@ -908,10 +935,10 @@
   `~/.config/rproject/<project>.R`, or `~/.config/rproject/secrets.R`)
   in `.setup/scripts/make-project.R`. `.setup/scripts/secrets.R` is only
   used as a fallback, with a warning.
-- [`Environment()`](https://github.com/ijapesigan/rProject/reference/Environment.md)
+- [`Environment()`](https://ijapesigan.github.io/rProject/reference/Environment.md)
   sets the permissions of `.Renviron` to `600`.
 - Added the
-  [`SecretScan()`](https://github.com/ijapesigan/rProject/reference/SecretScan.md)
+  [`SecretScan()`](https://ijapesigan.github.io/rProject/reference/SecretScan.md)
   function and the `make secretscan` target.
 
 ## rProject 0.0.25
@@ -934,7 +961,7 @@
 ### Patch
 
 - Edits to the
-  [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md)
+  [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
   function.
 
 ## rProject 0.0.22
@@ -942,7 +969,7 @@
 ### Patch
 
 - Added the
-  [`PkgProjectBioconductor()`](https://github.com/ijapesigan/rProject/reference/PkgProjectBioconductor.md)
+  [`PkgProjectBioconductor()`](https://ijapesigan.github.io/rProject/reference/PkgProjectBioconductor.md)
   function.
 
 ## rProject 0.0.21
@@ -963,11 +990,11 @@
 ### Patch
 
 - The
-  [`PkgProjectGitHub()`](https://github.com/ijapesigan/rProject/reference/PkgProjectGitHub.md)
+  [`PkgProjectGitHub()`](https://ijapesigan.github.io/rProject/reference/PkgProjectGitHub.md)
   function gives priority to installing packages that contain the `@`
   character in their specification.
 - The
-  [`PkgProjectVersion()`](https://github.com/ijapesigan/rProject/reference/PkgProjectVersion.md)
+  [`PkgProjectVersion()`](https://ijapesigan.github.io/rProject/reference/PkgProjectVersion.md)
   function installs the available package first before checking its
   version.
 
@@ -976,7 +1003,7 @@
 ### Patch
 
 - Added `.quarto` in the
-  [`BuildIgnore()`](https://github.com/ijapesigan/rProject/reference/BuildIgnore.md)
+  [`BuildIgnore()`](https://ijapesigan.github.io/rProject/reference/BuildIgnore.md)
   function.
 
 ## rProject 0.0.17
@@ -984,7 +1011,7 @@
 ### Patch
 
 - Revised the
-  [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md)
+  [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
   function.
 
 ## rProject 0.0.16
@@ -992,7 +1019,7 @@
 ### Patch
 
 - Added `tests` in exclusions in the
-  [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md)
+  [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
   function.
 
 ## rProject 0.0.15
@@ -1000,7 +1027,7 @@
 ### Patch
 
 - Added `nolint.R` in exclusions in the
-  [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md)
+  [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
   function.
 
 ## rProject 0.0.14
@@ -1008,21 +1035,21 @@
 ### Patch
 
 - Added `lib-2000-2009-manual` in
-  [`BibLib()`](https://github.com/ijapesigan/rProject/reference/BibLib.md).
+  [`BibLib()`](https://ijapesigan.github.io/rProject/reference/BibLib.md).
 
 ## rProject 0.0.13
 
 ### Patch
 
 - Added `.sif` to
-  [`BuildIgnore()`](https://github.com/ijapesigan/rProject/reference/BuildIgnore.md).
+  [`BuildIgnore()`](https://ijapesigan.github.io/rProject/reference/BuildIgnore.md).
 
 ## rProject 0.0.12
 
 ### Patch
 
 - Option to NOT delete `.sim` and `.sif` in
-  [`CleanProj()`](https://github.com/ijapesigan/rProject/reference/CleanProj.md).
+  [`CleanProj()`](https://ijapesigan.github.io/rProject/reference/CleanProj.md).
 
 ## rProject 0.0.11
 
@@ -1035,18 +1062,18 @@
 ### Patch
 
 - Added `".*\\.sif$` in
-  [`BuildIgnore()`](https://github.com/ijapesigan/rProject/reference/BuildIgnore.md).
+  [`BuildIgnore()`](https://ijapesigan.github.io/rProject/reference/BuildIgnore.md).
 
 ## rProject 0.0.9
 
 ### Patch
 
 - Added the
-  [`LatexTikzCompile()`](https://github.com/ijapesigan/rProject/reference/LatexTikzCompile.md)
+  [`LatexTikzCompile()`](https://ijapesigan.github.io/rProject/reference/LatexTikzCompile.md)
   function and
-  [`LatexMake()`](https://github.com/ijapesigan/rProject/reference/LatexMake.md)
+  [`LatexMake()`](https://ijapesigan.github.io/rProject/reference/LatexMake.md)
   calls it before
-  [`LatexCompile()`](https://github.com/ijapesigan/rProject/reference/LatexCompile.md).
+  [`LatexCompile()`](https://ijapesigan.github.io/rProject/reference/LatexCompile.md).
 
 ## rProject 0.0.8
 
@@ -1059,14 +1086,14 @@
 ### Patch
 
 - Exclude `R/methods.R` from linting in
-  [`Lint()`](https://github.com/ijapesigan/rProject/reference/Lint.md).
+  [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md).
 
 ## rProject 0.0.6
 
 ### Patch
 
 - Edits to
-  [`Clean()`](https://github.com/ijapesigan/rProject/reference/Clean.md)
+  [`Clean()`](https://ijapesigan.github.io/rProject/reference/Clean.md)
   to keep `vignettes.bib` when `push = TRUE`.
 
 ## rProject 0.0.5
@@ -1074,7 +1101,7 @@
 ### Patch
 
 - Option to build `bib.bib` from `lib-*` repositories using
-  [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md).
+  [`Bib()`](https://ijapesigan.github.io/rProject/reference/Bib.md).
 
 ## rProject 0.0.4
 
@@ -1087,7 +1114,7 @@
 ### Patch
 
 - Added the the function
-  [`Bib()`](https://github.com/ijapesigan/rProject/reference/Bib.md) to
+  [`Bib()`](https://ijapesigan.github.io/rProject/reference/Bib.md) to
   generate `bib.bib` files for LateX, quarto, and vignettes.
 
 ## rProject 0.0.2
@@ -1095,7 +1122,7 @@
 ### Patch
 
 - Added the argumnent `push` to
-  [`Clean()`](https://github.com/ijapesigan/rProject/reference/Clean.md)
+  [`Clean()`](https://ijapesigan.github.io/rProject/reference/Clean.md)
   for cleaning the directory in preparation for git push.
 
 ## rProject 0.0.1

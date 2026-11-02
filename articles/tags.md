@@ -1,6 +1,6 @@
 # Library Tags
 
-    ## Ignoring entry 'Pesigan-2022'  (line9773) because:
+    ## Ignoring entry 'Pesigan-2022'  (line9801) because:
     ##  A bibentry of bibtype 'PhdThesis' has to specify the fields: school, year
 
 |  | key | annotation | keywords |
@@ -32,6 +32,7 @@
 | Nesselroade-Cable-1974 | Nesselroade-Cable-1974 | NULL | NULL |
 | Osborne-Suddick-1972 | Osborne-Suddick-1972 | NULL | NULL |
 | Rubin-1976 | Rubin-1976 | NULL | NULL |
+| VanLoan-1978 | VanLoan-1978 | NULL | NULL |
 | Arnold-1974 | Arnold-1974 | NULL | stochastic differential equations |
 | Baltes-Nesselroade-1979 | Baltes-Nesselroade-1979 | NULL | NULL |
 | Rogosa-1979 | Rogosa-1979 | NULL | NULL |
@@ -325,6 +326,7 @@
 | Barker-Taylor-2014 | Barker-Taylor-2014 | NULL | habit, goal-directed behavior, prefrontal cortex, striatum, alcohol, addiction |
 | Barlow-Allen-Choate-2016 | Barlow-Allen-Choate-2016 | NULL | NULL |
 | Barnett-2015 | Barnett-2015 | NULL | NULL |
+| Bates-Machler-Bolker-etal-2015 | Bates-Machler-Bolker-etal-2015 | r, r-packages | NULL |
 | Bell-Jones-2015 | Bell-Jones-2015 | NULL | NULL |
 | Beltz-Wright-Sprague-etal-2016 | Beltz-Wright-Sprague-etal-2016 | NULL | NULL |
 | Bernardo-Wang-Pesigan-etal-2017 | Bernardo-Wang-Pesigan-etal-2017 | NULL | NULL |

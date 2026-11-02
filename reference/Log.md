@@ -51,7 +51,7 @@ Returns the path of the log invisibly.
 The file lists come from comparing the project with a clone of the
 private repository (by default `.verify`, kept by
 `.setup/scripts/verify.sh`), using the same rules as
-[`Verify()`](https://github.com/ijapesigan/rProject/reference/Verify.md).
+[`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md).
 Without a clone, the lists hold `TODO`.
 
 ## Author

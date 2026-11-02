@@ -75,7 +75,7 @@ The checks, and when each fails:
   end with `Log: .setup/logs/<log>`.
 
 - **Secrets:**
-  [`SecretScan()`](https://github.com/ijapesigan/rProject/reference/SecretScan.md)
+  [`SecretScan()`](https://ijapesigan.github.io/rProject/reference/SecretScan.md)
   finds a token in the private repository.
 
 - **Public export:** a file that `make auto` would publish is private

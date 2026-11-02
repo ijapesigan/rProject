@@ -2,7 +2,7 @@
 
 Writes the instruction files that AI tools read in this project, on top
 of the global instructions installed by
-[`AIGlobal()`](https://github.com/ijapesigan/rProject/reference/AIGlobal.md).
+[`AIGlobal()`](https://ijapesigan.github.io/rProject/reference/AIGlobal.md).
 
 ## Usage
 
@@ -47,7 +47,7 @@ The project type comes from `type`, else from an `ai` list in
 `.setup/scripts/project.R` (e.g.,
 `ai <- list(type = c("manuscript", "simulation"))`), else from the
 template type in `.setup/scripts/project.R` (`type <- "cran"`; see
-[`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md)),
+[`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)),
 else it is detected: `"simulation"` if `.sim/README.md` (which describes
 the simulation) exists, `"manuscript"` if a `*-manuscript*.Rtex` exists
 or the name starts with `man`, `"package"` and `"cran"` for a `cran-*`
@@ -58,7 +58,7 @@ folder (its `project.R` names the package), `"library"` for `lib-*`,
 Where the project lives (the private GitHub repository, the Overleaf
 project, and the public GitHub repository) comes from `.setup/repo/`,
 which
-[`Project()`](https://github.com/ijapesigan/rProject/reference/Project.md)
+[`Project()`](https://ijapesigan.github.io/rProject/reference/Project.md)
 creates when it is missing.
 
 The user chooses the Apptainer image and runs `apptainer exec`; the

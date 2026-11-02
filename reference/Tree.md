@@ -27,9 +27,9 @@ Returns a data frame, invisibly, with the columns `folder`, `status`
 ## Details
 
 The type comes from the `type` line in `.setup/scripts/project.R` (see
-[`Template()`](https://github.com/ijapesigan/rProject/reference/Template.md));
+[`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md));
 without it, it is guessed as in
-[`AI()`](https://github.com/ijapesigan/rProject/reference/AI.md).
+[`AI()`](https://ijapesigan.github.io/rProject/reference/AI.md).
 
 ## Author
 
