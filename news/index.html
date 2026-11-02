@@ -13,7 +13,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.60</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.61</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,6 +45,15 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.61" id="rproject-0061">rProject 0.0.61<a class="anchor" aria-label="anchor" href="#rproject-0061"></a></h2>
+<div class="section level3">
+<h3 id="patch-0-0-61">Patch<a class="anchor" aria-label="anchor" href="#patch-0-0-61"></a></h3>
+<ul><li>The Posit Package Manager snapshot is the day before the image’s date (<code>.SnapshotDate()</code>), in the lock (<code>snapshot</code>) and in <code><a href="../reference/PkgRepo.html">PkgRepo()</a></code>. The lock took the image’s own date (UTC), and a day’s snapshot is published only after that day ends: docs.sif built on 2026-11-01 (EDT) was dated 2026-11-02, the cran-beta* locks said <code>snapshot &lt;- "2026-11-02"</code>, and every CI job that installs from the snapshot failed. At build time the image installs the newest packages, which is the previous day’s snapshot.</li>
+<li>
+<code>image-lock.sh</code> (CI) checks that the lock’s snapshot is published and otherwise uses the newest earlier one (up to a week back), with a warning, so locks from before 0.0.61 work too.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.60" id="rproject-0060">rProject 0.0.60<a class="anchor" aria-label="anchor" href="#rproject-0060"></a></h2>
 <div class="section level3">

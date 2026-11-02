@@ -30,7 +30,7 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.60`\
+`#> [1] rProject_0.0.61`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
@@ -450,8 +450,8 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/Rtmp32Ong0/temp_libpath1152708b7b8d" "0.0.60"    `\
-`#> rProject          "/__w/rProject/rProject/.library"          "0.0.60"    `\
+`#> rProject          "/tmp/Rtmpivi7WP/temp_libpath115219022de2" "0.0.61"    `\
+`#> rProject          "/__w/rProject/rProject/.library"          "0.0.61"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
 `#> arm               "/usr/local/lib/R/site-library"            "1.15-3"    `\
@@ -745,7 +745,7 @@
 `#> roxygen2          "/usr/local/lib/R/site-library"            "8.1.1.9000"`\
 `#> rpf               "/usr/local/lib/R/site-library"            "1.0.15"    `\
 `#> RPostgres         "/usr/local/lib/R/site-library"            "1.4.10"    `\
-`#> rProject          "/usr/local/lib/R/site-library"            "0.0.59"    `\
+`#> rProject          "/usr/local/lib/R/site-library"            "0.0.60"    `\
 `#> rprojroot         "/usr/local/lib/R/site-library"            "2.1.1"     `\
 `#> rsample           "/usr/local/lib/R/site-library"            "1.3.2"     `\
 `#> RSQLite           "/usr/local/lib/R/site-library"            "3.53.3"    `\
@@ -793,7 +793,7 @@
 `#> tidyverse         "/usr/local/lib/R/site-library"            "2.0.0"     `\
 `#> timechange        "/usr/local/lib/R/site-library"            "0.4.0"     `\
 `#> timeDate          "/usr/local/lib/R/site-library"            "4052.112"  `\
-`#> tinytex           "/usr/local/lib/R/site-library"            "0.61.1"    `\
+`#> tinytex           "/usr/local/lib/R/site-library"            "0.61.4"    `\
 `#> tune              "/usr/local/lib/R/site-library"            "2.1.0"     `\
 `#> tzdb              "/usr/local/lib/R/site-library"            "0.5.0"     `\
 `#> ucminf            "/usr/local/lib/R/site-library"            "1.2.3"     `\
@@ -4086,8 +4086,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.2; ; 2026-11-02 01:30:15 UTC; unix"                   `\
-`#> rProject          "R 4.6.2; ; 2026-11-02 01:30:10 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-02 04:14:56 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-02 04:14:53 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:14:25 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-25 01:17:55 UTC; unix"                   `\
@@ -4381,7 +4381,7 @@
 `#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-01 04:55:46 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:42:36 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:37 UTC; unix"`\
-`#> rProject          "R 4.6.2; ; 2026-11-01 04:51:26 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-02 01:29:56 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 04:10:28 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-25 03:00:58 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:22 UTC; unix"`\
@@ -4429,7 +4429,7 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:33:11 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
-`#> tinytex           "R 4.6.2; ; 2026-11-01 04:55:24 UTC; unix"                   `\
+`#> tinytex           "R 4.6.2; ; 2026-11-02 01:29:54 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 03:11:58 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:36 UTC; unix"`\

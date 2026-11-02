@@ -8,8 +8,9 @@ is published. The lock records
 - the image (`image`, a registry digest, and `image_name`), read from
   the running sif's labels;
 
-- the Posit Package Manager snapshot (`snapshot`, the image's date) for
-  packages the image lacks, and the R version (`r_version`);
+- the Posit Package Manager snapshot (`snapshot`, the day before the
+  image's date, the newest snapshot published when the image was built)
+  for packages the image lacks, and the R version (`r_version`);
 
 - the packages the project adds in `project.R` (`extra_cran`,
   `extra_github`), with their versions or commits;

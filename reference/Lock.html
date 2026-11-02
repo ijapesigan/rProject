@@ -10,8 +10,10 @@ is published. The lock records
 the rProject that is running (rproject_sha, rproject_version);
 the image (image, a registry digest, and image_name),
 read from the running sif's labels;
-the Posit Package Manager snapshot (snapshot, the image's date)
-for packages the image lacks, and the R version (r_version);
+the Posit Package Manager snapshot (snapshot, the day before
+the image's date, the newest snapshot published when the image was
+built) for packages the image lacks, and the R version
+(r_version);
 the packages the project adds in project.R (extra_cran,
 extra_github), with their versions or commits;
 for a proprietary add-on sif (&amp;lt;name&amp;gt;-plus.sif, built from the
@@ -24,8 +26,10 @@ is published. The lock records
 the rProject that is running (rproject_sha, rproject_version);
 the image (image, a registry digest, and image_name),
 read from the running sif's labels;
-the Posit Package Manager snapshot (snapshot, the image's date)
-for packages the image lacks, and the R version (r_version);
+the Posit Package Manager snapshot (snapshot, the day before
+the image's date, the newest snapshot published when the image was
+built) for packages the image lacks, and the R version
+(r_version);
 the packages the project adds in project.R (extra_cran,
 extra_github), with their versions or commits;
 for a proprietary add-on sif (&amp;lt;name&amp;gt;-plus.sif, built from the
@@ -41,7 +45,7 @@ records the running image."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.60</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.61</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,8 +83,10 @@ records the running image."></head><body>
 is published. The lock records</p><ul><li><p>the rProject that is running (<code>rproject_sha</code>, <code>rproject_version</code>);</p></li>
 <li><p>the image (<code>image</code>, a registry digest, and <code>image_name</code>),
 read from the running sif's labels;</p></li>
-<li><p>the Posit Package Manager snapshot (<code>snapshot</code>, the image's date)
-for packages the image lacks, and the R version (<code>r_version</code>);</p></li>
+<li><p>the Posit Package Manager snapshot (<code>snapshot</code>, the day before
+the image's date, the newest snapshot published when the image was
+built) for packages the image lacks, and the R version
+(<code>r_version</code>);</p></li>
 <li><p>the packages the project adds in <code>project.R</code> (<code>extra_cran</code>,
 <code>extra_github</code>), with their versions or commits;</p></li>
 <li><p>for a proprietary add-on sif (<code>&lt;name&gt;-plus.sif</code>, built from the
