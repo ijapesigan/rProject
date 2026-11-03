@@ -1,5 +1,16 @@
 # Changelog
 
+## rProject 0.0.62
+
+### Patch
+
+- The pkgdown template (`inst/pkgdown/_pkgdown.yml`) renders math with
+  KaTeX (`math-rendering: katex`) instead of MathJax. pkgdown 2.2.1
+  writes its MathJax configuration after the MathJax script, which
+  replaces the running MathJax object, so macros MathJax autoloads, such
+  as `\boldsymbol`, failed on every site using the template
+  (simStateSpace, the cran-beta\* packages).
+
 ## rProject 0.0.61
 
 ### Patch
