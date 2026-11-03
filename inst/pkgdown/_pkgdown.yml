@@ -7,7 +7,10 @@
 # Penn State identity, as the talk theme (psu-colors.sty, psu-fonts.sty).
 template:
   bootstrap: 5
-  math-rendering: mathjax
+  # KaTeX, not MathJax: pkgdown 2.2.1 writes window.MathJax = {...} after
+  # the MathJax script, which replaces the running MathJax, so autoloaded
+  # macros (\boldsymbol) fail. pkgdown loads KaTeX itself: no in_header.
+  math-rendering: katex
   bslib:
     base_font: {google: "Roboto"}
     heading_font: {google: "Roboto Slab"}
