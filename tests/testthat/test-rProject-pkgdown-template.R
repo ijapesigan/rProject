@@ -27,7 +27,7 @@ lapply(
           any(grepl(pattern = "^  bootstrap: 5$", x = lines))
         )
         testthat::expect_true(
-          any(grepl(pattern = "^  math-rendering: mathjax$", x = lines))
+          any(grepl(pattern = "^  math-rendering: katex$", x = lines))
         )
       }
     )
