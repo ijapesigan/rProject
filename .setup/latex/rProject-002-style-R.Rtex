@@ -74,10 +74,17 @@
 \maketitle
 
 Follow the Google R style guide (\url{https://google.github.io/styleguide/Rguide.html}) as much as possible.
-Note that the Google R style guide is a fork of the Tidyverse style guide (\url{https://style.tidyverse.org/index.html})
-with some changes most notably with regard to function names.
-Thus, only flags that relate to function names
-are allowed when running \texttt{lintr}.
+The Google R style guide is a fork of the Tidyverse style guide (\url{https://style.tidyverse.org/index.html}),
+most notably with regard to function names.
+This guide lists the rules that differ from both or that they leave open.
+Where this guide and the Google guide disagree, this guide wins
+(for example, the Google guide asks for an explicit \texttt{return()}; this guide does not allow it).
+
+\texttt{make style} formats the code with \texttt{styler} (Tidyverse style).
+\texttt{make lint} checks it with \texttt{lintr}'s default linters
+and the checks of this guide (Section~\ref{sec:tools}).
+Agents follow \texttt{.setup/ai/style/r.md},
+which follows this guide and is changed together with it.
 
 \section{R Objects}
 
@@ -87,13 +94,94 @@ are allowed when running \texttt{lintr}.
 
 \section{R Functions}
 
+\subsection{Names}
+
 \begin{itemize}
-    \item use \texttt{BigCamelCase} for function names to distinguish functions from other objects 
+    \item use \texttt{BigCamelCase} for function names to distinguish functions from other objects
     \item append a dot (\texttt{.}) at the beginning for unexported functions (\texttt{.Foo})
     \item append dot Check (\texttt{.Check}) at the beginning for unexported functions used for sanity checks (\texttt{.CheckFoo})
-    \item when calling functions from another package use the \texttt{::} notation as much as possible (\texttt{stats::rnorm(n = 10, mean = 100, sd = 15)}), except for functions from the \texttt{base} package.
-    \item when calling a function, use argument names as much as possible (\texttt{stats::rnorm(n = 10, mean = 100, sd = 15)})
-    \item Avoid explicit return as much as possible.
+    \item S3 methods are named \texttt{generic.class}, with lowercase class names
+    (\texttt{print.betadelta}, \texttt{summary.betadelta})
+\end{itemize}
+
+\subsection{Calling Functions}
+
+\begin{itemize}
+    \item when calling functions from another package use the \texttt{::} notation
+    (\texttt{stats::rnorm(n = 10, mean = 100, sd = 15)}),
+    except for functions from the \texttt{base} package.
+    This includes the packages R attaches by default
+    (\texttt{stats::}, \texttt{utils::}, \texttt{methods::}, \texttt{graphics::}, \texttt{grDevices::})
+    and \texttt{testthat::} in tests.
+    Roxygen examples may call functions without \texttt{::},
+    since users copy them.
+    \item when calling a function, name every argument, including the first
+    (\texttt{length(x = x)}, \texttt{stats::lm(formula = y \textasciitilde{} x, data = df)}).
+    Values passed through \texttt{...} are not named,
+    since a name there changes the result
+    (\texttt{c(1, 2)}, \texttt{list(a, b)}, \texttt{paste(a, b)}).
+    \item do not use \texttt{library()}, \texttt{require()}, or \texttt{attach()}
+    in \texttt{R} or in tests; use \texttt{pkg::fn()}
+    \item do not use pipes (\texttt{|>}, \texttt{\%>\%}) in \texttt{R}.
+    Scripts and vignettes may use them.
+\end{itemize}
+
+\begin{Verbatim}
+# yes
+fit <- stats::lm(
+  formula = QUALITY ~ NARTIC + PCTGRT,
+  data = nas1982
+)
+out <- BetaDelta(object = fit, type = "mvn")
+testthat::expect_equal(
+  object = length(x = stats::coef(object = out)),
+  expected = 2
+)
+
+# no
+fit <- lm(QUALITY ~ NARTIC + PCTGRT, data = nas1982)
+out <- BetaDelta(fit, type = "mvn")
+testthat::expect_equal(length(coef(out)), 2)
+\end{Verbatim}
+
+\subsection{Function Bodies}
+
+\begin{itemize}
+    \item do not use an explicit \texttt{return()}.
+    The value of a function is its last expression.
+    \item to exit early, put the rest of the body in the \texttt{else} branch,
+    so that the value of the \texttt{if}--\texttt{else} is the result.
+    Invalid input stops in a sanity check (\texttt{.CheckFoo()}) with \texttt{stop()}.
+    In loops, \texttt{next} and \texttt{break} are fine.
+    In tests, the \texttt{testthat::skip\_*()} functions exit early (Section~\ref{sec:skip}).
+    \item every \texttt{if}, \texttt{else}, \texttt{for}, \texttt{while}, \texttt{repeat},
+    and \texttt{function} body is in braces (\texttt{\{\}}), even a body of one line
+    \item keep lines under 80 characters, including roxygen comments
+\end{itemize}
+
+\begin{Verbatim}
+# yes
+.Foo <- function(x) {
+  if (length(x = x) == 0) {
+    NULL
+  } else {
+    sum(x)
+  }
+}
+
+# no
+.Foo <- function(x) {
+  if (length(x) == 0) return(NULL)
+  sum(x)
+}
+\end{Verbatim}
+
+\subsection{Documentation}
+
+\begin{itemize}
+    \item every exported function has roxygen documentation
+    (\texttt{@param}, \texttt{@return}, \texttt{@examples})
+    and a test file (Section~\ref{sec:tests})
 \end{itemize}
 
 \section{File and Filenames}
@@ -117,32 +205,41 @@ are allowed when running \texttt{lintr}.
 
 \begin{itemize}
     \item use one file per function
-    \item use the function name as part of the filename
+    \item use the function name as part of the filename,
+    converting \texttt{BigCamelCase} to lowercase using dash (\texttt{-}) as separator
     \item for files under \texttt{R} and \texttt{.setup/r-dependencies}
         \begin{itemize}
             \item package name dash function name dot R (\texttt{template-foo.R})
             \item if the file contains an unexported function, follow the rules as usual but append the word \texttt{dot} at the end of the filename (\texttt{template-foo-dot.R})
             \item if the file contains an unexported sanity check function, follow the rules as usual but append the word \texttt{check} at the end of the filename (\texttt{template-foo-check.R})
+            \item the S3 methods of one class go together in one file,
+            an exception to one file per function
+            (\texttt{template-foo-methods.R})
         \end{itemize}
 \end{itemize}
 
 \subsection{Files Under Test Folders}
+\label{sec:tests}
 
 \subsubsection{Folders}
 
 \begin{itemize}
     \item \texttt{tests/testthat} for unit tests that are part of the package
     \item \texttt{.setup/tests-benchmark} for benchmark tests that are \textbf{NOT} part of the package unit tests
-    \item \texttt{.setup/tests-external} for external tests that are \textbf{NOT} part of the package unit tests
+    \item \texttt{.setup/tests-external} for external tests that are \textbf{NOT} part of the package unit tests,
+    including tests that take too long for continuous integration (CI)
 \end{itemize}
 
 \subsubsection{Files and Filenames}
 
 \begin{itemize}
-    \item use \texttt{setup-test.R} as an optional file for loading setup function or objects.
-    Note that \texttt{setup-test.R} is sourced before the \texttt{test*.R} files.
+    \item use \texttt{tests/testthat/helper-template.R} (package name after \texttt{helper-})
+    for helper functions and objects used by the tests, such as the skip helpers (Section~\ref{sec:skip}).
+    \texttt{testthat} sources the \texttt{helper*.R} files before the \texttt{test*.R} files.
     \item use one file for tests for a single function
     \item use the function name as part of the filename but convert \texttt{BigCamelCase} to lowercase using dash (\texttt{-}) as separator
+    \item every file follows the patterns below; there are no exceptions
+    (for example, a coverage test is \texttt{test-template-coverage.R}, not \texttt{test-zzz-coverage.R})
     \item for files under \texttt{tests/testthat}
         \begin{itemize}
             \item test dash package name dash function name dot R (\texttt{test-template-foo.R})
@@ -157,14 +254,105 @@ are allowed when running \texttt{lintr}.
         \end{itemize}
 \end{itemize}
 
+\subsubsection{Test Files}
+
+Each test file wraps its tests in \texttt{lapply()},
+with the filename (without \texttt{.R}) as \texttt{text}.
+The functions are called as in the package code:
+\texttt{testthat::} and named arguments.
+
+\begin{Verbatim}
+## ---- test-template-foo
+lapply(
+  X = 1,
+  FUN = function(i,
+                 text) {
+    testthat::skip_on_cran()
+    testthat::test_that(
+      paste(text, "adds one"),
+      {
+        testthat::expect_equal(
+          object = Foo(x = 1),
+          expected = 2
+        )
+      }
+    )
+  },
+  text = "test-template-foo"
+)
+\end{Verbatim}
+
+\subsubsection{Skipping Tests}
+\label{sec:skip}
+
+Run every test on CI (GitHub Actions) as far as possible.
+Skip a test on a capability (a program, a package, the network),
+not on a place.
+A skip is one line: at the top of the \texttt{lapply()} function
+when all of the tests in the file share it,
+or at the top of a \texttt{testthat::test\_that()} otherwise.
+
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+Kind & Local & CI & CRAN & Skip \\
+\hline
+ordinary & run & run & skip & \texttt{testthat::skip\_on\_cran()} \\
+smoke & run & run & run & none (\texttt{test-template-smoke.R}) \\
+slow & skip & run & skip & \texttt{.SkipSlow()} \\
+proprietary software & if found & never & skip & \texttt{.SkipIfMissing(program = "mplus")} \\
+too long for CI & on request & never & never & \texttt{.setup/tests-external} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{CRAN.} Tests are skipped on CRAN,
+    except one fast smoke test file per package (\texttt{test-template-smoke.R})
+    that checks the main functions run.
+    \item \textbf{Slow tests} run on CI and are skipped locally.
+    \texttt{.SkipSlow()} runs a test when \texttt{CI} or \texttt{RPROJECT\_SLOW\_TESTS} is \texttt{"true"};
+    run them locally with \texttt{RPROJECT\_SLOW\_TESTS=true make all}.
+    \item \textbf{Proprietary software} (Mplus, for example) never runs on CI.
+    \texttt{.SkipIfMissing()} skips on CI, and elsewhere when the program is not found.
+    These tests run locally or on Roar.
+    \item \textbf{Tests too long for CI} are not unit tests:
+    they go in \texttt{.setup/tests-external} and run on request (locally or on Roar).
+    \item other skips use \texttt{testthat}:
+    \texttt{skip\_if\_not\_installed()} (a suggested package),
+    \texttt{skip\_if\_offline()} (the network),
+    \texttt{skip\_on\_os()} (the platform),
+    \texttt{skip\_if()} (a credential in an environment variable, never in the test)
+    \item the helpers live in \texttt{tests/testthat/helper-template.R},
+    since a CRAN package cannot depend on \texttt{rProject}
+\end{itemize}
+
 \section{Rcpp Functions}
 
 \begin{itemize}
-    \item Save \texttt{Rcpp} functions in \texttt{.setup/cpp} using filname conventions used for \texttt{R} except for the \texttt{.cpp} extennsion. Save \texttt{Makevars} in \texttt{.setup/cpp} as well.
+    \item Save \texttt{Rcpp} functions in \texttt{.setup/cpp} using filename conventions used for \texttt{R} except for the \texttt{.cpp} extension. Save \texttt{Makevars} in \texttt{.setup/cpp} as well.
     \item Use forward declarations of functions in \texttt{.setup/cpp/000-forward-declarations.cpp}.
     \item \texttt{Rcpp} files are styled using \texttt{clang-format} with the \texttt{style=google} flag.
     Make sure to limit the number of characters to less than 80 for each line especially when using \texttt{Roxygen} comments to avoid styling errors.
     \item \texttt{Rcpp} functions are unit tested as \texttt{R} functions.
+\end{itemize}
+
+\section{Tools}
+\label{sec:tools}
+
+\begin{itemize}
+    \item \texttt{make style}: \texttt{styler} (Tidyverse style) for R; \texttt{clang-format} (Google style) for C++.
+    \texttt{styler} formats code; it does not add \texttt{::}, argument names, or braces.
+    \item \texttt{make lint}: \texttt{lintr}'s default linters,
+    with \texttt{BigCamelCase} and \texttt{snake\_case} names,
+    and the checks of this guide:
+    no \texttt{return()}, \texttt{::}, named arguments, braces,
+    no pipes in \texttt{R},
+    no \texttt{library()}, \texttt{require()}, or \texttt{attach()},
+    and filenames.
+    \item \texttt{\# nolint} only with the rule and a reason on the same line,
+    for example \texttt{\# nolint: object\_name\_linter. Reason: name fixed by the API.};
+    otherwise fix the code
 \end{itemize}
 
 \nocite{RCoreTeam-2026}
