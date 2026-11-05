@@ -56,6 +56,7 @@
 `#> AsioHeaders       "AsioHeaders"      `\
 `#> askpass           "askpass"          `\
 `#> assertthat        "assertthat"       `\
+`#> av                "av"               `\
 `#> backports         "backports"        `\
 `#> base64enc         "base64enc"        `\
 `#> betaDelta         "betaDelta"        `\
@@ -161,6 +162,7 @@
 `#> ggplot2           "ggplot2"          `\
 `#> ggrepel           "ggrepel"          `\
 `#> gh                "gh"               `\
+`#> gifski            "gifski"           `\
 `#> gitcreds          "gitcreds"         `\
 `#> glasso            "glasso"           `\
 `#> glmnet            "glmnet"           `\
@@ -450,7 +452,7 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/RtmpIYsJCI/temp_libpath11524de959ed" "0.0.62"    `\
+`#> rProject          "/tmp/RtmpVW0YrM/temp_libpath1152726b767c" "0.0.62"    `\
 `#> rProject          "/__w/rProject/rProject/.library"          "0.0.62"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
@@ -460,6 +462,7 @@
 `#> AsioHeaders       "/usr/local/lib/R/site-library"            "1.30.2-1"  `\
 `#> askpass           "/usr/local/lib/R/site-library"            "1.2.1"     `\
 `#> assertthat        "/usr/local/lib/R/site-library"            "0.2.1"     `\
+`#> av                "/usr/local/lib/R/site-library"            "0.9.6"     `\
 `#> backports         "/usr/local/lib/R/site-library"            "1.5.1"     `\
 `#> base64enc         "/usr/local/lib/R/site-library"            "0.1-6"     `\
 `#> betaDelta         "/usr/local/lib/R/site-library"            "1.0.7.9000"`\
@@ -556,7 +559,7 @@
 `#> fst               "/usr/local/lib/R/site-library"            "0.9.8"     `\
 `#> fstcore           "/usr/local/lib/R/site-library"            "0.10.0"    `\
 `#> furrr             "/usr/local/lib/R/site-library"            "0.4.0"     `\
-`#> future            "/usr/local/lib/R/site-library"            "1.80.0"    `\
+`#> future            "/usr/local/lib/R/site-library"            "1.82.0"    `\
 `#> future.apply      "/usr/local/lib/R/site-library"            "1.21.0"    `\
 `#> gargle            "/usr/local/lib/R/site-library"            "1.7.0"     `\
 `#> GauPro            "/usr/local/lib/R/site-library"            "0.2.17"    `\
@@ -565,6 +568,7 @@
 `#> ggplot2           "/usr/local/lib/R/site-library"            "4.0.3"     `\
 `#> ggrepel           "/usr/local/lib/R/site-library"            "0.9.8"     `\
 `#> gh                "/usr/local/lib/R/site-library"            "1.6.1"     `\
+`#> gifski            "/usr/local/lib/R/site-library"            "1.32.0-2"  `\
 `#> gitcreds          "/usr/local/lib/R/site-library"            "0.1.2"     `\
 `#> glasso            "/usr/local/lib/R/site-library"            "1.11"      `\
 `#> glmnet            "/usr/local/lib/R/site-library"            "5.2"       `\
@@ -623,7 +627,7 @@
 `#> lifecycle         "/usr/local/lib/R/site-library"            "1.0.5"     `\
 `#> lintr             "/usr/local/lib/R/site-library"            "3.4.0"     `\
 `#> listenv           "/usr/local/lib/R/site-library"            "1.1.0"     `\
-`#> litedown          "/usr/local/lib/R/site-library"            "0.11"      `\
+`#> litedown          "/usr/local/lib/R/site-library"            "1.0"       `\
 `#> littler           "/usr/local/lib/R/site-library"            "0.3.23"    `\
 `#> lme4              "/usr/local/lib/R/site-library"            "2.1-0"     `\
 `#> lmtest            "/usr/local/lib/R/site-library"            "0.9-40"    `\
@@ -660,7 +664,7 @@
 `#> numDeriv          "/usr/local/lib/R/site-library"            "2016.8-1.1"`\
 `#> nycflights13      "/usr/local/lib/R/site-library"            "1.0.2"     `\
 `#> OpenMx            "/usr/local/lib/R/site-library"            "2.22.11"   `\
-`#> openssl           "/usr/local/lib/R/site-library"            "2.4.2"     `\
+`#> openssl           "/usr/local/lib/R/site-library"            "2.5.0"     `\
 `#> ordinal           "/usr/local/lib/R/site-library"            "2026.7-26" `\
 `#> otel              "/usr/local/lib/R/site-library"            "0.2.0"     `\
 `#> pak               "/usr/local/lib/R/site-library"            "0.11.1"    `\
@@ -738,7 +742,7 @@
 `#> rhdf5filters      "/usr/local/lib/R/site-library"            "1.24.1"    `\
 `#> Rhdf5lib          "/usr/local/lib/R/site-library"            "2.0.0"     `\
 `#> rhub              "/usr/local/lib/R/site-library"            "2.0.1"     `\
-`#> rjags             "/usr/local/lib/R/site-library"            "4-17"      `\
+`#> rjags             "/usr/local/lib/R/site-library"            "4-18"      `\
 `#> rlang             "/usr/local/lib/R/site-library"            "1.3.0"     `\
 `#> RMariaDB          "/usr/local/lib/R/site-library"            "1.3.5"     `\
 `#> rmarkdown         "/usr/local/lib/R/site-library"            "2.32"      `\
@@ -770,10 +774,10 @@
 `#> slider            "/usr/local/lib/R/site-library"            "0.3.3"     `\
 `#> sourcetools       "/usr/local/lib/R/site-library"            "0.1.7-2"   `\
 `#> SparseM           "/usr/local/lib/R/site-library"            "1.84-2"    `\
-`#> sparsevctrs       "/usr/local/lib/R/site-library"            "0.3.6"     `\
+`#> sparsevctrs       "/usr/local/lib/R/site-library"            "0.4.0"     `\
 `#> splitfngr         "/usr/local/lib/R/site-library"            "0.1.2"     `\
 `#> SQUAREM           "/usr/local/lib/R/site-library"            "2026.1"    `\
-`#> StanHeaders       "/usr/local/lib/R/site-library"            "2.39.1"    `\
+`#> StanHeaders       "/usr/local/lib/R/site-library"            "2.39.1.1"  `\
 `#> stringi           "/usr/local/lib/R/site-library"            "1.8.9"     `\
 `#> stringr           "/usr/local/lib/R/site-library"            "1.6.0"     `\
 `#> strucchange       "/usr/local/lib/R/site-library"            "1.6-0"     `\
@@ -793,7 +797,7 @@
 `#> tidyverse         "/usr/local/lib/R/site-library"            "2.0.0"     `\
 `#> timechange        "/usr/local/lib/R/site-library"            "0.4.0"     `\
 `#> timeDate          "/usr/local/lib/R/site-library"            "4052.112"  `\
-`#> tinytex           "/usr/local/lib/R/site-library"            "0.61.4"    `\
+`#> tinytex           "/usr/local/lib/R/site-library"            "0.61.5"    `\
 `#> tune              "/usr/local/lib/R/site-library"            "2.1.0"     `\
 `#> tzdb              "/usr/local/lib/R/site-library"            "0.5.0"     `\
 `#> ucminf            "/usr/local/lib/R/site-library"            "1.2.3"     `\
@@ -864,6 +868,7 @@
 `#> AsioHeaders       NA           `\
 `#> askpass           NA           `\
 `#> assertthat        NA           `\
+`#> av                NA           `\
 `#> backports         NA           `\
 `#> base64enc         NA           `\
 `#> betaDelta         NA           `\
@@ -969,6 +974,7 @@
 `#> ggplot2           NA           `\
 `#> ggrepel           NA           `\
 `#> gh                NA           `\
+`#> gifski            NA           `\
 `#> gitcreds          NA           `\
 `#> glasso            NA           `\
 `#> glmnet            NA           `\
@@ -1268,6 +1274,7 @@
 `#> AsioHeaders       NA                                                                                          `\
 `#> askpass           NA                                                                                          `\
 `#> assertthat        NA                                                                                          `\
+`#> av                "R (>= 3.5)"                                                                                `\
 `#> backports         "R (>= 3.0.0)"                                                                              `\
 `#> base64enc         "R (>= 2.9.0)"                                                                              `\
 `#> betaDelta         "R (>= 3.5.0)"                                                                              `\
@@ -1373,6 +1380,7 @@
 `#> ggplot2           "R (>= 4.1)"                                                                                `\
 `#> ggrepel           "R (>= 4.1.0), ggplot2 (>= 3.5.2)"                                                          `\
 `#> gh                "R (>= 4.1)"                                                                                `\
+`#> gifski            NA                                                                                          `\
 `#> gitcreds          "R (>= 3.4)"                                                                                `\
 `#> glasso            NA                                                                                          `\
 `#> glmnet            "R (>= 3.6.0), Matrix (>= 1.0-6)"                                                           `\
@@ -1672,6 +1680,7 @@
 `#> AsioHeaders       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> askpass           "sys (>= 2.1)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> assertthat        "tools"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
+`#> av                "graphics"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> backports         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> base64enc         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> betaDelta         "numDeriv"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
@@ -1768,7 +1777,7 @@
 `#> fst               "fstcore, Rcpp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> fstcore           "Rcpp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> furrr             "globals (>= 0.19.1), purrr (>= 1.2.1), rlang (>= 1.1.7), vctrs\n(>= 0.7.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `\
-`#> future            "digest, globals (>= 0.18.0), listenv (>= 0.8.0), parallel,\nparallelly (>= 1.44.0), tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
+`#> future            "globals (>= 0.18.0), listenv (>= 0.8.0), parallel, parallelly\n(>= 1.44.0), tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> future.apply      "globals, parallel, stats, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> gargle            "cli (>= 3.0.1), fs (>= 1.3.1), glue (>= 1.3.0), httr (>=\n1.4.5), jsonlite, lifecycle, openssl, R6, rappdirs, rlang (>=\n1.1.0), stats, utils, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> GauPro            "ggplot2, Rcpp, R6, lbfgs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
@@ -1777,6 +1786,7 @@
 `#> ggplot2           "cli, grDevices, grid, gtable (>= 0.3.6), isoband, lifecycle (>\n1.0.1), rlang (>= 1.1.0), S7, scales (>= 1.4.0), stats, vctrs\n(>= 0.6.0), withr (>= 2.5.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> ggrepel           "grid, Rcpp, rlang (>= 1.1.6), S7, scales (>= 1.4.0), withr (>=\n3.0.2)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> gh                "cli (>= 3.0.1), gitcreds, glue, httr2 (>= 1.0.6), ini,\njsonlite, lifecycle, rlang (>= 1.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
+`#> gifski            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> gitcreds          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> glasso            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> glmnet            "methods, utils, foreach, shape, survival, Rcpp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
@@ -1835,7 +1845,7 @@
 `#> lifecycle         "cli (>= 3.4.0), rlang (>= 1.1.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> lintr             "cli (>= 3.4.0), codetools, digest, glue, knitr, rex, stats,\nutils, xfun, xml2 (>= 1.3.4), xmlparsedata (>= 1.0.5)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> listenv           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> litedown          "utils, commonmark (>= 2.0.0), xfun (>= 0.55)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
+`#> litedown          "utils, xfun (>= 0.62)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> littler           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> lme4              "MASS, Rdpack, boot, graphics, grid, lattice, minqa (>=\n1.1.15), nlme (>= 3.1-123), nloptr (>= 1.0.4), parallel,\nreformulas (>= 0.4.3.1), splines, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> lmtest            "graphics"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
@@ -2076,6 +2086,7 @@
 `#> AsioHeaders       NA                                                                                                                                                           `\
 `#> askpass           NA                                                                                                                                                           `\
 `#> assertthat        NA                                                                                                                                                           `\
+`#> av                NA                                                                                                                                                           `\
 `#> backports         NA                                                                                                                                                           `\
 `#> base64enc         NA                                                                                                                                                           `\
 `#> betaDelta         NA                                                                                                                                                           `\
@@ -2181,6 +2192,7 @@
 `#> ggplot2           NA                                                                                                                                                           `\
 `#> ggrepel           "Rcpp"                                                                                                                                                       `\
 `#> gh                NA                                                                                                                                                           `\
+`#> gifski            NA                                                                                                                                                           `\
 `#> gitcreds          NA                                                                                                                                                           `\
 `#> glasso            NA                                                                                                                                                           `\
 `#> glmnet            "RcppEigen, Rcpp"                                                                                                                                            `\
@@ -2480,6 +2492,7 @@
 `#> AsioHeaders       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> askpass           "testthat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> assertthat        "testthat, covr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
+`#> av                "curl, testthat, ps, ggplot2, gapminder"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> backports         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> base64enc         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> betaDelta         "knitr, rmarkdown, testthat, betaSandwich, betaMC, betaNB"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
@@ -2576,7 +2589,7 @@
 `#> fst               "testthat, bit64, data.table, lintr, nanotime, crayon"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> fstcore           "testthat, lintr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> furrr             "carrier, covr, dplyr (>= 1.1.4), knitr, parallelly (>=\n1.46.1), testthat (>= 3.3.2), tidyselect"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
-`#> future            "methods, RhpcBLASctl, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
+`#> future            "digest, methods, RhpcBLASctl, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> future.apply      "datasets, tools, listenv, R.rsp, markdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
 `#> gargle            "aws.ec2metadata, aws.signature, covr, httpuv, knitr,\nrmarkdown, spelling, testthat (>= 3.1.7)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> GauPro            "ContourFunctions, dplyr, ggrepel, gridExtra, knitr, lhs,\nMASS, microbenchmark, rlang, splitfngr, testthat, testthatmulti"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  `\
@@ -2585,6 +2598,7 @@
 `#> ggplot2           "broom, covr, dplyr, ggplot2movies, hexbin, Hmisc, hms, knitr,\nmapproj, maps, MASS, mgcv, multcomp, munsell, nlme, profvis,\nquantreg, quarto, ragg (>= 1.2.6), RColorBrewer, roxygen2,\nrpart, sf (>= 0.7-3), svglite (>= 2.1.2), testthat (>= 3.1.5),\ntibble, vdiffr (>= 1.0.6), xml2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> ggrepel           "knitr, rmarkdown, testthat, svglite, vdiffr, gridExtra, ggpp,\npatchwork, devtools, prettydoc, ggbeeswarm, dplyr, magrittr,\nreadr, stringr, marquee, rsvg, sf"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> gh                "connectcreds, covr, knitr, rmarkdown, rprojroot, spelling,\ntestthat (>= 3.0.0), vctrs, webfakes (>= 1.5.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
+`#> gifski            "ggplot2, gapminder"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> gitcreds          "codetools, covr, knitr, mockery, oskeyring, rmarkdown,\ntestthat (>= 3.0.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> glasso            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> glmnet            "knitr, lars, nnet, testthat, xfun, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
@@ -2884,6 +2898,7 @@
 `#> AsioHeaders       NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> askpass           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> assertthat        NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
+`#> av                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> backports         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> base64enc         "png"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
 `#> betaDelta         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -2989,6 +3004,7 @@
 `#> ggplot2           "sp"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
 `#> ggrepel           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> gh                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
+`#> gifski            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> gitcreds          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> glasso            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> glmnet            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3288,6 +3304,7 @@
 `#> AsioHeaders       "BSL-1.0"                                     NA             `\
 `#> askpass           "MIT + file LICENSE"                          NA             `\
 `#> assertthat        "GPL-3"                                       NA             `\
+`#> av                "MIT + file LICENSE"                          NA             `\
 `#> backports         "GPL-2 | GPL-3"                               NA             `\
 `#> base64enc         "GPL-2 | GPL-3"                               NA             `\
 `#> betaDelta         "MIT + file LICENSE"                          NA             `\
@@ -3393,6 +3410,7 @@
 `#> ggplot2           "MIT + file LICENSE"                          NA             `\
 `#> ggrepel           "GPL-3 | file LICENSE"                        NA             `\
 `#> gh                "MIT + file LICENSE"                          NA             `\
+`#> gifski            "MIT + file LICENSE"                          NA             `\
 `#> gitcreds          "MIT + file LICENSE"                          NA             `\
 `#> glasso            "GPL-2"                                       NA             `\
 `#> glmnet            "GPL-2"                                       NA             `\
@@ -3692,6 +3710,7 @@
 `#> AsioHeaders       NA                    NA      NA     "no"            `\
 `#> askpass           NA                    NA      NA     "yes"           `\
 `#> assertthat        NA                    NA      NA     "no"            `\
+`#> av                NA                    NA      NA     "yes"           `\
 `#> backports         NA                    NA      NA     "yes"           `\
 `#> base64enc         NA                    NA      NA     "yes"           `\
 `#> betaDelta         NA                    NA      NA     "no"            `\
@@ -3797,6 +3816,7 @@
 `#> ggplot2           NA                    NA      NA     "no"            `\
 `#> ggrepel           NA                    NA      NA     "yes"           `\
 `#> gh                NA                    NA      NA     "no"            `\
+`#> gifski            NA                    NA      NA     "yes"           `\
 `#> gitcreds          NA                    NA      NA     "no"            `\
 `#> glasso            NA                    NA      NA     "yes"           `\
 `#> glmnet            NA                    NA      NA     "yes"           `\
@@ -3855,7 +3875,7 @@
 `#> lifecycle         NA                    NA      NA     "no"            `\
 `#> lintr             NA                    NA      NA     "no"            `\
 `#> listenv           NA                    NA      NA     "no"            `\
-`#> litedown          NA                    NA      NA     "no"            `\
+`#> litedown          NA                    NA      NA     "yes"           `\
 `#> littler           NA                    "unix"  NA     "yes"           `\
 `#> lme4              NA                    NA      NA     "yes"           `\
 `#> lmtest            NA                    NA      NA     "yes"           `\
@@ -4086,8 +4106,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.2; ; 2026-11-03 16:44:07 UTC; unix"                   `\
-`#> rProject          "R 4.6.2; ; 2026-11-03 16:44:02 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-05 23:35:19 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-05 23:35:15 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:14:25 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-25 01:17:55 UTC; unix"                   `\
@@ -4096,21 +4116,22 @@
 `#> AsioHeaders       "R 4.6.0; ; 2026-04-24 04:09:53 UTC; unix"                   `\
 `#> askpass           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:07 UTC; unix"`\
 `#> assertthat        "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
+`#> av                "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:11:02 UTC; unix"`\
 `#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
-`#> betaDelta         "R 4.6.2; ; 2026-11-03 01:33:47 UTC; unix"                   `\
-`#> betaMC            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-03 01:34:07 UTC; unix"`\
-`#> betaNB            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-03 01:33:53 UTC; unix"`\
-`#> betaSandwich      "R 4.6.2; ; 2026-11-03 01:33:50 UTC; unix"                   `\
+`#> betaDelta         "R 4.6.2; ; 2026-11-05 05:33:01 UTC; unix"                   `\
+`#> betaMC            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:33:20 UTC; unix"`\
+`#> betaNB            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:33:07 UTC; unix"`\
+`#> betaSandwich      "R 4.6.2; ; 2026-11-05 05:33:04 UTC; unix"                   `\
 `#> BH                "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
 `#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:50 UTC; unix"                   `\
-`#> biocmake          "R 4.6.2; ; 2026-11-02 04:31:11 UTC; unix"                   `\
+`#> biocmake          "R 4.6.2; ; 2026-11-05 05:11:57 UTC; unix"                   `\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 04:10:10 UTC; unix"                   `\
-`#> BiocVersion       "R 4.6.2; ; 2026-11-02 04:31:09 UTC; unix"                   `\
+`#> BiocVersion       "R 4.6.2; ; 2026-11-05 05:11:55 UTC; unix"                   `\
 `#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
 `#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:27 UTC; unix"`\
 `#> blob              "R 4.6.0; ; 2026-08-12 20:25:54 UTC; unix"                   `\
-`#> bootStateSpace    "R 4.6.2; ; 2026-11-03 01:34:54 UTC; unix"                   `\
+`#> bootStateSpace    "R 4.6.2; ; 2026-11-05 05:34:05 UTC; unix"                   `\
 `#> brew              "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
 `#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:10 UTC; unix"`\
 `#> broom             "R 4.6.0; ; 2026-08-12 20:28:45 UTC; unix"                   `\
@@ -4123,7 +4144,7 @@
 `#> cellranger        "R 4.6.0; ; 2026-08-12 20:26:50 UTC; unix"                   `\
 `#> cffr              "R 4.6.0; ; 2026-08-25 04:32:41 UTC; unix"                   `\
 `#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:49 UTC; unix"`\
-`#> cli               "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-03 01:33:14 UTC; unix"`\
+`#> cli               "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:32:30 UTC; unix"`\
 `#> clipr             "R 4.6.0; ; 2026-08-12 20:24:44 UTC; unix"                   `\
 `#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:36 UTC; unix"`\
 `#> clusterGeneration "R 4.6.0; ; 2026-04-25 00:28:07 UTC; unix"                   `\
@@ -4140,8 +4161,8 @@
 `#> crayon            "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
 `#> credentials       "R 4.6.0; ; 2026-04-24 04:13:25 UTC; unix"                   `\
 `#> crosstalk         "R 4.6.0; ; 2026-08-12 20:25:32 UTC; unix"                   `\
-`#> cTMed             "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-03 01:35:03 UTC; unix"`\
-`#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:31:19 UTC; unix"`\
+`#> cTMed             "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:34:14 UTC; unix"`\
+`#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-04 09:17:06 UTC; unix"`\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:19:50 UTC; unix"`\
 `#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:32:28 UTC; unix"`\
 `#> DBI               "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
@@ -4149,13 +4170,13 @@
 `#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-22 04:18:07 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 04:10:49 UTC; unix"                   `\
 `#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:57 UTC; unix"`\
-`#> devtools          "R 4.6.2; ; 2026-11-03 01:33:26 UTC; unix"                   `\
+`#> devtools          "R 4.6.2; ; 2026-11-05 05:32:41 UTC; unix"                   `\
 `#> diagram           "R 4.6.0; ; 2026-04-24 04:11:06 UTC; unix"                   `\
 `#> dials             "R 4.6.0; ; 2026-06-23 05:17:55 UTC; unix"                   `\
 `#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:25:52 UTC; unix"`\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:20:30 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
-`#> dir.expiry        "R 4.6.2; ; 2026-11-02 04:31:10 UTC; unix"                   `\
+`#> dir.expiry        "R 4.6.2; ; 2026-11-05 05:11:56 UTC; unix"                   `\
 `#> distributional    "R 4.6.0; ; 2026-09-09 09:31:05 UTC; unix"                   `\
 `#> distro            "R 4.6.0; ; 2026-04-25 00:45:33 UTC; unix"                   `\
 `#> doBy              "R 4.6.0; ; 2026-08-12 20:30:54 UTC; unix"                   `\
@@ -4165,9 +4186,9 @@
 `#> DT                "R 4.6.0; ; 2026-08-12 20:30:29 UTC; unix"                   `\
 `#> dtplyr            "R 4.6.0; ; 2026-10-29 06:40:00 UTC; unix"                   `\
 `#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:11:54 UTC; unix"`\
-`#> dynr              "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-02 04:45:25 UTC; unix"`\
-`#> dynTools          "R 4.6.2; ; 2026-11-03 01:35:25 UTC; unix"                   `\
-`#> dynUtils          "R 4.6.2; ; 2026-11-02 04:46:33 UTC; unix"                   `\
+`#> dynr              "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:24:31 UTC; unix"`\
+`#> dynTools          "R 4.6.2; ; 2026-11-05 05:34:35 UTC; unix"                   `\
+`#> dynUtils          "R 4.6.2; ; 2026-11-05 05:25:39 UTC; unix"                   `\
 `#> ellipse           "R 4.6.0; ; 2026-08-12 20:24:42 UTC; unix"                   `\
 `#> ellipsis          "R 4.6.0; ; 2026-04-25 01:21:15 UTC; unix"                   `\
 `#> evaluate          "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
@@ -4180,7 +4201,7 @@
 `#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:47:34 UTC; unix"`\
 `#> fds               "R 4.6.0; ; 2026-10-27 04:26:16 UTC; unix"                   `\
 `#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:54 UTC; unix"`\
-`#> fitVARMxID        "R 4.6.2; ; 2026-11-03 01:35:33 UTC; unix"                   `\
+`#> fitVARMxID        "R 4.6.2; ; 2026-11-05 05:34:42 UTC; unix"                   `\
 `#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
 `#> fontawesome       "R 4.6.0; ; 2026-08-12 20:25:29 UTC; unix"                   `\
 `#> forcats           "R 4.6.0; ; 2026-08-12 20:26:56 UTC; unix"                   `\
@@ -4192,7 +4213,7 @@
 `#> fst               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:35:35 UTC; unix"`\
 `#> fstcore           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:26:09 UTC; unix"`\
 `#> furrr             "R 4.6.0; ; 2026-09-26 06:36:01 UTC; unix"                   `\
-`#> future            "R 4.6.0; ; 2026-10-16 04:15:47 UTC; unix"                   `\
+`#> future            "R 4.6.0; ; 2026-11-03 04:40:30 UTC; unix"                   `\
 `#> future.apply      "R 4.6.0; ; 2026-10-17 04:55:33 UTC; unix"                   `\
 `#> gargle            "R 4.6.0; ; 2026-10-29 06:40:16 UTC; unix"                   `\
 `#> GauPro            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:13:37 UTC; unix"`\
@@ -4201,6 +4222,7 @@
 `#> ggplot2           "R 4.6.0; ; 2026-08-12 20:26:08 UTC; unix"                   `\
 `#> ggrepel           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:27:02 UTC; unix"`\
 `#> gh                "R 4.6.0; ; 2026-07-21 05:28:43 UTC; unix"                   `\
+`#> gifski            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:11:06 UTC; unix"`\
 `#> gitcreds          "R 4.6.0; ; 2026-04-24 04:10:06 UTC; unix"                   `\
 `#> glasso            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:49:59 UTC; unix"`\
 `#> glmnet            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-29 04:02:50 UTC; unix"`\
@@ -4226,7 +4248,7 @@
 `#> htmlTable         "R 4.6.0; ; 2026-08-12 20:30:32 UTC; unix"                   `\
 `#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:12 UTC; unix"`\
 `#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:29:22 UTC; unix"                   `\
-`#> httpgd            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-03 01:32:36 UTC; unix"`\
+`#> httpgd            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:31:53 UTC; unix"`\
 `#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:13 UTC; unix"`\
 `#> httr              "R 4.6.0; ; 2026-09-02 04:00:13 UTC; unix"                   `\
 `#> httr2             "R 4.6.0; ; 2026-07-14 05:11:56 UTC; unix"                   `\
@@ -4259,12 +4281,12 @@
 `#> lifecycle         "R 4.6.0; ; 2026-08-12 20:25:06 UTC; unix"                   `\
 `#> lintr             "R 4.6.0; ; 2026-07-16 05:13:09 UTC; unix"                   `\
 `#> listenv           "R 4.6.0; ; 2026-10-05 04:21:39 UTC; unix"                   `\
-`#> litedown          "R 4.6.0; ; 2026-09-26 06:35:38 UTC; unix"                   `\
+`#> litedown          "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-03 04:40:21 UTC; unix"`\
 `#> littler           "R 4.6.2; x86_64-pc-linux-gnu; 2026-10-29 16:32:56 UTC; unix"`\
 `#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:12:18 UTC; unix"`\
 `#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:09 UTC; unix"`\
 `#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:40 UTC; unix"`\
-`#> longMI            "R 4.6.2; ; 2026-11-02 04:39:34 UTC; unix"                   `\
+`#> longMI            "R 4.6.2; ; 2026-11-05 05:19:35 UTC; unix"                   `\
 `#> loo               "R 4.6.0; ; 2026-07-25 05:26:19 UTC; unix"                   `\
 `#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:21 UTC; unix"`\
 `#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:44:24 UTC; unix"`\
@@ -4274,7 +4296,7 @@
 `#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
 `#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
 `#> memoise           "R 4.6.0; ; 2026-08-12 20:25:23 UTC; unix"                   `\
-`#> metaDyn           "R 4.6.2; ; 2026-11-03 01:35:42 UTC; unix"                   `\
+`#> metaDyn           "R 4.6.2; ; 2026-11-05 05:34:51 UTC; unix"                   `\
 `#> metaSEM           "R 4.6.0; ; 2026-04-25 02:03:48 UTC; unix"                   `\
 `#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 15:25:38 UTC; unix"`\
 `#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:08 UTC; unix"`\
@@ -4295,8 +4317,8 @@
 `#> nloptr            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:20 UTC; unix"`\
 `#> numDeriv          "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
 `#> nycflights13      "R 4.6.0; ; 2026-04-25 02:05:12 UTC; unix"                   `\
-`#> OpenMx            "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:14:03 UTC; unix"`\
-`#> openssl           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-23 06:07:17 UTC; unix"`\
+`#> OpenMx            "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-04 08:48:37 UTC; unix"`\
+`#> openssl           "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-03 04:40:37 UTC; unix"`\
 `#> ordinal           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-28 08:45:39 UTC; unix"`\
 `#> otel              "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
 `#> pak               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-23 16:11:05 UTC; unix"`\
@@ -4370,22 +4392,22 @@
 `#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:31 UTC; unix"`\
 `#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:22:48 UTC; unix"`\
 `#> rex               "R 4.6.0; ; 2026-04-25 01:47:01 UTC; unix"                   `\
-`#> rhdf5             "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-02 04:34:36 UTC; unix"`\
-`#> rhdf5filters      "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-02 04:34:12 UTC; unix"`\
-`#> Rhdf5lib          "R 4.6.2; ; 2026-11-02 04:34:08 UTC; unix"                   `\
+`#> rhdf5             "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:14:21 UTC; unix"`\
+`#> rhdf5filters      "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:14:04 UTC; unix"`\
+`#> Rhdf5lib          "R 4.6.2; ; 2026-11-05 05:14:01 UTC; unix"                   `\
 `#> rhub              "R 4.6.0; ; 2026-04-25 01:56:40 UTC; unix"                   `\
-`#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:12:12 UTC; unix"`\
+`#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-02 04:07:21 UTC; unix"`\
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
 `#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:14 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:01:02 UTC; unix"                   `\
-`#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-03 01:33:31 UTC; unix"`\
+`#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:32:46 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:42:36 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:37 UTC; unix"`\
-`#> rProject          "R 4.6.2; ; 2026-11-03 03:29:55 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-05 23:16:38 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 04:10:28 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-25 03:00:58 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:22 UTC; unix"`\
-`#> rstan             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:14:26 UTC; unix"`\
+`#> rstan             "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-04 08:39:21 UTC; unix"`\
 `#> rstantools        "R 4.6.0; ; 2026-08-30 04:14:03 UTC; unix"                   `\
 `#> rstudioapi        "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
 `#> rversions         "R 4.6.0; ; 2026-04-25 00:44:10 UTC; unix"                   `\
@@ -4396,20 +4418,20 @@
 `#> scales            "R 4.6.0; ; 2026-08-12 20:25:26 UTC; unix"                   `\
 `#> selectr           "R 4.6.0; ; 2026-09-28 04:40:24 UTC; unix"                   `\
 `#> semlbci           "R 4.6.0; ; 2026-07-28 08:49:07 UTC; unix"                   `\
-`#> semmcci           "R 4.6.2; ; 2026-11-03 01:33:45 UTC; unix"                   `\
+`#> semmcci           "R 4.6.2; ; 2026-11-05 05:32:59 UTC; unix"                   `\
 `#> semPlot           "R 4.6.0; ; 2026-09-04 06:56:03 UTC; unix"                   `\
 `#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:26:48 UTC; unix"                   `\
 `#> sfd               "R 4.6.0; ; 2026-04-25 02:06:33 UTC; unix"                   `\
 `#> shape             "R 4.6.0; ; 2026-08-12 20:24:42 UTC; unix"                   `\
 `#> shiny             "R 4.6.0; ; 2026-08-12 20:28:26 UTC; unix"                   `\
-`#> simStateSpace     "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-03 01:34:28 UTC; unix"`\
+`#> simStateSpace     "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:33:40 UTC; unix"`\
 `#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 01:45:04 UTC; unix"`\
 `#> sourcetools       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:43 UTC; unix"`\
 `#> SparseM           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
-`#> sparsevctrs       "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:13:48 UTC; unix"`\
+`#> sparsevctrs       "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-02 04:06:44 UTC; unix"`\
 `#> splitfngr         "R 4.6.0; ; 2026-04-25 00:37:41 UTC; unix"                   `\
 `#> SQUAREM           "R 4.6.0; ; 2026-04-24 04:09:54 UTC; unix"                   `\
-`#> StanHeaders       "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-03 08:11:28 UTC; unix"`\
+`#> StanHeaders       "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-04 08:24:02 UTC; unix"`\
 `#> stringi           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:48 UTC; unix"`\
 `#> stringr           "R 4.6.0; ; 2026-08-12 20:26:00 UTC; unix"                   `\
 `#> strucchange       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-05 05:57:16 UTC; unix"`\
@@ -4429,7 +4451,7 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:33:11 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
-`#> tinytex           "R 4.6.2; ; 2026-11-03 01:33:10 UTC; unix"                   `\
+`#> tinytex           "R 4.6.2; ; 2026-11-05 23:16:35 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 03:11:58 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:36 UTC; unix"`\
@@ -4500,6 +4522,7 @@
 `#> AsioHeaders       NA       `\
 `#> askpass           NA       `\
 `#> assertthat        NA       `\
+`#> av                NA       `\
 `#> backports         NA       `\
 `#> base64enc         NA       `\
 `#> betaDelta         NA       `\
@@ -4605,6 +4628,7 @@
 `#> ggplot2           NA       `\
 `#> ggrepel           NA       `\
 `#> gh                NA       `\
+`#> gifski            NA       `\
 `#> gitcreds          NA       `\
 `#> glasso            NA       `\
 `#> glmnet            NA       `\
