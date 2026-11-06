@@ -6,7 +6,7 @@ lapply(
     testthat::test_that(
       paste(text, "has an install script for every app"),
       {
-        apps <- eval(formals(InstallLocal)$what)
+        apps <- eval(expr = formals(fun = InstallLocal)$what)
         scripts <- vapply(
           X = apps,
           FUN = function(app) {
@@ -16,15 +16,15 @@ lapply(
               package = "rProject"
             )
           },
-          FUN.VALUE = character(1)
+          FUN.VALUE = character(length = 1)
         )
-        testthat::expect_true(all(nzchar(scripts)))
+        testthat::expect_true(object = all(nzchar(x = scripts)))
       }
     )
     testthat::test_that(
       paste(text, "ignores unknown apps"),
       {
-        testthat::expect_null(InstallLocal(what = "not-an-app"))
+        testthat::expect_null(object = InstallLocal(what = "not-an-app"))
       }
     )
   },

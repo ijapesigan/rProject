@@ -4,15 +4,15 @@
   # example {{version}} in docker/metadata-action) is left as it is
   # a value may span several lines; a line that holds only a placeholder
   # whose value is "" is dropped
-  empty <- names(values)[vapply(
+  empty <- names(x = values)[vapply(
     X = values,
     FUN = function(x) {
-      identical(x, "")
+      identical(x = x, y = "")
     },
-    FUN.VALUE = logical(1)
+    FUN.VALUE = logical(length = 1)
   )]
   text <- text[!(text %in% paste0("{{", empty, "}}"))]
-  for (key in names(values)) {
+  for (key in names(x = values)) {
     text <- gsub(
       pattern = paste0("{{", key, "}}"),
       replacement = values[[key]],
@@ -22,7 +22,7 @@
   }
   # one element per line
   unlist(
-    lapply(
+    x = lapply(
       X = text,
       FUN = function(x) {
         if (grepl(pattern = "\n", x = x, fixed = TRUE)) {

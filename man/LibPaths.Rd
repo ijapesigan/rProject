@@ -21,6 +21,11 @@ Returns the path of \code{.library}.
 \item{sets \code{R_LIBS_USER} to \code{.library}}
 }
 }
+\examples{
+\dontrun{
+LibPaths(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

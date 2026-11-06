@@ -3,6 +3,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' CFF(path = getwd())
+#' }
 #' @export
 CFF <- function(path) {
   if (

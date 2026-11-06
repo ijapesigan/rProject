@@ -12,14 +12,18 @@
 #'
 #' @inheritParams LibPaths
 #' @return Returns the files that would be published, invisibly.
+#' @examples
+#' \dontrun{
+#' Public(path = getwd())
+#' }
 #' @export
 Public <- function(path) {
   exported <- .PublicExport(root = path)
   problems <- .VerifyPublic(private = path)
   # tokens in files that stay private (e.g., gitignored) are not published
   secrets <- suppressMessages(
-    suppressWarnings(
-      SecretScan(
+    expr = suppressWarnings(
+      expr = SecretScan(
         path = path,
         error = FALSE
       )
@@ -29,10 +33,10 @@ Public <- function(path) {
   problems <- c(
     problems,
     paste0(secrets$file, ":", secrets$line, " (", secrets$type, ")")[
-      seq_len(nrow(secrets))
+      seq_len(length.out = nrow(x = secrets))
     ]
   )
-  if (length(problems) > 0L) {
+  if (length(x = problems) > 0L) {
     stop(
       paste0(
         "\n\nThe public export of ",
@@ -49,9 +53,9 @@ Public <- function(path) {
       "\n\nPublic export of ",
       path,
       ": ",
-      length(exported),
+      length(x = exported),
       " files; no private files, no files over 50 MB, no tokens.\n\n"
     )
   )
-  invisible(exported)
+  invisible(x = exported)
 }

@@ -10,10 +10,18 @@ CleanPkg(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Remove the project's R library (\code{.library}).
 Packages outside the project (the image's site library,
 the user library) are never touched.
+}
+\examples{
+\dontrun{
+CleanPkg(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

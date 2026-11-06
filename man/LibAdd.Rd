@@ -51,6 +51,11 @@ It lists what it cannot decide (initials only, an online-first date,
 a missing abstract, the title's proper nouns, a key already in use)
 as questions for the user.
 }
+\examples{
+\dontrun{
+LibAdd(doi = "10.1000/xyz123", root = "...")
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

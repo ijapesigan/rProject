@@ -1,0 +1,44 @@
+# Portable Math {#sec-math}
+
+This page renders the commands in the math style guide with MathJax,
+so a change in a renderer shows up.
+The guide's PDF renders the same commands with pdfLaTeX.
+
+Bold: $\boldsymbol{x}_{i, t}$, $\boldsymbol{A}$, $\boldsymbol{\Sigma}$;
+elements: $a_{12, i}$.
+
+Operators: $\operatorname{vec} \! \left( \boldsymbol{A} \right)$,
+$\operatorname{tr} \! \left( \boldsymbol{A} \right)$,
+$\boldsymbol{A}^{\prime}$,
+$\mathbb{E} \! \left( x \right)$,
+$\mathcal{N} \! \left( \boldsymbol{0}, \boldsymbol{\Xi} \right)$,
+$\operatorname*{arg\,max}_{x} f \! \left( x \right)$,
+$\mathrm{B}$.
+
+$$
+\boldsymbol{\eta}_{i, t}
+=
+\boldsymbol{\alpha}
++ \boldsymbol{\beta} \boldsymbol{\eta}_{i, t - 1}
++ \boldsymbol{\zeta}_{i, t},
+\quad
+\boldsymbol{\zeta}_{i, t}
+\sim \mathcal{N} \! \left( \boldsymbol{0}, \boldsymbol{\Psi} \right)
+$$
+
+$$
+\mathrm{d} \boldsymbol{\eta}_{i, t}
+=
+\boldsymbol{\Phi} \left( \boldsymbol{\eta}_{i, t} - \boldsymbol{\mu} \right) \mathrm{d} t
++ \boldsymbol{\Sigma}^{\frac{1}{2}} \mathrm{d} \boldsymbol{W}_{i, t}
+$$
+
+$$
+\exp \! \left( \Delta t \boldsymbol{\Phi} \right),
+\quad
+\boldsymbol{D}_{\boldsymbol{m}},
+\quad
+\hat{\boldsymbol{\theta}},
+\quad
+\sum_{i = 1}^{n} x_{i}
+$$

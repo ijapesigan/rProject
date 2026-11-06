@@ -10,8 +10,16 @@ PkgDevel(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Install Development Packages from CRAN
+}
+\examples{
+\dontrun{
+PkgDevel(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -3,6 +3,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' PkgDevelGitHub(path = getwd())
+#' }
 #' @export
 PkgDevelGitHub <- function(path) {
   lib <- LibPaths(path = path)
@@ -10,7 +15,7 @@ PkgDevelGitHub <- function(path) {
   pkg_installed <- installed[, "Package"]
   if (!("remotes" %in% pkg_installed)) {
     utils::install.packages(
-      "remotes",
+      pkgs = "remotes",
       repos = c(REPO_NAME = PkgRepo(path = path)),
       lib = lib,
       quiet = TRUE
@@ -21,13 +26,13 @@ PkgDevelGitHub <- function(path) {
     "r-lib/cli",
     "r-lib/devtools"
   )
-  repo_pkg <- strsplit(pkg, split = "/")
+  repo_pkg <- strsplit(x = pkg, split = "/")
   repo_pkg <- do.call(
     what = "rbind",
     args = repo_pkg
   )
-  colnames(repo_pkg) <- c("repo", "pkg")
-  for (i in seq_along(pkg)) {
+  colnames(x = repo_pkg) <- c("repo", "pkg")
+  for (i in seq_along(along.with = pkg)) {
     # never upgrade: only a package missing from every library
     run <- !(repo_pkg[i, "pkg"] %in% pkg_installed)
     if (run) {

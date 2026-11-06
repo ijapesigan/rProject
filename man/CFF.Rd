@@ -10,8 +10,16 @@ CFF(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Build \code{CITATION.cff}
+}
+\examples{
+\dontrun{
+CFF(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

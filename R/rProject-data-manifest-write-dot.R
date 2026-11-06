@@ -1,7 +1,7 @@
 .DataManifestWrite <- function(file,
                                data) {
   dir.create(
-    path = dirname(file),
+    path = dirname(path = file),
     showWarnings = FALSE,
     recursive = TRUE
   )
@@ -38,9 +38,9 @@
         "Used by |"
       ),
       "|---|---|---|---|---|---|---|---|",
-      rows[seq_len(nrow(data))]
+      rows[seq_len(length.out = nrow(x = data))]
     ),
     con = file
   )
-  invisible(file)
+  invisible(x = file)
 }

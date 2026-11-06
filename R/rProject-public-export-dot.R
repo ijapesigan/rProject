@@ -10,13 +10,16 @@
   # downloaded from Overleaf), use a temporary empty repository with the
   # project as its work tree, so the .gitignore files still apply.
   inside <- identical(
-    .VerifyGit(private = root, args = c("rev-parse", "--is-inside-work-tree")),
-    "true"
+    x = .VerifyGit(
+      private = root,
+      args = c("rev-parse", "--is-inside-work-tree")
+    ),
+    y = "true"
   )
   git <- c("-C", .ShellQuote(x = root))
   if (!inside) {
     git_dir <- tempfile(pattern = "public-export")
-    on.exit(unlink(git_dir, recursive = TRUE), add = TRUE)
+    on.exit(expr = unlink(x = git_dir, recursive = TRUE), add = TRUE)
     system2(
       command = "git",
       args = c("init", "-q", .ShellQuote(x = git_dir)),
@@ -30,7 +33,7 @@
   }
   # what `make auto` would publish: files the .gitignore does not exclude
   ignored <- suppressWarnings(
-    system2(
+    expr = system2(
       command = "git",
       args = c(
         git,
@@ -43,5 +46,5 @@
       stderr = FALSE
     )
   )
-  setdiff(files, ignored)
+  setdiff(x = files, y = ignored)
 }

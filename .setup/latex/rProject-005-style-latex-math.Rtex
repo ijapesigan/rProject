@@ -29,10 +29,10 @@
 % #| message = FALSE,
 % #| warning = FALSE,
 % #| results = "asis"
-% if (require("rProject")) {
+% if (require(package = "rProject")) {
 %   Bib(
 %     path = dirname(
-%       root$find_file(
+%       path = root$find_file(
 %         "project.Rproj"
 %       )
 %     )
@@ -48,7 +48,7 @@
 %   )
 % } else {
 %   cat(
-%     .PreambleBiblatexCombined(
+%     .PreambleCombined(
 %       path = root$find_file(
 %         ".setup",
 %         "latex",
@@ -73,7 +73,174 @@
 
 \maketitle
 
-WE NEED TO CREATE THIS.
+One equation should render the same everywhere it is pasted:
+\LaTeX{} (pdf\LaTeX{}), the Rd PDF manual, pkgdown (KaTeX),
+Quarto and R Markdown (MathJax), and Beamer.
+Agents follow \texttt{.setup/ai/style/latex-math.md},
+which follows this guide and is changed together with it.
+
+\section{Bold}
+
+\begin{itemize}
+	\item \texttt{\textbackslash boldsymbol\{\}} for every vector and matrix, Latin and Greek.
+	\item Do not write \texttt{\textbackslash mathbf} or \texttt{\textbackslash bm} in sources.
+	MathJax has no \texttt{\textbackslash bm}, and \texttt{\textbackslash mathbf}
+	prints upright on the web but italic in the PDF.
+	The preamble keeps its remap to \texttt{\textbackslash bm} for better PDF glyphs,
+	so this rule moves no glyph in a PDF.
+	\item Scalars and elements stay plain italic (\(a_{12, i}\)).
+\end{itemize}
+
+\begin{Verbatim}
+\boldsymbol{x}_{i, t}  \boldsymbol{A}  \boldsymbol{\Sigma}  a_{12, i}
+\end{Verbatim}
+
+\section{Symbols}
+
+\begin{itemize}
+	\item Transpose: \texttt{\^{}\{\textbackslash prime\}}
+	(not \texttt{\^{}T}, \texttt{\^{}\{\textbackslash top\}}, or \texttt{'}).
+	\item Operators: \texttt{\textbackslash operatorname\{\}}
+	(\texttt{vec}, \texttt{vech}, \texttt{tr}, \texttt{diag}, \texttt{Cov}),
+	never \texttt{\textbackslash text} or \texttt{\textbackslash mathrm}.
+	\item Subscripts in braces, with a space after commas:
+	\texttt{\textbackslash boldsymbol\{x\}\_\{i, t\}}.
+	\item \texttt{\textbackslash left( \textbackslash right)} around groups of more than one symbol,
+	and \texttt{\textbackslash !} before the \texttt{\textbackslash left(} of a function.
+	\item \texttt{\textbackslash mathbb\{E\}} and \texttt{\textbackslash mathbb\{V\}}
+	for expectation and variance.
+	\item The differential in an integral or a stochastic differential equation is
+	\texttt{\textbackslash mathrm\{d\}}; this is the exception to the operator rule.
+\end{itemize}
+
+\begin{Verbatim}
+\mathcal{N} \! \left( \boldsymbol{0}, \boldsymbol{\Xi} \right)
+\operatorname{vec} \! \left( \boldsymbol{A} \right)
+\boldsymbol{A}^{\prime}
+\end{Verbatim}
+
+\section{Display Equations}
+
+\begin{itemize}
+	\item \texttt{equation} when the equation is referred to, \texttt{equation*} otherwise.
+	\item A short equation stays on one line.
+	\item A long one breaks before \texttt{=}, \texttt{+}, and \texttt{\textbackslash sim},
+	and at commas between parts: one piece per line, indented with a tab.
+\end{itemize}
+
+\begin{Verbatim}
+\begin{equation}
+	\boldsymbol{\eta}_{i, t}
+	=
+	\boldsymbol{\alpha}
+	+ \boldsymbol{\beta} \boldsymbol{\eta}_{i, t - 1}
+	+ \boldsymbol{\zeta}_{i, t},
+	\quad
+	\boldsymbol{\zeta}_{i, t}
+	\sim \mathcal{N} \! \left( \boldsymbol{0}, \boldsymbol{\Psi} \right)
+	\label{eq:template-var}
+\end{equation}
+\end{Verbatim}
+
+\section{Macros}
+
+None.
+Plain, portable commands only.
+Do not use \texttt{\textbackslash newcommand}, \texttt{\textbackslash renewcommand},
+or \texttt{\textbackslash DeclareMathOperator} outside \texttt{.setup/latex/preamble}.
+
+\section{Portable Math}
+
+Use only commands that work in all of the contexts above:
+the Greek and Latin letters that \LaTeX{} defines,
+\texttt{\textbackslash boldsymbol},
+\texttt{\textbackslash mathcal}, \texttt{\textbackslash mathbb}, \texttt{\textbackslash mathrm\{d\}},
+\texttt{\textbackslash operatorname},
+\texttt{\textbackslash frac}, \texttt{\textbackslash sqrt}, \texttt{\textbackslash exp}, \texttt{\textbackslash log},
+\texttt{\textbackslash sum}, \texttt{\textbackslash prod}, \texttt{\textbackslash int},
+\texttt{\textbackslash sim}, \texttt{\textbackslash mid}, \texttt{\textbackslash ldots},
+\texttt{\textbackslash left}, \texttt{\textbackslash right}, \texttt{\textbackslash quad},
+\texttt{\textbackslash hat}, \texttt{\textbackslash tilde}, \texttt{\textbackslash bar},
+and the environments \texttt{pmatrix} and \texttt{aligned}.
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Not this & This \\
+\hline
+\texttt{\textbackslash Beta}, \texttt{\textbackslash Alpha} (not \LaTeX{}) & \texttt{\textbackslash mathrm\{B\}}, \texttt{\textbackslash mathrm\{A\}} \\
+\texttt{\textbackslash argmax}, \texttt{\textbackslash argmin} & \texttt{\textbackslash operatorname*\{arg\textbackslash ,max\}} \\
+\texttt{\textbackslash bm}, \texttt{\textbackslash mathbf} & \texttt{\textbackslash boldsymbol} \\
+\hline
+\end{tabular}
+\end{center}
+
+rProject's test page (\texttt{.setup/quarto/math/math.qmd}) renders these commands with MathJax,
+and this guide renders them in the PDF,
+so a change in a renderer shows up.
+
+\section{Shared Notation}
+
+This table holds the symbols shared across projects.
+Each project's \texttt{.setup/ai/project.md} (``Models and notation'')
+lists its own symbols and any departures.
+Elements of a vector or matrix use the plain letter.
+The subscripts \(i\) and \(t\) are the person and the time.
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Symbol & Source & Meaning \\
+\hline
+\multicolumn{3}{l}{\textit{Measurement}} \\
+\texttt{\textbackslash boldsymbol\{y\}\_\{i, t\}} & \(\boldsymbol{y}_{i, t}\) & observed variables \\
+\texttt{\textbackslash boldsymbol\{\textbackslash eta\}\_\{i, t\}} & \(\boldsymbol{\eta}_{i, t}\) & latent variables \\
+\texttt{\textbackslash boldsymbol\{\textbackslash nu\}} & \(\boldsymbol{\nu}\) & measurement intercepts \\
+\texttt{\textbackslash boldsymbol\{\textbackslash Lambda\}} & \(\boldsymbol{\Lambda}\) & factor loadings \\
+\texttt{\textbackslash boldsymbol\{\textbackslash varepsilon\}\_\{i, t\}} & \(\boldsymbol{\varepsilon}_{i, t}\) & measurement errors \\
+\texttt{\textbackslash boldsymbol\{\textbackslash Theta\}} & \(\boldsymbol{\Theta}\) & covariance of the measurement errors \\
+\multicolumn{3}{l}{\textit{Discrete time (VAR)}} \\
+\texttt{\textbackslash boldsymbol\{\textbackslash alpha\}} & \(\boldsymbol{\alpha}\) & intercepts \\
+\texttt{\textbackslash boldsymbol\{\textbackslash beta\}} & \(\boldsymbol{\beta}\) & transition matrix \\
+\texttt{\textbackslash boldsymbol\{\textbackslash zeta\}\_\{i, t\}} & \(\boldsymbol{\zeta}_{i, t}\) & process noise \\
+\texttt{\textbackslash boldsymbol\{\textbackslash Psi\}} & \(\boldsymbol{\Psi}\) & covariance of the process noise \\
+\multicolumn{3}{l}{\textit{Continuous time}} \\
+\texttt{\textbackslash boldsymbol\{\textbackslash iota\}} & \(\boldsymbol{\iota}\) & intercepts (linear SDE) \\
+\texttt{\textbackslash boldsymbol\{\textbackslash mu\}} & \(\boldsymbol{\mu}\) & set point (Ornstein-Uhlenbeck) \\
+\texttt{\textbackslash boldsymbol\{\textbackslash Phi\}} & \(\boldsymbol{\Phi}\) & drift matrix \\
+\texttt{\textbackslash boldsymbol\{\textbackslash Sigma\}} & \(\boldsymbol{\Sigma}\) & diffusion covariance \\
+\texttt{\textbackslash boldsymbol\{W\}\_\{i, t\}} & \(\boldsymbol{W}_{i, t}\) & Wiener process \\
+\texttt{\textbackslash Delta t} & \(\Delta t\) & time interval \\
+\multicolumn{3}{l}{\textit{Continuous-time mediation}} \\
+\texttt{\textbackslash exp \textbackslash ! \textbackslash left( \textbackslash Delta t \textbackslash boldsymbol\{\textbackslash Phi\} \textbackslash right)} & \(\exp \! \left( \Delta t \boldsymbol{\Phi} \right)\) & total effects \\
+\texttt{\textbackslash boldsymbol\{D\}\_\{\textbackslash boldsymbol\{m\}\}} & \(\boldsymbol{D}_{\boldsymbol{m}}\) & removes the mediators, for the direct effects \\
+\multicolumn{3}{l}{\textit{Cross-sectional mediation}} \\
+\texttt{X}, \texttt{M}, \texttt{Y} & \(X\), \(M\), \(Y\) & predictor, mediator, outcome \\
+\texttt{\textbackslash alpha}, \texttt{\textbackslash beta} & \(\alpha\), \(\beta\) & paths \(X \rightarrow M\), \(M \rightarrow Y\) \\
+\texttt{\textbackslash tau\^{}\{\textbackslash prime\}} & \(\tau^{\prime}\) & direct effect \\
+\hline
+\end{tabular}
+\end{center}
+
+The linear stochastic differential equation and the Ornstein-Uhlenbeck model are
+
+\begin{Verbatim}
+\mathrm{d} \boldsymbol{\eta}_{i, t}
+=
+\left( \boldsymbol{\iota} + \boldsymbol{\Phi} \boldsymbol{\eta}_{i, t} \right) \mathrm{d} t
++ \boldsymbol{\Sigma}^{\frac{1}{2}} \mathrm{d} \boldsymbol{W}_{i, t}
+
+\mathrm{d} \boldsymbol{\eta}_{i, t}
+=
+\boldsymbol{\Phi} \left( \boldsymbol{\eta}_{i, t} - \boldsymbol{\mu} \right) \mathrm{d} t
++ \boldsymbol{\Sigma}^{\frac{1}{2}} \mathrm{d} \boldsymbol{W}_{i, t}
+\end{Verbatim}
+
+\section{Tools}
+
+\texttt{make lint} reports (never fails on) bold, portable math,
+macros, and symbols, in \LaTeX{} sources, roxygen \texttt{\textbackslash eqn\{\}} and \texttt{\textbackslash deqn\{\}},
+and Markdown math.
 
 \nocite{RCoreTeam-2026}
 

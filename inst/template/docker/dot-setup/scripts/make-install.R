@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 args <- commandArgs(trailingOnly = TRUE)
-path <- as.character(args[1])
+path <- as.character(x = args[1])
 if (
   file.exists(
     file.path(
@@ -19,7 +19,7 @@ if (
     pattern = ".*\\.R",
     full.names = TRUE, recursive = TRUE
   )
-  if (length(deps) > 0) {
+  if (length(x = deps) > 0) {
     file.copy(
       from = deps,
       to = file.path(path, "R"),
@@ -31,21 +31,21 @@ if (
     pattern = "^.*\\.cpp",
     full.names = TRUE
   )
-  if (length(cpp) > 0) {
+  if (length(x = cpp) > 0) {
     dir.create(
       path = file.path(path, "src"),
       showWarnings = FALSE,
       recursive = TRUE
     )
     unlink(
-      file.path(
+      x = file.path(
         path,
         "R",
         "RcppExports.R"
       )
     )
     unlink(
-      file.path(
+      x = file.path(
         path,
         "src",
         "RcppExports.cpp"
@@ -67,7 +67,7 @@ if (
       description = cpp_file_fn,
       open = "w"
     )
-    for (i in seq_along(cpp)) {
+    for (i in seq_along(along.with = cpp)) {
       writeLines(
         text = readLines(con = cpp[i]),
         con = cpp_file
@@ -83,15 +83,15 @@ if (
       to = file.path(path, "src"),
       overwrite = TRUE
     )
-    close(cpp_file)
+    close(con = cpp_file)
     Rcpp::compileAttributes(pkgdir = path)
     roxygen2::roxygenize(
       package.dir = path,
       roclets = "rd"
     )
-    unlink(namespace)
+    unlink(x = namespace)
   }
-  devtools::document(path)
-  devtools::install(path, dependencies = FALSE, upgrade = FALSE)
+  devtools::document(pkg = path)
+  devtools::install(pkg = path, dependencies = FALSE, upgrade = FALSE)
 }
 warnings()

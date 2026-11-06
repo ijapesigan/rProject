@@ -10,8 +10,16 @@ BibLib(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Returns a logical value from copying the bibliography.
+}
 \description{
 Copy .bib Files from lib-* GitHUb Repositories
+}
+\examples{
+\dontrun{
+BibLib(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -1,0 +1,189 @@
+\documentclass{article}
+
+\input{.setup/latex/preamble/preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLATEX APA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "root",
+% #| include = FALSE
+% root <- rprojroot::is_rstudio_project
+%% end.rcode
+
+%% begin.rcode
+% #| label = "knitr",
+% #| include = FALSE,
+% #| file = root$find_file(
+% #|   ".setup",
+% #|   "latex",
+% #|   "r-scripts",
+% #|   "knitr.R"
+% #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% if (require(package = "rProject")) {
+%   Bib(
+%     path = dirname(
+%       path = root$find_file(
+%         "project.Rproj"
+%       )
+%     )
+%   )
+%   cat(
+%     .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+%   )
+% } else {
+%   cat(
+%     .PreambleCombined(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       ),
+%       output_path = root$find_file(
+%         ".setup",
+%         "latex"
+%       )
+%     )
+%   )
+% }
+%% end.rcode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Figures and Tables Style Guide}
+\author{Ivan Jacob Agaloos Pesigan}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+One source gives the paper's figure, the website's figure, and the slide's figure.
+Talks have their own leeway (the talks guide).
+Agents follow \texttt{.setup/ai/style/figures-tables.md},
+which follows this guide and is changed together with it.
+
+\section{Pipeline}
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Kind & Source & Paper & Web \\
+\hline
+Result plot & \texttt{Fig<Name>()} in \texttt{R} & PDF & PNG \\
+Diagram & \texttt{.setup/latex/tikz/<name>.tex} & PDF & PNG \\
+Table & results in \texttt{.setup/data-*}, columns by name & \texttt{booktabs} & \texttt{knitr::kable()} \\
+Animation & \texttt{Fig<Name>()}, one frame per call & small multiples & GIF \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Plots}
+
+\begin{itemize}
+	\item Palette: Okabe-Ito (\texttt{grDevices::palette.colors()}),
+	with a point shape and a line type per group, so that figures read in greyscale.
+	\item Format: vector PDF for papers and slides,
+	PNG at 300 dpi for pkgdown, Quarto, and the README; both from the same source.
+	\item A \texttt{Fig<Name>()} is exported, documented, and tested.
+	It saves the files itself, at a size preset, in \texttt{.setup/latex/figures}.
+	\item A \texttt{highlight} or \texttt{subset} argument is optional,
+	for a figure likely to be shown in stages:
+	each stage is one call, shown with \texttt{\textbackslash only<n>\{\}} in Beamer.
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\texttt{size} & Width \(\times\) height (in) & Use \\
+\hline
+\texttt{"column"} & 3.3 \(\times\) 2.5 & one column of \texttt{jou}; body-text font \\
+\texttt{"page"} & 6.5 \(\times\) 4 & text width; body-text font \\
+\texttt{"slide"} & 5.5 \(\times\) 3.1 & 16:9 frame; larger sans-serif font \\
+\hline
+\end{tabular}
+\end{center}
+
+The height can be overridden.
+\LaTeX{} sets \texttt{width = \textbackslash linewidth} or \texttt{\textbackslash textwidth}, never \texttt{scale}.
+
+\section{Diagrams}
+
+Diagrams are standalone TikZ files in \texttt{.setup/latex/tikz}.
+\texttt{make latex} compiles each to PDF, then \texttt{pdftoppm -r 300} makes the PNG;
+each is rebuilt only when its source is newer.
+
+\section{Animations}
+
+\begin{itemize}
+	\item GIFs are allowed everywhere: pkgdown, Quarto, README, Reveal.js, Beamer, and papers.
+	\item \texttt{GifWrite(fig, frames, fps, size)} calls a \texttt{Fig*()} once per frame
+	and writes \texttt{.setup/latex/figures/gif/<name>.gif}, the PNG frames,
+	and a multi-page PDF, using \texttt{magick}.
+	\item Papers show small multiples: a few chosen frames as one faceted PDF figure.
+	A paper may also embed the animation with the \texttt{animate} package
+	(it plays only in Acrobat and Okular),
+	always next to the small multiples, never in place of them.
+	\item Under 10 MB per GIF; 2 to 10 frames per second; loops.
+	\item No flashing faster than 3 per second.
+	Every GIF has alt text and a caption that says what changes.
+	Meaning is never shown by colour alone.
+\end{itemize}
+
+\section{Tables}
+
+\begin{itemize}
+	\item Read results from \texttt{.setup/data-*} and select columns by name, never by number.
+	\item \texttt{.Tabular(x = x, digits = 3)} writes the rows;
+	\texttt{\textbackslash rinline\{\}} puts them in a hand-written \texttt{booktabs}
+	and \texttt{threeparttable} frame.
+	\item The web version is \texttt{knitr::kable()} from the same data.
+\end{itemize}
+
+\section{Floats}
+
+\begin{itemize}
+	\item APA 7: the caption above, as a title in title case;
+	\texttt{\textbackslash textit\{Note.\}} below.
+	\item Every float and subfigure has a label,
+	\texttt{fig:<project>-<name>} or \texttt{tab:<project>-<name>}.
+	\item Every figure chunk has a label,
+	since an unnamed chunk's file name shifts when a chunk is added.
+\end{itemize}
+
+\section{Helpers}
+
+The template writes copies, with no dependency on rProject:
+\texttt{.setup/r-miscellaneous/texTools}
+(\texttt{.Tabular()}, \texttt{.Round()}, \texttt{.Array()}, the biblatex helpers, \texttt{GifWrite()}, \texttt{GifFrames()})
+and \texttt{.setup/r-dependencies} (the \texttt{ggplot2} theme and palette, copied into \texttt{R}).
+
+\section{Tools}
+
+\texttt{make lint} reports (never fails on)
+\texttt{scale} and missing files in \texttt{\textbackslash includegraphics},
+floats without a caption or label,
+figure chunks without a label,
+GIFs over 10 MB or without a source,
+and papers that embed an animation without small multiples.
+
+\nocite{RCoreTeam-2026}
+
+\printbibliography
+
+\end{document}

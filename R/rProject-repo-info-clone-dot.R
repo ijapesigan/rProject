@@ -1,7 +1,7 @@
 .RepoInfoClone <- function(path) {
   # owner/repo of the public repository that .setup/scripts/clone.sh clones
   clone <- file.path(path, ".setup", "scripts", "clone.sh")
-  public <- character(0)
+  public <- character(length = 0)
   if (file.exists(clone)) {
     lines <- readLines(con = clone, warn = FALSE)
     public <- regmatches(

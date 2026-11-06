@@ -41,12 +41,12 @@ Each type uses a few sets of template files
 #| echo = FALSE
 sets <- rProject:::.TemplateSets()
 knitr::kable(
-  data.frame(
-    type = names(sets),
+  x = data.frame(
+    type = names(x = sets),
     sets = vapply(
       X = sets,
       FUN = paste,
-      FUN.VALUE = character(1),
+      FUN.VALUE = character(length = 1),
       collapse = ", "
     ),
     use = c(
@@ -76,11 +76,11 @@ missing or not standard for its type.
 ```{r}
 #| echo = FALSE
 knitr::kable(
-  data.frame(
+  x = data.frame(
     folder = paste0("`", folders$folder, "`"),
     types = gsub(pattern = ",", replacement = ", ", x = folders$types),
-    private = ifelse(as.logical(folders$private), "yes", ""),
-    created = ifelse(as.logical(folders$create), "yes", ""),
+    private = ifelse(test = as.logical(x = folders$private), yes = "yes", no = ""),
+    created = ifelse(test = as.logical(x = folders$create), yes = "yes", no = ""),
     purpose = folders$purpose
   ),
   row.names = FALSE
@@ -177,7 +177,7 @@ removed <- utils::read.delim(
   colClasses = "character"
 )
 knitr::kable(
-  data.frame(
+  x = data.frame(
     path = paste0("`", removed$path, "`"),
     since = removed$since
   ),

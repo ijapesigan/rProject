@@ -3,11 +3,16 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LatexCompile
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' LatexTikzCompile(path = getwd())
+#' }
 #' @export
 LatexTikzCompile <- function(path,
                              clean = FALSE) {
-  if (!tinytex::check_installed("latexmk")) {
-    tinytex::tlmgr_install("latexmk")
+  if (!tinytex::check_installed(pkgs = "latexmk")) {
+    tinytex::tlmgr_install(pkgs = "latexmk")
   }
   latexmkrc <- system.file(
     "latexmk",
@@ -30,7 +35,7 @@ LatexTikzCompile <- function(path,
     full.names = TRUE,
     all.files = TRUE
   )
-  if (length(tex_files) > 0) {
+  if (length(x = tex_files) > 0) {
     detritus <- Detritus(path = path)
     tex_folder <- detritus$tex_folder
     tex_folder <- file.path(
@@ -38,7 +43,7 @@ LatexTikzCompile <- function(path,
       "tikz"
     )
     dir.create(
-      tex_folder,
+      path = tex_folder,
       showWarnings = FALSE,
       recursive = TRUE
     )
@@ -50,7 +55,7 @@ LatexTikzCompile <- function(path,
       "pdf"
     )
     dir.create(
-      pdf_folder,
+      path = pdf_folder,
       showWarnings = FALSE,
       recursive = TRUE
     )
@@ -65,20 +70,20 @@ LatexTikzCompile <- function(path,
         "!*.pdf",
         "!.gitignore"
       )
-      con <- file(dot_gitignore_file)
+      con <- file(description = dot_gitignore_file)
       writeLines(
         text = dot_gitignore,
         con = con,
         sep = "\n"
       )
-      close(con)
+      close(con = con)
     }
     file.copy(
       from = tex_files,
       to = tex_folder
     )
     try(
-      system2(
+      expr = system2(
         command = "latexmk",
         args = c(
           "-f",
@@ -95,9 +100,10 @@ LatexTikzCompile <- function(path,
         )
       )
     )
+    .LatexTikzPng(pdf_folder = pdf_folder)
     if (clean) {
       invisible(
-        lapply(
+        x = lapply(
           X = c(
             "\\.tex$",
             "\\.xml$",
@@ -113,9 +119,9 @@ LatexTikzCompile <- function(path,
           ),
           FUN = function(x) {
             invisible(
-              lapply(
+              x = lapply(
                 X = list.files(
-                  pdf_folder,
+                  path = pdf_folder,
                   pattern = x,
                   full.names = TRUE,
                   all.files = TRUE
@@ -128,7 +134,7 @@ LatexTikzCompile <- function(path,
       )
     }
     unlink(
-      file.path(
+      x = file.path(
         path,
         "latexmkrc"
       )
@@ -147,20 +153,20 @@ LatexTikzCompile <- function(path,
       "png"
     )
     dir.create(
-      png_folder,
+      path = png_folder,
       showWarnings = FALSE,
       recursive = TRUE
     )
-    for (i in seq_along(pdf_files)) {
+    for (i in seq_along(along.with = pdf_files)) {
       file_name_png <- tools::file_path_sans_ext(
-        basename(pdf_files[i])
+        x = basename(path = pdf_files[i])
       )
       file_name_png <- file.path(
         png_folder,
         file_name_png
       )
       try(
-        system2(
+        expr = system2(
           command = "pdftoppm",
           args = c(
             "-png",

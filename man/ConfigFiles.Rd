@@ -10,12 +10,20 @@ ConfigFiles(repo = "ijapesigan/dotfiles")
 \item{repo}{Character string.
 GitHub repository in the form \code{owner/name}.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Clones a public \code{dotfiles} GitHub repository and runs \code{make} in it.
 The clone ignores the global Git configuration,
 so URL rewrites to SSH host aliases do not apply
 and the repository is fetched anonymously over HTTPS.
 This also works inside a container without access to SSH keys.
+}
+\examples{
+\dontrun{
+ConfigFiles()
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

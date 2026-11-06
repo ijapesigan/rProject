@@ -23,13 +23,17 @@
 #'   If `TRUE`, refresh only the file lists of the newest existing log
 #'   for `topic`.
 #' @return Returns the path of the log invisibly.
+#' @examples
+#' \dontrun{
+#' Log(path = getwd(), topic = "my-topic")
+#' }
 #' @export
 Log <- function(path,
                 topic,
                 summary = topic,
                 private = file.path(path, ".verify"),
                 update = FALSE) {
-  if (!nzchar(summary)) {
+  if (!nzchar(x = summary)) {
     summary <- topic
   }
   logs <- file.path(path, ".setup", "logs")
@@ -39,14 +43,14 @@ Log <- function(path,
     recursive = TRUE
   )
   existing <- sort(
-    list.files(
+    x = list.files(
       path = logs,
       pattern = paste0("^[0-9]{4}-[0-9]{2}-[0-9]{2}-", topic, "\\.md$")
     ),
     decreasing = TRUE
   )
   if (update) {
-    if (length(existing) == 0L) {
+    if (length(x = existing) == 0L) {
       stop(
         paste0("\n\nNo log for topic \"", topic, "\" in ", logs, ".\n\n"),
         call. = FALSE
@@ -54,7 +58,7 @@ Log <- function(path,
     }
     log <- existing[1]
   } else {
-    log <- paste0(format(Sys.Date()), "-", topic, ".md")
+    log <- paste0(format(x = Sys.Date()), "-", topic, ".md")
   }
   log_file <- file.path(logs, log)
   if (!update && file.exists(log_file)) {
@@ -67,7 +71,7 @@ Log <- function(path,
       call. = FALSE
     )
   }
-  if (!dir.exists(file.path(private, ".git"))) {
+  if (!dir.exists(paths = file.path(private, ".git"))) {
     private <- NULL
   }
   if (!update) {
@@ -87,8 +91,8 @@ Log <- function(path,
       con = log_file,
       warn = FALSE
     )
-    start <- which(lines == "## Files to update in Overleaf")[1]
-    if (is.na(start)) {
+    start <- which(x = lines == "## Files to update in Overleaf")[1]
+    if (is.na(x = start)) {
       stop(
         paste0(
           "\n\n",
@@ -98,12 +102,12 @@ Log <- function(path,
         call. = FALSE
       )
     }
-    after <- which(grepl(pattern = "^## ", x = lines))
-    end <- c(after[after > start], length(lines) + 1L)[1]
+    after <- which(x = grepl(pattern = "^## ", x = lines))
+    end <- c(after[after > start], length(x = lines) + 1L)[1]
     lines <- c(
-      lines[seq_len(start - 1L)],
+      lines[seq_len(length.out = start - 1L)],
       section,
-      lines[seq(from = end, length.out = length(lines) - end + 1L)]
+      lines[seq(from = end, length.out = length(x = lines) - end + 1L)]
     )
   } else {
     lines <- .LogTemplate(
@@ -121,15 +125,15 @@ Log <- function(path,
   message(
     paste0(
       "\n\n",
-      ifelse(update, "Updated ", "Created "),
+      ifelse(test = update, yes = "Updated ", no = "Created "),
       log_file,
       ifelse(
-        is.null(private),
-        "\nNo clone of the private repository: file lists are TODO.",
-        ""
+        test = is.null(x = private),
+        yes = "\nNo clone of the private repository: file lists are TODO.",
+        no = ""
       ),
       "\n\n"
     )
   )
-  invisible(log_file)
+  invisible(x = log_file)
 }

@@ -9,19 +9,26 @@ lapply(
       {
         root <- .TestProject(pattern = "project with space ")
         Profile(path = root, project = "testProject")
-        profile <- readLines(file.path(root, ".Rprofile"))
+        profile <- readLines(con = file.path(root, ".Rprofile"))
         testthat::expect_true(
-          any(grepl("Sys.setenv(PROJECT = \"testProject\")", profile,
+          object = any(grepl(
+            pattern = "Sys.setenv(PROJECT = \"testProject\")", x = profile,
             fixed = TRUE
           ))
         )
-        testthat::expect_true(any(grepl("^\\.libPaths\\(", profile)))
         testthat::expect_true(
-          any(grepl("options(repos", profile, fixed = TRUE))
+          object = any(grepl(pattern = "^\\.libPaths\\(", x = profile))
+        )
+        testthat::expect_true(
+          object = any(
+            grepl(pattern = "options(repos", x = profile, fixed = TRUE)
+          )
         )
         # the file is valid R
-        testthat::expect_silent(parse(file.path(root, ".Rprofile")))
-        unlink(dirname(root), recursive = TRUE)
+        testthat::expect_silent(
+          object = parse(file = file.path(root, ".Rprofile"))
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
     testthat::test_that(
@@ -29,14 +36,16 @@ lapply(
       {
         root <- .TestProject(description = FALSE)
         testthat::expect_message(
-          Profile(path = root, project = "testProject"),
-          "is not an R package"
+          object = Profile(path = root, project = "testProject"),
+          regexp = "is not an R package"
         )
-        testthat::expect_false(file.exists(file.path(root, ".Rprofile")))
-        unlink(dirname(root), recursive = TRUE)
+        testthat::expect_false(
+          object = file.exists(file.path(root, ".Rprofile"))
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
-    .TestRestore(state)
+    .TestRestore(state = state)
   },
   text = "test-rProject-profile"
 )

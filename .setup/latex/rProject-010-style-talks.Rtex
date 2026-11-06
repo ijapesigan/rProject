@@ -1,0 +1,145 @@
+\documentclass{article}
+
+\input{.setup/latex/preamble/preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLATEX APA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "root",
+% #| include = FALSE
+% root <- rprojroot::is_rstudio_project
+%% end.rcode
+
+%% begin.rcode
+% #| label = "knitr",
+% #| include = FALSE,
+% #| file = root$find_file(
+% #|   ".setup",
+% #|   "latex",
+% #|   "r-scripts",
+% #|   "knitr.R"
+% #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% if (require(package = "rProject")) {
+%   Bib(
+%     path = dirname(
+%       path = root$find_file(
+%         "project.Rproj"
+%       )
+%     )
+%   )
+%   cat(
+%     .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+%   )
+% } else {
+%   cat(
+%     .PreambleCombined(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       ),
+%       output_path = root$find_file(
+%         ".setup",
+%         "latex"
+%       )
+%     )
+%   )
+% }
+%% end.rcode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Talks Style Guide}
+\author{Ivan Jacob Agaloos Pesigan}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Manuscripts are papers; talks are presentations that maximize appeal,
+so they get leeway.
+The rules split in two:
+what is kept for correctness and reuse, and what is free.
+Agents follow \texttt{.setup/ai/style/talks.md},
+which follows this guide and is changed together with it.
+
+\section{Kept}
+
+These are checked by \texttt{make lint}, as in papers.
+
+\begin{itemize}
+	\item Math: \texttt{\textbackslash boldsymbol}, portable commands, and the shared notation,
+	so that an equation pasted from a paper renders the same.
+	\item R code and file names, since talks are R packages.
+	\item Citations: any biblatex-apa command
+	(\texttt{\textbackslash parencite}, \texttt{\textbackslash textcite},
+	\texttt{\textbackslash footcite}, \texttt{\textbackslash fullcite}),
+	with lib-* keys only and no typed references.
+	\item One body (\texttt{.setup/latex/slides/talk.tex}) for slides, notes, and handout.
+	A talk with slides only may skip the wrappers.
+	\item Accessibility floor: meaning is never shown by colour alone.
+	Add a shape, line type, label, or position.
+\end{itemize}
+
+\section{Free}
+
+This is guidance, not lint.
+
+\begin{itemize}
+	\item Colours: the Penn State theme and any palette that helps the slide
+	(Okabe-Ito recommended), within the floor above.
+	\item Figure sizes: any; \texttt{scale} and \texttt{width} are allowed.
+	\texttt{Fig*(size = "slide")} gives slide fonts.
+	\item TikZ inline in frames, or from \texttt{.setup/latex/tikz}
+	(recommended when a paper uses the same diagram).
+	\item Layout: semantic line breaks and tabs are recommended;
+	no APA captions, labels, or notes.
+	\item Images and photos in PNG or JPG.
+	\item GIFs: free, except the floor, no flashing faster than 3 per second, and alt text on the web.
+\end{itemize}
+
+\section{Formats}
+
+\subsection{Beamer}
+
+\texttt{beamerthemePSU}, with one body and three wrappers (slides, notes for pympress, handout).
+Animations play with \texttt{\textbackslash PSUanimation} (PNG frames)
+or \texttt{\textbackslash PSUanimationpdf} (a multi-page PDF).
+
+\subsection{Reveal.js}
+
+Quarto Reveal.js, from \texttt{.setup/quarto}.
+Use GIFs directly and the same math (MathJax: no \texttt{\textbackslash bm}).
+
+\section{Lifetime}
+
+Finished talks are still checked; there is no skip after the talk's date.
+Older talks follow the rules when next reused.
+
+\section{Tools}
+
+\texttt{make lint} uses a talk profile for project type \texttt{talk}:
+it runs the kept checks and skips the free ones.
+
+\nocite{RCoreTeam-2026}
+
+\printbibliography
+
+\end{document}

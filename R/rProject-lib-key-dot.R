@@ -21,8 +21,8 @@
     gsub(pattern = "[^A-Za-z]", replacement = "", x = x)
   }
   names <- fold(x = families)
-  names <- names[nzchar(names)]
-  if (length(names) > 3L) {
+  names <- names[nzchar(x = names)]
+  if (length(x = names) > 3L) {
     names <- c(names[1:3], "etal")
   }
   paste(c(names, year), collapse = "-")

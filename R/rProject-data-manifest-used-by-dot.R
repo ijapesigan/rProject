@@ -32,7 +32,7 @@
     FUN = function(script) {
       paste(readLines(con = script, warn = FALSE), collapse = "\n")
     },
-    FUN.VALUE = character(1)
+    FUN.VALUE = character(length = 1)
   )
   # relative paths by prefix, not by a regex built from the path
   root <- paste0(
@@ -43,16 +43,23 @@
     X = files,
     FUN = function(file) {
       # the plain name, as scripts refer to it
-      name <- sub(pattern = "\\.(xz|gz)$", replacement = "", x = basename(file))
+      name <- sub(
+        pattern = "\\.(xz|gz)$",
+        replacement = "",
+        x = basename(path = file)
+      )
       hits <- normalizePath(
         path = scripts[grepl(pattern = name, x = text, fixed = TRUE)],
         winslash = "/"
       )
       inside <- startsWith(x = hits, prefix = root)
-      hits[inside] <- substring(text = hits[inside], first = nchar(root) + 1L)
+      hits[inside] <- substring(
+        text = hits[inside],
+        first = nchar(x = root) + 1L
+      )
       paste(hits, collapse = ", ")
     },
-    FUN.VALUE = character(1),
+    FUN.VALUE = character(length = 1),
     USE.NAMES = FALSE
   )
 }

@@ -18,17 +18,17 @@ knitr::opts_chunk$set(
 ```
 
 ```{r}
-library(rProject)
+library(package = rProject)
 ```
 
 # Session
 
 ```{r}
-sessionInfo()
+utils::sessionInfo()
 ```
 
 # Packages
 
 ```{r}
-installed.packages()
+utils::installed.packages()
 ```

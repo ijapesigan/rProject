@@ -4,15 +4,15 @@
   # arrays (unnamed lists, e.g., permission rules): union;
   # anything else: the source
   object <- function(x) {
-    is.list(x) && !is.null(names(x))
+    is.list(x = x) && !is.null(x = names(x = x))
   }
   array <- function(x) {
-    is.list(x) && is.null(names(x))
+    is.list(x = x) && is.null(x = names(x = x))
   }
-  if (object(existing) && object(source)) {
-    for (key in names(source)) {
+  if (object(x = existing) && object(x = source)) {
+    for (key in names(x = source)) {
       existing[key] <- list(
-        if (key %in% names(existing)) {
+        if (key %in% names(x = existing)) {
           .AIGlobalMerge(
             existing = existing[[key]],
             source = source[[key]]
@@ -23,7 +23,7 @@
       )
     }
     existing
-  } else if (array(existing) && array(source)) {
+  } else if (array(x = existing) && array(x = source)) {
     c(
       existing,
       source[
@@ -34,12 +34,12 @@
               vapply(
                 X = existing,
                 FUN = identical,
-                FUN.VALUE = logical(1),
+                FUN.VALUE = logical(length = 1),
                 y = x
               )
             )
           },
-          FUN.VALUE = logical(1)
+          FUN.VALUE = logical(length = 1)
         )
       ]
     )

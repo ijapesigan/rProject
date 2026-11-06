@@ -20,6 +20,11 @@ Lists the key, \code{annotation}, and \code{keywords} of every entry in the
 project's Quarto bibliography (\code{.setup/quarto/bib/quarto.bib}, written
 by \code{\link[=Bib]{Bib()}}), for the "Library Tags" page of the Quarto site.
 }
+\examples{
+\dontrun{
+Tags(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

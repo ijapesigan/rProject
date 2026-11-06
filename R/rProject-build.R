@@ -8,6 +8,11 @@
 #'   Build vignettes.
 #' @param dependencies Logical.
 #'   Install package dependencies.
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Build(path = getwd())
+#' }
 #' @export
 Build <- function(path,
                   vignettes = FALSE,
@@ -46,21 +51,21 @@ Build <- function(path,
       pattern = "^.*\\.cpp",
       full.names = TRUE
     )
-    if (length(cpp) > 0) {
+    if (length(x = cpp) > 0) {
       dir.create(
         path = file.path(path, "src"),
         showWarnings = FALSE,
         recursive = TRUE
       )
       unlink(
-        file.path(
+        x = file.path(
           path,
           "R",
           "RcppExports.R"
         )
       )
       unlink(
-        file.path(
+        x = file.path(
           path,
           "src",
           "RcppExports.cpp"
@@ -82,7 +87,7 @@ Build <- function(path,
         description = cpp_file_fn,
         open = "w"
       )
-      for (i in seq_along(cpp)) {
+      for (i in seq_along(along.with = cpp)) {
         writeLines(
           text = readLines(con = cpp[i]),
           con = cpp_file
@@ -96,13 +101,13 @@ Build <- function(path,
         from = file.path(path, ".setup", "cpp", "Makevars.win"),
         to = file.path(path, "src")
       )
-      close(cpp_file)
+      close(con = cpp_file)
       Rcpp::compileAttributes(pkgdir = path)
       roxygen2::roxygenize(
         package.dir = path,
         roclets = "rd"
       )
-      unlink(namespace)
+      unlink(x = namespace)
     }
     devtools::document(pkg = path)
     devtools::check(pkg = path, cran = FALSE)
@@ -118,8 +123,8 @@ Build <- function(path,
     )
     unlink(
       x = list.files(
-        output,
-        pattern = utils::glob2rx("*.tar.gz"),
+        path = output,
+        pattern = utils::glob2rx(pattern = "*.tar.gz"),
         full.names = TRUE
       )
     )

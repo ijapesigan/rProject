@@ -4,9 +4,9 @@ lapply(
   FUN = function(i,
                  text) {
     root <- tempfile(pattern = "spec")
-    dir.create(root)
+    dir.create(path = root)
     file <- suppressMessages(
-      Spec(
+      expr = Spec(
         path = root,
         topic = "new-thing",
         title = "A new thing"
@@ -15,14 +15,17 @@ lapply(
     testthat::test_that(
       paste(text, "writes the template"),
       {
-        lines <- readLines(file)
+        lines <- readLines(con = file)
         testthat::expect_equal(
-          basename(file),
-          paste0(format(Sys.Date()), "-new-thing.md")
+          object = basename(path = file),
+          expected = paste0(format(x = Sys.Date()), "-new-thing.md")
         )
-        testthat::expect_equal(lines[1], "# Spec: A new thing")
+        testthat::expect_equal(
+          object = lines[1],
+          expected = "# Spec: A new thing"
+        )
         testthat::expect_true(
-          all(
+          object = all(
             c("## Problem", "## Design", "## Files", "## Acceptance") %in%
               lines
           )
@@ -33,12 +36,12 @@ lapply(
       paste(text, "does not overwrite"),
       {
         testthat::expect_error(
-          Spec(path = root, topic = "new-thing"),
-          "already exists"
+          object = Spec(path = root, topic = "new-thing"),
+          regexp = "already exists"
         )
       }
     )
-    unlink(root, recursive = TRUE)
+    unlink(x = root, recursive = TRUE)
   },
   text = "test-rProject-spec"
 )

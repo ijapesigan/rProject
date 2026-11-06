@@ -21,20 +21,24 @@
     unpublished = "Unpublished"
   )
   # a type not in the list keeps its spelling
-  house <- types[tolower(type)]
-  type <- if (is.na(house)) type else unname(house)
-  fields <- fields[!is.na(fields) & nzchar(trimws(fields))]
-  names(fields) <- tolower(names(fields))
+  house <- types[tolower(x = type)]
+  type <- if (is.na(x = house)) {
+    type
+  } else {
+    unname(obj = house)
+  }
+  fields <- fields[!is.na(x = fields) & nzchar(x = trimws(x = fields))]
+  names(x = fields) <- tolower(x = names(x = fields))
   lead <- c(
     "author", "editor", "bookauthor", "booktitle",
     "date", "journaltitle", "title", "subtitle"
   )
   trail <- c("abstract", "publisher", "keywords", "library", "annotation")
-  middle <- sort(setdiff(names(fields), c(lead, trail)))
+  middle <- sort(x = setdiff(x = names(x = fields), y = c(lead, trail)))
   order <- c(
-    intersect(lead, names(fields)),
+    intersect(x = lead, y = names(x = fields)),
     middle,
-    intersect(trail, names(fields))
+    intersect(x = trail, y = names(x = fields))
   )
   c(
     paste0("@", type, "{", key, ","),

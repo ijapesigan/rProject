@@ -6,6 +6,11 @@
 #' @inheritParams tinytex::install_tinytex
 #' @param force Logical.
 #'   Force install.
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' TinyTex(path = getwd())
+#' }
 #' @export
 TinyTex <- function(path,
                     bundle = "TinyTeX-2",
@@ -16,7 +21,7 @@ TinyTex <- function(path,
   pkg_installed <- installed[, "Package"]
   if (!("remotes" %in% pkg_installed)) {
     utils::install.packages(
-      "remotes",
+      pkgs = "remotes",
       repos = c(REPO_NAME = PkgRepo(path = path)),
       lib = lib,
       quiet = TRUE
@@ -26,7 +31,7 @@ TinyTex <- function(path,
   if (!("tinytex" %in% pkg_installed)) {
     run <- TRUE
   } else {
-    if (is.null(utils::packageDescription("tinytex")$GithubRepo)) {
+    if (is.null(x = utils::packageDescription(pkg = "tinytex")$GithubRepo)) {
       run <- TRUE
     }
   }

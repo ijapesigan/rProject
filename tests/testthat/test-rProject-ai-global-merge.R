@@ -7,11 +7,11 @@ lapply(
     home <- tempfile(pattern = "home")
     source_dir <- file.path(root, ".setup", "ai", "global")
     dir.create(
-      source_dir,
+      path = source_dir,
       recursive = TRUE
     )
     dir.create(
-      file.path(home, ".claude"),
+      path = file.path(home, ".claude"),
       recursive = TRUE
     )
     writeLines(
@@ -34,7 +34,7 @@ lapply(
       con = file.path(home, ".claude", "settings.json")
     )
     suppressMessages(
-      AIGlobal(
+      expr = AIGlobal(
         path = root,
         home = home
       )
@@ -46,26 +46,26 @@ lapply(
     testthat::test_that(
       paste(text, "source keys win"),
       {
-        testthat::expect_equal(merged$theme, "dark")
+        testthat::expect_equal(object = merged$theme, expected = "dark")
       }
     )
     testthat::test_that(
       paste(text, "keeps other keys and rules"),
       {
-        testthat::expect_true(merged$autoMode)
+        testthat::expect_true(object = merged$autoMode)
         testthat::expect_equal(
-          unlist(merged$permissions$allow),
-          "mcp__undermind"
+          object = unlist(x = merged$permissions$allow),
+          expected = "mcp__undermind"
         )
         testthat::expect_equal(
-          unlist(merged$permissions$deny),
-          c("Read(**/*secrets*)", "Read(~/.x)")
+          object = unlist(x = merged$permissions$deny),
+          expected = c("Read(**/*secrets*)", "Read(~/.x)")
         )
         testthat::expect_true(
-          any(
+          object = any(
             grepl(
               pattern = "\"env\": \\{\\}",
-              x = readLines(file.path(home, ".claude", "settings.json"))
+              x = readLines(con = file.path(home, ".claude", "settings.json"))
             )
           )
         )
@@ -75,8 +75,8 @@ lapply(
       paste(text, "is stable"),
       {
         testthat::expect_null(
-          suppressMessages(
-            AIGlobal(
+          object = suppressMessages(
+            expr = AIGlobal(
               path = root,
               home = home
             )
@@ -85,7 +85,7 @@ lapply(
       }
     )
     unlink(
-      c(root, home),
+      x = c(root, home),
       recursive = TRUE
     )
   },

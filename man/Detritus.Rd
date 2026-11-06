@@ -10,8 +10,17 @@ Detritus(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Returns a list with the detritus folder and the paths of the
+\code{.tex} files.
+}
 \description{
 Create \verb{detritus/tex/tex-fig-*}
+}
+\examples{
+\dontrun{
+Detritus(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

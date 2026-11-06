@@ -3,19 +3,27 @@
   # a draft entry from a Crossref record: type, key, repo, fields, and the
   # questions the user must answer; never invents a field
   first <- function(x) {
-    if (is.null(x) || length(x) == 0L) NA_character_ else as.character(x[[1]])
-  }
-  ymd <- function(x) {
-    parts <- unlist(x$`date-parts`)
-    if (length(parts) == 0L || is.na(parts[1])) {
+    if (is.null(x = x) || length(x = x) == 0L) {
       NA_character_
-    } else if (length(parts) >= 2L) {
-      sprintf("%04d-%02d", as.integer(parts[1]), as.integer(parts[2]))
     } else {
-      sprintf("%04d", as.integer(parts[1]))
+      as.character(x = x[[1]])
     }
   }
-  questions <- character(0)
+  ymd <- function(x) {
+    parts <- unlist(x = x$`date-parts`)
+    if (length(x = parts) == 0L || is.na(x = parts[1])) {
+      NA_character_
+    } else if (length(x = parts) >= 2L) {
+      sprintf(
+        fmt = "%04d-%02d",
+        as.integer(x = parts[1]),
+        as.integer(x = parts[2])
+      )
+    } else {
+      sprintf(fmt = "%04d", as.integer(x = parts[1]))
+    }
+  }
+  questions <- character(length = 0)
   types <- c(
     "journal-article" = "Article",
     "book" = "Book",
@@ -31,13 +39,13 @@
   )
   crossref_type <- first(record$type)
   type <- c(types[crossref_type], "Misc")[1]
-  if (is.na(types[crossref_type])) {
+  if (is.na(x = types[crossref_type])) {
     questions <- c(
       questions,
       paste0("Crossref type '", crossref_type, "': Misc is a guess; check it.")
     )
   }
-  repo_type <- switch(type,
+  repo_type <- switch(EXPR = type,
     Article = "article",
     Unpublished = "article",
     Book = "book",
@@ -49,7 +57,7 @@
     vapply(
       X = list,
       FUN = function(p) {
-        if (!is.null(p$name)) {
+        if (!is.null(x = p$name)) {
           paste0("{", .LibLatex(x = p$name), "}")
         } else {
           family <- .LibLatex(x = first(p$family), escape = FALSE)
@@ -57,23 +65,29 @@
             family <- paste0("{", family, "}")
           }
           given <- .LibLatex(x = c(first(p$given), "")[1], escape = FALSE)
-          trimws(paste(given, family))
+          trimws(x = paste(given, family))
         }
       },
-      FUN.VALUE = character(1)
+      FUN.VALUE = character(length = 1)
     )
   }
   authors <- people(list = record$author)
   editors <- people(list = record$editor)
   families <- vapply(
-    X = c(record$author, if (length(record$author) == 0L) record$editor),
-    FUN = function(p) c(p$family, p$name, "")[1],
-    FUN.VALUE = character(1)
+    X = c(record$author, if (length(x = record$author) == 0L) {
+      record$editor
+    }),
+    FUN = function(p) {
+      c(p$family, p$name, "")[1]
+    },
+    FUN.VALUE = character(length = 1)
   )
   given <- vapply(
     X = c(record$author, record$editor),
-    FUN = function(p) c(p$given, "")[1],
-    FUN.VALUE = character(1)
+    FUN = function(p) {
+      c(p$given, "")[1]
+    },
+    FUN.VALUE = character(length = 1)
   )
   if (any(grepl(pattern = "^([A-Z]\\.[[:space:]-]*)+$", x = given))) {
     questions <- c(
@@ -86,10 +100,12 @@
   }
   # the issue (print) date, not the online-first date
   date <- ymd(record$`published-print`)
-  if (is.na(date)) date <- ymd(record$`journal-issue`$`published-print`)
-  if (is.na(date)) {
+  if (is.na(x = date)) {
+    date <- ymd(record$`journal-issue`$`published-print`)
+  }
+  if (is.na(x = date)) {
     date <- ymd(record$issued)
-    if (!is.null(record$`published-online`) && type == "Article") {
+    if (!is.null(x = record$`published-online`) && type == "Article") {
       questions <- c(
         questions,
         paste0(
@@ -99,15 +115,17 @@
       )
     }
   }
-  year <- substr(date, 1, 4)
+  year <- substr(x = date, start = 1, stop = 4)
   decade <- paste0(
-    floor(as.integer(year) / 10) * 10,
+    floor(x = as.integer(x = year) / 10) * 10,
     "-",
-    floor(as.integer(year) / 10) * 10 + 9
+    floor(x = as.integer(x = year) / 10) * 10 + 9
   )
   title <- first(record$title)
   subtitle <- first(record$subtitle)
-  if (!is.na(subtitle)) title <- paste0(title, ": ", subtitle)
+  if (!is.na(x = subtitle)) {
+    title <- paste0(title, ": ", subtitle)
+  }
   title <- .LibTitle(x = .LibLatex(x = title))
   container <- .LibLatex(x = first(record$`container-title`))
   pages <- gsub(
@@ -115,7 +133,9 @@
     replacement = "--",
     x = first(record$page)
   )
-  if (!is.na(pages) && !grepl(pattern = "--", x = pages) && type != "Book") {
+  if (!is.na(
+    x = pages
+  ) && !grepl(pattern = "--", x = pages) && type != "Book") {
     questions <- c(
       questions,
       paste(
@@ -125,13 +145,13 @@
     )
   }
   abstract <- first(record$abstract)
-  if (!is.na(abstract)) {
+  if (!is.na(x = abstract)) {
     abstract <- gsub(pattern = "<[^>]+>", replacement = " ", x = abstract)
     abstract <- gsub(pattern = "[[:space:]]+", replacement = " ", x = abstract)
     abstract <- sub(
       pattern = "^[[:space:]]*Abstract[[:space:]]+",
       replacement = "",
-      x = trimws(abstract)
+      x = trimws(x = abstract)
     )
     abstract <- .LibLatex(x = abstract)
   } else {
@@ -146,31 +166,47 @@
   issn <- first(record$ISSN)
   publisher <- .LibLatex(x = first(record$publisher))
   # reuse the library's ISSN and publisher for the same journal
-  if (!is.null(library) && !is.na(container) && type == "Article") {
+  if (!is.null(x = library) && !is.na(x = container) && type == "Article") {
     same <- library[library$journaltitle %in% container, , drop = FALSE]
-    if (nrow(same) > 0L) {
-      issn <- c(same$issn[!is.na(same$issn)], issn)[1]
-      publisher <- c(same$publisher[!is.na(same$publisher)], publisher)[1]
+    if (nrow(x = same) > 0L) {
+      issn <- c(same$issn[!is.na(x = same$issn)], issn)[1]
+      publisher <- c(same$publisher[!is.na(x = same$publisher)], publisher)[1]
     }
   }
   fields <- c(
     author = ifelse(
-      length(authors) > 0L,
-      paste(authors, collapse = " and "),
-      NA_character_
+      test = length(x = authors) > 0L,
+      yes = paste(authors, collapse = " and "),
+      no = NA_character_
     ),
     editor = ifelse(
-      length(editors) > 0L,
-      paste(editors, collapse = " and "),
-      NA_character_
+      test = length(x = editors) > 0L,
+      yes = paste(editors, collapse = " and "),
+      no = NA_character_
     ),
     date = date,
     title = title,
-    journaltitle = if (type == "Article") container else NA,
-    booktitle = if (type == "InBook") container else NA,
+    journaltitle = if (type == "Article") {
+      container
+    } else {
+      NA
+    },
+    booktitle = if (type == "InBook") {
+      container
+    } else {
+      NA
+    },
     doi = first(record$DOI),
-    issn = if (type == "Article") issn else NA,
-    isbn = if (type %in% c("Book", "InBook")) first(record$ISBN) else NA,
+    issn = if (type == "Article") {
+      issn
+    } else {
+      NA
+    },
+    isbn = if (type %in% c("Book", "InBook")) {
+      first(record$ISBN)
+    } else {
+      NA
+    },
     number = first(record$issue),
     pages = pages,
     volume = first(record$volume),
@@ -178,7 +214,7 @@
     abstract = abstract,
     publisher = publisher
   )
-  fields <- fields[!is.na(fields)]
+  fields <- fields[!is.na(x = fields)]
   questions <- c(
     questions,
     paste(

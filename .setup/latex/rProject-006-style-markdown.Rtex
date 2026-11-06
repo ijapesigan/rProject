@@ -1,0 +1,126 @@
+\documentclass{article}
+
+\input{.setup/latex/preamble/preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLATEX APA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "root",
+% #| include = FALSE
+% root <- rprojroot::is_rstudio_project
+%% end.rcode
+
+%% begin.rcode
+% #| label = "knitr",
+% #| include = FALSE,
+% #| file = root$find_file(
+% #|   ".setup",
+% #|   "latex",
+% #|   "r-scripts",
+% #|   "knitr.R"
+% #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% if (require(package = "rProject")) {
+%   Bib(
+%     path = dirname(
+%       path = root$find_file(
+%         "project.Rproj"
+%       )
+%     )
+%   )
+%   cat(
+%     .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+%   )
+% } else {
+%   cat(
+%     .PreambleCombined(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       ),
+%       output_path = root$find_file(
+%         ".setup",
+%         "latex"
+%       )
+%     )
+%   )
+% }
+%% end.rcode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Markdown Style Guide}
+\author{Ivan Jacob Agaloos Pesigan}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+This guide covers \texttt{NEWS.md}, \texttt{README.Rmd},
+vignettes (\texttt{.Rmd}, \texttt{.Rmd.orig}), Quarto (\texttt{.qmd}),
+\texttt{AGENTS.md}, and the files in \texttt{.setup/ai} and \texttt{.setup/logs}.
+It does not cover generated files
+(\texttt{README.md}, vignettes built from \texttt{.setup/vignettes}).
+Agents follow \texttt{.setup/ai/style/markdown.md},
+which follows this guide and is changed together with it.
+
+\section{Line Breaks}
+
+Use semantic line breaks, as in \LaTeX{}.
+There is no length limit.
+Tables and link lines stay whole.
+Existing files are reflowed when next edited;
+there are no pushes for layout alone.
+
+\section{Lists}
+
+Use \texttt{-} for bullets everywhere, \texttt{NEWS.md} too.
+Number lists \texttt{1.}, \texttt{2.}.
+
+\section{Headings}
+
+ATX headings (\texttt{\#}) only, one \texttt{\#} title per file, and no skipped levels.
+\texttt{NEWS.md} keeps pkgdown's \texttt{\# <pkg> <version>} and \texttt{\#\# <section>}.
+
+\section{Code}
+
+Fenced code blocks name a language (\texttt{r}, \texttt{bash}, \texttt{latex}, \texttt{yaml}).
+Use inline code for files, functions, commands, and variables.
+
+\section{Emphasis and Links}
+
+Use \texttt{**bold**} and \texttt{\_italic\_}.
+Links are inline with descriptive text, not ``here''.
+Bare URLs are in \texttt{<...>}.
+
+\section{Math}
+
+Math in \texttt{.Rmd} and \texttt{.qmd} files follows the math guide.
+
+\section{Tools}
+
+\texttt{make lint} reports (never fails on) bullets, headings, code fences, links, and math.
+\texttt{lintr} already checks the R chunks.
+
+\nocite{RCoreTeam-2026}
+
+\printbibliography
+
+\end{document}

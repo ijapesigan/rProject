@@ -19,6 +19,10 @@
 #' @param plain Logical.
 #'   If `TRUE`, return a path to an uncompressed copy.
 #' @return Returns the path of the file.
+#' @examples
+#' \dontrun{
+#' DataPath(path = getwd(), file = "data.csv")
+#' }
 #' @export
 DataPath <- function(path,
                      file,
@@ -29,8 +33,8 @@ DataPath <- function(path,
     c("data-raw", "data-private", "data-external")
   )
   candidates <- as.vector(
-    t(
-      outer(
+    x = t(
+      x = outer(
         X = tiers,
         Y = paste0(file, c("", ".xz", ".gz")),
         FUN = file.path
@@ -38,7 +42,7 @@ DataPath <- function(path,
     )
   )
   found <- candidates[file.exists(candidates)][1]
-  if (is.na(found)) {
+  if (is.na(x = found)) {
     stop(
       paste0(
         "\n\n",

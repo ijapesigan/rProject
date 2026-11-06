@@ -4,9 +4,12 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::skip_on_cran()
-    testthat::skip_if_not(rmarkdown::pandoc_available(), "pandoc not found")
+    testthat::skip_if_not(
+      condition = rmarkdown::pandoc_available(),
+      message = "pandoc not found"
+    )
     root <- .TestProject()
-    dir.create(file.path(root, ".setup", "readme"), recursive = TRUE)
+    dir.create(path = file.path(root, ".setup", "readme"), recursive = TRUE)
     writeLines(
       text = c(
         "---",
@@ -24,12 +27,18 @@ lapply(
     testthat::test_that(
       paste(text, "renders README.md and removes the intermediate files"),
       {
-        suppressMessages(suppressWarnings(ReadMe(path = root)))
+        suppressMessages(expr = suppressWarnings(expr = ReadMe(path = root)))
         readme <- file.path(root, "README.md")
-        testthat::expect_true(file.exists(readme))
-        testthat::expect_true(any(grepl("\\[1\\] 2", readLines(readme))))
+        testthat::expect_true(object = file.exists(readme))
+        testthat::expect_true(
+          object = any(
+            grepl(pattern = "\\[1\\] 2", x = readLines(con = readme))
+          )
+        )
         testthat::expect_false(
-          any(file.exists(file.path(root, c("README.Rmd", "README.html"))))
+          object = any(
+            file.exists(file.path(root, c("README.Rmd", "README.html")))
+          )
         )
       }
     )
@@ -38,11 +47,13 @@ lapply(
       {
         other <- .TestProject(name = "noReadme")
         ReadMe(path = other)
-        testthat::expect_false(file.exists(file.path(other, "README.md")))
-        unlink(dirname(other), recursive = TRUE)
+        testthat::expect_false(
+          object = file.exists(file.path(other, "README.md"))
+        )
+        unlink(x = dirname(path = other), recursive = TRUE)
       }
     )
-    unlink(dirname(root), recursive = TRUE)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-readme"
 )

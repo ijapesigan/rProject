@@ -6,7 +6,7 @@ author: "Ivan Jacob Agaloos Pesigan"
 ## Session
 
 ```{r}
-sessionInfo()
+utils::sessionInfo()
 ```
 
 ```{r}
@@ -15,12 +15,12 @@ build <- list.files(
   path = "/srv/build",
   full.names = TRUE
 )
-for (i in seq_along(build)) {
+for (i in seq_along(along.with = build)) {
   cat(
     paste0(
       build[i],
       ": ",
-      readLines(build[i]),
+      readLines(con = build[i]),
       "\n"
     )
   )

@@ -11,6 +11,10 @@
 #'
 #' @inheritParams LibPaths
 #' @return Returns the repository url.
+#' @examples
+#' \dontrun{
+#' PkgRepo(path = getwd())
+#' }
 #' @export
 PkgRepo <- function(path) {
   # source
@@ -23,39 +27,22 @@ PkgRepo <- function(path) {
     snapshot,
     "/"
   )
-  repos <- src
-
-  # set repos
   os <- .OS()
-  if (os == "osx") {
-    # nolint start
-    return(src)
-    # nolint end
-  }
   if (os == "windows") {
-    # nolint start
-    return(
-      paste0(
-        ppm,
-        snapshot,
-        "/bin/windows"
-      )
+    paste0(
+      ppm,
+      snapshot,
+      "/bin/windows"
     )
-    # nolint end
-  }
-  if (os == "linux") {
+  } else if (os == "linux") {
     linux <- paste0(
       ppm,
       "__linux__/"
     )
     distro <- distro::distro()
-    if (is.null(distro)) {
-      # nolint start
-      return(src)
-      # nolint end
-    } else {
-      repos <- src
-      if (tolower(distro$id) == "ubuntu") {
+    repos <- src
+    if (!is.null(x = distro)) {
+      if (tolower(x = distro$id) == "ubuntu") {
         if (distro$codename %in% c("bionic", "focal", "jammy", "noble")) {
           repos <- paste0(
             linux,
@@ -65,7 +52,7 @@ PkgRepo <- function(path) {
           )
         }
       }
-      if (tolower(distro$id) == "rocky") {
+      if (tolower(x = distro$id) == "rocky") {
         if (distro$short_version == "9") {
           repos <- paste0(
             linux,
@@ -83,10 +70,11 @@ PkgRepo <- function(path) {
           )
         }
       }
-      # populate the rest of the available repositories
-      # nolint start
-      return(repos)
-      # nolint end
     }
+    # populate the rest of the available repositories
+    repos
+  } else {
+    # osx, and any other system: the source repository
+    src
   }
 }

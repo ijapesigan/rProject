@@ -5,10 +5,15 @@
 #' @inheritParams LibPaths
 #' @inheritParams Bib
 #'
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Quarto(path = getwd())
+#' }
 #' @export
 Quarto <- function(path) {
   qmd_files <- list.files(
-    file.path(
+    path = file.path(
       path,
       ".setup",
       "quarto"
@@ -20,7 +25,7 @@ Quarto <- function(path) {
   qmd_files <- c(
     qmd_files,
     list.files(
-      file.path(
+      path = file.path(
         path
       ),
       pattern = "\\.qmd$",
@@ -28,7 +33,7 @@ Quarto <- function(path) {
       all.files = TRUE
     )
   )
-  if (length(qmd_files) > 0) {
+  if (length(x = qmd_files) > 0) {
     prerender <- file.path(
       path,
       ".setup",
@@ -37,7 +42,7 @@ Quarto <- function(path) {
       "prerender.R"
     )
     if (file.exists(prerender)) {
-      source(prerender)
+      source(file = prerender)
     } else {
       message(
         paste(
@@ -75,7 +80,7 @@ Quarto <- function(path) {
       )
       on.exit(
         expr = unlink(
-          file.path(
+          x = file.path(
             path,
             "_quarto.yml"
           )

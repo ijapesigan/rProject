@@ -5,8 +5,8 @@
     file.path(".setup", "logs", log),
     file.path(".setup", "logs", "index.md")
   )
-  delete <- character(0)
-  if (is.null(private)) {
+  delete <- character(length = 0)
+  if (is.null(x = private)) {
     new <- "TODO"
     edited <- "TODO"
   } else {
@@ -14,17 +14,21 @@
       path = path,
       private = private
     )
-    new <- names(status)[status == "missing in the private repository"]
-    edited <- names(status)[status == "different"]
+    new <- names(x = status)[status == "missing in the private repository"]
+    edited <- names(x = status)[status == "different"]
     # in the private repository but not here
-    delete <- names(status)[status == "missing locally"]
+    delete <- names(x = status)[status == "missing locally"]
     # this log and the index always go up with the change set
     in_private <- file.exists(file.path(private, logs))
-    new <- union(new, logs[!in_private])
-    edited <- union(edited, logs[in_private])
+    new <- union(x = new, y = logs[!in_private])
+    edited <- union(x = edited, y = logs[in_private])
   }
   bullets <- function(x) {
-    ifelse(length(x) > 0L, list(paste("-", x)), list("- (none)"))[[1]]
+    ifelse(
+      test = length(x = x) > 0L,
+      yes = list(paste("-", x)),
+      no = list("- (none)")
+    )[[1]]
   }
   c(
     "## Files to update in Overleaf",
@@ -43,7 +47,7 @@
     ),
     "",
     "### Delete in Overleaf",
-    if (length(delete) > 0L) {
+    if (length(x = delete) > 0L) {
       paste(
         "In the private repository but not here. Delete each one, unless it",
         "was added in Overleaf (then copy it here instead)."

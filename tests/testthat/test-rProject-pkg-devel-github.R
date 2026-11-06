@@ -8,8 +8,11 @@ lapply(
     testthat::test_that(
       paste(text, "has the documented arguments"),
       {
-        testthat::expect_true(is.function(PkgDevelGitHub))
-        testthat::expect_equal(names(formals(PkgDevelGitHub)), "path")
+        testthat::expect_true(object = is.function(x = PkgDevelGitHub))
+        testthat::expect_equal(
+          object = names(x = formals(fun = PkgDevelGitHub)),
+          expected = "path"
+        )
       }
     )
   },

@@ -13,8 +13,16 @@ Project path.}
 \item{project}{Character string.
 Project name.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Setup \code{.Rprofile}
+}
+\examples{
+\dontrun{
+Profile(path = getwd(), project = "myProject")
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

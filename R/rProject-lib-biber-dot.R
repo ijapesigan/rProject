@@ -2,18 +2,18 @@
   # biber's datamodel warnings for the entries in `text`, one row each;
   # none when biber is not installed
   out <- data.frame(
-    key = character(0),
-    message = character(0),
+    key = character(length = 0),
+    message = character(length = 0),
     stringsAsFactors = FALSE
   )
-  if (length(text) > 0L && nzchar(Sys.which("biber"))) {
+  if (length(x = text) > 0L && nzchar(x = Sys.which(names = "biber"))) {
     dir <- tempfile(pattern = "biber")
-    dir.create(dir)
-    on.exit(unlink(dir, recursive = TRUE), add = TRUE)
+    dir.create(path = dir)
+    on.exit(expr = unlink(x = dir, recursive = TRUE), add = TRUE)
     bib <- file.path(dir, "check.bib")
     writeLines(text = text, con = bib)
     log <- suppressWarnings(
-      system2(
+      expr = system2(
         command = "biber",
         args = c(
           "--tool",
@@ -34,7 +34,7 @@
         fixed = TRUE
       )
     ]
-    if (length(hits) > 0L) {
+    if (length(x = hits) > 0L) {
       out <- data.frame(
         key = sub(
           pattern = "^WARN - Datamodel: [A-Za-z]+ entry '([^']+)'.*$",

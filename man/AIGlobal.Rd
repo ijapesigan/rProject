@@ -4,7 +4,7 @@
 \alias{AIGlobal}
 \title{Install Global AI Instructions}
 \usage{
-AIGlobal(path, home = Sys.getenv("HOME"))
+AIGlobal(path, home = Sys.getenv(x = "HOME"))
 }
 \arguments{
 \item{path}{Character string.
@@ -37,6 +37,11 @@ Existing files that differ are backed up with the suffix \code{.bak}.
 \code{claude-settings.json} is merged into an existing \code{settings.json}:
 its keys win, permission rules are added to the existing ones,
 and other keys are kept.
+}
+\examples{
+\dontrun{
+AIGlobal(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

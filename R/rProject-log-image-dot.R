@@ -4,7 +4,7 @@
     x = "APPTAINER_NAME",
     unset = Sys.getenv(x = "SINGULARITY_NAME")
   )
-  if (nzchar(running)) {
+  if (nzchar(x = running)) {
     info <- .SifLabels(file = labels)
     paste0(
       "- Image: `",

@@ -19,6 +19,7 @@ book:
     - .setup/quarto/references/references.qmd
     - .setup/quarto/tags/tags.qmd
   appendices:
+    - .setup/quarto/math/math.qmd
     - .setup/quarto/session/session.qmd
 bibliography: .setup/quarto/bib/quarto.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl

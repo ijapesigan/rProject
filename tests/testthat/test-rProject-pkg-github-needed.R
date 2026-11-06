@@ -7,18 +7,18 @@ lapply(
     testthat::test_that(
       paste(text, "installs a missing package"),
       {
-        testthat::expect_true(.PkgGitHubNeeded(installed = FALSE))
+        testthat::expect_true(object = .PkgGitHubNeeded(installed = FALSE))
       }
     )
     testthat::test_that(
       paste(text, "never upgrades for a branch or tag"),
       {
-        testthat::expect_false(.PkgGitHubNeeded(installed = TRUE))
+        testthat::expect_false(object = .PkgGitHubNeeded(installed = TRUE))
         testthat::expect_false(
-          .PkgGitHubNeeded(installed = TRUE, ref = "main", sha = sha)
+          object = .PkgGitHubNeeded(installed = TRUE, ref = "main", sha = sha)
         )
         testthat::expect_false(
-          .PkgGitHubNeeded(installed = TRUE, ref = "v1.0.0")
+          object = .PkgGitHubNeeded(installed = TRUE, ref = "v1.0.0")
         )
       }
     )
@@ -26,16 +26,28 @@ lapply(
       paste(text, "reinstalls only for a different commit SHA"),
       {
         testthat::expect_false(
-          .PkgGitHubNeeded(installed = TRUE, ref = sha, sha = sha)
+          object = .PkgGitHubNeeded(installed = TRUE, ref = sha, sha = sha)
         )
         testthat::expect_false(
-          .PkgGitHubNeeded(installed = TRUE, ref = "0123456", sha = sha)
+          object = .PkgGitHubNeeded(
+            installed = TRUE,
+            ref = "0123456",
+            sha = sha
+          )
         )
         testthat::expect_true(
-          .PkgGitHubNeeded(installed = TRUE, ref = "fedcba9", sha = sha)
+          object = .PkgGitHubNeeded(
+            installed = TRUE,
+            ref = "fedcba9",
+            sha = sha
+          )
         )
         testthat::expect_true(
-          .PkgGitHubNeeded(installed = TRUE, ref = sha, sha = NA_character_)
+          object = .PkgGitHubNeeded(
+            installed = TRUE,
+            ref = sha,
+            sha = NA_character_
+          )
         )
       }
     )

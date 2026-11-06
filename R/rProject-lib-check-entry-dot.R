@@ -5,9 +5,9 @@
                            repo_type) {
   # the checks of one entry file (a row of .LibRead()); one row per finding
   out <- data.frame(
-    severity = character(0),
-    check = character(0),
-    message = character(0),
+    severity = character(length = 0),
+    check = character(length = 0),
+    message = character(length = 0),
     stringsAsFactors = FALSE
   )
   add <- function(out, severity, check, message) {
@@ -51,7 +51,7 @@
     # the key
     pattern <- "^[A-Za-z]+(-[A-Za-z]+){0,2}(-etal)?-[0-9]{4}[a-z]?$"
     people <- c(fields["author"], fields["editor"])
-    people <- people[!is.na(people)][1]
+    people <- people[!is.na(x = people)][1]
     if (!grepl(pattern = pattern, x = row$key)) {
       out <- add(
         out,
@@ -59,17 +59,17 @@
         "key",
         "not Family-Family-Family[-etal]-Year[a-z]"
       )
-    } else if (!is.na(people)) {
-      n_people <- length(.LibNames(x = people))
+    } else if (!is.na(x = people)) {
+      n_people <- length(x = .LibNames(x = people))
       names_in_key <- strsplit(
         x = sub(pattern = "-[0-9]{4}[a-z]?$", replacement = "", x = row$key),
         split = "-"
       )[[1]]
       etal <- "etal" %in% names_in_key
       good <- ifelse(
-        n_people >= 4L,
-        etal && length(names_in_key) == 4L,
-        !etal && length(names_in_key) == n_people
+        test = n_people >= 4L,
+        yes = etal && length(x = names_in_key) == 4L,
+        no = !etal && length(x = names_in_key) == n_people
       )
       if (!good) {
         out <- add(
@@ -80,9 +80,9 @@
             n_people,
             "authors: expected",
             ifelse(
-              n_people >= 4L,
-              "three names and etal",
-              paste(n_people, "names")
+              test = n_people >= 4L,
+              yes = "three names and etal",
+              no = paste(n_people, "names")
             )
           )
         )
@@ -90,13 +90,19 @@
     }
     # the year, the decade, and the type
     key_year <- as.integer(
-      sub(pattern = "^.*-([0-9]{4})[a-z]?$", replacement = "\\1", x = row$key)
+      x = sub(
+        pattern = "^.*-([0-9]{4})[a-z]?$",
+        replacement = "\\1",
+        x = row$key
+      )
     )
-    date_year <- suppressWarnings(as.integer(substr(row$date, 1, 4)))
-    if (is.na(date_year)) {
+    date_year <- suppressWarnings(
+      expr = as.integer(x = substr(x = row$date, start = 1, stop = 4))
+    )
+    if (is.na(x = date_year)) {
       out <- add(out, "ERROR", "date", "no date or year")
     } else {
-      if (!is.na(key_year) && key_year != date_year) {
+      if (!is.na(x = key_year) && key_year != date_year) {
         out <- add(
           out,
           "ERROR",
@@ -123,31 +129,31 @@
     }
     # required fields
     need <- required[[row$type]]
-    if (is.null(need)) {
+    if (is.null(x = need)) {
       need <- c("date", "title")
     }
-    missing <- need[!(need %in% names(fields))]
+    missing <- need[!(need %in% names(x = fields))]
     creators <- c("author", "editor", "organization")
-    if (!("author" %in% need) && !any(creators %in% names(fields))) {
+    if (!("author" %in% need) && !any(creators %in% names(x = fields))) {
       missing <- c(missing, "author or editor")
     }
-    if (length(missing) > 0L) {
+    if (length(x = missing) > 0L) {
       out <- add(
         out,
         "ERROR",
         "required",
-        paste("missing:", paste(unique(missing), collapse = ", "))
+        paste("missing:", paste(unique(x = missing), collapse = ", "))
       )
     }
     # text
     if (!row$ascii) {
       out <- add(out, "ERROR", "ASCII", "non-ASCII characters")
     }
-    text_fields <- fields[!(names(fields) %in% c("doi", "url", "eprint"))]
-    percent <- names(text_fields)[
+    text_fields <- fields[!(names(x = fields) %in% c("doi", "url", "eprint"))]
+    percent <- names(x = text_fields)[
       grepl(pattern = "(^|[^\\\\])%", x = text_fields)
     ]
-    if (length(percent) > 0L) {
+    if (length(x = percent) > 0L) {
       out <- add(
         out,
         "ERROR",
@@ -162,9 +168,9 @@
     if (grepl(pattern = "\\\\a[^A-Za-z]", x = row$text)) {
       out <- add(out, "STYLE", "accents", "\\a-style accents")
     }
-    pages <- unname(fields["pages"])
+    pages <- unname(obj = fields["pages"])
     if (
-      !is.na(pages) &&
+      !is.na(x = pages) &&
         grepl(
           pattern = "[0-9A-Za-z][[:space:]]*-[[:space:]]*[0-9A-Za-z]",
           x = pages
@@ -173,7 +179,7 @@
       out <- add(out, "STYLE", "pages", "page range with one hyphen")
     }
     if (
-      !is.na(row$doi) &&
+      !is.na(x = row$doi) &&
         grepl(pattern = "^(https?://|doi:)", x = row$doi, ignore.case = TRUE)
     ) {
       out <- add(out, "STYLE", "doi", "DOI with a prefix")
@@ -185,7 +191,7 @@
       ),
       "\n"
     )
-    if (!identical(layout, row$text)) {
+    if (!identical(x = layout, y = row$text)) {
       out <- add(out, "STYLE", "layout", "not in the house layout (LibFormat)")
     }
   }

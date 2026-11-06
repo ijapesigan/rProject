@@ -25,6 +25,11 @@ Compressed files are binary, so they do not count
 as editable text in Overleaf (see \code{\link[=SizeCheck]{SizeCheck()}}).
 Scripts that find files with \code{\link[=DataPath]{DataPath()}} keep working unchanged.
 }
+\examples{
+\dontrun{
+DataCompress(path = getwd(), files = "data.csv")
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

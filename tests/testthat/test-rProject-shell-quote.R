@@ -7,10 +7,10 @@ lapply(
       paste(text, "keeps a path with spaces as one argument"),
       {
         root <- file.path(tempfile(pattern = "shell quote"), "a b")
-        dir.create(root, recursive = TRUE)
-        writeLines("x", file.path(root, "file.txt"))
+        dir.create(path = root, recursive = TRUE)
+        writeLines(text = "x", con = file.path(root, "file.txt"))
         out <- system2(
-          command = file.path(R.home("bin"), "Rscript"),
+          command = file.path(R.home(component = "bin"), "Rscript"),
           args = c(
             "-e",
             rProject:::.ShellQuote(x = "cat(file.exists(commandArgs(TRUE)))"),
@@ -18,8 +18,8 @@ lapply(
           ),
           stdout = TRUE
         )
-        testthat::expect_equal(out, "TRUE")
-        unlink(dirname(root), recursive = TRUE)
+        testthat::expect_equal(object = out, expected = "TRUE")
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
   },

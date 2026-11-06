@@ -7,8 +7,8 @@ The R project `rProject` contains a collection of functions to setup personal R 
 
 ```{r}
 #| include: false
-library(rProject)
-library(printr)
+library(package = rProject)
+library(package = printr)
 ```
 
 ```{r}

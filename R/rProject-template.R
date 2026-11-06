@@ -65,18 +65,22 @@
 #'   (with `check = TRUE`, that would be written), invisibly, with the
 #'   deleted files (or those that would be deleted) in the attribute
 #'   `removed`.
+#' @examples
+#' \dontrun{
+#' Template(path = getwd())
+#' }
 #' @export
 Template <- function(path,
                      type = NULL,
                      check = FALSE) {
-  written <- character(0)
-  if (identical(Sys.getenv("GITHUB_ACTIONS"), "true")) {
+  written <- character(length = 0)
+  if (identical(x = Sys.getenv(x = "GITHUB_ACTIONS"), y = "true")) {
     message("\n\nTemplate(): nothing written in GitHub Actions.\n\n")
   } else {
-    if (is.null(type)) {
+    if (is.null(x = type)) {
       type <- .TemplateType(path = path)
     }
-    if (is.null(type)) {
+    if (is.null(x = type)) {
       message(
         paste0(
           "\n\nTemplate(): no type in .setup/scripts/project.R;",
@@ -92,5 +96,5 @@ Template <- function(path,
       )
     }
   }
-  invisible(written)
+  invisible(x = written)
 }

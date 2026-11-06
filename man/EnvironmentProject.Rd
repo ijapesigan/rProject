@@ -16,6 +16,11 @@ Returns project name.
 \description{
 Set \code{PROJECT} Environment Variable
 }
+\examples{
+\dontrun{
+EnvironmentProject(project = "myProject")
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

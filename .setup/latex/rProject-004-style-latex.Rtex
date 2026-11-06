@@ -29,10 +29,10 @@
 % #| message = FALSE,
 % #| warning = FALSE,
 % #| results = "asis"
-% if (require("rProject")) {
+% if (require(package = "rProject")) {
 %   Bib(
 %     path = dirname(
-%       root$find_file(
+%       path = root$find_file(
 %         "project.Rproj"
 %       )
 %     )
@@ -48,7 +48,7 @@
 %   )
 % } else {
 %   cat(
-%     .PreambleBiblatexCombined(
+%     .PreambleCombined(
 %       path = root$find_file(
 %         ".setup",
 %         "latex",
@@ -73,7 +73,80 @@
 
 \maketitle
 
-WE NEED TO CREATE THIS.
+This guide covers \LaTeX{} sources:
+\texttt{.Rtex} files and the \texttt{.tex} files they input.
+Math is in the math guide; prose voice is in \texttt{.setup/ai/style/manuscript.md}.
+Agents follow \texttt{.setup/ai/style/latex.md},
+which follows this guide and is changed together with it.
+
+\section{Files}
+
+\begin{itemize}
+	\item \texttt{.Rtex} files start with the knitr chunk block (root, knitr, biblatex).
+	Chunk options are written \texttt{\% \#| label = "..."}.
+	\item Every chunk has a label.
+	\item The preamble is in numbered files in \texttt{.setup/latex/preamble},
+	linked from rProject.
+	\item Manuscripts are \texttt{<project>-manuscript-EDIT-THIS.Rtex}.
+\end{itemize}
+
+\section{Line Breaks}
+
+Use semantic line breaks (\url{https://sembr.org}).
+Start a new line after every sentence,
+and at clause boundaries where it helps:
+after a comma, semicolon, or colon;
+before a conjunction or a relative clause.
+A blank line ends a paragraph.
+Prose has no length limit; R chunks keep lines under 80 characters.
+The PDF does not change.
+
+Existing manuscripts and talks are reflowed one at a time,
+each in a push that changes only line breaks,
+at a time the user chooses,
+and the text of the PDFs is compared to show that nothing else changed.
+
+\section{Indentation}
+
+One tab inside environments (\texttt{equation}, \texttt{table}, \texttt{itemize}, \ldots).
+
+\section{Citations}
+
+Use \texttt{\textbackslash parencite} and \texttt{\textbackslash textcite} only
+(biblatex-apa), with keys from the lib-* libraries.
+Do not use \texttt{\textbackslash cite} or natbib.
+Talks may also use \texttt{\textbackslash footcite} and \texttt{\textbackslash fullcite}.
+
+\section{Labels}
+
+Labels are \texttt{<type>:<project>-<name>},
+with the types \texttt{eq}, \texttt{fig}, \texttt{tab}, \texttt{sec}, and \texttt{app}.
+
+\begin{Verbatim}
+\label{eq:manMetaVAR-stage1-dynamics}
+\end{Verbatim}
+
+\section{References and Numbers}
+
+\begin{itemize}
+	\item Use a non-breaking space before a reference or number:
+	\texttt{Equation\textasciitilde\textbackslash ref\{...\}},
+	\texttt{Table\textasciitilde\textbackslash ref\{...\}},
+	\texttt{Stage\textasciitilde 1}.
+	\item Do not type the number of an equation, table, figure, or section;
+	use \texttt{\textbackslash ref}.
+	\item Do not type a value from R; use \texttt{\textbackslash rinline} or a chunk.
+\end{itemize}
+
+\section{Floats}
+
+Figures and tables follow the figures and tables guide.
+
+\section{Tools}
+
+\texttt{make lint} reports (never fails on) citations, labels, non-breaking spaces,
+typed numbers, indentation, math, and macros.
+It does not check where sentences and clauses break, which would be guesswork.
 
 \nocite{RCoreTeam-2026}
 

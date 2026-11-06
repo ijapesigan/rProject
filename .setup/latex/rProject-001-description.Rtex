@@ -29,10 +29,10 @@
 % #| message = FALSE,
 % #| warning = FALSE,
 % #| results = "asis"
-% if (require("rProject")) {
+% if (require(package = "rProject")) {
 %   Bib(
 %     path = dirname(
-%       root$find_file(
+%       path = root$find_file(
 %         "project.Rproj"
 %       )
 %     )
@@ -48,7 +48,7 @@
 %   )
 % } else {
 %   cat(
-%     .PreambleBiblatexCombined(
+%     .PreambleCombined(
 %       path = root$find_file(
 %         ".setup",
 %         "latex",
@@ -88,8 +88,8 @@ with:
 
 %% begin.rcode
 % #| eval = FALSE
-% if (!require("pak")) install.packages("pak")
-% pak::pkg_install("ijapesigan/rProject")
+% if (!require(package = "pak")) { utils::install.packages(pkgs = "pak") }
+% pak::pkg_install(pkg = "ijapesigan/rProject")
 %% end.rcode
 
 \section*{More Information}

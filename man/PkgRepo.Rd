@@ -21,6 +21,11 @@ packages: the environment variable \code{RPROJECT_SNAPSHOT} (set in GitHub
 Actions from the lock), the date of the running sif, the lock's
 \code{snapshot}, or \code{latest}.
 }
+\examples{
+\dontrun{
+PkgRepo(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

@@ -49,6 +49,11 @@ with a clone of the private repository
 using the same rules as \code{\link[=Verify]{Verify()}}.
 Without a clone, the lists hold \code{TODO}.
 }
+\examples{
+\dontrun{
+Log(path = getwd(), topic = "my-topic")
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

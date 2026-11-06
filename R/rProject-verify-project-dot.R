@@ -1,6 +1,6 @@
 .VerifyProject <- function(path) {
   project_r <- file.path(path, ".setup", "scripts", "project.R")
-  project <- character(0)
+  project <- character(length = 0)
   if (file.exists(project_r)) {
     lines <- readLines(
       con = project_r,
@@ -17,5 +17,5 @@
     )
   }
   # the project folder name when project.R does not say
-  c(project, basename(normalizePath(path)))[1]
+  c(project, basename(path = normalizePath(path = path)))[1]
 }

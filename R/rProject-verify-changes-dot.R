@@ -56,7 +56,7 @@
     )
     out[!grepl(pattern = skip, x = out)]
   }
-  candidates <- sort(union(files(path), files(private)))
+  candidates <- sort(x = union(x = files(path), y = files(private)))
   # vignettes knitted from .setup/vignettes/*.orig are generated;
   # hand-written vignettes are compared
   orig <- list.files(
@@ -64,20 +64,23 @@
     pattern = "\\.orig$"
   )
   candidates <- setdiff(
-    candidates,
-    file.path("vignettes", sub(pattern = "\\.orig$", "", x = orig))
+    x = candidates,
+    y = file.path(
+      "vignettes",
+      sub(pattern = "\\.orig$", replacement = "", x = orig)
+    )
   )
   # tier 2 template files are written by make (Template()), not uploaded,
   # but the Makefile and the .gitignore files, kept in Overleaf
   type <- .TemplateType(path = path)
-  if (!is.null(type)) {
+  if (!is.null(x = type)) {
     files <- .TemplateFiles(
       type = type,
       settings = .TemplateSettings(path = path)
     )
     candidates <- setdiff(
-      candidates,
-      files$path[!.TemplateKept(files = files)]
+      x = candidates,
+      y = files$path[!.TemplateKept(files = files)]
     )
   }
   status <- vapply(
@@ -89,7 +92,7 @@
         file = file
       )
     },
-    FUN.VALUE = character(1)
+    FUN.VALUE = character(length = 1)
   )
   status[status != "match"]
 }

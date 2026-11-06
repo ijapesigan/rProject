@@ -46,20 +46,24 @@
 #'   headed there; with `"package"`), `"manuscript"`, `"simulation"`,
 #'   `"library"`, `"talk"`, and `"container"`.
 #' @return Returns the paths of the files that were written, invisibly.
+#' @examples
+#' \dontrun{
+#' AI(path = getwd())
+#' }
 #' @export
 AI <- function(path,
                type = NULL) {
   project <- .VerifyProject(path = path)
   settings <- .AISettings(path = path)
-  if (is.null(type)) {
+  if (is.null(x = type)) {
     type <- settings$type
   }
-  if (is.null(type)) {
+  if (is.null(x = type)) {
     type <- .AIType(path = path, project = project)
   }
   info <- .RepoInfo(path = path)
   shown <- function(x, missing) {
-    ifelse(is.na(x), missing, paste0("`", x, "`"))
+    ifelse(test = is.na(x = x), yes = missing, no = paste0("`", x, "`"))
   }
   values <- c(
     project = project,
@@ -75,9 +79,9 @@ AI <- function(path,
       missing = "not recorded (`.setup/repo/private-overleaf.md`)"
     ),
     public_github = ifelse(
-      attr(info, "public_none"),
-      "none",
-      shown(
+      test = attr(x = info, which = "public_none"),
+      yes = "none",
+      no = shown(
         x = info$public_github,
         missing = "not recorded (`.setup/repo/public-github.md`)"
       )
@@ -98,7 +102,7 @@ AI <- function(path,
     sections = paste(
       vapply(
         X = intersect(
-          c(
+          x = c(
             "manuscript",
             "simulation",
             "package",
@@ -107,7 +111,7 @@ AI <- function(path,
             "talk",
             "container"
           ),
-          type
+          y = type
         ),
         FUN = function(x) {
           paste(
@@ -115,7 +119,7 @@ AI <- function(path,
             collapse = "\n"
           )
         },
-        FUN.VALUE = character(1)
+        FUN.VALUE = character(length = 1)
       ),
       collapse = "\n"
     )
@@ -162,7 +166,7 @@ AI <- function(path,
   }
   # the user's to-do list: created only if the folder does not exist
   todo <- file.path(path, ".setup", "todo")
-  if (!dir.exists(todo)) {
+  if (!dir.exists(paths = todo)) {
     written <- c(
       written,
       .AIWrite(file = file.path(todo, "todo.txt"), text = "TODO"),
@@ -177,12 +181,15 @@ AI <- function(path,
       values[["types"]],
       "): ",
       ifelse(
-        length(written) > 0L,
-        paste0("wrote ", paste(basename(written), collapse = ", ")),
-        "up to date"
+        test = length(x = written) > 0L,
+        yes = paste0(
+          "wrote ",
+          paste(basename(path = written), collapse = ", ")
+        ),
+        no = "up to date"
       ),
       ".\n\n"
     )
   )
-  invisible(written)
+  invisible(x = written)
 }

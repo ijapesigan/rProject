@@ -5,6 +5,15 @@
 #' @inheritParams LibPaths
 #' @inheritParams EnvironmentProject
 #' @inheritParams EnvironmentTokens
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Environment(
+#'   path = getwd(),
+#'   project = "myProject",
+#'   tokens = c(GITHUB_PAT = Sys.getenv(x = "GITHUB_PAT"))
+#' )
+#' }
 #' @export
 Environment <- function(path,
                         project,
@@ -45,13 +54,13 @@ Environment <- function(path,
     dot_renviron_contents,
     "R_COMPLETION=TRUE"
   )
-  if (!is.null(tokens)) {
+  if (!is.null(x = tokens)) {
     tokens <- EnvironmentTokens(tokens = tokens)
     tokens <- paste0(
-      names(tokens),
+      names(x = tokens),
       "=",
       "\"",
-      unname(tokens),
+      unname(obj = tokens),
       "\""
     )
     dot_renviron_contents <- c(
@@ -61,10 +70,10 @@ Environment <- function(path,
   }
   project <- EnvironmentProject(project = project)
   project <- paste0(
-    names(project),
+    names(x = project),
     "=",
     "\"",
-    unname(project),
+    unname(obj = project),
     "\""
   )
   dot_renviron_contents <- c(
@@ -75,13 +84,13 @@ Environment <- function(path,
     path,
     ".Renviron"
   )
-  con <- file(dot_renviron_file)
+  con <- file(description = dot_renviron_file)
   writeLines(
     text = dot_renviron_contents,
     con = con,
     sep = "\n"
   )
-  close(con)
+  close(con = con)
   # .Renviron may contain tokens
   Sys.chmod(
     paths = dot_renviron_file,

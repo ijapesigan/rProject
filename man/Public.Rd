@@ -22,6 +22,11 @@ and no tokens (\code{\link[=SecretScan]{SecretScan()}}) in the files that would 
 \verb{make auto} calls \code{Public()} before \verb{git add},
 so a failed check stops the push.
 }
+\examples{
+\dontrun{
+Public(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

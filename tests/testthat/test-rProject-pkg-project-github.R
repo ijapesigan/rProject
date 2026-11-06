@@ -8,14 +8,16 @@ lapply(
     testthat::test_that(
       paste(text, "does nothing without packages"),
       {
-        testthat::expect_null(PkgProjectGitHub(path = root, pkg = character(0)))
+        testthat::expect_null(
+          object = PkgProjectGitHub(path = root, pkg = character(length = 0))
+        )
       }
     )
     testthat::test_that(
       paste(text, "needs one ref per package"),
       {
         testthat::expect_error(
-          PkgProjectGitHub(
+          object = PkgProjectGitHub(
             path = root,
             pkg = c("owner/a", "owner/b"),
             ref = "main"
@@ -23,8 +25,8 @@ lapply(
         )
       }
     )
-    .TestRestore(state)
-    unlink(dirname(root), recursive = TRUE)
+    .TestRestore(state = state)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-pkg-project-github"
 )

@@ -5,14 +5,14 @@
                           summary = "") {
   logs <- file.path(path, ".setup", "logs")
   pending <- "\\(pending\\)"
-  date <- format(Sys.Date())
+  date <- format(x = Sys.Date())
   # the log's "Pushes" table: | (pending) | | | -> | sha | date | result |
   # (a fix-up push without a pending row gets a new row)
   log_file <- file.path(logs, log)
   lines <- readLines(con = log_file, warn = FALSE)
   new_row <- paste0("| ", sha, " | ", date, " | ", result, " |")
-  row <- which(grepl(pattern = paste0("^\\|\\s*", pending), x = lines))[1]
-  if (!is.na(row)) {
+  row <- which(x = grepl(pattern = paste0("^\\|\\s*", pending), x = lines))[1]
+  if (!is.na(x = row)) {
     lines[row] <- new_row
   } else {
     lines <- .VerifyRecordInsert(
@@ -28,10 +28,10 @@
   if (file.exists(index)) {
     lines <- readLines(con = index, warn = FALSE)
     row <- which(
-      grepl(pattern = pending, x = lines) &
+      x = grepl(pattern = pending, x = lines) &
         grepl(pattern = log, x = lines, fixed = TRUE)
     )[1]
-    if (!is.na(row)) {
+    if (!is.na(x = row)) {
       lines[row] <- sub(pattern = pending, replacement = sha, x = lines[row])
       lines[row] <- sub(
         pattern = "\\|\\s*\\|\\s*$",
@@ -56,5 +56,5 @@
     }
     writeLines(text = lines, con = index)
   }
-  invisible(NULL)
+  invisible(x = NULL)
 }

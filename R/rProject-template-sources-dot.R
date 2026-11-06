@@ -8,11 +8,11 @@
   live <- file.path(path, files$path)
   changed <- file.exists(live) & (
     !file.exists(files$source) |
-      tools::md5sum(live) != tools::md5sum(files$source)
+      tools::md5sum(files = live) != tools::md5sum(files = files$source)
   )
-  for (i in which(changed)) {
+  for (i in which(x = changed)) {
     dir.create(
-      path = dirname(files$source[i]),
+      path = dirname(path = files$source[i]),
       showWarnings = FALSE,
       recursive = TRUE
     )
@@ -22,5 +22,5 @@
       overwrite = TRUE
     )
   }
-  invisible(files$source[changed])
+  invisible(x = files$source[changed])
 }

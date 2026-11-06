@@ -11,15 +11,20 @@
 #' @param repo Character string.
 #'   GitHub repository in the form `owner/name`.
 #'
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' ConfigFiles()
+#' }
 #' @export
 ConfigFiles <- function(repo = "ijapesigan/dotfiles") {
-  if (Sys.which("git") == "") {
+  if (Sys.which(names = "git") == "") {
     stop("git is not installed.")
   }
   tmp_dir <- tempfile(pattern = "dotfiles")
   on.exit(
     expr = unlink(
-      tmp_dir,
+      x = tmp_dir,
       recursive = TRUE
     ),
     add = TRUE
@@ -66,5 +71,5 @@ ConfigFiles <- function(repo = "ijapesigan/dotfiles") {
       call. = FALSE
     )
   }
-  invisible(NULL)
+  invisible(x = NULL)
 }

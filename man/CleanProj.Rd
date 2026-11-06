@@ -22,9 +22,17 @@ If \code{sim = FALSE}, \code{.sim} is not deleted.}
 If \code{sif = TRUE}, delete \code{.sif}.
 If \code{sif = FALSE}, \code{.sif} is not deleted.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Remove all files except \code{project.Rproj} and,
 optionally, \code{.library}.
+}
+\examples{
+\dontrun{
+CleanProj(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -82,6 +82,11 @@ because SSH keys are not available in the container.
 \code{.setup/scripts/verify.sh} clones or pulls it into \code{.verify}
 (local only; never uploaded) and then calls \code{Verify()}.
 }
+\examples{
+\dontrun{
+Verify(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

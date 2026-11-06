@@ -25,6 +25,11 @@ Searches text files in the project for strings that look like tokens
 (GitHub, Docker Hub, Quarto Pub, Overleaf, Codecov, OpenAI, Anthropic).
 Matches are reported with the value masked.
 }
+\examples{
+\dontrun{
+SecretScan(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

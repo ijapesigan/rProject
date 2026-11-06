@@ -9,25 +9,46 @@ lapply(
       file = file.path(root, ".setup", "scripts", "project.R"),
       append = TRUE
     )
-    dir.create(file.path(root, ".setup", "latex"))
-    dir.create(file.path(root, ".setup", "cpp"))
-    dir.create(file.path(root, ".setup", "odd"))
+    dir.create(path = file.path(root, ".setup", "latex"))
+    dir.create(path = file.path(root, ".setup", "cpp"))
+    dir.create(path = file.path(root, ".setup", "odd"))
     testthat::test_that(
       paste(text, "flags missing and non-standard folders"),
       {
-        out <- suppressMessages(Tree(path = root))
-        status <- stats::setNames(out$status, out$folder)
-        testthat::expect_equal(status[[".setup/latex/"]], "present")
-        testthat::expect_equal(status[[".setup/r-miscellaneous/"]], "missing")
-        testthat::expect_equal(status[[".setup/ai/"]], "absent")
-        testthat::expect_equal(status[[".setup/cpp/"]], "not standard")
-        testthat::expect_equal(status[[".setup/odd/"]], "unknown")
+        out <- suppressMessages(expr = Tree(path = root))
+        status <- stats::setNames(object = out$status, nm = out$folder)
+        testthat::expect_equal(
+          object = status[[".setup/latex/"]],
+          expected = "present"
+        )
+        testthat::expect_equal(
+          object = status[[".setup/r-miscellaneous/"]],
+          expected = "missing"
+        )
+        testthat::expect_equal(
+          object = status[[".setup/ai/"]],
+          expected = "absent"
+        )
+        testthat::expect_equal(
+          object = status[[".setup/cpp/"]],
+          expected = "not standard"
+        )
+        testthat::expect_equal(
+          object = status[[".setup/odd/"]],
+          expected = "unknown"
+        )
         # R/ belongs to packages, not to lib
-        testthat::expect_equal(status[["R/"]], "not standard")
-        testthat::expect_message(Tree(path = root), regexp = "lib project")
+        testthat::expect_equal(
+          object = status[["R/"]],
+          expected = "not standard"
+        )
+        testthat::expect_message(
+          object = Tree(path = root),
+          regexp = "lib project"
+        )
       }
     )
-    unlink(dirname(root), recursive = TRUE)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-tree"
 )

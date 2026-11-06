@@ -4,7 +4,7 @@
     private = private,
     args = c("log", "-1", "--format=%B")
   )
-  body <- trimws(body)
+  body <- trimws(x = body)
   hit <- regmatches(
     x = body,
     m = regexpr(pattern = "^Log: \\.setup/logs/[^ ]+\\.md$", text = body)

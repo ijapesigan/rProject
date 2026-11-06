@@ -14,8 +14,16 @@ Project path.}
 Remove all \code{.Rds} files in \code{data-process}
 and \code{data-analysis} before running.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Execute R scripts in \code{data-analysis}.
+}
+\examples{
+\dontrun{
+DataAnalysis(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

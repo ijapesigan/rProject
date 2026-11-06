@@ -24,9 +24,13 @@
 #' @param home Character string.
 #'   Home directory.
 #' @return Returns the paths of the files that were written.
+#' @examples
+#' \dontrun{
+#' AIGlobal(path = getwd())
+#' }
 #' @export
 AIGlobal <- function(path,
-                     home = Sys.getenv("HOME")) {
+                     home = Sys.getenv(x = "HOME")) {
   source_dir <- file.path(
     path,
     ".setup",
@@ -94,10 +98,10 @@ AIGlobal <- function(path,
           NULL
         }
       )
-      if (!is.null(installed)) {
+      if (!is.null(x = installed)) {
         settings_text <- strsplit(
           x = as.character(
-            jsonlite::toJSON(
+            x = jsonlite::toJSON(
               x = .AIGlobalMerge(
                 existing = installed,
                 source = jsonlite::fromJSON(
@@ -126,7 +130,7 @@ AIGlobal <- function(path,
     )
   }
   written <- unlist(
-    lapply(
+    x = lapply(
       X = targets,
       FUN = function(target) {
         .AIGlobalWrite(
@@ -136,7 +140,7 @@ AIGlobal <- function(path,
       }
     )
   )
-  if (length(written) > 0L) {
+  if (length(x = written) > 0L) {
     message(
       paste0(
         "\n\nWritten:\n",
@@ -150,5 +154,5 @@ AIGlobal <- function(path,
   } else {
     message("\n\nGlobal AI instructions are up to date.\n\n")
   }
-  invisible(written)
+  invisible(x = written)
 }

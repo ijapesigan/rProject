@@ -15,15 +15,15 @@ bib <- root$find_file(
   "vignettes",
   "vignettes.bib"
 )
-X <- RefManageR::ReadBib(bib)
-key <- names(X)
-annotation <- lapply(X = X, function(x) x$annotation)
-keywords <- lapply(X = X, function(x) x$keywords)
+X <- RefManageR::ReadBib(file = bib)
+key <- names(x = X)
+annotation <- lapply(X = X, FUN = function(x) { x$annotation })
+keywords <- lapply(X = X, FUN = function(x) { x$keywords })
 x <- cbind(
   key = key,
   annotation = annotation,
   keywords = keywords
 )
 # DT::datatable(x)
-knitr::kable(x)
+knitr::kable(x = x)
 ```

@@ -13,6 +13,14 @@ Project path.}
 \item{project}{Character string.
 Project name.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Package Manual
+}
+\examples{
+\dontrun{
+Manual(path = getwd(), project = "myProject")
+}
 }

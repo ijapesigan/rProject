@@ -9,8 +9,8 @@ lapply(
         testthat::skip_on_cran()
         testthat::skip_if_offline(host = "github.com")
         testthat::expect_error(
-          suppressWarnings(
-            ConfigFiles(repo = "ijapesigan/this-repo-does-not-exist")
+          object = suppressWarnings(
+            expr = ConfigFiles(repo = "ijapesigan/this-repo-does-not-exist")
           ),
           regexp = "Could not clone"
         )

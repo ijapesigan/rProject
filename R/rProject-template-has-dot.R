@@ -7,7 +7,7 @@
     FUN = function(x) {
       any(grepl(pattern = pattern, x = readLines(con = x, warn = FALSE)))
     },
-    FUN.VALUE = logical(1),
+    FUN.VALUE = logical(length = 1),
     USE.NAMES = FALSE
   )
 }

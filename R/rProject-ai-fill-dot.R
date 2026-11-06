@@ -1,7 +1,7 @@
 .AIFill <- function(text,
                     values) {
   text <- paste(text, collapse = "\n")
-  for (key in names(values)) {
+  for (key in names(x = values)) {
     text <- gsub(
       pattern = paste0("{{", key, "}}"),
       replacement = values[[key]],

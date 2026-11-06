@@ -16,8 +16,16 @@ Project name.}
 \item{add}{Character vector.
 Items to add to \code{.Rbuildignore}.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Build \code{.Rbuildignore}
+}
+\examples{
+\dontrun{
+BuildIgnore(path = getwd(), project = "myProject")
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -15,8 +15,20 @@ Project name.}
 
 \item{tokens}{Named vector of tokens.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Setup \code{.Renviron}
+}
+\examples{
+\dontrun{
+Environment(
+  path = getwd(),
+  project = "myProject",
+  tokens = c(GITHUB_PAT = Sys.getenv(x = "GITHUB_PAT"))
+)
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

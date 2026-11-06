@@ -3,6 +3,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Dependencies(path = getwd())
+#' }
 #' @export
 Dependencies <- function(path) {
   if (
@@ -24,7 +29,7 @@ Dependencies <- function(path) {
       all.files = TRUE,
       recursive = TRUE
     )
-    if (length(deps) > 0) {
+    if (length(x = deps) > 0) {
       file.copy(
         from = deps,
         to = file.path(

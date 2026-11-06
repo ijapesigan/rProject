@@ -13,8 +13,16 @@ Project path.}
 \item{clean}{Logical.
 Remove all \code{.Rds} files in \code{data-process} before running.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Execute R scripts in \code{data-process}.
+}
+\examples{
+\dontrun{
+DataProcess(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -18,32 +18,48 @@ lapply(
       {
         root <- .TestProject()
         bib_dir <- file.path(root, ".setup", "latex", "bib")
-        dir.create(bib_dir, recursive = TRUE)
-        dir.create(file.path(root, ".setup", "quarto"))
-        dir.create(file.path(root, "vignettes"))
-        writeLines(entry("Doe-2020a", "First"), file.path(bib_dir, "a.bib"))
-        writeLines(entry("Doe-2020b", "Second"), file.path(bib_dir, "b.bib"))
-        suppressMessages(Bib(path = root))
-        merged <- readLines(file.path(bib_dir, "bib.bib"))
+        dir.create(path = bib_dir, recursive = TRUE)
+        dir.create(path = file.path(root, ".setup", "quarto"))
+        dir.create(path = file.path(root, "vignettes"))
+        writeLines(
+          text = entry("Doe-2020a", "First"),
+          con = file.path(bib_dir, "a.bib")
+        )
+        writeLines(
+          text = entry("Doe-2020b", "Second"),
+          con = file.path(bib_dir, "b.bib")
+        )
+        suppressMessages(expr = Bib(path = root))
+        merged <- readLines(con = file.path(bib_dir, "bib.bib"))
         testthat::expect_equal(
-          merged,
-          c(entry("Doe-2020a", "First"), "", entry("Doe-2020b", "Second"), "")
+          object = merged,
+          expected = c(
+            entry("Doe-2020a", "First"),
+            "",
+            entry("Doe-2020b", "Second"),
+            ""
+          )
         )
         # the sources are not rewritten, and bib.bib is not a source
         testthat::expect_equal(
-          readLines(file.path(bib_dir, "a.bib")),
-          entry("Doe-2020a", "First")
+          object = readLines(con = file.path(bib_dir, "a.bib")),
+          expected = entry("Doe-2020a", "First")
         )
-        suppressMessages(Bib(path = root))
-        testthat::expect_equal(readLines(file.path(bib_dir, "bib.bib")), merged)
+        suppressMessages(expr = Bib(path = root))
         testthat::expect_equal(
-          readLines(file.path(root, ".setup", "quarto", "bib", "quarto.bib")),
-          merged
+          object = readLines(con = file.path(bib_dir, "bib.bib")),
+          expected = merged
+        )
+        testthat::expect_equal(
+          object = readLines(
+            con = file.path(root, ".setup", "quarto", "bib", "quarto.bib")
+          ),
+          expected = merged
         )
         testthat::expect_true(
-          file.exists(file.path(root, "vignettes", "vignettes.bib"))
+          object = file.exists(file.path(root, "vignettes", "vignettes.bib"))
         )
-        unlink(dirname(root), recursive = TRUE)
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
     testthat::test_that(
@@ -51,23 +67,33 @@ lapply(
       {
         root <- .TestProject()
         bib_dir <- file.path(root, ".setup", "latex", "bib")
-        dir.create(bib_dir, recursive = TRUE)
-        dir.create(file.path(root, ".setup", "quarto"))
-        dir.create(file.path(root, "vignettes"))
+        dir.create(path = bib_dir, recursive = TRUE)
+        dir.create(path = file.path(root, ".setup", "quarto"))
+        dir.create(path = file.path(root, "vignettes"))
         merged <- c(entry("Doe-2020a", "First"), "")
-        writeLines(merged, file.path(bib_dir, "bib.bib"))
-        testthat::expect_silent(out <- Bib(path = root))
-        testthat::expect_equal(out, file.path(bib_dir, "bib.bib"))
-        testthat::expect_equal(readLines(file.path(bib_dir, "bib.bib")), merged)
+        writeLines(text = merged, con = file.path(bib_dir, "bib.bib"))
+        testthat::expect_silent(object = out <- Bib(path = root))
         testthat::expect_equal(
-          readLines(file.path(root, ".setup", "quarto", "bib", "quarto.bib")),
-          merged
+          object = out,
+          expected = file.path(bib_dir, "bib.bib")
         )
         testthat::expect_equal(
-          readLines(file.path(root, "vignettes", "vignettes.bib")),
-          merged
+          object = readLines(con = file.path(bib_dir, "bib.bib")),
+          expected = merged
         )
-        unlink(dirname(root), recursive = TRUE)
+        testthat::expect_equal(
+          object = readLines(
+            con = file.path(root, ".setup", "quarto", "bib", "quarto.bib")
+          ),
+          expected = merged
+        )
+        testthat::expect_equal(
+          object = readLines(
+            con = file.path(root, "vignettes", "vignettes.bib")
+          ),
+          expected = merged
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
     testthat::test_that(
@@ -75,13 +101,19 @@ lapply(
       {
         root <- .TestProject()
         testthat::expect_message(
-          out <- Bib(path = root),
-          "No \".bib\" files found"
+          object = out <- Bib(path = root),
+          regexp = "No \".bib\" files found"
         )
-        testthat::expect_null(out)
-        dir.create(file.path(root, ".setup", "latex", "bib"), recursive = TRUE)
-        testthat::expect_message(Bib(path = root), "No \".bib\" files found")
-        unlink(dirname(root), recursive = TRUE)
+        testthat::expect_null(object = out)
+        dir.create(
+          path = file.path(root, ".setup", "latex", "bib"),
+          recursive = TRUE
+        )
+        testthat::expect_message(
+          object = Bib(path = root),
+          regexp = "No \".bib\" files found"
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
   },

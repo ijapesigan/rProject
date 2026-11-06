@@ -24,6 +24,11 @@ Returns the path of the spec invisibly.
 Creates \verb{.setup/ai/specs/YYYY-MM-DD-<topic>.md} from a template.
 Every change set starts with a spec that the user approves.
 }
+\examples{
+\dontrun{
+Spec(path = getwd(), topic = "my-topic")
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

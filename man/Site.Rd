@@ -10,8 +10,16 @@ Site(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Build Website
+}
+\examples{
+\dontrun{
+Site(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

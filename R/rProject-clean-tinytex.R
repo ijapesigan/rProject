@@ -5,6 +5,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' CleanTinyTex(path = getwd())
+#' }
 #' @export
 CleanTinyTex <- function(path) {
   lib <- LibPaths(path = path)
@@ -15,7 +20,7 @@ CleanTinyTex <- function(path) {
     install_remotes <- !("remotes" %in% pkg_installed)
     if (install_remotes) {
       utils::install.packages(
-        "remotes",
+        pkgs = "remotes",
         repos = c(REPO_NAME = PkgRepo(path = path)),
         lib = lib,
         quiet = TRUE
@@ -28,12 +33,12 @@ CleanTinyTex <- function(path) {
     )
   }
   try(
-    tinytex::uninstall_tinytex(force = TRUE)
+    expr = tinytex::uninstall_tinytex(force = TRUE)
   )
   if (install_tinytex) {
     if (install_remotes) {
-      utils::remove.packages("remotes")
+      utils::remove.packages(pkgs = "remotes")
     }
-    utils::remove.packages("tinytex")
+    utils::remove.packages(pkgs = "tinytex")
   }
 }

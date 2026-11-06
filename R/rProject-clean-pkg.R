@@ -7,6 +7,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' CleanPkg(path = getwd())
+#' }
 #' @export
 CleanPkg <- function(path) {
   lib <- LibPaths(path = path)
@@ -15,5 +20,5 @@ CleanPkg <- function(path) {
     recursive = TRUE,
     force = FALSE
   )
-  invisible(LibPaths(path = path))
+  invisible(x = LibPaths(path = path))
 }

@@ -60,24 +60,30 @@
 #'   If `TRUE`, stop with an error when a check fails.
 #' @return Returns a data frame of checks
 #'   with the columns `check`, `status`, and `detail`.
+#' @examples
+#' \dontrun{
+#' Verify(path = getwd())
+#' }
 #' @export
 Verify <- function(path,
                    private = file.path(path, ".verify"),
                    log = NULL,
                    record = FALSE,
                    error = TRUE) {
-  if (is.null(log)) {
+  if (is.null(x = log)) {
     # the log named in the commit message ("Log: .setup/logs/<log>") wins:
     # two logs may have a pending push (a deletions-only push first)
     log <- .VerifyLogMessage(private = private)
-    if (!is.na(log) && !file.exists(file.path(path, ".setup", "logs", log))) {
+    if (!is.na(
+      x = log
+    ) && !file.exists(file.path(path, ".setup", "logs", log))) {
       log <- NA_character_
     }
   }
-  if (is.na(log)) {
+  if (is.na(x = log)) {
     log <- .VerifyLogPending(path = path)
   }
-  if (is.na(log)) {
+  if (is.na(x = log)) {
     stop(
       paste0(
         "\n\nNo pending push in ",
@@ -126,7 +132,7 @@ Verify <- function(path,
         file = file
       )
     },
-    FUN.VALUE = character(1)
+    FUN.VALUE = character(length = 1)
   )
   upload_bad <- upload_status != "match"
   # deletions
@@ -148,11 +154,11 @@ Verify <- function(path,
     sha = sha
   )
   log_line <- paste0("Log: .setup/logs/", log)
-  message_ok <- any(trimws(message_body) == log_line)
+  message_ok <- any(trimws(x = message_body) == log_line)
   # secrets
   secrets <- suppressMessages(
-    suppressWarnings(
-      SecretScan(
+    expr = suppressWarnings(
+      expr = SecretScan(
         path = private,
         error = FALSE
       )
@@ -177,54 +183,61 @@ Verify <- function(path,
       "Repo info"
     ),
     status = c(
-      ifelse(recorded, "fail", "pass"),
-      ifelse(any(upload_bad), "fail", "pass"),
-      ifelse(any(delete_bad), "fail", "pass"),
-      ifelse(length(unlisted) > 0L, "warn", "pass"),
-      ifelse(message_ok, "pass", "warn"),
-      ifelse(nrow(secrets) > 0L, "fail", "pass"),
-      ifelse(length(public) > 0L, "fail", "pass"),
+      ifelse(test = recorded, yes = "fail", no = "pass"),
+      ifelse(test = any(upload_bad), yes = "fail", no = "pass"),
+      ifelse(test = any(delete_bad), yes = "fail", no = "pass"),
+      ifelse(test = length(x = unlisted) > 0L, yes = "warn", no = "pass"),
+      ifelse(test = message_ok, yes = "pass", no = "warn"),
+      ifelse(test = nrow(x = secrets) > 0L, yes = "fail", no = "pass"),
+      ifelse(test = length(x = public) > 0L, yes = "fail", no = "pass"),
       repo_info[["status"]]
     ),
     detail = c(
       ifelse(
-        recorded,
-        paste(
+        test = recorded,
+        yes = paste(
           sha,
           "is already in index.md: .verify is stale or there is no new push",
           "(pull with bash .setup/scripts/verify.sh)"
         ),
-        sha
+        no = sha
       ),
       ifelse(
-        any(upload_bad),
-        paste(upload[upload_bad], upload_status[upload_bad], collapse = "; "),
-        paste(length(upload), "files match")
+        test = any(upload_bad),
+        yes = paste(
+          upload[upload_bad],
+          upload_status[upload_bad],
+          collapse = "; "
+        ),
+        no = paste(length(x = upload), "files match")
       ),
       ifelse(
-        any(delete_bad),
-        paste("still present:", paste(delete[delete_bad], collapse = "; ")),
-        paste(length(delete), "files removed")
+        test = any(delete_bad),
+        yes = paste(
+          "still present:",
+          paste(delete[delete_bad], collapse = "; ")
+        ),
+        no = paste(length(x = delete), "files removed")
       ),
       ifelse(
-        length(unlisted) > 0L,
-        paste(unlisted, collapse = "; "),
-        "none"
+        test = length(x = unlisted) > 0L,
+        yes = paste(unlisted, collapse = "; "),
+        no = "none"
       ),
       ifelse(
-        message_ok,
-        log_line,
-        paste("missing", log_line)
+        test = message_ok,
+        yes = log_line,
+        no = paste("missing", log_line)
       ),
       ifelse(
-        nrow(secrets) > 0L,
-        paste(unique(secrets$file), collapse = "; "),
-        "none found"
+        test = nrow(x = secrets) > 0L,
+        yes = paste(unique(x = secrets$file), collapse = "; "),
+        no = "none found"
       ),
       ifelse(
-        length(public) > 0L,
-        paste(public, collapse = "; "),
-        "no private or oversized files"
+        test = length(x = public) > 0L,
+        yes = paste(public, collapse = "; "),
+        no = "no private or oversized files"
       ),
       repo_info[["detail"]]
     ),
@@ -232,22 +245,22 @@ Verify <- function(path,
   )
   failed <- checks$status == "fail"
   result <- ifelse(
-    any(failed),
-    paste(
+    test = any(failed),
+    yes = paste(
       "\u2717 Verify():",
       paste(checks$check[failed], collapse = ", "),
       "failed"
     ),
-    paste0(
+    no = paste0(
       "\u2713 Verify(): all checks pass",
       ifelse(
-        any(checks$status == "warn"),
-        paste0(
+        test = any(checks$status == "warn"),
+        yes = paste0(
           " (warnings: ",
           paste(checks$check[checks$status == "warn"], collapse = ", "),
           ")"
         ),
-        ""
+        no = ""
       )
     )
   )
@@ -290,5 +303,5 @@ Verify <- function(path,
   } else {
     message(report)
   }
-  invisible(checks)
+  invisible(x = checks)
 }

@@ -10,7 +10,7 @@
     folders$folder,
     "` | ",
     folders$purpose,
-    ifelse(folders$private, " (private)", ""),
+    ifelse(test = folders$private, yes = " (private)", no = ""),
     " |",
     collapse = "\n"
   )

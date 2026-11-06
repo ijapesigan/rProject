@@ -6,13 +6,13 @@
   # workflow's title, schedule (workflow_cron), and next (workflow_next:
   # one or more images to start)
   first <- function(x) {
-    ifelse(length(x) > 0L, x[1], "")
+    ifelse(test = length(x = x) > 0L, yes = x[1], no = "")
   }
   cron <- first(settings$workflow_cron)
   # workflow_next may name several images (one dispatch each)
   following <- settings$workflow_next
-  following <- following[nzchar(following)]
-  public <- ifelse(is.na(public), "", public)
+  following <- following[nzchar(x = following)]
+  public <- ifelse(test = is.na(x = public), yes = "", no = public)
   list(
     project = first(settings$project),
     public = public,
@@ -20,9 +20,9 @@
     repo = sub(pattern = "^.*/", replacement = "", x = public),
     title = first(settings$workflow_title),
     schedule = ifelse(
-      nzchar(cron),
-      paste0("  schedule:\n    - cron: \"", cron, "\""),
-      ""
+      test = nzchar(x = cron),
+      yes = paste0("  schedule:\n    - cron: \"", cron, "\""),
+      no = ""
     ),
     `next` = paste(
       vapply(
@@ -40,7 +40,7 @@
             "            -d '{\"event_type\":\"base-image-built\"}'"
           )
         },
-        FUN.VALUE = character(1),
+        FUN.VALUE = character(length = 1),
         USE.NAMES = FALSE
       ),
       collapse = ""

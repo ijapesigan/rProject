@@ -3,6 +3,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' PkgDevel(path = getwd())
+#' }
 #' @export
 PkgDevel <- function(path) {
   pkg <- c(
@@ -38,7 +43,7 @@ PkgDevel <- function(path) {
   lib <- LibPaths(path = path)
   installed <- utils::installed.packages()
   pkg_installed <- installed[, "Package"]
-  for (i in seq_along(pkg)) {
+  for (i in seq_along(along.with = pkg)) {
     if (!(pkg[i] %in% pkg_installed)) {
       cat(
         paste0(
@@ -49,7 +54,7 @@ PkgDevel <- function(path) {
         )
       )
       utils::install.packages(
-        pkg[i],
+        pkgs = pkg[i],
         repos = c(REPO_NAME = PkgRepo(path = path)),
         lib = lib,
         quiet = TRUE

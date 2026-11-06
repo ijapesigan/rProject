@@ -29,10 +29,10 @@
 % #| message = FALSE,
 % #| warning = FALSE,
 % #| results = "asis"
-% if (require("rProject")) {
+% if (require(package = "rProject")) {
 %   Bib(
 %     path = dirname(
-%       root$find_file(
+%       path = root$find_file(
 %         "project.Rproj"
 %       )
 %     )
@@ -49,7 +49,7 @@
 %   )
 % } else {
 %   cat(
-%     .PreambleBiblatexCombined(
+%     .PreambleCombined(
 %       path = root$find_file(
 %         ".setup",
 %         "latex",
@@ -70,10 +70,10 @@
 \begin{document}
 
 \begin{center}
-    \LARGE
-    \textbf{Ivan Jacob Agaloos Pesigan} \\
-    \large
-    \textbf{\today}
+	\LARGE
+	\textbf{Ivan Jacob Agaloos Pesigan} \\
+	\large
+	\textbf{\today}
 \end{center}
 
 \nocite{*}

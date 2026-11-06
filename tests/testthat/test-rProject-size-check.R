@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     root <- tempfile(pattern = "sizecheck")
-    dir.create(file.path(root, ".setup", "data-raw"), recursive = TRUE)
-    dir.create(file.path(root, ".library"), recursive = TRUE)
+    dir.create(path = file.path(root, ".setup", "data-raw"), recursive = TRUE)
+    dir.create(path = file.path(root, ".library"), recursive = TRUE)
     status <- function(checks, check) {
       checks$status[checks$check == check]
     }
@@ -14,15 +14,18 @@ lapply(
       text = "Foo <- function() 1",
       con = file.path(root, "foo.R")
     )
-    checks <- suppressMessages(SizeCheck(path = root))
+    checks <- suppressMessages(expr = SizeCheck(path = root))
     testthat::test_that(
       paste(text, "passes a small project"),
       {
-        testthat::expect_true(all(checks$status == "pass"))
+        testthat::expect_true(object = all(checks$status == "pass"))
       }
     )
     # a 1.5 MB text file twice, a binary file, and a big file in .library
-    big_text <- paste(rep(strrep("a", 99), 15000), collapse = "\n")
+    big_text <- paste(
+      rep(x = strrep(x = "a", times = 99), 15000),
+      collapse = "\n"
+    )
     for (file in c("data.txt", "copy.txt")) {
       writeLines(
         text = big_text,
@@ -30,7 +33,7 @@ lapply(
       )
     }
     writeBin(
-      object = as.raw(c(0, rep(1, 2e6))),
+      object = as.raw(x = c(0, rep(x = 1, 2e6))),
       con = file.path(root, "data.rds")
     )
     writeLines(
@@ -38,7 +41,7 @@ lapply(
       con = file.path(root, ".library", "skip.txt")
     )
     checks <- suppressMessages(
-      SizeCheck(
+      expr = SizeCheck(
         path = root,
         editable = 2,
         text_file = 1,
@@ -50,32 +53,53 @@ lapply(
     testthat::test_that(
       paste(text, "fails over each limit"),
       {
-        testthat::expect_equal(status(checks, "Editable text"), "fail")
-        testthat::expect_equal(status(checks, "Text file size"), "fail")
-        testthat::expect_equal(status(checks, "File size"), "fail")
-        testthat::expect_match(
-          checks$detail[checks$check == "File size"],
-          "data.rds"
+        testthat::expect_equal(
+          object = status(checks, "Editable text"),
+          expected = "fail"
         )
-        testthat::expect_equal(status(checks, "Number of files"), "fail")
-        testthat::expect_equal(status(checks, "Total size"), "warn")
+        testthat::expect_equal(
+          object = status(checks, "Text file size"),
+          expected = "fail"
+        )
+        testthat::expect_equal(
+          object = status(checks, "File size"),
+          expected = "fail"
+        )
+        testthat::expect_match(
+          object = checks$detail[checks$check == "File size"],
+          regexp = "data.rds"
+        )
+        testthat::expect_equal(
+          object = status(checks, "Number of files"),
+          expected = "fail"
+        )
+        testthat::expect_equal(
+          object = status(checks, "Total size"),
+          expected = "warn"
+        )
       }
     )
     testthat::test_that(
       paste(text, "finds duplicates and skips local folders"),
       {
-        testthat::expect_equal(status(checks, "Duplicates"), "warn")
+        testthat::expect_equal(
+          object = status(checks, "Duplicates"),
+          expected = "warn"
+        )
         testthat::expect_match(
-          checks$detail[checks$check == "Duplicates"],
-          "copy.txt = .setup/data-raw/data.txt",
+          object = checks$detail[checks$check == "Duplicates"],
+          regexp = "copy.txt = .setup/data-raw/data.txt",
           fixed = TRUE
         )
         testthat::expect_false(
-          grepl("skip.txt", checks$detail[checks$check == "Duplicates"])
+          object = grepl(
+            pattern = "skip.txt",
+            x = checks$detail[checks$check == "Duplicates"]
+          )
         )
         testthat::expect_match(
-          checks$detail[checks$check == "Number of files"],
-          "^4 files"
+          object = checks$detail[checks$check == "Number of files"],
+          regexp = "^4 files"
         )
       }
     )
@@ -83,14 +107,14 @@ lapply(
       paste(text, "stops when asked"),
       {
         testthat::expect_error(
-          suppressMessages(
-            SizeCheck(path = root, editable = 2, error = TRUE)
+          object = suppressMessages(
+            expr = SizeCheck(path = root, editable = 2, error = TRUE)
           ),
-          "Editable text"
+          regexp = "Editable text"
         )
       }
     )
-    unlink(root, recursive = TRUE)
+    unlink(x = root, recursive = TRUE)
   },
   text = "test-rProject-size-check"
 )

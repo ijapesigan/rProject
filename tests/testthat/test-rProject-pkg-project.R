@@ -8,8 +8,10 @@ lapply(
     testthat::test_that(
       paste(text, "skips packages that are already installed"),
       {
-        testthat::expect_silent(PkgProject(path = root, pkg = "stats"))
-        testthat::expect_silent(PkgProject(path = root, pkg = character(0)))
+        testthat::expect_silent(object = PkgProject(path = root, pkg = "stats"))
+        testthat::expect_silent(
+          object = PkgProject(path = root, pkg = character(length = 0))
+        )
       }
     )
     testthat::test_that(
@@ -19,12 +21,12 @@ lapply(
         testthat::skip_if_offline()
         utils::capture.output(PkgProject(path = root, pkg = "fortunes"))
         testthat::expect_true(
-          dir.exists(file.path(root, ".library", "fortunes"))
+          object = dir.exists(paths = file.path(root, ".library", "fortunes"))
         )
       }
     )
-    .TestRestore(state)
-    unlink(dirname(root), recursive = TRUE)
+    .TestRestore(state = state)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-pkg-project"
 )

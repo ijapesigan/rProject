@@ -3,6 +3,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Returns a logical value from copying the bibliography.
+#' @examples
+#' \dontrun{
+#' BibLib(path = getwd())
+#' }
 #' @export
 BibLib <- function(path) {
   latex_bib_dir <- file.path(
@@ -12,7 +17,7 @@ BibLib <- function(path) {
     "bib"
   )
   dir.create(
-    latex_bib_dir,
+    path = latex_bib_dir,
     showWarnings = FALSE,
     recursive = TRUE
   )
@@ -45,7 +50,7 @@ BibLib <- function(path) {
       X = libs,
       FUN = function(lib, path) {
         unlink(
-          file.path(
+          x = file.path(
             path,
             ".setup",
             "latex",
@@ -66,8 +71,8 @@ BibLib <- function(path) {
   # clone into the bib folder, without changing the working directory;
   # without the user's git config (it may rewrite https to ssh, which
   # waits for a key or a prompt), and never prompt
-  status <- integer(length(libs))
-  for (i in seq_along(libs)) {
+  status <- integer(length = length(x = libs))
+  for (i in seq_along(along.with = libs)) {
     status[i] <- system2(
       command = "git",
       env = c(
@@ -96,7 +101,7 @@ BibLib <- function(path) {
   # all or nothing: a bib.bib without some lib-* would look complete.
   # When none can be cloned (offline), Bib() keeps the previous bib.bib
   failed <- libs[status != 0L]
-  if (length(failed) > 0L && length(failed) < length(libs)) {
+  if (length(x = failed) > 0L && length(x = failed) < length(x = libs)) {
     stop(
       paste0(
         "\n\nCould not clone ",

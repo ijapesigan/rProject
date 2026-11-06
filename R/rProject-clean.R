@@ -9,6 +9,11 @@
 #'   If `push = TRUE` clean in preparation for git push:
 #'   generated files are kept, and files matching `*secrets*` are deleted,
 #'   except in hidden folders such as `.setup`.
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Clean(path = getwd())
+#' }
 #' @export
 Clean <- function(path,
                   push = FALSE) {

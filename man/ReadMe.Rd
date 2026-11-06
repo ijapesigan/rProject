@@ -10,8 +10,16 @@ ReadMe(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Build README.md
+}
+\examples{
+\dontrun{
+ReadMe(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

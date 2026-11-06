@@ -6,17 +6,19 @@ lapply(
     root <- .TestProject()
     process <- file.path(root, ".setup", "data-process")
     analysis <- file.path(root, ".setup", "data-analysis")
-    dir.create(process, recursive = TRUE)
-    dir.create(analysis, recursive = TRUE)
+    dir.create(path = process, recursive = TRUE)
+    dir.create(path = analysis, recursive = TRUE)
     processed <- file.path(process, "processed.Rds")
     result <- file.path(analysis, "result.Rds")
     writeLines(
-      text = paste0("saveRDS(2, ", deparse(processed), ")"),
+      text = paste0("saveRDS(2, ", deparse(expr = processed), ")"),
       con = file.path(process, "data-process-001.R")
     )
     writeLines(
       text = paste0(
-        "saveRDS(readRDS(", deparse(processed), ") * 3, ", deparse(result), ")"
+        "saveRDS(readRDS(", deparse(
+          expr = processed
+        ), ") * 3, ", deparse(expr = result), ")"
       ),
       con = file.path(analysis, "data-analysis-001.R")
     )
@@ -24,20 +26,20 @@ lapply(
       paste(text, "runs data-process first, then data-analysis"),
       {
         DataAnalysis(path = root)
-        testthat::expect_equal(readRDS(result), 6)
+        testthat::expect_equal(object = readRDS(file = result), expected = 6)
       }
     )
     testthat::test_that(
       paste(text, "with clean = TRUE removes old .Rds in both folders"),
       {
         stale <- file.path(analysis, "stale.Rds")
-        saveRDS(0, stale)
+        saveRDS(object = 0, file = stale)
         DataAnalysis(path = root, clean = TRUE)
-        testthat::expect_false(file.exists(stale))
-        testthat::expect_equal(readRDS(result), 6)
+        testthat::expect_false(object = file.exists(stale))
+        testthat::expect_equal(object = readRDS(file = result), expected = 6)
       }
     )
-    unlink(dirname(root), recursive = TRUE)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-data-analysis"
 )

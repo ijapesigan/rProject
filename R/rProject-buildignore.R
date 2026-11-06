@@ -6,6 +6,11 @@
 #' @inheritParams EnvironmentProject
 #' @param add Character vector.
 #'   Items to add to `.Rbuildignore`.
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' BuildIgnore(path = getwd(), project = "myProject")
+#' }
 #' @export
 BuildIgnore <- function(path,
                         project,
@@ -51,11 +56,11 @@ BuildIgnore <- function(path,
       "^quarto$",
       "^scripts$"
     )
-    if (!is.null(add)) {
+    if (!is.null(x = add)) {
       x <- c(x, add)
     }
     con <- file(
-      file.path(
+      description = file.path(
         path,
         ".Rbuildignore"
       )
@@ -65,7 +70,7 @@ BuildIgnore <- function(path,
       con = con,
       sep = "\n"
     )
-    close(con)
+    close(con = con)
   } else {
     message(
       paste(

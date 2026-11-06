@@ -4,7 +4,7 @@
   if (file.exists(project_r)) {
     env <- new.env(parent = baseenv())
     try(
-      sys.source(file = project_r, envir = env),
+      expr = sys.source(file = project_r, envir = env),
       silent = TRUE
     )
     ai <- get0(x = "ai", envir = env, inherits = FALSE, ifnotfound = list())

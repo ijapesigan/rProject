@@ -10,8 +10,16 @@ CleanTinyTex(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Uninstall \code{TinyTex}.
+}
+\examples{
+\dontrun{
+CleanTinyTex(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

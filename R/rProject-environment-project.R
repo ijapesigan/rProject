@@ -5,6 +5,10 @@
 #' @param project Character string.
 #'   Project name.
 #' @return Returns project name.
+#' @examples
+#' \dontrun{
+#' EnvironmentProject(project = "myProject")
+#' }
 #' @export
 EnvironmentProject <- function(project) {
   Sys.setenv(PROJECT = project[[1]])

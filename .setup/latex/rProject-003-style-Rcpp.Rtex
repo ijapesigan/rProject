@@ -29,10 +29,10 @@
 % #| message = FALSE,
 % #| warning = FALSE,
 % #| results = "asis"
-% if (require("rProject")) {
+% if (require(package = "rProject")) {
 %   Bib(
 %     path = dirname(
-%       root$find_file(
+%       path = root$find_file(
 %         "project.Rproj"
 %       )
 %     )
@@ -48,7 +48,7 @@
 %   )
 % } else {
 %   cat(
-%     .PreambleBiblatexCombined(
+%     .PreambleCombined(
 %       path = root$find_file(
 %         ".setup",
 %         "latex",
@@ -73,7 +73,95 @@
 
 \maketitle
 
-WE NEED TO CREATE THIS.
+This guide extends the R style guide to C++.
+Where it is silent, the R guide applies, and then the Google C++ style guide
+(\url{https://google.github.io/styleguide/cppguide.html}).
+C++ keeps its \texttt{return}.
+Agents follow \texttt{.setup/ai/style/rcpp.md},
+which follows this guide and is changed together with it.
+
+\section{Files}
+
+\begin{itemize}
+	\item Sources are in \texttt{.setup/cpp}, with \texttt{Makevars} and \texttt{Makevars.win}.
+	\texttt{Build()} copies them to \texttt{src}; never edit \texttt{src} directly.
+	\item Every project with C++ has \texttt{.setup/cpp/000-forward-declarations.cpp},
+	which declares every function,
+	so the order of the other files does not matter.
+	It is the only numbered file.
+	\item One function per file:
+	\texttt{<pkg>-<name>.cpp} for a function exported to users,
+	\texttt{<pkg>-<name>-dot.cpp} for an internal one.
+	Numbered helper files (\texttt{001-transformation-helpers.cpp})
+	are split into these.
+	\item Each file starts with a header block whose \texttt{edit} line names the file itself.
+\end{itemize}
+
+\begin{Verbatim}
+// -----------------------------------------------------------------------------
+// edit .setup/cpp/template-foo-dot.cpp
+// Ivan Jacob Agaloos Pesigan
+// -----------------------------------------------------------------------------
+\end{Verbatim}
+
+\section{Types}
+
+\begin{itemize}
+	\item RcppArmadillo by default (\texttt{arma::mat}, \texttt{arma::vec}),
+	with \texttt{// [[Rcpp::depends(RcppArmadillo)]]}.
+	\item Plain Rcpp types only at the R boundary
+	(\texttt{Rcpp::List}, \texttt{Rcpp::Named}).
+	\item Matrices and vectors are \texttt{const} references unless the function changes them;
+	scalars are passed by value.
+\end{itemize}
+
+\section{Names}
+
+\begin{itemize}
+	\item Functions in \texttt{BigCamelCase}; arguments and variables in \texttt{snake\_case}.
+	\item Explicit namespaces: \texttt{arma::}, \texttt{Rcpp::}, \texttt{std::}.
+	No \texttt{using namespace}.
+	\item Internal functions are exported to R with a dot:
+	\texttt{// [[Rcpp::export(.Foo)]]}.
+	Public functions have roxygen comments (\texttt{//'}) and \texttt{// [[Rcpp::export]]}.
+\end{itemize}
+
+\section{Bodies}
+
+\begin{itemize}
+	\item Every \texttt{if}, \texttt{else}, \texttt{for}, and \texttt{while} body is in braces.
+	\texttt{make style} inserts them.
+	\item Lines under 80 characters, including roxygen comments.
+	\item Sanity checks go in the R wrapper (\texttt{.CheckFoo()}).
+	\texttt{Rcpp::stop()} in C++ is only for numerical failures.
+	\item \texttt{// \# nocov start} and \texttt{// \# nocov end} around unreachable branches only.
+\end{itemize}
+
+\begin{Verbatim}
+// [[Rcpp::depends(RcppArmadillo)]]
+#include <RcppArmadillo.h>
+
+// [[Rcpp::export(.Scale)]]
+arma::mat Scale(const arma::mat& x_mat, const double scale) {
+  if (scale == 0.0) {
+    Rcpp::stop("scale is zero.");
+  }
+  return x_mat / scale;
+}
+\end{Verbatim}
+
+\section{Tests}
+
+C++ functions are tested from R, as R functions, in \texttt{tests/testthat}.
+
+\section{Tools}
+
+\begin{itemize}
+	\item \texttt{make style}: \texttt{clang-format} (Google style, \texttt{InsertBraces}).
+	\item \texttt{make lint}: the header line, forward declarations, file names,
+	names, \texttt{using namespace}, \texttt{const} references, and the format.
+	Warnings in rProject 0.0.63; errors from 0.0.64.
+\end{itemize}
 
 \nocite{RCoreTeam-2026}
 

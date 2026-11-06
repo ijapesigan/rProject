@@ -20,7 +20,7 @@
   }
   row <- paste0(
     "| ",
-    substr(log, start = 1, stop = 10),
+    substr(x = log, start = 1, stop = 10),
     " | (pending) | ",
     log,
     " | ",
@@ -28,8 +28,8 @@
     " | |"
   )
   # newest first: right after the table's separator line
-  separator <- which(grepl(pattern = "^\\|---", x = lines))[1]
-  if (is.na(separator)) {
+  separator <- which(x = grepl(pattern = "^\\|---", x = lines))[1]
+  if (is.na(x = separator)) {
     lines <- c(lines, "", header[6:7], row)
   } else {
     lines <- append(
@@ -42,5 +42,5 @@
     text = lines,
     con = index
   )
-  invisible(index)
+  invisible(x = index)
 }

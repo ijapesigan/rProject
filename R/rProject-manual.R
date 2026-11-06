@@ -2,6 +2,11 @@
 #'
 #' @inheritParams LibPaths
 #' @inheritParams EnvironmentProject
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Manual(path = getwd(), project = "myProject")
+#' }
 #' @export
 Manual <- function(path,
                    project) {
@@ -20,8 +25,8 @@ Manual <- function(path,
     )
     unlink(
       x = list.files(
-        output,
-        pattern = utils::glob2rx("*.pdf"),
+        path = output,
+        pattern = utils::glob2rx(pattern = "*.pdf"),
         full.names = TRUE
       )
     )
@@ -38,13 +43,13 @@ Manual <- function(path,
     )
     system2(
       command = file.path(
-        R.home("bin"),
+        R.home(component = "bin"),
         "R"
       ),
       args = c(
         "CMD",
         "Rd2pdf",
-        .ShellQuote(x = find.package(project))
+        .ShellQuote(x = find.package(package = project))
       )
     )
     file.copy(

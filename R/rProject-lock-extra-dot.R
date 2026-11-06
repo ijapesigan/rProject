@@ -20,24 +20,32 @@
   )
   field <- function(pkg, name) {
     value <- suppressWarnings(
-      utils::packageDescription(pkg = pkg, fields = name)
+      expr = utils::packageDescription(pkg = pkg, fields = name)
     )
-    ifelse(is.null(value) || is.na(value), NA_character_, value)
+    ifelse(
+      test = is.null(x = value) || is.na(x = value),
+      yes = NA_character_,
+      no = value
+    )
   }
   cran <- vapply(
-    X = as.character(pkg_cran),
+    X = as.character(x = pkg_cran),
     FUN = field,
-    FUN.VALUE = character(1),
+    FUN.VALUE = character(length = 1),
     name = "Version"
   )
-  repos <- sub("@.*$", "", as.character(pkg_github))
+  repos <- sub(
+    pattern = "@.*$",
+    replacement = "",
+    x = as.character(x = pkg_github)
+  )
   github <- vapply(
-    X = basename(repos),
+    X = basename(path = repos),
     FUN = field,
-    FUN.VALUE = character(1),
+    FUN.VALUE = character(length = 1),
     name = "RemoteSha"
   )
-  names(github) <- repos
+  names(x = github) <- repos
   list(
     cran = cran,
     github = github

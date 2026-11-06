@@ -10,10 +10,18 @@ Coverage(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Runs \code{covr::package_coverage()} on the package. To leave files out,
 put covr's \code{.covrignore} at the project root (and add it to
 \code{.Rbuildignore} with \code{ignore} in \code{.setup/scripts/project.R}).
+}
+\examples{
+\dontrun{
+Coverage(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

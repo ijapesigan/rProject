@@ -3,6 +3,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' VignettesPrecompile(path = getwd())
+#' }
 #' @export
 VignettesPrecompile <- function(path) {
   if (
@@ -18,7 +23,7 @@ VignettesPrecompile <- function(path) {
     pkg_installed <- installed[, "Package"]
     if (!("knitr" %in% pkg_installed)) {
       utils::install.packages(
-        "knitr",
+        pkgs = "knitr",
         repos = c(REPO_NAME = PkgRepo(path = path)),
         lib = lib,
         quiet = TRUE
@@ -45,7 +50,7 @@ VignettesPrecompile <- function(path) {
       replacement = "",
       x = orig
     )
-    if (length(orig) > 0) {
+    if (length(x = orig) > 0) {
       dir.create(
         path = file.path(
           path,
@@ -53,7 +58,7 @@ VignettesPrecompile <- function(path) {
         ),
         showWarnings = FALSE
       )
-      for (i in seq_along(orig)) {
+      for (i in seq_along(along.with = orig)) {
         if (
           !(
             file.exists(
@@ -83,7 +88,7 @@ VignettesPrecompile <- function(path) {
       all.files = TRUE,
       recursive = FALSE
     )
-    if (length(figs) > 0) {
+    if (length(x = figs) > 0) {
       file.copy(
         from = figs,
         to = vignettes_folder
@@ -99,7 +104,7 @@ VignettesPrecompile <- function(path) {
       expr = unlink(
         x = list.files(
           path = vignettes_folder,
-          pattern = utils::glob2rx("*.orig"),
+          pattern = utils::glob2rx(pattern = "*.orig"),
           full.names = TRUE
         )
       ),

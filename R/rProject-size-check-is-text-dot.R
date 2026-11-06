@@ -8,6 +8,6 @@
     what = "raw",
     n = 8000
   )
-  close(con)
-  length(head_bytes) > 0L && !any(head_bytes == as.raw(0))
+  close(con = con)
+  length(x = head_bytes) > 0L && !any(head_bytes == as.raw(x = 0))
 }

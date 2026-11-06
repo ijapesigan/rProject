@@ -4,7 +4,7 @@ lapply(
   FUN = function(i,
                  text) {
     dir <- tempfile(pattern = "latexlog")
-    dir.create(dir)
+    dir.create(path = dir)
     good <- file.path(dir, "good.log")
     stub <- file.path(dir, "stub.log")
     full <- file.path(dir, "full.log")
@@ -29,16 +29,19 @@ lapply(
         out <- .LatexLogCheck(
           logs = c(good, stub, full, file.path(dir, "missing.log"))
         )
-        testthat::expect_equal(unname(out), c(stub, full))
+        testthat::expect_equal(
+          object = unname(obj = out),
+          expected = c(stub, full)
+        )
       }
     )
     testthat::test_that(
       paste(text, "is empty when every document compiled"),
       {
-        testthat::expect_length(.LatexLogCheck(logs = good), 0)
+        testthat::expect_length(object = .LatexLogCheck(logs = good), n = 0)
       }
     )
-    unlink(dir, recursive = TRUE)
+    unlink(x = dir, recursive = TRUE)
   },
   text = "test-rProject-latex-log-check"
 )

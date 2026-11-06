@@ -8,6 +8,11 @@
 #' @param clean Logical.
 #'   Remove all `.Rds` files in `data-process`
 #'   and `data-analysis` before running.
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' DataAnalysis(path = getwd())
+#' }
 #' @export
 DataAnalysis <- function(path,
                          clean = FALSE) {
@@ -28,8 +33,8 @@ DataAnalysis <- function(path,
       all.files = TRUE,
       recursive = TRUE
     )
-    if (length(x) > 0) {
-      unlink(x)
+    if (length(x = x) > 0) {
+      unlink(x = x)
     }
   }
   x <- list.files(
@@ -39,9 +44,9 @@ DataAnalysis <- function(path,
     all.files = TRUE,
     recursive = TRUE
   )
-  if (length(x) > 0) {
+  if (length(x = x) > 0) {
     invisible(
-      lapply(
+      x = lapply(
         X = x,
         FUN = source
       )

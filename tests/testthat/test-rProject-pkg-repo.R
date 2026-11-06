@@ -7,13 +7,16 @@ lapply(
       paste(text, "returns a Posit Package Manager URL"),
       {
         repo <- PkgRepo(path = tempdir())
-        testthat::expect_length(repo, 1L)
+        testthat::expect_length(object = repo, n = 1L)
         testthat::expect_match(
-          repo,
-          "^https://packagemanager\\.posit\\.co/cran/"
+          object = repo,
+          regexp = "^https://packagemanager\\.posit\\.co/cran/"
         )
         # the image's snapshot (a date), or latest
-        testthat::expect_match(repo, "latest|/\\d{4}-\\d{2}-\\d{2}")
+        testthat::expect_match(
+          object = repo,
+          regexp = "latest|/\\d{4}-\\d{2}-\\d{2}"
+        )
       }
     )
   },

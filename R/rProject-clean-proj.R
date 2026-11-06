@@ -15,6 +15,11 @@
 #' @param sif Logical.
 #'   If `sif = TRUE`, delete `.sif`.
 #'   If `sif = FALSE`, `.sif` is not deleted.
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' CleanProj(path = getwd())
+#' }
 #' @export
 CleanProj <- function(path,
                       lib = FALSE,
@@ -69,7 +74,7 @@ CleanProj <- function(path,
     dirs
   )
   try(
-    unlink(
+    expr = unlink(
       x = dirs,
       recursive = TRUE,
       force = TRUE
@@ -85,9 +90,15 @@ CleanProj <- function(path,
   # list.files() also returns folders, so keep the protected ones here too
   keep <- c(
     "project.Rproj",
-    if (!lib) ".library",
-    if (!sim) ".sim",
-    if (!sif) ".sif"
+    if (!lib) {
+      ".library"
+    },
+    if (!sim) {
+      ".sim"
+    },
+    if (!sif) {
+      ".sif"
+    }
   )
   files <- files[!(files %in% keep)]
   files <- file.path(
@@ -95,7 +106,7 @@ CleanProj <- function(path,
     files
   )
   try(
-    unlink(
+    expr = unlink(
       x = files,
       recursive = TRUE,
       force = TRUE

@@ -10,11 +10,19 @@ Binary(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Runs (sources) every R script in \verb{.setup/bin/}, at \verb{make project}; for
 example, a script that builds a bespoke binary the project needs.
 \verb{.setup/bin/} is optional: \code{make} does not create it, and without it
 \code{Binary()} does nothing.
+}
+\examples{
+\dontrun{
+Binary(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

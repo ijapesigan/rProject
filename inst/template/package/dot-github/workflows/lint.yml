@@ -74,7 +74,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::lintr, local::.
+          extra-packages: any::lintr, github::ijapesigan/rProject, local::.
           needs: lint
 
       - name: Lint
@@ -132,3 +132,18 @@ jobs:
         shell: Rscript {0}
         env:
           LINTR_ERROR_ON_LINT: true
+
+      # the style guides' checks; warnings are reported, errors fail once the
+      # project has lint_error <- TRUE in .setup/scripts/project.R
+      - name: House checks
+        if: always()
+        run: |
+          house <- rProject:::.LintHouse(
+            path = getwd(),
+            type = rProject:::.TemplateType(path = getwd())
+          )
+          rProject:::.LintReport(rows = house)
+          if (any(house$level == "error")) {
+            stop("house checks failed")
+          }
+        shell: Rscript {0}

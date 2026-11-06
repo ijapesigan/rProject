@@ -7,10 +7,13 @@ lapply(
       paste(text, "compiles a LaTeX document to PDF (slow)"),
       {
         .SkipSlow()
-        testthat::skip_if(Sys.which("latexmk") == "", "latexmk not found")
+        testthat::skip_if(
+          condition = Sys.which(names = "latexmk") == "",
+          message = "latexmk not found"
+        )
         root <- .TestProject(pattern = "project with space ")
         latex <- file.path(root, ".setup", "latex")
-        dir.create(latex, recursive = TRUE)
+        dir.create(path = latex, recursive = TRUE)
         writeLines(
           text = c(
             "\\documentclass{article}",
@@ -20,17 +23,19 @@ lapply(
           ),
           con = file.path(latex, "testProject-test.tex")
         )
-        suppressMessages(LatexKnit(path = root))
-        suppressMessages(suppressWarnings(LatexCompile(path = root)))
+        suppressMessages(expr = LatexKnit(path = root))
+        suppressMessages(
+          expr = suppressWarnings(expr = LatexCompile(path = root))
+        )
         testthat::expect_true(
-          length(list.files(
-            root,
+          object = length(x = list.files(
+            path = root,
             pattern = "\\.pdf$",
             recursive = TRUE,
             all.files = TRUE
           )) > 0L
         )
-        unlink(dirname(root), recursive = TRUE)
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
   },

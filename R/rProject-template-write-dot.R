@@ -2,7 +2,7 @@
                            type,
                            check) {
   settings <- .TemplateSettings(path = path)
-  if (identical(type, "rProject")) {
+  if (identical(x = type, y = "rProject")) {
     if (!check) {
       .TemplateSources(path = path)
     }
@@ -25,12 +25,12 @@
   public <- info$public_github
   values <- .TemplateKeys(settings = settings, public = public)
   # a file that names the public repository is not written without one
-  needs_public <- rep(x = FALSE, times = nrow(files))
+  needs_public <- rep(x = FALSE, times = nrow(x = files))
   needs_public[files$fill] <- .TemplateHas(
     files = files$source[files$fill],
     keys = c("public", "owner", "repo")
   )
-  if (!nzchar(values$public) && any(needs_public)) {
+  if (!nzchar(x = values$public) && any(needs_public)) {
     message(
       paste0(
         "\n\nNo public repository (.setup/repo/public-github.md);",
@@ -43,9 +43,9 @@
   }
   if (any(files$daily)) {
     following <- settings$workflow_next
-    following <- following[nzchar(following)]
-    problems <- character(0)
-    if (!nzchar(values$title)) {
+    following <- following[nzchar(x = following)]
+    problems <- character(length = 0)
+    if (!nzchar(x = values$title)) {
       problems <- "workflow_title is missing"
     }
     valid <- grepl(pattern = "^[^/ ]+/[^/ ]+$", x = following)
@@ -59,7 +59,7 @@
         )
       )
     }
-    if (length(problems) > 0L) {
+    if (length(x = problems) > 0L) {
       stop(
         paste0(
           "\n\n",
@@ -74,7 +74,7 @@
   }
   content <- function(i) {
     if (files$kind[i] == "dir") {
-      character(0)
+      character(length = 0)
     } else {
       .TemplateFill(
         text = readLines(con = files$source[i], warn = FALSE),
@@ -87,12 +87,12 @@
   differs <- !exists
   # an existing folder's .gitignore is the user's: never compared
   plain <- exists & files$kind == "file" & !files$fill
-  differs[plain] <- tools::md5sum(target[plain]) !=
-    tools::md5sum(files$source[plain])
-  for (i in which(exists & files$fill)) {
+  differs[plain] <- tools::md5sum(files = target[plain]) !=
+    tools::md5sum(files = files$source[plain])
+  for (i in which(x = exists & files$fill)) {
     differs[i] <- !identical(
-      readLines(con = target[i], warn = FALSE),
-      content(i)
+      x = readLines(con = target[i], warn = FALSE),
+      y = content(i)
     )
   }
   # every template file is written (the template wins); the ones kept in
@@ -106,20 +106,16 @@
     check = check
   )
   if (!check) {
-    for (i in which(write)) {
+    for (i in which(x = write)) {
       dir.create(
-        path = dirname(target[i]),
+        path = dirname(path = target[i]),
         showWarnings = FALSE,
         recursive = TRUE
       )
       if (files$kind[i] == "file" && !files$fill[i]) {
-        file.copy(
-          from = files$source[i],
-          to = target[i],
-          overwrite = TRUE
-        )
+        .TemplateAtomic(target = target[i], from = files$source[i])
       } else {
-        writeLines(text = content(i), con = target[i])
+        .TemplateAtomic(target = target[i], text = content(i))
       }
     }
   }
@@ -128,9 +124,9 @@
       paste0(
         "\n\n",
         ifelse(
-          check,
-          "Template files to write:\n",
-          "Template files written:\n"
+          test = check,
+          yes = "Template files to write:\n",
+          no = "Template files written:\n"
         ),
         paste(files$path[write], collapse = "\n"),
         "\n\n"
@@ -141,7 +137,7 @@
     message(
       paste0(
         "\n\n",
-        ifelse(check, "To overwrite", "Overwritten"),
+        ifelse(test = check, yes = "To overwrite", no = "Overwritten"),
         " (the template wins; change it in rProject's inst/template/):\n",
         paste(files$path[edited], collapse = "\n"),
         "\n\n"
@@ -158,10 +154,13 @@
       )
     )
   }
-  if (!any(write) && length(removed) == 0L) {
+  if (!any(write) && length(x = removed) == 0L) {
     message("\n\nTemplate files are up to date.\n\n")
   }
-  written <- files$path[write]
-  attr(written, "removed") <- removed
+  written <- c(
+    files$path[write],
+    .TemplateOnce(path = path, root = root, check = check)
+  )
+  attr(x = written, which = "removed") <- removed
   written
 }

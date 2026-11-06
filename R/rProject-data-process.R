@@ -7,6 +7,11 @@
 #' @inheritParams LibPaths
 #' @param clean Logical.
 #'   Remove all `.Rds` files in `data-process` before running.
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' DataProcess(path = getwd())
+#' }
 #' @export
 DataProcess <- function(path,
                         clean = FALSE) {
@@ -23,8 +28,8 @@ DataProcess <- function(path,
       all.files = TRUE,
       recursive = TRUE
     )
-    if (length(x) > 0) {
-      unlink(x)
+    if (length(x = x) > 0) {
+      unlink(x = x)
     }
   }
   x <- list.files(
@@ -34,9 +39,9 @@ DataProcess <- function(path,
     all.files = TRUE,
     recursive = TRUE
   )
-  if (length(x) > 0) {
+  if (length(x = x) > 0) {
     invisible(
-      lapply(
+      x = lapply(
         X = x,
         FUN = source
       )

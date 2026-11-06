@@ -10,8 +10,16 @@ Project(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Setup the project.Rproj file
+}
+\examples{
+\dontrun{
+Project(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

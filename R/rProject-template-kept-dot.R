@@ -4,7 +4,7 @@
   # to run at all), and the .gitignore files (a fresh clone keeps its
   # export rules), but not in .github/, which make writes whole
   files$tier == "1" | (
-    basename(files$path) %in% c("Makefile", ".gitignore") &
-      !startsWith(files$path, ".github/")
+    basename(path = files$path) %in% c("Makefile", ".gitignore") &
+      !startsWith(x = files$path, prefix = ".github/")
   )
 }

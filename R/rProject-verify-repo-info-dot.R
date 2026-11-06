@@ -8,16 +8,18 @@
   )
   missing <- files[
     vapply(
-      X = names(files),
+      X = names(x = files),
       FUN = function(x) {
-        is.na(info[[x]]) && !(x == "public_github" && attr(info, "public_none"))
+        is.na(
+          x = info[[x]]
+        ) && !(x == "public_github" && attr(x = info, which = "public_none"))
       },
-      FUN.VALUE = logical(1)
+      FUN.VALUE = logical(length = 1)
     )
   ]
-  warn <- character(0)
-  fail <- character(0)
-  if (length(missing) > 0L) {
+  warn <- character(length = 0)
+  fail <- character(length = 0)
+  if (length(x = missing) > 0L) {
     warn <- paste(
       "missing in .setup/repo/:",
       paste(missing, collapse = ", ")
@@ -26,7 +28,7 @@
   # a share link grants access: only the project URL belongs here
   overleaf <- info$private_overleaf
   if (
-    !is.na(overleaf) &&
+    !is.na(x = overleaf) &&
       !grepl(
         pattern = "^https://www\\.overleaf\\.com/project/[0-9a-f]+/?$",
         x = overleaf
@@ -46,9 +48,9 @@
     x = sub(pattern = "\\.git$", replacement = "", x = remote)
   )
   if (
-    !is.na(info$private_github) &&
-      length(remote) == 1L &&
-      !identical(remote, info$private_github)
+    !is.na(x = info$private_github) &&
+      length(x = remote) == 1L &&
+      !identical(x = remote, y = info$private_github)
   ) {
     warn <- c(
       warn,
@@ -62,8 +64,8 @@
   }
   clone <- .RepoInfoClone(path = path)
   if (
-    !is.na(info$public_github) &&
-      !is.na(clone) &&
+    !is.na(x = info$public_github) &&
+      !is.na(x = clone) &&
       clone != info$public_github
   ) {
     warn <- c(
@@ -77,14 +79,14 @@
     )
   }
   status <- "pass"
-  if (length(warn) > 0L) {
+  if (length(x = warn) > 0L) {
     status <- "warn"
   }
-  if (length(fail) > 0L) {
+  if (length(x = fail) > 0L) {
     status <- "fail"
   }
   detail <- paste(c(fail, warn), collapse = "; ")
-  if (!nzchar(detail)) {
+  if (!nzchar(x = detail)) {
     detail <- paste(
       c(info$private_github, info$private_overleaf, info$public_github),
       collapse = ", "

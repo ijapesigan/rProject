@@ -8,10 +8,10 @@
     "Bernoulli", "Poisson", "Laplace", "Wiener", "Ornstein", "Uhlenbeck",
     "Cholesky", "Hessian", "Jacobian", "Lagrange", "English", "American"
   )
-  words <- strsplit(x = trimws(x), split = " ", fixed = TRUE)[[1]]
-  first <- c(TRUE, grepl(pattern = "[:?.!]$", x = words[-length(words)]))
+  words <- strsplit(x = trimws(x = x), split = " ", fixed = TRUE)[[1]]
+  first <- c(TRUE, grepl(pattern = "[:?.!]$", x = words[-length(x = words)]))
   out <- vapply(
-    X = seq_along(words),
+    X = seq_along(along.with = words),
     FUN = function(i) {
       word <- words[i]
       bare <- gsub(pattern = "[^A-Za-z]", replacement = "", x = word)
@@ -26,12 +26,15 @@
           perl = TRUE
         )
       } else if (first[i]) {
-        paste0(toupper(substr(word, 1, 1)), tolower(substring(word, 2)))
+        paste0(
+          toupper(x = substr(x = word, start = 1, stop = 1)),
+          tolower(x = substring(text = word, first = 2))
+        )
       } else {
-        tolower(word)
+        tolower(x = word)
       }
     },
-    FUN.VALUE = character(1)
+    FUN.VALUE = character(length = 1)
   )
   paste(out, collapse = " ")
 }
