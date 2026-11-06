@@ -18,9 +18,15 @@ the user maintains (aims, data, notation, co-authors, open issues).
   (`make auto` pushes here)
 - These come from `.setup/repo/` (private). O2G checks the private
   repository; PUB checks the public one.
+- The standards are rProject as pushed, in `$RPROJECT/.verify` (where
+  `RPROJECT` is set). Read its `vignettes/structure.Rmd`, `NEWS.md`, and
+  `.setup/ai/specs/` only when a task touches structure. Where they
+  differ from this project’s installed rProject (`make tree`, the lock),
+  the installed version wins.
 - Image: **the user chooses it** and runs
-  `apptainer exec <image> make <target>`; R is not installed on the
-  host. Do not pick an image. When a command needs one, ask, or give the
+  `apptainer exec -B ~/work:$(readlink -f ~/work) <image> make <target>`
+  (on Roar, add `-B /scratch/ibp5092`); R is not installed on the host.
+  Do not pick an image. When a command needs one, ask, or give the
   command with `<image>` for the user to fill in. `.setup/ai/project.md`
   may note the image the project usually uses.
 
@@ -83,6 +89,8 @@ the user maintains (aims, data, notation, co-authors, open issues).
 | `make verify RECORD=TRUE` | after the user pushes from Overleaf (O2G): verify and record the push. On Roar, run `bash .setup/scripts/verify.sh` on the host first to pull. |
 | `make linked` | compare `.setup/r-dependencies/` with the functions clone |
 | `make auto` | publish to the public repository (checks the remote and the export first) |
+| `make release` | `make all`, the secret scan, then `make auto`; stops at the first failure |
+| `make dotfiles` | install the shell, tmux, Vim, and xterm files from rProject (`make all` does not) |
 | `make tree` | the project’s folders and what each is for; flags missing and non-standard folders |
 | `make project` | settings, template files; restores `.setup/scripts/rproject.lock` (rProject, image, snapshot) |
 | `make upgrade` | move to the newest rProject; the next `make auto` updates the lock. Never upgrade a package the image has: add it to the image |
@@ -94,6 +102,18 @@ the user maintains (aims, data, notation, co-authors, open issues).
 `src/RcppExports.cpp`, `*/bib.bib`, `vignettes/*.Rmd` built from
 `.setup/vignettes/`, `.setup/latex/pdf/`, `.setup/latex/figures/`,
 `data/*.rda`. Change their sources and run `make`.
+
+## Overleaf and generated files
+
+- Generated files may stay in Overleaf as regular files, never as links;
+  a template change reaches Overleaf with the project’s next upload
+  ([`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
+  skips them).
+- Keep the `Makefile`, `project.Rproj`, the `.gitignore` files, and the
+  scripts the project’s own build uses. Remove only `.setup/scripts/*`
+  except `project.R`.
+- A copy without the `Makefile`:
+  `Rscript -e 'rProject::Template(getwd())'` once, then `make`.
 
 ## Linked from functions
 

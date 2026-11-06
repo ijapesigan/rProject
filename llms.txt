@@ -19,7 +19,9 @@ You can install the released version of `rProject` from
 ## More Information
 
 See [GitHub Pages](https://ijapesigan.github.io/rProject) for package
-documentation.
+documentation, and [Working with AI
+Agents](https://ijapesigan.github.io/rProject/articles/agents.html) for
+how coding agents work on a project.
 
 See [Quarto Pub](https://ijapesigan.quarto.pub/rproject) for package
 wiki and other resources.
@@ -39,6 +41,9 @@ computing*. R Foundation for Statistical Computing.
 
 - [`AIGlobal()`](https://ijapesigan.github.io/rProject/reference/AIGlobal.md)
   : Install Global AI Instructions
+
+- [`Badges()`](https://ijapesigan.github.io/rProject/reference/Badges.md)
+  : README Badges
 
 - [`Bib()`](https://ijapesigan.github.io/rProject/reference/Bib.md) :
   Consolidate .bib Files into a Single File
@@ -256,6 +261,8 @@ computing*. R Foundation for Statistical Computing.
 
 ### All vignettes
 
+- [Working with AI
+  Agents](https://ijapesigan.github.io/rProject/articles/agents.md):
 - [rProject: Setup R
   Project](https://ijapesigan.github.io/rProject/articles/rProject.md):
 - [rProject:

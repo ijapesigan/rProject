@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.64</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.65</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,8 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/session/session.html">rProject: Session</a></li>
+<li><a class="dropdown-item" href="../articles/agents.html">Working with AI Agents</a></li>
+    <li><a class="dropdown-item" href="../articles/session/session.html">rProject: Session</a></li>
     <li><a class="dropdown-item" href="../articles/structure.html">How an rProject Project Works</a></li>
     <li><a class="dropdown-item" href="../articles/tags.html">Library Tags</a></li>
   </ul>
@@ -563,7 +564,7 @@ skips tier 2, so a stale copy is not an error). Keep the
 uses (docker: <code>scripts/rproject*.sh</code>); remove only
 <code>.setup/scripts/</code> except <code>project.R</code>. A copy
 without the <code>Makefile</code> runs
-<code>apptainer exec &lt;image&gt; Rscript -e 'rProject::Template(getwd())'</code>
+<code>apptainer exec -B ~/work:$(readlink -f ~/work) &lt;image&gt; Rscript -e 'rProject::Template(getwd())'</code>
 once, then <code>make</code>.</li>
 </ul>
 <p>Workflows that only some projects run are in a catalog
@@ -846,7 +847,10 @@ project)</td>
 </tbody>
 </table>
 <p>R runs only inside an Apptainer image:
-<code>apptainer exec &lt;image&gt; make &lt;target&gt;</code>.</p>
+<code>apptainer exec -B ~/work:$(readlink -f ~/work) &lt;image&gt; make &lt;target&gt;</code>
+(on Roar, add <code>-B /scratch/ibp5092</code>).
+<code>make release</code> runs <code>make all</code>, the secret scan,
+and <code>make auto</code>, and stops at the first failure.</p>
 </div>
 <div class="section level2">
 <h2 id="reproducible-builds">Reproducible builds<a class="anchor" aria-label="anchor" href="#reproducible-builds"></a>
@@ -969,6 +973,26 @@ the public repository and its CI</td>
 images</td>
 </tr>
 <tr class="even">
+<td>“build rProject”</td>
+<td>build and publish rProject from a verified private push</td>
+</tr>
+<tr class="odd">
+<td>“CI <project>”</project>
+</td>
+<td>wait for the last push’s runs and read the failed logs</td>
+</tr>
+<tr class="even">
+<td>“rollout <set><target>”</target></set>
+</td>
+<td>run a make target across projects, stopping at the first
+failure</td>
+</tr>
+<tr class="odd">
+<td>“sim status <project>”</project>
+</td>
+<td>count a simulation’s jobs against its design</td>
+</tr>
+<tr class="even">
 <td>“build lib”</td>
 <td>publish the lib-* libraries, then rebuild <code>bib.bib</code> on
 rProject’s <code>main</code> and <code>latex</code> branches from
@@ -991,7 +1015,69 @@ pending pushes, report, and wait</td>
 </tbody>
 </table>
 <p>The private files that agents read (<code>AGENTS.md</code>,
-<code>.setup/ai/</code>) are written by <code><a href="../reference/AI.html">rProject::AI()</a></code>.</p>
+<code>.setup/ai/</code>) are written by <code><a href="../reference/AI.html">rProject::AI()</a></code>.
+<code><a href="../articles/agents.html">vignette("agents")</a></code> has the details: who does what, the
+keyword agents, long jobs, and setting up a machine.</p>
+</div>
+<div class="section level2">
+<h2 id="ci-tiers">CI tiers<a class="anchor" aria-label="anchor" href="#ci-tiers"></a>
+</h2>
+<p>The r-hub workflows of <code>cran-*</code> projects and rProject, the
+testbed, have five tiers. The README’s badges come from
+<code>.github/workflows</code> at <code>make readme</code>
+(<code><a href="../reference/Badges.html">Badges()</a></code>).</p>
+<table class="table">
+<colgroup>
+<col width="25%">
+<col width="25%">
+<col width="25%">
+<col width="25%">
+</colgroup>
+<thead><tr class="header">
+<th>Tier</th>
+<th>Workflow</th>
+<th>Runs</th>
+<th>Badge</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1, essential</td>
+<td><code>rhub-1-essential.yml</code></td>
+<td>every PUB: CRAN’s flavors, <code>donttest</code>,
+<code>nosuggests</code>
+</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>2, memory</td>
+<td><code>rhub-2-memory.yml</code></td>
+<td>every PUB, for <code>src/</code> and always in rProject: sanitizers,
+<code>valgrind</code>, <code>rchk</code>
+</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>3, numerics</td>
+<td><code>rhub-3-numerics.yml</code></td>
+<td>every PUB, for review</td>
+<td>labeled “review only”</td>
+</tr>
+<tr class="even">
+<td>4, compilers</td>
+<td><code>rhub-4-compilers.yml</code></td>
+<td>every PUB, for review</td>
+<td>labeled “review only”</td>
+</tr>
+<tr class="odd">
+<td>5, other</td>
+<td><code>rhub-5-other.yml</code></td>
+<td>by hand, before CRAN submissions</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>Tiers 3 and 4 use <code>continue-on-error</code>, so their badges
+stay green: read their results.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

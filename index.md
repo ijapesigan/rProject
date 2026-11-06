@@ -19,7 +19,9 @@ You can install the released version of `rProject` from
 ## More Information
 
 See [GitHub Pages](https://ijapesigan.github.io/rProject) for package
-documentation.
+documentation, and [Working with AI
+Agents](https://ijapesigan.github.io/rProject/articles/agents.html) for
+how coding agents work on a project.
 
 See [Quarto Pub](https://ijapesigan.quarto.pub/rproject) for package
 wiki and other resources.

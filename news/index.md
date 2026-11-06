@@ -1,5 +1,104 @@
 # Changelog
 
+## rProject 0.0.65
+
+### Tools in `~/work`
+
+- Where `~/work` exists, a symlink or a folder, the tools rProject
+  installs live in `~/work/tools` and are linked from home, so a small
+  home quota holds only the links. `install.sh --move` moves what is
+  installed; `--list` shows where each tool lives. Quarto, tmux, and
+  pfetch stay in `~/.local`.
+- New `install.sh cli`: fzf, zoxide, bat, fd, eza, and delta, as static
+  builds, which also run on an old GLIBC.
+- New `inst/shell/setup-machine.sh` sets up a machine on the host: the
+  tools, the dotfiles, and `make local`.
+- Antigravity (`agy`, the command line tool only) joins the machine
+  tools, with the shell startup files kept as they were. The Gemini CLI
+  leaves: `install-gemini.sh` is gone. To remove it from a machine:
+  `npm uninstall -g --prefix ~/.local `[`@google`](https://github.com/google)`/gemini-cli`.
+
+### Dotfiles
+
+- rProject builds the dotfiles, from `inst/dotfiles`.
+  [`ConfigFiles()`](https://ijapesigan.github.io/rProject/reference/ConfigFiles.md)
+  no longer clones `ijapesigan/dotfiles`; its `repo` argument is
+  replaced by `check`. It runs `inst/shell/install-dotfiles.sh`, which
+  needs no R and keeps each file it replaces in `~/.dotfiles-backup`.
+- **`make build`, so `make all`, no longer installs the dotfiles**: a
+  package build should not rewrite a shell setup. `make dotfiles` does.
+- Fixes: `shell` pointed to a missing image; `exec`, which shadowed the
+  builtin, is now `ax`; the vi cursor settings move to `~/.inputrc`,
+  where they work; fastfetch runs only where it can; Vim’s aliases file
+  has its right name; Vim’s packages are pinned.
+- A short bash prompt with the host, folder, git status, last error, and
+  a marker inside a container. fzf and zoxide are used if present.
+  Longer history. `~/.bash-local` is for one machine’s settings.
+
+### Apptainer binds
+
+- Written Apptainer commands and scripts bind `~/work` and, on Roar,
+  `/scratch/ibp5092`. A bare `-B ~/work` fails where `~/work` is a
+  symlink, so the form is `-B ~/work:$(readlink -f ~/work)`.
+  `APPTAINER_BIND` in `~/.bash-variables` covers interactive shells;
+  `apptainer build` must run without it, and `build-docs.sh` removes it.
+
+### Publishing
+
+- New `make release`: `make all`, the secret scan, then `make auto`,
+  stopping at the first failure.
+- New `.setup/scripts/build-rproject.sh` and the “build rProject”
+  keyword: publish from a verified private push, with `make all` on a
+  compute node. It refuses a version that is not above the public one,
+  and stops on any error, warning, or note from `R CMD check`.
+- `build-docs.sh` builds the images as a Slurm job (`BUILD=host` to
+  override) and runs from a copy of itself.
+
+### README and site
+
+- New
+  [`Badges()`](https://ijapesigan.github.io/rProject/reference/Badges.md):
+  `make readme` writes the badges in every project type: the workflows,
+  from `.github/workflows`, and the DOI, from `inst/CITATION` (not the
+  `10.0000/0000000000` placeholder). Other badges in the block, such as
+  CRAN status, stay. Review-only tiers are labeled, and tier 5 has none.
+- [`Site()`](https://ijapesigan.github.io/rProject/reference/Site.md)
+  sets pkgdown’s `url` from the public repository.
+
+### Agents
+
+- Agent files in `inst/ai/agents/`, installed by `make aiglobal`:
+  `build-docs`, `verify`, `o2g-watch`, `pub-check`, `ci-watch`,
+  `rollout`, and `sim-status`, on cheaper models. New keywords: “CI”,
+  “rollout”, “sim status”, and “build rProject”.
+- New
+  [`vignette("agents")`](https://ijapesigan.github.io/rProject/articles/agents.md),
+  “Working with AI Agents”.
+- Global instructions gain the session habits: one release per session,
+  long jobs detached, upload folders final once given, and never editing
+  a running script. Each project’s `AGENTS.md` points to rProject as
+  pushed.
+
+### Overleaf
+
+- `.PreambleBiblatexCombined()`, which every `.Rtex` uses on Overleaf
+  (no rProject there), is in a kept file: `make` wrote it, so it never
+  reached Overleaf, and deleting its old copy stopped the compile.
+- New `inst/shell/overleaf-check.sh` compiles a project’s `.Rtex` files
+  as Overleaf does: from a copy of the private repository, without
+  rProject.
+
+### CI
+
+- Least-privilege `permissions:` on every template workflow that lacked
+  them.
+- r-hub tier 5, after its first run: `c23`, `clang16` to `clang20`,
+  `gcc15`, `noremap`, `rhel7`, and `centos7` leave, because they stop
+  before the package is checked (`vctrs` or `pak` does not load).
+  `rhel8` and `rhel9` install `cmake`, which `fs` needs.
+- `ggplot2` joins `Suggests`, which clears the `R CMD check` warning
+  from `test-rProject-figures.R`.
+
 ## rProject 0.0.64
 
 ### Style guides

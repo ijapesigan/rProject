@@ -2,6 +2,8 @@
 
 ### All vignettes
 
+- [Working with AI
+  Agents](https://ijapesigan.github.io/rProject/articles/agents.md):
 - [rProject: Setup R
   Project](https://ijapesigan.github.io/rProject/articles/rProject.md):
 - [rProject:

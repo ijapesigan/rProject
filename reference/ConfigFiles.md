@@ -1,21 +1,22 @@
 # Setup Config Files
 
-Clones a public `dotfiles` GitHub repository and runs `make` in it. The
-clone ignores the global Git configuration, so URL rewrites to SSH host
-aliases do not apply and the repository is fetched anonymously over
-HTTPS. This also works inside a container without access to SSH keys.
+Installs the shell, tmux, Vim, and xterm files from the package
+(`inst/dotfiles`) into the home directory. A file it replaces is kept in
+`~/.dotfiles-backup`. It runs `inst/shell/install-dotfiles.sh`, which
+needs neither R nor a container on the host; `setup-machine.sh` calls
+that script directly.
 
 ## Usage
 
 ``` r
-ConfigFiles(repo = "ijapesigan/dotfiles")
+ConfigFiles(check = FALSE)
 ```
 
 ## Arguments
 
-- repo:
+- check:
 
-  Character string. GitHub repository in the form `owner/name`.
+  Logical. If `TRUE`, shows the differences and changes nothing.
 
 ## Value
 
@@ -29,6 +30,6 @@ Ivan Jacob Agaloos Pesigan
 
 ``` r
 if (FALSE) { # \dontrun{
-ConfigFiles()
+ConfigFiles(check = TRUE)
 } # }
 ```

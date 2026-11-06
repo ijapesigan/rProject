@@ -121,7 +121,8 @@ a project in step with rProject. Each file has a tier:
   `project.Rproj`, the `.gitignore` files, and the scripts the project’s
   own build uses (docker: `scripts/rproject*.sh`); remove only
   `.setup/scripts/` except `project.R`. A copy without the `Makefile`
-  runs `apptainer exec <image> Rscript -e 'rProject::Template(getwd())'`
+  runs
+  `apptainer exec -B ~/work:$(readlink -f ~/work) <image> Rscript -e 'rProject::Template(getwd())'`
   once, then `make`.
 
 Workflows that only some projects run are in a catalog
@@ -231,7 +232,9 @@ in it) and names them, so that they can be deleted in Overleaf too.
 | `make latex`, `make pdf` | knit and compile the LaTeX sources |
 
 R runs only inside an Apptainer image:
-`apptainer exec <image> make <target>`.
+`apptainer exec -B ~/work:$(readlink -f ~/work) <image> make <target>`
+(on Roar, add `-B /scratch/ibp5092`). `make release` runs `make all`,
+the secret scan, and `make auto`, and stops at the first failure.
 
 ## Reproducible builds
 
@@ -293,6 +296,10 @@ Short messages from the user to an AI agent:
 | “O2G” | the user pushed from Overleaf to GitHub: verify and record the push |
 | “PUB” | the user ran `make all` and `make auto`: check the public repository and its CI |
 | “build docs” | publish the docker images in order and rebuild the `docs` images |
+| “build rProject” | build and publish rProject from a verified private push |
+| “CI ” | wait for the last push’s runs and read the failed logs |
+| “rollout ” | run a make target across projects, stopping at the first failure |
+| “sim status ” | count a simulation’s jobs against its design |
 | “build lib” | publish the lib-\* libraries, then rebuild `bib.bib` on rProject’s `main` and `latex` branches from them |
 | “EX” | the user is leaving: update `.setup/notes/claude.txt` and the handoff |
 | “handoff” | rewrite `.setup/ai/handoff.md` without leaving |
@@ -301,3 +308,24 @@ Short messages from the user to an AI agent:
 The private files that agents read (`AGENTS.md`, `.setup/ai/`) are
 written by
 [`rProject::AI()`](https://ijapesigan.github.io/rProject/reference/AI.md).
+[`vignette("agents")`](https://ijapesigan.github.io/rProject/articles/agents.md)
+has the details: who does what, the keyword agents, long jobs, and
+setting up a machine.
+
+## CI tiers
+
+The r-hub workflows of `cran-*` projects and rProject, the testbed, have
+five tiers. The README’s badges come from `.github/workflows` at
+`make readme`
+([`Badges()`](https://ijapesigan.github.io/rProject/reference/Badges.md)).
+
+| Tier | Workflow | Runs | Badge |
+|----|----|----|----|
+| 1, essential | `rhub-1-essential.yml` | every PUB: CRAN’s flavors, `donttest`, `nosuggests` | yes |
+| 2, memory | `rhub-2-memory.yml` | every PUB, for `src/` and always in rProject: sanitizers, `valgrind`, `rchk` | yes |
+| 3, numerics | `rhub-3-numerics.yml` | every PUB, for review | labeled “review only” |
+| 4, compilers | `rhub-4-compilers.yml` | every PUB, for review | labeled “review only” |
+| 5, other | `rhub-5-other.yml` | by hand, before CRAN submissions | none |
+
+Tiers 3 and 4 use `continue-on-error`, so their badges stay green: read
+their results.

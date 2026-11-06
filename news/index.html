@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.64</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.65</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,8 @@
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/session/session.html">rProject: Session</a></li>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/agents.html">Working with AI Agents</a></li>
+    <li><a class="dropdown-item" href="../articles/session/session.html">rProject: Session</a></li>
     <li><a class="dropdown-item" href="../articles/structure.html">How an rProject Project Works</a></li>
     <li><a class="dropdown-item" href="../articles/tags.html">Library Tags</a></li>
   </ul></li>
@@ -39,6 +40,61 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.65" id="rproject-0065">rProject 0.0.65<a class="anchor" aria-label="anchor" href="#rproject-0065"></a></h2>
+<div class="section level3">
+<h3 id="tools-in-work-0-0-65">Tools in <code>~/work</code>
+<a class="anchor" aria-label="anchor" href="#tools-in-work-0-0-65"></a></h3>
+<ul><li>Where <code>~/work</code> exists, a symlink or a folder, the tools rProject installs live in <code>~/work/tools</code> and are linked from home, so a small home quota holds only the links. <code>install.sh --move</code> moves what is installed; <code>--list</code> shows where each tool lives. Quarto, tmux, and pfetch stay in <code>~/.local</code>.</li>
+<li>New <code>install.sh cli</code>: fzf, zoxide, bat, fd, eza, and delta, as static builds, which also run on an old GLIBC.</li>
+<li>New <code>inst/shell/setup-machine.sh</code> sets up a machine on the host: the tools, the dotfiles, and <code>make local</code>.</li>
+<li>Antigravity (<code>agy</code>, the command line tool only) joins the machine tools, with the shell startup files kept as they were. The Gemini CLI leaves: <code>install-gemini.sh</code> is gone. To remove it from a machine: <code>npm uninstall -g --prefix ~/.local <a href="https://github.com/google" class="external-link">@google</a>/gemini-cli</code>.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="dotfiles-0-0-65">Dotfiles<a class="anchor" aria-label="anchor" href="#dotfiles-0-0-65"></a></h3>
+<ul><li>rProject builds the dotfiles, from <code>inst/dotfiles</code>. <code><a href="../reference/ConfigFiles.html">ConfigFiles()</a></code> no longer clones <code>ijapesigan/dotfiles</code>; its <code>repo</code> argument is replaced by <code>check</code>. It runs <code>inst/shell/install-dotfiles.sh</code>, which needs no R and keeps each file it replaces in <code>~/.dotfiles-backup</code>.</li>
+<li>
+<strong><code>make build</code>, so <code>make all</code>, no longer installs the dotfiles</strong>: a package build should not rewrite a shell setup. <code>make dotfiles</code> does.</li>
+<li>Fixes: <code>shell</code> pointed to a missing image; <code>exec</code>, which shadowed the builtin, is now <code>ax</code>; the vi cursor settings move to <code>~/.inputrc</code>, where they work; fastfetch runs only where it can; Vim’s aliases file has its right name; Vim’s packages are pinned.</li>
+<li>A short bash prompt with the host, folder, git status, last error, and a marker inside a container. fzf and zoxide are used if present. Longer history. <code>~/.bash-local</code> is for one machine’s settings.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="apptainer-binds-0-0-65">Apptainer binds<a class="anchor" aria-label="anchor" href="#apptainer-binds-0-0-65"></a></h3>
+<ul><li>Written Apptainer commands and scripts bind <code>~/work</code> and, on Roar, <code>/scratch/ibp5092</code>. A bare <code>-B ~/work</code> fails where <code>~/work</code> is a symlink, so the form is <code>-B ~/work:$(readlink -f ~/work)</code>. <code>APPTAINER_BIND</code> in <code>~/.bash-variables</code> covers interactive shells; <code>apptainer build</code> must run without it, and <code>build-docs.sh</code> removes it.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="publishing-0-0-65">Publishing<a class="anchor" aria-label="anchor" href="#publishing-0-0-65"></a></h3>
+<ul><li>New <code>make release</code>: <code>make all</code>, the secret scan, then <code>make auto</code>, stopping at the first failure.</li>
+<li>New <code>.setup/scripts/build-rproject.sh</code> and the “build rProject” keyword: publish from a verified private push, with <code>make all</code> on a compute node. It refuses a version that is not above the public one, and stops on any error, warning, or note from <code>R CMD check</code>.</li>
+<li>
+<code>build-docs.sh</code> builds the images as a Slurm job (<code>BUILD=host</code> to override) and runs from a copy of itself.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="readme-and-site-0-0-65">README and site<a class="anchor" aria-label="anchor" href="#readme-and-site-0-0-65"></a></h3>
+<ul><li>New <code><a href="../reference/Badges.html">Badges()</a></code>: <code>make readme</code> writes the badges in every project type: the workflows, from <code>.github/workflows</code>, and the DOI, from <code>inst/CITATION</code> (not the <code>10.0000/0000000000</code> placeholder). Other badges in the block, such as CRAN status, stay. Review-only tiers are labeled, and tier 5 has none.</li>
+<li>
+<code><a href="../reference/Site.html">Site()</a></code> sets pkgdown’s <code>url</code> from the public repository.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="agents-0-0-65">Agents<a class="anchor" aria-label="anchor" href="#agents-0-0-65"></a></h3>
+<ul><li>Agent files in <code>inst/ai/agents/</code>, installed by <code>make aiglobal</code>: <code>build-docs</code>, <code>verify</code>, <code>o2g-watch</code>, <code>pub-check</code>, <code>ci-watch</code>, <code>rollout</code>, and <code>sim-status</code>, on cheaper models. New keywords: “CI”, “rollout”, “sim status”, and “build rProject”.</li>
+<li>New <code><a href="../articles/agents.html">vignette("agents")</a></code>, “Working with AI Agents”.</li>
+<li>Global instructions gain the session habits: one release per session, long jobs detached, upload folders final once given, and never editing a running script. Each project’s <code>AGENTS.md</code> points to rProject as pushed.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="overleaf-0-0-65">Overleaf<a class="anchor" aria-label="anchor" href="#overleaf-0-0-65"></a></h3>
+<ul><li>
+<code>.PreambleBiblatexCombined()</code>, which every <code>.Rtex</code> uses on Overleaf (no rProject there), is in a kept file: <code>make</code> wrote it, so it never reached Overleaf, and deleting its old copy stopped the compile.</li>
+<li>New <code>inst/shell/overleaf-check.sh</code> compiles a project’s <code>.Rtex</code> files as Overleaf does: from a copy of the private repository, without rProject.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="ci-0-0-65">CI<a class="anchor" aria-label="anchor" href="#ci-0-0-65"></a></h3>
+<ul><li>Least-privilege <code>permissions:</code> on every template workflow that lacked them.</li>
+<li>r-hub tier 5, after its first run: <code>c23</code>, <code>clang16</code> to <code>clang20</code>, <code>gcc15</code>, <code>noremap</code>, <code>rhel7</code>, and <code>centos7</code> leave, because they stop before the package is checked (<code>vctrs</code> or <code>pak</code> does not load). <code>rhel8</code> and <code>rhel9</code> install <code>cmake</code>, which <code>fs</code> needs.</li>
+<li>
+<code>ggplot2</code> joins <code>Suggests</code>, which clears the <code>R CMD check</code> warning from <code>test-rProject-figures.R</code>.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.64" id="rproject-0064">rProject 0.0.64<a class="anchor" aria-label="anchor" href="#rproject-0064"></a></h2>
 <div class="section level3">

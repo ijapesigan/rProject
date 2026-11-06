@@ -8,6 +8,9 @@
 - [`AIGlobal()`](https://ijapesigan.github.io/rProject/reference/AIGlobal.md)
   : Install Global AI Instructions
 
+- [`Badges()`](https://ijapesigan.github.io/rProject/reference/Badges.md)
+  : README Badges
+
 - [`Bib()`](https://ijapesigan.github.io/rProject/reference/Bib.md) :
   Consolidate .bib Files into a Single File
 
