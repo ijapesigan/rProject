@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "says so and does nothing without .setup/latex"),
-      {
+      desc = paste(text, "says so and does nothing without .setup/latex"),
+      code = {
         root <- .TestProject()
         testthat::expect_message(
           object = LatexMake(path = root),
@@ -18,8 +18,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "knits and compiles a document (slow)"),
-      {
+      desc = paste(text, "knits and compiles a document (slow)"),
+      code = {
         .SkipSlow()
         testthat::skip_if(condition = Sys.which(names = "latexmk") == "")
         root <- .TestProject()

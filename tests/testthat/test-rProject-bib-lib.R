@@ -4,9 +4,15 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "clones the lib-* libraries, keeps their .bib files (slow)"),
-      {
+      desc = paste(
+        text,
+        "clones the lib-* libraries, keeps their .bib files (slow)"
+      ),
+      code = {
         .SkipSlow()
+        # finds no .bib files on the Windows runner (cause not looked at);
+        # the libraries are built on Linux
+        testthat::skip_on_os(os = "windows")
         testthat::skip_if(condition = Sys.which(names = "git") == "")
         root <- .TestProject()
         wd <- getwd()

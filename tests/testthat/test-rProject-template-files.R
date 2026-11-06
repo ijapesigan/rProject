@@ -21,8 +21,11 @@ lapply(
       colClasses = "character"
     )
     testthat::test_that(
-      paste(text, "every manifest row has its file and every file its row"),
-      {
+      desc = paste(
+        text,
+        "every manifest row has its file and every file its row"
+      ),
+      code = {
         sources <- file.path(manifest$set, encode(manifest$path))
         testthat::expect_true(
           object = all(file.exists(file.path(root, sources)))
@@ -49,8 +52,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "shared files are the same in every set"),
-      {
+      desc = paste(text, "shared files are the same in every set"),
+      code = {
         same <- function(files) {
           length(
             x = unique(x = tools::md5sum(files = file.path(root, files)))
@@ -76,8 +79,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "folders.tsv names valid types"),
-      {
+      desc = paste(text, "folders.tsv names valid types"),
+      code = {
         folders <- .TemplateFolders()
         types <- unlist(
           x = strsplit(x = folders$types, split = ",", fixed = TRUE)
@@ -98,8 +101,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "the folder skeleton of each type"),
-      {
+      desc = paste(text, "the folder skeleton of each type"),
+      code = {
         files <- .TemplateFiles(type = "cran")
         dirs <- files$path[files$kind == "dir"]
         testthat::expect_true(object = ".setup/cpp/.gitignore" %in% dirs)
@@ -114,8 +117,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "chosen workflows and the daily file name"),
-      {
+      desc = paste(text, "chosen workflows and the daily file name"),
+      code = {
         files <- .TemplateFiles(
           type = "docker",
           settings = list(
@@ -149,8 +152,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "stops on an unknown workflow"),
-      {
+      desc = paste(text, "stops on an unknown workflow"),
+      code = {
         testthat::expect_error(
           object = .TemplateFiles(
             type = "docker",
@@ -165,8 +168,8 @@ lapply(
     project <- file.path("..", "..")
     if (file.exists(file.path(project, ".setup", "scripts", "project.R"))) {
       testthat::test_that(
-        paste(text, "workflows live only in inst/template"),
-        {
+        desc = paste(text, "workflows live only in inst/template"),
+        code = {
           yml <- unlist(
             x = lapply(
               X = c(".github", ".setup", "inst"),

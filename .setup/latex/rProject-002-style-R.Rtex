@@ -271,8 +271,8 @@ lapply(
                  text) {
     testthat::skip_on_cran()
     testthat::test_that(
-      paste(text, "adds one"),
-      {
+      desc = paste(text, "adds one"),
+      code = {
         testthat::expect_equal(
           object = Foo(x = 1),
           expected = 2

@@ -22,8 +22,8 @@ lapply(
       con = file.path(latex, "testProject-plain.tex")
     )
     testthat::test_that(
-      paste(text, "knits .Rtex and copies .tex into detritus/tex"),
-      {
+      desc = paste(text, "knits .Rtex and copies .tex into detritus/tex"),
+      code = {
         suppressMessages(expr = LatexKnit(path = root))
         tex <- file.path(root, "detritus", "tex")
         knitted <- file.path(tex, "testProject-paper.tex")

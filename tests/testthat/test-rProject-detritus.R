@@ -6,8 +6,8 @@ lapply(
     root <- .TestProject()
     out <- Detritus(path = root)
     testthat::test_that(
-      paste(text, "creates the folders and a .gitignore"),
-      {
+      desc = paste(text, "creates the folders and a .gitignore"),
+      code = {
         testthat::expect_true(
           object = dir.exists(paths = out$tex_figures_folder)
         )
@@ -24,8 +24,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "keeps an existing .gitignore"),
-      {
+      desc = paste(text, "keeps an existing .gitignore"),
+      code = {
         writeLines(
           text = "custom",
           con = file.path(out$detritus_folder, ".gitignore")

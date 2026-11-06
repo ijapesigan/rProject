@@ -5,8 +5,8 @@ lapply(
                  text) {
     state <- .TestState(vars = c("TEST_A", "TEST_B"))
     testthat::test_that(
-      paste(text, "sets each token and returns them"),
-      {
+      desc = paste(text, "sets each token and returns them"),
+      code = {
         tokens <- c(TEST_A = "a", TEST_B = "b")
         testthat::expect_equal(
           object = EnvironmentTokens(tokens = tokens),

@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "returns a Posit Package Manager URL"),
-      {
+      desc = paste(text, "returns a Posit Package Manager URL"),
+      code = {
         repo <- PkgRepo(path = tempdir())
         testthat::expect_length(object = repo, n = 1L)
         testthat::expect_match(

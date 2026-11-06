@@ -9,8 +9,8 @@ lapply(
       package = "rProject"
     )
     testthat::test_that(
-      paste(text, "pkgdown template is installed"),
-      {
+      desc = paste(text, "pkgdown template is installed"),
+      code = {
         testthat::expect_true(
           object = nzchar(x = pkgdown) && file.exists(pkgdown)
         )
@@ -18,8 +18,8 @@ lapply(
     )
     lines <- readLines(con = pkgdown)
     testthat::test_that(
-      paste(text, "pkgdown template settings"),
-      {
+      desc = paste(text, "pkgdown template settings"),
+      code = {
         testthat::expect_true(
           object = "template:" %in% lines
         )
@@ -47,8 +47,8 @@ lapply(
       FUN.VALUE = character(length = 1)
     )
     testthat::test_that(
-      paste(text, "Quarto custom.scss copies are identical"),
-      {
+      desc = paste(text, "Quarto custom.scss copies are identical"),
+      code = {
         testthat::expect_true(
           object = all(nzchar(x = scss))
         )

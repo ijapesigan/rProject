@@ -41,8 +41,8 @@ lapply(
       stderr = FALSE
     )
     testthat::test_that(
-      paste(text, "writes the PDF manual into .setup/build"),
-      {
+      desc = paste(text, "writes the PDF manual into .setup/build"),
+      code = {
         testthat::skip_if_not(
           condition = dir.exists(paths = file.path(lib, "manualPkg"))
         )
@@ -62,8 +62,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "skips folders that are not packages"),
-      {
+      desc = paste(text, "skips folders that are not packages"),
+      code = {
         other <- .TestProject(description = FALSE)
         testthat::expect_message(
           object = Manual(path = other, project = "x"),

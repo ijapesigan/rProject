@@ -70,6 +70,17 @@ Lint <- function(path) {
     recursive = TRUE,
     full.names = TRUE
   )
+  # texTools helpers call each other but are not a package: object_usage_linter
+  # cannot see them. The template's smoke test has a {{pkg}} placeholder.
+  tex_tools <- list.files(
+    path = path,
+    pattern = "^texTools-.*\\.R$",
+    recursive = TRUE,
+    all.files = TRUE,
+    full.names = TRUE
+  )
+  smoke <- file.path(path, "inst", "template", "once", "test-pkg-smoke.R")
+  smoke <- smoke[file.exists(smoke)]
   exclusions <- c(
     as.list(x = exclusions),
     stats::setNames(
@@ -78,6 +89,20 @@ Lint <- function(path) {
         times = length(x = rtex)
       ),
       nm = rtex
+    ),
+    stats::setNames(
+      object = rep(
+        x = list(list(object_usage_linter = Inf)),
+        times = length(x = tex_tools)
+      ),
+      nm = tex_tools
+    ),
+    stats::setNames(
+      object = rep(
+        x = list(list(commented_code_linter = Inf)),
+        times = length(x = smoke)
+      ),
+      nm = smoke
     )
   )
   # no try(): an error in lintr stops make lint

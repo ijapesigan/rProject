@@ -28,18 +28,17 @@ PkgRepo <- function(path) {
     "/"
   )
   os <- .OS()
-  if (os == "windows") {
-    paste0(
-      ppm,
-      snapshot,
-      "/bin/windows"
-    )
-  } else if (os == "linux") {
+  if (os == "linux") {
     linux <- paste0(
       ppm,
       "__linux__/"
     )
-    distro <- distro::distro()
+    # LibPaths() may leave distro out of reach (a project's .library alone):
+    # without it, the source repository, which works on any system
+    distro <- NULL
+    if (requireNamespace(package = "distro", quietly = TRUE)) {
+      distro <- distro::distro()
+    }
     repos <- src
     if (!is.null(x = distro)) {
       if (tolower(x = distro$id) == "ubuntu") {
@@ -74,7 +73,8 @@ PkgRepo <- function(path) {
     # populate the rest of the available repositories
     repos
   } else {
-    # osx, and any other system: the source repository
+    # windows (install.packages() adds bin/windows/contrib itself), osx, and
+    # any other system: the repository's root
     src
   }
 }

@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "copies the MIT license"),
-      {
+      desc = paste(text, "copies the MIT license"),
+      code = {
         root <- .TestProject()
         License(path = root, type = "mit")
         testthat::expect_true(
@@ -15,8 +15,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "copies the GPL-3 license"),
-      {
+      desc = paste(text, "copies the GPL-3 license"),
+      code = {
         root <- .TestProject()
         License(path = root, type = "gpl3")
         testthat::expect_true(
@@ -27,8 +27,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "copies nothing for NULL"),
-      {
+      desc = paste(text, "copies nothing for NULL"),
+      code = {
         root <- .TestProject()
         License(path = root, type = NULL)
         testthat::expect_false(

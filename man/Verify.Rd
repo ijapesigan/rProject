@@ -52,8 +52,10 @@ is missing from or differs in the private repository.
 The list is the one of the pushed commit: the section of the log
 with a code block that starts with the commit's first line (the
 top-level lists for the log's own commit message; the lists inside a
-later push's \verb{##} section, none for a push of records only). If no
-block matches, every list in the log is used.
+later push's \verb{##} section). If no block matches, every list in the log
+is used. A push with no list of its own compares the files of its commit
+instead; a difference is then a warning, as a commit may hold generated
+files, and an empty commit warns that nothing was checked.
 \item \strong{Deletions:} a file listed under "Delete in Overleaf"
 is still in the private repository.
 \item \strong{Unlisted changes:} (warning only) other files differ
@@ -71,6 +73,11 @@ project URL (for example, a share link, which grants access).
 Warning only: a file in \verb{.setup/repo/} is missing,
 \code{private-github.md} differs from the \code{.verify} remote,
 or \code{public-github.md} differs from the repository in \code{clone.sh}.
+\item \strong{Linked files:} (warning only) a file in \verb{.setup/r-dependencies/}
+differs from a local clone of the functions repository (\code{\link[=Linked]{Linked()}}).
+\item \strong{Full text:} (warning only, \verb{lib-*} projects) an entry this push adds has
+no full text in \verb{.setup/notes/}, or a file there matches no entry
+(\code{\link[=LibFullTextReport]{LibFullTextReport()}}).
 }
 
 Generated files (e.g., \code{NAMESPACE}, \verb{man/}),

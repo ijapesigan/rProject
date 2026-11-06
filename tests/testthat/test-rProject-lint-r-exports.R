@@ -5,8 +5,8 @@ lapply(
                  text) {
     testthat::skip_on_cran()
     testthat::test_that(
-      paste(text, "flags an export without docs or a test"),
-      {
+      desc = paste(text, "flags an export without docs or a test"),
+      code = {
         root <- .TestLintProject(
           files = list(
             NAMESPACE = "export(FooBar)",
@@ -19,8 +19,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "passes a documented and tested export"),
-      {
+      desc = paste(text, "passes a documented and tested export"),
+      code = {
         root <- .TestLintProject(
           files = list(
             NAMESPACE = "export(FooBar)",

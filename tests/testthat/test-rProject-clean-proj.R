@@ -13,8 +13,8 @@ lapply(
       root
     }
     testthat::test_that(
-      paste(text, "empties the project but keeps the protected folders"),
-      {
+      desc = paste(text, "empties the project but keeps the protected folders"),
+      code = {
         root <- fill()
         CleanProj(path = root)
         left <- list.files(path = root, all.files = TRUE, no.. = TRUE)
@@ -26,8 +26,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "removes the protected folders when asked"),
-      {
+      desc = paste(text, "removes the protected folders when asked"),
+      code = {
         root <- fill()
         CleanProj(path = root, lib = TRUE, sim = TRUE, sif = TRUE)
         left <- list.files(path = root, all.files = TRUE, no.. = TRUE)

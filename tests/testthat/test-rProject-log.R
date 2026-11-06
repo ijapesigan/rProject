@@ -47,8 +47,8 @@ lapply(
     lines <- readLines(con = log_file)
     section <- .VerifyLogFiles(log_file = log_file, project = "proj")
     testthat::test_that(
-      paste(text, "writes the template"),
-      {
+      desc = paste(text, "writes the template"),
+      code = {
         testthat::expect_true(object = "rProject 9.9.9: a summary" %in% lines)
         testthat::expect_true(
           object = paste0("Log: .setup/logs/", log) %in% lines
@@ -60,8 +60,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "lists new and edited files, skipping generated ones"),
-      {
+      desc = paste(text, "lists new and edited files, skipping generated ones"),
+      code = {
         upload <- section$file[section$action == "upload"]
         testthat::expect_true(
           object = all(
@@ -81,8 +81,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "lists files deleted locally under Delete in Overleaf"),
-      {
+      desc = paste(
+        text,
+        "lists files deleted locally under Delete in Overleaf"
+      ),
+      code = {
         testthat::expect_equal(
           object = section$file[section$action == "delete"],
           expected = "R/gone.R"
@@ -90,8 +93,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "adds a pending row to the index"),
-      {
+      desc = paste(text, "adds a pending row to the index"),
+      code = {
         index <- readLines(con = file.path(path, ".setup", "logs", "index.md"))
         testthat::expect_true(
           object = any(
@@ -105,8 +108,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "refuses to overwrite and updates the lists"),
-      {
+      desc = paste(text, "refuses to overwrite and updates the lists"),
+      code = {
         testthat::expect_error(
           object = Log(path = path, topic = "topic"),
           regexp = "already exists"
@@ -125,8 +128,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "writes TODO without a clone"),
-      {
+      desc = paste(text, "writes TODO without a clone"),
+      code = {
         other <- file.path(root, "other")
         dir.create(path = other)
         file <- suppressMessages(expr = Log(path = other, topic = "x"))

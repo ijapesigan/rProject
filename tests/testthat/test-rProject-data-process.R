@@ -12,15 +12,15 @@ lapply(
       con = file.path(dir, "data-process-001.R")
     )
     testthat::test_that(
-      paste(text, "sources the data-process scripts"),
-      {
+      desc = paste(text, "sources the data-process scripts"),
+      code = {
         DataProcess(path = root)
         testthat::expect_equal(object = readRDS(file = out), expected = 1)
       }
     )
     testthat::test_that(
-      paste(text, "with clean = TRUE removes old .Rds before running"),
-      {
+      desc = paste(text, "with clean = TRUE removes old .Rds before running"),
+      code = {
         stale <- file.path(dir, "stale.Rds")
         saveRDS(object = 0, file = stale)
         DataProcess(path = root, clean = TRUE)

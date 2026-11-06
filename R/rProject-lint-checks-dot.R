@@ -21,9 +21,12 @@
   markdown <- c(
     ".LintMdBullets", ".LintMdHeadings", ".LintMdFences", ".LintMdLinks"
   )
+  shell <- c(
+    ".LintShScript", ".LintShCheck", ".LintMakeApptainer", ".LintCiPin"
+  )
   if (identical(x = type, y = "talk")) {
-    c(r, cpp, math)
+    c(r, cpp, math, shell)
   } else {
-    c(r, cpp, math, layout, markdown)
+    c(r, cpp, math, layout, markdown, shell)
   }
 }

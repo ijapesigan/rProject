@@ -32,6 +32,8 @@
 
 project <- "rProject"
 
+lint_error <- TRUE
+
 type <- "rProject"
 
 

@@ -10,8 +10,8 @@ lapply(
     root <- .TestProject(pattern = "project with space ")
     writeLines(text = "x<-c( 1,2 )", con = file.path(root, "R", "a.R"))
     testthat::test_that(
-      paste(text, "styles R code"),
-      {
+      desc = paste(text, "styles R code"),
+      code = {
         suppressMessages(expr = Style(path = root))
         testthat::expect_equal(
           object = readLines(con = file.path(root, "R", "a.R")),
@@ -20,8 +20,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "formats C++ with clang-format (Google style)"),
-      {
+      desc = paste(text, "formats C++ with clang-format (Google style)"),
+      code = {
         testthat::skip_on_os(os = "windows")
         testthat::skip_if(condition = Sys.which(names = "clang-format") == "")
         dir.create(path = file.path(root, "src"))

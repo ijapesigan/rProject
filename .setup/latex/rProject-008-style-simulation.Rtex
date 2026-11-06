@@ -1,0 +1,218 @@
+\documentclass{article}
+
+\input{.setup/latex/preamble/preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLATEX APA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "root",
+% #| include = FALSE
+% root <- rprojroot::is_rstudio_project
+%% end.rcode
+
+%% begin.rcode
+% #| label = "knitr",
+% #| include = FALSE,
+% #| file = root$find_file(
+% #|   ".setup",
+% #|   "latex",
+% #|   "r-scripts",
+% #|   "knitr.R"
+% #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% if (require(package = "rProject")) {
+%   Bib(
+%     path = dirname(
+%       path = root$find_file(
+%         "project.Rproj"
+%       )
+%     )
+%   )
+%   cat(
+%     .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+%   )
+% } else {
+%   cat(
+%     .PreambleCombined(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       ),
+%       output_path = root$find_file(
+%         ".setup",
+%         "latex"
+%       )
+%     )
+%   )
+% }
+%% end.rcode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Simulation Style Guide}
+\author{Ivan Jacob Agaloos Pesigan}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+This guide covers \texttt{.sim} in simulation projects.
+Agents follow \texttt{.setup/ai/style/simulation.md},
+which follows this guide and is changed together with it.
+Existing simulations follow it when next reused.
+
+\section{Layout}
+
+\begin{itemize}
+	\item \texttt{README.md}: how to set up, run, and summarize.
+	It also marks the project as a simulation.
+	\item \texttt{sim-args.R}: conditions, replications,
+	the failure classes, and the attempts allowed.
+	\item \texttt{sim.R} and \texttt{sim.sh}: one block of cells,
+	and the SLURM job array.
+	\item \texttt{sim-compress.R} and \texttt{sim-compress.sh}: collect and compress results.
+	\item \texttt{sum-*.R} and \texttt{sum-*.sh}: summaries for the paper.
+	\item \texttt{monitor.sh}: progress, and the cells to check.
+\end{itemize}
+
+The functions that do the work live in \texttt{R}, documented and tested;
+scripts only call them.
+Set the thread counts of OpenMP, MKL, and OpenBLAS to one:
+the job array is the only parallel layer.
+
+\section{Seeds}
+
+A cell is one \texttt{taskid} and \texttt{repid}.
+Its seed comes from those two and the attempt number,
+so any cell can be rerun alone:
+
+\begin{verbatim}
+seed <- ((attempt - 1L) * tasks + (taskid - 1L)) * reps + repid
+\end{verbatim}
+
+No two cells or attempts share a seed
+while \texttt{repid} is at most \texttt{reps} and \texttt{taskid} is at most \texttt{tasks}.
+Keep the product of attempts, tasks, and replications below the largest integer in R.
+
+\section{Failures}
+
+\begin{itemize}
+	\item Each project lists the failure classes that allow a new seed in \texttt{sim-args.R}.
+	\item Anything else is a result, or an error to fix: it never gets a new seed.
+	\item A listed failure moves the cell to the next attempt,
+	up to the maximum in \texttt{sim-args.R}.
+	\item A crash (a segfault, or an out-of-memory kill) counts as a failed attempt
+	of the cell that was running.
+	\item Never set a seed by hand for one cell.
+	\item The cell's output records \texttt{taskid}, \texttt{repid}, \texttt{attempt}, the seed,
+	and, for each failed attempt, its seed and failure class.
+	It does not keep a failed attempt's results.
+	\item The summary reports the reseeded cells per condition and the failure rate,
+	with the results: keeping only successful attempts conditions on convergence.
+\end{itemize}
+
+\section{Output}
+
+\begin{itemize}
+	\item One file per cell, with the condition and replication in its name.
+	\item Resume by skipping files that exist.
+	\item Write to a temporary name and rename, so a killed job leaves no half file.
+	\item Save \texttt{.Rds} files with \texttt{xz}; every file stays under 50 MB,
+	and only summaries go to Overleaf.
+	\item \texttt{tryCatch()} prints the task and replication of a cell to check,
+	so that \texttt{monitor.sh} can list them.
+\end{itemize}
+
+\section{SLURM}
+
+The default is a job array of blocks, with the replications in series inside each block.
+SLURM does the managing; there is no GNU Parallel and no whole node.
+This starts in free cores, loads R and the packages once per block,
+and loses one block when a node fails.
+It is not one array element per cell:
+clusters limit the jobs a user can submit and the size of an array.
+
+\subsection{Measure, Then Size}
+
+\begin{enumerate}
+	\item Measure: run a few cells of the slowest condition,
+	and read \texttt{seff} and \texttt{sacct} for time and memory.
+	\item Size: choose replications per block so that a block runs about one to four hours,
+	within the job limit.
+	Write the measured numbers in \texttt{.sim/README.md}.
+	\item Check after the run: read \texttt{seff} on some elements, and update the numbers.
+\end{enumerate}
+
+\subsection{Blocks}
+
+An element's index gives its task and range of replications by a fixed formula,
+kept in \texttt{R}, so a block is reproducible and can be rerun alone.
+
+\begin{itemize}
+	\item Run the cells in a loop in one R process,
+	with the seed and attempt rules above for each cell.
+	\item Wrap each cell in \texttt{tryCatch()}, clear large objects between cells,
+	and call \texttt{gc()}.
+	\item Crashes: \texttt{tryCatch()} does not survive a segfault or an out-of-memory kill.
+	Before a cell starts, write a marker with its task, replication, and attempt,
+	and remove it when the cell ends.
+	A rerun that finds a marker counts that attempt as failed and moves on,
+	so a block does not hit the same crash forever.
+	\item Rerun only the missing blocks, with a list in \texttt{sbatch --array}.
+\end{itemize}
+
+\subsection{Settings}
+
+\begin{itemize}
+	\item One core per element, and the measured peak memory plus a margin.
+	\item Time: the measured block time plus a margin, not the partition's maximum.
+	A shorter limit can start sooner,
+	and a block that hits its limit loses only unfinished cells.
+	\item Cap the elements running at once with \texttt{\%N} in \texttt{--array},
+	starting low on a new simulation.
+	\item Mail: \texttt{--mail-type=END,FAIL}, not \texttt{ALL}.
+	\item Output and error files per element.
+	\item Keep temporary files on the node, and compress when a stage ends.
+	Summaries and compression also go through \texttt{sbatch}.
+\end{itemize}
+
+\subsection{When to Use GNU Parallel}
+
+Use a whole node with GNU Parallel only when a cell crashes often,
+so that one process per cell pays for itself,
+or when a job needs a node's memory.
+Before moving a real simulation to blocks,
+run one condition both ways and compare core-hours and time to finish.
+
+\section{Running}
+
+\begin{itemize}
+	\item Before a full run: one or two replications inside the image,
+	and \texttt{sbatch --test-only}.
+	\item Agents never submit the full run: they give the user the command,
+	with the measured time and memory.
+	\item Results reach the paper through \texttt{Fig*()} and \texttt{.Tabular()}.
+\end{itemize}
+
+\nocite{RCoreTeam-2026}
+
+\printbibliography
+
+\end{document}

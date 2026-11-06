@@ -5,8 +5,8 @@ lapply(
                  text) {
     testthat::skip_on_cran()
     testthat::test_that(
-      paste(text, "flags what the rule forbids"),
-      {
+      desc = paste(text, "flags what the rule forbids"),
+      code = {
         root <- .TestLintProject(
           files = list("b.md" = c("# T", "", "* a"))
         )
@@ -16,8 +16,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "passes what the rule allows"),
-      {
+      desc = paste(text, "passes what the rule allows"),
+      code = {
         root <- .TestLintProject(
           files = list("b.md" = c("# T", "", "- a", "", "```r", "* 2", "```"))
         )

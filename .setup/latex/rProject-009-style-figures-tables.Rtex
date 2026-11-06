@@ -171,7 +171,8 @@ each is rebuilt only when its source is newer.
 The template writes copies, with no dependency on rProject:
 \texttt{.setup/r-miscellaneous/texTools}
 (\texttt{.Tabular()}, \texttt{.Round()}, \texttt{.Array()}, the biblatex helpers, \texttt{GifWrite()}, \texttt{GifFrames()})
-and \texttt{.setup/r-dependencies} (the \texttt{ggplot2} theme and palette, copied into \texttt{R}).
+with the \texttt{ggplot2} theme and palette; a package with \texttt{Fig*()} moves them into \texttt{R}
+and imports \texttt{ggplot2}.
 
 \section{Tools}
 

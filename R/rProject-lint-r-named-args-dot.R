@@ -2,8 +2,7 @@
                             code = .LintRCode(path = path)) {
   level <- .LintLevel(path = path)
   known <- .LintRKnown(path = path)
-  # test_that(): the guide's test skeleton passes desc and code by position
-  exempt <- c("test_that", "return", "function")
+  exempt <- c("return", "function")
   .LintBind(
     rows = lapply(
       X = code,

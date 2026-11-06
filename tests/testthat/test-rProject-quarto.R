@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "does nothing without .qmd files"),
-      {
+      desc = paste(text, "does nothing without .qmd files"),
+      code = {
         root <- .TestProject()
         testthat::expect_message(
           object = Quarto(path = root),
@@ -18,8 +18,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "renders a website (slow)"),
-      {
+      desc = paste(text, "renders a website (slow)"),
+      code = {
         .SkipSlow()
         testthat::skip_if(condition = Sys.which(names = "quarto") == "")
         root <- .TestProject()

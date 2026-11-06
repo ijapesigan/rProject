@@ -3,6 +3,15 @@ lapply(
   X = 1,
   FUN = function(i,
                  text) {
+    testthat::test_that(
+      desc = paste(text, "stops on a folder that does not exist"),
+      code = {
+        testthat::expect_error(
+          object = SecretScan(path = tempfile(pattern = "missing")),
+          regexp = "nothing was scanned"
+        )
+      }
+    )
     # fake tokens are built at run time
     # so that this file does not trigger SecretScan or push protection
     fake_github <- paste0("ghp_", strrep(x = "a", times = 36))
@@ -38,8 +47,8 @@ lapply(
       con = file.path(root, "clean.R")
     )
     testthat::test_that(
-      paste(text, "finds secrets"),
-      {
+      desc = paste(text, "finds secrets"),
+      code = {
         testthat::expect_error(
           object = SecretScan(path = root)
         )
@@ -56,8 +65,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "masks values"),
-      {
+      desc = paste(text, "masks values"),
+      code = {
         findings <- suppressWarnings(
           expr = SecretScan(path = root, error = FALSE)
         )
@@ -78,8 +87,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "passes when clean"),
-      {
+      desc = paste(text, "passes when clean"),
+      code = {
         unlink(x = file.path(root, ".setup", "scripts", "secrets.R"))
         findings <- suppressMessages(
           expr = SecretScan(path = root)
@@ -91,8 +100,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "skips sk- inside a longer name"),
-      {
+      desc = paste(text, "skips sk- inside a longer name"),
+      code = {
         fake_openai <- paste0("sk-", strrep(x = "a", times = 40))
         writeLines(
           text = c(

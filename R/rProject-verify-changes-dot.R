@@ -42,7 +42,8 @@
       "bib\\.bib$",
       "^\\.Renviron$",
       "^\\.Rprofile$",
-      "secrets",
+      # secret files, but not the secretscan files (a workflow, a report)
+      "secrets(?!can)",
       "TEMPDIR"
     ),
     collapse = "|"
@@ -54,7 +55,7 @@
       recursive = TRUE,
       no.. = TRUE
     )
-    out[!grepl(pattern = skip, x = out)]
+    out[!grepl(pattern = skip, x = out, perl = TRUE)]
   }
   candidates <- sort(x = union(x = files(path), y = files(private)))
   # vignettes knitted from .setup/vignettes/*.orig are generated;

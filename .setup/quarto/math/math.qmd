@@ -19,7 +19,7 @@ $$
 \boldsymbol{\eta}_{i, t}
 =
 \boldsymbol{\alpha}
-+ \boldsymbol{\beta} \boldsymbol{\eta}_{i, t - 1}
++ \boldsymbol{B} \boldsymbol{\eta}_{i, t - 1}
 + \boldsymbol{\zeta}_{i, t},
 \quad
 \boldsymbol{\zeta}_{i, t}
@@ -29,8 +29,8 @@ $$
 $$
 \mathrm{d} \boldsymbol{\eta}_{i, t}
 =
-\boldsymbol{\Phi} \left( \boldsymbol{\eta}_{i, t} - \boldsymbol{\mu} \right) \mathrm{d} t
-+ \boldsymbol{\Sigma}^{\frac{1}{2}} \mathrm{d} \boldsymbol{W}_{i, t}
+\boldsymbol{\Phi} \left( \boldsymbol{\eta}_{i, t} - \boldsymbol{\mu} \right) \, \mathrm{d} t
++ \boldsymbol{\Sigma}^{\frac{1}{2}} \, \mathrm{d} \boldsymbol{W}_{i, t}
 $$
 
 $$

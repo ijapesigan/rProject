@@ -79,6 +79,21 @@ Quarto and R Markdown (MathJax), and Beamer.
 Agents follow \texttt{.setup/ai/style/latex-math.md},
 which follows this guide and is changed together with it.
 
+\section{Form}
+
+What a symbol means can change from paper to paper;
+each project lists its symbols in \texttt{.setup/ai/project.md}.
+Its form does not change, and follows the conventions of linear algebra,
+statistics, and calculus.
+
+\begin{itemize}
+	\item Scalars and elements: plain italic (\(a_{12, i}\), \(\alpha\)).
+	\item Vectors: bold lowercase (\(\boldsymbol{y}\), \(\boldsymbol{\eta}\)).
+	\item Matrices: bold uppercase (\(\boldsymbol{B}\), \(\boldsymbol{\Phi}\)).
+	\item Named exception: the Wiener process \(\boldsymbol{W}\) is a vector in bold uppercase,
+	the usual form for a stochastic process.
+\end{itemize}
+
 \section{Bold}
 
 \begin{itemize}
@@ -109,8 +124,11 @@ which follows this guide and is changed together with it.
 	and \texttt{\textbackslash !} before the \texttt{\textbackslash left(} of a function.
 	\item \texttt{\textbackslash mathbb\{E\}} and \texttt{\textbackslash mathbb\{V\}}
 	for expectation and variance.
-	\item The differential in an integral or a stochastic differential equation is
-	\texttt{\textbackslash mathrm\{d\}}; this is the exception to the operator rule.
+	\item The differential is upright, as in ISO 80000-2, with a thin space before it:
+	\texttt{\textbackslash , \textbackslash mathrm\{d\} t}, and
+	\texttt{\textbackslash frac\{\textbackslash mathrm\{d\} y\}\{\textbackslash mathrm\{d\} t\}}
+	for a derivative. This is the exception to the operator rule.
+	The partial derivative stays \texttt{\textbackslash partial}.
 \end{itemize}
 
 \begin{Verbatim}
@@ -133,7 +151,7 @@ which follows this guide and is changed together with it.
 	\boldsymbol{\eta}_{i, t}
 	=
 	\boldsymbol{\alpha}
-	+ \boldsymbol{\beta} \boldsymbol{\eta}_{i, t - 1}
+	+ \boldsymbol{B} \boldsymbol{\eta}_{i, t - 1}
 	+ \boldsymbol{\zeta}_{i, t},
 	\quad
 	\boldsymbol{\zeta}_{i, t}
@@ -160,6 +178,7 @@ the Greek and Latin letters that \LaTeX{} defines,
 \texttt{\textbackslash sum}, \texttt{\textbackslash prod}, \texttt{\textbackslash int},
 \texttt{\textbackslash sim}, \texttt{\textbackslash mid}, \texttt{\textbackslash ldots},
 \texttt{\textbackslash left}, \texttt{\textbackslash right}, \texttt{\textbackslash quad},
+\texttt{\textbackslash ,},
 \texttt{\textbackslash hat}, \texttt{\textbackslash tilde}, \texttt{\textbackslash bar},
 and the environments \texttt{pmatrix} and \texttt{aligned}.
 
@@ -181,9 +200,11 @@ so a change in a renderer shows up.
 
 \section{Shared Notation}
 
-This table holds the symbols shared across projects.
-Each project's \texttt{.setup/ai/project.md} (``Models and notation'')
-lists its own symbols and any departures.
+This table holds the default symbols across projects.
+A paper can give a symbol another meaning:
+its \texttt{.setup/ai/project.md} (``Models and notation'')
+lists its own symbols and any departures, in the same form.
+Existing packages and papers keep their symbols until they are next reused.
 Elements of a vector or matrix use the plain letter.
 The subscripts \(i\) and \(t\) are the person and the time.
 
@@ -201,7 +222,7 @@ Symbol & Source & Meaning \\
 \texttt{\textbackslash boldsymbol\{\textbackslash Theta\}} & \(\boldsymbol{\Theta}\) & covariance of the measurement errors \\
 \multicolumn{3}{l}{\textit{Discrete time (VAR)}} \\
 \texttt{\textbackslash boldsymbol\{\textbackslash alpha\}} & \(\boldsymbol{\alpha}\) & intercepts \\
-\texttt{\textbackslash boldsymbol\{\textbackslash beta\}} & \(\boldsymbol{\beta}\) & transition matrix \\
+\texttt{\textbackslash boldsymbol\{B\}} & \(\boldsymbol{B}\) & transition matrix \\
 \texttt{\textbackslash boldsymbol\{\textbackslash zeta\}\_\{i, t\}} & \(\boldsymbol{\zeta}_{i, t}\) & process noise \\
 \texttt{\textbackslash boldsymbol\{\textbackslash Psi\}} & \(\boldsymbol{\Psi}\) & covariance of the process noise \\
 \multicolumn{3}{l}{\textit{Continuous time}} \\
@@ -227,13 +248,13 @@ The linear stochastic differential equation and the Ornstein-Uhlenbeck model are
 \begin{Verbatim}
 \mathrm{d} \boldsymbol{\eta}_{i, t}
 =
-\left( \boldsymbol{\iota} + \boldsymbol{\Phi} \boldsymbol{\eta}_{i, t} \right) \mathrm{d} t
-+ \boldsymbol{\Sigma}^{\frac{1}{2}} \mathrm{d} \boldsymbol{W}_{i, t}
+\left( \boldsymbol{\iota} + \boldsymbol{\Phi} \boldsymbol{\eta}_{i, t} \right) \, \mathrm{d} t
++ \boldsymbol{\Sigma}^{\frac{1}{2}} \, \mathrm{d} \boldsymbol{W}_{i, t}
 
 \mathrm{d} \boldsymbol{\eta}_{i, t}
 =
-\boldsymbol{\Phi} \left( \boldsymbol{\eta}_{i, t} - \boldsymbol{\mu} \right) \mathrm{d} t
-+ \boldsymbol{\Sigma}^{\frac{1}{2}} \mathrm{d} \boldsymbol{W}_{i, t}
+\boldsymbol{\Phi} \left( \boldsymbol{\eta}_{i, t} - \boldsymbol{\mu} \right) \, \mathrm{d} t
++ \boldsymbol{\Sigma}^{\frac{1}{2}} \, \mathrm{d} \boldsymbol{W}_{i, t}
 \end{Verbatim}
 
 \section{Tools}

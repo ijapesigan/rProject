@@ -5,8 +5,8 @@ lapply(
                  text) {
     state <- .TestState()
     testthat::test_that(
-      paste(text, "writes .Rprofile for a package"),
-      {
+      desc = paste(text, "writes .Rprofile for a package"),
+      code = {
         root <- .TestProject(pattern = "project with space ")
         Profile(path = root, project = "testProject")
         profile <- readLines(con = file.path(root, ".Rprofile"))
@@ -32,8 +32,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "skips folders that are not packages"),
-      {
+      desc = paste(text, "skips folders that are not packages"),
+      code = {
         root <- .TestProject(description = FALSE)
         testthat::expect_message(
           object = Profile(path = root, project = "testProject"),

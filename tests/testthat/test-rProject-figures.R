@@ -18,8 +18,8 @@ lapply(
       sys.source(file = file, envir = env)
     }
     testthat::test_that(
-      paste(text, "the presets and palette"),
-      {
+      desc = paste(text, "the presets and palette"),
+      code = {
         testthat::expect_equal(
           object = env$.FigSize(size = "column")$width,
           expected = 3.3
@@ -37,8 +37,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "tables"),
-      {
+      desc = paste(text, "tables"),
+      code = {
         testthat::expect_equal(
           object = env$.Round(x = 1.234, digits = 2),
           expected = "1.23"
@@ -50,8 +50,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "GifWrite gives the GIF, frames, and multi-page PDF"),
-      {
+      desc = paste(text, "GifWrite gives the GIF, frames, and multi-page PDF"),
+      code = {
         testthat::skip_if_not_installed(pkg = "ggplot2")
         testthat::skip_if_not_installed(pkg = "magick")
         root <- tempfile()

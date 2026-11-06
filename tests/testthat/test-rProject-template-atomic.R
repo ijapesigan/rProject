@@ -5,8 +5,10 @@ lapply(
                  text) {
     testthat::skip_on_cran()
     testthat::test_that(
-      paste(text, "a running reader keeps the old file"),
-      {
+      desc = paste(text, "a running reader keeps the old file"),
+      code = {
+        # POSIX: a rename leaves an open file in place; make runs on Linux
+        testthat::skip_on_os(os = "windows")
         target <- tempfile()
         writeLines(text = c("old 1", "old 2"), con = target)
         con <- file(description = target, open = "r")
@@ -24,8 +26,13 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "copies a file, keeps the mode, and leaves no temporary"),
-      {
+      desc = paste(
+        text,
+        "copies a file, keeps the mode, and leaves no temporary"
+      ),
+      code = {
+        # POSIX: Windows has no execute bit to keep
+        testthat::skip_on_os(os = "windows")
         folder <- tempfile()
         dir.create(path = folder)
         target <- file.path(folder, "a.sh")

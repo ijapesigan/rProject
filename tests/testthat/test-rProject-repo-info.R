@@ -13,8 +13,8 @@ lapply(
       con = file.path(root, ".setup", "scripts", "clone.sh")
     )
     testthat::test_that(
-      paste(text, "reads NA when .setup/repo is missing"),
-      {
+      desc = paste(text, "reads NA when .setup/repo is missing"),
+      code = {
         info <- .RepoInfo(path = root)
         testthat::expect_true(object = is.na(x = info$private_github))
         testthat::expect_true(object = is.na(x = info$public_github))
@@ -22,8 +22,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "finds the public repository in clone.sh"),
-      {
+      desc = paste(text, "finds the public repository in clone.sh"),
+      code = {
         testthat::expect_equal(
           object = .RepoInfoClone(path = root),
           expected = "ijapesigan/lib-2010-2019-article"
@@ -32,8 +32,8 @@ lapply(
     )
     written <- suppressMessages(expr = .RepoInfoWrite(path = root))
     testthat::test_that(
-      paste(text, "creates .setup/repo with the GitHub repositories"),
-      {
+      desc = paste(text, "creates .setup/repo with the GitHub repositories"),
+      code = {
         testthat::expect_length(object = written, n = 3L)
         testthat::expect_equal(
           object = readLines(
@@ -54,8 +54,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "never overwrites .setup/repo"),
-      {
+      desc = paste(text, "never overwrites .setup/repo"),
+      code = {
         writeLines(
           text = "owner/other",
           con = file.path(root, ".setup", "repo", "private-github.md")
@@ -68,8 +68,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "reads none as no public copy, and trims lines"),
-      {
+      desc = paste(text, "reads none as no public copy, and trims lines"),
+      code = {
         cat(
           "none",
           file = file.path(root, ".setup", "repo", "public-github.md")

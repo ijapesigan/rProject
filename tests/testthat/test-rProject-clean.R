@@ -23,8 +23,8 @@ lapply(
       file.exists(file.path(root, files))
     }
     testthat::test_that(
-      paste(text, "removes build output and generated files"),
-      {
+      desc = paste(text, "removes build output and generated files"),
+      code = {
         root <- .TestProject()
         fill(root)
         Clean(path = root)
@@ -53,8 +53,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "with push = TRUE keeps generated files, removes secrets"),
-      {
+      desc = paste(
+        text,
+        "with push = TRUE keeps generated files, removes secrets"
+      ),
+      code = {
         root <- .TestProject()
         fill(root)
         Clean(path = root, push = TRUE)

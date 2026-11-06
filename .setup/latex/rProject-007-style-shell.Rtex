@@ -1,0 +1,134 @@
+\documentclass{article}
+
+\input{.setup/latex/preamble/preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLATEX APA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "root",
+% #| include = FALSE
+% root <- rprojroot::is_rstudio_project
+%% end.rcode
+
+%% begin.rcode
+% #| label = "knitr",
+% #| include = FALSE,
+% #| file = root$find_file(
+% #|   ".setup",
+% #|   "latex",
+% #|   "r-scripts",
+% #|   "knitr.R"
+% #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% if (require(package = "rProject")) {
+%   Bib(
+%     path = dirname(
+%       path = root$find_file(
+%         "project.Rproj"
+%       )
+%     )
+%   )
+%   cat(
+%     .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+%   )
+% } else {
+%   cat(
+%     .PreambleCombined(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       ),
+%       output_path = root$find_file(
+%         ".setup",
+%         "latex"
+%       )
+%     )
+%   )
+% }
+%% end.rcode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Shell, Make, and CI Style Guide}
+\author{Ivan Jacob Agaloos Pesigan}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+This guide covers shell scripts, Makefiles, and GitHub workflows.
+Agents follow \texttt{.setup/ai/style/shell.md},
+which follows this guide and is changed together with it.
+All checks in \texttt{make lint} are warnings.
+\texttt{make lint} runs shellcheck when the image has it; CI always does.
+
+\section{Shell}
+
+\begin{itemize}
+	\item Start with \texttt{\#!/usr/bin/env bash},
+	then a comment with what the script does and a usage line.
+	\item Set \texttt{set -Eeuo pipefail} before the first command.
+	A helper that is only sourced says ``sourced'' in its header and sets nothing.
+	A command that may fail on purpose is handled where it runs.
+	\item Quote every expansion, and use \texttt{"\$@"}.
+	\item Never hard-code a user's home or scratch folder in a template.
+	\item Check a path before \texttt{rm -rf}:
+	never build it from a variable that can be empty.
+	\item Scripts are shellcheck-clean; a disabled check says why.
+\end{itemize}
+
+\section{Long Runs}
+
+A run that must outlive the session starts detached,
+writes a status file (\texttt{running}, then \texttt{done} or \texttt{STOPPED: <reason>})
+and a log next to it,
+refuses a second run while the status says \texttt{running},
+traps signals so that the status names the reason,
+and takes a \texttt{[first]} argument to resume after a failure.
+
+\section{Make}
+
+\begin{itemize}
+	\item Targets assume they already run inside the container:
+	a recipe never calls \texttt{apptainer}.
+	\item Each target is a short call to one R function or script.
+	\item Use portable make: R CMD check warns about GNU extensions under \texttt{inst}.
+	\item A target that needs SSH has a host script,
+	since the container has no keys on Roar.
+\end{itemize}
+
+\section{CI}
+
+\begin{itemize}
+	\item Use a release tag for an action, never a moving branch,
+	and one version of each action across workflows.
+	Use a commit SHA only for an action with no release tag.
+	\item Jobs that use the container read it from the lock,
+	so that a build uses the release's image.
+	\item Tokens come only from Actions secrets, never from a file.
+	\item \texttt{Template()} writes the workflows:
+	change them in rProject's \texttt{inst/template}.
+\end{itemize}
+
+\nocite{RCoreTeam-2026}
+
+\printbibliography
+
+\end{document}

@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "stops when the clone fails"),
-      {
+      desc = paste(text, "stops when the clone fails"),
+      code = {
         testthat::skip_on_cran()
         testthat::skip_if_offline(host = "github.com")
         testthat::expect_error(

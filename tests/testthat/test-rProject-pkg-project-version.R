@@ -8,8 +8,8 @@ lapply(
     state <- .TestState()
     root <- .TestProject()
     testthat::test_that(
-      paste(text, "needs one version per package"),
-      {
+      desc = paste(text, "needs one version per package"),
+      code = {
         testthat::expect_error(
           object = PkgProjectVersion(
             path = root,
@@ -20,8 +20,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "skips a package that already has the version"),
-      {
+      desc = paste(text, "skips a package that already has the version"),
+      code = {
         testthat::expect_silent(
           object = PkgProjectVersion(
             path = root,

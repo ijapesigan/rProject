@@ -7,8 +7,8 @@ lapply(
     root <- .TestProject()
     lib <- LibPaths(path = root)
     testthat::test_that(
-      paste(text, "creates .library first in the library paths"),
-      {
+      desc = paste(text, "creates .library first in the library paths"),
+      code = {
         testthat::expect_true(object = dir.exists(paths = lib))
         testthat::expect_equal(
           object = normalizePath(path = .libPaths()[1]),

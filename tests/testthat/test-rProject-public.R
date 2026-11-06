@@ -35,8 +35,8 @@ lapply(
       text = paste0("x <- \"", token, "\"")
     )
     testthat::test_that(
-      paste(text, "passes a safe export"),
-      {
+      desc = paste(text, "passes a safe export"),
+      code = {
         testthat::skip_on_os(os = "windows")
         exported <- suppressMessages(expr = Public(path = root))
         testthat::expect_true(object = "R/foo.R" %in% exported)
@@ -44,8 +44,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "stops on a private file in the export"),
-      {
+      desc = paste(text, "stops on a private file in the export"),
+      code = {
         write(root = root, file = ".gitignore", text = "*secrets*")
         testthat::expect_error(
           object = suppressMessages(expr = Public(path = root)),
@@ -55,8 +55,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "stops on a token in a published file"),
-      {
+      desc = paste(text, "stops on a token in a published file"),
+      code = {
         write(
           root = root,
           file = ".gitignore",
@@ -74,6 +74,92 @@ lapply(
         )
       }
     )
+    unlink(x = file.path(root, "R", "token.R"))
+    system2(
+      command = "git",
+      args = c(
+        "-C",
+        shQuote(string = root),
+        "remote",
+        "add",
+        "origin",
+        "git@github-owner:owner/private-repo.git"
+      ),
+      stdout = FALSE,
+      stderr = FALSE
+    )
+    testthat::test_that(
+      desc = paste(
+        text,
+        "stops when public-github.md is missing and origin is set"
+      ),
+      code = {
+        testthat::skip_on_os(os = "windows")
+        testthat::expect_error(
+          object = suppressMessages(expr = Public(path = root)),
+          regexp = "public-github.md is missing"
+        )
+      }
+    )
+    testthat::test_that(
+      desc = paste(text, "stops when origin is not the public repository"),
+      code = {
+        testthat::skip_on_os(os = "windows")
+        write(
+          root = root,
+          file = ".setup/repo/public-github.md",
+          text = "owner/public-repo"
+        )
+        testthat::expect_error(
+          object = suppressMessages(expr = Public(path = root)),
+          regexp = "origin is owner/private-repo, but the public repository"
+        )
+      }
+    )
+    testthat::test_that(
+      desc = paste(text, "stops when the project has no public repository"),
+      code = {
+        testthat::skip_on_os(os = "windows")
+        write(root = root, file = ".setup/repo/public-github.md", text = "none")
+        testthat::expect_error(
+          object = suppressMessages(expr = Public(path = root)),
+          regexp = "no public repository"
+        )
+      }
+    )
+    testthat::test_that(
+      desc = paste(
+        text,
+        "passes when origin is the public repository, in any form"
+      ),
+      code = {
+        testthat::skip_on_os(os = "windows")
+        write(
+          root = root,
+          file = ".setup/repo/public-github.md",
+          text = "owner/private-repo"
+        )
+        write(
+          root = root,
+          file = ".gitignore",
+          text = c(".setup/ai/", ".setup/repo/", "*secrets*")
+        )
+        testthat::expect_no_error(
+          object = suppressMessages(expr = Public(path = root))
+        )
+        testthat::expect_identical(
+          object = .GitRemoteRepo(
+            remote = c(
+              "https://github.com/owner/repo.git",
+              "https://github.com/owner/repo/",
+              "git@github.com:owner/repo.git",
+              "git@github-owner:owner/repo"
+            )
+          ),
+          expected = rep(x = "owner/repo", times = 4L)
+        )
+      }
+    )
     unlink(x = root, recursive = TRUE)
     # a folder that is not a git repository (e.g., downloaded from Overleaf)
     root <- tempfile(pattern = "public-nogit")
@@ -87,8 +173,8 @@ lapply(
       text = "owner/repo"
     )
     testthat::test_that(
-      paste(text, "applies .gitignore outside a git repository"),
-      {
+      desc = paste(text, "applies .gitignore outside a git repository"),
+      code = {
         testthat::skip_on_os(os = "windows")
         exported <- suppressMessages(expr = Public(path = root))
         testthat::expect_true(object = "R/foo.R" %in% exported)
@@ -102,8 +188,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "stops on .setup/todo in the export"),
-      {
+      desc = paste(text, "stops on .setup/todo in the export"),
+      code = {
         testthat::skip_on_os(os = "windows")
         write(root = root, file = ".setup/todo/todo.txt", text = "1. an item")
         testthat::expect_error(
@@ -115,8 +201,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "stops on .setup/repo in the export"),
-      {
+      desc = paste(text, "stops on .setup/repo in the export"),
+      code = {
         testthat::skip_on_os(os = "windows")
         unlink(x = file.path(root, ".setup", "repo", ".gitignore"))
         testthat::expect_error(

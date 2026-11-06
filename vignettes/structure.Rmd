@@ -79,8 +79,16 @@ knitr::kable(
   x = data.frame(
     folder = paste0("`", folders$folder, "`"),
     types = gsub(pattern = ",", replacement = ", ", x = folders$types),
-    private = ifelse(test = as.logical(x = folders$private), yes = "yes", no = ""),
-    created = ifelse(test = as.logical(x = folders$create), yes = "yes", no = ""),
+    private = ifelse(
+      test = as.logical(x = folders$private),
+      yes = "yes",
+      no = ""
+    ),
+    created = ifelse(
+      test = as.logical(x = folders$create),
+      yes = "yes",
+      no = ""
+    ),
     purpose = folders$purpose
   ),
   row.names = FALSE

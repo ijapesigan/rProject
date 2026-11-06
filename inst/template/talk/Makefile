@@ -116,6 +116,10 @@ secretscan:
 # pulls the private repository into .verify (where SSH works in the
 # container), then checks the push; on Roar, first run on the host:
 # bash .setup/scripts/verify.sh
+linked:
+	@echo "\n\nComparing the linked files with functions...\n\n"
+	@Rscript -e "rProject::Linked(\"${PWD}\", functions = if (nzchar(\"$(FUNCTIONS)\")) \"$(FUNCTIONS)\")"
+
 verify:
 	@echo "\n\nVerifying the Overleaf push...\n\n"
 	@bash .setup/scripts/verify.sh || echo "\n\nWARNING: .verify was not updated (no SSH here). Run bash .setup/scripts/verify.sh on the host, then make verify again.\n\n"

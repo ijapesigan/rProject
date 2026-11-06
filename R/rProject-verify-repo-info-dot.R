@@ -41,12 +41,7 @@
     private = private,
     args = c("remote", "get-url", "origin")
   )
-  # owner/repo from any remote form (https, git@github.com:, an SSH alias)
-  remote <- sub(
-    pattern = "^.*[:/]([^/:]+/[^/:]+)$",
-    replacement = "\\1",
-    x = sub(pattern = "\\.git$", replacement = "", x = remote)
-  )
+  remote <- .GitRemoteRepo(remote = remote)
   if (
     !is.na(x = info$private_github) &&
       length(x = remote) == 1L &&

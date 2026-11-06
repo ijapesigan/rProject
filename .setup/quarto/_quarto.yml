@@ -10,6 +10,8 @@ book:
   repo-url: https://github.com/ijapesigan/rProject
   repo-actions: [edit]
   site-url: https://ijapesigan.quarto.pub/rProject/index.html
+  page-footer:
+    left: "Ivan Jacob Agaloos Pesigan, [Department of Human Development and Family Studies](https://hhd.psu.edu/hdfs), The Pennsylvania State University"
   sidebar:
     collapse-level: 3
     pinned: true

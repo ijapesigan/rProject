@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "turns backslashes into forward slashes"),
-      {
+      desc = paste(text, "turns backslashes into forward slashes"),
+      code = {
         testthat::expect_equal(
           object = rProject:::.PathSlash(
             x = "C:\\Users\\a b\\project/.library"
@@ -15,8 +15,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "leaves other paths unchanged"),
-      {
+      desc = paste(text, "leaves other paths unchanged"),
+      code = {
         x <- c("/scratch/a b/project", "relative/path", "")
         testthat::expect_equal(
           object = rProject:::.PathSlash(x = x),

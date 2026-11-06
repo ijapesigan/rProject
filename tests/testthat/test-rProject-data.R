@@ -29,8 +29,8 @@ lapply(
     )
     original <- utils::read.table(file = raw, header = TRUE)
     testthat::test_that(
-      paste(text, "finds files in the tiers"),
-      {
+      desc = paste(text, "finds files in the tiers"),
+      code = {
         testthat::expect_equal(
           object = normalizePath(
             path = DataPath(path = root, file = "ema.txt")
@@ -51,8 +51,8 @@ lapply(
       expr = DataCompress(path = root, files = ".setup/data-raw/ema.txt")
     )
     testthat::test_that(
-      paste(text, "compresses, checks, and still finds the file"),
-      {
+      desc = paste(text, "compresses, checks, and still finds the file"),
+      code = {
         testthat::expect_false(object = file.exists(raw))
         testthat::expect_true(object = file.exists(paste0(raw, ".xz")))
         found <- DataPath(path = root, file = "ema.txt")
@@ -65,8 +65,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "unpacks a plain copy into the cache and refreshes it"),
-      {
+      desc = paste(
+        text,
+        "unpacks a plain copy into the cache and refreshes it"
+      ),
+      code = {
         plain <- DataPath(path = root, file = "ema.txt", plain = TRUE)
         testthat::expect_match(object = plain, regexp = "data-cache/ema\\.txt$")
         testthat::expect_equal(
@@ -90,8 +93,8 @@ lapply(
     manifest_file <- file.path(root, ".setup", "ai", "data.md")
     manifest <- suppressMessages(expr = DataManifest(path = root))
     testthat::test_that(
-      paste(text, "writes the manifest with tiers and users"),
-      {
+      desc = paste(text, "writes the manifest with tiers and users"),
+      code = {
         testthat::expect_true(object = file.exists(manifest_file))
         testthat::expect_setequal(
           object = manifest$tier,
@@ -108,8 +111,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "keeps user columns and flags external files"),
-      {
+      desc = paste(text, "keeps user columns and flags external files"),
+      code = {
         lines <- readLines(con = manifest_file)
         row <- grep(pattern = "restricted.txt", x = lines, fixed = TRUE)
         cells <- strsplit(x = lines[row], split = "|", fixed = TRUE)[[1]]

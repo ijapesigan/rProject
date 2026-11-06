@@ -117,6 +117,34 @@ jobs:
               nm = rtex
             )
           )
+          # texTools helpers call each other but are not a package:
+          # object_usage_linter cannot see them. The template's smoke test has
+          # a {{pkg}} placeholder.
+          tex_tools <- list.files(
+            path = ".",
+            pattern = "^texTools-.*\\.R$",
+            recursive = TRUE,
+            all.files = TRUE
+          )
+          smoke <- file.path("inst", "template", "once", "test-pkg-smoke.R")
+          smoke <- smoke[file.exists(smoke)]
+          exclusions <- c(
+            exclusions,
+            stats::setNames(
+              object = rep(
+                x = list(list(object_usage_linter = Inf)),
+                times = length(tex_tools)
+              ),
+              nm = tex_tools
+            ),
+            stats::setNames(
+              object = rep(
+                x = list(list(commented_code_linter = Inf)),
+                times = length(smoke)
+              ),
+              nm = smoke
+            )
+          )
           if (length(exclusions) == 0L) {
             lintr::lint_dir(
               path = ".",

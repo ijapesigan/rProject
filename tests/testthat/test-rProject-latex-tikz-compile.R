@@ -9,8 +9,11 @@ lapply(
       message = "latexmk not found"
     )
     testthat::test_that(
-      paste(text, "copies latexmkrc and does nothing without TikZ files"),
-      {
+      desc = paste(
+        text,
+        "copies latexmkrc and does nothing without TikZ files"
+      ),
+      code = {
         root <- .TestProject(pattern = "project with space ")
         suppressMessages(expr = LatexTikzCompile(path = root))
         testthat::expect_true(
@@ -23,8 +26,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "compiles a TikZ figure to PDF (slow)"),
-      {
+      desc = paste(text, "compiles a TikZ figure to PDF (slow)"),
+      code = {
         .SkipSlow()
         root <- .TestProject(pattern = "project with space ")
         tikz <- file.path(root, ".setup", "latex", "tikz")

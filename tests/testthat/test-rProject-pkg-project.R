@@ -6,8 +6,8 @@ lapply(
     state <- .TestState()
     root <- .TestProject()
     testthat::test_that(
-      paste(text, "skips packages that are already installed"),
-      {
+      desc = paste(text, "skips packages that are already installed"),
+      code = {
         testthat::expect_silent(object = PkgProject(path = root, pkg = "stats"))
         testthat::expect_silent(
           object = PkgProject(path = root, pkg = character(length = 0))
@@ -15,8 +15,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "installs a missing CRAN package (slow)"),
-      {
+      desc = paste(text, "installs a missing CRAN package (slow)"),
+      code = {
         .SkipSlow()
         testthat::skip_if_offline()
         utils::capture.output(PkgProject(path = root, pkg = "fortunes"))

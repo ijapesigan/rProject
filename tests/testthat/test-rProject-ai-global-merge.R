@@ -44,14 +44,14 @@ lapply(
       simplifyVector = FALSE
     )
     testthat::test_that(
-      paste(text, "source keys win"),
-      {
+      desc = paste(text, "source keys win"),
+      code = {
         testthat::expect_equal(object = merged$theme, expected = "dark")
       }
     )
     testthat::test_that(
-      paste(text, "keeps other keys and rules"),
-      {
+      desc = paste(text, "keeps other keys and rules"),
+      code = {
         testthat::expect_true(object = merged$autoMode)
         testthat::expect_equal(
           object = unlist(x = merged$permissions$allow),
@@ -72,8 +72,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "is stable"),
-      {
+      desc = paste(text, "is stable"),
+      code = {
         testthat::expect_null(
           object = suppressMessages(
             expr = AIGlobal(

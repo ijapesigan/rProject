@@ -99,6 +99,16 @@ LibAdd <- function(doi,
       )
     }
   }
+  if (write) {
+    questions <- c(
+      questions,
+      paste0(
+        "Upload the full text in Overleaf as .setup/notes/pdf/",
+        entry$repo, "-", entry$key,
+        ".pdf (or epub/, -ch01 for parts)."
+      )
+    )
+  }
   text <- .LibFormat(type = entry$type, key = entry$key, fields = entry$fields)
   file <- file.path(
     root,

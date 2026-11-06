@@ -23,15 +23,15 @@ lapply(
       con = file.path(analysis, "data-analysis-001.R")
     )
     testthat::test_that(
-      paste(text, "runs data-process first, then data-analysis"),
-      {
+      desc = paste(text, "runs data-process first, then data-analysis"),
+      code = {
         DataAnalysis(path = root)
         testthat::expect_equal(object = readRDS(file = result), expected = 6)
       }
     )
     testthat::test_that(
-      paste(text, "with clean = TRUE removes old .Rds in both folders"),
-      {
+      desc = paste(text, "with clean = TRUE removes old .Rds in both folders"),
+      code = {
         stale <- file.path(analysis, "stale.Rds")
         saveRDS(object = 0, file = stale)
         DataAnalysis(path = root, clean = TRUE)

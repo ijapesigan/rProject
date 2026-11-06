@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "has an install script for every app"),
-      {
+      desc = paste(text, "has an install script for every app"),
+      code = {
         apps <- eval(expr = formals(fun = InstallLocal)$what)
         scripts <- vapply(
           X = apps,
@@ -22,8 +22,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "ignores unknown apps"),
-      {
+      desc = paste(text, "ignores unknown apps"),
+      code = {
         testthat::expect_null(object = InstallLocal(what = "not-an-app"))
       }
     )

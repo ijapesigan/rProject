@@ -16,8 +16,8 @@ lapply(
       )
     }
     testthat::test_that(
-      paste(text, "SkipIfMissing skips on CI and for a missing program"),
-      {
+      desc = paste(text, "SkipIfMissing skips on CI and for a missing program"),
+      code = {
         testthat::expect_identical(
           object = .SkipState(
             expr = .SkipIfMissing(program = "no-such-program")
@@ -27,8 +27,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "SkipSlow follows RPROJECT_SLOW_TESTS when not on CI"),
-      {
+      desc = paste(text, "SkipSlow follows RPROJECT_SLOW_TESTS when not on CI"),
+      code = {
         testthat::skip_on_ci()
         state <- .TestState(vars = "RPROJECT_SLOW_TESTS")
         Sys.setenv(RPROJECT_SLOW_TESTS = "")
@@ -45,8 +45,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "make agents has its install scripts"),
-      {
+      desc = paste(text, "make agents has its install scripts"),
+      code = {
         shell <- system.file("shell", package = "rProject")
         testthat::skip_if(condition = !nzchar(x = shell))
         testthat::expect_true(

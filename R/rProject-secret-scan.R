@@ -21,6 +21,13 @@
 SecretScan <- function(path,
                        max_size = 5e+06,
                        error = TRUE) {
+  # no folder is not a clean result
+  if (!dir.exists(paths = path)) {
+    stop(
+      paste0("\n\n", path, " does not exist: nothing was scanned.\n\n"),
+      call. = FALSE
+    )
+  }
   patterns <- c(
     github = "gh[pousr]_[A-Za-z0-9]{36}",
     github_fine_grained = "github_pat_[A-Za-z0-9_]{22,}",

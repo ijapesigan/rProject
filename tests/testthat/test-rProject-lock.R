@@ -5,8 +5,8 @@ lapply(
                  text) {
     root <- .TestProject()
     testthat::test_that(
-      paste(text, "writes the commit and version"),
-      {
+      desc = paste(text, "writes the commit and version"),
+      code = {
         out <- suppressMessages(
           expr = .LockWrite(path = root, sha = "abc1234def", version = "0.0.56")
         )
@@ -23,8 +23,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "writes the image, snapshot, and extras"),
-      {
+      desc = paste(text, "writes the image, snapshot, and extras"),
+      code = {
         digest <- paste0("sha256:", strrep(x = "b", times = 64))
         out <- suppressMessages(
           expr = .LockWrite(
@@ -70,8 +70,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "records an add-on sif and an image without a digest"),
-      {
+      desc = paste(text, "records an add-on sif and an image without a digest"),
+      code = {
         out <- suppressMessages(
           expr = .LockWrite(
             path = root,
@@ -111,8 +111,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "reads the extras from project.R"),
-      {
+      desc = paste(text, "reads the extras from project.R"),
+      code = {
         project_r <- file.path(root, ".setup", "scripts", "project.R")
         writeLines(
           text = c(
@@ -137,8 +137,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "writes nothing without a commit"),
-      {
+      desc = paste(text, "writes nothing without a commit"),
+      code = {
         unlink(x = file.path(root, ".setup", "scripts", "rproject.lock"))
         testthat::expect_message(
           object = .LockWrite(
@@ -156,8 +156,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "writes no lock in rProject itself"),
-      {
+      desc = paste(text, "writes no lock in rProject itself"),
+      code = {
         cat(
           "type <- \"rProject\"\n",
           file = file.path(root, ".setup", "scripts", "project.R"),
@@ -169,8 +169,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "writes no lock in a docker project"),
-      {
+      desc = paste(text, "writes no lock in a docker project"),
+      code = {
         writeLines(
           text = "type <- \"docker\"",
           con = file.path(root, ".setup", "scripts", "project.R")

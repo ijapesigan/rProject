@@ -24,8 +24,8 @@ lapply(
       con = full
     )
     testthat::test_that(
-      paste(text, "names the documents whose last run failed"),
-      {
+      desc = paste(text, "names the documents whose last run failed"),
+      code = {
         out <- .LatexLogCheck(
           logs = c(good, stub, full, file.path(dir, "missing.log"))
         )
@@ -36,8 +36,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "is empty when every document compiled"),
-      {
+      desc = paste(text, "is empty when every document compiled"),
+      code = {
         testthat::expect_length(object = .LatexLogCheck(logs = good), n = 0)
       }
     )

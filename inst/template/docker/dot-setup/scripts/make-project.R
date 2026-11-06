@@ -73,7 +73,12 @@ if (!is.null(x = secrets_path)) {
     )
   } else {
     secrets_mode <- file.info(secrets_path)$mode
-    if (bitwAnd(a = as.integer(x = secrets_mode), b = strtoi(x = "077", base = 8L)) != 0L) {
+    if (
+      bitwAnd(
+        a = as.integer(x = secrets_mode),
+        b = strtoi(x = "077", base = 8L)
+      ) != 0L
+    ) {
       Sys.chmod(
         paths = secrets_path,
         mode = "600"
@@ -321,12 +326,21 @@ rproject_imports <- function(ref) {
   )
   if (isTRUE(x = ok)) {
     imports <- read.dcf(file = description, fields = "Imports")[1, 1]
-    imports <- trimws(x = strsplit(x = gsub(pattern = "\n", replacement = " ", x = imports), split = ",")[[1]])
+    imports <- trimws(
+      x = strsplit(
+        x = gsub(pattern = "\n", replacement = " ", x = imports),
+        split = ","
+      )[[1]]
+    )
     imports <- imports[nzchar(x = imports)]
     name <- sub(pattern = "\\s*\\(.*$", replacement = "", x = imports)
     minimum <- ifelse(
       test = grepl(pattern = ">=", x = imports),
-      yes = sub(pattern = "^.*>=\\s*([^) ]+).*$", replacement = "\\1", x = imports),
+      yes = sub(
+        pattern = "^.*>=\\s*([^) ]+).*$",
+        replacement = "\\1",
+        x = imports
+      ),
       no = NA_character_
     )
     have <- vapply(
@@ -335,7 +349,11 @@ rproject_imports <- function(ref) {
         out <- suppressWarnings(
           expr = utils::packageDescription(pkg = x, fields = "Version")
         )
-        ifelse(test = is.null(x = out) || is.na(x = out), yes = NA_character_, no = out)
+        ifelse(
+          test = is.null(x = out) || is.na(x = out),
+          yes = NA_character_,
+          no = out
+        )
       },
       FUN.VALUE = character(length = 1)
     )
@@ -358,7 +376,11 @@ rproject_imports <- function(ref) {
           " imports: ",
           paste0(
             name[bad],
-            ifelse(test = is.na(x = minimum[bad]), yes = "", no = paste0(" (>= ", minimum[bad], ")")),
+            ifelse(
+              test = is.na(x = minimum[bad]),
+              yes = "",
+              no = paste0(" (>= ", minimum[bad], ")")
+            ),
             collapse = ", "
           ),
           ".\nRebuild docs.sif (build docs), or use the image that",
@@ -459,7 +481,11 @@ if (
   )[1]
   if (
     !is.na(x = rproject_running) &&
-      !grepl(pattern = sub(pattern = "^.*@", replacement = "", x = rproject_image), x = rproject_running, fixed = TRUE)
+      !grepl(
+        pattern = sub(pattern = "^.*@", replacement = "", x = rproject_image),
+        x = rproject_running,
+        fixed = TRUE
+      )
   ) {
     message(
       paste0(

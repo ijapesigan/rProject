@@ -25,8 +25,11 @@ lapply(
       con = file.path(root, ".setup", "readme", "README.Rmd")
     )
     testthat::test_that(
-      paste(text, "renders README.md and removes the intermediate files"),
-      {
+      desc = paste(
+        text,
+        "renders README.md and removes the intermediate files"
+      ),
+      code = {
         suppressMessages(expr = suppressWarnings(expr = ReadMe(path = root)))
         readme <- file.path(root, "README.md")
         testthat::expect_true(object = file.exists(readme))
@@ -43,8 +46,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "does nothing without .setup/readme/README.Rmd"),
-      {
+      desc = paste(text, "does nothing without .setup/readme/README.Rmd"),
+      code = {
         other <- .TestProject(name = "noReadme")
         ReadMe(path = other)
         testthat::expect_false(

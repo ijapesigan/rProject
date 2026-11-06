@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "skips folders that are not packages"),
-      {
+      desc = paste(text, "skips folders that are not packages"),
+      code = {
         root <- .TestProject(description = FALSE)
         testthat::expect_message(
           object = VignettesPrecompile(path = root),

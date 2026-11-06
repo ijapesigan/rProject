@@ -17,11 +17,19 @@
                      path = ".") {
   preset <- .FigSize(size = size, height = height)
   files <- c(
-    pdf = file.path(path, ".setup", "latex", "figures", "pdf", paste0(name, ".pdf")),
-    png = file.path(path, ".setup", "latex", "figures", "png", paste0(name, ".png"))
+    pdf = file.path(
+      path, ".setup", "latex", "figures", "pdf", paste0(name, ".pdf")
+    ),
+    png = file.path(
+      path, ".setup", "latex", "figures", "png", paste0(name, ".png")
+    )
   )
   for (file in files) {
-    dir.create(path = dirname(path = file), showWarnings = FALSE, recursive = TRUE)
+    dir.create(
+      path = dirname(path = file),
+      showWarnings = FALSE,
+      recursive = TRUE
+    )
     ggplot2::ggsave(
       filename = file,
       plot = plot,

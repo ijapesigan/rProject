@@ -20,6 +20,25 @@ if (
     full.names = TRUE, recursive = TRUE
   )
   if (length(x = deps) > 0) {
+    # a helper renamed or deleted in functions must not stay in R/; a set
+    # named after the package is left alone (the package's own files)
+    sets <- setdiff(
+      x = list.dirs(
+        path = file.path(path, ".setup", "r-dependencies"),
+        full.names = FALSE,
+        recursive = FALSE
+      ),
+      y = read.dcf(file = file.path(path, "DESCRIPTION"), fields = "Package")
+    )
+    for (set in sets) {
+      unlink(
+        x = list.files(
+          path = file.path(path, "R"),
+          pattern = paste0("^", set, "-.*\\.R$"),
+          full.names = TRUE
+        )
+      )
+    }
     file.copy(
       from = deps,
       to = file.path(path, "R"),
