@@ -117,6 +117,9 @@
 - [`LibFormat()`](https://ijapesigan.github.io/rProject/reference/LibFormat.md)
   : Put the Entries of a lib-\* Library in the House Layout
 
+- [`LibFullTextReport()`](https://ijapesigan.github.io/rProject/reference/LibFullTextReport.md)
+  : Report the Full Texts Missing from the lib-\* Library
+
 - [`LibPaths()`](https://ijapesigan.github.io/rProject/reference/LibPaths.md)
   :
 
@@ -124,6 +127,9 @@
 
 - [`License()`](https://ijapesigan.github.io/rProject/reference/License.md)
   : Generate License File
+
+- [`Linked()`](https://ijapesigan.github.io/rProject/reference/Linked.md)
+  : Compare the Files Linked from the Functions Repository
 
 - [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md) :
   Lint Project

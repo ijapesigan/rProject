@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.63</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.64</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,8 +170,10 @@
 <td>write the change-set log and its file list (<code>UPDATE=TRUE</code> refreshes the list)</td>
 </tr><tr><td><code>make verify RECORD=TRUE</code></td>
 <td>after the user pushes from Overleaf (O2G): verify and record the push. On Roar, run <code>bash .setup/scripts/verify.sh</code> on the host first to pull.</td>
+</tr><tr><td><code>make linked</code></td>
+<td>compare <code>.setup/r-dependencies/</code> with the functions clone</td>
 </tr><tr><td><code>make auto</code></td>
-<td>publish to the public repository (checks the export first)</td>
+<td>publish to the public repository (checks the remote and the export first)</td>
 </tr><tr><td><code>make tree</code></td>
 <td>the project’s folders and what each is for; flags missing and non-standard folders</td>
 </tr><tr><td><code>make project</code></td>
@@ -183,6 +185,15 @@
 <h2 id="generated-files-never-edit-by-hand">Generated files: never edit by hand<a class="anchor" aria-label="anchor" href="#generated-files-never-edit-by-hand"></a></h2>
 <p><code>NAMESPACE</code>, <code>man/</code>, <code>README.md</code>, <code>CITATION.cff</code>, <code>LICENSE*</code>, <code>.Rbuildignore</code>, <code>project.Rproj</code>, <code>R/RcppExports.R</code>, <code>src/RcppExports.cpp</code>, <code>*/bib.bib</code>, <code>vignettes/*.Rmd</code> built from <code>.setup/vignettes/</code>, <code>.setup/latex/pdf/</code>, <code>.setup/latex/figures/</code>, <code>data/*.rda</code>. Change their sources and run <code>make</code>.</p>
 </div>
+<div class="section level2">
+<h2 id="linked-from-functions">Linked from functions<a class="anchor" aria-label="anchor" href="#linked-from-functions"></a></h2>
+<p>Files in <code>.setup/r-dependencies/</code> are Overleaf links to the private functions repository (<code>&lt;lib&gt;/&lt;file&gt;</code> there), shared with other projects.</p>
+<ul><li>Never edit them in a project or put them in its upload folder.</li>
+<li>To change one, edit the local functions clone (next to the projects; agents never push) and write an upload folder for functions; for a test, copy the files into a scratch build of the project, not into the project.</li>
+<li>Order: functions first; then refresh the links in each project that has them and push. The reply and the log name the links to refresh.</li>
+<li>
+<code>make linked</code> compares the files with the functions clone (<code>FUNCTIONS=&lt;path&gt;</code>).</li>
+</ul></div>
 <div class="section level2">
 <h2 id="size">Size<a class="anchor" aria-label="anchor" href="#size"></a></h2>
 <p>Overleaf’s GitHub sync stops above 7 MB of editable text and caps text files at 2 MB. Keep large data compressed (binary, e.g. <code>.Rds</code> or <code>.xz</code>) and never store the same file twice. <code>make sizecheck</code> reports problems.</p>
@@ -201,7 +212,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Ivan Jacob Agaloos Pesigan.</p>
+  <p>Ivan Jacob Agaloos Pesigan, <a href="https://hhd.psu.edu/hdfs" class="external-link">Department of Human Development and Family Studies</a>, The Pennsylvania State University</p>
 </div>
 
 <div class="pkgdown-footer-right">

@@ -59,9 +59,11 @@ The checks, and when each fails:
   missing from or differs in the private repository. The list is the one
   of the pushed commit: the section of the log with a code block that
   starts with the commit's first line (the top-level lists for the log's
-  own commit message; the lists inside a later push's `##` section, none
-  for a push of records only). If no block matches, every list in the
-  log is used.
+  own commit message; the lists inside a later push's `##` section). If
+  no block matches, every list in the log is used. A push with no list
+  of its own compares the files of its commit instead; a difference is
+  then a warning, as a commit may hold generated files, and an empty
+  commit warns that nothing was checked.
 
 - **Deletions:** a file listed under "Delete in Overleaf" is still in
   the private repository.
@@ -87,6 +89,15 @@ The checks, and when each fails:
   only: a file in `.setup/repo/` is missing, `private-github.md` differs
   from the `.verify` remote, or `public-github.md` differs from the
   repository in `clone.sh`.
+
+- **Linked files:** (warning only) a file in `.setup/r-dependencies/`
+  differs from a local clone of the functions repository
+  ([`Linked()`](https://ijapesigan.github.io/rProject/reference/Linked.md)).
+
+- **Full text:** (warning only, `lib-*` projects) an entry this push
+  adds has no full text in `.setup/notes/`, or a file there matches no
+  entry
+  ([`LibFullTextReport()`](https://ijapesigan.github.io/rProject/reference/LibFullTextReport.md)).
 
 Generated files (e.g., `NAMESPACE`, `man/`), local folders (e.g.,
 `.library`), and secret files are never compared.

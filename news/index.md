@@ -1,5 +1,126 @@
 # Changelog
 
+## rProject 0.0.64
+
+### Style guides
+
+- New guides: shell, Make, and CI (007) and simulation (008), with the
+  agents’ copies in `.setup/ai/style/`. Seeds come from `taskid`,
+  `repid`, and a numbered attempt; each project lists the failures that
+  allow a new seed. The default run is a SLURM job array of blocks, with
+  replications in series inside each and sizes taken from measurements;
+  GNU Parallel on a whole node is the exception.
+- [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
+  warns on a shell script without a shebang or strict mode, a Makefile
+  recipe that calls `apptainer`, and a workflow action at a moving
+  branch.
+- Workflow templates use release tags, with one version of each action.
+
+### r-hub checks
+
+- The r-hub workflows of `cran-*` projects and rProject, the testbed,
+  are grouped in five tiers. Essential (CRAN’s flavors, `donttest`,
+  `nosuggests`) and Memory (sanitizers, including `m1-san` on macOS,
+  `valgrind`, `rchk`; for `src/`, and always in rProject) run at every
+  PUB. Numerics and Compilers also run at every PUB, for review only.
+  Other platforms (deprecated containers, `rhel`, `centos7`, `s390x`)
+  run by hand.
+- Containers r-hub lists as deprecated move out of the regular runs, in
+  favor of current ones (`ubuntu-gcc16`, `gcc16`, `clang23`).
+
+### Notation
+
+- Guide 005 gains a form rule: a symbol’s meaning can change per paper,
+  its form cannot (scalars plain italic, vectors bold lowercase,
+  matrices bold uppercase; `\boldsymbol{W}` is a named exception). The
+  default transition matrix is now `\boldsymbol{B}`. The differential is
+  upright with a thin space: `\, \mathrm{d} t`. Existing packages and
+  papers keep their symbols until next reused.
+
+### Tests
+
+- [`testthat::test_that()`](https://testthat.r-lib.org/reference/test_that.html)
+  names its arguments (`desc`, `code`), in rProject, the template, and
+  the R guide;
+  [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md) no
+  longer exempts it, so each project’s tests change at its cleanup push.
+
+### Safer publishing
+
+- [`Public()`](https://ijapesigan.github.io/rProject/reference/Public.md)
+  stops, before anything is published, when `origin` is not the
+  repository in `.setup/repo/public-github.md`. The template’s
+  `clone.sh` stops at the first error: a failed `git clone` no longer
+  goes on to remove `.git`.
+- [`SecretScan()`](https://ijapesigan.github.io/rProject/reference/SecretScan.md)
+  stops on a folder that does not exist, instead of reporting no
+  findings.
+
+### Verify
+
+- A push with no file list of its own (a fix-up) compares the files of
+  its commit instead of passing with “0 files match”. A difference is a
+  warning, and an empty commit warns that nothing was checked.
+- Files named `secretscan` are compared; secret files are still never
+  compared.
+- New check “Linked files”: a note when `.setup/r-dependencies/` differs
+  from the functions clone. New check “Full text” in `lib-*` projects: a
+  warning for an added entry with no full text, and for a file that
+  matches no entry.
+
+### Library
+
+- [`LibFullTextReport()`](https://ijapesigan.github.io/rProject/reference/LibFullTextReport.md)
+  lists the entries without a full text across all `lib-*`, and the
+  files that match no entry. A work with no copy in any format goes in
+  `.setup/notes/no-full-text.txt`. `LibAdd(write = TRUE)` reminds you to
+  upload the full text.
+
+### Linked files
+
+- [`Linked()`](https://ijapesigan.github.io/rProject/reference/Linked.md)
+  and `make linked` compare `.setup/r-dependencies/` with the functions
+  clone.
+  [`Log()`](https://ijapesigan.github.io/rProject/reference/Log.md)
+  lists these files under “Linked from functions” (refresh the link; do
+  not upload), and the agent instructions say how to change them.
+- [`Dependencies()`](https://ijapesigan.github.io/rProject/reference/Dependencies.md)
+  and `make-install.R` delete a helper set’s old copies in `R/` before
+  copying, so a helper renamed or deleted in functions is not built. A
+  set named after the package is left alone.
+
+### Fixes
+
+- [`PkgRepo()`](https://ijapesigan.github.io/rProject/reference/PkgRepo.md)
+  falls back to the source repository when `distro` is out of reach
+  ([`LibPaths()`](https://ijapesigan.github.io/rProject/reference/LibPaths.md)
+  may leave only a project’s `.library`), so
+  [`PkgProject()`](https://ijapesigan.github.io/rProject/reference/PkgProject.md)
+  no longer stops there. On Windows it returns the repository’s root:
+  [`install.packages()`](https://rdrr.io/r/utils/install.packages.html)
+  adds `bin/windows/contrib` itself, so the old URL could not be read.
+  Slow tests running on CI since 0.0.63 found both.
+- The
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
+  atomic-write tests skip on Windows (they test POSIX rename and file
+  modes), and the slow
+  [`BibLib()`](https://ijapesigan.github.io/rProject/reference/BibLib.md)
+  test skips there too (it finds no `.bib` files; cause not looked at).
+- [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
+  and the lint workflow stop reporting two false positives:
+  `object_usage_linter` on the `texTools` helpers, and
+  `commented_code_linter` on the template’s smoke test. Long lines in
+  the templates are wrapped. The lint workflow fails on any lintr
+  finding, so these kept it red.
+
+### Sites and workflows
+
+- Every pkgdown site and the `lib-*` and rProject Quarto books show the
+  author’s affiliation in the footer.
+- Docker workflow templates: `softprops/action-gh-release@v2`;
+  `repo-token` removed (not an input of `docker/build-push-action`).
+- rProject sets `lint_error <- TRUE`.
+
 ## rProject 0.0.63
 
 ### Style guides and lint
