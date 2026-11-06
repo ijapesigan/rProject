@@ -5,8 +5,8 @@ lapply(
                  text) {
     testthat::skip_on_cran()
     testthat::test_that(
-      paste(text, "an empty folder writes nothing"),
-      {
+      desc = paste(text, "an empty folder writes nothing"),
+      code = {
         pdf_folder <- file.path(tempfile(), "pdf")
         dir.create(path = pdf_folder, recursive = TRUE)
         testthat::expect_false(
@@ -16,8 +16,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "a PDF gets a PNG, rebuilt only when newer"),
-      {
+      desc = paste(text, "a PDF gets a PNG, rebuilt only when newer"),
+      code = {
         testthat::skip_if(condition = Sys.which(names = "pdftoppm") == "")
         pdf_folder <- file.path(tempfile(), "pdf")
         dir.create(path = pdf_folder, recursive = TRUE)

@@ -47,7 +47,11 @@ image <- paste0(
 from <- sub(
   pattern = "^FROM[[:space:]]+",
   replacement = "",
-  x = grep(pattern = "^FROM", x = readLines(con = "Dockerfile"), value = TRUE)[1]
+  x = grep(
+    pattern = "^FROM",
+    x = readLines(con = "Dockerfile"),
+    value = TRUE
+  )[1]
 )
 files <- sort(
   x = list.files(
@@ -95,7 +99,11 @@ Triggers <- function(x) {
   if (any(grepl(pattern = "base-image-built", x = x))) {
     out <- c(out, "when the base image is rebuilt")
   }
-  ifelse(test = length(x = out) > 0L, yes = paste(out, collapse = ", "), no = "by hand")
+  ifelse(
+    test = length(x = out) > 0L,
+    yes = paste(out, collapse = ", "),
+    no = "by hand"
+  )
 }
 arm64 <- any(
   vapply(
@@ -184,8 +192,14 @@ cat(
   "```\n\n",
   "Apptainer:\n\n",
   "```bash\n",
-  "apptainer pull ", sub(pattern = "^.*/", replacement = "", x = image), ".sif docker://", image, "\n",
-  "apptainer shell ", sub(pattern = "^.*/", replacement = "", x = image), ".sif\n",
+  "apptainer pull ",
+  sub(pattern = "^.*/", replacement = "", x = image),
+  ".sif docker://",
+  image,
+  "\n",
+  "apptainer shell ",
+  sub(pattern = "^.*/", replacement = "", x = image),
+  ".sif\n",
   "```\n",
   sep = ""
 )
@@ -201,7 +215,15 @@ if (length(x = packages) > 0L) {
   # group; a comment after it names the group of the lines below it
   lines <- trimws(x = cran)
   blank <- which(x = !nzchar(x = lines))
-  if (length(x = blank) > 0L && all(grepl(pattern = "^#", x = lines[seq_len(length.out = blank[1] - 1L)]))) {
+  if (
+    length(x = blank) > 0L &&
+      all(
+        grepl(
+          pattern = "^#",
+          x = lines[seq_len(length.out = blank[1] - 1L)]
+        )
+      )
+  ) {
     lines <- lines[-seq_len(length.out = blank[1])]
   }
   group <- "Other"
@@ -232,7 +254,9 @@ if (length(x = github) > 0L) {
   )
   cat(
     paste0(
-      "- [", sub(pattern = "@.*$", replacement = "", x = github), "](https://github.com/",
+      "- [",
+      sub(pattern = "@.*$", replacement = "", x = github),
+      "](https://github.com/",
       sub(pattern = "@.*$", replacement = "", x = github), ")"
     ),
     sep = "\n"

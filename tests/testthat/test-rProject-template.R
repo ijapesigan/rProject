@@ -27,8 +27,8 @@ lapply(
     github_actions <- Sys.getenv(x = "GITHUB_ACTIONS")
     Sys.setenv(GITHUB_ACTIONS = "false")
     testthat::test_that(
-      paste(text, "manifest paths are not dot-encoded"),
-      {
+      desc = paste(text, "manifest paths are not dot-encoded"),
+      code = {
         manifest <- .TemplateFiles(type = "cran")
         all_paths <- unlist(
           x = lapply(
@@ -54,8 +54,8 @@ lapply(
         expr = Template(path = root, check = TRUE)
       )
       testthat::test_that(
-        paste(text, type, "check writes nothing"),
-        {
+        desc = paste(text, type, "check writes nothing"),
+        code = {
           testthat::expect_equal(
             object = sort(x = pending),
             expected = sort(x = all_files)
@@ -69,8 +69,8 @@ lapply(
         expr = Template(path = root)
       )
       testthat::test_that(
-        paste(text, type, "writes every template file"),
-        {
+        desc = paste(text, type, "writes every template file"),
+        code = {
           testthat::expect_equal(
             object = sort(x = written),
             expected = sort(x = all_files)
@@ -100,8 +100,8 @@ lapply(
     )
     writeLines(text = "old", con = linked)
     testthat::test_that(
-      paste(text, "names and overwrites an edited file"),
-      {
+      desc = paste(text, "names and overwrites an edited file"),
+      code = {
         testthat::expect_message(
           object = Template(path = root),
           regexp = "Overwritten"
@@ -115,8 +115,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "names a differing kept file for upload and writes it"),
-      {
+      desc = paste(
+        text,
+        "names a differing kept file for upload and writes it"
+      ),
+      code = {
         writeLines(text = "old", con = linked)
         testthat::expect_message(
           object = Template(path = root),
@@ -128,8 +131,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "does nothing in GitHub Actions"),
-      {
+      desc = paste(text, "does nothing in GitHub Actions"),
+      code = {
         writeLines(text = "edited", con = edited)
         Sys.setenv(GITHUB_ACTIONS = "true")
         suppressMessages(expr = Template(path = root))
@@ -141,8 +144,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "writes nothing without a type"),
-      {
+      desc = paste(text, "writes nothing without a type"),
+      code = {
         bare <- tempfile(pattern = "template")
         dir.create(path = bare)
         testthat::expect_length(
@@ -154,16 +157,16 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "stops on an unknown type"),
-      {
+      desc = paste(text, "stops on an unknown type"),
+      code = {
         testthat::expect_error(
           object = Template(path = project(type = "other"))
         )
       }
     )
     testthat::test_that(
-      paste(text, "maps the type for AI()"),
-      {
+      desc = paste(text, "maps the type for AI()"),
+      code = {
         testthat::expect_equal(
           object = .AIType(path = root, project = "test"),
           expected = c("package", "cran")
@@ -171,8 +174,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "fills the project and its public repository"),
-      {
+      desc = paste(text, "fills the project and its public repository"),
+      code = {
         clone <- readLines(
           con = file.path(root, ".setup", "scripts", "clone.sh")
         )
@@ -209,8 +212,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "keeps a folder's own .gitignore"),
-      {
+      desc = paste(text, "keeps a folder's own .gitignore"),
+      code = {
         own <- file.path(root, ".setup", "cpp", ".gitignore")
         writeLines(text = "*.o", con = own)
         suppressMessages(expr = Template(path = root))
@@ -231,8 +234,8 @@ lapply(
       append = TRUE
     )
     testthat::test_that(
-      paste(text, "fills the daily workflow"),
-      {
+      desc = paste(text, "fills the daily workflow"),
+      code = {
         suppressMessages(expr = Template(path = docker))
         daily <- readLines(
           con = file.path(
@@ -279,8 +282,8 @@ lapply(
       )
     }
     testthat::test_that(
-      paste(text, "chains the daily builds"),
-      {
+      desc = paste(text, "chains the daily builds"),
+      code = {
         # the head: a schedule and the next image
         head <- chain(
           c(
@@ -336,8 +339,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "stops on an invalid workflow_next"),
-      {
+      desc = paste(text, "stops on an invalid workflow_next"),
+      code = {
         testthat::expect_error(
           object = chain("workflow_next <- \"docker-dplyr\""),
           regexp = "owner/repository"
@@ -345,8 +348,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "stops when the daily workflow has no title"),
-      {
+      desc = paste(text, "stops when the daily workflow has no title"),
+      code = {
         writeLines(
           text = c(
             "type <- \"docker\"",

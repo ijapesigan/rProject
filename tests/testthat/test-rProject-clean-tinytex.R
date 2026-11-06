@@ -6,8 +6,8 @@ lapply(
     # CleanTinyTex() removes the user's TinyTeX installation,
     # so the tests only check its interface.
     testthat::test_that(
-      paste(text, "has the documented arguments"),
-      {
+      desc = paste(text, "has the documented arguments"),
+      code = {
         testthat::expect_true(object = is.function(x = CleanTinyTex))
         testthat::expect_equal(
           object = names(x = formals(fun = CleanTinyTex)),

@@ -15,8 +15,8 @@ lapply(
       con = file.path(bib_dir, "bib.bib")
     )
     testthat::test_that(
-      paste(text, "keeps bib.bib when no lib-* repository is cloned"),
-      {
+      desc = paste(text, "keeps bib.bib when no lib-* repository is cloned"),
+      code = {
         testthat::local_mocked_bindings(
           BibLib = function(path) {
             NULL

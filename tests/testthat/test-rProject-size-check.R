@@ -16,8 +16,8 @@ lapply(
     )
     checks <- suppressMessages(expr = SizeCheck(path = root))
     testthat::test_that(
-      paste(text, "passes a small project"),
-      {
+      desc = paste(text, "passes a small project"),
+      code = {
         testthat::expect_true(object = all(checks$status == "pass"))
       }
     )
@@ -51,8 +51,8 @@ lapply(
       )
     )
     testthat::test_that(
-      paste(text, "fails over each limit"),
-      {
+      desc = paste(text, "fails over each limit"),
+      code = {
         testthat::expect_equal(
           object = status(checks, "Editable text"),
           expected = "fail"
@@ -80,8 +80,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "finds duplicates and skips local folders"),
-      {
+      desc = paste(text, "finds duplicates and skips local folders"),
+      code = {
         testthat::expect_equal(
           object = status(checks, "Duplicates"),
           expected = "warn"
@@ -104,8 +104,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "stops when asked"),
-      {
+      desc = paste(text, "stops when asked"),
+      code = {
         testthat::expect_error(
           object = suppressMessages(
             expr = SizeCheck(path = root, editable = 2, error = TRUE)

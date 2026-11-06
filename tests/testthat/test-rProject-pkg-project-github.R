@@ -6,16 +6,16 @@ lapply(
     state <- .TestState()
     root <- .TestProject()
     testthat::test_that(
-      paste(text, "does nothing without packages"),
-      {
+      desc = paste(text, "does nothing without packages"),
+      code = {
         testthat::expect_null(
           object = PkgProjectGitHub(path = root, pkg = character(length = 0))
         )
       }
     )
     testthat::test_that(
-      paste(text, "needs one ref per package"),
-      {
+      desc = paste(text, "needs one ref per package"),
+      code = {
         testthat::expect_error(
           object = PkgProjectGitHub(
             path = root,

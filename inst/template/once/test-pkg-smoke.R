@@ -6,8 +6,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "the package loads"),
-      {
+      desc = paste(text, "the package loads"),
+      code = {
         testthat::expect_true(
           object = requireNamespace(package = "{{pkg}}", quietly = TRUE)
         )

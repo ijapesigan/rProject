@@ -27,3 +27,11 @@ template:
 # pkgdown then sets light text (data-bs-theme="dark")
 navbar:
   bg: dark
+
+# the author's affiliation on every site; no Penn State mark
+footer:
+  structure:
+    left: affiliation
+    right: built_with
+  components:
+    affiliation: "Ivan Jacob Agaloos Pesigan, [Department of Human Development and Family Studies](https://hhd.psu.edu/hdfs), The Pennsylvania State University"

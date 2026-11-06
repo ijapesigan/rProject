@@ -5,8 +5,8 @@ lapply(
                  text) {
     testthat::skip_on_cran()
     testthat::test_that(
-      paste(text, "flags a GIF without a source"),
-      {
+      desc = paste(text, "flags a GIF without a source"),
+      code = {
         root <- .TestLintProject(
           files = list(".setup/latex/figures/gif/a.gif" = "x")
         )
@@ -16,8 +16,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "passes a GIF named in a script"),
-      {
+      desc = paste(text, "passes a GIF named in a script"),
+      code = {
         root <- .TestLintProject(
           files = list(
             ".setup/latex/figures/gif/a.gif" = "x",

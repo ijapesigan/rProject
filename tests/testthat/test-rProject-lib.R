@@ -26,8 +26,8 @@ lapply(
       "}"
     )
     testthat::test_that(
-      paste(text, "parses an entry, nested braces included"),
-      {
+      desc = paste(text, "parses an entry, nested braces included"),
+      code = {
         x <- .LibParse(text = entry)
         testthat::expect_true(object = x$ok)
         testthat::expect_equal(object = x$n, expected = 1L)
@@ -50,8 +50,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "formats in the house layout and order"),
-      {
+      desc = paste(text, "formats in the house layout and order"),
+      code = {
         x <- .LibParse(text = entry)
         shuffled <- rev(x = x$fields)
         testthat::expect_equal(
@@ -61,8 +61,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "keeps Collection and types not in the list"),
-      {
+      desc = paste(text, "keeps Collection and types not in the list"),
+      code = {
         fields <- c(
           editor = "A A and B B",
           date = "1991",
@@ -88,8 +88,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "splits names outside braces"),
-      {
+      desc = paste(text, "splits names outside braces"),
+      code = {
         testthat::expect_equal(
           object = .LibNames(x = "A B and {Smith and Sons} and C D"),
           expected = c("A B", "{Smith and Sons}", "C D")
@@ -97,8 +97,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "writes LaTeX for non-ASCII text and escapes % and &"),
-      {
+      desc = paste(text, "writes LaTeX for non-ASCII text and escapes % and &"),
+      code = {
         testthat::expect_equal(
           object = .LibLatex(x = "Muth\u00e9n: 3% & 4%, 1\u20132"),
           expected = "Muth{\\'e}n: 3\\% \\& 4\\%, 1--2"
@@ -114,8 +114,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "builds keys: accents dropped, particles joined, etal"),
-      {
+      desc = paste(
+        text,
+        "builds keys: accents dropped, particles joined, etal"
+      ),
+      code = {
         testthat::expect_equal(
           object = .LibKey(
             families = c("Muth\u00e9n", "Le Bourdonnec"),
@@ -134,8 +137,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "drafts sentence-case titles with protected words"),
-      {
+      desc = paste(text, "drafts sentence-case titles with protected words"),
+      code = {
         testthat::expect_equal(
           object = .LibTitle(x = "Bayesian Estimation Of SEM: A Tutorial In R"),
           expected = "{Bayesian} estimation of {SEM}: A tutorial in {R}"
@@ -161,8 +164,8 @@ lapply(
       abstract = "<jats:p>About 3% of studies.</jats:p>"
     )
     testthat::test_that(
-      paste(text, "drafts an entry from a Crossref record"),
-      {
+      desc = paste(text, "drafts an entry from a Crossref record"),
+      code = {
         x <- .LibEntry(record = record)
         testthat::expect_equal(
           object = x$key,
@@ -252,8 +255,11 @@ lapply(
       any(checks$key == key & checks$check == check)
     }
     testthat::test_that(
-      paste(text, "LibCheck finds key, year, file, percent, duplicate errors"),
-      {
+      desc = paste(
+        text,
+        "LibCheck finds key, year, file, percent, duplicate errors"
+      ),
+      code = {
         testthat::expect_true(object = found("A-B-C-D-E-1995", "key"))
         testthat::expect_true(object = found("A-B-C-D-E-1995", "decade"))
         testthat::expect_true(object = found("A-B-C-D-E-1995", "percent"))
@@ -274,8 +280,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "LibFormat writes the layout, accents, pages, and DOIs"),
-      {
+      desc = paste(
+        text,
+        "LibFormat writes the layout, accents, pages, and DOIs"
+      ),
+      code = {
         messy <- c(
           "@article{Doe-1985,",
           "  title = {T},",
@@ -315,8 +324,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "LibCheck and LibFormat accept CRLF line endings"),
-      {
+      desc = paste(text, "LibCheck and LibFormat accept CRLF line endings"),
+      code = {
         # as writeLines() writes on Windows
         writeBin(
           object = charToRaw(
@@ -337,8 +346,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "LibAdd drafts from Crossref, refuses a DOI in the library"),
-      {
+      desc = paste(
+        text,
+        "LibAdd drafts from Crossref, refuses a DOI in the library"
+      ),
+      code = {
         x <- testthat::with_mocked_bindings(
           code = suppressMessages(
             expr = LibAdd(doi = "10.1000/test.1", root = root)

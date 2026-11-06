@@ -7,8 +7,8 @@ lapply(
                  text) {
     testthat::skip_on_cran()
     testthat::test_that(
-      paste(text, "keeps its arguments"),
-      {
+      desc = paste(text, "keeps its arguments"),
+      code = {
         testthat::expect_named(
           object = formals(fun = LibFormat),
           expected = c("path", "write")

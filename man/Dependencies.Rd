@@ -14,7 +14,9 @@ Project path.}
 Called for its side effects; the value is not meaningful.
 }
 \description{
-Copy Dependencies to from \code{.setup/r-dependencies} to \code{R}
+Replaces the copies in \code{R}: a helper renamed or deleted in
+\verb{.setup/r-dependencies/<set>} does not stay in \code{R} as \verb{<set>-*.R}.
+A set named after the package is left alone (the package's own files).
 }
 \examples{
 \dontrun{

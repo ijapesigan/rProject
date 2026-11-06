@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "keeps a path with spaces as one argument"),
-      {
+      desc = paste(text, "keeps a path with spaces as one argument"),
+      code = {
         root <- file.path(tempfile(pattern = "shell quote"), "a b")
         dir.create(path = root, recursive = TRUE)
         writeLines(text = "x", con = file.path(root, "file.txt"))

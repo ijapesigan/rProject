@@ -15,8 +15,8 @@ lapply(
     renviron <- file.path(root, ".Renviron")
     lines <- readLines(con = renviron)
     testthat::test_that(
-      paste(text, "writes .Renviron with paths, project, and tokens"),
-      {
+      desc = paste(text, "writes .Renviron with paths, project, and tokens"),
+      code = {
         testthat::expect_true(
           object = any(
             grepl(pattern = "^R_LIBS_USER=\".*/\\.library\"$", x = lines)
@@ -30,8 +30,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "makes .Renviron readable by the owner only"),
-      {
+      desc = paste(text, "makes .Renviron readable by the owner only"),
+      code = {
         testthat::skip_on_os(os = "windows")
         testthat::expect_equal(
           object = format(x = file.info(renviron)$mode),
@@ -40,8 +40,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "sets the session variables"),
-      {
+      desc = paste(text, "sets the session variables"),
+      code = {
         testthat::expect_equal(
           object = Sys.getenv(x = "PROJECT"),
           expected = "testProject"
@@ -53,8 +53,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "works without tokens"),
-      {
+      desc = paste(text, "works without tokens"),
+      code = {
         Environment(path = root, project = "testProject", tokens = NULL)
         testthat::expect_false(
           object = any(

@@ -71,7 +71,7 @@ jobs:
           make push
       - 
         name: Commit and push changes
-        uses: devops-infra/action-commit-push@master
+        uses: devops-infra/action-commit-push@v1.5.0
         with:
           github_token: ${{ secrets.PAT }}
           commit_message: "Automated build [skip ci]."

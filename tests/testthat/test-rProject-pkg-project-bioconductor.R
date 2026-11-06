@@ -6,8 +6,8 @@ lapply(
     state <- .TestState()
     root <- .TestProject()
     testthat::test_that(
-      paste(text, "skips packages that are already installed"),
-      {
+      desc = paste(text, "skips packages that are already installed"),
+      code = {
         testthat::expect_silent(
           object = PkgProjectBioconductor(path = root, pkg = "stats")
         )

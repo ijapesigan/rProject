@@ -41,8 +41,8 @@ lapply(
       )
     }
     testthat::test_that(
-      paste(text, "ignores AI tool files"),
-      {
+      desc = paste(text, "ignores AI tool files"),
+      code = {
         testthat::expect_true(
           object = all(
             vapply(
@@ -55,8 +55,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "keeps package files"),
-      {
+      desc = paste(text, "keeps package files"),
+      code = {
         testthat::expect_false(
           object = any(
             vapply(
@@ -69,8 +69,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "ignores the root latexmkrc only"),
-      {
+      desc = paste(text, "ignores the root latexmkrc only"),
+      code = {
         testthat::expect_true(
           object = ignored("latexmkrc")
         )
@@ -80,8 +80,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "appends add"),
-      {
+      desc = paste(text, "appends add"),
+      code = {
         testthat::expect_equal(
           object = utils::tail(x = patterns, 1),
           expected = "^extra$"

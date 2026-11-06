@@ -23,8 +23,8 @@ lapply(
     put(".setup/coverage/.covrignore")
     put(".setup/scripts/secrets.R")
     testthat::test_that(
-      paste(text, "check deletes nothing"),
-      {
+      desc = paste(text, "check deletes nothing"),
+      code = {
         planned <- suppressMessages(
           expr = .TemplateRemove(path = root, root = template, check = TRUE)
         )
@@ -42,8 +42,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "deletes the listed files and emptied folders"),
-      {
+      desc = paste(text, "deletes the listed files and emptied folders"),
+      code = {
         testthat::expect_message(
           object = .TemplateRemove(path = root, root = template, check = FALSE),
           regexp = "Not deleted"
@@ -71,8 +71,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "keeps .setup/bin with a script"),
-      {
+      desc = paste(text, "keeps .setup/bin with a script"),
+      code = {
         put(".setup/bin/.gitignore", content = character(length = 0))
         put(".setup/bin/make-bin.R")
         suppressMessages(

@@ -13,8 +13,8 @@ lapply(
     dir.create(path = file.path(root, ".setup", "cpp"))
     dir.create(path = file.path(root, ".setup", "odd"))
     testthat::test_that(
-      paste(text, "flags missing and non-standard folders"),
-      {
+      desc = paste(text, "flags missing and non-standard folders"),
+      code = {
         out <- suppressMessages(expr = Tree(path = root))
         status <- stats::setNames(object = out$status, nm = out$folder)
         testthat::expect_equal(

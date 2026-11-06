@@ -42,8 +42,8 @@ lapply(
       )
     )
     testthat::test_that(
-      paste(text, "installs all files"),
-      {
+      desc = paste(text, "installs all files"),
+      code = {
         testthat::expect_equal(
           object = sort(x = first),
           expected = sort(x = targets)
@@ -54,8 +54,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "adds the header"),
-      {
+      desc = paste(text, "adds the header"),
+      code = {
         claude <- readLines(con = file.path(home, ".claude", "CLAUDE.md"))
         testthat::expect_true(
           object = grepl(
@@ -70,8 +70,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "sets mode 600"),
-      {
+      desc = paste(text, "sets mode 600"),
+      code = {
         testthat::skip_on_os(os = "windows")
         testthat::expect_true(
           object = all(
@@ -81,8 +81,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "backs up a different file"),
-      {
+      desc = paste(text, "backs up a different file"),
+      code = {
         testthat::expect_equal(
           object = readLines(
             con = file.path(home, ".claude", "settings.json.bak")
@@ -98,14 +98,14 @@ lapply(
       )
     )
     testthat::test_that(
-      paste(text, "writes nothing when up to date"),
-      {
+      desc = paste(text, "writes nothing when up to date"),
+      code = {
         testthat::expect_null(object = second)
       }
     )
     testthat::test_that(
-      paste(text, "stops without AGENTS.md"),
-      {
+      desc = paste(text, "stops without AGENTS.md"),
+      code = {
         testthat::expect_error(
           object = AIGlobal(
             path = tempfile(),
@@ -125,8 +125,8 @@ lapply(
     vignette <- file.path(project, "vignettes", "structure.Rmd")
     if (file.exists(global) && file.exists(vignette)) {
       testthat::test_that(
-        paste(text, "the vignette's keywords match the instructions"),
-        {
+        desc = paste(text, "the vignette's keywords match the instructions"),
+        code = {
           keywords <- function(lines, pattern) {
             sub(
               pattern = pattern,

@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "fills only the given keys"),
-      {
+      desc = paste(text, "fills only the given keys"),
+      code = {
         out <- .TemplateFill(
           text = c(
             "name: {{title}}",
@@ -25,8 +25,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "splits multi-line values and drops empty placeholders"),
-      {
+      desc = paste(
+        text,
+        "splits multi-line values and drops empty placeholders"
+      ),
+      code = {
         out <- .TemplateFill(
           text = c(
             "on:",
@@ -51,8 +54,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "workflow_next starts each image it names"),
-      {
+      desc = paste(text, "workflow_next starts each image it names"),
+      code = {
         keys <- .TemplateKeys(
           settings = list(
             workflow_next = c(

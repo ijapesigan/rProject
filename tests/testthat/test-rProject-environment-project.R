@@ -5,8 +5,8 @@ lapply(
                  text) {
     state <- .TestState(vars = "PROJECT")
     testthat::test_that(
-      paste(text, "sets PROJECT and returns it"),
-      {
+      desc = paste(text, "sets PROJECT and returns it"),
+      code = {
         out <- EnvironmentProject(project = c("first", "second"))
         testthat::expect_equal(object = out, expected = c(PROJECT = "first"))
         testthat::expect_equal(

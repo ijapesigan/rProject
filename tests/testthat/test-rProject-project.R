@@ -13,8 +13,8 @@ lapply(
     setwd(dir = wd)
     rproj <- readLines(con = file.path(root, "project.Rproj"))
     testthat::test_that(
-      paste(text, "writes project.Rproj for a package"),
-      {
+      desc = paste(text, "writes project.Rproj for a package"),
+      code = {
         testthat::expect_true(object = "BuildType: Package" %in% rproj)
         testthat::expect_true(object = "NumSpacesForTab: 2" %in% rproj)
         testthat::expect_true(

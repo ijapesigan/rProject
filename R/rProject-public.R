@@ -2,6 +2,7 @@
 #'
 #' Checks the working tree that `make auto` is about to publish
 #' (after `clone.sh` swaps in the public `.git`):
+#' `origin` is the repository in `.setup/repo/public-github.md`,
 #' no private files (e.g., `.setup/ai/`, `.setup/logs/`, `AGENTS.md`),
 #' no file larger than 50 MB,
 #' and no tokens ([SecretScan()]) in the files that would be published.
@@ -18,6 +19,7 @@
 #' }
 #' @export
 Public <- function(path) {
+  .PublicRemote(path = path)
   exported <- .PublicExport(root = path)
   problems <- .VerifyPublic(private = path)
   # tokens in files that stay private (e.g., gitignored) are not published

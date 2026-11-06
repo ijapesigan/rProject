@@ -38,7 +38,8 @@ maintains (aims, data, notation, co-authors, open issues).
 | `make spec TOPIC=<topic>` | start a spec for a change set |
 | `make log TOPIC=<topic> SUMMARY="..."` | write the change-set log and its file list (`UPDATE=TRUE` refreshes the list) |
 | `make verify RECORD=TRUE` | after the user pushes from Overleaf (O2G): verify and record the push. On Roar, run `bash .setup/scripts/verify.sh` on the host first to pull. |
-| `make auto` | publish to the public repository (checks the export first) |
+| `make linked` | compare `.setup/r-dependencies/` with the functions clone |
+| `make auto` | publish to the public repository (checks the remote and the export first) |
 | `make tree` | the project's folders and what each is for; flags missing and non-standard folders |
 | `make project` | settings, template files; restores `.setup/scripts/rproject.lock` (rProject, image, snapshot) |
 | `make upgrade` | move to the newest rProject; the next `make auto` updates the lock. Never upgrade a package the image has: add it to the image |
@@ -50,6 +51,19 @@ maintains (aims, data, notation, co-authors, open issues).
 `project.Rproj`, `R/RcppExports.R`, `src/RcppExports.cpp`, `*/bib.bib`,
 `vignettes/*.Rmd` built from `.setup/vignettes/`, `.setup/latex/pdf/`,
 `.setup/latex/figures/`, `data/*.rda`. Change their sources and run `make`.
+
+## Linked from functions
+
+Files in `.setup/r-dependencies/` are Overleaf links to the private functions
+repository (`<lib>/<file>` there), shared with other projects.
+
+- Never edit them in a project or put them in its upload folder.
+- To change one, edit the local functions clone (next to the projects; agents
+  never push) and write an upload folder for functions; for a test, copy the
+  files into a scratch build of the project, not into the project.
+- Order: functions first; then refresh the links in each project that has them
+  and push. The reply and the log name the links to refresh.
+- `make linked` compares the files with the functions clone (`FUNCTIONS=<path>`).
 
 ## Size
 

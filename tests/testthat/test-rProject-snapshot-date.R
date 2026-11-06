@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "is the day before the image's date"),
-      {
+      desc = paste(text, "is the day before the image's date"),
+      code = {
         testthat::expect_equal(
           object = .SnapshotDate(created = "2026-11-02"),
           expected = "2026-11-01"
@@ -19,8 +19,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "is NA without a date"),
-      {
+      desc = paste(text, "is NA without a date"),
+      code = {
         testthat::expect_equal(
           object = .SnapshotDate(created = c(NA_character_, "latest", "")),
           expected = rep(x = NA_character_, times = 3)

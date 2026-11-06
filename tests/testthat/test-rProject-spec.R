@@ -13,8 +13,8 @@ lapply(
       )
     )
     testthat::test_that(
-      paste(text, "writes the template"),
-      {
+      desc = paste(text, "writes the template"),
+      code = {
         lines <- readLines(con = file)
         testthat::expect_equal(
           object = basename(path = file),
@@ -33,8 +33,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "does not overwrite"),
-      {
+      desc = paste(text, "does not overwrite"),
+      code = {
         testthat::expect_error(
           object = Spec(path = root, topic = "new-thing"),
           regexp = "already exists"

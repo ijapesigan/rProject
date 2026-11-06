@@ -6,8 +6,8 @@ lapply(
     testthat::skip_on_cran()
     testthat::skip_if_not_installed(pkg = "cffr")
     testthat::test_that(
-      paste(text, "writes CITATION.cff for a package"),
-      {
+      desc = paste(text, "writes CITATION.cff for a package"),
+      code = {
         root <- normalizePath(path = .TestProject())
         writeLines(
           text = c(
@@ -44,8 +44,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "skips folders that are not packages"),
-      {
+      desc = paste(text, "skips folders that are not packages"),
+      code = {
         root <- .TestProject(description = FALSE)
         testthat::expect_message(
           object = CFF(path = root),

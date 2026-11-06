@@ -62,23 +62,23 @@ lapply(
     )
     out <- rProject:::.VerifyChanges(path = path, private = private)
     testthat::test_that(
-      paste(text, "compares inst/latexmk/latexmkrc"),
-      {
+      desc = paste(text, "compares inst/latexmk/latexmkrc"),
+      code = {
         testthat::expect_true(
           object = "inst/latexmk/latexmkrc" %in% names(x = out)
         )
       }
     )
     testthat::test_that(
-      paste(text, "skips the root latexmkrc that LatexCompile() writes"),
-      {
+      desc = paste(text, "skips the root latexmkrc that LatexCompile() writes"),
+      code = {
         testthat::expect_false(object = "latexmkrc" %in% names(x = out))
         testthat::expect_false(object = "R.R" %in% names(x = out))
       }
     )
     testthat::test_that(
-      paste(text, "compares the Makefile, skips a generated workflow"),
-      {
+      desc = paste(text, "compares the Makefile, skips a generated workflow"),
+      code = {
         testthat::expect_true(object = "Makefile" %in% names(x = out))
         testthat::expect_false(
           object = ".github/workflows/make.yml" %in% names(x = out)
@@ -89,8 +89,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "compares hand-written vignettes, skips knitted ones"),
-      {
+      desc = paste(text, "compares hand-written vignettes, skips knitted ones"),
+      code = {
         testthat::expect_true(object = "vignettes/b.Rmd" %in% names(x = out))
         testthat::expect_false(object = "vignettes/a.Rmd" %in% names(x = out))
       }

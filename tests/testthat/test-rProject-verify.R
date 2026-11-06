@@ -125,8 +125,8 @@ lapply(
       )
     )
     testthat::test_that(
-      paste(text, "passes a clean push"),
-      {
+      desc = paste(text, "passes a clean push"),
+      code = {
         testthat::expect_true(
           object = all(checks$status == "pass")
         )
@@ -137,8 +137,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "finds the pending log and records the push"),
-      {
+      desc = paste(text, "finds the pending log and records the push"),
+      code = {
         sha <- git(x$private, "rev-parse", "--short", "HEAD")
         log_lines <- readLines(con = file.path(x$path, ".setup", "logs", log))
         index_lines <- readLines(
@@ -158,8 +158,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "refuses to record a commit that is already recorded"),
-      {
+      desc = paste(text, "refuses to record a commit that is already recorded"),
+      code = {
         before <- readLines(
           con = file.path(x$path, ".setup", "logs", "index.md")
         )
@@ -200,8 +200,8 @@ lapply(
       expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
-      paste(text, "ignores line endings and trailing blank lines"),
-      {
+      desc = paste(text, "ignores line endings and trailing blank lines"),
+      code = {
         testthat::expect_equal(
           object = status(checks, "Listed files"),
           expected = "pass"
@@ -226,8 +226,8 @@ lapply(
       )
     )
     testthat::test_that(
-      paste(text, "ignores the generated roxygen line in DESCRIPTION"),
-      {
+      desc = paste(text, "ignores the generated roxygen line in DESCRIPTION"),
+      code = {
         testthat::expect_equal(
           object = .VerifyCompare(
             path = x$path,
@@ -243,8 +243,8 @@ lapply(
     x <- fixture()
     write(root = x$path, file = "R/foo.R", text = "Foo <- function() 2")
     testthat::test_that(
-      paste(text, "fails on a listed file that differs"),
-      {
+      desc = paste(text, "fails on a listed file that differs"),
+      code = {
         testthat::expect_error(
           object = suppressMessages(
             expr = Verify(path = x$path, private = x$private)
@@ -275,8 +275,8 @@ lapply(
       expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
-      paste(text, "fails on deletions and warns on unlisted changes"),
-      {
+      desc = paste(text, "fails on deletions and warns on unlisted changes"),
+      code = {
         testthat::expect_equal(
           object = status(checks, "Deletions"),
           expected = "fail"
@@ -318,8 +318,11 @@ lapply(
       expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
-      paste(text, "fails on private files in the public export and on secrets"),
-      {
+      desc = paste(
+        text,
+        "fails on private files in the public export and on secrets"
+      ),
+      code = {
         testthat::expect_equal(
           object = status(checks, "Public export"),
           expected = "fail"
@@ -362,8 +365,8 @@ lapply(
       )
     )
     testthat::test_that(
-      paste(text, "records a fix-up push without a pending row"),
-      {
+      desc = paste(text, "records a fix-up push without a pending row"),
+      code = {
         testthat::expect_equal(
           object = status(checks, "New commit"),
           expected = "pass"
@@ -401,8 +404,8 @@ lapply(
       expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
-      paste(text, "fails on an Overleaf share link"),
-      {
+      desc = paste(text, "fails on an Overleaf share link"),
+      code = {
         testthat::expect_equal(
           object = status(checks, "Repo info"),
           expected = "fail"
@@ -422,8 +425,8 @@ lapply(
       expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
-      paste(text, "warns on a missing repo file"),
-      {
+      desc = paste(text, "warns on a missing repo file"),
+      code = {
         testthat::expect_equal(
           object = status(checks, "Repo info"),
           expected = "warn"
@@ -437,8 +440,8 @@ lapply(
     unlink(x = x$root, recursive = TRUE)
     # 7. a section for another project is ignored
     testthat::test_that(
-      paste(text, "reads only this project's sections"),
-      {
+      desc = paste(text, "reads only this project's sections"),
+      code = {
         file <- tempfile(fileext = ".md")
         writeLines(
           text = c(
@@ -468,10 +471,116 @@ lapply(
         unlink(x = file)
       }
     )
+    # 7b. a push with no list of its own: the files of its commit
+    no_list <- function(local_text) {
+      x <- fixture()
+      fixup <- c(log_text[1:7], "## Records", "```", "Records", "```")
+      for (dir in c(x$path, x$private)) {
+        write(root = dir, file = file.path(".setup", "logs", log), text = fixup)
+      }
+      write(root = x$private, file = "R/foo.R", text = "Foo <- function() 2")
+      write(root = x$path, file = "R/foo.R", text = local_text)
+      git(x$private, "add", "--all")
+      git(x$private, "commit", "-q", "-m", "Records")
+      checks <- suppressMessages(
+        expr = Verify(path = x$path, private = x$private, log = log)
+      )
+      unlink(x = x$root, recursive = TRUE)
+      checks
+    }
+    testthat::test_that(
+      desc = paste(text, "compares the commit's files when a push has no list"),
+      code = {
+        checks <- no_list(local_text = "Foo <- function() 2")
+        testthat::expect_identical(
+          object = status(checks, "Listed files"),
+          expected = "pass"
+        )
+        testthat::expect_match(
+          object = checks$detail[checks$check == "Listed files"],
+          regexp = "no list for this push"
+        )
+      }
+    )
+    testthat::test_that(
+      desc = paste(
+        text,
+        "warns when the commit's files differ and no list exists"
+      ),
+      code = {
+        checks <- no_list(local_text = "Foo <- function() 3")
+        testthat::expect_identical(
+          object = status(checks, "Listed files"),
+          expected = "warn"
+        )
+        testthat::expect_match(
+          object = checks$detail[checks$check == "Listed files"],
+          regexp = "R/foo.R different"
+        )
+      }
+    )
+    testthat::test_that(
+      desc = paste(text, "compares secretscan files but never secret files"),
+      code = {
+        x <- fixture()
+        write(x$path, ".github/workflows/secretscan.yml", "a: 1")
+        write(x$private, ".github/workflows/secretscan.yml", "a: 2")
+        write(x$path, ".setup/scripts/secrets.R", "a <- 1")
+        write(x$private, ".setup/scripts/secrets.R", "a <- 2")
+        out <- .VerifyChanges(path = x$path, private = x$private)
+        testthat::expect_true(
+          object = ".github/workflows/secretscan.yml" %in% names(x = out)
+        )
+        testthat::expect_false(
+          object = ".setup/scripts/secrets.R" %in% names(x = out)
+        )
+        unlink(x = x$root, recursive = TRUE)
+      }
+    )
+    testthat::test_that(
+      desc = paste(text, "warns on an added lib entry without a full text"),
+      code = {
+        x <- fixture()
+        repo <- "lib-2000-2009-article"
+        bib <- file.path(".setup", "latex", "bib", paste0(repo, "-A-2000.bib"))
+        for (dir in c(x$path, x$private)) {
+          write(root = dir, file = bib, text = "@Article{x,}")
+          write(
+            root = dir,
+            file = ".setup/scripts/project.R",
+            text = "type <- \"lib\""
+          )
+        }
+        git(x$private, "add", "--all")
+        git(x$private, "commit", "-q", "-m", "Entry")
+        checks <- .VerifyFullText(path = x$path, private = x$private)
+        testthat::expect_identical(
+          object = checks[["status"]],
+          expected = "warn"
+        )
+        testthat::expect_match(
+          object = checks[["detail"]],
+          regexp = paste0(".setup/notes/pdf/", repo, "-A-2000.pdf")
+        )
+        write(
+          root = x$private,
+          file = file.path(
+            ".setup", "notes", "pdf", paste0(repo, "-A-2000.pdf")
+          ),
+          text = "x"
+        )
+        checks <- .VerifyFullText(path = x$path, private = x$private)
+        testthat::expect_identical(
+          object = checks[["status"]],
+          expected = "pass"
+        )
+        unlink(x = x$root, recursive = TRUE)
+      }
+    )
     # 8. the file list of the pushed commit only
     testthat::test_that(
-      paste(text, "reads the file list of the pushed commit"),
-      {
+      desc = paste(text, "reads the file list of the pushed commit"),
+      code = {
         file <- tempfile(fileext = ".md")
         writeLines(
           text = c(

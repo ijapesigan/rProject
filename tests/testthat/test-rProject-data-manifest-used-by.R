@@ -29,8 +29,8 @@ lapply(
     write(root = root, file = ".setup/ai/plan.R", text = use)
     write(root = root, file = ".setup/logs/log.R", text = use)
     testthat::test_that(
-      paste(text, "keeps the data-analysis and data-process scripts"),
-      {
+      desc = paste(text, "keeps the data-analysis and data-process scripts"),
+      code = {
         used <- strsplit(
           x = .DataManifestUsedBy(
             path = root,

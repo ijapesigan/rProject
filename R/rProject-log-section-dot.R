@@ -6,6 +6,7 @@
     file.path(".setup", "logs", "index.md")
   )
   delete <- character(length = 0)
+  linked <- character(length = 0)
   if (is.null(x = private)) {
     new <- "TODO"
     edited <- "TODO"
@@ -22,6 +23,15 @@
     in_private <- file.exists(file.path(private, logs))
     new <- union(x = new, y = logs[!in_private])
     edited <- union(x = edited, y = logs[in_private])
+    # links to the functions repository are refreshed, never uploaded
+    is_linked <- grepl(
+      pattern = "^\\.setup/r-dependencies/",
+      x = names(x = status)
+    )
+    linked <- names(x = status)[is_linked]
+    new <- setdiff(x = new, y = linked)
+    edited <- setdiff(x = edited, y = linked)
+    delete <- setdiff(x = delete, y = linked)
   }
   bullets <- function(x) {
     ifelse(
@@ -54,6 +64,17 @@
       )
     },
     bullets(delete),
-    ""
+    "",
+    if (length(x = linked) > 0L) {
+      c(
+        paste(
+          "### Linked from functions",
+          "(refresh the link in Overleaf; do not upload)"
+        ),
+        "If one differs from functions, update functions first.",
+        paste("-", linked),
+        ""
+      )
+    }
   )
 }

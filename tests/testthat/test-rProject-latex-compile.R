@@ -4,8 +4,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "compiles a LaTeX document to PDF (slow)"),
-      {
+      desc = paste(text, "compiles a LaTeX document to PDF (slow)"),
+      code = {
         .SkipSlow()
         testthat::skip_if(
           condition = Sys.which(names = "latexmk") == "",

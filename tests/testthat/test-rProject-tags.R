@@ -29,8 +29,8 @@ lapply(
       con = file.path(root, ".setup", "quarto", "bib", "quarto.bib")
     )
     testthat::test_that(
-      paste(text, "lists keys, annotations, and keywords"),
-      {
+      desc = paste(text, "lists keys, annotations, and keywords"),
+      code = {
         out <- Tags(path = root)
         testthat::expect_equal(
           object = out$key,
@@ -47,8 +47,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "is empty without the bibliography"),
-      {
+      desc = paste(text, "is empty without the bibliography"),
+      code = {
         other <- .TestProject(name = "noBib")
         out <- testthat::expect_message(
           object = Tags(path = other),
@@ -62,8 +62,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, ".LibSplit drops comments and strings"),
-      {
+      desc = paste(text, ".LibSplit drops comments and strings"),
+      code = {
         testthat::expect_length(
           object = .LibSplit(text = c("@string{a = {b}}", "@article{K,", "}")),
           n = 1L

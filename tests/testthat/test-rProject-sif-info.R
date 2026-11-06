@@ -25,8 +25,8 @@ lapply(
     base <- "org.opencontainers.image."
     digest <- paste0("sha256:", strrep(x = "a", times = 64))
     testthat::test_that(
-      paste(text, "reads a public image pulled by tag"),
-      {
+      desc = paste(text, "reads a public image pulled by tag"),
+      code = {
         out <- fake(
           name = "docs",
           labels = stats::setNames(
@@ -53,8 +53,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "reads an add-on built from the public sif (localimage)"),
-      {
+      desc = paste(
+        text,
+        "reads an add-on built from the public sif (localimage)"
+      ),
+      code = {
         out <- fake(
           name = "docs-plus",
           labels = stats::setNames(
@@ -77,8 +80,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "finds the public image of a docker-daemon add-on"),
-      {
+      desc = paste(text, "finds the public image of a docker-daemon add-on"),
+      code = {
         out <- fake(
           name = "manmetavar",
           labels = stats::setNames(
@@ -115,8 +118,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "reads the proprietary label and a digest in From"),
-      {
+      desc = paste(text, "reads the proprietary label and a digest in From"),
+      code = {
         out <- fake(
           name = "pinned",
           labels = stats::setNames(
@@ -135,8 +138,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "outside a container"),
-      {
+      desc = paste(text, "outside a container"),
+      code = {
         out <- .SifInfo(
           labels = file.path(dir, "none.json"),
           deffile = file.path(dir, "none.def"),

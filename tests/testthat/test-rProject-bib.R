@@ -14,8 +14,8 @@ lapply(
       )
     }
     testthat::test_that(
-      paste(text, "joins .bib files verbatim and copies them"),
-      {
+      desc = paste(text, "joins .bib files verbatim and copies them"),
+      code = {
         root <- .TestProject()
         bib_dir <- file.path(root, ".setup", "latex", "bib")
         dir.create(path = bib_dir, recursive = TRUE)
@@ -63,8 +63,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "copies an existing bib.bib without sources"),
-      {
+      desc = paste(text, "copies an existing bib.bib without sources"),
+      code = {
         root <- .TestProject()
         bib_dir <- file.path(root, ".setup", "latex", "bib")
         dir.create(path = bib_dir, recursive = TRUE)
@@ -97,8 +97,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "says so when there are no .bib files"),
-      {
+      desc = paste(text, "says so when there are no .bib files"),
+      code = {
         root <- .TestProject()
         testthat::expect_message(
           object = out <- Bib(path = root),

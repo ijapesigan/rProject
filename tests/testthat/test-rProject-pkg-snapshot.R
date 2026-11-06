@@ -16,8 +16,8 @@ lapply(
       con = labels
     )
     testthat::test_that(
-      paste(text, "is latest without an image, a lock, or the variable"),
-      {
+      desc = paste(text, "is latest without an image, a lock, or the variable"),
+      code = {
         Sys.unsetenv(x = "RPROJECT_SNAPSHOT")
         testthat::expect_equal(
           object = .PkgSnapshot(path = root, labels = none),
@@ -26,8 +26,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "takes the lock, the day before the sif, then the variable"),
-      {
+      desc = paste(
+        text,
+        "takes the lock, the day before the sif, then the variable"
+      ),
+      code = {
         writeLines(
           text = "snapshot <- \"2026-01-02\"",
           con = file.path(root, ".setup", "scripts", "rproject.lock")

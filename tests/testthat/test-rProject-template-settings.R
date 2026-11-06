@@ -19,8 +19,8 @@ lapply(
       con = file.path(root, ".setup", "scripts", "project.R")
     )
     testthat::test_that(
-      paste(text, "reads constant settings only"),
-      {
+      desc = paste(text, "reads constant settings only"),
+      code = {
         settings <- .TemplateSettings(path = root)
         testthat::expect_equal(object = settings$type, expected = "docker")
         testthat::expect_equal(
@@ -43,8 +43,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "is empty without project.R"),
-      {
+      desc = paste(text, "is empty without project.R"),
+      code = {
         testthat::expect_length(
           object = .TemplateSettings(path = tempdir()),
           n = 0L

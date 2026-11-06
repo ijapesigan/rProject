@@ -5,8 +5,8 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::test_that(
-      paste(text, "the package loads and a check runs"),
-      {
+      desc = paste(text, "the package loads and a check runs"),
+      code = {
         testthat::expect_true(
           object = requireNamespace(package = "rProject", quietly = TRUE)
         )

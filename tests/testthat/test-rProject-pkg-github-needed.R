@@ -5,14 +5,14 @@ lapply(
                  text) {
     sha <- "0123456789abcdef0123456789abcdef01234567"
     testthat::test_that(
-      paste(text, "installs a missing package"),
-      {
+      desc = paste(text, "installs a missing package"),
+      code = {
         testthat::expect_true(object = .PkgGitHubNeeded(installed = FALSE))
       }
     )
     testthat::test_that(
-      paste(text, "never upgrades for a branch or tag"),
-      {
+      desc = paste(text, "never upgrades for a branch or tag"),
+      code = {
         testthat::expect_false(object = .PkgGitHubNeeded(installed = TRUE))
         testthat::expect_false(
           object = .PkgGitHubNeeded(installed = TRUE, ref = "main", sha = sha)
@@ -23,8 +23,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "reinstalls only for a different commit SHA"),
-      {
+      desc = paste(text, "reinstalls only for a different commit SHA"),
+      code = {
         testthat::expect_false(
           object = .PkgGitHubNeeded(installed = TRUE, ref = sha, sha = sha)
         )

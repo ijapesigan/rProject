@@ -18,8 +18,8 @@ lapply(
     )
     saved <- Sys.getenv(x = c("APPTAINER_NAME", "SINGULARITY_NAME"))
     testthat::test_that(
-      paste(text, "records the image that ran"),
-      {
+      desc = paste(text, "records the image that ran"),
+      code = {
         Sys.setenv(APPTAINER_NAME = "manmetavar.sif")
         testthat::expect_equal(
           object = .LogImage(labels = labels),
@@ -31,8 +31,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "says when it did not run in a container"),
-      {
+      desc = paste(text, "says when it did not run in a container"),
+      code = {
         Sys.unsetenv(x = c("APPTAINER_NAME", "SINGULARITY_NAME"))
         testthat::expect_equal(
           object = .LogImage(labels = labels),
@@ -41,8 +41,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "reports unknown labels"),
-      {
+      desc = paste(text, "reports unknown labels"),
+      code = {
         Sys.setenv(APPTAINER_NAME = "docs.sif")
         testthat::expect_match(
           object = .LogImage(labels = tempfile()),

@@ -11,8 +11,8 @@ lapply(
       )
     }
     testthat::test_that(
-      paste(text, "reports unformatted C++ and passes formatted C++"),
-      {
+      desc = paste(text, "reports unformatted C++ and passes formatted C++"),
+      code = {
         .SkipIfMissingFormat()
         root <- .TestLintProject(
           files = list(

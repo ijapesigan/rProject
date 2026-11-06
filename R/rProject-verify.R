@@ -12,8 +12,10 @@
 #'   The list is the one of the pushed commit: the section of the log
 #'   with a code block that starts with the commit's first line (the
 #'   top-level lists for the log's own commit message; the lists inside a
-#'   later push's `##` section, none for a push of records only). If no
-#'   block matches, every list in the log is used.
+#'   later push's `##` section). If no block matches, every list in the log
+#'   is used. A push with no list of its own compares the files of its commit
+#'   instead; a difference is then a warning, as a commit may hold generated
+#'   files, and an empty commit warns that nothing was checked.
 #' - **Deletions:** a file listed under "Delete in Overleaf"
 #'   is still in the private repository.
 #' - **Unlisted changes:** (warning only) other files differ
@@ -31,6 +33,11 @@
 #'   Warning only: a file in `.setup/repo/` is missing,
 #'   `private-github.md` differs from the `.verify` remote,
 #'   or `public-github.md` differs from the repository in `clone.sh`.
+#' - **Linked files:** (warning only) a file in `.setup/r-dependencies/`
+#'   differs from a local clone of the functions repository ([Linked()]).
+#' - **Full text:** (warning only, `lib-*` projects) an entry this push adds has
+#'   no full text in `.setup/notes/`, or a file there matches no entry
+#'   ([LibFullTextReport()]).
 #'
 #' Generated files (e.g., `NAMESPACE`, `man/`),
 #' local folders (e.g., `.library`),
@@ -122,6 +129,14 @@ Verify <- function(path,
   )
   upload <- listed$file[listed$action == "upload"]
   delete <- listed$file[listed$action == "delete"]
+  # a push with no list of its own: the files of the commit stand in. They
+  # warn, not fail: a commit may hold generated files that are not compared
+  no_list <- nrow(x = listed) == 0L
+  if (no_list) {
+    commit <- .VerifyCommitFiles(private = private)
+    upload <- commit$file[commit$status != "D"]
+    delete <- commit$file[commit$status == "D"]
+  }
   # listed files
   upload_status <- vapply(
     X = upload,
@@ -141,7 +156,7 @@ Verify <- function(path,
   unlisted <- .VerifyUnlisted(
     path = path,
     private = private,
-    listed = listed$file
+    listed = c(listed$file, upload, delete)
   )
   # commit message
   sha <- .VerifyGit(
@@ -171,6 +186,36 @@ Verify <- function(path,
     path = path,
     private = private
   )
+  # the links to the functions repository
+  linked <- .VerifyLinked(
+    path = path,
+    private = private
+  )
+  listed_status <- ifelse(
+    test = any(upload_bad),
+    yes = ifelse(test = no_list, yes = "warn", no = "fail"),
+    no = ifelse(
+      test = no_list && length(x = upload) + length(x = delete) == 0L,
+      yes = "warn",
+      no = "pass"
+    )
+  )
+  listed_detail <- ifelse(
+    test = any(upload_bad),
+    yes = paste(
+      upload[upload_bad],
+      upload_status[upload_bad],
+      collapse = "; "
+    ),
+    no = paste(length(x = upload), "files match")
+  )
+  if (no_list) {
+    listed_detail <- ifelse(
+      test = length(x = upload) + length(x = delete) == 0L,
+      yes = "no list for this push and no files in the commit: nothing checked",
+      no = paste0("no list for this push; the commit's files: ", listed_detail)
+    )
+  }
   checks <- data.frame(
     check = c(
       "New commit",
@@ -180,17 +225,19 @@ Verify <- function(path,
       "Commit message",
       "Secrets",
       "Public export",
-      "Repo info"
+      "Repo info",
+      "Linked files"
     ),
     status = c(
       ifelse(test = recorded, yes = "fail", no = "pass"),
-      ifelse(test = any(upload_bad), yes = "fail", no = "pass"),
+      listed_status,
       ifelse(test = any(delete_bad), yes = "fail", no = "pass"),
       ifelse(test = length(x = unlisted) > 0L, yes = "warn", no = "pass"),
       ifelse(test = message_ok, yes = "pass", no = "warn"),
       ifelse(test = nrow(x = secrets) > 0L, yes = "fail", no = "pass"),
       ifelse(test = length(x = public) > 0L, yes = "fail", no = "pass"),
-      repo_info[["status"]]
+      repo_info[["status"]],
+      linked[["status"]]
     ),
     detail = c(
       ifelse(
@@ -202,15 +249,7 @@ Verify <- function(path,
         ),
         no = sha
       ),
-      ifelse(
-        test = any(upload_bad),
-        yes = paste(
-          upload[upload_bad],
-          upload_status[upload_bad],
-          collapse = "; "
-        ),
-        no = paste(length(x = upload), "files match")
-      ),
+      listed_detail,
       ifelse(
         test = any(delete_bad),
         yes = paste(
@@ -239,10 +278,27 @@ Verify <- function(path,
         yes = paste(public, collapse = "; "),
         no = "no private or oversized files"
       ),
-      repo_info[["detail"]]
+      repo_info[["detail"]],
+      linked[["detail"]]
     ),
     stringsAsFactors = FALSE
   )
+  # a lib-* project: the full text of the entries this push adds
+  if (identical(x = .TemplateType(path = path), y = "lib")) {
+    full_text <- .VerifyFullText(
+      path = path,
+      private = private
+    )
+    checks <- rbind(
+      checks,
+      data.frame(
+        check = "Full text",
+        status = full_text[["status"]],
+        detail = full_text[["detail"]],
+        stringsAsFactors = FALSE
+      )
+    )
+  }
   failed <- checks$status == "fail"
   result <- ifelse(
     test = any(failed),

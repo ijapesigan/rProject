@@ -38,7 +38,13 @@ projects get the entries from the public copies (`ijapesigan/lib-*`) with
 - Layout: `make libformat` (`LibFormat()`) writes the house layout and field
   order; never hand-format.
 - Add an entry with `rProject::LibAdd(doi, root)`: show the user the draft
-  and its questions before `write = TRUE`.
+  and its questions before `write = TRUE`. After adding entries, list the keys
+  and the exact paths for their full text in the reply
+  (`.setup/notes/pdf/<repo>-<Key>.pdf`, or `epub/`, `-ch01` for parts). At O2G,
+  report the `Full text` line of `Verify()`.
+- A work with no copy in any format goes in `.setup/notes/no-full-text.txt`
+  (one key per line, a short reason after `#`). `LibFullTextReport(root)` lists
+  the entries without a full text across all lib-\*.
 - Never invent an entry or a field. A field no authoritative source gives is
   left out; record the source of every field you add.
 - Check before the user pushes: `make libcheck` (`LibCheck()`; pass

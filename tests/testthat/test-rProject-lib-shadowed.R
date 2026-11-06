@@ -23,8 +23,8 @@ lapply(
       fake(lib = other, pkg = pkg)
     }
     testthat::test_that(
-      paste(text, "names packages that the image also has"),
-      {
+      desc = paste(text, "names packages that the image also has"),
+      code = {
         out <- suppressMessages(
           expr = .LibShadowed(path = root, lib_paths = c(lib, other))
         )
@@ -36,8 +36,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "is quiet without duplicates"),
-      {
+      desc = paste(text, "is quiet without duplicates"),
+      code = {
         testthat::expect_length(
           object = .LibShadowed(path = root, lib_paths = lib),
           n = 0

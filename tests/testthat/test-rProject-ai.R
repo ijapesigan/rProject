@@ -27,8 +27,8 @@ lapply(
     written <- suppressMessages(expr = AI(path = root))
     agents <- readLines(con = file.path(root, "AGENTS.md"))
     testthat::test_that(
-      paste(text, "detects types and fills the templates"),
-      {
+      desc = paste(text, "detects types and fills the templates"),
+      code = {
         testthat::expect_true(
           object = all(
             file.exists(
@@ -74,8 +74,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "never overwrites project.md and skips unchanged files"),
-      {
+      desc = paste(
+        text,
+        "never overwrites project.md and skips unchanged files"
+      ),
+      code = {
         project_md <- file.path(root, ".setup", "ai", "project.md")
         writeLines(text = "my notes", con = project_md)
         again <- suppressMessages(expr = AI(path = root))
@@ -87,8 +90,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "creates .setup/todo/ only if the folder does not exist"),
-      {
+      desc = paste(
+        text,
+        "creates .setup/todo/ only if the folder does not exist"
+      ),
+      code = {
         todo <- file.path(root, ".setup", "todo")
         testthat::expect_equal(
           object = readLines(con = file.path(todo, "todo.txt")),
@@ -122,8 +128,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "follows the type argument and guesses other projects"),
-      {
+      desc = paste(
+        text,
+        "follows the type argument and guesses other projects"
+      ),
+      code = {
         suppressMessages(expr = AI(path = root, type = "talk"))
         agents <- readLines(con = file.path(root, "AGENTS.md"))
         testthat::expect_true(object = "## Talk" %in% agents)
@@ -172,8 +181,11 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "writes a container section and where the project lives"),
-      {
+      desc = paste(
+        text,
+        "writes a container section and where the project lives"
+      ),
+      code = {
         docker <- file.path(dirname(path = root), "docker-001-tidyverse")
         private <- "jeksterslab-psu/docker-001-tidyverse"
         write(

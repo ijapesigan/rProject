@@ -11,8 +11,8 @@ lapply(
       con = file.path(root, ".setup", "bin", "sub", "make-bin.R")
     )
     testthat::test_that(
-      paste(text, "sources every R file in .setup/bin"),
-      {
+      desc = paste(text, "sources every R file in .setup/bin"),
+      code = {
         Binary(path = root)
         testthat::expect_equal(
           object = readLines(con = marker),
@@ -21,8 +21,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "does nothing without .setup/bin"),
-      {
+      desc = paste(text, "does nothing without .setup/bin"),
+      code = {
         other <- .TestProject(name = "noBin")
         testthat::expect_null(object = Binary(path = other))
       }

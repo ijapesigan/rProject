@@ -9,8 +9,8 @@ lapply(
     state <- .TestState()
     root <- .TestProject()
     testthat::test_that(
-      paste(text, "reports lints with the house rules"),
-      {
+      desc = paste(text, "reports lints with the house rules"),
+      code = {
         writeLines(
           text = "bad_Name = function( x ) x",
           con = file.path(root, "R", "a.R")
@@ -21,8 +21,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "allows BigCamelCase and snake_case"),
-      {
+      desc = paste(text, "allows BigCamelCase and snake_case"),
+      code = {
         writeLines(
           text = c(
             "Foo <- function(x) {",
@@ -36,8 +36,8 @@ lapply(
       }
     )
     testthat::test_that(
-      paste(text, "skips .verify, from any working directory"),
-      {
+      desc = paste(text, "skips .verify, from any working directory"),
+      code = {
         dir.create(path = file.path(root, ".verify", "R"), recursive = TRUE)
         writeLines(
           text = "bad_Name = function( x ) x",

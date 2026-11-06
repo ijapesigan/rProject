@@ -60,8 +60,11 @@ lapply(
       con = script
     )
     testthat::test_that(
-      paste(text, "empties .library and keeps packages in other libraries"),
-      {
+      desc = paste(
+        text,
+        "empties .library and keeps packages in other libraries"
+      ),
+      code = {
         testthat::skip_if_not(
           condition = dir.exists(paths = file.path(other, "dummyPkg")),
           message = "could not install the dummy package"

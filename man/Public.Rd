@@ -16,6 +16,7 @@ Returns the files that would be published, invisibly.
 \description{
 Checks the working tree that \verb{make auto} is about to publish
 (after \code{clone.sh} swaps in the public \code{.git}):
+\code{origin} is the repository in \code{.setup/repo/public-github.md},
 no private files (e.g., \verb{.setup/ai/}, \verb{.setup/logs/}, \code{AGENTS.md}),
 no file larger than 50 MB,
 and no tokens (\code{\link[=SecretScan]{SecretScan()}}) in the files that would be published.

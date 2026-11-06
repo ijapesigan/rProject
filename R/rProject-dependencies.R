@@ -1,5 +1,9 @@
 #' Copy Dependencies to from `.setup/r-dependencies` to `R`
 #'
+#' Replaces the copies in `R`: a helper renamed or deleted in
+#' `.setup/r-dependencies/<set>` does not stay in `R` as `<set>-*.R`.
+#' A set named after the package is left alone (the package's own files).
+#'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
@@ -30,6 +34,7 @@ Dependencies <- function(path) {
       recursive = TRUE
     )
     if (length(x = deps) > 0) {
+      .DependenciesClean(path = path)
       file.copy(
         from = deps,
         to = file.path(

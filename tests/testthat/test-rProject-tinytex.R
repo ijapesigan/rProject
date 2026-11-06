@@ -6,8 +6,8 @@ lapply(
     # TinyTex() installs TinyTeX into the user's home folder,
     # so the tests only check its interface.
     testthat::test_that(
-      paste(text, "has the documented arguments"),
-      {
+      desc = paste(text, "has the documented arguments"),
+      code = {
         testthat::expect_true(object = is.function(x = TinyTex))
         testthat::expect_equal(
           object = names(x = formals(fun = TinyTex)),
