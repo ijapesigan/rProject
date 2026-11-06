@@ -1,0 +1,4 @@
+# At login, where it runs (it needs a recent GLIBC), and not inside a container.
+if [ -z "${APPTAINER_CONTAINER:-}" ] && fastfetch --version > /dev/null 2>&1; then
+  fastfetch
+fi

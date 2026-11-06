@@ -28,7 +28,7 @@ common	2	.setup/r-miscellaneous/texTools/texTools-fig-theme-dot.R
 common	2	.setup/r-miscellaneous/texTools/texTools-gif-frames.R
 common	2	.setup/r-miscellaneous/texTools/texTools-gif-write.R
 common	2	.setup/r-miscellaneous/texTools/texTools-okabe-ito-dot.R
-common	2	.setup/r-miscellaneous/texTools/texTools-preamble-combined-dot.R
+common	1	.setup/r-miscellaneous/texTools/texTools-preamble-combined-dot.R
 common	2	.setup/r-miscellaneous/texTools/texTools-preamble-biblatex-dot.R
 common	2	.setup/r-miscellaneous/texTools/texTools-round-dot.R
 common	2	.setup/r-miscellaneous/texTools/texTools-tabular-dot.R

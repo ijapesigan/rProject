@@ -8,3 +8,7 @@ tar xf lazygit.tar.gz lazygit
 mkdir -p "$HOME/.local/bin"
 install lazygit "$HOME/.local/bin"
 rm -rf lazygit*
+
+# shellcheck source=install-common.sh disable=SC1091
+source "$(dirname "${BASH_SOURCE[0]}")/install-common.sh"
+link_tool .local/bin/lazygit

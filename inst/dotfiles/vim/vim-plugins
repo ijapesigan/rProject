@@ -1,0 +1,25 @@
+#!/bin/bash
+# Vim's packages, pinned: an update changes a commit here. A package at its
+# commit is left alone, so nothing is downloaded again.
+set -euo pipefail
+
+plugin() {
+  local dir="${HOME}/.vim/pack/$1/start/$2"
+  local url="$3"
+  local commit="$4"
+  if [[ "$(git -C "${dir}" rev-parse HEAD 2>/dev/null || true)" == "${commit}" ]]; then
+    return 0
+  fi
+  rm -rf "${dir}"
+  mkdir -p "${dir}"
+  git -C "${dir}" init -q
+  git -C "${dir}" remote add origin "${url}"
+  git -C "${dir}" fetch -q --depth 1 origin "${commit}"
+  git -C "${dir}" checkout -q FETCH_HEAD
+}
+
+plugin plugins vim-slime https://github.com/jpalardy/vim-slime.git 305b4d81ff4630af5137fdeffb54aa0fef14761b
+plugin plugins julia-vim https://github.com/JuliaEditorSupport/julia-vim.git 52b30547346b21bc93acda28d626795667f9e087
+plugin themes dracula https://github.com/dracula/vim.git c689958744a93851b870e17ede7e9cbd28bc7cf8
+# julia-vim was in themes/ before
+rm -rf "${HOME}/.vim/pack/themes/start/julia-vim"

@@ -33,9 +33,24 @@
 # multi jobs once, and stops at the first failure.
 # After docker-docs: docs-plus/run-def.sh builds both images on one core into
 # a staging folder; an image replaces the current one only if that one is not
-# in use (this node, or a Slurm job script of the user).
+# in use (this node, or a Slurm job script of the user). Where sbatch exists,
+# the images build as a Slurm job (account open, 1 core, 16 GB, 12 h), which
+# this script waits for; BUILD=host builds them here instead.
+#
+# The script runs from a copy of itself in <work>/tmp, so an edit to this file
+# cannot reach a running build (bash reads a running script from disk).
 
 set -Eeuo pipefail
+
+if [[ -z "${BUILD_DOCS_ROOT:-}" ]]; then
+  BUILD_DOCS_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+  export BUILD_DOCS_ROOT
+  build_docs_copy="$(dirname "${BUILD_DOCS_ROOT}")/tmp/build-docs-copy-$$.sh"
+  mkdir -p "$(dirname "${build_docs_copy}")"
+  cp "${BASH_SOURCE[0]}" "${build_docs_copy}"
+  export BUILD_DOCS_COPY="${build_docs_copy}"
+  exec bash "${build_docs_copy}" "$@"
+fi
 
 images=TRUE
 images_only=FALSE
@@ -63,21 +78,31 @@ if [[ $# -lt 1 ]]; then
 fi
 image="$1"
 first="${2:-}"
+# always bind ~/work (a symlink or a folder) and, on Roar, /scratch/ibp5092
+binds=(-B "${HOME}/work:$(readlink -f "${HOME}/work")")
+if [[ -d /scratch/ibp5092 ]]; then
+  binds+=(-B /scratch/ibp5092)
+fi
 dry_run="${DRY_RUN:-0}"
 
-root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+root="${BUILD_DOCS_ROOT}"
 list="${root}/.setup/scripts/build-docs.txt"
 work="$(dirname "${root}")"
-dir="${work}/tmp/$(date +%Y-%m-%d)-build-docs"
+# the Slurm job of the image step shares the run's folder and log
+dir="${BUILD_DOCS_DIR:-${work}/tmp/$(date +%Y-%m-%d)-build-docs}"
 log_file="${dir}.log"
 gh="$(command -v gh || echo "${HOME}/.local/bin/gh")"
 sif_dir="/storage/home/${USER}/work/sif"
 
 status_file="${dir}.status"
+if [[ -n "${BUILD_DOCS_CHILD:-}" ]]; then
+  status_file="${dir}.images-status"
+fi
 
 # one run at a time: a status file of any date that says "running", with
 # its process alive (or on another host, where it cannot be checked)
 for f in "${work}"/tmp/*-build-docs.status; do
+  [[ -z "${BUILD_DOCS_CHILD:-}" ]] || break
   [[ -f "${f}" ]] || continue
   read -r state pid host _ < "${f}" || true
   [[ "${state:-}" == running ]] || continue
@@ -104,6 +129,9 @@ finish() {
     echo "done $(date '+%F %T')" > "${status_file}"
   else
     echo "STOPPED $(date '+%F %T'): ${reason:-exit ${code}}" > "${status_file}"
+  fi
+  if [[ -z "${BUILD_DOCS_CHILD:-}" && -n "${BUILD_DOCS_COPY:-}" ]]; then
+    rm -f "${BUILD_DOCS_COPY}"
   fi
 }
 trap finish EXIT
@@ -213,18 +241,18 @@ for p in "${projects[@]}"; do
   # a copy without the Makefile or make-project.R (tier 2): write the
   # template files first, with the image's rProject
   if [[ ! -f Makefile || ! -f .setup/scripts/make-project.R ]]; then
-    apptainer exec "${image}" Rscript -e "rProject::Template(\"${PWD}\")" ||
+    apptainer exec "${binds[@]}" "${image}" Rscript -e "rProject::Template(\"${PWD}\")" ||
       fail "${p}: Template()"
   fi
-  apptainer exec "${image}" make project || fail "${p}: make project"
+  apptainer exec "${binds[@]}" "${image}" make project || fail "${p}: make project"
   if [[ -f .setup/readme/README.Rmd ]]; then
-    apptainer exec "${image}" make readme || fail "${p}: make readme"
+    apptainer exec "${binds[@]}" "${image}" make readme || fail "${p}: make readme"
   fi
   log "${p}: make project done"
   # clone.sh is one of the written files: it brings in the public .git
   bash .setup/scripts/clone.sh || fail "${p}: clone.sh"
   log "${p}: public .git from ${repo}"
-  apptainer exec "${image}" Rscript -e "rProject::Public(\"${PWD}\")" ||
+  apptainer exec "${binds[@]}" "${image}" Rscript -e "rProject::Public(\"${PWD}\")" ||
     fail "${p}: Public()"
   git add --all
   # never publish a project without its workflows
@@ -270,6 +298,20 @@ done
 # docs.sif and docs-plus.sif, after docker-docs (or alone, --images-only:
 # the download only brings run-def.sh and docs-plus.def; nothing is pushed)
 built=""
+# the image step as a Slurm job: the job is this script, --images-only
+if [[ "${images}" == TRUE && "${dry_run}" != "1" && "${BUILD:-}" != "host" ]] &&
+  [[ -z "${SLURM_JOB_ID:-}" ]] && command -v sbatch > /dev/null 2>&1 &&
+  { [[ "${images_only}" == TRUE ]] ||
+    printf '%s\n' "${projects[@]}" | grep -qx docker-docs; }; then
+  log "images: Slurm job (account open, 1 core, 16 GB, 12 h); waiting"
+  BUILD_DOCS_CHILD=1 BUILD_DOCS_DIR="${dir}" sbatch --wait --account=open --cpus-per-task=1 \
+    --mem=16G --time=12:00:00 --job-name=build-docs-images \
+    --output="${dir}.images-%j.out" --export=ALL \
+    --wrap="bash ${BUILD_DOCS_COPY} --images-only ${image}" ||
+    fail "images: the Slurm job failed (see ${dir}.images-*.out)"
+  images=FALSE
+  images_only_done=TRUE
+fi
 if [[ "${images_only}" == TRUE && "${dry_run}" != "1" ]]; then
   rm -rf "${dir:?}/docker-docs"
   git clone -q "git@${private_host}:jeksterslab-psu/docker-docs.git" "${dir}/docker-docs" ||
@@ -286,18 +328,22 @@ if [[ "${images}" == TRUE && "${dry_run}" != "1" ]] &&
   stage="${sif_dir}/.staging-$(date +%Y%m%d-%H%M%S)"
   mkdir -p "${stage}"
   log "images: building on one core into ${stage}"
-  (cd "${notes}" && SIF_DIR="${stage}" nice -n 19 taskset -c 0 bash run-def.sh) ||
+  # In a Slurm job the allocation limits the cores, and core 0 may not be in it
+  pin=(taskset -c 0)
+  [[ -n "${SLURM_JOB_ID:-}" ]] && pin=()
+  # apptainer build applies APPTAINER_BIND in %post, where the mount fails
+  (cd "${notes}" && SIF_DIR="${stage}" env -u APPTAINER_BIND nice -n 19 "${pin[@]}" bash run-def.sh) ||
     fail "images: run-def.sh (staging kept: ${stage})"
   # --vanilla from /: a project's .Rprofile (e.g., rProject's .library)
   # must not hide the rProject in the image
   for f in docs.sif docs-plus.sif; do
-    in_image="$(cd / && apptainer exec "${stage}/${f}" Rscript --vanilla -e \
+    in_image="$(cd / && apptainer exec "${binds[@]}" "${stage}/${f}" Rscript --vanilla -e \
       'cat(as.character(packageVersion("rProject")))')"
     log "images: ${f} has rProject ${in_image}"
     [[ "${in_image}" == "${version}" ]] ||
       fail "images: ${f} has rProject ${in_image}, not ${version} (staging kept: ${stage})"
   done
-  apptainer exec "${stage}/docs-plus.sif" bash -c \
+  apptainer exec "${binds[@]}" "${stage}/docs-plus.sif" bash -c \
     'command -v mplus && test ! -e /usr/src/local/src && echo "installer removed"' ||
     fail "images: docs-plus.sif check (staging kept: ${stage})"
   for f in docs.sif docs-plus.sif; do
@@ -322,11 +368,16 @@ if [[ "${images}" == TRUE && "${dry_run}" != "1" ]] &&
   rmdir "${stage}" 2>/dev/null || true
 fi
 
+if [[ -n "${BUILD_DOCS_CHILD:-}" ]]; then
+  [[ -z "${built}" ]] || log "Images:${built}"
+  exit 0
+fi
 log "summary"
 echo "| Project | Pushed | Make Project | Docker Build and Push [multi] | Result |"
 echo "|---|---|---|---|---|"
 [[ ${#summary[@]} -gt 0 ]] && printf '%s\n' "${summary[@]}"
 [[ -n "${built}" ]] && echo "Images:${built}"
+[[ -z "${images_only_done:-}" ]] || echo "Images: see the Slurm job's lines above"
 cd "${work}"
 rm -rf "${dir:?}"
 log "done; downloads removed; log: ${log_file}"

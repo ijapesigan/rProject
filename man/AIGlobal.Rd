@@ -31,6 +31,7 @@ Existing files that differ are backed up with the suffix \code{.bak}.
    \code{AGENTS.md} \tab \verb{~/.codex/AGENTS.md} \cr
    \code{AGENTS.md} \tab \verb{~/.copilot/copilot-instructions.md} \cr
    \code{claude-settings.json} \tab \verb{~/.claude/settings.json} \cr
+   \verb{inst/ai/agents/*.md} \tab \verb{~/.claude/agents/} \cr
 }
 
 

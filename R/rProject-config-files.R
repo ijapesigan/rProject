@@ -1,73 +1,41 @@
 #' Setup Config Files
 #'
-#' Clones a public `dotfiles` GitHub repository and runs `make` in it.
-#' The clone ignores the global Git configuration,
-#' so URL rewrites to SSH host aliases do not apply
-#' and the repository is fetched anonymously over HTTPS.
-#' This also works inside a container without access to SSH keys.
+#' Installs the shell, tmux, Vim, and xterm files from the package
+#' (`inst/dotfiles`) into the home directory. A file it replaces is kept in
+#' `~/.dotfiles-backup`. It runs `inst/shell/install-dotfiles.sh`, which needs
+#' neither R nor a container on the host; `setup-machine.sh` calls that script
+#' directly.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @param repo Character string.
-#'   GitHub repository in the form `owner/name`.
+#' @param check Logical.
+#'   If `TRUE`, shows the differences and changes nothing.
 #'
 #' @return Called for its side effects; the value is not meaningful.
 #' @examples
 #' \dontrun{
-#' ConfigFiles()
+#' ConfigFiles(check = TRUE)
 #' }
 #' @export
-ConfigFiles <- function(repo = "ijapesigan/dotfiles") {
-  if (Sys.which(names = "git") == "") {
-    stop("git is not installed.")
-  }
-  tmp_dir <- tempfile(pattern = "dotfiles")
-  on.exit(
-    expr = unlink(
-      x = tmp_dir,
-      recursive = TRUE
-    ),
-    add = TRUE
+ConfigFiles <- function(check = FALSE) {
+  script <- system.file(
+    "shell",
+    "install-dotfiles.sh",
+    package = "rProject",
+    mustWork = TRUE
   )
   status <- system2(
-    command = "git",
+    command = "bash",
     args = c(
-      "clone",
-      "--depth",
-      "1",
-      paste0("https://github.com/", repo, ".git"),
-      .ShellQuote(x = tmp_dir)
-    ),
-    env = c(
-      "GIT_CONFIG_GLOBAL=/dev/null",
-      "GIT_TERMINAL_PROMPT=0"
+      .ShellQuote(x = script),
+      if (isTRUE(x = check)) {
+        "--check"
+      }
     )
   )
   if (status != 0) {
     stop(
-      paste0(
-        "\n\nCould not clone https://github.com/",
-        repo,
-        ".\n\n"
-      ),
-      call. = FALSE
-    )
-  }
-  # make -C runs make in the clone, as `cd <clone> && make` did
-  status <- system2(
-    command = "make",
-    args = c(
-      "-C",
-      .ShellQuote(x = tmp_dir)
-    )
-  )
-  if (status != 0) {
-    stop(
-      paste0(
-        "\n\n`make` failed in ",
-        repo,
-        ".\n\n"
-      ),
+      "\n\nThe dotfiles were not installed.\n\n",
       call. = FALSE
     )
   }

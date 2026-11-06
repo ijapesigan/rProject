@@ -57,6 +57,11 @@ if [[ $# -lt 1 ]]; then
   exit 2
 fi
 image="$1"
+# always bind ~/work (a symlink or a folder) and, on Roar, /scratch/ibp5092
+binds=(-B "${HOME}/work:$(readlink -f "${HOME}/work")")
+if [[ -d /scratch/ibp5092 ]]; then
+  binds+=(-B /scratch/ibp5092)
+fi
 first="${2:-}"
 dry_run="${DRY_RUN:-0}"
 build="${BUILD:-srun}"
@@ -179,9 +184,9 @@ make_all() {
   if [[ "${build}" == srun ]]; then
     srun --account=open --partition=basic --nodes=1 --ntasks=1 \
       --cpus-per-task=1 --mem=16G --time=02:00:00 --job-name=build-lib \
-      apptainer exec "${image}" make all
+      apptainer exec "${binds[@]}" "${image}" make all
   else
-    apptainer exec "${image}" make all
+    apptainer exec "${binds[@]}" "${image}" make all
   fi
 }
 
@@ -195,18 +200,18 @@ for p in "${projects[@]}"; do
   cd "${dir}/${p}"
   repo="$(tr -d '[:space:]' < .setup/repo/public-github.md)"
   if [[ ! -f Makefile || ! -f .setup/scripts/make-project.R ]]; then
-    apptainer exec "${image}" Rscript -e "rProject::Template(\"${PWD}\")" ||
+    apptainer exec "${binds[@]}" "${image}" Rscript -e "rProject::Template(\"${PWD}\")" ||
       fail "${p}: Template()"
   fi
-  apptainer exec "${image}" make project || fail "${p}: make project"
+  apptainer exec "${binds[@]}" "${image}" make project || fail "${p}: make project"
   started=${SECONDS}
   make_all || fail "${p}: make all"
   log "${p}: make all done ($(( (SECONDS - started) / 60 )) min)"
   # make auto's steps
   bash .setup/scripts/clone.sh || fail "${p}: clone.sh"
-  apptainer exec "${image}" Rscript -e "rProject::Public(\"${PWD}\")" ||
+  apptainer exec "${binds[@]}" "${image}" Rscript -e "rProject::Public(\"${PWD}\")" ||
     fail "${p}: Public()"
-  apptainer exec "${image}" Rscript -e "rProject::Lock(\"${PWD}\")" ||
+  apptainer exec "${binds[@]}" "${image}" Rscript -e "rProject::Lock(\"${PWD}\")" ||
     fail "${p}: Lock()"
   git add --all
   lost="$(git diff --cached --name-only --diff-filter=D -- .github/workflows)"

@@ -1,0 +1,29 @@
+################################################################################
+#====[ Settings ]===============================================================
+################################################################################
+
+#====[ vi mode; the cursor settings are in ~/.inputrc ]=========================
+set -o vi
+
+#====[ line wrap ]==============================================================
+shopt -s checkwinsize
+
+#====[ noclobber ]==============================================================
+set -o noclobber
+
+#====[ auto cd ]================================================================
+shopt -s autocd
+
+#====[ tools, each only if present ]============================================
+# fzf: Ctrl-R history, Ctrl-T files, Alt-C folders (fzf 0.48 or later)
+if command -v fzf > /dev/null 2>&1; then
+  eval "$(fzf --bash 2> /dev/null)"
+  if command -v fd > /dev/null 2>&1; then
+    export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
+    export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+  fi
+fi
+# zoxide: z <part of a folder name>
+if command -v zoxide > /dev/null 2>&1; then
+  eval "$(zoxide init bash)"
+fi

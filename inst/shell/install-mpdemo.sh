@@ -10,3 +10,9 @@ sh install_mpluslinux_demo64.bin
 rm -rf install_mpluslinux_demo64.bin
 mkdir -p "$HOME/.local/bin"
 rm -rf install_mpluslinux_demo64.bin
+
+# shellcheck source=install-common.sh disable=SC1091
+source "$(dirname "${BASH_SOURCE[0]}")/install-common.sh"
+if [[ -e "${BIN}/mpdemo" ]]; then
+  link_tool .local/bin/mpdemo
+fi

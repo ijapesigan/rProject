@@ -13,6 +13,7 @@
 #' | `AGENTS.md` | `~/.codex/AGENTS.md` |
 #' | `AGENTS.md` | `~/.copilot/copilot-instructions.md` |
 #' | `claude-settings.json` | `~/.claude/settings.json` |
+#' | `inst/ai/agents/*.md` | `~/.claude/agents/` |
 #'
 #' `claude-settings.json` is merged into an existing `settings.json`:
 #' its keys win, permission rules are added to the existing ones,
@@ -129,6 +130,13 @@ AIGlobal <- function(path,
       )
     )
   }
+  targets <- c(
+    targets,
+    .AIGlobalAgents(
+      path = path,
+      home = home
+    )
+  )
   written <- unlist(
     x = lapply(
       X = targets,

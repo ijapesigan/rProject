@@ -14,6 +14,9 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: read
+
 jobs:
   # the image and packages of the release (.setup/scripts/rproject.lock);
   # a scheduled run, or a manual run with latest, uses the latest

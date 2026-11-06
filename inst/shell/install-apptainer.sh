@@ -3,6 +3,7 @@
 # Apptainer: the official unprivileged installer, into ~/.local.
 # The old ~/.local/<arch> is moved aside, not deleted: a running container can
 # hold its files open (NFS .nfs* files), and deleting them then fails halfway.
+# Where ~/work exists, ~/.local/<arch> is a link to ~/work/tools.
 
 set -euo pipefail
 
@@ -21,6 +22,8 @@ fi
 if fetch "https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install-unprivileged.sh" - |
   bash -s -- -a "${arch}" "${HOME}/.local" &&
   [[ -n "$(version "${BIN}/apptainer")" ]]; then
+  link_tool ".local/${arch}"
+  link_tool ".local/${arch}"
   say "apptainer: $(version "${BIN}/apptainer")"
   if [[ -n "${old}" ]]; then
     rm -rf "${old}" 2>/dev/null ||

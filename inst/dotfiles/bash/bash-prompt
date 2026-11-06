@@ -1,0 +1,22 @@
+# [container] user@host:folder (git) [error], then $ on its own line
+[ -z "$PS1" ] && return
+. ~/.bash-git-completion
+. ~/.bash-git-prompt
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUPSTREAM=auto
+__rp_host='\[\e[1;36m\]'
+[ -n "${SSH_CONNECTION:-}" ] && __rp_host='\[\e[1;32m\]'
+__rp_user='\[\e[1;36m\]'
+[ "$(id -u)" = "0" ] && __rp_user='\[\e[1;31m\]'
+__rp_box=""
+if [ -n "${APPTAINER_CONTAINER:-}" ]; then
+  __rp_box="\[\e[1;35m\][${APPTAINER_NAME:-container}]\[\e[m\] "
+fi
+__rp_prompt() {
+  local code=$?
+  local error=""
+  [ "${code}" -ne 0 ] && error=" \[\e[1;31m\][${code}]\[\e[m\]"
+  history -a
+  PS1="${__rp_box}${__rp_user}\u\[\e[m\]@${__rp_host}\h\[\e[m\]:\[\e[1;33m\]\w\[\e[m\]$(__git_ps1 ' (%s)')${error}\n\$ "
+}
+PROMPT_COMMAND="__rp_prompt"
