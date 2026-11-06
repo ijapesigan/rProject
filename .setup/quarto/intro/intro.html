@@ -182,6 +182,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../.setup/quarto/math/math.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Portable Math</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../.setup/quarto/session/session.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Website Build Session</span></a>
   </div>
 </li>
@@ -276,10 +281,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<h3 class="anchored">Value</h3>
+
+<p>Called for its side effects; the value is not meaningful.
+</p>
+
+
 <h3 class="anchored">Author(s)</h3>
 
 <p>Ivan Jacob Agaloos Pesigan
 </p>
+
+
+<h3 class="anchored">Examples</h3>
+
+<pre><code class="language-R">## Not run: 
+BuildIgnore(path = getwd(), project = "myProject")
+
+## End(Not run)
+</code></pre>
 
 </main>
 
@@ -302,18 +322,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             "^\\.quarto$", "^\\.setup$", "^\\.sif$", "^\\.sim$", 
             "^\\.verify$", "^detritus$", "^index\\.qmd$", "^latexmkrc$", 
             "^pkgdown$", "^quarto$", "^scripts$")
-        if (!is.null(add)) {
+        if (!is.null(x = add)) {
             x &lt;- c(x, add)
         }
-        con &lt;- file(file.path(path, ".Rbuildignore"))
+        con &lt;- file(description = file.path(path, ".Rbuildignore"))
         writeLines(text = x, con = con, sep = "\n")
-        close(con)
+        close(con = con)
     }
     else {
         message(paste(path, "is not an R package."))
     }
 }
-&lt;bytecode: 0x5634b8f89608&gt;
+&lt;bytecode: 0x6544f437b928&gt;
 &lt;environment: namespace:rProject&gt;</code></pre>
 </div>
 </div>
