@@ -80,6 +80,11 @@ project folder, not from the installed package.
 Nothing is written or deleted in GitHub Actions (\code{GITHUB_ACTIONS} is
 \code{"true"}): CI uses the files already in the public repository.
 }
+\examples{
+\dontrun{
+Template(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

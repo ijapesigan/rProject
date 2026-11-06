@@ -6,14 +6,14 @@
   # exist yet (CI then cannot install anything).
   out <- rep(
     x = NA_character_,
-    times = length(created)
+    times = length(x = created)
   )
-  ok <- !is.na(created) & grepl(
+  ok <- !is.na(x = created) & grepl(
     pattern = "^\\d{4}-\\d{2}-\\d{2}$",
     x = created
   )
   out[ok] <- format(
-    x = as.Date(created[ok]) - 1L,
+    x = as.Date(x = created[ok]) - 1L,
     format = "%Y-%m-%d"
   )
   out

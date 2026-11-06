@@ -10,8 +10,28 @@ Lint(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Returns the \code{lints} object of \code{lintr}, invisibly with the house
+findings as the data frame in its \code{house} attribute.
+
+Called for its side effects; the value is not meaningful.
+}
 \description{
-Lint Project
+Runs \code{lintr} on the R code, then the house checks of the style guides,
+and prints one table of findings: file, line, rule, message, and level.
+The R and C++ checks are warnings until a project sets
+\code{lint_error <- TRUE} in \code{.setup/scripts/project.R}: then they stop
+\verb{make lint}. The LaTeX and Markdown checks are always warnings. Talks
+(project type \code{talk}) run the rules kept in talks only.
+}
+\examples{
+\dontrun{
+Lint(path = getwd())
+}
+
+\dontrun{
+Lint(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

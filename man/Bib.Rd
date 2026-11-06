@@ -16,6 +16,9 @@ build \code{bib.bib} from the public \verb{lib-*} GitHub repositories
 (\verb{make bib} does so in rProject, \verb{make bibrproject} anywhere).
 If none can be cloned, the previous \code{bib.bib} is kept.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Joins the \code{.bib} files in \code{.setup/latex/bib} into \code{bib.bib},
 verbatim and in file-name order,
@@ -27,6 +30,11 @@ The source files are never rewritten:
 in \verb{lib-*} projects they are the entries themselves
 (one entry per file, ASCII with LaTeX accents).
 \code{\link[=LibCheck]{LibCheck()}} validates them with biber.
+}
+\examples{
+\dontrun{
+Bib(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

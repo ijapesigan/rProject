@@ -32,6 +32,11 @@ With \code{plain = TRUE}, a compressed file is unpacked into
 such as Mplus.
 The copy is refreshed when the compressed file changes.
 }
+\examples{
+\dontrun{
+DataPath(path = getwd(), file = "data.csv")
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

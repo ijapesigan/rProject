@@ -8,13 +8,16 @@ lapply(
       {
         root <- .TestProject()
         deps <- file.path(root, ".setup", "r-dependencies")
-        dir.create(deps, recursive = TRUE)
-        writeLines("Dep <- function() 1", file.path(deps, "testProject-dep.R"))
+        dir.create(path = deps, recursive = TRUE)
+        writeLines(
+          text = "Dep <- function() 1",
+          con = file.path(deps, "testProject-dep.R")
+        )
         Dependencies(path = root)
         testthat::expect_true(
-          file.exists(file.path(root, "R", "testProject-dep.R"))
+          object = file.exists(file.path(root, "R", "testProject-dep.R"))
         )
-        unlink(dirname(root), recursive = TRUE)
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
     testthat::test_that(
@@ -22,19 +25,22 @@ lapply(
       {
         root <- .TestProject()
         deps <- file.path(root, ".setup", "r-dependencies")
-        dir.create(deps, recursive = TRUE)
-        dir.create(file.path(root, "R"), showWarnings = FALSE)
+        dir.create(path = deps, recursive = TRUE)
+        dir.create(path = file.path(root, "R"), showWarnings = FALSE)
         writeLines(
-          "Dep <- function() 1",
-          file.path(root, "R", "testProject-dep.R")
+          text = "Dep <- function() 1",
+          con = file.path(root, "R", "testProject-dep.R")
         )
-        writeLines("Dep <- function() 2", file.path(deps, "testProject-dep.R"))
+        writeLines(
+          text = "Dep <- function() 2",
+          con = file.path(deps, "testProject-dep.R")
+        )
         Dependencies(path = root)
         testthat::expect_identical(
-          readLines(file.path(root, "R", "testProject-dep.R")),
-          "Dep <- function() 2"
+          object = readLines(con = file.path(root, "R", "testProject-dep.R")),
+          expected = "Dep <- function() 2"
         )
-        unlink(dirname(root), recursive = TRUE)
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
     testthat::test_that(
@@ -42,10 +48,10 @@ lapply(
       {
         root <- .TestProject(description = FALSE)
         testthat::expect_message(
-          Dependencies(path = root),
-          "is not an R package"
+          object = Dependencies(path = root),
+          regexp = "is not an R package"
         )
-        unlink(dirname(root), recursive = TRUE)
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
   },

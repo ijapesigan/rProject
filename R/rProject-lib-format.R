@@ -26,6 +26,10 @@
 #'   If `FALSE`, only report them.
 #' @return Returns the names of the files that change (or changed),
 #'   invisibly.
+#' @examples
+#' \dontrun{
+#' LibFormat(path = getwd())
+#' }
 #' @export
 LibFormat <- function(path,
                       write = FALSE) {
@@ -34,8 +38,8 @@ LibFormat <- function(path,
     pattern = "\\.bib$",
     full.names = TRUE
   )
-  files <- files[basename(files) != "bib.bib"]
-  changed <- character(0)
+  files <- files[basename(path = files) != "bib.bib"]
+  changed <- character(length = 0)
   for (file in files) {
     lines <- readLines(con = file, warn = FALSE)
     text <- paste0(paste(lines, collapse = "\n"), "\n")
@@ -48,14 +52,14 @@ LibFormat <- function(path,
         replacement = "\\\\\\1",
         x = fields
       )
-      if (!is.na(fields["pages"])) {
+      if (!is.na(x = fields["pages"])) {
         fields["pages"] <- gsub(
           pattern = "([0-9A-Za-z])[[:space:]]*-[[:space:]]*([0-9A-Za-z])",
           replacement = "\\1--\\2",
           x = fields["pages"]
         )
       }
-      if (!is.na(fields["doi"])) {
+      if (!is.na(x = fields["doi"])) {
         fields["doi"] <- sub(
           pattern = "^(https?://(dx\\.)?doi\\.org/|doi:)",
           replacement = "",
@@ -71,11 +75,11 @@ LibFormat <- function(path,
         "\n"
       )
       raw <- readChar(con = file, nchars = file.info(file)$size)
-      if (!identical(new, text) || !grepl(pattern = "\n$", x = raw)) {
-        changed <- c(changed, basename(file))
+      if (!identical(x = new, y = text) || !grepl(pattern = "\n$", x = raw)) {
+        changed <- c(changed, basename(path = file))
         if (write) {
           # LF on every platform
-          writeBin(object = charToRaw(new), con = file)
+          writeBin(object = charToRaw(x = new), con = file)
         }
       }
     }
@@ -83,10 +87,10 @@ LibFormat <- function(path,
   message(
     paste0(
       "\n\nLibFormat ", .VerifyProject(path = path), ": ",
-      length(changed), " of ", length(files), " files ",
-      ifelse(write, "rewritten", "would change"),
+      length(x = changed), " of ", length(x = files), " files ",
+      ifelse(test = write, yes = "rewritten", no = "would change"),
       ".\n\n"
     )
   )
-  invisible(changed)
+  invisible(x = changed)
 }

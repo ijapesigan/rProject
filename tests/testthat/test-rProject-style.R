@@ -4,45 +4,48 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::skip_on_cran()
-    testthat::skip_if_not_installed("styler")
+    testthat::skip_if_not_installed(pkg = "styler")
     .SkipUnlessSiteLibrary(pkgs = c("styler", "distro"))
     state <- .TestState()
     root <- .TestProject(pattern = "project with space ")
-    writeLines("x<-c( 1,2 )", file.path(root, "R", "a.R"))
+    writeLines(text = "x<-c( 1,2 )", con = file.path(root, "R", "a.R"))
     testthat::test_that(
       paste(text, "styles R code"),
       {
-        suppressMessages(Style(path = root))
+        suppressMessages(expr = Style(path = root))
         testthat::expect_equal(
-          readLines(file.path(root, "R", "a.R")),
-          "x <- c(1, 2)"
+          object = readLines(con = file.path(root, "R", "a.R")),
+          expected = "x <- c(1, 2)"
         )
       }
     )
     testthat::test_that(
       paste(text, "formats C++ with clang-format (Google style)"),
       {
-        testthat::skip_on_os("windows")
-        testthat::skip_if(Sys.which("clang-format") == "")
-        dir.create(file.path(root, "src"))
+        testthat::skip_on_os(os = "windows")
+        testthat::skip_if(condition = Sys.which(names = "clang-format") == "")
+        dir.create(path = file.path(root, "src"))
         writeLines(
-          "int  f( int x ){return x;}",
-          file.path(root, "src", "a.cpp")
+          text = "int  f( int x ){return x;}",
+          con = file.path(root, "src", "a.cpp")
         )
-        writeLines("int  keep( ){}", file.path(root, "src", "RcppExports.cpp"))
-        suppressMessages(Style(path = root))
+        writeLines(
+          text = "int  keep( ){}",
+          con = file.path(root, "src", "RcppExports.cpp")
+        )
+        suppressMessages(expr = Style(path = root))
         testthat::expect_equal(
-          readLines(file.path(root, "src", "a.cpp")),
-          "int f(int x) { return x; }"
+          object = readLines(con = file.path(root, "src", "a.cpp")),
+          expected = "int f(int x) { return x; }"
         )
         testthat::expect_equal(
-          readLines(file.path(root, "src", "RcppExports.cpp")),
-          "int  keep( ){}"
+          object = readLines(con = file.path(root, "src", "RcppExports.cpp")),
+          expected = "int  keep( ){}"
         )
       }
     )
-    .TestRestore(state)
-    unlink(dirname(root), recursive = TRUE)
+    .TestRestore(state = state)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-style"
 )

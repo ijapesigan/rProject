@@ -6,5 +6,5 @@ author: "Ivan Jacob Agaloos Pesigan"
 ```{r}
 #| echo = FALSE
 root <- rprojroot::is_rstudio_project
-knitr::kable(rProject::Tags(path = root$find_file()))
+knitr::kable(x = rProject::Tags(path = root$find_file()))
 ```

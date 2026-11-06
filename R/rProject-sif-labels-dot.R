@@ -1,18 +1,22 @@
 .SifLabels <- function(file = "/.singularity.d/labels.json") {
-  lines <- character(0)
+  lines <- character(length = 0)
   if (file.exists(file)) {
     lines <- readLines(con = file, warn = FALSE)
   }
   value <- function(key) {
     hit <- grep(pattern = key, x = lines, fixed = TRUE, value = TRUE)[1]
     ifelse(
-      is.na(hit),
-      "unknown",
-      sub(pattern = '^.*:\\s*"([^"]*)".*$', replacement = "\\1", x = hit)
+      test = is.na(x = hit),
+      yes = "unknown",
+      no = sub(pattern = '^.*:\\s*"([^"]*)".*$', replacement = "\\1", x = hit)
     )
   }
   c(
-    built = value("org.label-schema.build-date"),
-    base = substr(value("org.opencontainers.image.base.digest"), 1, 19)
+    built = value(key = "org.label-schema.build-date"),
+    base = substr(
+      x = value(key = "org.opencontainers.image.base.digest"),
+      start = 1,
+      stop = 19
+    )
   )
 }

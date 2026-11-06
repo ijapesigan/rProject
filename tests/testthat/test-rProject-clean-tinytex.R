@@ -8,8 +8,11 @@ lapply(
     testthat::test_that(
       paste(text, "has the documented arguments"),
       {
-        testthat::expect_true(is.function(CleanTinyTex))
-        testthat::expect_equal(names(formals(CleanTinyTex)), "path")
+        testthat::expect_true(object = is.function(x = CleanTinyTex))
+        testthat::expect_equal(
+          object = names(x = formals(fun = CleanTinyTex)),
+          expected = "path"
+        )
       }
     )
   },

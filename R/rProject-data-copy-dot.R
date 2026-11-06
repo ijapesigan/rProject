@@ -16,17 +16,17 @@
   }
   on.exit(
     expr = {
-      close(input)
-      close(output)
+      close(con = input)
+      close(con = output)
     },
     add = TRUE
   )
   repeat {
     chunk <- readBin(con = input, what = "raw", n = 1e7)
-    if (length(chunk) == 0L) {
+    if (length(x = chunk) == 0L) {
       break
     }
     writeBin(object = chunk, con = output)
   }
-  invisible(to)
+  invisible(x = to)
 }

@@ -1,15 +1,15 @@
 .TemplateType <- function(path) {
   type <- .TemplateSettings(path = path)$type
-  if (!is.null(type)) {
+  if (!is.null(x = type)) {
     type <- type[1]
   }
-  if (!is.null(type) && !(type %in% names(.TemplateSets()))) {
+  if (!is.null(x = type) && !(type %in% names(x = .TemplateSets()))) {
     stop(
       paste0(
         "\n\nUnknown type \"",
         type,
         "\" in .setup/scripts/project.R.\nUse one of: ",
-        paste(names(.TemplateSets()), collapse = ", "),
+        paste(names(x = .TemplateSets()), collapse = ", "),
         ".\n\n"
       ),
       call. = FALSE

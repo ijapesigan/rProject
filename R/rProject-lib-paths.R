@@ -13,6 +13,10 @@
 #'   Project path.
 #'
 #' @return Returns the path of `.library`.
+#' @examples
+#' \dontrun{
+#' LibPaths(path = getwd())
+#' }
 #' @export
 LibPaths <- function(path) {
   dot_library_folder <- file.path(
@@ -20,7 +24,7 @@ LibPaths <- function(path) {
     ".library"
   )
   dir.create(
-    dot_library_folder,
+    path = dot_library_folder,
     showWarnings = FALSE,
     recursive = TRUE
   )
@@ -33,16 +37,16 @@ LibPaths <- function(path) {
       "*",
       "*/"
     )
-    con <- file(dot_gitignore_file)
+    con <- file(description = dot_gitignore_file)
     writeLines(
       text = dot_gitignore,
       con = con,
       sep = "\n"
     )
-    close(con)
+    close(con = con)
   }
   .libPaths(
-    dot_library_folder
+    new = dot_library_folder
   )
   Sys.setenv(
     R_LIBS_USER = dot_library_folder

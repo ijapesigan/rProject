@@ -9,7 +9,7 @@
         pattern = "\\.bib$",
         full.names = TRUE
       )
-      files <- files[basename(files) != "bib.bib"]
+      files <- files[basename(path = files) != "bib.bib"]
       lapply(
         X = files,
         FUN = function(file) {
@@ -18,17 +18,17 @@
           text <- gsub(
             pattern = "\r\n",
             replacement = "\n",
-            x = rawToChar(raw[raw != as.raw(0)]),
+            x = rawToChar(x = raw[raw != as.raw(x = 0)]),
             fixed = TRUE
           )
           entry <- .LibParse(text = text)
           field <- function(name) {
-            unname(c(entry$fields[name], NA_character_)[1])
+            unname(obj = c(entry$fields[name], NA_character_)[1])
           }
           data.frame(
             repo = repo,
             path = path,
-            file = basename(file),
+            file = basename(path = file),
             n = entry$n,
             ok = entry$ok,
             error = entry$error,
@@ -37,15 +37,17 @@
             author = field("author"),
             editor = field("editor"),
             date = c(field("date"), field("year"))[
-              ifelse(is.na(field("date")), 2L, 1L)
+              ifelse(test = is.na(x = field("date")), yes = 2L, no = 1L)
             ],
             journaltitle = field("journaltitle"),
             title = field("title"),
             doi = field("doi"),
             issn = field("issn"),
             publisher = field("publisher"),
-            ascii = all(as.integer(raw) < 128L),
-            newline = length(raw) > 0L && raw[length(raw)] == as.raw(10L),
+            ascii = all(as.integer(x = raw) < 128L),
+            newline = length(
+              x = raw
+            ) > 0L && raw[length(x = raw)] == as.raw(x = 10L),
             text = text,
             stringsAsFactors = FALSE
           )
@@ -53,8 +55,8 @@
       )
     }
   )
-  rows <- unlist(rows, recursive = FALSE)
-  if (length(rows) == 0L) {
+  rows <- unlist(x = rows, recursive = FALSE)
+  if (length(x = rows) == 0L) {
     data.frame()
   } else {
     do.call(what = rbind, args = rows)

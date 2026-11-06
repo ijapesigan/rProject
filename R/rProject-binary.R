@@ -8,6 +8,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Binary(path = getwd())
+#' }
 #' @export
 Binary <- function(path) {
   x <- list.files(
@@ -21,9 +26,9 @@ Binary <- function(path) {
     all.files = TRUE,
     recursive = TRUE
   )
-  if (length(x) > 0) {
+  if (length(x = x) > 0) {
     invisible(
-      lapply(
+      x = lapply(
         X = x,
         FUN = source
       )

@@ -32,13 +32,17 @@
 #' @inheritParams LibPaths
 #' @return Returns the path of the lock file, invisibly, or `NULL` when
 #'   nothing was written.
+#' @examples
+#' \dontrun{
+#' Lock(path = getwd())
+#' }
 #' @export
 Lock <- function(path) {
   out <- NULL
   type <- .TemplateType(path = path)
-  if (identical(type, "rProject")) {
+  if (identical(x = type, y = "rProject")) {
     message("\n\nLock(): rProject builds itself from source; no lock.\n\n")
-  } else if (identical(type, "docker")) {
+  } else if (identical(x = type, y = "docker")) {
     # docker-* build on a schedule from the newest upstream base and the
     # newest rProject: never pinned (the user, 2026-10-23)
     message("\n\nLock(): docker projects follow the latest; no lock.\n\n")
@@ -46,24 +50,28 @@ Lock <- function(path) {
     description <- utils::packageDescription(pkg = "rProject")
     sif <- .SifInfo()
     sif_sha256 <- NA_character_
-    addon <- identical(sif$kind, "addon") && !is.na(sif$sif)
+    addon <- identical(x = sif$kind, y = "addon") && !is.na(x = sif$sif)
     if (addon && file.exists(sif$sif)) {
-      sif$built <- format(file.mtime(sif$sif), "%Y-%m-%d")
+      sif$built <- format(x = file.mtime(sif$sif), "%Y-%m-%d")
       sif_sha256 <- .LockSha256(file = sif$sif)
       message(
         paste0(
           "\n\nLock(): ",
-          basename(sif$sif),
+          basename(path = sif$sif),
           " is a proprietary add-on; keep a copy in ",
           "~/work/sif/archive/",
-          sub("\\.sif$", "", basename(sif$sif)),
+          sub(
+            pattern = "\\.sif$",
+            replacement = "",
+            x = basename(path = sif$sif)
+          ),
           "-",
           sif$built,
           ".sif (never upload it).\n\n"
         )
       )
     }
-    if (identical(sif$kind, "addon") && is.na(sif$digest)) {
+    if (identical(x = sif$kind, y = "addon") && is.na(x = sif$digest)) {
       message(
         paste0(
           "\n\nLock(): the sif does not record its public base by digest; ",
@@ -86,5 +94,5 @@ Lock <- function(path) {
       sif_sha256 = sif_sha256
     )
   }
-  invisible(out)
+  invisible(x = out)
 }

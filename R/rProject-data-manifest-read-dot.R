@@ -1,26 +1,26 @@
 .DataManifestRead <- function(file) {
   empty <- data.frame(
-    file = character(0),
-    tier = character(0),
-    size = character(0),
-    md5 = character(0),
-    status = character(0),
-    source = character(0),
-    location = character(0),
+    file = character(length = 0),
+    tier = character(length = 0),
+    size = character(length = 0),
+    md5 = character(length = 0),
+    status = character(length = 0),
+    source = character(length = 0),
+    location = character(length = 0),
     stringsAsFactors = FALSE
   )
-  rows <- character(0)
+  rows <- character(length = 0)
   if (file.exists(file)) {
     lines <- readLines(con = file, warn = FALSE)
     rows <- lines[grepl(pattern = "^\\| `", x = lines)]
   }
-  if (length(rows) == 0L) {
+  if (length(x = rows) == 0L) {
     empty
   } else {
     cells <- lapply(
       X = strsplit(x = rows, split = "|", fixed = TRUE),
       FUN = function(x) {
-        trimws(gsub(pattern = "`", replacement = "", x = x[-1]))
+        trimws(x = gsub(pattern = "`", replacement = "", x = x[-1]))
       }
     )
     data.frame(

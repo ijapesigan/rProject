@@ -4,7 +4,7 @@ lapply(
   FUN = function(i,
                  text) {
     root <- tempfile(pattern = "buildignore")
-    dir.create(root)
+    dir.create(path = root)
     writeLines(
       text = "Package: test",
       con = file.path(root, "DESCRIPTION")
@@ -14,7 +14,7 @@ lapply(
       project = "test",
       add = "^extra$"
     )
-    patterns <- readLines(file.path(root, ".Rbuildignore"))
+    patterns <- readLines(con = file.path(root, ".Rbuildignore"))
     ai_files <- c(
       ".claude",
       "CLAUDE.md",
@@ -36,7 +36,7 @@ lapply(
               x = file
             )
           },
-          FUN.VALUE = logical(1)
+          FUN.VALUE = logical(length = 1)
         )
       )
     }
@@ -44,11 +44,11 @@ lapply(
       paste(text, "ignores AI tool files"),
       {
         testthat::expect_true(
-          all(
+          object = all(
             vapply(
               X = ai_files,
               FUN = ignored,
-              FUN.VALUE = logical(1)
+              FUN.VALUE = logical(length = 1)
             )
           )
         )
@@ -58,11 +58,11 @@ lapply(
       paste(text, "keeps package files"),
       {
         testthat::expect_false(
-          any(
+          object = any(
             vapply(
               X = c("DESCRIPTION", "NAMESPACE", "R", "man", "tests"),
               FUN = ignored,
-              FUN.VALUE = logical(1)
+              FUN.VALUE = logical(length = 1)
             )
           )
         )
@@ -72,10 +72,10 @@ lapply(
       paste(text, "ignores the root latexmkrc only"),
       {
         testthat::expect_true(
-          ignored("latexmkrc")
+          object = ignored("latexmkrc")
         )
         testthat::expect_false(
-          ignored("inst/latexmk/latexmkrc")
+          object = ignored("inst/latexmk/latexmkrc")
         )
       }
     )
@@ -83,13 +83,13 @@ lapply(
       paste(text, "appends add"),
       {
         testthat::expect_equal(
-          utils::tail(patterns, 1),
-          "^extra$"
+          object = utils::tail(x = patterns, 1),
+          expected = "^extra$"
         )
       }
     )
     unlink(
-      root,
+      x = root,
       recursive = TRUE
     )
   },

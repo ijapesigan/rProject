@@ -13,8 +13,16 @@ Project path.}
 \item{pkg}{Character vector.
 Bioconductor packages.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Install Project Packages from Bioconductor
+}
+\examples{
+\dontrun{
+PkgProjectBioconductor(path = getwd(), pkg = "stats")
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

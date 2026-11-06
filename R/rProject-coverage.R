@@ -7,6 +7,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Coverage(path = getwd())
+#' }
 #' @export
 Coverage <- function(path) {
   if (
@@ -22,7 +27,7 @@ Coverage <- function(path) {
     pkg_installed <- installed[, "Package"]
     if (!("covr" %in% pkg_installed)) {
       utils::install.packages(
-        "covr",
+        pkgs = "covr",
         repos = c(REPO_NAME = PkgRepo(path = path)),
         lib = lib,
         quiet = TRUE

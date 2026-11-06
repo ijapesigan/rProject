@@ -21,28 +21,28 @@
         expression()
       }
     )
-    for (expr in as.list(exprs)) {
+    for (expr in as.list(x = exprs)) {
       if (
-        is.call(expr) &&
-          identical(expr[[1]], as.name("<-")) &&
-          is.name(expr[[2]]) &&
-          as.character(expr[[2]]) %in% names
+        is.call(x = expr) &&
+          identical(x = expr[[1]], y = as.name(x = "<-")) &&
+          is.name(x = expr[[2]]) &&
+          as.character(x = expr[[2]]) %in% names
       ) {
         value <- expr[[3]]
-        constant <- is.character(value) || (
-          is.call(value) &&
-            identical(value[[1]], as.name("c")) &&
+        constant <- is.character(x = value) || (
+          is.call(x = value) &&
+            identical(x = value[[1]], y = as.name(x = "c")) &&
             all(
               vapply(
-                X = as.list(value)[-1],
+                X = as.list(x = value)[-1],
                 FUN = is.character,
-                FUN.VALUE = logical(1)
+                FUN.VALUE = logical(length = 1)
               )
             )
         )
         if (constant) {
-          settings[[as.character(expr[[2]])]] <- as.character(
-            eval(expr = value, envir = baseenv())
+          settings[[as.character(x = expr[[2]])]] <- as.character(
+            x = eval(expr = value, envir = baseenv())
           )
         }
       }

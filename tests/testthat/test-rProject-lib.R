@@ -5,7 +5,7 @@ lapply(
                  text) {
     write <- function(root, file, text) {
       dir.create(
-        dirname(file.path(root, file)),
+        path = dirname(path = file.path(root, file)),
         showWarnings = FALSE,
         recursive = TRUE
       )
@@ -29,31 +29,34 @@ lapply(
       paste(text, "parses an entry, nested braces included"),
       {
         x <- .LibParse(text = entry)
-        testthat::expect_true(x$ok)
-        testthat::expect_equal(x$n, 1L)
-        testthat::expect_equal(x$type, "Article")
-        testthat::expect_equal(x$key, "Baron-Kenny-1986")
+        testthat::expect_true(object = x$ok)
+        testthat::expect_equal(object = x$n, expected = 1L)
+        testthat::expect_equal(object = x$type, expected = "Article")
+        testthat::expect_equal(object = x$key, expected = "Baron-Kenny-1986")
         testthat::expect_equal(
-          unname(x$fields["publisher"]),
-          "American Psychological Association ({APA})"
+          object = unname(obj = x$fields["publisher"]),
+          expected = "American Psychological Association ({APA})"
         )
-        testthat::expect_equal(unname(x$fields["volume"]), "51")
+        testthat::expect_equal(
+          object = unname(obj = x$fields["volume"]),
+          expected = "51"
+        )
         bad <- .LibParse(
           text = c("@Article{Key-2020,", "  title = {a {b},", "}")
         )
-        testthat::expect_false(bad$ok)
+        testthat::expect_false(object = bad$ok)
         two <- .LibParse(text = c(entry, entry))
-        testthat::expect_equal(two$n, 2L)
+        testthat::expect_equal(object = two$n, expected = 2L)
       }
     )
     testthat::test_that(
       paste(text, "formats in the house layout and order"),
       {
         x <- .LibParse(text = entry)
-        shuffled <- rev(x$fields)
+        shuffled <- rev(x = x$fields)
         testthat::expect_equal(
-          .LibFormat(type = "article", key = x$key, fields = shuffled),
-          entry
+          object = .LibFormat(type = "article", key = x$key, fields = shuffled),
+          expected = entry
         )
       }
     )
@@ -67,12 +70,20 @@ lapply(
           publisher = "P"
         )
         testthat::expect_equal(
-          .LibFormat(type = "collection", key = "A-B-1991", fields = fields)[1],
-          "@Collection{A-B-1991,"
+          object = .LibFormat(
+            type = "collection",
+            key = "A-B-1991",
+            fields = fields
+          )[1],
+          expected = "@Collection{A-B-1991,"
         )
         testthat::expect_equal(
-          .LibFormat(type = "Patent", key = "A-B-1991", fields = fields)[1],
-          "@Patent{A-B-1991,"
+          object = .LibFormat(
+            type = "Patent",
+            key = "A-B-1991",
+            fields = fields
+          )[1],
+          expected = "@Patent{A-B-1991,"
         )
       }
     )
@@ -80,8 +91,8 @@ lapply(
       paste(text, "splits names outside braces"),
       {
         testthat::expect_equal(
-          .LibNames(x = "A B and {Smith and Sons} and C D"),
-          c("A B", "{Smith and Sons}", "C D")
+          object = .LibNames(x = "A B and {Smith and Sons} and C D"),
+          expected = c("A B", "{Smith and Sons}", "C D")
         )
       }
     )
@@ -89,27 +100,36 @@ lapply(
       paste(text, "writes LaTeX for non-ASCII text and escapes % and &"),
       {
         testthat::expect_equal(
-          .LibLatex(x = "Muth\u00e9n: 3% & 4%, 1\u20132"),
-          "Muth{\\'e}n: 3\\% \\& 4\\%, 1--2"
+          object = .LibLatex(x = "Muth\u00e9n: 3% & 4%, 1\u20132"),
+          expected = "Muth{\\'e}n: 3\\% \\& 4\\%, 1--2"
         )
-        testthat::expect_equal(.LibLatex(x = "3\\%"), "3\\%")
-        testthat::expect_equal(.LibLatex(x = "a%b", escape = FALSE), "a%b")
+        testthat::expect_equal(
+          object = .LibLatex(x = "3\\%"),
+          expected = "3\\%"
+        )
+        testthat::expect_equal(
+          object = .LibLatex(x = "a%b", escape = FALSE),
+          expected = "a%b"
+        )
       }
     )
     testthat::test_that(
       paste(text, "builds keys: accents dropped, particles joined, etal"),
       {
         testthat::expect_equal(
-          .LibKey(families = c("Muth\u00e9n", "Le Bourdonnec"), year = "2020"),
-          "Muthen-LeBourdonnec-2020"
+          object = .LibKey(
+            families = c("Muth\u00e9n", "Le Bourdonnec"),
+            year = "2020"
+          ),
+          expected = "Muthen-LeBourdonnec-2020"
         )
         testthat::expect_equal(
-          .LibKey(families = c("A", "B", "C", "D"), year = "2021"),
-          "A-B-C-etal-2021"
+          object = .LibKey(families = c("A", "B", "C", "D"), year = "2021"),
+          expected = "A-B-C-etal-2021"
         )
         testthat::expect_equal(
-          .LibKey(families = "Kisbu-Sakarya", year = "2014"),
-          "KisbuSakarya-2014"
+          object = .LibKey(families = "Kisbu-Sakarya", year = "2014"),
+          expected = "KisbuSakarya-2014"
         )
       }
     )
@@ -117,8 +137,8 @@ lapply(
       paste(text, "drafts sentence-case titles with protected words"),
       {
         testthat::expect_equal(
-          .LibTitle(x = "Bayesian Estimation Of SEM: A Tutorial In R"),
-          "{Bayesian} estimation of {SEM}: A tutorial in {R}"
+          object = .LibTitle(x = "Bayesian Estimation Of SEM: A Tutorial In R"),
+          expected = "{Bayesian} estimation of {SEM}: A tutorial in {R}"
         )
       }
     )
@@ -144,19 +164,33 @@ lapply(
       paste(text, "drafts an entry from a Crossref record"),
       {
         x <- .LibEntry(record = record)
-        testthat::expect_equal(x$key, "Morris-Gourieroux-2019")
-        testthat::expect_equal(x$repo, "lib-2010-2019-article")
-        testthat::expect_equal(unname(x$fields["date"]), "2019-05")
-        testthat::expect_equal(unname(x$fields["pages"]), "2074--2102")
         testthat::expect_equal(
-          unname(x$fields["author"]),
-          "Tim P. Morris and C. Gouri{\\'e}roux"
+          object = x$key,
+          expected = "Morris-Gourieroux-2019"
         )
         testthat::expect_equal(
-          unname(x$fields["abstract"]),
-          "About 3\\% of studies."
+          object = x$repo,
+          expected = "lib-2010-2019-article"
         )
-        testthat::expect_true(any(grepl("initials only", x$questions)))
+        testthat::expect_equal(
+          object = unname(obj = x$fields["date"]),
+          expected = "2019-05"
+        )
+        testthat::expect_equal(
+          object = unname(obj = x$fields["pages"]),
+          expected = "2074--2102"
+        )
+        testthat::expect_equal(
+          object = unname(obj = x$fields["author"]),
+          expected = "Tim P. Morris and C. Gouri{\\'e}roux"
+        )
+        testthat::expect_equal(
+          object = unname(obj = x$fields["abstract"]),
+          expected = "About 3\\% of studies."
+        )
+        testthat::expect_true(
+          object = any(grepl(pattern = "initials only", x = x$questions))
+        )
       }
     )
     # a library of two repositories
@@ -165,20 +199,23 @@ lapply(
     other <- file.path(root, "lib-2010-2019-article")
     for (dir in c(repo, other)) {
       write(
-        dir,
-        ".setup/scripts/project.R",
-        paste0("project <- \"", basename(dir), "\"")
+        root = dir,
+        file = ".setup/scripts/project.R",
+        text = paste0("project <- \"", basename(path = dir), "\"")
       )
     }
     bib <- function(dir, key) {
-      file.path(".setup/latex/bib", paste0(basename(dir), "-", key, ".bib"))
+      file.path(
+        ".setup/latex/bib",
+        paste0(basename(path = dir), "-", key, ".bib")
+      )
     }
-    write(repo, bib(repo, "Baron-Kenny-1986"), entry)
+    write(root = repo, file = bib(repo, "Baron-Kenny-1986"), text = entry)
     # five authors without etal, a year outside the decade, a raw %
     write(
-      repo,
-      bib(repo, "A-B-C-D-E-1995"),
-      c(
+      root = repo,
+      file = bib(repo, "A-B-C-D-E-1995"),
+      text = c(
         "@Article{A-B-C-D-E-1995,",
         "  author = {A A and B B and C C and D D and E E},",
         "  date = {1995},",
@@ -189,14 +226,18 @@ lapply(
     )
     # a misnamed file with the same DOI as another repository's entry
     write(
-      repo,
-      ".setup/latex/bib/wrong-name.bib",
-      sub("Baron-Kenny-1986", "Baron-Kenny-1986b", entry)
+      root = repo,
+      file = ".setup/latex/bib/wrong-name.bib",
+      text = sub(
+        pattern = "Baron-Kenny-1986",
+        replacement = "Baron-Kenny-1986b",
+        x = entry
+      )
     )
     write(
-      other,
-      bib(other, "Other-2015"),
-      c(
+      root = other,
+      file = bib(other, "Other-2015"),
+      text = c(
         "@Article{Other-2015,",
         "  author = {O O},",
         "  date = {2015},",
@@ -206,25 +247,29 @@ lapply(
         "}"
       )
     )
-    checks <- suppressMessages(LibCheck(path = repo, root = root))
+    checks <- suppressMessages(expr = LibCheck(path = repo, root = root))
     found <- function(key, check) {
       any(checks$key == key & checks$check == check)
     }
     testthat::test_that(
       paste(text, "LibCheck finds key, year, file, percent, duplicate errors"),
       {
-        testthat::expect_true(found("A-B-C-D-E-1995", "key"))
-        testthat::expect_true(found("A-B-C-D-E-1995", "decade"))
-        testthat::expect_true(found("A-B-C-D-E-1995", "percent"))
-        testthat::expect_true(found("Baron-Kenny-1986b", "file name"))
-        testthat::expect_true(found("Baron-Kenny-1986", "duplicate DOI"))
-        testthat::expect_true(found("Baron-Kenny-1986b", "suffix"))
+        testthat::expect_true(object = found("A-B-C-D-E-1995", "key"))
+        testthat::expect_true(object = found("A-B-C-D-E-1995", "decade"))
+        testthat::expect_true(object = found("A-B-C-D-E-1995", "percent"))
+        testthat::expect_true(object = found("Baron-Kenny-1986b", "file name"))
+        testthat::expect_true(
+          object = found("Baron-Kenny-1986", "duplicate DOI")
+        )
+        testthat::expect_true(object = found("Baron-Kenny-1986b", "suffix"))
         testthat::expect_false(
-          any(checks$key == "Baron-Kenny-1986" & checks$check == "layout")
+          object = any(
+            checks$key == "Baron-Kenny-1986" & checks$check == "layout"
+          )
         )
         testthat::expect_error(
-          suppressMessages(LibCheck(path = repo, error = TRUE)),
-          "A-B-C-D-E-1995"
+          object = suppressMessages(expr = LibCheck(path = repo, error = TRUE)),
+          regexp = "A-B-C-D-E-1995"
         )
       }
     )
@@ -240,15 +285,17 @@ lapply(
           "  date = {1985},",
           "  journaltitle = {J}}"
         )
-        write(repo, bib(repo, "Doe-1985"), messy)
-        changed <- suppressMessages(LibFormat(path = repo, write = TRUE))
-        testthat::expect_true("lib-1980-1989-article-Doe-1985.bib" %in% changed)
+        write(root = repo, file = bib(repo, "Doe-1985"), text = messy)
+        changed <- suppressMessages(expr = LibFormat(path = repo, write = TRUE))
+        testthat::expect_true(
+          object = "lib-1980-1989-article-Doe-1985.bib" %in% changed
+        )
         testthat::expect_false(
-          "lib-1980-1989-article-Baron-Kenny-1986.bib" %in% changed
+          object = "lib-1980-1989-article-Baron-Kenny-1986.bib" %in% changed
         )
         testthat::expect_equal(
-          readLines(file.path(repo, bib(repo, "Doe-1985"))),
-          c(
+          object = readLines(con = file.path(repo, bib(repo, "Doe-1985"))),
+          expected = c(
             "@Article{Doe-1985,",
             "  author = {Jane Doe and Lee M{\\'e}n},",
             "  date = {1985},",
@@ -264,7 +311,7 @@ lapply(
           what = "raw",
           n = 1000
         )
-        testthat::expect_false(as.raw(13L) %in% raw)
+        testthat::expect_false(object = as.raw(x = 13L) %in% raw)
       }
     )
     testthat::test_that(
@@ -272,16 +319,20 @@ lapply(
       {
         # as writeLines() writes on Windows
         writeBin(
-          object = charToRaw(paste0(paste(entry, collapse = "\r\n"), "\r\n")),
+          object = charToRaw(
+            x = paste0(paste(entry, collapse = "\r\n"), "\r\n")
+          ),
           con = file.path(repo, bib(repo, "Baron-Kenny-1986"))
         )
-        checks <- suppressMessages(LibCheck(path = repo))
+        checks <- suppressMessages(expr = LibCheck(path = repo))
         testthat::expect_false(
-          any(checks$key == "Baron-Kenny-1986" & checks$check == "layout")
+          object = any(
+            checks$key == "Baron-Kenny-1986" & checks$check == "layout"
+          )
         )
-        changed <- suppressMessages(LibFormat(path = repo))
+        changed <- suppressMessages(expr = LibFormat(path = repo))
         testthat::expect_false(
-          "lib-1980-1989-article-Baron-Kenny-1986.bib" %in% changed
+          object = "lib-1980-1989-article-Baron-Kenny-1986.bib" %in% changed
         )
       }
     )
@@ -289,29 +340,35 @@ lapply(
       paste(text, "LibAdd drafts from Crossref, refuses a DOI in the library"),
       {
         x <- testthat::with_mocked_bindings(
-          code = suppressMessages(LibAdd(doi = "10.1000/test.1", root = root)),
-          .LibCrossref = function(doi) record,
+          code = suppressMessages(
+            expr = LibAdd(doi = "10.1000/test.1", root = root)
+          ),
+          .LibCrossref = function(doi) {
+            record
+          },
           .package = "rProject"
         )
         testthat::expect_match(
-          x$file,
-          "lib-2010-2019-article-Morris-Gourieroux-2019.bib",
+          object = x$file,
+          regexp = "lib-2010-2019-article-Morris-Gourieroux-2019.bib",
           fixed = TRUE
         )
-        testthat::expect_false(file.exists(x$file))
+        testthat::expect_false(object = file.exists(x$file))
         dup <- record
         dup$DOI <- "10.1037/0022-3514.51.6.1173"
         testthat::expect_error(
-          testthat::with_mocked_bindings(
-            code = suppressMessages(LibAdd(doi = dup$DOI, root = root)),
-            .LibCrossref = function(doi) dup,
+          object = testthat::with_mocked_bindings(
+            code = suppressMessages(expr = LibAdd(doi = dup$DOI, root = root)),
+            .LibCrossref = function(doi) {
+              dup
+            },
             .package = "rProject"
           ),
-          "already in the library"
+          regexp = "already in the library"
         )
       }
     )
-    unlink(root, recursive = TRUE)
+    unlink(x = root, recursive = TRUE)
   },
   text = "test-rProject-lib"
 )

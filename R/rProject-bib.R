@@ -19,6 +19,11 @@
 #'   (`make bib` does so in rProject, `make bibrproject` anywhere).
 #'   If none can be cloned, the previous `bib.bib` is kept.
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Bib(path = getwd())
+#' }
 #' @export
 Bib <- function(path,
                 bib_lib = FALSE) {
@@ -65,7 +70,7 @@ Bib <- function(path,
       path = latex_bib_dir,
       pattern = "^lib-.*\\.bib$"
     )
-    if (length(cloned) == 0L && !is.null(previous)) {
+    if (length(x = cloned) == 0L && !is.null(x = previous)) {
       writeLines(
         text = previous,
         con = latex_bib
@@ -88,14 +93,14 @@ Bib <- function(path,
   )
   # the outputs are not sources
   bib_src <- bib_src[
-    !(basename(bib_src) %in% c("bib.bib", "quarto.bib", "vignettes.bib"))
+    !(basename(path = bib_src) %in% c("bib.bib", "quarto.bib", "vignettes.bib"))
   ]
   out <- NULL
-  if (length(bib_src) > 0L) {
+  if (length(x = bib_src) > 0L) {
     # verbatim, one blank line between files
     bib <- unlist(
-      lapply(
-        X = sort(bib_src),
+      x = lapply(
+        X = sort(x = bib_src),
         FUN = function(file) {
           c(readLines(con = file, warn = FALSE), "")
         }
@@ -119,14 +124,14 @@ Bib <- function(path,
       file.path(path, "vignettes", "vignettes.bib")
     )
     keep <- dir.exists(
-      c(
+      paths = c(
         file.path(path, ".setup", "quarto"),
         file.path(path, "vignettes")
       )
     )
     for (copy in copies[keep]) {
       dir.create(
-        path = dirname(copy),
+        path = dirname(path = copy),
         showWarnings = FALSE,
         recursive = TRUE
       )
@@ -139,7 +144,7 @@ Bib <- function(path,
   }
   if (bib_lib) {
     unlink(
-      list.files(
+      x = list.files(
         path = file.path(
           path,
           ".setup",
@@ -152,5 +157,5 @@ Bib <- function(path,
       )
     )
   }
-  invisible(out)
+  invisible(x = out)
 }

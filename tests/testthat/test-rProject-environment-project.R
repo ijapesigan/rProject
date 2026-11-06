@@ -8,11 +8,14 @@ lapply(
       paste(text, "sets PROJECT and returns it"),
       {
         out <- EnvironmentProject(project = c("first", "second"))
-        testthat::expect_equal(out, c(PROJECT = "first"))
-        testthat::expect_equal(Sys.getenv("PROJECT"), "first")
+        testthat::expect_equal(object = out, expected = c(PROJECT = "first"))
+        testthat::expect_equal(
+          object = Sys.getenv(x = "PROJECT"),
+          expected = "first"
+        )
       }
     )
-    .TestRestore(state)
+    .TestRestore(state = state)
   },
   text = "test-rProject-environment-project"
 )

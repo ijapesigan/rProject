@@ -5,7 +5,7 @@ root <- rprojroot::is_rstudio_project
 
 # load functions
 source(
-  root$find_file(
+  file = root$find_file(
     ".setup",
     "load",
     "load.R"
@@ -35,9 +35,9 @@ x <- c(
     recursive = TRUE
   )
 )
-if (length(x) > 0) {
-  for (i in seq_along(x)) {
-    load(x[i])
+if (length(x = x) > 0) {
+  for (i in seq_along(along.with = x)) {
+    load(file = x[i])
   }
   rm(i)
 }

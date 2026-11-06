@@ -13,7 +13,7 @@ lapply(
             collapse = "/"
           )
         },
-        FUN.VALUE = character(1)
+        FUN.VALUE = character(length = 1)
       )
     }
     manifest <- utils::read.delim(
@@ -24,10 +24,12 @@ lapply(
       paste(text, "every manifest row has its file and every file its row"),
       {
         sources <- file.path(manifest$set, encode(manifest$path))
-        testthat::expect_true(all(file.exists(file.path(root, sources))))
-        sets <- unique(unlist(.TemplateSets()))
+        testthat::expect_true(
+          object = all(file.exists(file.path(root, sources)))
+        )
+        sets <- unique(x = unlist(x = .TemplateSets()))
         on_disk <- unlist(
-          lapply(
+          x = lapply(
             X = sets,
             FUN = function(set) {
               file.path(
@@ -42,25 +44,33 @@ lapply(
             }
           )
         )
-        testthat::expect_setequal(on_disk, sources)
-        testthat::expect_true(all(manifest$set %in% sets))
+        testthat::expect_setequal(object = on_disk, expected = sources)
+        testthat::expect_true(object = all(manifest$set %in% sets))
       }
     )
     testthat::test_that(
       paste(text, "shared files are the same in every set"),
       {
         same <- function(files) {
-          length(unique(tools::md5sum(file.path(root, files)))) == 1
+          length(
+            x = unique(x = tools::md5sum(files = file.path(root, files)))
+          ) == 1
         }
-        testthat::expect_true(same(c("package/Makefile", "talk/Makefile")))
+        testthat::expect_true(
+          object = same(c("package/Makefile", "talk/Makefile"))
+        )
         for (f in c("make-project.R", "make-install.R", "make-packages.R")) {
           testthat::expect_true(
-            same(paste0(c("common", "docker"), "/dot-setup/scripts/", f))
+            object = same(
+              paste0(c("common", "docker"), "/dot-setup/scripts/", f)
+            )
           )
         }
         for (f in c("make-config.R", "verify.sh")) {
           testthat::expect_true(
-            same(paste0(c("package", "talk"), "/dot-setup/scripts/", f))
+            object = same(
+              paste0(c("package", "talk"), "/dot-setup/scripts/", f)
+            )
           )
         }
       }
@@ -70,16 +80,20 @@ lapply(
       {
         folders <- .TemplateFolders()
         types <- unlist(
-          strsplit(x = folders$types, split = ",", fixed = TRUE)
+          x = strsplit(x = folders$types, split = ",", fixed = TRUE)
         )
         testthat::expect_true(
-          all(types %in% c("all", names(.TemplateSets())))
+          object = all(types %in% c("all", names(x = .TemplateSets())))
         )
-        testthat::expect_true(all(grepl(pattern = "/$", x = folders$folder)))
-        testthat::expect_false(anyNA(folders$private))
-        testthat::expect_false(anyNA(folders$create))
-        for (type in names(.TemplateSets())) {
-          testthat::expect_true(nrow(.TemplateFolders(type = type)) > 0L)
+        testthat::expect_true(
+          object = all(grepl(pattern = "/$", x = folders$folder))
+        )
+        testthat::expect_false(object = anyNA(x = folders$private))
+        testthat::expect_false(object = anyNA(x = folders$create))
+        for (type in names(x = .TemplateSets())) {
+          testthat::expect_true(
+            object = nrow(x = .TemplateFolders(type = type)) > 0L
+          )
         }
       }
     )
@@ -88,13 +102,15 @@ lapply(
       {
         files <- .TemplateFiles(type = "cran")
         dirs <- files$path[files$kind == "dir"]
-        testthat::expect_true(".setup/cpp/.gitignore" %in% dirs)
-        testthat::expect_false(".setup/data-raw/.gitignore" %in% dirs)
+        testthat::expect_true(object = ".setup/cpp/.gitignore" %in% dirs)
+        testthat::expect_false(object = ".setup/data-raw/.gitignore" %in% dirs)
         testthat::expect_false(
-          ".setup/bin/.gitignore" %in% .TemplateFiles(type = "man")$path
+          object = ".setup/bin/.gitignore" %in% .TemplateFiles(
+            type = "man"
+          )$path
         )
         docker <- .TemplateFiles(type = "docker")
-        testthat::expect_false(any(docker$kind == "dir"))
+        testthat::expect_false(object = any(docker$kind == "dir"))
       }
     )
     testthat::test_that(
@@ -111,7 +127,7 @@ lapply(
           )
         )
         testthat::expect_true(
-          all(
+          object = all(
             c(
               ".github/workflows/docker-build-push-multi.yml",
               ".github/workflows/docker-build-push-daily-multi-docs.yml"
@@ -119,15 +135,15 @@ lapply(
           )
         )
         testthat::expect_equal(
-          files$fill[files$set == "workflows"],
-          c(FALSE, TRUE)
+          object = files$fill[files$set == "workflows"],
+          expected = c(FALSE, TRUE)
         )
         plain <- .TemplateFiles(
           type = "docker",
           settings = list(workflows = "docker-build-push-daily-multi")
         )
         testthat::expect_true(
-          ".github/workflows/docker-build-push-daily-multi.yml" %in%
+          object = ".github/workflows/docker-build-push-daily-multi.yml" %in%
             plain$path
         )
       }
@@ -136,7 +152,7 @@ lapply(
       paste(text, "stops on an unknown workflow"),
       {
         testthat::expect_error(
-          .TemplateFiles(
+          object = .TemplateFiles(
             type = "docker",
             settings = list(workflows = "no-such-workflow")
           ),
@@ -152,7 +168,7 @@ lapply(
         paste(text, "workflows live only in inst/template"),
         {
           yml <- unlist(
-            lapply(
+            x = lapply(
               X = c(".github", ".setup", "inst"),
               FUN = function(x) {
                 file.path(
@@ -169,7 +185,7 @@ lapply(
           )
           workflows <- yml[grepl(pattern = "(^|/)workflows/", x = yml)]
           testthat::expect_true(
-            all(
+            object = all(
               grepl(
                 pattern = "^(inst/template/|\\.github/workflows/)",
                 x = workflows

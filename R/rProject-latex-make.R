@@ -4,6 +4,11 @@
 #'
 #' @inheritParams LatexCompile
 #' @inheritParams Bib
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' LatexMake(path = getwd())
+#' }
 #' @export
 LatexMake <- function(path,
                       clean = FALSE) {
@@ -29,18 +34,18 @@ LatexMake <- function(path,
       )
     }
     try(
-      LatexKnit(
+      expr = LatexKnit(
         path = path
       )
     )
     try(
-      LatexTikzCompile(
+      expr = LatexTikzCompile(
         path = path,
         clean = clean
       )
     )
     try(
-      LatexCompile(
+      expr = LatexCompile(
         path = path,
         clean = clean
       )

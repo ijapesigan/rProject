@@ -2,7 +2,7 @@
                             sha) {
   index <- file.path(path, ".setup", "logs", "index.md")
   recorded <- FALSE
-  if (file.exists(index) && length(sha) == 1L && nzchar(sha)) {
+  if (file.exists(index) && length(x = sha) == 1L && nzchar(x = sha)) {
     lines <- readLines(
       con = index,
       warn = FALSE
@@ -10,9 +10,9 @@
     commits <- vapply(
       X = strsplit(x = lines, split = "|", fixed = TRUE),
       FUN = function(cells) {
-        trimws(c(cells, "", "")[3])
+        trimws(x = c(cells, "", "")[3])
       },
-      FUN.VALUE = character(1)
+      FUN.VALUE = character(length = 1)
     )
     recorded <- sha %in% commits
   }

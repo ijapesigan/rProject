@@ -10,18 +10,18 @@
     colClasses = "character",
     quote = ""
   )
-  folders$private <- as.logical(folders$private)
-  folders$create <- as.logical(folders$create)
-  if (!is.null(type)) {
+  folders$private <- as.logical(x = folders$private)
+  folders$create <- as.logical(x = folders$create)
+  if (!is.null(x = type)) {
     keep <- vapply(
       X = strsplit(x = folders$types, split = ",", fixed = TRUE),
       FUN = function(x) {
         "all" %in% x || type %in% x
       },
-      FUN.VALUE = logical(1)
+      FUN.VALUE = logical(length = 1)
     )
     folders <- folders[keep, ]
   }
-  rownames(folders) <- NULL
+  rownames(x = folders) <- NULL
   folders
 }

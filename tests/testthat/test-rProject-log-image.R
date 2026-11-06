@@ -16,14 +16,14 @@ lapply(
       ),
       con = labels
     )
-    saved <- Sys.getenv(c("APPTAINER_NAME", "SINGULARITY_NAME"))
+    saved <- Sys.getenv(x = c("APPTAINER_NAME", "SINGULARITY_NAME"))
     testthat::test_that(
       paste(text, "records the image that ran"),
       {
         Sys.setenv(APPTAINER_NAME = "manmetavar.sif")
         testthat::expect_equal(
-          .LogImage(labels = labels),
-          paste0(
+          object = .LogImage(labels = labels),
+          expected = paste0(
             "- Image: `manmetavar.sif` (built Sunday_11_October_2026; ",
             "base sha256:64b60b539330)"
           )
@@ -33,10 +33,10 @@ lapply(
     testthat::test_that(
       paste(text, "says when it did not run in a container"),
       {
-        Sys.unsetenv(c("APPTAINER_NAME", "SINGULARITY_NAME"))
+        Sys.unsetenv(x = c("APPTAINER_NAME", "SINGULARITY_NAME"))
         testthat::expect_equal(
-          .LogImage(labels = labels),
-          "- Image: not run inside a container"
+          object = .LogImage(labels = labels),
+          expected = "- Image: not run inside a container"
         )
       }
     )
@@ -45,17 +45,17 @@ lapply(
       {
         Sys.setenv(APPTAINER_NAME = "docs.sif")
         testthat::expect_match(
-          .LogImage(labels = tempfile()),
-          "built unknown; base unknown"
+          object = .LogImage(labels = tempfile()),
+          regexp = "built unknown; base unknown"
         )
       }
     )
-    Sys.unsetenv(c("APPTAINER_NAME", "SINGULARITY_NAME"))
+    Sys.unsetenv(x = c("APPTAINER_NAME", "SINGULARITY_NAME"))
     # restore only what was set (Sys.setenv() with no arguments is an error)
-    if (any(nzchar(saved))) {
-      do.call(what = Sys.setenv, args = as.list(saved[nzchar(saved)]))
+    if (any(nzchar(x = saved))) {
+      do.call(what = Sys.setenv, args = as.list(x = saved[nzchar(x = saved)]))
     }
-    unlink(labels)
+    unlink(x = labels)
   },
   text = "test-rProject-log-image"
 )

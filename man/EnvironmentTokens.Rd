@@ -15,6 +15,11 @@ Returns vector of secret tokens.
 \description{
 Set Tokens
 }
+\examples{
+\dontrun{
+EnvironmentTokens(tokens = c(GITHUB_PAT = Sys.getenv(x = "GITHUB_PAT")))
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

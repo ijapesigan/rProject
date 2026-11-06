@@ -10,8 +10,16 @@ VignettesPrecompile(path)
 \item{path}{Character string.
 Project path.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Precompile Vignettes
+}
+\examples{
+\dontrun{
+VignettesPrecompile(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

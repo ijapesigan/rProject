@@ -33,6 +33,10 @@
 #'   If `TRUE`, stop when there is an ERROR.
 #' @return Returns a data frame with the columns
 #'   `file`, `key`, `severity`, `check`, and `message`, invisibly.
+#' @examples
+#' \dontrun{
+#' LibCheck(path = getwd())
+#' }
 #' @export
 LibCheck <- function(path,
                      root = NULL,
@@ -42,27 +46,27 @@ LibCheck <- function(path,
     x = repo,
     m = regexec(pattern = "^lib-([0-9]{4})-([0-9]{4})-([a-z]+)$", text = repo)
   )[[1]]
-  if (length(parts) == 0L) {
+  if (length(x = parts) == 0L) {
     stop(
       paste0("\n\n", repo, " is not a lib-<decade>-<type> project.\n\n"),
       call. = FALSE
     )
   }
-  others <- character(0)
-  if (!is.null(root)) {
+  others <- character(length = 0)
+  if (!is.null(x = root)) {
     others <- list.files(
       path = root,
       pattern = "^lib-[0-9]{4}-[0-9]{4}-[a-z]+$",
       full.names = TRUE
     )
-    others <- others[normalizePath(others) != normalizePath(path)]
+    others <- others[normalizePath(path = others) != normalizePath(path = path)]
   }
   all <- .LibRead(paths = c(path, others))
   here <- all[all$path == path, , drop = FALSE]
   finding <- function(row, severity, check, message) {
     data.frame(
-      file = rep(row$file, length(severity)),
-      key = rep(row$key, length(severity)),
+      file = rep(x = row$file, length(x = severity)),
+      key = rep(x = row$key, length(x = severity)),
       severity = severity,
       check = check,
       message = message,
@@ -70,13 +74,13 @@ LibCheck <- function(path,
     )
   }
   rows <- lapply(
-    X = seq_len(nrow(here)),
+    X = seq_len(length.out = nrow(x = here)),
     FUN = function(i) {
       found <- .LibCheckEntry(
         row = here[i, ],
         repo = repo,
-        first = as.integer(parts[2]),
-        last = as.integer(parts[3]),
+        first = as.integer(x = parts[2]),
+        last = as.integer(x = parts[3]),
         repo_type = parts[4]
       )
       finding(
@@ -89,13 +93,13 @@ LibCheck <- function(path,
   )
   # keys and DOIs used twice, and lone suffixes, across repositories
   ok <- all[all$ok, , drop = FALSE]
-  dup_key <- ok$key[duplicated(ok$key)]
-  doi <- tolower(ok$doi)
-  dup_doi <- unique(doi[!is.na(doi) & duplicated(doi)])
-  for (i in which(here$ok)) {
+  dup_key <- ok$key[duplicated(x = ok$key)]
+  doi <- tolower(x = ok$doi)
+  dup_doi <- unique(x = doi[!is.na(x = doi) & duplicated(x = doi)])
+  for (i in which(x = here$ok)) {
     row <- here[i, ]
     if (row$key %in% dup_key) {
-      where <- unique(ok$repo[ok$key == row$key])
+      where <- unique(x = ok$repo[ok$key == row$key])
       rows <- c(
         rows,
         list(
@@ -108,8 +112,11 @@ LibCheck <- function(path,
         )
       )
     }
-    if (!is.na(row$doi) && tolower(row$doi) %in% dup_doi) {
-      keys <- setdiff(ok$key[!is.na(doi) & doi == tolower(row$doi)], row$key)
+    if (!is.na(x = row$doi) && tolower(x = row$doi) %in% dup_doi) {
+      keys <- setdiff(
+        x = ok$key[!is.na(x = doi) & doi == tolower(x = row$doi)],
+        y = row$key
+      )
       rows <- c(
         rows,
         list(
@@ -132,13 +139,13 @@ LibCheck <- function(path,
   }
   # biber's datamodel
   biber <- .LibBiber(text = here$text[here$ok])
-  for (i in seq_len(nrow(biber))) {
+  for (i in seq_len(length.out = nrow(x = biber))) {
     row <- here[here$ok & here$key == biber$key[i], , drop = FALSE]
-    if (nrow(row) > 0L) {
+    if (nrow(x = row) > 0L) {
       severity <- ifelse(
-        grepl(pattern = "Missing mandatory", x = biber$message[i]),
-        "ERROR",
-        "WARNING"
+        test = grepl(pattern = "Missing mandatory", x = biber$message[i]),
+        yes = "ERROR",
+        no = "WARNING"
       )
       rows <- c(
         rows,
@@ -149,22 +156,29 @@ LibCheck <- function(path,
   out <- do.call(
     what = rbind,
     args = c(
-      list(finding(here[0, ], character(0), character(0), character(0))),
+      list(
+        finding(
+          here[0, ],
+          character(length = 0),
+          character(length = 0),
+          character(length = 0)
+        )
+      ),
       rows
     )
   )
   counts <- table(
-    factor(out$severity, levels = c("ERROR", "WARNING", "STYLE"))
+    factor(x = out$severity, levels = c("ERROR", "WARNING", "STYLE"))
   )
   message(
     paste0(
-      "\n\nLibCheck ", repo, ": ", nrow(here), " files; ",
+      "\n\nLibCheck ", repo, ": ", nrow(x = here), " files; ",
       counts[["ERROR"]], " errors, ", counts[["WARNING"]], " warnings, ",
       counts[["STYLE"]], " style",
       ifelse(
-        is.null(root),
-        " (this repository only; pass root for keys and DOIs used twice)",
-        ""
+        test = is.null(x = root),
+        yes = " (this repository only; pass root for keys and DOIs used twice)",
+        no = ""
       ),
       ".\n\n"
     )
@@ -180,5 +194,5 @@ LibCheck <- function(path,
       call. = FALSE
     )
   }
-  invisible(out)
+  invisible(x = out)
 }

@@ -5,15 +5,15 @@ lapply(
                  text) {
     # fake tokens are built at run time
     # so that this file does not trigger SecretScan or push protection
-    fake_github <- paste0("ghp_", strrep("a", 36))
+    fake_github <- paste0("ghp_", strrep(x = "a", times = 36))
     fake_codecov <- "00000000-0000-0000-0000-000000000000"
     root <- tempfile(pattern = "secretscan")
     dir.create(
-      file.path(root, ".setup", "scripts"),
+      path = file.path(root, ".setup", "scripts"),
       recursive = TRUE
     )
     dir.create(
-      file.path(root, ".library"),
+      path = file.path(root, ".library"),
       recursive = TRUE
     )
     writeLines(
@@ -41,17 +41,17 @@ lapply(
       paste(text, "finds secrets"),
       {
         testthat::expect_error(
-          SecretScan(path = root)
+          object = SecretScan(path = root)
         )
         findings <- suppressWarnings(
-          SecretScan(path = root, error = FALSE)
+          expr = SecretScan(path = root, error = FALSE)
         )
         testthat::expect_equal(
-          sort(findings$type),
-          c("codecov", "github")
+          object = sort(x = findings$type),
+          expected = c("codecov", "github")
         )
         testthat::expect_true(
-          all(findings$file == ".setup/scripts/secrets.R")
+          object = all(findings$file == ".setup/scripts/secrets.R")
         )
       }
     )
@@ -59,37 +59,41 @@ lapply(
       paste(text, "masks values"),
       {
         findings <- suppressWarnings(
-          SecretScan(path = root, error = FALSE)
+          expr = SecretScan(path = root, error = FALSE)
         )
         testthat::expect_false(
-          any(grepl(fake_github, findings$match, fixed = TRUE))
+          object = any(
+            grepl(pattern = fake_github, x = findings$match, fixed = TRUE)
+          )
         )
         msg <- tryCatch(
-          SecretScan(path = root),
-          error = function(e) conditionMessage(e)
+          expr = SecretScan(path = root),
+          error = function(e) {
+            conditionMessage(c = e)
+          }
         )
         testthat::expect_false(
-          grepl(fake_github, msg, fixed = TRUE)
+          object = grepl(pattern = fake_github, x = msg, fixed = TRUE)
         )
       }
     )
     testthat::test_that(
       paste(text, "passes when clean"),
       {
-        unlink(file.path(root, ".setup", "scripts", "secrets.R"))
+        unlink(x = file.path(root, ".setup", "scripts", "secrets.R"))
         findings <- suppressMessages(
-          SecretScan(path = root)
+          expr = SecretScan(path = root)
         )
         testthat::expect_equal(
-          nrow(findings),
-          0L
+          object = nrow(x = findings),
+          expected = 0L
         )
       }
     )
     testthat::test_that(
       paste(text, "skips sk- inside a longer name"),
       {
-        fake_openai <- paste0("sk-", strrep("a", 40))
+        fake_openai <- paste0("sk-", strrep(x = "a", times = 40))
         writeLines(
           text = c(
             # split, so the scanner in an older image does not flag it
@@ -104,16 +108,16 @@ lapply(
           con = file.path(root, "names.md")
         )
         findings <- suppressWarnings(
-          SecretScan(path = root, error = FALSE)
+          expr = SecretScan(path = root, error = FALSE)
         )
         testthat::expect_equal(
-          findings$line[findings$file == "names.md"],
-          2:4
+          object = findings$line[findings$file == "names.md"],
+          expected = 2:4
         )
-        unlink(file.path(root, "names.md"))
+        unlink(x = file.path(root, "names.md"))
       }
     )
-    unlink(root, recursive = TRUE)
+    unlink(x = root, recursive = TRUE)
   },
   text = "test-rProject-secret-scan"
 )

@@ -60,6 +60,11 @@ which \code{\link[=Project]{Project()}} creates when it is missing.
 The user chooses the Apptainer image and runs \verb{apptainer exec};
 the instructions tell agents not to pick an image.
 }
+\examples{
+\dontrun{
+AI(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

@@ -14,6 +14,10 @@
 #' @param files Character vector.
 #'   Files to compress, relative to `path`.
 #' @return Returns the paths of the compressed files, invisibly.
+#' @examples
+#' \dontrun{
+#' DataCompress(path = getwd(), files = "data.csv")
+#' }
 #' @export
 DataCompress <- function(path,
                          files) {
@@ -38,10 +42,12 @@ DataCompress <- function(path,
         from = to,
         to = check
       )
-      same <- unname(tools::md5sum(check)) == unname(tools::md5sum(from))
-      unlink(check)
+      same <- unname(
+        obj = tools::md5sum(files = check)
+      ) == unname(obj = tools::md5sum(files = from))
+      unlink(x = check)
       if (!same) {
-        unlink(to)
+        unlink(x = to)
         stop(
           paste0(
             "\n\nThe compressed copy of ",
@@ -52,10 +58,10 @@ DataCompress <- function(path,
         )
       }
       before <- file.info(from)$size
-      unlink(from)
+      unlink(x = from)
       message(
         sprintf(
-          "%s: %.1f MB -> %.1f MB",
+          fmt = "%s: %.1f MB -> %.1f MB",
           file,
           before / 1024^2,
           file.info(to)$size / 1024^2
@@ -63,7 +69,7 @@ DataCompress <- function(path,
       )
       to
     },
-    FUN.VALUE = character(1)
+    FUN.VALUE = character(length = 1)
   )
-  invisible(unname(out))
+  invisible(x = unname(obj = out))
 }

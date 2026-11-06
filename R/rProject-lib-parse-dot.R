@@ -7,7 +7,7 @@
   out <- list(
     type = NA_character_,
     key = NA_character_,
-    fields = character(0),
+    fields = character(length = 0),
     n = n,
     ok = FALSE,
     error = "no entry"
@@ -27,17 +27,17 @@
     )
     out$type <- sub(pattern = "^@([A-Za-z]+).*$", replacement = "\\1", x = head)
     out$key <- trimws(
-      sub(
+      x = sub(
         pattern = "^@[A-Za-z]+[[:space:]]*\\{([^,]+),$",
         replacement = "\\1",
         x = head
       )
     )
-    i <- starts[1] + nchar(head)
-    fields <- character(0)
+    i <- starts[1] + nchar(x = head)
+    fields <- character(length = 0)
     error <- ""
     closed <- FALSE
-    while (i <= length(chars) && !closed && !nzchar(error)) {
+    while (i <= length(x = chars) && !closed && !nzchar(x = error)) {
       ch <- chars[i]
       if (grepl(pattern = "[[:space:],]", x = ch)) {
         i <- i + 1L
@@ -46,29 +46,33 @@
       } else if (grepl(pattern = "[A-Za-z]", x = ch)) {
         j <- i
         while (
-          j <= length(chars) && grepl(pattern = "[A-Za-z0-9_+-]", x = chars[j])
+          j <= length(
+            x = chars
+          ) && grepl(pattern = "[A-Za-z0-9_+-]", x = chars[j])
         ) {
           j <- j + 1L
         }
-        name <- tolower(paste(chars[i:(j - 1L)], collapse = ""))
+        name <- tolower(x = paste(chars[i:(j - 1L)], collapse = ""))
         while (
-          j <= length(chars) && grepl(pattern = "[[:space:]]", x = chars[j])
+          j <= length(x = chars) && grepl(pattern = "[[:space:]]", x = chars[j])
         ) {
           j <- j + 1L
         }
-        if (j > length(chars) || chars[j] != "=") {
+        if (j > length(x = chars) || chars[j] != "=") {
           error <- paste0("no '=' after field ", name)
         } else {
           j <- j + 1L
           while (
-            j <= length(chars) && grepl(pattern = "[[:space:]]", x = chars[j])
+            j <= length(
+              x = chars
+            ) && grepl(pattern = "[[:space:]]", x = chars[j])
           ) {
             j <- j + 1L
           }
-          if (j <= length(chars) && chars[j] == "{") {
+          if (j <= length(x = chars) && chars[j] == "{") {
             depth <- 1L
             k <- j + 1L
-            while (k <= length(chars) && depth > 0L) {
+            while (k <= length(x = chars) && depth > 0L) {
               if (chars[k] == "{" && chars[k - 1L] != "\\") {
                 depth <- depth + 1L
               } else if (chars[k] == "}" && chars[k - 1L] != "\\") {
@@ -83,7 +87,7 @@
               if (k - 2L < j + 1L) {
                 value <- ""
               }
-              if (name %in% names(fields)) {
+              if (name %in% names(x = fields)) {
                 error <- paste0("duplicate field ", name)
               }
               fields[name] <- value
@@ -93,7 +97,7 @@
             # a bare value (a number or a macro)
             k <- j
             while (
-              k <= length(chars) &&
+              k <= length(x = chars) &&
                 !grepl(pattern = "[,}[:space:]]", x = chars[k])
             ) {
               k <- k + 1L
@@ -106,11 +110,11 @@
         error <- paste0("unexpected character '", ch, "'")
       }
     }
-    if (!closed && !nzchar(error)) {
+    if (!closed && !nzchar(x = error)) {
       error <- "the entry is not closed"
     }
     out$fields <- fields
-    out$ok <- !nzchar(error)
+    out$ok <- !nzchar(x = error)
     out$error <- error
   }
   out

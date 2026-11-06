@@ -18,8 +18,16 @@ bundles and their meanings.}
 \item{force}{Logical.
 Force install.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Install \verb{~/.TinyTex}
+}
+\examples{
+\dontrun{
+TinyTex(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -24,8 +24,16 @@ If \code{all = TRUE}, ignore \code{what} and install all valid \code{what} value
 If \code{force = TRUE}, install whether or not the application is
 available in the system.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Install Applications on Local Machine
+}
+\examples{
+\dontrun{
+InstallLocal()
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

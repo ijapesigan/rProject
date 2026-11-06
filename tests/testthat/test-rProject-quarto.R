@@ -7,28 +7,38 @@ lapply(
       paste(text, "does nothing without .qmd files"),
       {
         root <- .TestProject()
-        testthat::expect_message(Quarto(path = root), "No .qmd. files found")
-        testthat::expect_false(dir.exists(file.path(root, "quarto")))
-        unlink(dirname(root), recursive = TRUE)
+        testthat::expect_message(
+          object = Quarto(path = root),
+          regexp = "No .qmd. files found"
+        )
+        testthat::expect_false(
+          object = dir.exists(paths = file.path(root, "quarto"))
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
     testthat::test_that(
       paste(text, "renders a website (slow)"),
       {
         .SkipSlow()
-        testthat::skip_if(Sys.which("quarto") == "")
+        testthat::skip_if(condition = Sys.which(names = "quarto") == "")
         root <- .TestProject()
-        dir.create(file.path(root, ".setup", "quarto"), recursive = TRUE)
+        dir.create(path = file.path(root, ".setup", "quarto"), recursive = TRUE)
         writeLines(
-          c("project:", "  type: website", "  output-dir: quarto"),
-          file.path(root, ".setup", "quarto", "_quarto.yml")
+          text = c("project:", "  type: website", "  output-dir: quarto"),
+          con = file.path(root, ".setup", "quarto", "_quarto.yml")
         )
-        writeLines(c("# Home", "", "Hello."), file.path(root, "index.qmd"))
-        suppressMessages(suppressWarnings(Quarto(path = root)))
+        writeLines(
+          text = c("# Home", "", "Hello."),
+          con = file.path(root, "index.qmd")
+        )
+        suppressMessages(expr = suppressWarnings(expr = Quarto(path = root)))
         testthat::expect_true(
-          length(list.files(root, pattern = "\\.html$", recursive = TRUE)) > 0L
+          object = length(
+            x = list.files(path = root, pattern = "\\.html$", recursive = TRUE)
+          ) > 0L
         )
-        unlink(dirname(root), recursive = TRUE)
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
   },

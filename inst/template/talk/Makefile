@@ -94,6 +94,11 @@ lint: style
 	@Rscript -e "rProject::Lint(\"${PWD}\")"
 	@Rscript -e "if (exists('SizeCheck', envir = asNamespace('rProject'))) rProject::SizeCheck(\"${PWD}\")"
 
+# the agents' command line tools, on the host (no R, no Apptainer): installs
+# the missing ones into ~/.local/bin; UPDATE=TRUE updates them
+agents:
+	@bash .setup/scripts/agents.sh $(if $(UPDATE),--update,)
+
 sizecheck:
 	@echo "\n\nChecking Overleaf limits...\n\n"
 	@Rscript -e "rProject::SizeCheck(\"${PWD}\", error = TRUE)"
@@ -186,7 +191,7 @@ docs: readme
 	@echo "\n\nBuilding CITATION.cff...\n\n"
 	@Rscript -e "rProject::CFF(\"${PWD}\")"
 
-all: build docs latex pkgdown quarto coverage
+all: lint build docs latex pkgdown quarto coverage
 
 cleanall: clean cleanpush cleanpkg cleantinytex
 

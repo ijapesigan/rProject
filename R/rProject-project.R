@@ -3,6 +3,11 @@
 #' @author Ivan Jacob Agaloos Pesigan
 #'
 #' @inheritParams LibPaths
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Project(path = getwd())
+#' }
 #' @export
 Project <- function(path) {
   lib <- LibPaths(path = path)
@@ -10,7 +15,7 @@ Project <- function(path) {
   pkg_installed <- installed[, "Package"]
   if (!("rprojroot" %in% pkg_installed)) {
     utils::install.packages(
-      "rprojroot",
+      pkgs = "rprojroot",
       repos = c(REPO_NAME = PkgRepo(path = path)),
       lib = lib,
       quiet = TRUE
@@ -40,7 +45,7 @@ Project <- function(path) {
     "PackageRoxygenize: rd,collate,namespace", "\n"
   )
   con <- file(
-    file.path(
+    description = file.path(
       path,
       "project.Rproj"
     )
@@ -49,7 +54,7 @@ Project <- function(path) {
     text = x,
     con = con
   )
-  close(con)
+  close(con = con)
   # where the project lives (private GitHub, Overleaf, public GitHub)
   .RepoInfoWrite(path = path)
   # packages in .library that hide the image's (rProject 0.0.57)
@@ -59,7 +64,7 @@ Project <- function(path) {
     paste(
       "Project directory:",
       dirname(
-        root$find_file(
+        path = root$find_file(
           "project.Rproj"
         )
       ),

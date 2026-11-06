@@ -23,15 +23,15 @@
           collapse = "/"
         )
       },
-      FUN.VALUE = character(1)
+      FUN.VALUE = character(length = 1)
     )
   )
-  manifest$kind <- rep(x = "file", times = nrow(manifest))
-  manifest$fill <- rep(x = FALSE, times = nrow(manifest))
+  manifest$kind <- rep(x = "file", times = nrow(x = manifest))
+  manifest$fill <- rep(x = FALSE, times = nrow(x = manifest))
   # workflows the project chooses (workflows in project.R),
   # from the catalog in inst/template/workflows/
   workflows <- settings$workflows
-  if (length(workflows) > 0L) {
+  if (length(x = workflows) > 0L) {
     catalog <- sub(
       pattern = "\\.yml$",
       replacement = "",
@@ -40,8 +40,8 @@
         pattern = "\\.yml$"
       )
     )
-    unknown <- setdiff(workflows, catalog)
-    if (length(unknown) > 0L) {
+    unknown <- setdiff(x = workflows, y = catalog)
+    if (length(x = unknown) > 0L) {
       stop(
         paste0(
           "\n\nUnknown workflows in .setup/scripts/project.R: ",
@@ -59,7 +59,7 @@
     daily <- .TemplateHas(files = source, keys = "title")
     suffix <- settings$workflow_daily
     name <- workflows
-    if (any(daily) && length(suffix) > 0L && nzchar(suffix[1])) {
+    if (any(daily) && length(x = suffix) > 0L && nzchar(x = suffix[1])) {
       name[daily] <- paste0(workflows[daily], "-", suffix[1])
     }
     manifest <- rbind(
@@ -80,7 +80,7 @@
   folders <- folders[folders$create, ]
   dirs <- paste0(folders$folder, ".gitignore")
   dirs <- dirs[!(dirs %in% manifest$path)]
-  if (length(dirs) > 0L) {
+  if (length(x = dirs) > 0L) {
     manifest <- rbind(
       manifest,
       data.frame(
@@ -98,13 +98,13 @@
   text <- manifest$kind == "file" & manifest$tier == "2"
   manifest$fill[text] <- .TemplateHas(
     files = manifest$source[text],
-    keys = names(.TemplateKeys())
+    keys = names(x = .TemplateKeys())
   )
   manifest$daily <- FALSE
   manifest$daily[text] <- .TemplateHas(
     files = manifest$source[text],
     keys = "title"
   )
-  rownames(manifest) <- NULL
+  rownames(x = manifest) <- NULL
   manifest
 }

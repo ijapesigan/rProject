@@ -16,8 +16,16 @@ R packages.}
 \item{ver}{Character vector.
 Version.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Install Project Packages with Specific Version
+}
+\examples{
+\dontrun{
+PkgProjectVersion(path = getwd(), pkg = "stats", ver = "1.0.0")
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

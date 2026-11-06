@@ -6,7 +6,7 @@ lapply(
     fill <- function() {
       root <- .TestProject()
       for (dir in c(".library", ".sim", ".sif")) {
-        dir.create(file.path(root, dir))
+        dir.create(path = file.path(root, dir))
       }
       writeLines(text = "x", con = file.path(root, "project.Rproj"))
       writeLines(text = "x", con = file.path(root, "Makefile"))
@@ -17,12 +17,12 @@ lapply(
       {
         root <- fill()
         CleanProj(path = root)
-        left <- list.files(root, all.files = TRUE, no.. = TRUE)
+        left <- list.files(path = root, all.files = TRUE, no.. = TRUE)
         testthat::expect_setequal(
-          left,
-          c(".library", ".sim", ".sif", "project.Rproj")
+          object = left,
+          expected = c(".library", ".sim", ".sif", "project.Rproj")
         )
-        unlink(dirname(root), recursive = TRUE)
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
     testthat::test_that(
@@ -30,9 +30,9 @@ lapply(
       {
         root <- fill()
         CleanProj(path = root, lib = TRUE, sim = TRUE, sif = TRUE)
-        left <- list.files(root, all.files = TRUE, no.. = TRUE)
-        testthat::expect_equal(left, "project.Rproj")
-        unlink(dirname(root), recursive = TRUE)
+        left <- list.files(path = root, all.files = TRUE, no.. = TRUE)
+        testthat::expect_equal(object = left, expected = "project.Rproj")
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
   },

@@ -27,6 +27,11 @@ One that is listed but missing on this machine is kept,
 marked "not on this machine";
 one whose MD5 differs from the recorded one is marked "changed".
 }
+\examples{
+\dontrun{
+DataManifest(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

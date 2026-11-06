@@ -3,10 +3,10 @@ lapply(
   X = 1,
   FUN = function(i,
                  text) {
-    testthat::skip_if(Sys.which("git") == "")
+    testthat::skip_if(condition = Sys.which(names = "git") == "")
     write <- function(root, file, text) {
       dir.create(
-        dirname(file.path(root, file)),
+        path = dirname(path = file.path(root, file)),
         showWarnings = FALSE,
         recursive = TRUE
       )
@@ -16,44 +16,46 @@ lapply(
     path <- file.path(root, "proj")
     private <- file.path(path, ".verify")
     # the private repository has foo.R and old.R
-    write(private, "R/foo.R", "Foo <- function() 1")
-    write(private, "R/old.R", "Old <- function() 1")
+    write(root = private, file = "R/foo.R", text = "Foo <- function() 1")
+    write(root = private, file = "R/old.R", text = "Old <- function() 1")
     # gone.R was deleted locally
-    write(private, "R/gone.R", "Gone <- function() 1")
+    write(root = private, file = "R/gone.R", text = "Gone <- function() 1")
     system2(
       command = "git",
-      args = c("-C", shQuote(private), "init", "-q"),
+      args = c("-C", shQuote(string = private), "init", "-q"),
       stdout = FALSE,
       stderr = FALSE
     )
     # locally foo.R changed and bar.R is new
-    write(path, "R/foo.R", "Foo <- function() 2")
-    write(path, "R/old.R", "Old <- function() 1")
-    write(path, "R/bar.R", "Bar <- function() 1")
-    write(path, "NAMESPACE", "export(Foo)")
+    write(root = path, file = "R/foo.R", text = "Foo <- function() 2")
+    write(root = path, file = "R/old.R", text = "Old <- function() 1")
+    write(root = path, file = "R/bar.R", text = "Bar <- function() 1")
+    write(root = path, file = "NAMESPACE", text = "export(Foo)")
     write(
-      path,
-      file.path(".setup", "ai", "specs", "2026-01-01-topic.md"),
-      "# Spec: topic"
+      root = path,
+      file = file.path(".setup", "ai", "specs", "2026-01-01-topic.md"),
+      text = "# Spec: topic"
     )
     log_file <- suppressMessages(
-      Log(
+      expr = Log(
         path = path,
         topic = "topic",
         summary = "rProject 9.9.9: a summary"
       )
     )
-    log <- basename(log_file)
-    lines <- readLines(log_file)
+    log <- basename(path = log_file)
+    lines <- readLines(con = log_file)
     section <- .VerifyLogFiles(log_file = log_file, project = "proj")
     testthat::test_that(
       paste(text, "writes the template"),
       {
-        testthat::expect_true("rProject 9.9.9: a summary" %in% lines)
-        testthat::expect_true(paste0("Log: .setup/logs/", log) %in% lines)
-        testthat::expect_true("| (pending) | | |" %in% lines)
+        testthat::expect_true(object = "rProject 9.9.9: a summary" %in% lines)
         testthat::expect_true(
-          "Spec: .setup/ai/specs/2026-01-01-topic.md" %in% lines
+          object = paste0("Log: .setup/logs/", log) %in% lines
+        )
+        testthat::expect_true(object = "| (pending) | | |" %in% lines)
+        testthat::expect_true(
+          object = "Spec: .setup/ai/specs/2026-01-01-topic.md" %in% lines
         )
       }
     )
@@ -62,7 +64,7 @@ lapply(
       {
         upload <- section$file[section$action == "upload"]
         testthat::expect_true(
-          all(
+          object = all(
             c(
               "R/bar.R",
               "R/foo.R",
@@ -71,26 +73,34 @@ lapply(
             ) %in% upload
           )
         )
-        testthat::expect_false("R/old.R" %in% upload)
-        testthat::expect_false("NAMESPACE" %in% upload)
-        testthat::expect_false(any(grepl("^\\.verify", upload)))
+        testthat::expect_false(object = "R/old.R" %in% upload)
+        testthat::expect_false(object = "NAMESPACE" %in% upload)
+        testthat::expect_false(
+          object = any(grepl(pattern = "^\\.verify", x = upload))
+        )
       }
     )
     testthat::test_that(
       paste(text, "lists files deleted locally under Delete in Overleaf"),
       {
         testthat::expect_equal(
-          section$file[section$action == "delete"],
-          "R/gone.R"
+          object = section$file[section$action == "delete"],
+          expected = "R/gone.R"
         )
       }
     )
     testthat::test_that(
       paste(text, "adds a pending row to the index"),
       {
-        index <- readLines(file.path(path, ".setup", "logs", "index.md"))
+        index <- readLines(con = file.path(path, ".setup", "logs", "index.md"))
         testthat::expect_true(
-          any(grepl(paste0("(pending) | ", log), index, fixed = TRUE))
+          object = any(
+            grepl(
+              pattern = paste0("(pending) | ", log),
+              x = index,
+              fixed = TRUE
+            )
+          )
         )
       }
     )
@@ -98,17 +108,19 @@ lapply(
       paste(text, "refuses to overwrite and updates the lists"),
       {
         testthat::expect_error(
-          Log(path = path, topic = "topic"),
-          "already exists"
+          object = Log(path = path, topic = "topic"),
+          regexp = "already exists"
         )
-        write(path, "R/baz.R", "Baz <- function() 1")
-        suppressMessages(Log(path = path, topic = "topic", update = TRUE))
-        lines <- readLines(log_file)
-        testthat::expect_true("- R/baz.R" %in% lines)
-        testthat::expect_true("rProject 9.9.9: a summary" %in% lines)
+        write(root = path, file = "R/baz.R", text = "Baz <- function() 1")
+        suppressMessages(
+          expr = Log(path = path, topic = "topic", update = TRUE)
+        )
+        lines <- readLines(con = log_file)
+        testthat::expect_true(object = "- R/baz.R" %in% lines)
+        testthat::expect_true(object = "rProject 9.9.9: a summary" %in% lines)
         testthat::expect_equal(
-          sum(lines == "## Files to update in Overleaf"),
-          1L
+          object = sum(lines == "## Files to update in Overleaf"),
+          expected = 1L
         )
       }
     )
@@ -116,12 +128,12 @@ lapply(
       paste(text, "writes TODO without a clone"),
       {
         other <- file.path(root, "other")
-        dir.create(other)
-        file <- suppressMessages(Log(path = other, topic = "x"))
-        testthat::expect_true("- TODO" %in% readLines(file))
+        dir.create(path = other)
+        file <- suppressMessages(expr = Log(path = other, topic = "x"))
+        testthat::expect_true(object = "- TODO" %in% readLines(con = file))
       }
     )
-    unlink(root, recursive = TRUE)
+    unlink(x = root, recursive = TRUE)
   },
   text = "test-rProject-log"
 )

@@ -16,16 +16,20 @@
 #'   `status` (`"present"`, `"missing"`, `"absent"` for an optional
 #'   folder, `"not standard"` for this type, or `"unknown"`), `private`,
 #'   and `purpose`.
+#' @examples
+#' \dontrun{
+#' Tree(path = getwd())
+#' }
 #' @export
 Tree <- function(path) {
   type <- .TemplateTypeGuess(path = path)
   all <- .TemplateFolders()
   standard <- .TemplateFolders(type = type)
-  present <- dir.exists(file.path(path, standard$folder))
+  present <- dir.exists(paths = file.path(path, standard$folder))
   status <- ifelse(
-    present,
-    "present",
-    ifelse(standard$create, "missing", "absent")
+    test = present,
+    yes = "present",
+    no = ifelse(test = standard$create, yes = "missing", no = "absent")
   )
   out <- data.frame(
     folder = standard$folder,
@@ -35,40 +39,42 @@ Tree <- function(path) {
   )
   # folders in the project that the standard does not have
   top <- list.dirs(path = path, full.names = FALSE, recursive = FALSE)
-  top <- paste0(setdiff(top, c(".git", ".setup")), "/")
+  top <- paste0(setdiff(x = top, y = c(".git", ".setup")), "/")
   setup <- list.dirs(
     path = file.path(path, ".setup"),
     full.names = FALSE,
     recursive = FALSE
   )
-  setup <- if (length(setup) > 0L) paste0(".setup/", setup, "/")
+  setup <- if (length(x = setup) > 0L) {
+    paste0(".setup/", setup, "/")
+  }
   known <- function(x, folders) {
     vapply(
       X = x,
       FUN = function(i) {
         any(startsWith(x = folders, prefix = i))
       },
-      FUN.VALUE = logical(1),
+      FUN.VALUE = logical(length = 1),
       USE.NAMES = FALSE
     )
   }
   found <- c(top, setup)
   extra <- found[!known(x = found, folders = standard$folder)]
-  if (length(extra) > 0L) {
+  if (length(x = extra) > 0L) {
     other <- known(x = extra, folders = all$folder)
     out <- rbind(
       out,
       data.frame(
         folder = extra,
-        status = ifelse(other, "not standard", "unknown"),
+        status = ifelse(test = other, yes = "not standard", no = "unknown"),
         private = FALSE,
         purpose = vapply(
           X = extra,
           FUN = function(i) {
             hit <- all$purpose[startsWith(x = all$folder, prefix = i)]
-            ifelse(length(hit) > 0L, hit[1], "")
+            ifelse(test = length(x = hit) > 0L, yes = hit[1], no = "")
           },
-          FUN.VALUE = character(1),
+          FUN.VALUE = character(length = 1),
           USE.NAMES = FALSE
         )
       )
@@ -90,16 +96,16 @@ Tree <- function(path) {
       "):\n\n",
       paste0(
         flag,
-        format(out$folder),
+        format(x = out$folder),
         "  ",
-        format(out$status),
+        format(x = out$status),
         "  ",
         out$purpose,
-        ifelse(out$private, " (private)", ""),
+        ifelse(test = out$private, yes = " (private)", no = ""),
         collapse = "\n"
       ),
       "\n\n"
     )
   )
-  invisible(out)
+  invisible(x = out)
 }

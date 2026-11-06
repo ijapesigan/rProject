@@ -19,6 +19,9 @@
   folders marked `create` (an empty `.gitignore`); `AI()` writes the
   AGENTS.md folder map from it; `make tree` and the vignette show it;
   the public export check reads the private ones.
+- `once/`: the test helper and the smoke test (`helper-<pkg>.R`,
+  `test-<pkg>-smoke.R`), written once when missing (`.TemplateOnce()`); `{{pkg}}`
+  is the package name.
 - `removed.tsv`: files that left the template (`path`, `since`; a path
   may be a glob, a folder ends in `/`). `Template()` deletes them.
 - Sources. Tier 2: these files (edit them here). Tier 1 that rProject

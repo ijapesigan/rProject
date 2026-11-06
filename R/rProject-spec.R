@@ -12,11 +12,15 @@
 #' @param title Character string.
 #'   Title of the spec.
 #' @return Returns the path of the spec invisibly.
+#' @examples
+#' \dontrun{
+#' Spec(path = getwd(), topic = "my-topic")
+#' }
 #' @export
 Spec <- function(path,
                  topic,
                  title = topic) {
-  date <- format(Sys.Date())
+  date <- format(x = Sys.Date())
   file <- file.path(
     path,
     ".setup",
@@ -35,7 +39,7 @@ Spec <- function(path,
     )
   }
   dir.create(
-    path = dirname(file),
+    path = dirname(path = file),
     showWarnings = FALSE,
     recursive = TRUE
   )
@@ -63,5 +67,5 @@ Spec <- function(path,
       "\n\n"
     )
   )
-  invisible(file)
+  invisible(x = file)
 }

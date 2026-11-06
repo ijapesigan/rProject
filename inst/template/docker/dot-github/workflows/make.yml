@@ -18,6 +18,7 @@ jobs:
     container:
       image: ijapesigan/docs
     env:
+      NOT_CRAN: "true"
       GITHUB_PAT: ${{ secrets.PAT }}
     permissions:
       contents: write

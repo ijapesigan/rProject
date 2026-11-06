@@ -59,13 +59,13 @@
     ncol = 2,
     byrow = TRUE
   )
-  x <- enc2utf8(x)
+  x <- enc2utf8(x = x)
   if (escape) {
     # an unescaped % starts a LaTeX comment; & is an alignment tab
     x <- gsub(pattern = "(^|[^\\\\])([%&])", replacement = "\\1\\\\\\2", x = x)
     x <- gsub(pattern = "(^|[^\\\\])([%&])", replacement = "\\1\\\\\\2", x = x)
   }
-  for (i in seq_len(nrow(map))) {
+  for (i in seq_len(length.out = nrow(x = map))) {
     x <- gsub(pattern = map[i, 1], replacement = map[i, 2], x = x, fixed = TRUE)
   }
   x

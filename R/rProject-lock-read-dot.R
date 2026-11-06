@@ -5,7 +5,7 @@
   if (file.exists(lock)) {
     env <- new.env()
     sys.source(file = lock, envir = env)
-    out <- as.list(env)
+    out <- as.list(x = env)
   }
   out
 }

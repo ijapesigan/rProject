@@ -13,6 +13,10 @@
 #'   If `TRUE`, stop with an error when secrets are found.
 #' @return Returns a data frame of findings
 #'   with the columns `file`, `line`, `type`, and `match` (masked).
+#' @examples
+#' \dontrun{
+#' SecretScan(path = getwd())
+#' }
 #' @export
 SecretScan <- function(path,
                        max_size = 5e+06,
@@ -45,11 +49,11 @@ SecretScan <- function(path,
   files <- files[!skip]
   rel <- rel[!skip]
   info <- file.info(files)
-  keep <- !is.na(info$size) & info$size > 0 & info$size <= max_size
+  keep <- !is.na(x = info$size) & info$size > 0 & info$size <= max_size
   files <- files[keep]
   rel <- rel[keep]
   findings <- lapply(
-    X = seq_along(files),
+    X = seq_along(along.with = files),
     FUN = function(i) {
       con <- file(
         description = files[i],
@@ -60,30 +64,30 @@ SecretScan <- function(path,
         what = "raw",
         n = 8000
       )
-      close(con)
+      close(con = con)
       # skip binary files
-      if (!any(head_bytes == as.raw(0))) {
+      if (!any(head_bytes == as.raw(x = 0))) {
         lines <- suppressWarnings(
-          readLines(
+          expr = readLines(
             con = files[i],
             warn = FALSE,
             encoding = "UTF-8"
           )
         )
         out <- lapply(
-          X = names(patterns),
+          X = names(x = patterns),
           FUN = function(type) {
             hit <- regexpr(
               pattern = patterns[[type]],
               text = lines,
               perl = TRUE
             )
-            idx <- which(hit > 0)
-            if (length(idx) > 0L) {
+            idx <- which(x = hit > 0)
+            if (length(x = idx) > 0L) {
               match <- substr(
                 x = lines[idx],
                 start = hit[idx],
-                stop = hit[idx] + attr(hit, "match.length")[idx] - 1
+                stop = hit[idx] + attr(x = hit, which = "match.length")[idx] - 1
               )
               data.frame(
                 file = rel[i],
@@ -113,16 +117,16 @@ SecretScan <- function(path,
     what = "rbind",
     args = findings
   )
-  if (is.null(findings)) {
+  if (is.null(x = findings)) {
     findings <- data.frame(
-      file = character(0),
-      line = integer(0),
-      type = character(0),
-      match = character(0),
+      file = character(length = 0),
+      line = integer(length = 0),
+      type = character(length = 0),
+      match = character(length = 0),
       stringsAsFactors = FALSE
     )
   }
-  if (nrow(findings) > 0L) {
+  if (nrow(x = findings) > 0L) {
     report <- paste0(
       findings$file,
       ":",
@@ -160,5 +164,5 @@ SecretScan <- function(path,
       )
     )
   }
-  invisible(findings)
+  invisible(x = findings)
 }

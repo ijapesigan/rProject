@@ -15,8 +15,16 @@ If \code{push = TRUE} clean in preparation for git push:
 generated files are kept, and files matching \verb{*secrets*} are deleted,
 except in hidden folders such as \code{.setup}.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Delete all output files that are generated on automated build.
+}
+\examples{
+\dontrun{
+Clean(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

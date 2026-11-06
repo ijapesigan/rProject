@@ -40,6 +40,10 @@
 #'   If `TRUE`, stop with an error when a check fails.
 #' @return Returns a data frame of checks
 #'   with the columns `check`, `status`, and `detail`.
+#' @examples
+#' \dontrun{
+#' SizeCheck(path = getwd())
+#' }
 #' @export
 SizeCheck <- function(path,
                       editable = 7,
@@ -81,11 +85,11 @@ SizeCheck <- function(path,
   )
   all_files <- all_files[!grepl(pattern = skip, x = all_files)]
   size <- file.info(file.path(path, all_files))$size
-  size[is.na(size)] <- 0
+  size[is.na(x = size)] <- 0
   is_text <- vapply(
     X = file.path(path, all_files),
     FUN = .SizeCheckIsText,
-    FUN.VALUE = logical(1)
+    FUN.VALUE = logical(length = 1)
   )
   text_mb <- sum(size[is_text]) / mb
   large_text <- all_files[is_text & size > text_file * mb]
@@ -104,39 +108,39 @@ SizeCheck <- function(path,
       "Duplicates"
     ),
     status = c(
-      ifelse(text_mb > editable, "fail", "pass"),
-      ifelse(length(large_text) > 0L, "fail", "pass"),
-      ifelse(length(large) > 0L, "fail", "pass"),
-      ifelse(length(all_files) > files, "fail", "pass"),
-      ifelse(sum(size) / mb > total, "warn", "pass"),
-      ifelse(length(duplicates) > 0L, "warn", "pass")
+      ifelse(test = text_mb > editable, yes = "fail", no = "pass"),
+      ifelse(test = length(x = large_text) > 0L, yes = "fail", no = "pass"),
+      ifelse(test = length(x = large) > 0L, yes = "fail", no = "pass"),
+      ifelse(test = length(x = all_files) > files, yes = "fail", no = "pass"),
+      ifelse(test = sum(size) / mb > total, yes = "warn", no = "pass"),
+      ifelse(test = length(x = duplicates) > 0L, yes = "warn", no = "pass")
     ),
     detail = c(
-      sprintf("%.1f MB (limit %s MB)", text_mb, editable),
+      sprintf(fmt = "%.1f MB (limit %s MB)", text_mb, editable),
       ifelse(
-        length(large_text) > 0L,
-        paste(length(large_text), "files over", text_file, "MB"),
-        paste("none over", text_file, "MB")
+        test = length(x = large_text) > 0L,
+        yes = paste(length(x = large_text), "files over", text_file, "MB"),
+        no = paste("none over", text_file, "MB")
       ),
       ifelse(
-        length(large) > 0L,
-        paste(paste(large, collapse = "; "), "over", file, "MB"),
-        paste("none over", file, "MB")
+        test = length(x = large) > 0L,
+        yes = paste(paste(large, collapse = "; "), "over", file, "MB"),
+        no = paste("none over", file, "MB")
       ),
-      paste(length(all_files), "files (limit", files, ")"),
-      sprintf("%.1f MB (recommended under %s MB)", sum(size) / mb, total),
+      paste(length(x = all_files), "files (limit", files, ")"),
+      sprintf(fmt = "%.1f MB (recommended under %s MB)", sum(size) / mb, total),
       ifelse(
-        length(duplicates) > 0L,
-        paste(duplicates, collapse = "; "),
-        "none"
+        test = length(x = duplicates) > 0L,
+        yes = paste(duplicates, collapse = "; "),
+        no = "none"
       )
     ),
     stringsAsFactors = FALSE
   )
   top <- function(keep) {
     o <- order(size, decreasing = TRUE)
-    o <- o[keep[o]][seq_len(min(10L, sum(keep)))]
-    sprintf("  %8.2f MB  %s", size[o] / mb, all_files[o])
+    o <- o[keep[o]][seq_len(length.out = min(10L, sum(keep)))]
+    sprintf(fmt = "  %8.2f MB  %s", size[o] / mb, all_files[o])
   }
   report <- paste0(
     "\n\nOverleaf size check of ",
@@ -154,7 +158,7 @@ SizeCheck <- function(path,
     "\n\nLargest editable text files:\n",
     paste(top(is_text), collapse = "\n"),
     "\n\nLargest files:\n",
-    paste(top(rep(TRUE, length(size))), collapse = "\n"),
+    paste(top(rep(x = TRUE, length(x = size))), collapse = "\n"),
     "\n\n"
   )
   if (error && any(checks$status == "fail")) {
@@ -165,5 +169,5 @@ SizeCheck <- function(path,
   } else {
     message(report)
   }
-  invisible(checks)
+  invisible(x = checks)
 }

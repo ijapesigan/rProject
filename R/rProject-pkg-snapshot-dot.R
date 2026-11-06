@@ -5,10 +5,12 @@
   # snapshot, or latest
   date <- "^\\d{4}-\\d{2}-\\d{2}$"
   candidates <- c(
-    Sys.getenv("RPROJECT_SNAPSHOT"),
+    Sys.getenv(x = "RPROJECT_SNAPSHOT"),
     .SnapshotDate(created = .SifInfo(labels = labels)$created),
     .LockRead(path = path)$snapshot
   )
-  candidates <- candidates[!is.na(candidates) & grepl(date, candidates)]
+  candidates <- candidates[!is.na(
+    x = candidates
+  ) & grepl(pattern = date, x = candidates)]
   c(candidates, "latest")[1]
 }

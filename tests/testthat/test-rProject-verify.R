@@ -3,15 +3,15 @@ lapply(
   X = 1,
   FUN = function(i,
                  text) {
-    testthat::skip_if(Sys.which("git") == "")
-    testthat::skip_on_os("windows")
+    testthat::skip_if(condition = Sys.which(names = "git") == "")
+    testthat::skip_on_os(os = "windows")
     git <- function(dir, ...) {
       suppressWarnings(
-        system2(
+        expr = system2(
           command = "git",
           args = c(
             "-C",
-            shQuote(dir),
+            shQuote(string = dir),
             "-c",
             "user.name=test",
             "-c",
@@ -25,7 +25,7 @@ lapply(
     }
     write <- function(root, file, text) {
       dir.create(
-        dirname(file.path(root, file)),
+        path = dirname(path = file.path(root, file)),
         showWarnings = FALSE,
         recursive = TRUE
       )
@@ -67,23 +67,39 @@ lapply(
       path <- file.path(root, "local")
       private <- file.path(root, private_name)
       for (dir in c(path, private)) {
-        write(dir, "R/foo.R", "Foo <- function() 1")
-        write(dir, "new.R", "x <- 1")
+        write(root = dir, file = "R/foo.R", text = "Foo <- function() 1")
+        write(root = dir, file = "new.R", text = "x <- 1")
         write(
-          dir,
-          ".gitignore",
-          c(".setup/logs/", ".setup/ai/", ".setup/repo/")
+          root = dir,
+          file = ".gitignore",
+          text = c(".setup/logs/", ".setup/ai/", ".setup/repo/")
         )
-        write(dir, file.path(".setup", "logs", log), log_text)
-        write(dir, file.path(".setup", "logs", "index.md"), index_text)
-        write(dir, file.path(".setup", "ai", "plan.md"), "private plan")
-        write(dir, ".setup/repo/private-github.md", "owner/proj")
         write(
-          dir,
-          ".setup/repo/private-overleaf.md",
-          "https://www.overleaf.com/project/0123456789abcdef01234567"
+          root = dir,
+          file = file.path(".setup", "logs", log),
+          text = log_text
         )
-        write(dir, ".setup/repo/public-github.md", "none")
+        write(
+          root = dir,
+          file = file.path(".setup", "logs", "index.md"),
+          text = index_text
+        )
+        write(
+          root = dir,
+          file = file.path(".setup", "ai", "plan.md"),
+          text = "private plan"
+        )
+        write(
+          root = dir,
+          file = ".setup/repo/private-github.md",
+          text = "owner/proj"
+        )
+        write(
+          root = dir,
+          file = ".setup/repo/private-overleaf.md",
+          text = "https://www.overleaf.com/project/0123456789abcdef01234567"
+        )
+        write(root = dir, file = ".setup/repo/public-github.md", text = "none")
       }
       git(private, "init", "-q")
       git(private, "add", "--all")
@@ -92,7 +108,7 @@ lapply(
         "commit",
         "-q",
         "-m",
-        shQuote(paste0("Topic\n\nLog: .setup/logs/", log))
+        shQuote(string = paste0("Topic\n\nLog: .setup/logs/", log))
       )
       list(root = root, path = path, private = private)
     }
@@ -102,7 +118,7 @@ lapply(
     # 1. a clean push
     x <- fixture()
     checks <- suppressMessages(
-      Verify(
+      expr = Verify(
         path = x$path,
         private = x$private,
         record = TRUE
@@ -112,11 +128,11 @@ lapply(
       paste(text, "passes a clean push"),
       {
         testthat::expect_true(
-          all(checks$status == "pass")
+          object = all(checks$status == "pass")
         )
         testthat::expect_match(
-          checks$detail[checks$check == "Listed files"],
-          "2 files match"
+          object = checks$detail[checks$check == "Listed files"],
+          regexp = "2 files match"
         )
       }
     )
@@ -124,26 +140,40 @@ lapply(
       paste(text, "finds the pending log and records the push"),
       {
         sha <- git(x$private, "rev-parse", "--short", "HEAD")
-        log_lines <- readLines(file.path(x$path, ".setup", "logs", log))
+        log_lines <- readLines(con = file.path(x$path, ".setup", "logs", log))
         index_lines <- readLines(
-          file.path(x$path, ".setup", "logs", "index.md")
+          con = file.path(x$path, ".setup", "logs", "index.md")
         )
-        testthat::expect_true(any(grepl(sha, log_lines, fixed = TRUE)))
-        testthat::expect_false(any(grepl("(pending)", log_lines, fixed = TRUE)))
-        testthat::expect_true(any(grepl(sha, index_lines, fixed = TRUE)))
+        testthat::expect_true(
+          object = any(grepl(pattern = sha, x = log_lines, fixed = TRUE))
+        )
+        testthat::expect_false(
+          object = any(
+            grepl(pattern = "(pending)", x = log_lines, fixed = TRUE)
+          )
+        )
+        testthat::expect_true(
+          object = any(grepl(pattern = sha, x = index_lines, fixed = TRUE))
+        )
       }
     )
     testthat::test_that(
       paste(text, "refuses to record a commit that is already recorded"),
       {
-        before <- readLines(file.path(x$path, ".setup", "logs", "index.md"))
+        before <- readLines(
+          con = file.path(x$path, ".setup", "logs", "index.md")
+        )
         writeLines(
           text = c(before, "| 2026-10-12 | (pending) | other.md | x | |"),
           con = file.path(x$path, ".setup", "logs", "index.md")
         )
-        write(x$path, file.path(".setup", "logs", "other.md"), log_text)
+        write(
+          root = x$path,
+          file = file.path(".setup", "logs", "other.md"),
+          text = log_text
+        )
         again <- suppressMessages(
-          Verify(
+          expr = Verify(
             path = x$path,
             private = x$private,
             log = "other.md",
@@ -151,127 +181,168 @@ lapply(
             error = FALSE
           )
         )
-        testthat::expect_equal(status(again, "New commit"), "fail")
+        testthat::expect_equal(
+          object = status(again, "New commit"),
+          expected = "fail"
+        )
         testthat::expect_true(
-          "| (pending) | | |" %in%
-            readLines(file.path(x$path, ".setup", "logs", "other.md"))
+          object = "| (pending) | | |" %in%
+            readLines(con = file.path(x$path, ".setup", "logs", "other.md"))
         )
       }
     )
-    unlink(x$root, recursive = TRUE)
+    unlink(x = x$root, recursive = TRUE)
     # 1b. Overleaf drops the final newline and uses CRLF line endings
     x <- fixture()
     cat("Foo <- function() 1", file = file.path(x$private, "R/foo.R"))
     cat("x <- 1\r\n\r\n", file = file.path(x$private, "new.R"))
     checks <- suppressMessages(
-      Verify(path = x$path, private = x$private, error = FALSE)
+      expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
       paste(text, "ignores line endings and trailing blank lines"),
       {
-        testthat::expect_equal(status(checks, "Listed files"), "pass")
+        testthat::expect_equal(
+          object = status(checks, "Listed files"),
+          expected = "pass"
+        )
       }
     )
-    unlink(x$root, recursive = TRUE)
+    unlink(x = x$root, recursive = TRUE)
     # 1c. the generated roxygen line in DESCRIPTION is ignored
     x <- fixture()
-    write(x$private, "DESCRIPTION", c("Package: test", "Version: 1.0"))
     write(
-      x$path,
-      "DESCRIPTION",
-      c("Package: test", "Version: 1.0", "Config/roxygen2/version: 8.1.1")
+      root = x$private,
+      file = "DESCRIPTION",
+      text = c("Package: test", "Version: 1.0")
+    )
+    write(
+      root = x$path,
+      file = "DESCRIPTION",
+      text = c(
+        "Package: test",
+        "Version: 1.0",
+        "Config/roxygen2/version: 8.1.1"
+      )
     )
     testthat::test_that(
       paste(text, "ignores the generated roxygen line in DESCRIPTION"),
       {
         testthat::expect_equal(
-          .VerifyCompare(
+          object = .VerifyCompare(
             path = x$path,
             private = x$private,
             file = "DESCRIPTION"
           ),
-          "match"
+          expected = "match"
         )
       }
     )
-    unlink(x$root, recursive = TRUE)
+    unlink(x = x$root, recursive = TRUE)
     # 2. a listed file that was not uploaded
     x <- fixture()
-    write(x$path, "R/foo.R", "Foo <- function() 2")
+    write(root = x$path, file = "R/foo.R", text = "Foo <- function() 2")
     testthat::test_that(
       paste(text, "fails on a listed file that differs"),
       {
         testthat::expect_error(
-          suppressMessages(Verify(path = x$path, private = x$private)),
-          "R/foo.R different"
+          object = suppressMessages(
+            expr = Verify(path = x$path, private = x$private)
+          ),
+          regexp = "R/foo.R different"
         )
         checks <- suppressMessages(
-          Verify(path = x$path, private = x$private, error = FALSE)
+          expr = Verify(path = x$path, private = x$private, error = FALSE)
         )
-        testthat::expect_equal(status(checks, "Listed files"), "fail")
+        testthat::expect_equal(
+          object = status(checks, "Listed files"),
+          expected = "fail"
+        )
       }
     )
-    unlink(x$root, recursive = TRUE)
+    unlink(x = x$root, recursive = TRUE)
     # 3. a file that should have been deleted, and an unlisted change
     x <- fixture()
-    write(x$private, "old.R", "y <- 1")
-    write(x$path, "R/bar.R", "Bar <- function() 1")
-    write(x$path, ".setup/notes/claude.txt", "claude --resume 1234")
-    write(x$path, ".setup/todo/todo.txt", "1. an item")
+    write(root = x$private, file = "old.R", text = "y <- 1")
+    write(root = x$path, file = "R/bar.R", text = "Bar <- function() 1")
+    write(
+      root = x$path,
+      file = ".setup/notes/claude.txt",
+      text = "claude --resume 1234"
+    )
+    write(root = x$path, file = ".setup/todo/todo.txt", text = "1. an item")
     checks <- suppressMessages(
-      Verify(path = x$path, private = x$private, error = FALSE)
+      expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
       paste(text, "fails on deletions and warns on unlisted changes"),
       {
-        testthat::expect_equal(status(checks, "Deletions"), "fail")
-        testthat::expect_equal(status(checks, "Unlisted changes"), "warn")
+        testthat::expect_equal(
+          object = status(checks, "Deletions"),
+          expected = "fail"
+        )
+        testthat::expect_equal(
+          object = status(checks, "Unlisted changes"),
+          expected = "warn"
+        )
         testthat::expect_match(
-          checks$detail[checks$check == "Unlisted changes"],
-          "R/bar.R"
+          object = checks$detail[checks$check == "Unlisted changes"],
+          regexp = "R/bar.R"
         )
         # the resume commands are not counted
         testthat::expect_no_match(
-          checks$detail[checks$check == "Unlisted changes"],
-          "claude.txt"
+          object = checks$detail[checks$check == "Unlisted changes"],
+          regexp = "claude.txt"
         )
         # nor the user's to-do list
         testthat::expect_no_match(
-          checks$detail[checks$check == "Unlisted changes"],
-          "todo.txt"
+          object = checks$detail[checks$check == "Unlisted changes"],
+          regexp = "todo.txt"
         )
       }
     )
-    unlink(x$root, recursive = TRUE)
+    unlink(x = x$root, recursive = TRUE)
     # 4. a private file that the public export would publish, and a token
     x <- fixture()
-    write(x$private, ".gitignore", ".setup/logs/")
+    write(root = x$private, file = ".gitignore", text = ".setup/logs/")
     write(
-      x$private,
-      "R/token.R",
-      paste0("token <- \"", paste0("ghp_", strrep("a", 36)), "\"")
+      root = x$private,
+      file = "R/token.R",
+      text = paste0(
+        "token <- \"",
+        paste0("ghp_", strrep(x = "a", times = 36)),
+        "\""
+      )
     )
     checks <- suppressMessages(
-      Verify(path = x$path, private = x$private, error = FALSE)
+      expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
       paste(text, "fails on private files in the public export and on secrets"),
       {
-        testthat::expect_equal(status(checks, "Public export"), "fail")
+        testthat::expect_equal(
+          object = status(checks, "Public export"),
+          expected = "fail"
+        )
         testthat::expect_match(
-          checks$detail[checks$check == "Public export"],
-          ".setup/ai/plan.md (private)",
+          object = checks$detail[checks$check == "Public export"],
+          regexp = ".setup/ai/plan.md (private)",
           fixed = TRUE
         )
-        testthat::expect_equal(status(checks, "Secrets"), "fail")
+        testthat::expect_equal(
+          object = status(checks, "Secrets"),
+          expected = "fail"
+        )
       }
     )
-    unlink(x$root, recursive = TRUE)
+    unlink(x = x$root, recursive = TRUE)
     # 5. a fix-up push: no pending row, the commit message names the log
     x <- fixture()
-    suppressMessages(Verify(path = x$path, private = x$private, record = TRUE))
+    suppressMessages(
+      expr = Verify(path = x$path, private = x$private, record = TRUE)
+    )
     for (dir in c(x$path, x$private)) {
-      write(dir, "R/foo.R", "Foo <- function() 3")
+      write(root = dir, file = "R/foo.R", text = "Foo <- function() 3")
     }
     git(x$private, "add", "--all")
     git(
@@ -279,69 +350,91 @@ lapply(
       "commit",
       "-q",
       "-m",
-      shQuote(paste0("Fix the function\n\nLog: .setup/logs/", log))
+      shQuote(string = paste0("Fix the function\n\nLog: .setup/logs/", log))
     )
     sha <- git(x$private, "rev-parse", "--short", "HEAD")
     checks <- suppressMessages(
-      Verify(path = x$path, private = x$private, record = TRUE, error = FALSE)
+      expr = Verify(
+        path = x$path,
+        private = x$private,
+        record = TRUE,
+        error = FALSE
+      )
     )
     testthat::test_that(
       paste(text, "records a fix-up push without a pending row"),
       {
-        testthat::expect_equal(status(checks, "New commit"), "pass")
-        log_lines <- readLines(file.path(x$path, ".setup", "logs", log))
-        index_lines <- readLines(
-          file.path(x$path, ".setup", "logs", "index.md")
+        testthat::expect_equal(
+          object = status(checks, "New commit"),
+          expected = "pass"
         )
-        rows <- log_lines[grepl("^\\| [0-9a-f]{7}", log_lines)]
-        testthat::expect_length(rows, 2L)
-        testthat::expect_match(rows[2], sha, fixed = TRUE)
-        testthat::expect_match(index_lines[3], sha, fixed = TRUE)
-        testthat::expect_match(index_lines[3], "Fix the function", fixed = TRUE)
+        log_lines <- readLines(con = file.path(x$path, ".setup", "logs", log))
+        index_lines <- readLines(
+          con = file.path(x$path, ".setup", "logs", "index.md")
+        )
+        rows <- log_lines[grepl(pattern = "^\\| [0-9a-f]{7}", x = log_lines)]
+        testthat::expect_length(object = rows, n = 2L)
+        testthat::expect_match(object = rows[2], regexp = sha, fixed = TRUE)
+        testthat::expect_match(
+          object = index_lines[3],
+          regexp = sha,
+          fixed = TRUE
+        )
+        testthat::expect_match(
+          object = index_lines[3],
+          regexp = "Fix the function",
+          fixed = TRUE
+        )
       }
     )
-    unlink(x$root, recursive = TRUE)
+    unlink(x = x$root, recursive = TRUE)
     # 6. repo info: a share link fails; a missing file warns
     x <- fixture()
     for (dir in c(x$path, x$private)) {
       write(
-        dir,
-        ".setup/repo/private-overleaf.md",
-        "https://www.overleaf.com/read/abcdefghijkl"
+        root = dir,
+        file = ".setup/repo/private-overleaf.md",
+        text = "https://www.overleaf.com/read/abcdefghijkl"
       )
     }
     checks <- suppressMessages(
-      Verify(path = x$path, private = x$private, error = FALSE)
+      expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
       paste(text, "fails on an Overleaf share link"),
       {
-        testthat::expect_equal(status(checks, "Repo info"), "fail")
+        testthat::expect_equal(
+          object = status(checks, "Repo info"),
+          expected = "fail"
+        )
       }
     )
-    unlink(file.path(x$path, ".setup/repo/public-github.md"))
-    unlink(file.path(x$private, ".setup/repo/public-github.md"))
+    unlink(x = file.path(x$path, ".setup/repo/public-github.md"))
+    unlink(x = file.path(x$private, ".setup/repo/public-github.md"))
     for (dir in c(x$path, x$private)) {
       write(
-        dir,
-        ".setup/repo/private-overleaf.md",
-        "https://www.overleaf.com/project/0123456789abcdef01234567"
+        root = dir,
+        file = ".setup/repo/private-overleaf.md",
+        text = "https://www.overleaf.com/project/0123456789abcdef01234567"
       )
     }
     checks <- suppressMessages(
-      Verify(path = x$path, private = x$private, error = FALSE)
+      expr = Verify(path = x$path, private = x$private, error = FALSE)
     )
     testthat::test_that(
       paste(text, "warns on a missing repo file"),
       {
-        testthat::expect_equal(status(checks, "Repo info"), "warn")
+        testthat::expect_equal(
+          object = status(checks, "Repo info"),
+          expected = "warn"
+        )
         testthat::expect_match(
-          checks$detail[checks$check == "Repo info"],
-          "public-github.md"
+          object = checks$detail[checks$check == "Repo info"],
+          regexp = "public-github.md"
         )
       }
     )
-    unlink(x$root, recursive = TRUE)
+    unlink(x = x$root, recursive = TRUE)
     # 7. a section for another project is ignored
     testthat::test_that(
       paste(text, "reads only this project's sections"),
@@ -359,14 +452,20 @@ lapply(
           con = file
         )
         files <- .VerifyLogFiles(log_file = file, project = "rProject")
-        testthat::expect_equal(files$file, "R/a.R")
+        testthat::expect_equal(object = files$file, expected = "R/a.R")
         files <- .VerifyLogFiles(
           log_file = file,
           project = ".dotfiles-ijapesigan"
         )
-        testthat::expect_equal(files$file, c("Makefile", ".setup/git"))
-        testthat::expect_equal(files$action, c("upload", "delete"))
-        unlink(file)
+        testthat::expect_equal(
+          object = files$file,
+          expected = c("Makefile", ".setup/git")
+        )
+        testthat::expect_equal(
+          object = files$action,
+          expected = c("upload", "delete")
+        )
+        unlink(x = file)
       }
     )
     # 8. the file list of the pushed commit only
@@ -407,19 +506,22 @@ lapply(
           project = "proj",
           subject = "First change set"
         )
-        testthat::expect_equal(first$file, c("R/a.R", ".setup/logs/index.md"))
+        testthat::expect_equal(
+          object = first$file,
+          expected = c("R/a.R", ".setup/logs/index.md")
+        )
         second <- .VerifyLogFiles(
           log_file = file,
           project = "proj",
           subject = "Second change set"
         )
-        testthat::expect_equal(second$file, "R/b.R")
+        testthat::expect_equal(object = second$file, expected = "R/b.R")
         record <- .VerifyLogFiles(
           log_file = file,
           project = "proj",
           subject = "Record the second push"
         )
-        testthat::expect_equal(nrow(record), 0L)
+        testthat::expect_equal(object = nrow(x = record), expected = 0L)
         # no block with the subject: every list, as before
         other <- .VerifyLogFiles(
           log_file = file,
@@ -427,10 +529,10 @@ lapply(
           subject = "Edited on Overleaf"
         )
         testthat::expect_equal(
-          other$file,
-          c("R/a.R", ".setup/logs/index.md", "R/b.R")
+          object = other$file,
+          expected = c("R/a.R", ".setup/logs/index.md", "R/b.R")
         )
-        unlink(file)
+        unlink(x = file)
       }
     )
   },

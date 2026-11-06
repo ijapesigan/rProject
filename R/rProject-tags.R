@@ -10,13 +10,17 @@
 #' @return Returns a data frame with the columns `key`, `annotation`,
 #'   and `keywords` (`NA` when an entry has none), sorted by key.
 #'   Without the bibliography, an empty data frame, with a message.
+#' @examples
+#' \dontrun{
+#' Tags(path = getwd())
+#' }
 #' @export
 Tags <- function(path) {
   bib <- file.path(path, ".setup", "quarto", "bib", "quarto.bib")
   out <- data.frame(
-    key = character(0),
-    annotation = character(0),
-    keywords = character(0)
+    key = character(length = 0),
+    annotation = character(length = 0),
+    keywords = character(length = 0)
   )
   if (file.exists(bib)) {
     entries <- lapply(
@@ -26,34 +30,34 @@ Tags <- function(path) {
       FUN = .LibParse
     )
     entries <- entries[
-      vapply(X = entries, FUN = `[[`, "ok", FUN.VALUE = logical(1))
+      vapply(X = entries, FUN = `[[`, "ok", FUN.VALUE = logical(length = 1))
     ]
-    if (length(entries) > 0L) {
+    if (length(x = entries) > 0L) {
       field <- function(entry, name) {
-        unname(c(entry$fields[name], NA_character_)[1])
+        unname(obj = c(entry$fields[name], NA_character_)[1])
       }
       out <- data.frame(
         key = vapply(
           X = entries,
           FUN = `[[`,
           "key",
-          FUN.VALUE = character(1)
+          FUN.VALUE = character(length = 1)
         ),
         annotation = vapply(
           X = entries,
           FUN = field,
           name = "annotation",
-          FUN.VALUE = character(1)
+          FUN.VALUE = character(length = 1)
         ),
         keywords = vapply(
           X = entries,
           FUN = field,
           name = "keywords",
-          FUN.VALUE = character(1)
+          FUN.VALUE = character(length = 1)
         )
       )
       out <- out[order(out$key), ]
-      rownames(out) <- NULL
+      rownames(x = out) <- NULL
     }
   } else {
     message(paste0("\n\nTags(): no ", bib, ".\nRun make bib.\n\n"))

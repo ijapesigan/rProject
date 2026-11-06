@@ -13,30 +13,43 @@ lapply(
       tokens = c(TEST_TOKEN = "not-a-real-token")
     )
     renviron <- file.path(root, ".Renviron")
-    lines <- readLines(renviron)
+    lines <- readLines(con = renviron)
     testthat::test_that(
       paste(text, "writes .Renviron with paths, project, and tokens"),
       {
         testthat::expect_true(
-          any(grepl("^R_LIBS_USER=\".*/\\.library\"$", lines))
+          object = any(
+            grepl(pattern = "^R_LIBS_USER=\".*/\\.library\"$", x = lines)
+          )
         )
-        testthat::expect_true("PROJECT=\"testProject\"" %in% lines)
-        testthat::expect_true("TEST_TOKEN=\"not-a-real-token\"" %in% lines)
-        testthat::expect_true("R_COMPLETION=TRUE" %in% lines)
+        testthat::expect_true(object = "PROJECT=\"testProject\"" %in% lines)
+        testthat::expect_true(
+          object = "TEST_TOKEN=\"not-a-real-token\"" %in% lines
+        )
+        testthat::expect_true(object = "R_COMPLETION=TRUE" %in% lines)
       }
     )
     testthat::test_that(
       paste(text, "makes .Renviron readable by the owner only"),
       {
-        testthat::skip_on_os("windows")
-        testthat::expect_equal(format(file.info(renviron)$mode), "600")
+        testthat::skip_on_os(os = "windows")
+        testthat::expect_equal(
+          object = format(x = file.info(renviron)$mode),
+          expected = "600"
+        )
       }
     )
     testthat::test_that(
       paste(text, "sets the session variables"),
       {
-        testthat::expect_equal(Sys.getenv("PROJECT"), "testProject")
-        testthat::expect_equal(Sys.getenv("TEST_TOKEN"), "not-a-real-token")
+        testthat::expect_equal(
+          object = Sys.getenv(x = "PROJECT"),
+          expected = "testProject"
+        )
+        testthat::expect_equal(
+          object = Sys.getenv(x = "TEST_TOKEN"),
+          expected = "not-a-real-token"
+        )
       }
     )
     testthat::test_that(
@@ -44,12 +57,14 @@ lapply(
       {
         Environment(path = root, project = "testProject", tokens = NULL)
         testthat::expect_false(
-          any(grepl("TEST_TOKEN", readLines(renviron)))
+          object = any(
+            grepl(pattern = "TEST_TOKEN", x = readLines(con = renviron))
+          )
         )
       }
     )
-    .TestRestore(state)
-    unlink(dirname(root), recursive = TRUE)
+    .TestRestore(state = state)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-environment"
 )

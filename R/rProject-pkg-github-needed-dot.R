@@ -4,8 +4,8 @@
   # never upgrade (the user, 2026-10-22): install a GitHub package when it
   # is missing from every library, or when `ref` is a commit SHA that
   # differs from the installed RemoteSha; a branch or tag never reinstalls
-  pinned <- grepl("^[0-9a-f]{7,40}$", ref)
+  pinned <- grepl(pattern = "^[0-9a-f]{7,40}$", x = ref)
   !installed || (
-    pinned && (is.na(sha) || !startsWith(sha, ref))
+    pinned && (is.na(x = sha) || !startsWith(x = sha, prefix = ref))
   )
 }

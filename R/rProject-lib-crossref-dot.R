@@ -6,7 +6,9 @@
   )
   record <- tryCatch(
     expr = jsonlite::fromJSON(txt = url, simplifyVector = FALSE),
-    error = function(e) NULL
+    error = function(e) {
+      NULL
+    }
   )
   record$message
 }

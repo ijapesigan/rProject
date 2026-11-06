@@ -4,6 +4,11 @@
 #'
 #' @inheritParams LibPaths
 #' @inheritParams Bib
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Site(path = getwd())
+#' }
 #' @export
 Site <- function(path) {
   if (
@@ -26,7 +31,7 @@ Site <- function(path) {
     }
     if (!("pkgdown" %in% pkg_installed)) {
       utils::install.packages(
-        "pkgdown",
+        pkgs = "pkgdown",
         repos = c(REPO_NAME = PkgRepo(path = path)),
         lib = lib,
         quiet = TRUE
@@ -64,7 +69,7 @@ Site <- function(path) {
       )
       on.exit(
         expr = unlink(
-          file.path(
+          x = file.path(
             path,
             "_pkgdown.yml"
           )

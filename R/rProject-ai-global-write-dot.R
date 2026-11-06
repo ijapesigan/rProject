@@ -4,11 +4,11 @@
   changed <- TRUE
   if (exists) {
     changed <- !identical(
-      readLines(
+      x = readLines(
         con = file,
         warn = FALSE
       ),
-      text
+      y = text
     )
   }
   if (changed) {
@@ -24,7 +24,7 @@
       )
     }
     dir.create(
-      path = dirname(file),
+      path = dirname(path = file),
       showWarnings = FALSE,
       recursive = TRUE
     )

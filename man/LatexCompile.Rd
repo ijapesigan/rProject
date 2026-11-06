@@ -13,12 +13,20 @@ Project path.}
 \item{clean}{Logical.
 Clean \code{latexmk} output except \verb{*.pdf}}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Runs \code{latexmk} on every \code{.tex} file, with 10 million extra words of
 pdfTeX main memory (\code{extra_mem_bot}), so that a long bibliography
 compiles. A document whose last run failed (fatal error, TeX capacity
 exceeded) stops \verb{make latex} in GitHub Actions and gives a warning
 locally: \code{latexmk -f} would otherwise leave a stub PDF and succeed.
+}
+\examples{
+\dontrun{
+LatexCompile(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

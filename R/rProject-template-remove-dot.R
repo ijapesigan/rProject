@@ -17,25 +17,25 @@
       FUN = function(x) {
         any(startsWith(x = x, prefix = private))
       },
-      FUN.VALUE = logical(1)
+      FUN.VALUE = logical(length = 1)
     )
   ]
   is_folder <- grepl(pattern = "/$", x = rows)
   # plan first, then delete (check = TRUE only plans)
-  deleted <- character(0)
+  deleted <- character(length = 0)
   for (row in rows[!is_folder]) {
-    hits <- Sys.glob(file.path(path, row))
-    hits <- hits[!dir.exists(hits)]
-    deleted <- c(deleted, substring(hits, nchar(path) + 2L))
+    hits <- Sys.glob(paths = file.path(path, row))
+    hits <- hits[!dir.exists(paths = hits)]
+    deleted <- c(deleted, substring(text = hits, first = nchar(x = path) + 2L))
   }
   files <- deleted
   # deepest folders first, so that a parent sees its children as gone
   folder_rows <- rows[is_folder]
-  folder_rows <- folder_rows[order(-nchar(folder_rows))]
-  gone <- character(0)
-  kept <- character(0)
+  folder_rows <- folder_rows[order(-nchar(x = folder_rows))]
+  gone <- character(length = 0)
+  kept <- character(length = 0)
   for (row in folder_rows) {
-    if (dir.exists(file.path(path, row))) {
+    if (dir.exists(paths = file.path(path, row))) {
       inside <- file.path(
         sub(pattern = "/$", replacement = "", x = row),
         list.files(
@@ -45,8 +45,8 @@
           no.. = TRUE
         )
       )
-      left <- setdiff(inside, deleted)
-      if (all(basename(left) == ".gitignore")) {
+      left <- setdiff(x = inside, y = deleted)
+      if (all(basename(path = left) == ".gitignore")) {
         deleted <- c(deleted, left)
         gone <- c(gone, row)
       } else {
@@ -55,22 +55,26 @@
     }
   }
   if (!check) {
-    unlink(file.path(path, files))
-    unlink(file.path(path, gone), recursive = TRUE)
+    unlink(x = file.path(path, files))
+    unlink(x = file.path(path, gone), recursive = TRUE)
   }
-  deleted <- unique(deleted)
-  if (length(deleted) > 0L) {
+  deleted <- unique(x = deleted)
+  if (length(x = deleted) > 0L) {
     message(
       paste0(
         "\n\n",
-        ifelse(check, "Template files to delete", "Template files deleted"),
+        ifelse(
+          test = check,
+          yes = "Template files to delete",
+          no = "Template files deleted"
+        ),
         " (no longer in the template; delete them in Overleaf too):\n",
         paste(deleted, collapse = "\n"),
         "\n\n"
       )
     )
   }
-  if (length(kept) > 0L) {
+  if (length(x = kept) > 0L) {
     message(
       paste0(
         "\n\nNot deleted (they hold files the template does not know;",

@@ -12,43 +12,48 @@
 #'   GitHub packages.
 #' @param ref Character vector.
 #'   Git branch, tag, or commit SHA (only a SHA reinstalls).
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' PkgProjectGitHub(path = getwd(), pkg = "stats")
+#' }
 #' @export
 PkgProjectGitHub <- function(path,
                              pkg,
                              ref = "HEAD") {
-  if (length(pkg) > 0) {
+  if (length(x = pkg) > 0) {
     lib <- LibPaths(path = path)
-    if (length(ref) == 1) {
+    if (length(x = ref) == 1) {
       if (ref == "HEAD") {
         ref <- rep(
           x = ref,
-          times = length(pkg)
+          times = length(x = pkg)
         )
       }
     }
     stopifnot(
-      length(pkg) == length(ref)
+      length(x = pkg) == length(x = ref)
     )
     installed <- utils::installed.packages()
     pkg_installed <- installed[, "Package"]
     if (!("remotes" %in% pkg_installed)) {
       utils::install.packages(
-        "remotes",
+        pkgs = "remotes",
         repos = c(REPO_NAME = PkgRepo(path = path)),
         lib = lib,
         quiet = TRUE
       )
     }
     # a ref may also come with the package (owner/pkg@ref)
-    at <- grepl("@", pkg)
-    ref[at] <- sub("^[^@]*@", "", pkg[at])
-    pkg <- sub("@.*$", "", pkg)
-    for (i in seq_along(pkg)) {
-      name <- basename(pkg[i])
+    at <- grepl(pattern = "@", x = pkg)
+    ref[at] <- sub(pattern = "^[^@]*@", replacement = "", x = pkg[at])
+    pkg <- sub(pattern = "@.*$", replacement = "", x = pkg)
+    for (i in seq_along(along.with = pkg)) {
+      name <- basename(path = pkg[i])
       sha <- NA_character_
       if (name %in% pkg_installed) {
         sha <- suppressWarnings(
-          utils::packageDescription(pkg = name, fields = "RemoteSha")
+          expr = utils::packageDescription(pkg = name, fields = "RemoteSha")
         )
       }
       run <- .PkgGitHubNeeded(

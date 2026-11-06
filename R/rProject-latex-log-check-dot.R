@@ -19,7 +19,7 @@
         )
       )
     },
-    FUN.VALUE = logical(1)
+    FUN.VALUE = logical(length = 1)
   )
   logs[bad]
 }

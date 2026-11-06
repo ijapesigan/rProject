@@ -6,7 +6,7 @@ lapply(
     root <- .TestProject()
     other <- tempfile(pattern = "otherlib")
     fake <- function(lib, pkg) {
-      dir.create(file.path(lib, pkg), recursive = TRUE)
+      dir.create(path = file.path(lib, pkg), recursive = TRUE)
       writeLines(
         text = c(
           paste("Package:", pkg), "Version: 0.0.1",
@@ -26,11 +26,11 @@ lapply(
       paste(text, "names packages that the image also has"),
       {
         out <- suppressMessages(
-          .LibShadowed(path = root, lib_paths = c(lib, other))
+          expr = .LibShadowed(path = root, lib_paths = c(lib, other))
         )
-        testthat::expect_equal(out, "dupPkg")
+        testthat::expect_equal(object = out, expected = "dupPkg")
         testthat::expect_message(
-          .LibShadowed(path = root, lib_paths = c(lib, other)),
+          object = .LibShadowed(path = root, lib_paths = c(lib, other)),
           regexp = "make cleanpkg"
         )
       }
@@ -39,12 +39,12 @@ lapply(
       paste(text, "is quiet without duplicates"),
       {
         testthat::expect_length(
-          .LibShadowed(path = root, lib_paths = lib),
-          0
+          object = .LibShadowed(path = root, lib_paths = lib),
+          n = 0
         )
       }
     )
-    unlink(c(dirname(root), other), recursive = TRUE)
+    unlink(x = c(dirname(path = root), other), recursive = TRUE)
   },
   text = "test-rProject-lib-shadowed"
 )

@@ -27,6 +27,11 @@ for the type.
 The type comes from the \code{type} line in \code{.setup/scripts/project.R}
 (see \code{\link[=Template]{Template()}}); without it, it is guessed as in \code{\link[=AI]{AI()}}.
 }
+\examples{
+\dontrun{
+Tree(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

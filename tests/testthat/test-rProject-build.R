@@ -8,10 +8,10 @@ lapply(
       {
         root <- .TestProject(description = FALSE)
         testthat::expect_message(
-          Build(path = root),
-          "is not an R package"
+          object = Build(path = root),
+          regexp = "is not an R package"
         )
-        unlink(dirname(root), recursive = TRUE)
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
   },

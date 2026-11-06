@@ -9,15 +9,18 @@ lapply(
       paste(text, "skips packages that are already installed"),
       {
         testthat::expect_silent(
-          PkgProjectBioconductor(path = root, pkg = "stats")
+          object = PkgProjectBioconductor(path = root, pkg = "stats")
         )
         testthat::expect_silent(
-          PkgProjectBioconductor(path = root, pkg = character(0))
+          object = PkgProjectBioconductor(
+            path = root,
+            pkg = character(length = 0)
+          )
         )
       }
     )
-    .TestRestore(state)
-    unlink(dirname(root), recursive = TRUE)
+    .TestRestore(state = state)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-pkg-project-bioconductor"
 )

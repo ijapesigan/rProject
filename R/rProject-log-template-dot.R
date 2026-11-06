@@ -3,15 +3,18 @@
                          topic,
                          summary,
                          section) {
-  date <- substr(log, start = 1, stop = 10)
+  date <- substr(x = log, start = 1, stop = 10)
   specs <- list.files(
     path = file.path(path, ".setup", "ai", "specs"),
     pattern = paste0("-", topic, "\\.md$")
   )
   spec <- ifelse(
-    length(specs) > 0L,
-    paste0("Spec: .setup/ai/specs/", sort(specs, decreasing = TRUE)[1]),
-    "Spec: TODO"
+    test = length(x = specs) > 0L,
+    yes = paste0(
+      "Spec: .setup/ai/specs/",
+      sort(x = specs, decreasing = TRUE)[1]
+    ),
+    no = "Spec: TODO"
   )
   c(
     paste0("# ", date, ": ", topic),

@@ -40,6 +40,11 @@ the other fields alphabetically, then \code{abstract}, \code{publisher},
 Files that do not parse, or that hold more than one entry,
 are left as they are (see \code{\link[=LibCheck]{LibCheck()}}).
 }
+\examples{
+\dontrun{
+LibFormat(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

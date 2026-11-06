@@ -4,11 +4,11 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::skip_on_cran()
-    testthat::skip_if_not_installed("cffr")
+    testthat::skip_if_not_installed(pkg = "cffr")
     testthat::test_that(
       paste(text, "writes CITATION.cff for a package"),
       {
-        root <- normalizePath(.TestProject())
+        root <- normalizePath(path = .TestProject())
         writeLines(
           text = c(
             "Package: testProject",
@@ -27,26 +27,31 @@ lapply(
         # run from another folder: CFF() must not depend on the working
         # directory
         elsewhere <- tempfile(pattern = "elsewhere")
-        dir.create(elsewhere)
-        wd <- setwd(elsewhere)
-        on.exit(setwd(wd), add = TRUE)
-        suppressMessages(CFF(path = root))
+        dir.create(path = elsewhere)
+        wd <- setwd(dir = elsewhere)
+        on.exit(expr = setwd(dir = wd), add = TRUE)
+        suppressMessages(expr = CFF(path = root))
         cff <- file.path(root, "CITATION.cff")
-        testthat::expect_true(file.exists(cff))
-        testthat::expect_true(any(grepl("testProject", readLines(cff))))
-        testthat::expect_false(
-          file.exists(file.path(elsewhere, "CITATION.cff"))
+        testthat::expect_true(object = file.exists(cff))
+        testthat::expect_true(
+          object = any(grepl(pattern = "testProject", x = readLines(con = cff)))
         )
-        setwd(wd)
-        unlink(c(dirname(root), elsewhere), recursive = TRUE)
+        testthat::expect_false(
+          object = file.exists(file.path(elsewhere, "CITATION.cff"))
+        )
+        setwd(dir = wd)
+        unlink(x = c(dirname(path = root), elsewhere), recursive = TRUE)
       }
     )
     testthat::test_that(
       paste(text, "skips folders that are not packages"),
       {
         root <- .TestProject(description = FALSE)
-        testthat::expect_message(CFF(path = root), "is not an R package")
-        unlink(dirname(root), recursive = TRUE)
+        testthat::expect_message(
+          object = CFF(path = root),
+          regexp = "is not an R package"
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
   },

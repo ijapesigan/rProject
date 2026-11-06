@@ -43,6 +43,11 @@ Nothing is written in rProject itself (its CI builds rProject from
 source), or when the running rProject has no commit (installed from a
 local source).
 }
+\examples{
+\dontrun{
+Lock(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

@@ -10,11 +10,11 @@ lapply(
       c("data-raw", "data-private", "data-external", "scripts")
     )
     for (dir in dirs) {
-      dir.create(dir, recursive = TRUE)
+      dir.create(path = dir, recursive = TRUE)
     }
-    data <- data.frame(x = 1:500, y = stats::rnorm(500))
+    data <- data.frame(x = 1:500, y = stats::rnorm(n = 500))
     raw <- file.path(root, ".setup", "data-raw", "ema.txt")
-    utils::write.table(data, file = raw, row.names = FALSE)
+    utils::write.table(x = data, file = raw, row.names = FALSE)
     writeLines(
       text = "x <- 1",
       con = file.path(root, ".setup", "data-private", "restricted.txt")
@@ -27,117 +27,124 @@ lapply(
       text = "d <- DataPath(path = root, file = \"ema.txt\")",
       con = file.path(root, ".setup", "scripts", "analysis.R")
     )
-    original <- utils::read.table(raw, header = TRUE)
+    original <- utils::read.table(file = raw, header = TRUE)
     testthat::test_that(
       paste(text, "finds files in the tiers"),
       {
         testthat::expect_equal(
-          normalizePath(DataPath(path = root, file = "ema.txt")),
-          normalizePath(raw)
+          object = normalizePath(
+            path = DataPath(path = root, file = "ema.txt")
+          ),
+          expected = normalizePath(path = raw)
         )
         testthat::expect_match(
-          DataPath(path = root, file = "restricted.txt"),
-          "data-private"
+          object = DataPath(path = root, file = "restricted.txt"),
+          regexp = "data-private"
         )
         testthat::expect_error(
-          DataPath(path = root, file = "missing.txt"),
-          "data-external"
+          object = DataPath(path = root, file = "missing.txt"),
+          regexp = "data-external"
         )
       }
     )
     compressed <- suppressMessages(
-      DataCompress(path = root, files = ".setup/data-raw/ema.txt")
+      expr = DataCompress(path = root, files = ".setup/data-raw/ema.txt")
     )
     testthat::test_that(
       paste(text, "compresses, checks, and still finds the file"),
       {
-        testthat::expect_false(file.exists(raw))
-        testthat::expect_true(file.exists(paste0(raw, ".xz")))
+        testthat::expect_false(object = file.exists(raw))
+        testthat::expect_true(object = file.exists(paste0(raw, ".xz")))
         found <- DataPath(path = root, file = "ema.txt")
-        testthat::expect_match(found, "ema\\.txt\\.xz$")
+        testthat::expect_match(object = found, regexp = "ema\\.txt\\.xz$")
         testthat::expect_equal(
-          utils::read.table(found, header = TRUE),
-          original
+          object = utils::read.table(file = found, header = TRUE),
+          expected = original
         )
-        testthat::expect_false(.SizeCheckIsText(file = found))
+        testthat::expect_false(object = .SizeCheckIsText(file = found))
       }
     )
     testthat::test_that(
       paste(text, "unpacks a plain copy into the cache and refreshes it"),
       {
         plain <- DataPath(path = root, file = "ema.txt", plain = TRUE)
-        testthat::expect_match(plain, "data-cache/ema\\.txt$")
+        testthat::expect_match(object = plain, regexp = "data-cache/ema\\.txt$")
         testthat::expect_equal(
-          utils::read.table(plain, header = TRUE),
-          original
+          object = utils::read.table(file = plain, header = TRUE),
+          expected = original
         )
         # a new compressed version replaces the cached copy
         changed <- data.frame(x = 1:3, y = 3:1)
-        utils::write.table(changed, file = raw, row.names = FALSE)
-        unlink(paste0(raw, ".xz"))
+        utils::write.table(x = changed, file = raw, row.names = FALSE)
+        unlink(x = paste0(raw, ".xz"))
         suppressMessages(
-          DataCompress(path = root, files = ".setup/data-raw/ema.txt")
+          expr = DataCompress(path = root, files = ".setup/data-raw/ema.txt")
         )
         plain <- DataPath(path = root, file = "ema.txt", plain = TRUE)
         testthat::expect_equal(
-          utils::read.table(plain, header = TRUE),
-          changed
+          object = utils::read.table(file = plain, header = TRUE),
+          expected = changed
         )
       }
     )
     manifest_file <- file.path(root, ".setup", "ai", "data.md")
-    manifest <- suppressMessages(DataManifest(path = root))
+    manifest <- suppressMessages(expr = DataManifest(path = root))
     testthat::test_that(
       paste(text, "writes the manifest with tiers and users"),
       {
-        testthat::expect_true(file.exists(manifest_file))
+        testthat::expect_true(object = file.exists(manifest_file))
         testthat::expect_setequal(
-          manifest$tier,
-          c("raw", "private", "external")
+          object = manifest$tier,
+          expected = c("raw", "private", "external")
         )
         testthat::expect_match(
-          manifest$used_by[manifest$file == ".setup/data-raw/ema.txt.xz"],
-          ".setup/scripts/analysis.R",
+          object = manifest$used_by[
+            manifest$file == ".setup/data-raw/ema.txt.xz"
+          ],
+          regexp = ".setup/scripts/analysis.R",
           fixed = TRUE
         )
-        testthat::expect_true(all(manifest$status == "ok"))
+        testthat::expect_true(object = all(manifest$status == "ok"))
       }
     )
     testthat::test_that(
       paste(text, "keeps user columns and flags external files"),
       {
-        lines <- readLines(manifest_file)
-        row <- grep("restricted.txt", lines, fixed = TRUE)
-        cells <- strsplit(lines[row], "|", fixed = TRUE)[[1]]
+        lines <- readLines(con = manifest_file)
+        row <- grep(pattern = "restricted.txt", x = lines, fixed = TRUE)
+        cells <- strsplit(x = lines[row], split = "|", fixed = TRUE)[[1]]
         cells[7] <- " ADID study "
         cells[8] <- " Roar work "
         lines[row] <- paste0(paste(cells, collapse = "|"), "|")
-        writeLines(lines, manifest_file)
+        writeLines(text = lines, con = manifest_file)
         writeLines(
           text = "bigger",
           con = file.path(root, ".setup", "data-external", "posterior.txt")
         )
-        manifest <- suppressMessages(DataManifest(path = root))
+        manifest <- suppressMessages(expr = DataManifest(path = root))
         private <- manifest[
           manifest$file == ".setup/data-private/restricted.txt", ,
           drop = FALSE
         ]
-        testthat::expect_equal(private$source, "ADID study")
-        testthat::expect_equal(private$location, "Roar work")
+        testthat::expect_equal(object = private$source, expected = "ADID study")
+        testthat::expect_equal(
+          object = private$location,
+          expected = "Roar work"
+        )
         external <- ".setup/data-external/posterior.txt"
         testthat::expect_equal(
-          manifest$status[manifest$file == external],
-          "changed"
+          object = manifest$status[manifest$file == external],
+          expected = "changed"
         )
-        unlink(file.path(root, external))
-        manifest <- suppressMessages(DataManifest(path = root))
+        unlink(x = file.path(root, external))
+        manifest <- suppressMessages(expr = DataManifest(path = root))
         testthat::expect_equal(
-          manifest$status[manifest$file == external],
-          "not on this machine"
+          object = manifest$status[manifest$file == external],
+          expected = "not on this machine"
         )
       }
     )
-    unlink(root, recursive = TRUE)
+    unlink(x = root, recursive = TRUE)
   },
   text = "test-rProject-data"
 )

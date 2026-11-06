@@ -4,6 +4,11 @@
 #'
 #' @inheritParams LibPaths
 #' @inheritParams EnvironmentProject
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' Profile(path = getwd(), project = "myProject")
+#' }
 #' @export
 Profile <- function(path,
                     project) {
@@ -21,7 +26,7 @@ Profile <- function(path,
       "PROJECT",
       " = ",
       "\"",
-      unname(EnvironmentProject(project = project)),
+      unname(obj = EnvironmentProject(project = project)),
       "\"",
       ")",
       "\n"
@@ -29,7 +34,7 @@ Profile <- function(path,
     # deparse() quotes and escapes the path
     lib <- paste0(
       ".libPaths(",
-      deparse(.PathSlash(x = LibPaths(path = path))),
+      deparse(expr = .PathSlash(x = LibPaths(path = path))),
       ")",
       "\n"
     )
@@ -86,7 +91,7 @@ Profile <- function(path,
       profile
     )
     con <- file(
-      file.path(
+      description = file.path(
         path,
         ".Rprofile"
       )
@@ -95,7 +100,7 @@ Profile <- function(path,
       text = profile,
       con = con
     )
-    close(con)
+    close(con = con)
   } else {
     message(
       paste(

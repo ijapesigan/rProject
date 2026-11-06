@@ -30,9 +30,15 @@
   )
   is_private <- grepl(pattern = private_paths, x = exported)
   size <- file.info(file.path(private, exported))$size
-  is_large <- !is.na(size) & size > max_size
+  is_large <- !is.na(x = size) & size > max_size
   c(
-    paste(exported[is_private], "(private)")[seq_len(sum(is_private))],
-    paste(exported[is_large], "(over 50 MB)")[seq_len(sum(is_large))]
+    paste(
+      exported[is_private],
+      "(private)"
+    )[seq_len(length.out = sum(is_private))],
+    paste(
+      exported[is_large],
+      "(over 50 MB)"
+    )[seq_len(length.out = sum(is_large))]
   )
 }

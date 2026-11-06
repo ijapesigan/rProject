@@ -3,12 +3,16 @@
   # the template type: the type line in project.R, or else the AI() types
   # mapped to a template type (type: AI() types, guessed when NULL)
   template <- .TemplateType(path = path)
-  if (is.null(template)) {
-    if (is.null(type)) {
+  if (is.null(x = template)) {
+    if (is.null(x = type)) {
       project <- .TemplateSettings(path = path)$project
       type <- .AIType(
         path = path,
-        project = ifelse(is.null(project), basename(path), project[1])
+        project = ifelse(
+          test = is.null(x = project),
+          yes = basename(path = path),
+          no = project[1]
+        )
       )
     }
     map <- c(
@@ -19,7 +23,7 @@
       package = "cran",
       cran = "cran"
     )
-    template <- c(map[intersect(names(map), type)], "cran")[[1]]
+    template <- c(map[intersect(x = names(x = map), y = type)], "cran")[[1]]
   }
   template
 }

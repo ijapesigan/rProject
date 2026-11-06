@@ -67,6 +67,11 @@ Overleaf recommends under 100 MB with GitHub sync or git.
 
 The report also lists the largest text files and the largest files.
 }
+\examples{
+\dontrun{
+SizeCheck(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

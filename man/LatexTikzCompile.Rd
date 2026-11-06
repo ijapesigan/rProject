@@ -13,8 +13,16 @@ Project path.}
 \item{clean}{Logical.
 Clean \code{latexmk} output except \verb{*.pdf}}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Compile Tikz
+}
+\examples{
+\dontrun{
+LatexTikzCompile(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

@@ -1,0 +1,49 @@
+## ---- test-rProject-lint-cpp-declarations
+lapply(
+  X = 1,
+  FUN = function(i,
+                 text) {
+    testthat::skip_on_cran()
+    testthat::test_that(
+      paste(text, "flags what the rule forbids"),
+      {
+        root <- .TestLintProject(
+          files = list(
+            ".setup/cpp/testProject-foo-dot.cpp" = c(
+              "double Foo(const double x) {",
+              "  return x;",
+              "}"
+            ),
+            ".setup/cpp/000-forward-declarations.cpp" = c(
+              "double Bar(const double x);"
+            )
+          )
+        )
+        rows <- .LintCppDeclarations(path = root)
+        testthat::expect_true(object = any(rows$rule == "cpp-declarations"))
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
+    testthat::test_that(
+      paste(text, "passes what the rule allows"),
+      {
+        root <- .TestLintProject(
+          files = list(
+            ".setup/cpp/testProject-foo-dot.cpp" = c(
+              "double Foo(const double x) {",
+              "  return x;",
+              "}"
+            ),
+            ".setup/cpp/000-forward-declarations.cpp" = c(
+              "double Foo(const double x);"
+            )
+          )
+        )
+        rows <- .LintCppDeclarations(path = root)
+        testthat::expect_false(object = any(rows$rule == "cpp-declarations"))
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
+  },
+  text = "test-rProject-lint-cpp-declarations"
+)

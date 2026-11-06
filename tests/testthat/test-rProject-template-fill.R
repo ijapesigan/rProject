@@ -15,8 +15,8 @@ lapply(
           values = list(title = "Daily", cron = "0 3 * * *")
         )
         testthat::expect_equal(
-          out,
-          c(
+          object = out,
+          expected = c(
             "name: Daily",
             "cron: \"0 3 * * *\"",
             "pattern={{version}} ${{ secrets.PAT }}"
@@ -40,8 +40,8 @@ lapply(
           )
         )
         testthat::expect_equal(
-          out,
-          c(
+          object = out,
+          expected = c(
             "on:",
             "  schedule:",
             "    - cron: \"0 0 * * *\"",
@@ -63,13 +63,18 @@ lapply(
         )
         out <- .TemplateFill(text = "{{next}}", values = keys["next"])
         testthat::expect_equal(
-          sum(out == "      - name: Trigger the next image"),
-          2L
+          object = sum(out == "      - name: Trigger the next image"),
+          expected = 2L
         )
         testthat::expect_true(
-          any(grepl(pattern = "repos/ijapesigan/docker-rocker/", x = out))
+          object = any(
+            grepl(pattern = "repos/ijapesigan/docker-rocker/", x = out)
+          )
         )
-        testthat::expect_identical(.TemplateKeys()[["next"]], "")
+        testthat::expect_identical(
+          object = .TemplateKeys()[["next"]],
+          expected = ""
+        )
       }
     )
   },

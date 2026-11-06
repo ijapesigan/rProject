@@ -3,13 +3,13 @@
                        file) {
   cache <- file.path(path, ".setup", "data-cache", file)
   stamp <- paste0(cache, ".md5")
-  md5 <- unname(tools::md5sum(source))
+  md5 <- unname(obj = tools::md5sum(files = source))
   fresh <- file.exists(cache) &&
     file.exists(stamp) &&
-    identical(readLines(con = stamp, warn = FALSE), md5)
+    identical(x = readLines(con = stamp, warn = FALSE), y = md5)
   if (!fresh) {
     dir.create(
-      path = dirname(cache),
+      path = dirname(path = cache),
       showWarnings = FALSE,
       recursive = TRUE
     )

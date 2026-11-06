@@ -2,7 +2,7 @@
                     project) {
   # the type line in project.R (Template()), when present
   template <- .TemplateType(path = path)
-  if (!is.null(template)) {
+  if (!is.null(x = template)) {
     type <- list(
       rProject = "package",
       cran = c("package", "cran"),
@@ -23,9 +23,9 @@
     # make all); a simulation has .sim/README.md, which describes it (the
     # template must not ship one)
     # cran-* folders: project.R names the package, not the folder
-    folder <- basename(normalizePath(path, mustWork = FALSE))
+    folder <- basename(path = normalizePath(path = path, mustWork = FALSE))
     type <- c(
-      manuscript = length(manuscripts) > 0L ||
+      manuscript = length(x = manuscripts) > 0L ||
         grepl(pattern = "^man", x = project),
       simulation = file.exists(file.path(path, ".sim", "README.md")),
       package = grepl(pattern = "^cran-", x = folder),
@@ -34,8 +34,8 @@
       talk = grepl(pattern = "^talks", x = project),
       container = grepl(pattern = "^docker-", x = project)
     )
-    type <- names(type)[type]
-    if (length(type) == 0L) {
+    type <- names(x = type)[type]
+    if (length(x = type) == 0L) {
       type <- "package"
     }
   }

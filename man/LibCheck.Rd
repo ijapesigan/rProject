@@ -48,6 +48,11 @@ a DOI with a prefix; no final newline.
 biber's warning that \code{publisher} is not an \verb{@Article} field is the
 house convention and is not reported.
 }
+\examples{
+\dontrun{
+LibCheck(path = getwd())
+}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

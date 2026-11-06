@@ -16,39 +16,41 @@ lapply(
       paste(text, "reads NA when .setup/repo is missing"),
       {
         info <- .RepoInfo(path = root)
-        testthat::expect_true(is.na(info$private_github))
-        testthat::expect_true(is.na(info$public_github))
-        testthat::expect_false(attr(info, "public_none"))
+        testthat::expect_true(object = is.na(x = info$private_github))
+        testthat::expect_true(object = is.na(x = info$public_github))
+        testthat::expect_false(object = attr(x = info, which = "public_none"))
       }
     )
     testthat::test_that(
       paste(text, "finds the public repository in clone.sh"),
       {
         testthat::expect_equal(
-          .RepoInfoClone(path = root),
-          "ijapesigan/lib-2010-2019-article"
+          object = .RepoInfoClone(path = root),
+          expected = "ijapesigan/lib-2010-2019-article"
         )
       }
     )
-    written <- suppressMessages(.RepoInfoWrite(path = root))
+    written <- suppressMessages(expr = .RepoInfoWrite(path = root))
     testthat::test_that(
       paste(text, "creates .setup/repo with the GitHub repositories"),
       {
-        testthat::expect_length(written, 3L)
+        testthat::expect_length(object = written, n = 3L)
         testthat::expect_equal(
-          readLines(file.path(root, ".setup", "repo", ".gitignore")),
-          c("*", "*/")
+          object = readLines(
+            con = file.path(root, ".setup", "repo", ".gitignore")
+          ),
+          expected = c("*", "*/")
         )
         info <- .RepoInfo(path = root)
         testthat::expect_equal(
-          info$private_github,
-          "jeksterslab-psu/lib-2010-2019-article"
+          object = info$private_github,
+          expected = "jeksterslab-psu/lib-2010-2019-article"
         )
         testthat::expect_equal(
-          info$public_github,
-          "ijapesigan/lib-2010-2019-article"
+          object = info$public_github,
+          expected = "ijapesigan/lib-2010-2019-article"
         )
-        testthat::expect_true(is.na(info$private_overleaf))
+        testthat::expect_true(object = is.na(x = info$private_overleaf))
       }
     )
     testthat::test_that(
@@ -58,10 +60,10 @@ lapply(
           text = "owner/other",
           con = file.path(root, ".setup", "repo", "private-github.md")
         )
-        testthat::expect_length(.RepoInfoWrite(path = root), 0L)
+        testthat::expect_length(object = .RepoInfoWrite(path = root), n = 0L)
         testthat::expect_equal(
-          .RepoInfo(path = root)$private_github,
-          "owner/other"
+          object = .RepoInfo(path = root)$private_github,
+          expected = "owner/other"
         )
       }
     )
@@ -80,15 +82,15 @@ lapply(
           con = file.path(root, ".setup", "repo", "private-overleaf.md")
         )
         info <- .RepoInfo(path = root)
-        testthat::expect_true(is.na(info$public_github))
-        testthat::expect_true(attr(info, "public_none"))
+        testthat::expect_true(object = is.na(x = info$public_github))
+        testthat::expect_true(object = attr(x = info, which = "public_none"))
         testthat::expect_equal(
-          info$private_overleaf,
-          "https://www.overleaf.com/project/0123456789abcdef01234567"
+          object = info$private_overleaf,
+          expected = "https://www.overleaf.com/project/0123456789abcdef01234567"
         )
       }
     )
-    unlink(dirname(root), recursive = TRUE)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-repo-info"
 )

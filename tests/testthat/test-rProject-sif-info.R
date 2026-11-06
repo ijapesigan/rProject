@@ -4,15 +4,15 @@ lapply(
   FUN = function(i,
                  text) {
     dir <- tempfile(pattern = "sif")
-    dir.create(dir)
+    dir.create(path = dir)
     fake <- function(name, labels, def) {
       json <- file.path(dir, paste0(name, ".json"))
       writeLines(
         text = c(
           "{",
           paste0(
-            "  \"", names(labels), "\": \"", labels, "\"",
-            c(rep(",", length(labels) - 1), "")
+            "  \"", names(x = labels), "\": \"", labels, "\"",
+            c(rep(x = ",", length(x = labels) - 1), "")
           ),
           "}"
         ),
@@ -23,30 +23,33 @@ lapply(
       .SifInfo(labels = json, deffile = deffile, sif = "")
     }
     base <- "org.opencontainers.image."
-    digest <- paste0("sha256:", strrep("a", 64))
+    digest <- paste0("sha256:", strrep(x = "a", times = 64))
     testthat::test_that(
       paste(text, "reads a public image pulled by tag"),
       {
         out <- fake(
           name = "docs",
           labels = stats::setNames(
-            c(
+            object = c(
               "docker.io/ijapesigan/docs:latest", digest,
               "2026-10-22T16:33:24.104Z",
               "https://github.com/ijapesigan/docker-docs",
               "https://github.com/ijapesigan/docker-docs"
             ),
-            paste0(
+            nm = paste0(
               base,
               c("base.name", "base.digest", "created", "source", "url")
             )
           ),
           def = c("bootstrap: docker", "from: ijapesigan/docs:latest")
         )
-        testthat::expect_equal(out$kind, "public")
-        testthat::expect_equal(out$image, "docker.io/ijapesigan/docs")
-        testthat::expect_equal(out$digest, digest)
-        testthat::expect_equal(out$created, "2026-10-22")
+        testthat::expect_equal(object = out$kind, expected = "public")
+        testthat::expect_equal(
+          object = out$image,
+          expected = "docker.io/ijapesigan/docs"
+        )
+        testthat::expect_equal(object = out$digest, expected = digest)
+        testthat::expect_equal(object = out$created, expected = "2026-10-22")
       }
     )
     testthat::test_that(
@@ -55,19 +58,22 @@ lapply(
         out <- fake(
           name = "docs-plus",
           labels = stats::setNames(
-            c(
+            object = c(
               "docker.io/ijapesigan/docs:latest", digest,
               "https://github.com/ijapesigan/docker-docs-mplus",
               "https://github.com/ijapesigan/docker-docs"
             ),
-            paste0(base, c("base.name", "base.digest", "source", "url"))
+            nm = paste0(base, c("base.name", "base.digest", "source", "url"))
           ),
           def = c("Bootstrap: localimage", "From: /sif/docs.sif")
         )
-        testthat::expect_equal(out$kind, "addon")
-        testthat::expect_equal(out$image, "docker.io/ijapesigan/docs")
-        testthat::expect_equal(out$digest, digest)
-        testthat::expect_equal(out$proprietary, "unknown")
+        testthat::expect_equal(object = out$kind, expected = "addon")
+        testthat::expect_equal(
+          object = out$image,
+          expected = "docker.io/ijapesigan/docs"
+        )
+        testthat::expect_equal(object = out$digest, expected = digest)
+        testthat::expect_equal(object = out$proprietary, expected = "unknown")
       }
     )
     testthat::test_that(
@@ -76,30 +82,36 @@ lapply(
         out <- fake(
           name = "manmetavar",
           labels = stats::setNames(
-            c(
+            object = c(
               "docker.io/library/ubuntu:noble",
               "https://github.com/ijapesigan/docker-manmetavar-mplus",
               "https://github.com/ijapesigan/docker-manmetavar"
             ),
-            paste0(base, c("base.name", "source", "url"))
+            nm = paste0(base, c("base.name", "source", "url"))
           ),
           def = c("bootstrap: docker-daemon", "from: manmetavar:latest")
         )
-        testthat::expect_equal(out$kind, "addon")
-        testthat::expect_equal(out$image, "docker.io/ijapesigan/manmetavar")
-        testthat::expect_true(is.na(out$digest))
+        testthat::expect_equal(object = out$kind, expected = "addon")
+        testthat::expect_equal(
+          object = out$image,
+          expected = "docker.io/ijapesigan/manmetavar"
+        )
+        testthat::expect_true(object = is.na(x = out$digest))
         out <- fake(
           name = "manculta",
           labels = stats::setNames(
-            c(
+            object = c(
               "docker.io/library/ubuntu:noble",
               "https://github.com/ijapesigan/docker-manculta-mplus"
             ),
-            paste0(base, c("base.name", "source"))
+            nm = paste0(base, c("base.name", "source"))
           ),
           def = c("bootstrap: docker-daemon", "from: manculta:latest")
         )
-        testthat::expect_equal(out$image, "docker.io/ijapesigan/manculta")
+        testthat::expect_equal(
+          object = out$image,
+          expected = "docker.io/ijapesigan/manculta"
+        )
       }
     )
     testthat::test_that(
@@ -108,15 +120,18 @@ lapply(
         out <- fake(
           name = "pinned",
           labels = stats::setNames(
-            "mplus",
-            "io.github.ijapesigan.proprietary"
+            object = "mplus",
+            nm = "io.github.ijapesigan.proprietary"
           ),
           def = c("Bootstrap: docker", paste0("From: ijapesigan/x@", digest))
         )
-        testthat::expect_equal(out$kind, "addon")
-        testthat::expect_equal(out$image, "docker.io/ijapesigan/x")
-        testthat::expect_equal(out$digest, digest)
-        testthat::expect_equal(out$proprietary, "mplus")
+        testthat::expect_equal(object = out$kind, expected = "addon")
+        testthat::expect_equal(
+          object = out$image,
+          expected = "docker.io/ijapesigan/x"
+        )
+        testthat::expect_equal(object = out$digest, expected = digest)
+        testthat::expect_equal(object = out$proprietary, expected = "mplus")
       }
     )
     testthat::test_that(
@@ -127,11 +142,11 @@ lapply(
           deffile = file.path(dir, "none.def"),
           sif = ""
         )
-        testthat::expect_equal(out$kind, "none")
-        testthat::expect_true(is.na(out$image))
+        testthat::expect_equal(object = out$kind, expected = "none")
+        testthat::expect_true(object = is.na(x = out$image))
       }
     )
-    unlink(dir, recursive = TRUE)
+    unlink(x = dir, recursive = TRUE)
   },
   text = "test-rProject-sif-info"
 )

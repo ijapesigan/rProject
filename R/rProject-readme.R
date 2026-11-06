@@ -4,6 +4,11 @@
 #'
 #' @inheritParams LibPaths
 #' @inheritParams Bib
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' ReadMe(path = getwd())
+#' }
 #' @export
 ReadMe <- function(path) {
   readme <- file.path(
@@ -27,13 +32,13 @@ ReadMe <- function(path) {
       )
     }
     try(
-      file.copy(
+      expr = file.copy(
         from = bib,
         to = path
       )
     )
     try(
-      file.rename(
+      expr = file.rename(
         from = file.path(
           path,
           "bib.bib"

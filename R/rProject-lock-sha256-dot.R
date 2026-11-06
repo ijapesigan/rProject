@@ -1,15 +1,15 @@
 .LockSha256 <- function(file) {
   out <- suppressWarnings(
-    system2(
+    expr = system2(
       command = "sha256sum",
-      args = shQuote(file),
+      args = shQuote(string = file),
       stdout = TRUE,
       stderr = FALSE
     )
   )
   ifelse(
-    length(out) == 1 && is.null(attr(out, "status")),
-    sub("\\s.*$", "", out),
-    NA_character_
+    test = length(x = out) == 1 && is.null(x = attr(x = out, which = "status")),
+    yes = sub(pattern = "\\s.*$", replacement = "", x = out),
+    no = NA_character_
   )
 }

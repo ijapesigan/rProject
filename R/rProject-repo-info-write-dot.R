@@ -1,8 +1,8 @@
 .RepoInfoWrite <- function(path) {
   repo <- file.path(path, ".setup", "repo")
-  written <- character(0)
-  if (!dir.exists(repo)) {
-    dir.create(repo, recursive = TRUE)
+  written <- character(length = 0)
+  if (!dir.exists(paths = repo)) {
+    dir.create(path = repo, recursive = TRUE)
     writeLines(text = c("*", "*/"), con = file.path(repo, ".gitignore"))
     writeLines(
       text = paste0("jeksterslab-psu/", .VerifyProject(path = path)),
@@ -11,7 +11,7 @@
     written <- file.path(repo, c(".gitignore", "private-github.md"))
     # the public repository that clone.sh clones
     public <- .RepoInfoClone(path = path)
-    if (!is.na(public)) {
+    if (!is.na(x = public)) {
       writeLines(text = public, con = file.path(repo, "public-github.md"))
       written <- c(written, file.path(repo, "public-github.md"))
     }
@@ -25,5 +25,5 @@
       )
     )
   }
-  invisible(written)
+  invisible(x = written)
 }

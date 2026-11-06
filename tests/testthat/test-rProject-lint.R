@@ -4,45 +4,53 @@ lapply(
   FUN = function(i,
                  text) {
     testthat::skip_on_cran()
-    testthat::skip_if_not_installed("lintr")
+    testthat::skip_if_not_installed(pkg = "lintr")
     .SkipUnlessSiteLibrary(pkgs = c("lintr", "distro"))
     state <- .TestState()
     root <- .TestProject()
     testthat::test_that(
       paste(text, "reports lints with the house rules"),
       {
-        writeLines("bad_Name = function( x ) x", file.path(root, "R", "a.R"))
+        writeLines(
+          text = "bad_Name = function( x ) x",
+          con = file.path(root, "R", "a.R")
+        )
         lints <- Lint(path = root)
-        testthat::expect_s3_class(lints, "lints")
-        testthat::expect_true(length(lints) > 0L)
+        testthat::expect_s3_class(object = lints, class = "lints")
+        testthat::expect_true(object = length(x = lints) > 0L)
       }
     )
     testthat::test_that(
       paste(text, "allows BigCamelCase and snake_case"),
       {
         writeLines(
-          c("Foo <- function(x) {", "  my_value <- x", "  my_value", "}"),
-          file.path(root, "R", "a.R")
+          text = c(
+            "Foo <- function(x) {",
+            "  my_value <- x",
+            "  my_value",
+            "}"
+          ),
+          con = file.path(root, "R", "a.R")
         )
-        testthat::expect_length(Lint(path = root), 0L)
+        testthat::expect_length(object = Lint(path = root), n = 0L)
       }
     )
     testthat::test_that(
       paste(text, "skips .verify, from any working directory"),
       {
-        dir.create(file.path(root, ".verify", "R"), recursive = TRUE)
+        dir.create(path = file.path(root, ".verify", "R"), recursive = TRUE)
         writeLines(
-          "bad_Name = function( x ) x",
-          file.path(root, ".verify", "R", "b.R")
+          text = "bad_Name = function( x ) x",
+          con = file.path(root, ".verify", "R", "b.R")
         )
-        old <- setwd(tempdir())
+        old <- setwd(dir = tempdir())
         lints <- Lint(path = root)
-        setwd(old)
-        testthat::expect_length(lints, 0L)
+        setwd(dir = old)
+        testthat::expect_length(object = lints, n = 0L)
       }
     )
-    .TestRestore(state)
-    unlink(dirname(root), recursive = TRUE)
+    .TestRestore(state = state)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-lint"
 )

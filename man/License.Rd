@@ -14,8 +14,16 @@ Project path.}
 License type.
 Available values include \code{"mit"} and \code{"gpl3"}.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Generate License File
+}
+\examples{
+\dontrun{
+License(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

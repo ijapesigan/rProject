@@ -3,7 +3,7 @@ lapply(
   X = 1,
   FUN = function(i,
                  text) {
-    testthat::skip_if_not_installed("remotes")
+    testthat::skip_if_not_installed(pkg = "remotes")
     .SkipUnlessSiteLibrary(pkgs = c("remotes", "distro"))
     state <- .TestState()
     root <- .TestProject()
@@ -11,7 +11,11 @@ lapply(
       paste(text, "needs one version per package"),
       {
         testthat::expect_error(
-          PkgProjectVersion(path = root, pkg = "stats", ver = c("1", "2"))
+          object = PkgProjectVersion(
+            path = root,
+            pkg = "stats",
+            ver = c("1", "2")
+          )
         )
       }
     )
@@ -19,16 +23,16 @@ lapply(
       paste(text, "skips a package that already has the version"),
       {
         testthat::expect_silent(
-          PkgProjectVersion(
+          object = PkgProjectVersion(
             path = root,
             pkg = "stats",
-            ver = as.character(utils::packageVersion("stats"))
+            ver = as.character(x = utils::packageVersion(pkg = "stats"))
           )
         )
       }
     )
-    .TestRestore(state)
-    unlink(dirname(root), recursive = TRUE)
+    .TestRestore(state = state)
+    unlink(x = dirname(path = root), recursive = TRUE)
   },
   text = "test-rProject-pkg-project-version"
 )

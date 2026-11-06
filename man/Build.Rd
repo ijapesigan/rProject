@@ -16,8 +16,16 @@ Build vignettes.}
 \item{dependencies}{Logical.
 Install package dependencies.}
 }
+\value{
+Called for its side effects; the value is not meaningful.
+}
 \description{
 Build Package
+}
+\examples{
+\dontrun{
+Build(path = getwd())
+}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

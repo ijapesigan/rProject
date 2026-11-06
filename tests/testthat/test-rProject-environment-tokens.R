@@ -8,11 +8,17 @@ lapply(
       paste(text, "sets each token and returns them"),
       {
         tokens <- c(TEST_A = "a", TEST_B = "b")
-        testthat::expect_equal(EnvironmentTokens(tokens = tokens), tokens)
-        testthat::expect_equal(Sys.getenv(c("TEST_A", "TEST_B")), tokens)
+        testthat::expect_equal(
+          object = EnvironmentTokens(tokens = tokens),
+          expected = tokens
+        )
+        testthat::expect_equal(
+          object = Sys.getenv(x = c("TEST_A", "TEST_B")),
+          expected = tokens
+        )
       }
     )
-    .TestRestore(state)
+    .TestRestore(state = state)
   },
   text = "test-rProject-environment-tokens"
 )

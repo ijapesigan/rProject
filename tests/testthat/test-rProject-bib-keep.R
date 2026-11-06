@@ -6,7 +6,7 @@ lapply(
     root <- tempfile(pattern = "bibkeep")
     bib_dir <- file.path(root, ".setup", "latex", "bib")
     dir.create(
-      bib_dir,
+      path = bib_dir,
       recursive = TRUE
     )
     entry <- c("@Article{Key-2000,", "  title = {Title},", "}")
@@ -23,16 +23,16 @@ lapply(
           }
         )
         testthat::expect_warning(
-          Bib(path = root, bib_lib = TRUE),
+          object = Bib(path = root, bib_lib = TRUE),
           regexp = "keeping the previous bib.bib"
         )
         testthat::expect_equal(
-          readLines(file.path(bib_dir, "bib.bib")),
-          entry
+          object = readLines(con = file.path(bib_dir, "bib.bib")),
+          expected = entry
         )
       }
     )
-    unlink(root, recursive = TRUE)
+    unlink(x = root, recursive = TRUE)
   },
   text = "test-rProject-bib-keep"
 )

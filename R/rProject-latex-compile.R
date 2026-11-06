@@ -11,11 +11,16 @@
 #' @inheritParams LibPaths
 #' @param clean Logical.
 #'   Clean `latexmk` output except `*.pdf`
+#' @return Called for its side effects; the value is not meaningful.
+#' @examples
+#' \dontrun{
+#' LatexCompile(path = getwd())
+#' }
 #' @export
 LatexCompile <- function(path,
                          clean = FALSE) {
-  if (!tinytex::check_installed("latexmk")) {
-    tinytex::tlmgr_install("latexmk")
+  if (!tinytex::check_installed(pkgs = "latexmk")) {
+    tinytex::tlmgr_install(pkgs = "latexmk")
   }
   latexmkrc <- system.file(
     "latexmk",
@@ -35,7 +40,7 @@ LatexCompile <- function(path,
     "pdf"
   )
   dir.create(
-    pdf_folder,
+    path = pdf_folder,
     showWarnings = FALSE,
     recursive = TRUE
   )
@@ -51,13 +56,13 @@ LatexCompile <- function(path,
       "!.gitignore",
       "!bib.bib"
     )
-    con <- file(dot_gitignore_file)
+    con <- file(description = dot_gitignore_file)
     writeLines(
       text = dot_gitignore,
       con = con,
       sep = "\n"
     )
-    close(con)
+    close(con = con)
   }
   # the .tex files listed in R, not by a shell glob
   tex_files <- list.files(
@@ -65,9 +70,9 @@ LatexCompile <- function(path,
     pattern = "\\.tex$",
     full.names = TRUE
   )
-  if (length(tex_files) > 0) {
+  if (length(x = tex_files) > 0) {
     try(
-      system2(
+      expr = system2(
         command = "latexmk",
         args = c(
           "-f",
@@ -84,16 +89,20 @@ LatexCompile <- function(path,
     failed <- .LatexLogCheck(
       logs = file.path(
         pdf_folder,
-        sub(pattern = "\\.tex$", replacement = ".log", x = basename(tex_files))
+        sub(
+          pattern = "\\.tex$",
+          replacement = ".log",
+          x = basename(path = tex_files)
+        )
       )
     )
-    if (length(failed) > 0) {
+    if (length(x = failed) > 0) {
       problem <- paste0(
         "\n\nLaTeX failed (a stub PDF or none): ",
-        paste(basename(failed), collapse = ", "),
+        paste(basename(path = failed), collapse = ", "),
         ". See the log.\n\n"
       )
-      if (identical(Sys.getenv("GITHUB_ACTIONS"), "true")) {
+      if (identical(x = Sys.getenv(x = "GITHUB_ACTIONS"), y = "true")) {
         stop(problem, call. = FALSE)
       } else {
         warning(problem, call. = FALSE)
@@ -102,7 +111,7 @@ LatexCompile <- function(path,
   }
   if (clean) {
     invisible(
-      lapply(
+      x = lapply(
         X = c(
           "\\.tex$",
           "\\.xml$",
@@ -118,9 +127,9 @@ LatexCompile <- function(path,
         ),
         FUN = function(x) {
           invisible(
-            lapply(
+            x = lapply(
               X = list.files(
-                pdf_folder,
+                path = pdf_folder,
                 pattern = x,
                 full.names = TRUE,
                 all.files = TRUE
@@ -132,7 +141,7 @@ LatexCompile <- function(path,
       )
     )
     unlink(
-      paste0(
+      x = paste0(
         tex_folder,
         "/tex-fig-*"
       ),
@@ -140,7 +149,7 @@ LatexCompile <- function(path,
     )
   }
   unlink(
-    file.path(
+    x = file.path(
       path,
       "latexmkrc"
     )

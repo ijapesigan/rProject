@@ -34,6 +34,10 @@
 #' @param write Logical.
 #'   If `TRUE`, write the file and run [LibCheck()] on its repository.
 #' @return Returns a list with `file`, `text`, and `questions`, invisibly.
+#' @examples
+#' \dontrun{
+#' LibAdd(doi = "10.1000/xyz123", root = "...")
+#' }
 #' @export
 LibAdd <- function(doi,
                    root,
@@ -42,7 +46,7 @@ LibAdd <- function(doi,
                    fields = NULL,
                    write = FALSE) {
   record <- .LibCrossref(doi = doi)
-  if (is.null(record)) {
+  if (is.null(x = record)) {
     stop(
       paste0("\n\nCrossref has no record for ", doi, ".\n\n"),
       call. = FALSE
@@ -55,16 +59,22 @@ LibAdd <- function(doi,
   )
   library <- .LibRead(paths = repos)
   entry <- .LibEntry(record = record, library = library)
-  if (!is.null(key)) entry$key <- key
-  if (!is.null(title)) entry$fields["title"] <- title
-  if (!is.null(fields)) entry$fields[names(fields)] <- fields
+  if (!is.null(x = key)) {
+    entry$key <- key
+  }
+  if (!is.null(x = title)) {
+    entry$fields["title"] <- title
+  }
+  if (!is.null(x = fields)) {
+    entry$fields[names(x = fields)] <- fields
+  }
   questions <- entry$questions
-  if (nrow(library) > 0L) {
+  if (nrow(x = library) > 0L) {
     same_doi <- library[
-      !is.na(library$doi) & tolower(library$doi) == tolower(doi), ,
+      !is.na(x = library$doi) & tolower(x = library$doi) == tolower(x = doi), ,
       drop = FALSE
     ]
-    if (nrow(same_doi) > 0L) {
+    if (nrow(x = same_doi) > 0L) {
       stop(
         paste0(
           "\n\n", doi, " is already in the library: ",
@@ -79,7 +89,7 @@ LibAdd <- function(doi,
       library$key == stem |
         grepl(pattern = paste0("^", stem, "[a-z]$"), x = library$key)
     ]
-    if (length(taken) > 0L) {
+    if (length(x = taken) > 0L) {
       questions <- c(
         questions,
         paste0(
@@ -108,7 +118,7 @@ LibAdd <- function(doi,
     )
   )
   if (write) {
-    if (!dir.exists(file.path(root, entry$repo))) {
+    if (!dir.exists(paths = file.path(root, entry$repo))) {
       stop(
         paste0("\n\n", entry$repo, " is not in ", root, ".\n\n"),
         call. = FALSE
@@ -116,10 +126,10 @@ LibAdd <- function(doi,
     }
     # LF on every platform
     writeBin(
-      object = charToRaw(paste0(paste(text, collapse = "\n"), "\n")),
+      object = charToRaw(x = paste0(paste(text, collapse = "\n"), "\n")),
       con = file
     )
     LibCheck(path = file.path(root, entry$repo), root = root)
   }
-  invisible(list(file = file, text = text, questions = questions))
+  invisible(x = list(file = file, text = text, questions = questions))
 }
