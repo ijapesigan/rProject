@@ -2,7 +2,10 @@ name: rhub 5 (other platforms)
 
 # By hand, for information; a failure does not fail the run. legacy: containers
 # r-hub lists as deprecated (frozen R-devel; newer binaries may not load).
-# rhel, centos, and s390x are not on r-hub's platform list.
+# rhel and s390x are not on r-hub's platform list. Removed after a run on
+# 2026-11-06, because they stop before the package is checked: c23, clang16 to
+# clang20, gcc15, and noremap (vctrs does not load), rhel7 and centos7 (pak
+# does not load).
 on:
   workflow_dispatch:
     inputs:
@@ -10,6 +13,9 @@ on:
         description: "Run in the latest image and packages, not the lock's"
         type: boolean
         default: false
+
+permissions:
+  contents: read
 
 jobs:
   # the image and packages of the release (.setup/scripts/rproject.lock);
@@ -46,18 +52,6 @@ jobs:
       fail-fast: false
       matrix:
         container:
-          - name: c23
-            image: ghcr.io/r-hub/containers/c23:latest
-          - name: clang16
-            image: ghcr.io/r-hub/containers/clang16:latest
-          - name: clang17
-            image: ghcr.io/r-hub/containers/clang17:latest
-          - name: clang18
-            image: ghcr.io/r-hub/containers/clang18:latest
-          - name: clang19
-            image: ghcr.io/r-hub/containers/clang19:latest
-          - name: clang20
-            image: ghcr.io/r-hub/containers/clang20:latest
           - name: clang21
             image: ghcr.io/r-hub/containers/clang21:latest
           - name: clang22
@@ -68,10 +62,6 @@ jobs:
             image: ghcr.io/r-hub/containers/gcc13:latest
           - name: gcc14
             image: ghcr.io/r-hub/containers/gcc14:latest
-          - name: gcc15
-            image: ghcr.io/r-hub/containers/gcc15:latest
-          - name: noremap
-            image: ghcr.io/r-hub/containers/noremap:latest
           - name: ubuntu-gcc12
             image: ghcr.io/r-hub/containers/ubuntu-gcc12:latest
           - name: ubuntu-gcc15
@@ -162,6 +152,10 @@ jobs:
             message("Packages from ", repo)
           }
 
+      # fs builds its bundled libuv with cmake
+      - name: Install cmake
+        run: dnf install -y cmake
+
       - name: Install dependencies
         run: |
           R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
@@ -171,36 +165,6 @@ jobs:
         uses: r-lib/actions/check-r-package@v2
         with:
           error-on: '"error"'
-
-  # Node 24, which JavaScript actions need, does not run on these systems
-  old:
-    needs: image
-    continue-on-error: true
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.PAT }}
-      PKG_SYSREQS: "false"
-    strategy:
-      fail-fast: false
-      matrix:
-        container:
-          - name: rhel7
-            image: ghcr.io/r-hub/containers/rhel7:latest
-          - name: centos7
-            image: ghcr.io/r-hub/containers/centos7:latest
-    name: ${{ matrix.container.name }}
-    container:
-      image: ${{ matrix.container.image }}
-    steps:
-      - name: Check
-        run: |
-          curl -fsSL -H "Authorization: Bearer ${GITHUB_PAT}" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/tarball/src" |
-            tar xz --strip-components=1
-          R -q -e 'if (!require("pak")) install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-          R -q -e 'pak::pkg_install(c("deps::.", "any::rcmdcheck"), dependencies = TRUE)'
-          R CMD build .
-          R CMD check --no-manual ./*.tar.gz
 
   # big-endian, emulated: QEMU has to be set up before the container starts
   s390x:

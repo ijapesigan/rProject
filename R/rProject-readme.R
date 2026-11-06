@@ -66,6 +66,8 @@ ReadMe <- function(path) {
       output_format = "github_document",
       output_file = readme_md
     )
+    # the badges follow the project's workflows
+    .BadgesWrite(path = path)
     on.exit(
       expr = unlink(
         x = c(

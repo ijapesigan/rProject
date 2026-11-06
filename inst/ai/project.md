@@ -4,7 +4,7 @@ Maintained by the user (and agents, when asked). `rProject::AI()` creates this
 file once and never overwrites it. Agents read it at the start of every task.
 
 - Type: {{types}}
-- Image the project usually uses (the user runs `apptainer exec <image>`):
+- Image the project usually uses (the user runs `apptainer exec -B ~/work:$(readlink -f ~/work) <image>`; on Roar, add `-B /scratch/ibp5092`):
 
 ## Aims
 

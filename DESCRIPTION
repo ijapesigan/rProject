@@ -1,6 +1,6 @@
 Package: rProject
 Title: Setup R Project
-Version: 0.0.64
+Version: 0.0.65
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -20,10 +20,10 @@ Depends: R (>= 3.5.0)
 Imports: BiocManager, cffr, covr, devtools, distro, jsonlite, knitr,
         lintr, pak, pkgdown, quarto, Rcpp, remotes, rmarkdown,
         roxygen2, rprojroot, stats, styler, tinytex, utils
-Suggests: testthat
+Suggests: ggplot2, testthat
 Config/roxygen2/version: 8.1.1.9000
 NeedsCompilation: no
-Packaged: 2026-11-06 06:14:06 UTC; root
+Packaged: 2026-11-06 21:21:04 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0003-4818-8420>)
 Maintainer: Ivan Jacob Agaloos Pesigan <ijapesigan@gmail.com>

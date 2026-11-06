@@ -1,0 +1,10 @@
+$include /etc/inputrc
+# vi mode: the cursor shows the mode (a bar to insert, a block for commands)
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+# search the history with what is typed so far
+set keymap vi-insert
+"\e[A": history-search-backward
+"\e[B": history-search-forward

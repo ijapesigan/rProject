@@ -56,7 +56,7 @@ lapply(
                 shell,
                 paste0(
                   "install-",
-                  c("claude", "codex", "gemini", "copilot", "gh"),
+                  c("claude", "codex", "antigravity", "copilot", "gh"),
                   ".sh"
                 )
               )

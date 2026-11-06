@@ -3,7 +3,7 @@
 
 - Scripts are in `.sim/`; read `.sim/README.md` first, and follow
   `.setup/ai/style/simulation.md` (seeds, failures, output, SLURM).
-- Jobs run inside the image (`apptainer exec`): by default a SLURM job array of
+- Jobs run inside the image (`apptainer exec -B ~/work:$(readlink -f ~/work) -B /scratch/ibp5092`): by default a SLURM job array of
   blocks; older simulations may use GNU Parallel on a whole node. The user
   submits jobs on the compute nodes or the local nodes; you never submit a job.
 - Before handing over a job: a smoke test with one or two replications on the

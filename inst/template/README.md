@@ -40,3 +40,11 @@
   `bib.bib`.
 - The apa7 class is not a template: manuscripts use the copy in the TeX
   distribution (CTAN; TinyTeX-2 in `docs.sif`, TeX Live in Overleaf).
+
+## r-hub tiers
+
+`cran/dot-github/workflows/rhub-*.yml` has five tiers: 1 essential and 2 memory,
+which must pass; 3 numerics and 4 compilers, at every PUB for review only
+(`continue-on-error`); 5 other, by hand. Details: `vignette("structure")`. A new
+workflow gets its README badge from its `name:` line through `Badges()`; `rhub-5-*`
+has none.

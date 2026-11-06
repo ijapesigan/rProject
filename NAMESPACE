@@ -2,6 +2,7 @@
 
 export(AI)
 export(AIGlobal)
+export(Badges)
 export(Bib)
 export(BibLib)
 export(Binary)

@@ -4,25 +4,25 @@
 \alias{ConfigFiles}
 \title{Setup Config Files}
 \usage{
-ConfigFiles(repo = "ijapesigan/dotfiles")
+ConfigFiles(check = FALSE)
 }
 \arguments{
-\item{repo}{Character string.
-GitHub repository in the form \code{owner/name}.}
+\item{check}{Logical.
+If \code{TRUE}, shows the differences and changes nothing.}
 }
 \value{
 Called for its side effects; the value is not meaningful.
 }
 \description{
-Clones a public \code{dotfiles} GitHub repository and runs \code{make} in it.
-The clone ignores the global Git configuration,
-so URL rewrites to SSH host aliases do not apply
-and the repository is fetched anonymously over HTTPS.
-This also works inside a container without access to SSH keys.
+Installs the shell, tmux, Vim, and xterm files from the package
+(\code{inst/dotfiles}) into the home directory. A file it replaces is kept in
+\verb{~/.dotfiles-backup}. It runs \code{inst/shell/install-dotfiles.sh}, which needs
+neither R nor a container on the host; \code{setup-machine.sh} calls that script
+directly.
 }
 \examples{
 \dontrun{
-ConfigFiles()
+ConfigFiles(check = TRUE)
 }
 }
 \author{

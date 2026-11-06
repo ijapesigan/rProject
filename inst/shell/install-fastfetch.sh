@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 repo="fastfetch-cli/fastfetch"
 
 case "$(uname -m)" in
@@ -54,3 +56,7 @@ install -m 755 "${fastfetch_bin}" "${HOME}/.local/bin/fastfetch"
 
 ls -l "${HOME}/.local/bin/fastfetch"
 "${HOME}/.local/bin/fastfetch" --version
+
+# shellcheck source=install-common.sh disable=SC1091
+source "${script_dir}/install-common.sh"
+link_tool .local/bin/fastfetch

@@ -63,9 +63,15 @@ Site <- function(path) {
         from = pkgdown,
         to = path
       )
+      url <- .SiteUrl(path = path)
       pkgdown::build_site(
         pkg = path,
-        preview = FALSE
+        preview = FALSE,
+        override = if (is.null(x = url)) {
+          list()
+        } else {
+          list(url = url)
+        }
       )
       on.exit(
         expr = unlink(

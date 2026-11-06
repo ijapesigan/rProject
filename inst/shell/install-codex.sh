@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Codex CLI: the official installer, into ~/.local/bin.
+# Codex CLI: the official installer, into ~/.local/bin. Its packages live in
+# ~/work/tools where ~/work exists.
 
 set -euo pipefail
 
@@ -13,4 +14,5 @@ install_codex() {
     CODEX_INSTALL_DIR="${BIN}" bash
 }
 
+link_tool .codex/packages
 safe_install codex install_codex

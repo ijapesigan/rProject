@@ -1,0 +1,17 @@
+# Do nothing for non-interactive SSH commands such as rsync/scp
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+[ -f /etc/bashrc ] && . /etc/bashrc
+[ -f ~/.bash-path ] && . ~/.bash-path
+[ -f ~/.bash-fastfetch ] && . ~/.bash-fastfetch
+[ -f ~/.bash-aliases ] && . ~/.bash-aliases
+[ -f ~/.bash-prompt ] && . ~/.bash-prompt
+[ -f ~/.bash-secrets ] && . ~/.bash-secrets
+[ -f ~/.bash-settings ] && . ~/.bash-settings
+[ -f ~/.bash-variables ] && . ~/.bash-variables
+[ -f ~/.bash-misc ] && . ~/.bash-misc
+# this device only; rProject does not write it (setup-machine.sh adds RPROJECT)
+[ -f ~/.bash-local ] && . ~/.bash-local
