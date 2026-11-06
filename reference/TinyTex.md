@@ -25,6 +25,18 @@ TinyTex(path, bundle = "TinyTeX-2", force = FALSE)
 
   Logical. Force install.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+TinyTex(path = getwd())
+} # }
+```

@@ -22,6 +22,22 @@ Environment(path, project, tokens)
 
   Named vector of tokens.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Environment(
+  path = getwd(),
+  project = "myProject",
+  tokens = c(GITHUB_PAT = Sys.getenv(x = "GITHUB_PAT"))
+)
+} # }
+```

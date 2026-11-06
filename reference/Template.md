@@ -90,3 +90,11 @@ Nothing is written or deleted in GitHub Actions (`GITHUB_ACTIONS` is
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Template(path = getwd())
+} # }
+```

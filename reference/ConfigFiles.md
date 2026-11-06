@@ -17,6 +17,18 @@ ConfigFiles(repo = "ijapesigan/dotfiles")
 
   Character string. GitHub repository in the form `owner/name`.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+ConfigFiles()
+} # }
+```

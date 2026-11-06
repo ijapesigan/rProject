@@ -21,3 +21,11 @@ Returns project name.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+EnvironmentProject(project = "myProject")
+} # }
+```

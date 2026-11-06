@@ -20,6 +20,18 @@ Clean(path, push = FALSE)
   files are kept, and files matching `*secrets*` are deleted, except in
   hidden folders such as `.setup`.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Clean(path = getwd())
+} # }
+```

@@ -1,5 +1,64 @@
 # Changelog
 
+## rProject 0.0.63
+
+### Style guides and lint
+
+- New guides: Rcpp (003), LaTeX (004), LaTeX math with the shared
+  notation (005), Markdown (006), figures and tables (009), and talks
+  (010), with the agents’ copies in `.setup/ai/style/` and a test page,
+  `.setup/quarto/math/math.qmd`. The global instructions point to them.
+- [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
+  adds the house checks of the guides for R, C++, LaTeX, and Markdown,
+  and prints one table of findings. R and C++ checks warn until a
+  project sets `lint_error <- TRUE` in `.setup/scripts/project.R`; LaTeX
+  and Markdown checks always warn. Talks (type `talk`) run the rules
+  kept in talks only. `make all` runs `make lint` first; the lint
+  workflow runs the checks.
+- `make style` inserts braces in C++ (`InsertBraces`).
+- rProject’s own R code follows the guide: `pkg::`, named arguments,
+  braces, no [`return()`](https://rdrr.io/r/base/function.html), and
+  `@return` and `@examples` on every export.
+
+### Tests
+
+- Tests skip by capability: `.SkipSlow()` now runs on CI as well as on
+  request, and `.SkipIfMissing()` is new.
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
+  writes `tests/testthat/helper-<pkg>.R` and `test-<pkg>-smoke.R` once,
+  when missing.
+- The `check-*`, `make`, `make-all`, and `test-coverage` workflows set
+  `NOT_CRAN`; the r-hub CRAN-like checks do not.
+
+### Figures
+
+- `.setup/r-miscellaneous/texTools/` in the template holds `.Tabular()`,
+  `.Round()`, `.Array()`, the Okabe-Ito palette, the size presets
+  (`.FigSize()`), the ggplot2 theme, `.FigSave()`, `GifWrite()`, and
+  `GifFrames()`.
+- [`LatexTikzCompile()`](https://ijapesigan.github.io/rProject/reference/LatexTikzCompile.md)
+  makes a PNG at 300 dpi next to each diagram (`pdftoppm`).
+
+### Tools
+
+- `make agents` installs the agents’ command line tools into
+  `~/.local/bin` on the host (`UPDATE=TRUE` updates them).
+
+### Fixes
+
+- [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
+  writes files atomically. Written in place, a `make-project.R` that
+  replaced itself while running went on reading the new file from the
+  old file’s size, which could stop `make project` with a parse error,
+  or run the wrong code.
+- The template’s `texTools-preamble-biblatex-combined-dot.R` is now
+  `texTools-preamble-combined-dot.R`: its path in the tarball was 106
+  bytes, over the portable limit of 100, which gave a note in
+  `R CMD check`. The function is now `.PreambleCombined()`;
+  `.PreambleBiblatexCombined()` stays as an alias for documents that
+  still call it. `make project` deletes the old file; delete it in
+  Overleaf too.
+
 ## rProject 0.0.62
 
 ### Patch

@@ -21,3 +21,11 @@ Returns vector of secret tokens.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+EnvironmentTokens(tokens = c(GITHUB_PAT = Sys.getenv(x = "GITHUB_PAT")))
+} # }
+```

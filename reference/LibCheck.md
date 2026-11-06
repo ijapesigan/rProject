@@ -54,3 +54,11 @@ convention and is not reported.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+LibCheck(path = getwd())
+} # }
+```

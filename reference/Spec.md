@@ -31,3 +31,11 @@ Returns the path of the spec invisibly.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Spec(path = getwd(), topic = "my-topic")
+} # }
+```

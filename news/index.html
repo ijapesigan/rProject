@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.62</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.63</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,41 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.63" id="rproject-0063">rProject 0.0.63<a class="anchor" aria-label="anchor" href="#rproject-0063"></a></h2>
+<div class="section level3">
+<h3 id="style-guides-and-lint-0-0-63">Style guides and lint<a class="anchor" aria-label="anchor" href="#style-guides-and-lint-0-0-63"></a></h3>
+<ul><li>New guides: Rcpp (003), LaTeX (004), LaTeX math with the shared notation (005), Markdown (006), figures and tables (009), and talks (010), with the agents’ copies in <code>.setup/ai/style/</code> and a test page, <code>.setup/quarto/math/math.qmd</code>. The global instructions point to them.</li>
+<li>
+<code><a href="../reference/Lint.html">Lint()</a></code> adds the house checks of the guides for R, C++, LaTeX, and Markdown, and prints one table of findings. R and C++ checks warn until a project sets <code>lint_error &lt;- TRUE</code> in <code>.setup/scripts/project.R</code>; LaTeX and Markdown checks always warn. Talks (type <code>talk</code>) run the rules kept in talks only. <code>make all</code> runs <code>make lint</code> first; the lint workflow runs the checks.</li>
+<li>
+<code>make style</code> inserts braces in C++ (<code>InsertBraces</code>).</li>
+<li>rProject’s own R code follows the guide: <code>pkg::</code>, named arguments, braces, no <code><a href="https://rdrr.io/r/base/function.html" class="external-link">return()</a></code>, and <code>@return</code> and <code>@examples</code> on every export.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="tests-0-0-63">Tests<a class="anchor" aria-label="anchor" href="#tests-0-0-63"></a></h3>
+<ul><li>Tests skip by capability: <code>.SkipSlow()</code> now runs on CI as well as on request, and <code>.SkipIfMissing()</code> is new. <code><a href="../reference/Template.html">Template()</a></code> writes <code>tests/testthat/helper-&lt;pkg&gt;.R</code> and <code>test-&lt;pkg&gt;-smoke.R</code> once, when missing.</li>
+<li>The <code>check-*</code>, <code>make</code>, <code>make-all</code>, and <code>test-coverage</code> workflows set <code>NOT_CRAN</code>; the r-hub CRAN-like checks do not.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="figures-0-0-63">Figures<a class="anchor" aria-label="anchor" href="#figures-0-0-63"></a></h3>
+<ul><li>
+<code>.setup/r-miscellaneous/texTools/</code> in the template holds <code>.Tabular()</code>, <code>.Round()</code>, <code>.Array()</code>, the Okabe-Ito palette, the size presets (<code>.FigSize()</code>), the ggplot2 theme, <code>.FigSave()</code>, <code>GifWrite()</code>, and <code>GifFrames()</code>.</li>
+<li>
+<code><a href="../reference/LatexTikzCompile.html">LatexTikzCompile()</a></code> makes a PNG at 300 dpi next to each diagram (<code>pdftoppm</code>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="tools-0-0-63">Tools<a class="anchor" aria-label="anchor" href="#tools-0-0-63"></a></h3>
+<ul><li>
+<code>make agents</code> installs the agents’ command line tools into <code>~/.local/bin</code> on the host (<code>UPDATE=TRUE</code> updates them).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="fixes-0-0-63">Fixes<a class="anchor" aria-label="anchor" href="#fixes-0-0-63"></a></h3>
+<ul><li>
+<code><a href="../reference/Template.html">Template()</a></code> writes files atomically. Written in place, a <code>make-project.R</code> that replaced itself while running went on reading the new file from the old file’s size, which could stop <code>make project</code> with a parse error, or run the wrong code.</li>
+<li>The template’s <code>texTools-preamble-biblatex-combined-dot.R</code> is now <code>texTools-preamble-combined-dot.R</code>: its path in the tarball was 106 bytes, over the portable limit of 100, which gave a note in <code>R CMD check</code>. The function is now <code>.PreambleCombined()</code>; <code>.PreambleBiblatexCombined()</code> stays as an alias for documents that still call it. <code>make project</code> deletes the old file; delete it in Overleaf too.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.62" id="rproject-0062">rProject 0.0.62<a class="anchor" aria-label="anchor" href="#rproject-0062"></a></h2>
 <div class="section level3">

@@ -1,12 +1,12 @@
 # rProject: Session
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`rProject`](https://github.com/ijapesigan/rProject/)`)`
+[`library`](https://rdrr.io/r/base/library.html)`(``package ``=`` ``rProject``)`
 
 ## Session
 
 \
-[`sessionInfo`](https://rdrr.io/r/utils/sessionInfo.html)`(``)`\
+`utils``::`[`sessionInfo`](https://rdrr.io/r/utils/sessionInfo.html)`(``)`\
 `#> R version 4.6.2 (2026-10-29)`\
 `#> Platform: x86_64-pc-linux-gnu`\
 `#> Running under: Ubuntu 26.04.1 LTS`\
@@ -30,7 +30,7 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.62`\
+`#> [1] rProject_0.0.63`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
@@ -44,7 +44,7 @@
 ## Packages
 
 \
-[`installed.packages`](https://rdrr.io/r/utils/installed.packages.html)`(``)`\
+`utils``::`[`installed.packages`](https://rdrr.io/r/utils/installed.packages.html)`(``)`\
 `#>                   Package            `\
 `#> rProject          "rProject"         `\
 `#> rProject          "rProject"         `\
@@ -452,8 +452,8 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/RtmpVW0YrM/temp_libpath1152726b767c" "0.0.62"    `\
-`#> rProject          "/__w/rProject/rProject/.library"          "0.0.62"    `\
+`#> rProject          "/tmp/RtmpYaR7D0/temp_libpath16af2e37c3c5" "0.0.63"    `\
+`#> rProject          "/__w/rProject/rProject/.library"          "0.0.63"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
 `#> arm               "/usr/local/lib/R/site-library"            "1.15-3"    `\
@@ -4106,8 +4106,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.2; ; 2026-11-05 23:35:19 UTC; unix"                   `\
-`#> rProject          "R 4.6.2; ; 2026-11-05 23:35:15 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-06 02:21:46 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-06 02:21:39 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:14:25 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-25 01:17:55 UTC; unix"                   `\
@@ -4403,7 +4403,7 @@
 `#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-05 05:32:46 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:42:36 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:37 UTC; unix"`\
-`#> rProject          "R 4.6.2; ; 2026-11-05 23:16:38 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-05 23:22:23 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 04:10:28 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-25 03:00:58 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:22 UTC; unix"`\
@@ -4451,7 +4451,7 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:33:11 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
-`#> tinytex           "R 4.6.2; ; 2026-11-05 23:16:35 UTC; unix"                   `\
+`#> tinytex           "R 4.6.2; ; 2026-11-05 23:22:20 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 03:11:58 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:36 UTC; unix"`\

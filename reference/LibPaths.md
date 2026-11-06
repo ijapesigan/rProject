@@ -28,3 +28,11 @@ Returns the path of `.library`.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+LibPaths(path = getwd())
+} # }
+```

@@ -32,3 +32,11 @@ Returns a data frame of findings with the columns `file`, `line`,
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+SecretScan(path = getwd())
+} # }
+```

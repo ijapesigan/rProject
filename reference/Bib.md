@@ -29,6 +29,18 @@ Bib(path, bib_lib = FALSE)
   `make bibrproject` anywhere). If none can be cloned, the previous
   `bib.bib` is kept.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Bib(path = getwd())
+} # }
+```

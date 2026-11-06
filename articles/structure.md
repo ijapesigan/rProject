@@ -187,6 +187,7 @@ in it) and names them, so that they can be deleted in Overleaf too.
 | `.github/workflows/docker-build-push-amd64.yml` | 0.0.57 |
 | `.github/workflows/docker-build-push-monthly-amd64.yml` | 0.0.57 |
 | `.github/workflows/docker-build-push-weekly-amd64.yml` | 0.0.57 |
+| `.setup/r-miscellaneous/texTools/texTools-preamble-biblatex-combined-dot.R` | 0.0.63 |
 
 ## From Overleaf to the public repository
 

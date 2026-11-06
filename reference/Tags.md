@@ -26,3 +26,11 @@ bibliography, an empty data frame, with a message.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Tags(path = getwd())
+} # }
+```

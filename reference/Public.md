@@ -27,3 +27,11 @@ Returns the files that would be published, invisibly.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Public(path = getwd())
+} # }
+```

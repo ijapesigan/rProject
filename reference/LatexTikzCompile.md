@@ -18,6 +18,18 @@ LatexTikzCompile(path, clean = FALSE)
 
   Logical. Clean `latexmk` output except `*.pdf`
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+LatexTikzCompile(path = getwd())
+} # }
+```

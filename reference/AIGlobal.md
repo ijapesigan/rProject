@@ -9,7 +9,7 @@ up with the suffix `.bak`.
 ## Usage
 
 ``` r
-AIGlobal(path, home = Sys.getenv("HOME"))
+AIGlobal(path, home = Sys.getenv(x = "HOME"))
 ```
 
 ## Arguments
@@ -43,3 +43,11 @@ keys are kept.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+AIGlobal(path = getwd())
+} # }
+```

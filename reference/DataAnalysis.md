@@ -19,6 +19,18 @@ DataAnalysis(path, clean = FALSE)
   Logical. Remove all `.Rds` files in `data-process` and `data-analysis`
   before running.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+DataAnalysis(path = getwd())
+} # }
+```

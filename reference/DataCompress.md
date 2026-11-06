@@ -32,3 +32,11 @@ Returns the paths of the compressed files, invisibly.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+DataCompress(path = getwd(), files = "data.csv")
+} # }
+```

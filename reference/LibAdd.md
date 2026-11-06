@@ -71,3 +71,11 @@ questions for the user.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+LibAdd(doi = "10.1000/xyz123", root = "...")
+} # }
+```

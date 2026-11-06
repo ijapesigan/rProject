@@ -67,3 +67,11 @@ instructions tell agents not to pick an image.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+AI(path = getwd())
+} # }
+```

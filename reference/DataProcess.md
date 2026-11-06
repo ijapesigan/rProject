@@ -18,6 +18,18 @@ DataProcess(path, clean = FALSE)
 
   Logical. Remove all `.Rds` files in `data-process` before running.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+DataProcess(path = getwd())
+} # }
+```

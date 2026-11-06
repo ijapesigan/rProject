@@ -41,3 +41,11 @@ as Mplus. The copy is refreshed when the compressed file changes.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+DataPath(path = getwd(), file = "data.csv")
+} # }
+```

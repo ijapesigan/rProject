@@ -25,3 +25,11 @@ Returns the repository url.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+PkgRepo(path = getwd())
+} # }
+```

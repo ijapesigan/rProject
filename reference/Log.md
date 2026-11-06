@@ -57,3 +57,11 @@ Without a clone, the lists hold `TODO`.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Log(path = getwd(), topic = "my-topic")
+} # }
+```

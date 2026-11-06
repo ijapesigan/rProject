@@ -34,3 +34,11 @@ without it, it is guessed as in
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Tree(path = getwd())
+} # }
+```

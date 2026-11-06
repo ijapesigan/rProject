@@ -22,6 +22,18 @@ Build(path, vignettes = FALSE, dependencies = FALSE)
 
   Logical. Install package dependencies.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Build(path = getwd())
+} # }
+```

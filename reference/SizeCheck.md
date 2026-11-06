@@ -81,3 +81,11 @@ The report also lists the largest text files and the largest files.
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+SizeCheck(path = getwd())
+} # }
+```

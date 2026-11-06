@@ -22,6 +22,18 @@ PkgProjectVersion(path, pkg, ver)
 
   Character vector. Version.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+PkgProjectVersion(path = getwd(), pkg = "stats", ver = "1.0.0")
+} # }
+```

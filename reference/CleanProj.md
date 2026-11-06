@@ -29,6 +29,18 @@ CleanProj(path, lib = FALSE, sim = FALSE, sif = FALSE)
   Logical. If `sif = TRUE`, delete `.sif`. If `sif = FALSE`, `.sif` is
   not deleted.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+CleanProj(path = getwd())
+} # }
+```

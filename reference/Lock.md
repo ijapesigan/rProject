@@ -52,3 +52,11 @@ local source).
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Lock(path = getwd())
+} # }
+```

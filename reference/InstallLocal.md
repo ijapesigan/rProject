@@ -30,6 +30,18 @@ InstallLocal(
   Logical. If `force = TRUE`, install whether or not the application is
   available in the system.
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+InstallLocal()
+} # }
+```

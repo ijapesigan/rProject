@@ -26,6 +26,18 @@ PkgProjectGitHub(path, pkg, ref = "HEAD")
   Character vector. Git branch, tag, or commit SHA (only a SHA
   reinstalls).
 
+## Value
+
+Called for its side effects; the value is not meaningful.
+
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+PkgProjectGitHub(path = getwd(), pkg = "stats")
+} # }
+```

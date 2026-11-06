@@ -99,3 +99,11 @@ pulls it into `.verify` (local only; never uploaded) and then calls
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+Verify(path = getwd())
+} # }
+```

@@ -31,3 +31,11 @@ from the recorded one is marked "changed".
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+DataManifest(path = getwd())
+} # }
+```

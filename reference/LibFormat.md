@@ -50,3 +50,11 @@ they are (see
 ## Author
 
 Ivan Jacob Agaloos Pesigan
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+LibFormat(path = getwd())
+} # }
+```
