@@ -12,7 +12,10 @@
       con = file,
       warn = FALSE
     )
-    pattern <- "^[[:space:]]*doi[[:space:]]*=[[:space:]]*\"(10\\.[^\"[:space:]]+)\".*$"
+    pattern <- paste0(
+      "^[[:space:]]*doi[[:space:]]*=[[:space:]]*",
+      "\"(10\\.[^\"[:space:]]+)\".*$"
+    )
     found <- grep(pattern = pattern, x = lines, value = TRUE)
     if (length(x = found) > 0) {
       doi <- sub(pattern = pattern, replacement = "\\1", x = found[1])

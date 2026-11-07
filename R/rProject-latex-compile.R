@@ -1,7 +1,7 @@
 #' Compile Output of `LatexKnit`
 #'
 #' Runs `latexmk` on every `.tex` file, with 10 million extra words of
-#' pdfTeX main memory (`extra_mem_bot`), so that a long bibliography
+#' pdfTeX high memory (`extra_mem_top`), so that a long bibliography
 #' compiles. A document whose last run failed (fatal error, TeX capacity
 #' exceeded) stops `make latex` in GitHub Actions and gives a warning
 #' locally: `latexmk -f` would otherwise leave a stub PDF and succeed.
@@ -81,9 +81,9 @@ LatexCompile <- function(path,
           paste0("-output-directory=", .ShellQuote(x = pdf_folder)),
           .ShellQuote(x = tex_files)
         ),
-        # pdflatex's main memory (5M words) is too small for a long
-        # bibliography (lib-apa with biblatex 3.22): add 10M words (~80 MB)
-        env = "extra_mem_bot=10000000"
+        # a long bibliography (lib-apa) is tokens, which use pdfTeX's high
+        # memory: extra_mem_top adds to it; extra_mem_bot would not help
+        env = "extra_mem_top=10000000"
       )
     )
     failed <- .LatexLogCheck(

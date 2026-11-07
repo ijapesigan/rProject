@@ -9,7 +9,10 @@ lapply(
     run <- function(home, code) {
       system2(
         command = "bash",
-        args = c("-c", shQuote(string = paste0("source install-common.sh; ", code))),
+        args = c(
+          "-c",
+          shQuote(string = paste0("source install-common.sh; ", code))
+        ),
         env = paste0("HOME=", home),
         stdout = TRUE,
         stderr = TRUE
@@ -34,18 +37,25 @@ lapply(
         in_shell(code = run(home = home, code = "link_tool .local/bin/tool"))
         testthat::expect_true(object = nzchar(x = Sys.readlink(paths = tool)))
         testthat::expect_identical(
-          object = readLines(con = file.path(home, "work", "tools", ".local", "bin", "tool")),
+          object = readLines(
+            con = file.path(home, "work", "tools", ".local", "bin", "tool")
+          ),
           expected = "new"
         )
         # a new file replaces the old copy
         unlink(x = tool)
         writeLines(text = "newer", con = tool)
         in_shell(code = run(home = home, code = "link_tool .local/bin/tool"))
-        testthat::expect_identical(object = readLines(con = tool), expected = "newer")
+        testthat::expect_identical(
+          object = readLines(con = tool),
+          expected = "newer"
+        )
         # an empty folder for an installer to write through
         in_shell(code = run(home = home, code = "link_tool .codex/packages"))
         testthat::expect_true(
-          object = nzchar(x = Sys.readlink(paths = file.path(home, ".codex", "packages")))
+          object = nzchar(
+            x = Sys.readlink(paths = file.path(home, ".codex", "packages"))
+          )
         )
       }
     )
@@ -79,7 +89,9 @@ lapply(
         testthat::expect_true(object = "antigravity" %in% tools)
         testthat::expect_false(object = "gemini" %in% tools)
         testthat::expect_true(
-          object = all(file.exists(file.path(shell(), paste0("install-", tools, ".sh"))))
+          object = all(
+            file.exists(file.path(shell(), paste0("install-", tools, ".sh")))
+          )
         )
       }
     )

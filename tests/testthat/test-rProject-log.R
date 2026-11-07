@@ -18,6 +18,13 @@ lapply(
     # the private repository has foo.R and old.R
     write(root = private, file = "R/foo.R", text = "Foo <- function() 1")
     write(root = private, file = "R/old.R", text = "Old <- function() 1")
+    # neither is a deletion, though both are missing locally
+    write(root = private, file = ".setup/repo/private.md", text = "owner/repo")
+    write(root = private, file = ".setup/todo/todo.txt", text = "TODO")
+    # marks are uploaded; other figures are generated
+    write(root = path, file = ".setup/latex/figures/psu/mark.txt", text = "m")
+    write(root = path, file = ".setup/latex/figures/pdf/plot.txt", text = "p")
+    write(root = path, file = ".setup/todo/local.txt", text = "the user's")
     # gone.R was deleted locally
     write(root = private, file = "R/gone.R", text = "Gone <- function() 1")
     system2(
@@ -77,6 +84,21 @@ lapply(
         testthat::expect_false(object = "NAMESPACE" %in% upload)
         testthat::expect_false(
           object = any(grepl(pattern = "^\\.verify", x = upload))
+        )
+      }
+    )
+    testthat::test_that(
+      desc = paste(text, "lists figures/psu/ and leaves out .setup/todo/"),
+      code = {
+        upload <- section$file[section$action == "upload"]
+        testthat::expect_true(
+          object = ".setup/latex/figures/psu/mark.txt" %in% upload
+        )
+        testthat::expect_false(
+          object = ".setup/latex/figures/pdf/plot.txt" %in% upload
+        )
+        testthat::expect_false(
+          object = any(grepl(pattern = "^\\.setup/todo/", x = upload))
         )
       }
     )

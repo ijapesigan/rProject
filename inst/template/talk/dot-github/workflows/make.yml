@@ -1,16 +1,20 @@
-name: Quarto Website (Quarto Pub)
+name: Make Project
 
 on:
-  workflow_run:
-    workflows: [ "Make Project" ]
-    types:
-      - completed
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
   workflow_dispatch:
     inputs:
       latest:
         description: "Run in the latest image and packages, not the lock's"
         type: boolean
         default: false
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
 
@@ -38,44 +42,37 @@ jobs:
 
   build:
     needs: image
+    if: github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip ci]')
     runs-on: ubuntu-latest
     container:
       image: ${{ needs.image.outputs.image }}
-    # Only restrict concurrency for non-PR jobs
-    concurrency:
-      group: quarto-quarto-pub-${{ github.event_name != 'pull_request' || github.run_id }}
     env:
+      NOT_CRAN: "true"
       RPROJECT_SNAPSHOT: ${{ needs.image.outputs.snapshot }}
       GITHUB_PAT: ${{ secrets.PAT }}
       GITHUB_ACTIONS: "true"
-      QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
     permissions:
       contents: write
+      packages: read
+      statuses: write
 
     steps:
       -
         name: Checkout 
         uses: actions/checkout@v7
       -
-        name: Build Project
-        run: make build
-      -
-        name: Build Quarto Project
-        run: make quarto
-      - 
-        name: _quarto.yml
+        name: Clean
         run: |
-          FILE=.setup/quarto/_quarto.yml
-          if [ -f "$FILE" ]; then
-            cp "$FILE" .
-          fi
-      - 
-        name: _publish.yml
-        run: |
-          FILE=.setup/quarto/_publish.yml
-          if [ -f "$FILE" ]; then
-            cp "$FILE" .
-          fi
+          make clean
       -
-        name: Deploy to Quarto Pub
-        run: quarto publish --no-render quarto-pub
+        name: Make Project
+        run: |
+          make install
+          make bibrproject
+          make push
+      - 
+        name: Commit and push changes
+        uses: devops-infra/action-commit-push@v1.5.0
+        with:
+          github_token: ${{ secrets.PAT }}
+          commit_message: "Automated build [skip ci]."

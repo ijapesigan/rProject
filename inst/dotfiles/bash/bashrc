@@ -1,3 +1,4 @@
+# shellcheck shell=bash disable=SC1090,SC1091 # the sourced files are the user's, found at run time
 # Do nothing for non-interactive SSH commands such as rsync/scp
 case $- in
   *i*) ;;

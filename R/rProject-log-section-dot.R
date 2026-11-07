@@ -32,6 +32,13 @@
     new <- setdiff(x = new, y = linked)
     edited <- setdiff(x = edited, y = linked)
     delete <- setdiff(x = delete, y = linked)
+    # .setup/todo/ is the user's, edited on Overleaf at any time;
+    # .setup/repo/ can be missing here without being deleted
+    todo <- grepl(pattern = "^\\.setup/todo/", x = names(x = status))
+    keep <- grepl(pattern = "^\\.setup/(todo|repo)/", x = names(x = status))
+    new <- setdiff(x = new, y = names(x = status)[todo])
+    edited <- setdiff(x = edited, y = names(x = status)[todo])
+    delete <- setdiff(x = delete, y = names(x = status)[keep])
   }
   bullets <- function(x) {
     ifelse(

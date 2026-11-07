@@ -26,7 +26,8 @@
       "^vignettes/fig-vignettes-",
       "^vignettes/.*\\.orig$",
       "^\\.setup/latex/pdf/",
-      "^\\.setup/latex/figures/",
+      # figures/psu/ holds uploaded marks and photos, not generated figures
+      "^\\.setup/latex/figures/(?!psu/)",
       "^\\.setup/data-analysis/.*\\.txt$",
       "^data/.*\\.rda$",
       "^NAMESPACE$",

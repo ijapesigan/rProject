@@ -121,9 +121,12 @@ which follows this guide and is changed together with it.
 	\item Functions in \texttt{BigCamelCase}; arguments and variables in \texttt{snake\_case}.
 	\item Explicit namespaces: \texttt{arma::}, \texttt{Rcpp::}, \texttt{std::}.
 	No \texttt{using namespace}.
+	\item Every function has complete roxygen comments (\texttt{//'}), as in the R style guide.
 	\item Internal functions are exported to R with a dot:
-	\texttt{// [[Rcpp::export(.Foo)]]}.
-	Public functions have roxygen comments (\texttt{//'}) and \texttt{// [[Rcpp::export]]}.
+	\texttt{// [[Rcpp::export(.Foo)]]}, with \texttt{@noRd}.
+	Public functions have \texttt{// [[Rcpp::export]]}.
+	\item A helper library's C++ follows these rules, in \texttt{.setup/cpp/}.
+	A project never edits or restyles a copy; it is changed only in its library.
 \end{itemize}
 
 \section{Bodies}

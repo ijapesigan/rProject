@@ -37,8 +37,9 @@ cd "${project_dir}"
 # .verify, as verify.sh keeps it (its first run clones it)
 [[ -d .verify/.git ]] || bash .setup/scripts/verify.sh > /dev/null
 
+# a failed read prints nothing and succeeds: it counts as no change
 head_sha() {
-  git -C .verify ls-remote origin HEAD 2>/dev/null | cut -f 1
+  git -C .verify ls-remote origin HEAD 2>/dev/null | cut -f 1 || true
 }
 
 start="$(head_sha)"

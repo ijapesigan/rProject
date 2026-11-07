@@ -5,7 +5,7 @@
                           summary = "") {
   logs <- file.path(path, ".setup", "logs")
   pending <- "\\(pending\\)"
-  date <- format(x = Sys.Date())
+  date <- .LogDate()
   # the log's "Pushes" table: | (pending) | | | -> | sha | date | result |
   # (a fix-up push without a pending row gets a new row)
   log_file <- file.path(logs, log)

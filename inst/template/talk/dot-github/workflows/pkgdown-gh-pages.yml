@@ -1,4 +1,4 @@
-name: Quarto Website (Quarto Pub)
+name: Package Website (GitHub Pages)
 
 on:
   workflow_run:
@@ -43,12 +43,11 @@ jobs:
       image: ${{ needs.image.outputs.image }}
     # Only restrict concurrency for non-PR jobs
     concurrency:
-      group: quarto-quarto-pub-${{ github.event_name != 'pull_request' || github.run_id }}
+      group: pages-${{ github.event_name != 'pull_request' || github.run_id }}
     env:
       RPROJECT_SNAPSHOT: ${{ needs.image.outputs.snapshot }}
       GITHUB_PAT: ${{ secrets.PAT }}
       GITHUB_ACTIONS: "true"
-      QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
     permissions:
       contents: write
 
@@ -60,22 +59,17 @@ jobs:
         name: Build Project
         run: make build
       -
-        name: Build Quarto Project
-        run: make quarto
-      - 
-        name: _quarto.yml
-        run: |
-          FILE=.setup/quarto/_quarto.yml
-          if [ -f "$FILE" ]; then
-            cp "$FILE" .
-          fi
-      - 
-        name: _publish.yml
-        run: |
-          FILE=.setup/quarto/_publish.yml
-          if [ -f "$FILE" ]; then
-            cp "$FILE" .
-          fi
+        name: Build pkgdown Site
+        run: make pkgdown
       -
-        name: Deploy to Quarto Pub
-        run: quarto publish --no-render quarto-pub
+        name: Add .nojekyll
+        run: touch pkgdown/.nojekyll
+      -
+        name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean: true
+          # Quarto's site, from quarto-gh-pages.yml
+          clean-exclude: quarto/
+          branch: pkgdown
+          folder: pkgdown

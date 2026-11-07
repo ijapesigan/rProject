@@ -123,9 +123,12 @@ log "private ${head_sha}"
 # nothing unverified gets published: the newest row for a private commit, or
 # the record pushed right after it, is verified
 index=".setup/logs/index.md"
+# as bytes, to keep this file ASCII: U+2713 in the index, U+2716 in R CMD check
+check_mark=$'\xe2\x9c\x93'
+cross_mark=$'\xe2\x9c\x96'
 verified="$(grep -E '^\| [0-9-]+ \| [0-9a-f]{7,} \|' "${index}" | head -n 1 || true)"
 [[ -n "${verified}" ]] || fail "no private push in ${index}"
-[[ "${verified}" == *"✓"* ]] || fail "the newest push in ${index} is not verified: ${verified}"
+[[ "${verified}" == *"${check_mark}"* ]] || fail "the newest push in ${index} is not verified: ${verified}"
 recorded="$(printf '%s' "${verified}" | cut -d'|' -f3 | tr -d '[:space:]')"
 git merge-base --is-ancestor "${recorded}" HEAD ||
   fail "the verified ${recorded} is not in the private history"
@@ -156,7 +159,7 @@ else
     fail "make all (see ${all_log})"
 fi
 # strict: any error, warning, or note stops the run
-if grep -E '^Status: .*(ERROR|WARNING|NOTE)|[1-9][0-9]* (error|warning|note)s? ✖' "${all_log}" > "${dir}.check.txt"; then
+if grep -E '^Status: .*(ERROR|WARNING|NOTE)|[1-9][0-9]* (error|warning|note)s? '"${cross_mark}" "${all_log}" > "${dir}.check.txt"; then
   fail "R CMD check is not clean: $(head -n 3 "${dir}.check.txt" | tr '\n' ' ')"
 fi
 log "make all done; R CMD check is clean"

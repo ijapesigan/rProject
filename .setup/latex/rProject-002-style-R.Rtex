@@ -181,10 +181,31 @@ testthat::expect_equal(length(coef(out)), 2)
 \subsection{Documentation}
 
 \begin{itemize}
-	\item every exported function has roxygen documentation
-	(\texttt{@param}, \texttt{@return}, \texttt{@examples})
-	and a test file (Section~\ref{sec:rProject-tests})
+	\item every function has complete roxygen documentation, so that it can be understood from its file:
+	a title, a description, \texttt{@author}, every \texttt{@param}, \texttt{@return}, and \texttt{@examples}
+	\item exported functions also have \texttt{@export} and a test file (Section~\ref{sec:rProject-tests})
+	\item unexported functions (\texttt{.Foo}, \texttt{.CheckFoo}) also have \texttt{@noRd}:
+	documented in the source, with no help page
+	\item \texttt{@author} names who wrote the code
+	\item \texttt{@noRd} examples are not run, so keep them true when the function changes
 \end{itemize}
+
+The check for unexported functions is not yet in \texttt{make lint}.
+The order is rProject, the helper libraries, then each other project at its cleanup push.
+
+\subsection{Helper Libraries}
+
+A helper library (for example \texttt{linearAlgebra}) follows this guide as any package does.
+
+\begin{itemize}
+	\item every function has a test file, exported or not
+	\item tests that pass on the old code come before restructuring a body
+	(removing \texttt{return()}, for example)
+	\item a copy in a project's \texttt{.setup/r-dependencies/} is changed only in its library;
+	a project never edits or restyles a copy
+\end{itemize}
+
+\texttt{make style} does not yet skip copies.
 
 \section{File and Filenames}
 

@@ -18,6 +18,33 @@ lapply(
       }
     )
     testthat::test_that(
+      desc = paste(text, "stops when the PDF build fails"),
+      code = {
+        root <- .TestProject()
+        dir.create(
+          path = file.path(root, ".setup", "latex", "bib"),
+          recursive = TRUE
+        )
+        file.create(file.path(root, ".setup", "latex", "bib", "bib.bib"))
+        testthat::with_mocked_bindings(
+          code = testthat::expect_error(
+            object = LatexMake(path = root),
+            regexp = "LaTeX failed"
+          ),
+          LatexKnit = function(...) {
+            NULL
+          },
+          LatexTikzCompile = function(...) {
+            NULL
+          },
+          LatexCompile = function(...) {
+            stop("LaTeX failed", call. = FALSE)
+          }
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
+    testthat::test_that(
       desc = paste(text, "knits and compiles a document (slow)"),
       code = {
         .SkipSlow()

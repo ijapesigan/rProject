@@ -43,7 +43,7 @@ jobs:
       image: ${{ needs.image.outputs.image }}
     # Only restrict concurrency for non-PR jobs
     concurrency:
-      group: quarto-gh-pages-${{ github.event_name != 'pull_request' || github.run_id }}
+      group: pages-${{ github.event_name != 'pull_request' || github.run_id }}
     env:
       RPROJECT_SNAPSHOT: ${{ needs.image.outputs.snapshot }}
       GITHUB_PAT: ${{ secrets.PAT }}
@@ -69,5 +69,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           clean: true
-          branch: quarto
+          # one Pages site: pkgdown at the root, Quarto under /quarto/
+          branch: pkgdown
+          target-folder: quarto
           folder: quarto
