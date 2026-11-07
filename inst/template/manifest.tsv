@@ -66,7 +66,6 @@ cran	2	.github/workflows/check-standard.yml
 cran	2	.github/workflows/non-ascii-check.yml
 rproject	2	.github/workflows/latex-rproject-daily.yml
 rproject	2	.github/workflows/quarto-gh-pages.yml
-rproject	2	.github/workflows/quarto-quarto-pub.yml
 man	2	.github/workflows/make.yml
 man	2	.setup/latex/.gitignore
 man	1	.setup/latex/sty/kbordermatrix.sty
@@ -94,6 +93,10 @@ lib	2	.setup/scripts/make-config.R
 lib	2	.setup/scripts/verify.sh
 lib	2	Makefile
 talk	2	.github/workflows/lint.yml
+talk	2	.github/workflows/latex.yml
+talk	2	.github/workflows/make.yml
+talk	2	.github/workflows/pkgdown-gh-pages.yml
+talk	2	.github/workflows/quarto-gh-pages.yml
 talk	1	.setup/latex/preamble/999-preamble-settings.tex
 talk	1	.setup/latex/sty/kbordermatrix.sty
 talk	2	.setup/notes/.gitignore

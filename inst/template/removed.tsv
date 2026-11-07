@@ -33,3 +33,4 @@ path	since
 .github/workflows/rhub-cran-add-04.yml	0.0.64
 .github/workflows/rhub-donttest.yml	0.0.64
 .github/workflows/rhub-etc.yml	0.0.64
+.github/workflows/quarto-quarto-pub.yml	0.0.66

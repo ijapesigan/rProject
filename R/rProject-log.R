@@ -58,7 +58,7 @@ Log <- function(path,
     }
     log <- existing[1]
   } else {
-    log <- paste0(format(x = Sys.Date()), "-", topic, ".md")
+    log <- paste0(.LogDate(), "-", topic, ".md")
   }
   log_file <- file.path(logs, log)
   if (!update && file.exists(log_file)) {

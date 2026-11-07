@@ -44,11 +44,10 @@ LatexMake <- function(path,
         clean = clean
       )
     )
-    try(
-      expr = LatexCompile(
-        path = path,
-        clean = clean
-      )
+    # not in try(): a failed PDF must stop make latex in CI
+    LatexCompile(
+      path = path,
+      clean = clean
     )
   } else {
     message(

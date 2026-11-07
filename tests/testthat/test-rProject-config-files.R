@@ -30,7 +30,9 @@ lapply(
           )
         }
         check <- run("--check")
-        testthat::expect_true(object = any(grepl(pattern = "nothing changed", x = check)))
+        testthat::expect_true(
+          object = any(grepl(pattern = "nothing changed", x = check))
+        )
         testthat::expect_identical(
           object = readLines(con = file.path(home, ".bashrc")),
           expected = "old"
@@ -48,15 +50,33 @@ lapply(
         )
         testthat::skip_if(condition = !nzchar(x = script))
         lines <- readLines(con = script, warn = FALSE)
-        pairs <- trimws(x = grep(pattern = "^  \"[a-z]+/", x = lines, value = TRUE))
+        pairs <- trimws(
+          x = grep(pattern = "^  \"[a-z]+/", x = lines, value = TRUE)
+        )
         testthat::expect_gt(object = length(x = pairs), expected = 10)
         testthat::expect_false(
-          object = any(grepl(pattern = "secret|gitconfig|ssh", x = pairs, ignore.case = TRUE))
+          object = any(
+            grepl(
+              pattern = "secret|gitconfig|ssh",
+              x = pairs,
+              ignore.case = TRUE
+            )
+          )
         )
-        sources <- sub(pattern = "^\"([^ ]+) .*$", replacement = "\\1", x = pairs)
+        sources <- sub(
+          pattern = "^\"([^ ]+) .*$",
+          replacement = "\\1",
+          x = pairs
+        )
         testthat::expect_true(
           object = all(
-            file.exists(file.path(dirname(path = dirname(path = script)), "dotfiles", sources))
+            file.exists(
+              file.path(
+                dirname(path = dirname(path = script)),
+                "dotfiles",
+                sources
+              )
+            )
           )
         )
       }
