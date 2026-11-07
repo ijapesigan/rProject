@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.65</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.66</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,34 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.66" id="rproject-0066">rProject 0.0.66<a class="anchor" aria-label="anchor" href="#rproject-0066"></a></h2>
+<div class="section level3">
+<h3 id="latex-0-0-66">LaTeX<a class="anchor" aria-label="anchor" href="#latex-0-0-66"></a></h3>
+<ul><li>
+<code>lib-apa</code> compiles again, with all its entries. A long bibliography fills pdfTeX’s high memory, so <code><a href="../reference/LatexCompile.html">LatexCompile()</a></code> now sets <code>extra_mem_top</code>; <code>extra_mem_bot</code>, set since 0.0.57, could not help.</li>
+<li>A failed PDF now fails <code>make latex</code> in CI: <code><a href="../reference/LatexMake.html">LatexMake()</a></code> no longer hides the error in <code><a href="https://rdrr.io/r/base/try.html" class="external-link">try()</a></code>, so a stub PDF is not published.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="websites-0-0-66">Websites<a class="anchor" aria-label="anchor" href="#websites-0-0-66"></a></h3>
+<ul><li>One GitHub Pages site: pkgdown at the root, Quarto under <code>/quarto/</code>. The Quarto Pub workflow is removed (<code>inst/template/removed.tsv</code>).</li>
+<li>The <code>talk</code> set gains <code>latex</code>, <code>make</code>, <code>pkgdown-gh-pages</code>, and <code>quarto-gh-pages</code>.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="logs-and-checks-0-0-66">Logs and checks<a class="anchor" aria-label="anchor" href="#logs-and-checks-0-0-66"></a></h3>
+<ul><li>
+<code><a href="../reference/Log.html">Log()</a></code> and <code><a href="../reference/Verify.html">Verify()</a></code> date a push in the user’s time zone (<code>RPROJECT_TZ</code>, by default <code>America/New_York</code>), not UTC.</li>
+<li>
+<code><a href="../reference/Log.html">Log()</a></code> lists new files under <code>.setup/latex/figures/psu/</code>, leaves out <code>.setup/todo/</code>, and no longer proposes deleting <code>.setup/repo/</code> files that are only missing locally.</li>
+<li>
+<code>o2g-watch.sh</code>: one failed connection no longer ends the watcher.</li>
+<li>Non-ASCII, shellcheck, and lint findings on the public checks are fixed.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="style-0-0-66">Style<a class="anchor" aria-label="anchor" href="#style-0-0-66"></a></h3>
+<ul><li>The R and Rcpp guides: every function has complete roxygen, unexported functions use <code>@noRd</code>, and the rules for helper libraries and their copies. <code>make lint</code> does not check this yet.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.65" id="rproject-0065">rProject 0.0.65<a class="anchor" aria-label="anchor" href="#rproject-0065"></a></h2>
 <div class="section level3">

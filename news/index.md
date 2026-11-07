@@ -1,5 +1,47 @@
 # Changelog
 
+## rProject 0.0.66
+
+### LaTeX
+
+- `lib-apa` compiles again, with all its entries. A long bibliography
+  fills pdfTeX’s high memory, so
+  [`LatexCompile()`](https://ijapesigan.github.io/rProject/reference/LatexCompile.md)
+  now sets `extra_mem_top`; `extra_mem_bot`, set since 0.0.57, could not
+  help.
+- A failed PDF now fails `make latex` in CI:
+  [`LatexMake()`](https://ijapesigan.github.io/rProject/reference/LatexMake.md)
+  no longer hides the error in
+  [`try()`](https://rdrr.io/r/base/try.html), so a stub PDF is not
+  published.
+
+### Websites
+
+- One GitHub Pages site: pkgdown at the root, Quarto under `/quarto/`.
+  The Quarto Pub workflow is removed (`inst/template/removed.tsv`).
+- The `talk` set gains `latex`, `make`, `pkgdown-gh-pages`, and
+  `quarto-gh-pages`.
+
+### Logs and checks
+
+- [`Log()`](https://ijapesigan.github.io/rProject/reference/Log.md) and
+  [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
+  date a push in the user’s time zone (`RPROJECT_TZ`, by default
+  `America/New_York`), not UTC.
+- [`Log()`](https://ijapesigan.github.io/rProject/reference/Log.md)
+  lists new files under `.setup/latex/figures/psu/`, leaves out
+  `.setup/todo/`, and no longer proposes deleting `.setup/repo/` files
+  that are only missing locally.
+- `o2g-watch.sh`: one failed connection no longer ends the watcher.
+- Non-ASCII, shellcheck, and lint findings on the public checks are
+  fixed.
+
+### Style
+
+- The R and Rcpp guides: every function has complete roxygen, unexported
+  functions use `@noRd`, and the rules for helper libraries and their
+  copies. `make lint` does not check this yet.
+
 ## rProject 0.0.65
 
 ### Tools in `~/work`

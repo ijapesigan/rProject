@@ -196,6 +196,7 @@ in it) and names them, so that they can be deleted in Overleaf too.
 | `.github/workflows/rhub-cran-add-04.yml` | 0.0.64 |
 | `.github/workflows/rhub-donttest.yml` | 0.0.64 |
 | `.github/workflows/rhub-etc.yml` | 0.0.64 |
+| `.github/workflows/quarto-quarto-pub.yml` | 0.0.66 |
 
 ## From Overleaf to the public repository
 
