@@ -1,3 +1,17 @@
+# rProject 0.0.67
+
+## Templates
+
+- `rhub-1-essential.yml`: the `nosuggests` job no longer rebuilds the vignettes, because that image has no Suggests packages (no rmarkdown).
+
+## Scripts
+
+- `build-docs.sh`, `build-lib.sh`, and `build-rproject.sh` write their details to `<work>/tmp/*.log` and print one summary line; `verify.sh` logs to `<work>/tmp/*-verify.log`.
+
+## AI instructions
+
+- The keyword procedures (`build docs`, `build lib`, `build rProject`, `CI`, `rollout`, `sim status`, `EX`) and the Token tips table moved from `.setup/ai/global/AGENTS.md` to `.setup/ai/global/keywords.md` (16 KB to 12 KB). The handoff is capped at 3 KB.
+
 # rProject 0.0.66
 
 ## LaTeX
