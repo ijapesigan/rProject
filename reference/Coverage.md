@@ -1,7 +1,7 @@
 # Code Coverage
 
 Runs
-[`covr::package_coverage()`](http://covr.r-lib.org/reference/package_coverage.md)
+[`covr::package_coverage()`](https://covr.r-lib.org/reference/package_coverage.html)
 on the package. To leave files out, put covr's `.covrignore` at the
 project root (and add it to `.Rbuildignore` with `ignore` in
 `.setup/scripts/project.R`).

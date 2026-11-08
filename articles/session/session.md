@@ -59,6 +59,7 @@
 `#> av                "av"               `\
 `#> backports         "backports"        `\
 `#> base64enc         "base64enc"        `\
+`#> bench             "bench"            `\
 `#> betaDelta         "betaDelta"        `\
 `#> betaMC            "betaMC"           `\
 `#> betaNB            "betaNB"           `\
@@ -286,6 +287,7 @@
 `#> printr            "printr"           `\
 `#> processx          "processx"         `\
 `#> prodlim           "prodlim"          `\
+`#> profmem           "profmem"          `\
 `#> profvis           "profvis"          `\
 `#> progress          "progress"         `\
 `#> progressr         "progressr"        `\
@@ -452,7 +454,7 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/RtmpKHVL7C/temp_libpath17ae27a847d1" "0.0.66"    `\
+`#> rProject          "/tmp/RtmpFhfgDy/temp_libpath17ae7fab75df" "0.0.66"    `\
 `#> rProject          "/__w/rProject/rProject/.library"          "0.0.66"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
@@ -465,6 +467,7 @@
 `#> av                "/usr/local/lib/R/site-library"            "0.9.6"     `\
 `#> backports         "/usr/local/lib/R/site-library"            "1.5.1"     `\
 `#> base64enc         "/usr/local/lib/R/site-library"            "0.1-6"     `\
+`#> bench             "/usr/local/lib/R/site-library"            "1.1.4"     `\
 `#> betaDelta         "/usr/local/lib/R/site-library"            "1.0.7.9000"`\
 `#> betaMC            "/usr/local/lib/R/site-library"            "1.3.4.9000"`\
 `#> betaNB            "/usr/local/lib/R/site-library"            "1.0.7.9000"`\
@@ -692,6 +695,7 @@
 `#> printr            "/usr/local/lib/R/site-library"            "0.3"       `\
 `#> processx          "/usr/local/lib/R/site-library"            "3.9.0"     `\
 `#> prodlim           "/usr/local/lib/R/site-library"            "2026.03.11"`\
+`#> profmem           "/usr/local/lib/R/site-library"            "0.7.0"     `\
 `#> profvis           "/usr/local/lib/R/site-library"            "0.4.0"     `\
 `#> progress          "/usr/local/lib/R/site-library"            "1.2.3"     `\
 `#> progressr         "/usr/local/lib/R/site-library"            "1.1.0"     `\
@@ -749,7 +753,7 @@
 `#> roxygen2          "/usr/local/lib/R/site-library"            "8.1.1.9000"`\
 `#> rpf               "/usr/local/lib/R/site-library"            "1.0.15"    `\
 `#> RPostgres         "/usr/local/lib/R/site-library"            "1.4.10"    `\
-`#> rProject          "/usr/local/lib/R/site-library"            "0.0.65"    `\
+`#> rProject          "/usr/local/lib/R/site-library"            "0.0.66"    `\
 `#> rprojroot         "/usr/local/lib/R/site-library"            "2.1.1"     `\
 `#> rsample           "/usr/local/lib/R/site-library"            "1.3.2"     `\
 `#> RSQLite           "/usr/local/lib/R/site-library"            "3.53.3"    `\
@@ -871,6 +875,7 @@
 `#> av                NA           `\
 `#> backports         NA           `\
 `#> base64enc         NA           `\
+`#> bench             NA           `\
 `#> betaDelta         NA           `\
 `#> betaMC            NA           `\
 `#> betaNB            NA           `\
@@ -1098,6 +1103,7 @@
 `#> printr            NA           `\
 `#> processx          NA           `\
 `#> prodlim           NA           `\
+`#> profmem           NA           `\
 `#> profvis           NA           `\
 `#> progress          NA           `\
 `#> progressr         NA           `\
@@ -1277,6 +1283,7 @@
 `#> av                "R (>= 3.5)"                                                                                `\
 `#> backports         "R (>= 3.0.0)"                                                                              `\
 `#> base64enc         "R (>= 2.9.0)"                                                                              `\
+`#> bench             "R (>= 4.0.0)"                                                                              `\
 `#> betaDelta         "R (>= 3.5.0)"                                                                              `\
 `#> betaMC            "R (>= 3.5.0)"                                                                              `\
 `#> betaNB            "R (>= 3.5.0)"                                                                              `\
@@ -1504,6 +1511,7 @@
 `#> printr            NA                                                                                          `\
 `#> processx          "R (>= 3.4.0)"                                                                              `\
 `#> prodlim           "R (>= 4.1.0)"                                                                              `\
+`#> profmem           NA                                                                                          `\
 `#> profvis           "R (>= 4.0)"                                                                                `\
 `#> progress          "R (>= 3.6)"                                                                                `\
 `#> progressr         "R (>= 3.5.0)"                                                                              `\
@@ -1683,6 +1691,7 @@
 `#> av                "graphics"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> backports         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> base64enc         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
+`#> bench             "glue (>= 1.8.0), methods, pillar (>= 1.10.1), profmem (>=\n0.6.0), rlang (>= 1.1.4), stats, tibble (>= 3.2.1), utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> betaDelta         "numDeriv"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> betaMC            "Rcpp, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> betaNB            "Rcpp, stats"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -1910,6 +1919,7 @@
 `#> printr            "knitr (>= 1.31)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> processx          "ps (>= 1.9.3), R6, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> prodlim           "Rcpp (>= 0.11.5), stats, rlang, data.table, grDevices,\nggplot2, scales, graphics, diagram, survival, KernSmooth, lava"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
+`#> profmem           "utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `\
 `#> profvis           "htmlwidgets (>= 0.3.2), rlang (>= 1.1.0), vctrs"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> progress          "crayon, hms, prettyunits, R6"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
 `#> progressr         "tools, utils"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `\
@@ -2089,6 +2099,7 @@
 `#> av                NA                                                                                                                                                           `\
 `#> backports         NA                                                                                                                                                           `\
 `#> base64enc         NA                                                                                                                                                           `\
+`#> bench             NA                                                                                                                                                           `\
 `#> betaDelta         NA                                                                                                                                                           `\
 `#> betaMC            "Rcpp, RcppArmadillo"                                                                                                                                        `\
 `#> betaNB            "Rcpp, RcppArmadillo"                                                                                                                                        `\
@@ -2316,6 +2327,7 @@
 `#> printr            NA                                                                                                                                                           `\
 `#> processx          NA                                                                                                                                                           `\
 `#> prodlim           "Rcpp"                                                                                                                                                       `\
+`#> profmem           NA                                                                                                                                                           `\
 `#> profvis           NA                                                                                                                                                           `\
 `#> progress          NA                                                                                                                                                           `\
 `#> progressr         NA                                                                                                                                                           `\
@@ -2495,6 +2507,7 @@
 `#> av                "curl, testthat, ps, ggplot2, gapminder"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     `\
 `#> backports         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> base64enc         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
+`#> bench             "covr, dplyr, forcats, ggbeeswarm, ggplot2 (>= 3.5.1),\nggridges, parallel, scales, testthat (>= 3.2.3), tidyr (>=\n1.3.1), vctrs (>= 0.6.5), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `\
 `#> betaDelta         "knitr, rmarkdown, testthat, betaSandwich, betaMC, betaNB"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `\
 `#> betaMC            "knitr, rmarkdown, testthat, MASS, mice, Amelia, betaDelta,\nbetaSandwich, betaNB"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> betaNB            "knitr, rmarkdown, testthat, betaDelta, betaSandwich, betaMC"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -2722,6 +2735,7 @@
 `#> printr            "tools, rmarkdown"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> processx          "callr (>= 3.7.3), cli (>= 3.3.0), codetools, covr, curl,\ndebugme, parallel, rlang (>= 1.0.2), testthat (>= 3.0.0),\nwebfakes, withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       `\
 `#> prodlim           "tibble, ggthemes, riskRegression, testthat, etm, survey"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
+`#> profmem           "R.rsp, markdown, microbenchmark"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            `\
 `#> profvis           "htmltools, knitr, rmarkdown, shiny, testthat (>= 3.0.0)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `\
 `#> progress          "Rcpp, testthat (>= 3.0.0), withr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           `\
 `#> progressr         "graphics, tcltk, beepr, cli, crayon, digest, pbmcapply,\nprogress, purrr, foreach, plyr, doFuture, future, future.apply,\nfurrr, ntfy, RPushbullet, rstudioapi, shiny, commonmark,\nbase64enc"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              `\
@@ -2901,6 +2915,7 @@
 `#> av                NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> backports         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> base64enc         "png"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             `\
+`#> bench             NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> betaDelta         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> betaMC            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> betaNB            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3128,6 +3143,7 @@
 `#> printr            NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> processx          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> prodlim           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
+`#> profmem           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> profvis           NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> progress          NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
 `#> progressr         NA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                `\
@@ -3307,6 +3323,7 @@
 `#> av                "MIT + file LICENSE"                          NA             `\
 `#> backports         "GPL-2 | GPL-3"                               NA             `\
 `#> base64enc         "GPL-2 | GPL-3"                               NA             `\
+`#> bench             "MIT + file LICENSE"                          NA             `\
 `#> betaDelta         "MIT + file LICENSE"                          NA             `\
 `#> betaMC            "MIT + file LICENSE"                          NA             `\
 `#> betaNB            "MIT + file LICENSE"                          NA             `\
@@ -3534,6 +3551,7 @@
 `#> printr            "GPL"                                         NA             `\
 `#> processx          "MIT + file LICENSE"                          NA             `\
 `#> prodlim           "GPL (>= 2)"                                  NA             `\
+`#> profmem           "LGPL (>= 2.1)"                               NA             `\
 `#> profvis           "MIT + file LICENSE"                          NA             `\
 `#> progress          "MIT + file LICENSE"                          NA             `\
 `#> progressr         "Apache License (>= 2)"                       NA             `\
@@ -3713,6 +3731,7 @@
 `#> av                NA                    NA      NA     "yes"           `\
 `#> backports         NA                    NA      NA     "yes"           `\
 `#> base64enc         NA                    NA      NA     "yes"           `\
+`#> bench             NA                    NA      NA     "yes"           `\
 `#> betaDelta         NA                    NA      NA     "no"            `\
 `#> betaMC            NA                    NA      NA     "yes"           `\
 `#> betaNB            NA                    NA      NA     "yes"           `\
@@ -3940,6 +3959,7 @@
 `#> printr            NA                    NA      NA     "no"            `\
 `#> processx          NA                    NA      NA     "yes"           `\
 `#> prodlim           NA                    NA      NA     "yes"           `\
+`#> profmem           NA                    NA      NA     "no"            `\
 `#> profvis           NA                    NA      NA     "yes"           `\
 `#> progress          NA                    NA      NA     "no"            `\
 `#> progressr         NA                    NA      NA     "no"            `\
@@ -4106,8 +4126,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.2; ; 2026-11-07 09:19:02 UTC; unix"                   `\
-`#> rProject          "R 4.6.2; ; 2026-11-07 09:18:56 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-08 03:11:49 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-08 03:11:44 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:14:25 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-25 01:17:55 UTC; unix"                   `\
@@ -4119,19 +4139,20 @@
 `#> av                "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:11:02 UTC; unix"`\
 `#> backports         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
 `#> base64enc         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
-`#> betaDelta         "R 4.6.2; ; 2026-11-07 05:04:30 UTC; unix"                   `\
-`#> betaMC            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 05:04:45 UTC; unix"`\
-`#> betaNB            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 05:04:36 UTC; unix"`\
-`#> betaSandwich      "R 4.6.2; ; 2026-11-07 05:04:33 UTC; unix"                   `\
+`#> bench             "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-28 06:19:48 UTC; unix"`\
+`#> betaDelta         "R 4.6.2; ; 2026-11-07 20:29:31 UTC; unix"                   `\
+`#> betaMC            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:29:50 UTC; unix"`\
+`#> betaNB            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:29:37 UTC; unix"`\
+`#> betaSandwich      "R 4.6.2; ; 2026-11-07 20:29:34 UTC; unix"                   `\
 `#> BH                "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
 `#> bibtex            "R 4.6.0; ; 2026-09-23 04:14:50 UTC; unix"                   `\
-`#> biocmake          "R 4.6.2; ; 2026-11-07 04:44:35 UTC; unix"                   `\
+`#> biocmake          "R 4.6.2; ; 2026-11-07 20:06:46 UTC; unix"                   `\
 `#> BiocManager       "R 4.6.0; ; 2026-04-24 04:10:10 UTC; unix"                   `\
-`#> BiocVersion       "R 4.6.2; ; 2026-11-07 04:44:34 UTC; unix"                   `\
+`#> BiocVersion       "R 4.6.2; ; 2026-11-07 20:06:44 UTC; unix"                   `\
 `#> bit               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
 `#> bit64             "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-02 04:00:27 UTC; unix"`\
 `#> blob              "R 4.6.0; ; 2026-08-12 20:25:54 UTC; unix"                   `\
-`#> bootStateSpace    "R 4.6.2; ; 2026-11-07 05:05:21 UTC; unix"                   `\
+`#> bootStateSpace    "R 4.6.2; ; 2026-11-07 20:30:37 UTC; unix"                   `\
 `#> brew              "R 4.6.0; ; 2026-08-12 20:24:39 UTC; unix"                   `\
 `#> brio              "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:10 UTC; unix"`\
 `#> broom             "R 4.6.0; ; 2026-08-12 20:28:45 UTC; unix"                   `\
@@ -4144,7 +4165,7 @@
 `#> cellranger        "R 4.6.0; ; 2026-08-12 20:26:50 UTC; unix"                   `\
 `#> cffr              "R 4.6.0; ; 2026-08-25 04:32:41 UTC; unix"                   `\
 `#> checkmate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:49 UTC; unix"`\
-`#> cli               "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 05:04:08 UTC; unix"`\
+`#> cli               "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:28:58 UTC; unix"`\
 `#> clipr             "R 4.6.0; ; 2026-08-12 20:24:44 UTC; unix"                   `\
 `#> clock             "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:51:36 UTC; unix"`\
 `#> clusterGeneration "R 4.6.0; ; 2026-04-25 00:28:07 UTC; unix"                   `\
@@ -4161,7 +4182,7 @@
 `#> crayon            "R 4.6.0; ; 2026-08-12 20:24:37 UTC; unix"                   `\
 `#> credentials       "R 4.6.0; ; 2026-04-24 04:13:25 UTC; unix"                   `\
 `#> crosstalk         "R 4.6.0; ; 2026-08-12 20:25:32 UTC; unix"                   `\
-`#> cTMed             "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 05:05:29 UTC; unix"`\
+`#> cTMed             "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:30:46 UTC; unix"`\
 `#> ctsem             "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-04 09:17:06 UTC; unix"`\
 `#> curl              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-15 04:19:50 UTC; unix"`\
 `#> data.table        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-25 04:32:28 UTC; unix"`\
@@ -4170,13 +4191,13 @@
 `#> Deriv             "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-22 04:18:07 UTC; unix"`\
 `#> desc              "R 4.6.0; ; 2026-04-24 04:10:49 UTC; unix"                   `\
 `#> deSolve           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:57 UTC; unix"`\
-`#> devtools          "R 4.6.2; ; 2026-11-07 05:04:15 UTC; unix"                   `\
+`#> devtools          "R 4.6.2; ; 2026-11-07 20:29:09 UTC; unix"                   `\
 `#> diagram           "R 4.6.0; ; 2026-04-24 04:11:06 UTC; unix"                   `\
 `#> dials             "R 4.6.0; ; 2026-06-23 05:17:55 UTC; unix"                   `\
 `#> DiceDesign        "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:25:52 UTC; unix"`\
 `#> diffobj           "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-12 04:20:30 UTC; unix"`\
 `#> digest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
-`#> dir.expiry        "R 4.6.2; ; 2026-11-07 04:44:34 UTC; unix"                   `\
+`#> dir.expiry        "R 4.6.2; ; 2026-11-07 20:06:45 UTC; unix"                   `\
 `#> distributional    "R 4.6.0; ; 2026-09-09 09:31:05 UTC; unix"                   `\
 `#> distro            "R 4.6.0; ; 2026-04-25 00:45:33 UTC; unix"                   `\
 `#> doBy              "R 4.6.0; ; 2026-08-12 20:30:54 UTC; unix"                   `\
@@ -4186,9 +4207,9 @@
 `#> DT                "R 4.6.0; ; 2026-08-12 20:30:29 UTC; unix"                   `\
 `#> dtplyr            "R 4.6.0; ; 2026-10-29 06:40:00 UTC; unix"                   `\
 `#> duckdb            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:11:54 UTC; unix"`\
-`#> dynr              "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 04:56:26 UTC; unix"`\
-`#> dynTools          "R 4.6.2; ; 2026-11-07 05:05:45 UTC; unix"                   `\
-`#> dynUtils          "R 4.6.2; ; 2026-11-07 04:57:22 UTC; unix"                   `\
+`#> dynr              "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:20:20 UTC; unix"`\
+`#> dynTools          "R 4.6.2; ; 2026-11-07 20:31:08 UTC; unix"                   `\
+`#> dynUtils          "R 4.6.2; ; 2026-11-07 20:21:37 UTC; unix"                   `\
 `#> ellipse           "R 4.6.0; ; 2026-08-12 20:24:42 UTC; unix"                   `\
 `#> ellipsis          "R 4.6.0; ; 2026-04-25 01:21:15 UTC; unix"                   `\
 `#> evaluate          "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
@@ -4201,7 +4222,7 @@
 `#> fdrtool           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 00:47:34 UTC; unix"`\
 `#> fds               "R 4.6.0; ; 2026-10-27 04:26:16 UTC; unix"                   `\
 `#> filelock          "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:09:54 UTC; unix"`\
-`#> fitVARMxID        "R 4.6.2; ; 2026-11-07 05:05:51 UTC; unix"                   `\
+`#> fitVARMxID        "R 4.6.2; ; 2026-11-07 20:31:16 UTC; unix"                   `\
 `#> FNN               "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
 `#> fontawesome       "R 4.6.0; ; 2026-08-12 20:25:29 UTC; unix"                   `\
 `#> forcats           "R 4.6.0; ; 2026-08-12 20:26:56 UTC; unix"                   `\
@@ -4248,7 +4269,7 @@
 `#> htmlTable         "R 4.6.0; ; 2026-08-12 20:30:32 UTC; unix"                   `\
 `#> htmltools         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:12 UTC; unix"`\
 `#> htmlwidgets       "R 4.6.0; ; 2026-08-12 20:29:22 UTC; unix"                   `\
-`#> httpgd            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 05:03:40 UTC; unix"`\
+`#> httpgd            "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:28:21 UTC; unix"`\
 `#> httpuv            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:13 UTC; unix"`\
 `#> httr              "R 4.6.0; ; 2026-09-02 04:00:13 UTC; unix"                   `\
 `#> httr2             "R 4.6.0; ; 2026-07-14 05:11:56 UTC; unix"                   `\
@@ -4286,7 +4307,7 @@
 `#> lme4              "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-24 06:12:18 UTC; unix"`\
 `#> lmtest            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:09 UTC; unix"`\
 `#> locfit            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:40 UTC; unix"`\
-`#> longMI            "R 4.6.2; ; 2026-11-07 04:52:33 UTC; unix"                   `\
+`#> longMI            "R 4.6.2; ; 2026-11-07 20:15:46 UTC; unix"                   `\
 `#> loo               "R 4.6.0; ; 2026-07-25 05:26:19 UTC; unix"                   `\
 `#> lubridate         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:25:21 UTC; unix"`\
 `#> magick            "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 14:44:24 UTC; unix"`\
@@ -4296,7 +4317,7 @@
 `#> matrixStats       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
 `#> mclust            "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:38 UTC; unix"`\
 `#> memoise           "R 4.6.0; ; 2026-08-12 20:25:23 UTC; unix"                   `\
-`#> metaDyn           "R 4.6.2; ; 2026-11-07 05:05:58 UTC; unix"                   `\
+`#> metaDyn           "R 4.6.2; ; 2026-11-07 20:31:25 UTC; unix"                   `\
 `#> metaSEM           "R 4.6.0; ; 2026-04-25 02:03:48 UTC; unix"                   `\
 `#> mice              "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 15:25:38 UTC; unix"`\
 `#> microbenchmark    "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:08 UTC; unix"`\
@@ -4346,6 +4367,7 @@
 `#> printr            "R 4.6.0; ; 2026-04-25 01:51:27 UTC; unix"                   `\
 `#> processx          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:55 UTC; unix"`\
 `#> prodlim           "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 15:02:05 UTC; unix"`\
+`#> profmem           "R 4.6.0; ; 2026-04-25 01:06:25 UTC; unix"                   `\
 `#> profvis           "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 02:07:08 UTC; unix"`\
 `#> progress          "R 4.6.0; ; 2026-08-12 20:26:27 UTC; unix"                   `\
 `#> progressr         "R 4.6.0; ; 2026-10-19 04:23:35 UTC; unix"                   `\
@@ -4392,18 +4414,18 @@
 `#> reshape2          "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:31 UTC; unix"`\
 `#> reticulate        "R 4.6.0; x86_64-pc-linux-gnu; 2026-09-04 04:22:48 UTC; unix"`\
 `#> rex               "R 4.6.0; ; 2026-04-25 01:47:01 UTC; unix"                   `\
-`#> rhdf5             "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 04:47:57 UTC; unix"`\
-`#> rhdf5filters      "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 04:47:34 UTC; unix"`\
-`#> Rhdf5lib          "R 4.6.2; ; 2026-11-07 04:47:30 UTC; unix"                   `\
+`#> rhdf5             "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:10:09 UTC; unix"`\
+`#> rhdf5filters      "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:09:45 UTC; unix"`\
+`#> Rhdf5lib          "R 4.6.2; ; 2026-11-07 20:09:42 UTC; unix"                   `\
 `#> rhub              "R 4.6.0; ; 2026-04-25 01:56:40 UTC; unix"                   `\
 `#> rjags             "R 4.6.0; x86_64-pc-linux-gnu; 2026-11-02 04:07:21 UTC; unix"`\
 `#> rlang             "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:39 UTC; unix"`\
 `#> RMariaDB          "R 4.6.0; x86_64-pc-linux-gnu; 2026-05-07 06:49:14 UTC; unix"`\
 `#> rmarkdown         "R 4.6.0; ; 2026-09-02 04:01:02 UTC; unix"                   `\
-`#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 05:04:19 UTC; unix"`\
+`#> roxygen2          "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:29:15 UTC; unix"`\
 `#> rpf               "R 4.6.0; x86_64-pc-linux-gnu; 2026-07-06 13:42:36 UTC; unix"`\
 `#> RPostgres         "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:37 UTC; unix"`\
-`#> rProject          "R 4.6.2; ; 2026-11-07 04:42:10 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-07 20:04:29 UTC; unix"                   `\
 `#> rprojroot         "R 4.6.0; ; 2026-04-24 04:10:28 UTC; unix"                   `\
 `#> rsample           "R 4.6.0; ; 2026-04-25 03:00:58 UTC; unix"                   `\
 `#> RSQLite           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:26:22 UTC; unix"`\
@@ -4418,13 +4440,13 @@
 `#> scales            "R 4.6.0; ; 2026-08-12 20:25:26 UTC; unix"                   `\
 `#> selectr           "R 4.6.0; ; 2026-09-28 04:40:24 UTC; unix"                   `\
 `#> semlbci           "R 4.6.0; ; 2026-07-28 08:49:07 UTC; unix"                   `\
-`#> semmcci           "R 4.6.2; ; 2026-11-07 05:04:28 UTC; unix"                   `\
+`#> semmcci           "R 4.6.2; ; 2026-11-07 20:29:28 UTC; unix"                   `\
 `#> semPlot           "R 4.6.0; ; 2026-09-04 06:56:03 UTC; unix"                   `\
 `#> sessioninfo       "R 4.6.0; ; 2026-06-05 14:26:48 UTC; unix"                   `\
 `#> sfd               "R 4.6.0; ; 2026-04-25 02:06:33 UTC; unix"                   `\
 `#> shape             "R 4.6.0; ; 2026-08-12 20:24:42 UTC; unix"                   `\
 `#> shiny             "R 4.6.0; ; 2026-08-12 20:28:26 UTC; unix"                   `\
-`#> simStateSpace     "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 05:05:03 UTC; unix"`\
+`#> simStateSpace     "R 4.6.2; x86_64-pc-linux-gnu; 2026-11-07 20:30:12 UTC; unix"`\
 `#> slider            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-25 01:45:04 UTC; unix"`\
 `#> sourcetools       "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:43 UTC; unix"`\
 `#> SparseM           "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:37 UTC; unix"`\
@@ -4451,7 +4473,7 @@
 `#> tidyverse         "R 4.6.0; ; 2026-08-12 20:33:11 UTC; unix"                   `\
 `#> timechange        "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> timeDate          "R 4.6.0; ; 2026-08-12 20:24:47 UTC; unix"                   `\
-`#> tinytex           "R 4.6.2; ; 2026-11-07 05:04:04 UTC; unix"                   `\
+`#> tinytex           "R 4.6.2; ; 2026-11-07 20:28:54 UTC; unix"                   `\
 `#> tune              "R 4.6.0; ; 2026-04-25 03:11:58 UTC; unix"                   `\
 `#> tzdb              "R 4.6.0; x86_64-pc-linux-gnu; 2026-08-12 20:24:53 UTC; unix"`\
 `#> ucminf            "R 4.6.0; x86_64-pc-linux-gnu; 2026-04-24 04:10:36 UTC; unix"`\
@@ -4525,6 +4547,7 @@
 `#> av                NA       `\
 `#> backports         NA       `\
 `#> base64enc         NA       `\
+`#> bench             NA       `\
 `#> betaDelta         NA       `\
 `#> betaMC            NA       `\
 `#> betaNB            NA       `\
@@ -4752,6 +4775,7 @@
 `#> printr            NA       `\
 `#> processx          NA       `\
 `#> prodlim           NA       `\
+`#> profmem           NA       `\
 `#> profvis           NA       `\
 `#> progress          NA       `\
 `#> progressr         NA       `\
