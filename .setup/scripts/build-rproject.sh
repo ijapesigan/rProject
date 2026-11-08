@@ -15,6 +15,8 @@
 # <work>/tmp/YYYY-MM-DD-build-rproject.log; the status file next to it says
 # "running", then "done" or "STOPPED: <reason>". The keyword is the user's
 # explicit request to push. The PUB checks and the record follow, as for "PUB".
+# Output is quiet: the details go to the log (and make all to its own log);
+# the script prints one line at the end ("done" or "STOPPED" and the log path).
 #
 # It stops, before anything is pushed, when the newest private push is not
 # verified, the version is not above the public one, or R CMD check has any
@@ -67,10 +69,13 @@ for f in "${work}"/tmp/*-build-rproject.status; do
 done
 
 mkdir -p "${dir}"
-exec > >(tee -a "${log_file}") 2>&1
+# quiet: everything goes to the log; the caller sees one summary line (fd 3)
+exec 3>&1
+exec >> "${log_file}" 2>&1
 
 log() { echo "[$(date '+%F %T')] $*"; }
 reason=""
+final=""
 fail() {
   reason="$*"
   log "STOPPED: $*"
@@ -81,8 +86,10 @@ finish() {
   local code=$?
   if [[ ${code} -eq 0 ]]; then
     echo "done $(date '+%F %T')" > "${status_file}"
+    echo "build-rproject: done; ${final:-finished}; log: ${log_file}" >&3
   else
     echo "STOPPED $(date '+%F %T'): ${reason:-exit ${code}}" > "${status_file}"
+    echo "build-rproject: STOPPED: ${reason:-exit ${code}}; log: ${log_file}" >&3
   fi
   rm -f "${BUILD_RPROJECT_COPY:-}"
 }
@@ -181,6 +188,7 @@ lost="$(git diff --cached --name-only --diff-filter=D -- .github/workflows)"
 if [[ "${dry_run}" == "1" ]]; then
   log "DRY_RUN: would commit and push"
   git diff --cached --stat | tail -n 3
+  final="dry run, nothing pushed"
   exit 0
 fi
 git diff --cached --quiet && fail "nothing to commit"
@@ -192,6 +200,7 @@ if ! git rev-parse -q --verify "refs/tags/v${version}" > /dev/null; then
   git push -q origin "v${version}" || fail "git push of the tag"
 fi
 log "pushed ${sha}, tag v${version}"
+final="${version} pushed as ${sha}, tag v${version}"
 cd "${work}"
 rm -rf "${dir:?}"
 log "done; the PUB checks and the record follow. Log: ${log_file}"

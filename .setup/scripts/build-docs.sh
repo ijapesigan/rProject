@@ -20,6 +20,9 @@
 # (.status) says "running <pid> <host> <start>", then "done <time>" or
 # "STOPPED <time>: <reason>". The script refuses to start while another run
 # is running.
+# Output is quiet: the details go to the log; the script prints one line at
+# the end ("done" or "STOPPED", the counts, and the log path). Read the log
+# with grep or tail.
 #
 # The projects and their order: .setup/scripts/build-docs.txt.
 # Per project, the steps of `make auto`: the private repository is
@@ -113,10 +116,14 @@ for f in "${work}"/tmp/*-build-docs.status; do
 done
 
 mkdir -p "${dir}"
-exec > >(tee -a "${log_file}") 2>&1
+# quiet: everything goes to the log; the caller sees one summary line (fd 3)
+exec 3>&1
+exec >> "${log_file}" 2>&1
 
 log() { echo "[$(date '+%F %T')] $*"; }
 reason=""
+summary=()
+built=""
 fail() {
   reason="$*"
   log "STOPPED: $*"
@@ -125,10 +132,19 @@ fail() {
 }
 finish() {
   local code=$?
+  local ok=0 skipped=0 line
+  for line in "${summary[@]:-}"; do
+    [[ "${line}" == *"| ok |" ]] && ok=$((ok + 1))
+    [[ "${line}" == *"| skipped |" ]] && skipped=$((skipped + 1))
+  done
   if [[ ${code} -eq 0 ]]; then
     echo "done $(date '+%F %T')" > "${status_file}"
+    [[ -n "${BUILD_DOCS_CHILD:-}" ]] ||
+      echo "build-docs: done; ${ok} published, ${skipped} skipped;${built:+${built};} log: ${log_file}" >&3
   else
     echo "STOPPED $(date '+%F %T'): ${reason:-exit ${code}}" > "${status_file}"
+    [[ -n "${BUILD_DOCS_CHILD:-}" ]] ||
+      echo "build-docs: STOPPED: ${reason:-exit ${code}}; ${ok} published; log: ${log_file}" >&3
   fi
   if [[ -z "${BUILD_DOCS_CHILD:-}" && -n "${BUILD_DOCS_COPY:-}" ]]; then
     rm -f "${BUILD_DOCS_COPY}"
@@ -227,7 +243,6 @@ id_wait() {
   return 1
 }
 
-summary=()
 for p in "${projects[@]}"; do
   log "== ${p}"
   rm -rf "${dir:?}/${p}"
@@ -297,7 +312,6 @@ done
 
 # docs.sif and docs-plus.sif, after docker-docs (or alone, --images-only:
 # the download only brings run-def.sh and docs-plus.def; nothing is pushed)
-built=""
 # the image step as a Slurm job: the job is this script, --images-only
 if [[ "${images}" == TRUE && "${dry_run}" != "1" && "${BUILD:-}" != "host" ]] &&
   [[ -z "${SLURM_JOB_ID:-}" ]] && command -v sbatch > /dev/null 2>&1 &&
