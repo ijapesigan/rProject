@@ -153,6 +153,20 @@ arma::mat Scale(const arma::mat& x_mat, const double scale) {
 }
 \end{Verbatim}
 
+\section{Efficiency}
+
+Packages maximize efficiency.
+
+\begin{itemize}
+	\item Move a function to C++ when a measurement shows it is worth it,
+	above all what simulations and bootstraps call many times.
+	\item A faster version wins, even if it is harder to read.
+	This guide's rules still apply in full.
+	\item Tests guard correctness: they pass on the R version first,
+	and the C++ version must pass the same tests.
+	\item Put timings in \texttt{.setup/tests-benchmark/}.
+\end{itemize}
+
 \section{Tests}
 
 C++ functions are tested from R, as R functions, in \texttt{tests/testthat}.
