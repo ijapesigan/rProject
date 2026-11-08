@@ -30,7 +30,7 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.66`\
+`#> [1] rProject_0.0.67`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#>  [1] digest_0.6.39     desc_1.4.3        R6_2.6.1          fastmap_1.2.0    `\
@@ -454,8 +454,8 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                    Version     `\
-`#> rProject          "/tmp/Rtmpu2Ztr6/temp_libpath17ae4e12dc26" "0.0.66"    `\
-`#> rProject          "/__w/rProject/rProject/.library"          "0.0.66"    `\
+`#> rProject          "/tmp/RtmpuQHEYs/temp_libpath17ae3f9f4f69" "0.0.67"    `\
+`#> rProject          "/__w/rProject/rProject/.library"          "0.0.67"    `\
 `#> abind             "/usr/local/lib/R/site-library"            "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"            "1.8.3"     `\
 `#> arm               "/usr/local/lib/R/site-library"            "1.15-3"    `\
@@ -4126,8 +4126,8 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.2; ; 2026-11-08 09:01:14 UTC; unix"                   `\
-`#> rProject          "R 4.6.2; ; 2026-11-08 09:01:08 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-08 20:09:17 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-08 20:09:10 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:14:25 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-25 01:17:55 UTC; unix"                   `\
