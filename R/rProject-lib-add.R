@@ -9,7 +9,7 @@
 #'   the key year and the decade repository follow it;
 #' - names and text with LaTeX accents, and `\%` and `\&` escaped;
 #' - the key as `Family-Family-Family[-etal]-Year`, accents dropped;
-#' - the abstract without its JATS tags;
+#' - the abstract without its JATS tags; from PubMed when Crossref has none;
 #' - the ISSN and publisher reused from the library's other entries
 #'   for the same journal;
 #' - the title in a sentence-case draft.

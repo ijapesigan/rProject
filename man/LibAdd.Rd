@@ -40,7 +40,7 @@ else the journal issue, else the first publication;
 the key year and the decade repository follow it;
 \item names and text with LaTeX accents, and \verb{\\\%} and \verb{\\&} escaped;
 \item the key as \code{Family-Family-Family[-etal]-Year}, accents dropped;
-\item the abstract without its JATS tags;
+\item the abstract without its JATS tags; from PubMed when Crossref has none;
 \item the ISSN and publisher reused from the library's other entries
 for the same journal;
 \item the title in a sentence-case draft.
