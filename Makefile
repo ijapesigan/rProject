@@ -1,4 +1,4 @@
-.PHONY: all release build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log sizecheck template tree public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes upgrade
+.PHONY: all release build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log fixup upload sizecheck template tree public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes upgrade
 
 push: build docs latex coverage cleanpush
 
@@ -135,6 +135,17 @@ spec:
 log:
 	@echo "\n\nWriting the change-set log...\n\n"
 	@Rscript -e "rProject::Log(\"${PWD}\", topic = \"${TOPIC}\", summary = \"${SUMMARY}\", update = $(or ${UPDATE},FALSE))"
+
+# make fixup TOPIC=<topic> SUMMARY="<first line of the fix-up's commit message>"
+# adds a fix-up section, a pending Pushes row, and a pending index row to the topic's log
+fixup:
+	@echo "\n\nAdding a fix-up to the change-set log...\n\n"
+	@Rscript -e "rProject::FixUp(\"${PWD}\", topic = \"${TOPIC}\", summary = \"${SUMMARY}\")"
+
+# make upload TOPIC=<topic> [FIXUP=TRUE] builds the upload folder from the log's lists
+upload:
+	@echo "\n\nBuilding the upload folder...\n\n"
+	@Rscript -e "rProject::Upload(\"${PWD}\", topic = \"${TOPIC}\", fixup = $(or ${FIXUP},FALSE))"
 
 # project AI instructions: AGENTS.md, CLAUDE.md, .github/copilot-instructions.md
 ai:
