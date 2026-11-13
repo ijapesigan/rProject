@@ -1,3 +1,14 @@
+# rProject 0.0.68
+
+## Verify
+
+- `Verify(record = TRUE)` writes the "Pushes" row in the order of the log's own header (`Commit | Date | Result` or `Date | Commit | Result`), fills a pending row wherever `(pending)` sits in it, and replaces the last cell of the index row whatever it holds (it used to fill only an empty cell, so `not pushed` stayed).
+
+## Fix-ups
+
+- New `FixUp()` (`make fixup TOPIC= SUMMARY=`): adds a fix-up section (commit message and file lists), a pending Pushes row, and a pending index row to the topic's log.
+- New `Upload()` (`make upload TOPIC= [FIXUP=TRUE]`): builds the upload folder from the log's lists; never overwrites an existing folder.
+
 # rProject 0.0.67
 
 ## Templates

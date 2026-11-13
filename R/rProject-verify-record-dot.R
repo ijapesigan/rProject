@@ -6,12 +6,19 @@
   logs <- file.path(path, ".setup", "logs")
   pending <- "\\(pending\\)"
   date <- .LogDate()
-  # the log's "Pushes" table: | (pending) | | | -> | sha | date | result |
+  # the log's "Pushes" table: a pending row becomes | sha | date | result |,
+  # with the cells in the order of the table's own header
   # (a fix-up push without a pending row gets a new row)
   log_file <- file.path(logs, log)
   lines <- readLines(con = log_file, warn = FALSE)
-  new_row <- paste0("| ", sha, " | ", date, " | ", result, " |")
-  row <- which(x = grepl(pattern = paste0("^\\|\\s*", pending), x = lines))[1]
+  section <- .VerifyRecordSection(lines = lines, heading = "## Pushes")
+  new_row <- .VerifyRecordRow(
+    header = section$header,
+    sha = sha,
+    date = date,
+    result = result
+  )
+  row <- section$rows[grepl(pattern = pending, x = lines[section$rows])][1]
   if (!is.na(x = row)) {
     lines[row] <- new_row
   } else {
@@ -33,8 +40,9 @@
     )[1]
     if (!is.na(x = row)) {
       lines[row] <- sub(pattern = pending, replacement = sha, x = lines[row])
+      # the last cell, whatever it holds (empty, "not pushed", ...)
       lines[row] <- sub(
-        pattern = "\\|\\s*\\|\\s*$",
+        pattern = "\\|[^|]*\\|\\s*$",
         replacement = paste0("| ", result, " |"),
         x = lines[row]
       )
