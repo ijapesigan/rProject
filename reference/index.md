@@ -90,6 +90,9 @@
 - [`EnvironmentTokens()`](https://ijapesigan.github.io/rProject/reference/EnvironmentTokens.md)
   : Set Tokens
 
+- [`FixUp()`](https://ijapesigan.github.io/rProject/reference/FixUp.md)
+  : Add a Fix-Up to a Change-Set Log
+
 - [`InstallLocal()`](https://ijapesigan.github.io/rProject/reference/InstallLocal.md)
   : Install Applications on Local Machine
 
@@ -213,6 +216,9 @@
 
 - [`Tree()`](https://ijapesigan.github.io/rProject/reference/Tree.md) :
   Project Folders and What They Are For
+
+- [`Upload()`](https://ijapesigan.github.io/rProject/reference/Upload.md)
+  : Build the Upload Folder of a Change Set
 
 - [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
   : Verify an Overleaf Push

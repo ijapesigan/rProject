@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.67</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.68</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,19 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.68" id="rproject-0068">rProject 0.0.68<a class="anchor" aria-label="anchor" href="#rproject-0068"></a></h2>
+<div class="section level3">
+<h3 id="verify-0-0-68">Verify<a class="anchor" aria-label="anchor" href="#verify-0-0-68"></a></h3>
+<ul><li>
+<code>Verify(record = TRUE)</code> writes the “Pushes” row in the order of the log’s own header (<code>Commit | Date | Result</code> or <code>Date | Commit | Result</code>), fills a pending row wherever <code>(pending)</code> sits in it, and replaces the last cell of the index row whatever it holds (it used to fill only an empty cell, so <code>not pushed</code> stayed).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="fix-ups-0-0-68">Fix-ups<a class="anchor" aria-label="anchor" href="#fix-ups-0-0-68"></a></h3>
+<ul><li>New <code><a href="../reference/FixUp.html">FixUp()</a></code> (<code>make fixup TOPIC= SUMMARY=</code>): adds a fix-up section (commit message and file lists), a pending Pushes row, and a pending index row to the topic’s log.</li>
+<li>New <code><a href="../reference/Upload.html">Upload()</a></code> (<code>make upload TOPIC= [FIXUP=TRUE]</code>): builds the upload folder from the log’s lists; never overwrites an existing folder.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.67" id="rproject-0067">rProject 0.0.67<a class="anchor" aria-label="anchor" href="#rproject-0067"></a></h2>
 <div class="section level3">
