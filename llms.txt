@@ -148,6 +148,9 @@ computing*. R Foundation for Statistical Computing.
 - [`LatexTikzCompile()`](https://ijapesigan.github.io/rProject/reference/LatexTikzCompile.md)
   : Compile Tikz
 
+- [`LibAbstractReport()`](https://ijapesigan.github.io/rProject/reference/LibAbstractReport.md)
+  : Report the Articles Missing an Abstract in the lib-\* Library
+
 - [`LibAdd()`](https://ijapesigan.github.io/rProject/reference/LibAdd.md)
   : Add an Entry to the lib-\* Library from a DOI
 

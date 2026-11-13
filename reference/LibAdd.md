@@ -56,7 +56,8 @@ Returns a list with `file`, `text`, and `questions`, invisibly.
 
 - the key as `Family-Family-Family[-etal]-Year`, accents dropped;
 
-- the abstract without its JATS tags;
+- the abstract without its JATS tags; from PubMed when Crossref has
+  none;
 
 - the ISSN and publisher reused from the library's other entries for the
   same journal;

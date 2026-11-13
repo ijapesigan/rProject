@@ -1,6 +1,6 @@
 # Library Tags
 
-    ## Ignoring entry 'Pesigan-2022'  (line10374) because:
+    ## Ignoring entry 'Pesigan-2022'  (line10478) because:
     ##  A bibentry of bibtype 'PhdThesis' has to specify the fields: school, year
 
 |  | key | annotation | keywords |
@@ -367,6 +367,7 @@
 | Bringmann-Pe-Vissers-etal-2016 | Bringmann-Pe-Vissers-etal-2016 | NULL | NULL |
 | Bringmann-Vissers-Wichers-etal-2013 | Bringmann-Vissers-Wichers-etal-2013 | NULL | NULL |
 | Brody-Yu-Chen-etal-2013 | Brody-Yu-Chen-etal-2013 | NULL | NULL |
+| Cabrieto-Adolf-Tuerlinckx-etal-2018 | Cabrieto-Adolf-Tuerlinckx-etal-2018 | NULL | NULL |
 | Carpenter-Gelman-Hoffman-etal-2017 | Carpenter-Gelman-Hoffman-etal-2017 | NULL | NULL |
 | CastroSchilo-Ferrer-2013 | CastroSchilo-Ferrer-2013 | NULL | NULL |
 | Charles-Piazza-Mogle-etal-2013 | Charles-Piazza-Mogle-etal-2013 | NULL | NULL |
@@ -421,6 +422,7 @@
 | Fredrickson-Boulton-Firestine-etal-2017 | Fredrickson-Boulton-Firestine-etal-2017 | NULL | NULL |
 | Fredrickson-Joiner-2018 | Fredrickson-Joiner-2018 | NULL | NULL |
 | Fritz-Taylor-MacKinnon-2012 | Fritz-Taylor-MacKinnon-2012 | mediation, mediation-bootstrap | NULL |
+| Garland-Geschwind-Peeters-etal-2015 | Garland-Geschwind-Peeters-etal-2015 | NULL | NULL |
 | Gates-Molenaar-2012 | Gates-Molenaar-2012 | NULL | NULL |
 | Gates-Molenaar-Hillary-etal-2010 | Gates-Molenaar-Hillary-etal-2010 | NULL | NULL |
 | George-Russell-Piontak-etal-2018 | George-Russell-Piontak-etal-2018 | NULL | NULL |
@@ -462,6 +464,7 @@
 | Kenny-Judd-2014 | Kenny-Judd-2014 | NULL | NULL |
 | KisbuSakarya-MacKinnon-Miocevic-2014 | KisbuSakarya-MacKinnon-Miocevic-2014 | mediation, mediation-prodclin | NULL |
 | Kok-Coffey-Cohn-etal-2013 | Kok-Coffey-Cohn-etal-2013 | NULL | NULL |
+| Kok-Fredrickson-2010 | Kok-Fredrickson-2010 | NULL | NULL |
 | Koopman-Howe-Hollenbeck-etal-2015 | Koopman-Howe-Hollenbeck-etal-2015 | mediation, mediation-bootstrap, mediation-bayesian | mediation, bootstrapping, permutation, Bayes |
 | Kossakowski-Groot-Haslbeck-etal-2017 | Kossakowski-Groot-Haslbeck-etal-2017 | NULL | NULL |
 | Koval-Pe-Meers-etal-2013 | Koval-Pe-Meers-etal-2013 | NULL | NULL |
@@ -509,6 +512,7 @@
 | Preacher-Selig-2012 | Preacher-Selig-2012 | mediation, mediation-montecarlo, mediation-bootstrap | NULL |
 | Prince-Read-Colder-2019 | Prince-Read-Colder-2019 | NULL | NULL |
 | Pritikin-Hunter-vonOertzen-etal-2017 | Pritikin-Hunter-vonOertzen-etal-2017 | NULL | NULL |
+| Ram-Conroy-Pincus-etal-2014 | Ram-Conroy-Pincus-etal-2014 | NULL | NULL |
 | Rast-Ferrer-2018 | Rast-Ferrer-2018 | NULL | NULL |
 | Reichardt-2011 | Reichardt-2011 | NULL | NULL |
 | Roache-KarnsWright-Goros-etal-2019 | Roache-KarnsWright-Goros-etal-2019 | NULL | NULL |
@@ -600,6 +604,7 @@
 | Abbott-Dempsey-NahumShani-etal-2025 | Abbott-Dempsey-NahumShani-etal-2025 | NULL | NULL |
 | AbrilPla-Andreani-Carroll-etal-2023 | AbrilPla-Andreani-Carroll-etal-2023 | NULL | NULL |
 | Adolf-Loossens-Tuerlinckx-etal-2021 | Adolf-Loossens-Tuerlinckx-etal-2021 | NULL | NULL |
+| Albers-Bringmann-2020 | Albers-Bringmann-2020 | NULL | NULL |
 | Alter-Counsell-2023 | Alter-Counsell-2023 | NULL | Equivalence testing, negligible effect, linear regression, lack of association |
 | Anderson-2024 | Anderson-2024 | NULL | NULL |
 | Antonakis-Bastardoz-Ronkko-2021 | Antonakis-Bastardoz-Ronkko-2021 | NULL | NULL |
@@ -631,6 +636,7 @@
 | Dora-Piccirillo-Foster-etal-2023 | Dora-Piccirillo-Foster-etal-2023 | NULL | NULL |
 | Driver-2025 | Driver-2025 | NULL | NULL |
 | Elmer-vanDuijn-Ram-etal-2025 | Elmer-vanDuijn-Ram-etal-2025 | NULL | NULL |
+| Falkenstrom-Solomonov-Rubel-2026 | Falkenstrom-Solomonov-Rubel-2026 | NULL | NULL |
 | Feinn-Armeli-Tennen-2023 | Feinn-Armeli-Tennen-2023 | NULL | NULL |
 | Fisher-Chow-Molenaar-etal-2022 | Fisher-Chow-Molenaar-etal-2022 | NULL | NULL |
 | Fisher-Kim-Fredrickson-etal-2022 | Fisher-Kim-Fredrickson-etal-2022 | NULL | NULL |
@@ -660,6 +666,7 @@
 | Ion-Georgescu-Iliescu-etal-2025 | Ion-Georgescu-Iliescu-etal-2025 | NULL | NULL |
 | Jak-Cheung-2020 | Jak-Cheung-2020 | NULL | NULL |
 | Kang-Jones-Armstrong-etal-2023 | Kang-Jones-Armstrong-etal-2023 | NULL | NULL |
+| Keng-Tong-Yan-etal-2021 | Keng-Tong-Yan-etal-2021 | NULL | NULL |
 | Kraiss-Vaessen-Klooster-2024 | Kraiss-Vaessen-Klooster-2024 | NULL | NULL |
 | Kuiper-Ryan-2020 | Kuiper-Ryan-2020 | NULL | NULL |
 | Kury-Fredrickson-VanCappellen-etal-2026 | Kury-Fredrickson-VanCappellen-etal-2026 | NULL | NULL |
@@ -725,6 +732,7 @@
 | Ringwald-Nielsen-Mostajabi-etal-2024 | Ringwald-Nielsen-Mostajabi-etal-2024 | NULL | NULL |
 | Rousselet-Pernet-Wilcox-2021 | Rousselet-Pernet-Wilcox-2021 | NULL | bootstrap, confidence interval, correlation, R, simulation, trimmed mean, median, reaction time, skewness, group comparison, open materials |
 | Rowland-Wenzel-2020 | Rowland-Wenzel-2020 | NULL | NULL |
+| Rowland-Wenzel-Kubiak-2020 | Rowland-Wenzel-Kubiak-2020 | NULL | NULL |
 | Rush-Charles-Willroth-etal-2025 | Rush-Charles-Willroth-etal-2025 | NULL | NULL |
 | Russell-LindenCarmichael-Lanza-etal-2020 | Russell-LindenCarmichael-Lanza-etal-2020 | NULL | NULL |
 | Russell-Odgers-2020 | Russell-Odgers-2020 | NULL | NULL |
