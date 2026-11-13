@@ -1,3 +1,11 @@
+# rProject 0.0.69
+
+## Library
+
+- `LibAdd()` takes the abstract from PubMed when Crossref has none (`.LibPubMed()`, `.LibPubMedAbstract()`); the questions name the source (PubMed ID) or say that neither has one.
+- New `LibAbstractReport()`: lists the `@Article` entries without an abstract in each `lib-*` project.
+- `inst/ai/section-library.md`: every new entry gets an abstract (Crossref, PubMed, publisher page, then ask).
+
 # rProject 0.0.68
 
 ## Verify

@@ -38,7 +38,13 @@ projects get the entries from the public copies (`ijapesigan/lib-*`) with
 - Layout: `make libformat` (`LibFormat()`) writes the house layout and field
   order; never hand-format.
 - Add an entry with `rProject::LibAdd(doi, root)`: show the user the draft
-  and its questions before `write = TRUE`. After adding entries, list the keys
+  and its questions before `write = TRUE`. Every new entry gets its abstract:
+  Crossref, then PubMed (both automatic), then the publisher's page (fetch it
+  and pass `fields = c(abstract = ...)`; Springer:
+  `<meta name="dc.description">`, HTML-escaped twice), then ask the user. Never leave it out silently, never
+  write it by hand, and record its source in the change-set log ("Abstracts:
+  ..." line). `LibAbstractReport(root)` lists the `@Article` entries without
+  one. After adding entries, list the keys
   and the exact paths for their full text in the reply
   (`.setup/notes/pdf/<repo>-<Key>.pdf`, or `epub/`, `-ch01` for parts). At O2G,
   report the `Full text` line of `Verify()`.

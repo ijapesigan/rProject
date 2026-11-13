@@ -155,13 +155,30 @@
     )
     abstract <- .LibLatex(x = abstract)
   } else {
-    questions <- c(
-      questions,
-      paste(
-        "No abstract in Crossref: look for it on the publisher's page",
-        "(final version)."
+    pubmed <- .LibPubMed(doi = first(record$DOI))
+    abstract <- NA_character_
+    if (!is.null(x = pubmed)) {
+      abstract <- .LibPubMedAbstract(xml = pubmed$xml)
+    }
+    if (!is.na(x = abstract)) {
+      questions <- c(
+        questions,
+        paste0(
+          "Abstract from PubMed ",
+          pubmed$pmid,
+          " (not Crossref): record the source in the log;",
+          " check that it is the published abstract."
+        )
       )
-    )
+    } else {
+      questions <- c(
+        questions,
+        paste(
+          "No abstract in Crossref or PubMed: look for it on the",
+          "publisher's page (final version)."
+        )
+      )
+    }
   }
   issn <- first(record$ISSN)
   publisher <- .LibLatex(x = first(record$publisher))
