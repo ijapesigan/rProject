@@ -348,7 +348,8 @@ Verify <- function(path,
       log = log,
       sha = sha,
       result = result,
-      summary = c(message_body, "")[1]
+      summary = c(message_body, "")[1],
+      subject = c(message_body, "")[1]
     )
   }
   if (any(failed) && error) {

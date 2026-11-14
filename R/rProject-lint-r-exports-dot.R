@@ -25,7 +25,11 @@
     rows <- lapply(
       X = exports,
       FUN = function(name) {
-        alias <- paste0("\\alias{", name, "}")
+        alias <- paste0("\\alias{", gsub(
+          pattern = "%",
+          replacement = "\\\\%",
+          x = name
+        ), "}")
         hit <- vapply(
           X = rd,
           FUN = function(lines) {
@@ -42,14 +46,15 @@
             "no @examples"
           },
           if (
-            !file.exists(
-              file.path(
-                path,
-                "tests",
-                "testthat",
-                paste0("test-", pkg, "-", .LintKebab(x = name), ".R")
+            grepl(pattern = "^[A-Za-z.][A-Za-z0-9._]*$", x = name) &&
+              !file.exists(
+                file.path(
+                  path,
+                  "tests",
+                  "testthat",
+                  paste0("test-", pkg, "-", .LintKebab(x = name), ".R")
+                )
               )
-            )
           ) {
             paste0("no test-", pkg, "-", .LintKebab(x = name), ".R")
           }

@@ -119,3 +119,77 @@
   }
   root
 }
+
+# A package project built from the template, for Conform(): the manifest
+# files (type cran), the files every package has, and an export with its test.
+.TestConform <- function(name = "conformPkg",
+                         public = "ijapesigan/conformPkg") {
+  root <- .TestProject(name = name)
+  cat(
+    "type <- \"cran\"\n",
+    file = file.path(root, ".setup", "scripts", "project.R"),
+    append = TRUE
+  )
+  for (folder in c(
+    "tests/testthat", "vignettes", "inst", ".setup/pkgdown", ".setup/repo"
+  )) {
+    dir.create(
+      path = file.path(root, folder),
+      showWarnings = FALSE,
+      recursive = TRUE
+    )
+  }
+  writeLines(text = "*.Rds", con = file.path(root, "vignettes", ".gitignore"))
+  writeLines(
+    text = c(
+      "library(testthat)",
+      paste0("library(", name, ")"),
+      "",
+      paste0("test_check(\"", name, "\")")
+    ),
+    con = file.path(root, "tests", "testthat.R")
+  )
+  writeLines(text = "citation", con = file.path(root, "inst", "CITATION"))
+  writeLines(
+    text = "destination: pkgdown",
+    con = file.path(root, ".setup", "pkgdown", "_pkgdown.yml")
+  )
+  writeLines(
+    text = c("jeksterslab-psu/conformPkg"),
+    con = file.path(root, ".setup", "repo", "private-github.md")
+  )
+  writeLines(
+    text = "https://www.overleaf.com/project/635a91d56f77ff3bdd9b8f9c",
+    con = file.path(root, ".setup", "repo", "private-overleaf.md")
+  )
+  writeLines(
+    text = public,
+    con = file.path(root, ".setup", "repo", "public-github.md")
+  )
+  writeLines(
+    text = c("export(Foo)", "S3method(print, foo)"),
+    con = file.path(root, "NAMESPACE")
+  )
+  writeLines(
+    text = "Foo <- function() {\n  1\n}",
+    con = file.path(root, "R", paste0(name, "-foo.R"))
+  )
+  writeLines(
+    text = "",
+    con = file.path(root, "tests", "testthat", paste0("test-", name, "-foo.R"))
+  )
+  suppressMessages(
+    expr = .TemplateWrite(path = root, type = "cran", check = FALSE)
+  )
+  root
+}
+
+# Rows of Conform() for a rule, without the printed table.
+.TestConformRows <- function(path,
+                             rule,
+                             reference = NULL) {
+  rows <- suppressMessages(
+    expr = Conform(path = path, reference = reference)
+  )
+  rows[rows$rule == rule, ]
+}

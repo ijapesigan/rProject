@@ -37,6 +37,24 @@ lapply(
         unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
+    testthat::test_that(
+      desc = paste(text, "handles an exported operator"),
+      code = {
+        root <- .TestLintProject(
+          files = list(
+            NAMESPACE = "export(\"%||%\")",
+            "man/or-null.Rd" = c(
+              "\\alias{\\%||\\%}",
+              "\\value{x}",
+              "\\examples{x}"
+            )
+          )
+        )
+        rows <- .LintRExports(path = root)
+        testthat::expect_equal(object = nrow(x = rows), expected = 0L)
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
   },
   text = "test-rProject-lint-r-exports"
 )

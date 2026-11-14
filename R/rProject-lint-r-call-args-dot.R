@@ -28,6 +28,7 @@
           ),
           no = NA_character_
         ),
+        first = data$text[segment[1]],
         line = data$line1[segment[1]],
         col = data$col1[segment[1]]
       )

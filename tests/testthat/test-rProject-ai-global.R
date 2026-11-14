@@ -134,8 +134,16 @@ lapply(
               x = grep(pattern = pattern, x = lines, value = TRUE)
             )
           }
+          # the long keywords are in keywords.md, next to AGENTS.md
+          sources <- c(global, file.path(dirname(path = global), "keywords.md"))
           defined <- keywords(
-            lines = readLines(con = global, warn = FALSE),
+            lines = unlist(
+              x = lapply(
+                X = sources[file.exists(sources)],
+                FUN = readLines,
+                warn = FALSE
+              )
+            ),
             pattern = "^- \"([^\"]+)\".*"
           )
           listed <- keywords(

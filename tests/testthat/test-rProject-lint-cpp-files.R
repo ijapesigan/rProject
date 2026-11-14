@@ -26,6 +26,20 @@ lapply(
         unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
+    testthat::test_that(
+      desc = paste(text, "passes a locked copy of a declared library"),
+      code = {
+        root <- .TestLintProject(
+          files = list(
+            ".setup/cpp/linearAlgebra/linearAlgebra-foo.cpp" = c("int x;"),
+            ".setup/cpp/linearAlgebra-bar.cpp" = c("int x;")
+          )
+        )
+        rows <- .LintCppFiles(path = root)
+        testthat::expect_false(object = any(rows$rule == "cpp-file-name"))
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
   },
   text = "test-rProject-lint-cpp-files"
 )
