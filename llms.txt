@@ -83,6 +83,12 @@ computing*. R Foundation for Statistical Computing.
 - [`ConfigFiles()`](https://ijapesigan.github.io/rProject/reference/ConfigFiles.md)
   : Setup Config Files
 
+- [`Conform()`](https://ijapesigan.github.io/rProject/reference/Conform.md)
+  : Check a Project Against the rProject Standard
+
+- [`ConformFix()`](https://ijapesigan.github.io/rProject/reference/ConformFix.md)
+  : Fix What Conform Can Fix
+
 - [`Coverage()`](https://ijapesigan.github.io/rProject/reference/Coverage.md)
   : Code Coverage
 

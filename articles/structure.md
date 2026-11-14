@@ -229,6 +229,7 @@ in it) and names them, so that they can be deleted in Overleaf too.
 | `make verify RECORD=TRUE` | verify and record a push from Overleaf |
 | `make auto` | publish to the public repository |
 | `make tree` | the project’s folders and what each is for |
+| `make conform` | compare the project with the standard; `FIX=TRUE` fixes what is safe |
 | `make template` | write the template files only |
 | `make latex`, `make pdf` | knit and compile the LaTeX sources |
 

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.69</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.70</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,44 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.70" id="rproject-0070">rProject 0.0.70<a class="anchor" aria-label="anchor" href="#rproject-0070"></a></h2>
+<p>(One release: 0.0.69 was pushed to the private repository only; its changes ship here.)</p>
+<div class="section level3">
+<h3 id="lint-0-0-70">Lint<a class="anchor" aria-label="anchor" href="#lint-0-0-70"></a></h3>
+<ul><li>
+<code>exports</code>: an exported operator (<code>%||%</code>) matches its Rd alias (<code>\alias{\%||\%}</code>) and skips the test-file check (its name is not a file name).</li>
+<li>
+<code>named-args</code>: a forwarded <code>...</code> (or <code>..1</code>) is not a positional argument.</li>
+<li>
+<code>file-name</code> and <code>cpp-file-name</code> exempt locked copies of another library (the files <code>make</code> copies from <code>.setup/r-dependencies/&lt;lib&gt;/</code> and <code>.setup/cpp/&lt;lib&gt;/</code>, and <code>&lt;lib&gt;-&lt;name&gt;</code> files for a declared <code>&lt;lib&gt;</code>); new internal <code>.LintLocked()</code>.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="verify-0-0-70">Verify<a class="anchor" aria-label="anchor" href="#verify-0-0-70"></a></h3>
+<ul><li>
+<code>.VerifyRecord()</code> fills the pending row of <code>index.md</code> whose summary is the pushed commit’s subject (two fix-ups of one log no longer swap rows); with no match it fills the first pending row as before.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="upload-set-0-0-70">Upload set<a class="anchor" aria-label="anchor" href="#upload-set-0-0-70"></a></h3>
+<ul><li>New internal <code>.UploadSet()</code>: an upload folder holds no manifest tier 2 file except <code>.gitignore</code>, <code>latexmkrc</code>, <code>Makefile</code>, and <code>project.Rproj</code>, and the nested <code>.gitignore</code> files (made by hand in Overleaf), except those in <code>.github</code>, <code>.setup/repo</code>, and <code>.setup/scripts</code>, which <code>make</code> writes. <code><a href="../reference/Upload.html">Upload()</a></code> and <code><a href="../reference/ConformFix.html">ConformFix()</a></code> use it.</li>
+<li>
+<code><a href="../reference/Conform.html">Conform()</a></code> rules <code>upload-tier2</code> (a tier 2 file in an unpushed upload folder: <code>fix</code>, <code><a href="../reference/ConformFix.html">ConformFix()</a></code> removes it from the folder; in a pushed one: <code>info</code>) and <code>pushed-tier2</code> (a tier 2 file in the pushed private repository: <code>info</code>, deleting it in Overleaf is optional).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="clean-0-0-70">Clean<a class="anchor" aria-label="anchor" href="#clean-0-0-70"></a></h3>
+<ul><li>
+<code><a href="../reference/Clean.html">Clean()</a></code> no longer deletes <code>latexmkrc</code> or the <code>.setup/notes</code> folder (they held a project’s kept <code>latexmkrc</code> and private notes such as <code>claude.txt</code>). <code><a href="../reference/LatexCompile.html">LatexCompile()</a></code> and <code><a href="../reference/LatexTikzCompile.html">LatexTikzCompile()</a></code> remove <code>latexmkrc</code> afterwards only when they copied it.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="conform-0-0-70">Conform<a class="anchor" aria-label="anchor" href="#conform-0-0-70"></a></h3>
+<ul><li>New <code><a href="../reference/Conform.html">Conform()</a></code> (<code>make conform</code>): compares a project with the standard (the manifest of its type, <code>make tree</code>, the file set of a <code>reference</code> project, strays such as <code>main.tex</code>, the files every package has, test names of the exports through <code>.LintKebab()</code>, file names and one function per file with locked copies exempt, <code>lint_error &lt;- FALSE</code>, the lock, <code>.setup/repo/</code>) and returns the findings as <code>fix</code>, <code>decide</code>, or <code>info</code>; a finding the reference has too is not reported. <code>remote = TRUE</code> adds a read-only check of the private repository.</li>
+<li>
+<code>Conform(lint = TRUE, tests = TRUE)</code> (<code>make conform LINT=TRUE TESTS=TRUE</code>) also runs the real <code>make lint</code> and <code><a href="https://devtools.r-lib.org/reference/test.html" class="external-link">devtools::test()</a></code> (same R, no Apptainer call) and reports each lint message, house row, and test failure as a <code>decide</code> row (rules <code>lint</code>, <code>tests</code>), with the test counts; raw output saved in <code>log_dir</code> (a temporary folder by default). <code><a href="../reference/ConformFix.html">ConformFix()</a></code> takes the same arguments for a final re-check (never run otherwise).</li>
+<li>New <code><a href="../reference/ConformFix.html">ConformFix()</a></code> (<code>make conform FIX=TRUE</code>): writes the <code>fix</code> rows (never overwrites; removes strays only with <code>remove = TRUE</code>, never a locked copy), adds a “Structure audit additions” section to the log (a fix-up when the log was pushed), fills the upload folder, and reports the drift between the upload folder and the project.</li>
+<li>
+<code>inst/template/once/citation-default.txt</code>: the default <code>inst/CITATION</code>.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.69" id="rproject-0069">rProject 0.0.69<a class="anchor" aria-label="anchor" href="#rproject-0069"></a></h2>
 <div class="section level3">

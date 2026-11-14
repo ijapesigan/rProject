@@ -92,6 +92,7 @@ the user maintains (aims, data, notation, co-authors, open issues).
 | `make release` | `make all`, the secret scan, then `make auto`; stops at the first failure |
 | `make dotfiles` | install the shell, tmux, Vim, and xterm files from rProject (`make all` does not) |
 | `make tree` | the project’s folders and what each is for; flags missing and non-standard folders |
+| `make conform` | compare the project with the standard (`REFERENCE=<project>`, `REMOTE=TRUE`); `FIX=TRUE` writes the `fix` rows, then the log and the upload folder |
 | `make project` | settings, template files; restores `.setup/scripts/rproject.lock` (rProject, image, snapshot) |
 | `make upgrade` | move to the newest rProject; the next `make auto` updates the lock. Never upgrade a package the image has: add it to the image |
 

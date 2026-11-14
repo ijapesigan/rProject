@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.69</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.70</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -183,6 +183,8 @@
 <td>install the shell, tmux, Vim, and xterm files from rProject (<code>make all</code> does not)</td>
 </tr><tr><td><code>make tree</code></td>
 <td>the project’s folders and what each is for; flags missing and non-standard folders</td>
+</tr><tr><td><code>make conform</code></td>
+<td>compare the project with the standard (<code>REFERENCE=&lt;project&gt;</code>, <code>REMOTE=TRUE</code>); <code>FIX=TRUE</code> writes the <code>fix</code> rows, then the log and the upload folder</td>
 </tr><tr><td><code>make project</code></td>
 <td>settings, template files; restores <code>.setup/scripts/rproject.lock</code> (rProject, image, snapshot)</td>
 </tr><tr><td><code>make upgrade</code></td>
