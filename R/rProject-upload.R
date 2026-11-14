@@ -99,6 +99,7 @@ Upload <- function(path,
   files <- listed$file[listed$action == "upload"]
   delete <- listed$file[listed$action == "delete"]
   files <- files[!grepl(pattern = "^TODO$", x = files)]
+  files <- files[.UploadSet(path = path, files = files)]
   present <- file.exists(file.path(path, files))
   for (file in files[present]) {
     target <- file.path(folder, file)

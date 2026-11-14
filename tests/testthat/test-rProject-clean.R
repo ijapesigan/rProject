@@ -4,7 +4,7 @@ lapply(
   FUN = function(i,
                  text) {
     fill <- function(root) {
-      for (dir in c("docs", "pkgdown", ".setup/latex/pdf", "man", "src")) {
+      for (dir in c("docs", "pkgdown", ".setup/latex/pdf", ".setup/notes", "man", "src")) {
         dir.create(
           path = file.path(root, dir),
           recursive = TRUE,
@@ -12,7 +12,7 @@ lapply(
         )
       }
       for (file in c(
-        "_pkgdown.yml", "latexmkrc", "README.html", "fig-vignettes-a.png",
+        "_pkgdown.yml", "latexmkrc", ".setup/notes/claude.txt", "README.html", "fig-vignettes-a.png",
         "src/a.o", "src/a.so", "NAMESPACE", "README.md", "CITATION.cff",
         "R/keep.R", ".setup/scripts/secrets.R", "R/secrets.R"
       )) {
@@ -34,7 +34,7 @@ lapply(
               root = root,
               files = c(
                 "docs", "pkgdown", ".setup/latex/pdf", "_pkgdown.yml",
-                "latexmkrc", "README.html", "fig-vignettes-a.png",
+                "README.html", "fig-vignettes-a.png",
                 "src/a.o", "src/a.so", "man", "NAMESPACE", "README.md",
                 "CITATION.cff"
               )
@@ -43,7 +43,13 @@ lapply(
         )
         testthat::expect_true(
           object = all(
-            exists(root = root, files = c("R/keep.R", "DESCRIPTION"))
+            exists(
+              root = root,
+              files = c(
+                "R/keep.R", "DESCRIPTION", "latexmkrc",
+                ".setup/notes/claude.txt"
+              )
+            )
           )
         )
         testthat::expect_true(

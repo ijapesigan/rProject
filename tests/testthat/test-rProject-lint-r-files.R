@@ -26,6 +26,20 @@ lapply(
         unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
+    testthat::test_that(
+      desc = paste(text, "passes a locked copy of a dependency"),
+      code = {
+        root <- .TestLintProject(
+          files = list(
+            ".setup/r-dependencies/wald/wald-ci-wald-dot.R" = c("y <- 1"),
+            "R/wald-ci-wald-dot.R" = c("y <- 1")
+          )
+        )
+        rows <- .LintRFiles(path = root)
+        testthat::expect_false(object = any(rows$rule == "file-name"))
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
   },
   text = "test-rProject-lint-r-files"
 )

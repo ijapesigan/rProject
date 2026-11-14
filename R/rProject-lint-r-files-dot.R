@@ -42,7 +42,8 @@
         files <- .LintList(path = path, pattern = rule$folder)
         bad <- files[
           !grepl(pattern = rule$good, x = files) &
-            !grepl(pattern = rule$skip, x = files)
+            !grepl(pattern = rule$skip, x = files) &
+            !.LintLocked(path = path, files = files)
         ]
         .LintRow(
           file = bad,

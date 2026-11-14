@@ -3,7 +3,10 @@
   pkg <- .LintPkg(path = path)
   files <- .LintCppList(path = path)
   good <- paste0("^(000-forward-declarations|", pkg, "-[a-z0-9-]+)\\.cpp$")
-  bad <- files[!grepl(pattern = good, x = basename(path = files))]
+  bad <- files[
+    !grepl(pattern = good, x = basename(path = files)) &
+      !.LintLocked(path = path, files = files)
+  ]
   .LintRow(
     file = bad,
     line = rep(x = 1L, times = length(x = bad)),

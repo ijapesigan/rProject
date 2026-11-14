@@ -2,7 +2,8 @@
                           log,
                           sha,
                           result,
-                          summary = "") {
+                          summary = "",
+                          subject = "") {
   logs <- file.path(path, ".setup", "logs")
   pending <- "\\(pending\\)"
   date <- .LogDate()
@@ -34,10 +35,27 @@
   index <- file.path(logs, "index.md")
   if (file.exists(index)) {
     lines <- readLines(con = index, warn = FALSE)
-    row <- which(
+    rows <- which(
       x = grepl(pattern = pending, x = lines) &
         grepl(pattern = log, x = lines, fixed = TRUE)
-    )[1]
+    )
+    # the pending row whose summary is the pushed commit's subject; else the
+    # first pending row (two fix-ups of one log have two pending rows)
+    subject <- trimws(x = subject)
+    same <- vapply(
+      X = rows,
+      FUN = function(at) {
+        cells <- strsplit(x = lines[at], split = "|", fixed = TRUE)[[1]]
+        cell <- trimws(x = cells[5])
+        usable <- nzchar(x = subject) && !is.na(x = cell) && nzchar(x = cell)
+        usable && (
+          startsWith(x = cell, prefix = subject) ||
+            startsWith(x = subject, prefix = cell)
+        )
+      },
+      FUN.VALUE = logical(length = 1)
+    )
+    row <- c(rows[same], rows)[1]
     if (!is.na(x = row)) {
       lines[row] <- sub(pattern = pending, replacement = sha, x = lines[row])
       # the last cell, whatever it holds (empty, "not pushed", ...)

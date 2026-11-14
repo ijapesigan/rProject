@@ -1,3 +1,33 @@
+# rProject 0.0.70
+
+(One release: 0.0.69 was pushed to the private repository only; its changes ship here.)
+
+## Lint
+
+- `exports`: an exported operator (`%||%`) matches its Rd alias (`\alias{\%||\%}`) and skips the test-file check (its name is not a file name).
+- `named-args`: a forwarded `...` (or `..1`) is not a positional argument.
+- `file-name` and `cpp-file-name` exempt locked copies of another library (the files `make` copies from `.setup/r-dependencies/<lib>/` and `.setup/cpp/<lib>/`, and `<lib>-<name>` files for a declared `<lib>`); new internal `.LintLocked()`.
+
+## Verify
+
+- `.VerifyRecord()` fills the pending row of `index.md` whose summary is the pushed commit's subject (two fix-ups of one log no longer swap rows); with no match it fills the first pending row as before.
+
+## Upload set
+
+- New internal `.UploadSet()`: an upload folder holds no manifest tier 2 file except `.gitignore`, `latexmkrc`, `Makefile`, and `project.Rproj`, and the nested `.gitignore` files (made by hand in Overleaf), except those in `.github`, `.setup/repo`, and `.setup/scripts`, which `make` writes. `Upload()` and `ConformFix()` use it.
+- `Conform()` rules `upload-tier2` (a tier 2 file in an unpushed upload folder: `fix`, `ConformFix()` removes it from the folder; in a pushed one: `info`) and `pushed-tier2` (a tier 2 file in the pushed private repository: `info`, deleting it in Overleaf is optional).
+
+## Clean
+
+- `Clean()` no longer deletes `latexmkrc` or the `.setup/notes` folder (they held a project's kept `latexmkrc` and private notes such as `claude.txt`). `LatexCompile()` and `LatexTikzCompile()` remove `latexmkrc` afterwards only when they copied it.
+
+## Conform
+
+- New `Conform()` (`make conform`): compares a project with the standard (the manifest of its type, `make tree`, the file set of a `reference` project, strays such as `main.tex`, the files every package has, test names of the exports through `.LintKebab()`, file names and one function per file with locked copies exempt, `lint_error <- FALSE`, the lock, `.setup/repo/`) and returns the findings as `fix`, `decide`, or `info`; a finding the reference has too is not reported. `remote = TRUE` adds a read-only check of the private repository.
+- `Conform(lint = TRUE, tests = TRUE)` (`make conform LINT=TRUE TESTS=TRUE`) also runs the real `make lint` and `devtools::test()` (same R, no Apptainer call) and reports each lint message, house row, and test failure as a `decide` row (rules `lint`, `tests`), with the test counts; raw output saved in `log_dir` (a temporary folder by default). `ConformFix()` takes the same arguments for a final re-check (never run otherwise).
+- New `ConformFix()` (`make conform FIX=TRUE`): writes the `fix` rows (never overwrites; removes strays only with `remove = TRUE`, never a locked copy), adds a "Structure audit additions" section to the log (a fix-up when the log was pushed), fills the upload folder, and reports the drift between the upload folder and the project.
+- `inst/template/once/citation-default.txt`: the default `inst/CITATION`.
+
 # rProject 0.0.69
 
 ## Library

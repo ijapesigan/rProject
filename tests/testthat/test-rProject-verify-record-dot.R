@@ -110,6 +110,40 @@ lapply(
         )
       }
     )
+    # two pending rows for one log: each push lands on its own row, by subject
+    path <- setup(
+      log_lines = c(
+        "## Pushes", "", "| Commit | Date | Result |", "|---|---|---|",
+        "| (pending) | | |"
+      ),
+      index_lines = c(
+        index_head,
+        "| 2026-01-01 | (pending) | 2026-01-01-x.md | first | |",
+        "| 2026-01-01 | (pending) | 2026-01-01-x.md | second | |"
+      )
+    )
+    .VerifyRecord(
+      path = path, log = "2026-01-01-x.md", sha = "bbb2222", result = "ok",
+      summary = "second", subject = "second"
+    )
+    .VerifyRecord(
+      path = path, log = "2026-01-01-x.md", sha = "aaa1111", result = "ok",
+      summary = "first", subject = "first"
+    )
+    index <- read(path = path, file = "index.md")
+    testthat::test_that(
+      desc = text,
+      code = {
+        testthat::expect_equal(
+          object = index[3],
+          expected = "| 2026-01-01 | aaa1111 | 2026-01-01-x.md | first | ok |"
+        )
+        testthat::expect_equal(
+          object = index[4],
+          expected = "| 2026-01-01 | bbb2222 | 2026-01-01-x.md | second | ok |"
+        )
+      }
+    )
   },
   text = "test-rProject-verify-record-dot"
 )

@@ -31,17 +31,12 @@ Clean <- function(path,
         "detritus",
         "doc",
         "docs",
-        "latexmkrc",
         "pkgdown",
         "quarto",
         "README.html",
         "README.knit.md",
         "TEMPDIR",
         "_site",
-        file.path(
-          ".setup",
-          "notes"
-        ),
         file.path(
           ".setup",
           "latex",

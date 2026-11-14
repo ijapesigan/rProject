@@ -33,6 +33,26 @@ lapply(
         unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
+    testthat::test_that(
+      desc = paste(text, "does not count a forwarded dots as positional"),
+      code = {
+        root <- .TestLintProject(
+          files = list(
+            "R/x.R" = c(
+              "f <- function(x, y, ...) {",
+              "  x",
+              "}",
+              "g <- function(...) {",
+              "  f(x = 1, ...)",
+              "}"
+            )
+          )
+        )
+        rows <- .LintRNamedArgs(path = root)
+        testthat::expect_false(object = any(rows$rule == "named-args"))
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
   },
   text = "test-rProject-lint-r-named-args"
 )

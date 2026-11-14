@@ -19,6 +19,8 @@ LatexTikzCompile <- function(path,
     "latexmkrc",
     package = "rProject"
   )
+  # a latexmkrc the project keeps (Overleaf) is never removed afterwards
+  latexmkrc_new <- !file.exists(file.path(path, "latexmkrc"))
   file.copy(
     from = latexmkrc,
     to = path
@@ -133,12 +135,9 @@ LatexTikzCompile <- function(path,
         )
       )
     }
-    unlink(
-      x = file.path(
-        path,
-        "latexmkrc"
-      )
-    )
+    if (latexmkrc_new) {
+      unlink(x = file.path(path, "latexmkrc"))
+    }
     pdf_files <- list.files(
       path = pdf_folder,
       pattern = "\\.pdf$",

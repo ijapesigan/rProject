@@ -1,4 +1,4 @@
-.PHONY: all release build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log fixup upload sizecheck public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes template tree upgrade
+.PHONY: all release build clean cleanall cleanpkg cleanproj cleanpush cleantinytex bib libcheck libformat bibrproject clone coverage data dependencies readme docs dotfiles aiglobal secretscan verify spec log fixup upload sizecheck public ai manifest install latex lint local localforce pdf pkg pkgdown project push quarto style tinytex tinytexforce vignettes template tree conform upgrade
 
 push: build docs latex coverage cleanpush
 
@@ -24,6 +24,18 @@ template:
 
 tree:
 	@Rscript -e "rProject::Tree(\"${PWD}\")"
+
+# make conform [REFERENCE=<project>] [REMOTE=TRUE] [LINT=TRUE] [TESTS=TRUE] [FIX=TRUE [TOPIC=<topic>]]
+# compares the project with the standard; FIX=TRUE writes the missing files
+# and removes the strays (main.tex), then updates the log and the upload folder;
+# LINT=TRUE runs make lint and TESTS=TRUE runs the unit tests (findings, logs in tempdir)
+conform:
+	@echo "\n\nChecking the project against the standard...\n\n"
+	@if [ "$(FIX)" = "TRUE" ]; then \
+	Rscript -e "rProject::ConformFix(\"${PWD}\", reference = if (nzchar(\"$(REFERENCE)\")) \"$(REFERENCE)\", topic = \"$(or ${TOPIC},conform)\", remove = TRUE, lint = $(or ${LINT},FALSE), tests = $(or ${TESTS},FALSE))"; \
+	else \
+	Rscript -e "rProject::Conform(\"${PWD}\", reference = if (nzchar(\"$(REFERENCE)\")) \"$(REFERENCE)\", remote = $(or ${REMOTE},FALSE), lint = $(or ${LINT},FALSE), tests = $(or ${TESTS},FALSE))"; \
+	fi
 
 pkg:
 	@echo "\n\nInstalling packages...\n\n"
