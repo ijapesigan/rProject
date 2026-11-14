@@ -4,7 +4,9 @@ lapply(
   FUN = function(i,
                  text) {
     fill <- function(root) {
-      for (dir in c("docs", "pkgdown", ".setup/latex/pdf", ".setup/notes", "man", "src")) {
+      for (dir in c(
+        "docs", "pkgdown", ".setup/latex/pdf", ".setup/notes", "man", "src"
+      )) {
         dir.create(
           path = file.path(root, dir),
           recursive = TRUE,
@@ -12,8 +14,9 @@ lapply(
         )
       }
       for (file in c(
-        "_pkgdown.yml", "latexmkrc", ".setup/notes/claude.txt", "README.html", "fig-vignettes-a.png",
-        "src/a.o", "src/a.so", "NAMESPACE", "README.md", "CITATION.cff",
+        "_pkgdown.yml", "latexmkrc", ".setup/notes/claude.txt", "README.html",
+        "fig-vignettes-a.png", "src/a.o", "src/a.so", "NAMESPACE",
+        "README.md", "CITATION.cff",
         "R/keep.R", ".setup/scripts/secrets.R", "R/secrets.R"
       )) {
         writeLines(text = "x", con = file.path(root, file))

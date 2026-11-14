@@ -8,10 +8,11 @@
   tier_two <- template$files$path[template$files$tier == "2"]
   # a nested .gitignore is made by hand in Overleaf: it may be uploaded,
   # except in the folders make writes (.github, .setup/repo, .setup/scripts)
+  made <- c(".github", ".setup/repo", ".setup/scripts")
   nested <- tier_two[
     basename(path = tier_two) == ".gitignore" &
       dirname(path = tier_two) != "." &
-      !dirname(path = tier_two) %in% c(".github", ".setup/repo", ".setup/scripts")
+      !dirname(path = tier_two) %in% made
   ]
   !(files %in% setdiff(x = tier_two, y = c(kept, nested)))
 }
