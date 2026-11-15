@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.72</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.73</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,19 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.73" id="rproject-0073">rProject 0.0.73<a class="anchor" aria-label="anchor" href="#rproject-0073"></a></h2>
+<div class="section level3">
+<h3 id="lint-0-0-73">Lint<a class="anchor" aria-label="anchor" href="#lint-0-0-73"></a></h3>
+<ul><li>
+<code>named-args</code>: a forwarded <code>...</code> (or <code>..1</code>) is not a positional argument also when the callee is defined in another file (0.0.70 handled only the callee in the same file: the text of an expression argument is empty in the parse data, so <code>first</code> is now the first terminal token).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="build-0-0-73">Build<a class="anchor" aria-label="anchor" href="#build-0-0-73"></a></h3>
+<ul><li>
+<code><a href="../reference/BuildIgnore.html">BuildIgnore()</a></code> lists <code>^cran-comments\\.md$</code> by default (R CMD check notes it as a non-standard top-level file).</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.72" id="rproject-0072">rProject 0.0.72<a class="anchor" aria-label="anchor" href="#rproject-0072"></a></h2>
 <div class="section level3">
