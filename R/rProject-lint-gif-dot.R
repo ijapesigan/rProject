@@ -29,7 +29,7 @@
           "over 10 MB"
         },
         if (!any(grepl(pattern = name, x = text, fixed = TRUE))) {
-          "no source: make it with Fig*() and GifWrite(), or a script"
+          "no source: make it with the texHelper figure helpers, or a script"
         }
       )
       .LintRow(

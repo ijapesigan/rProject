@@ -34,3 +34,14 @@ path	since
 .github/workflows/rhub-donttest.yml	0.0.64
 .github/workflows/rhub-etc.yml	0.0.64
 .github/workflows/quarto-quarto-pub.yml	0.0.66
+.setup/r-miscellaneous/texTools/texTools-array-dot.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-fig-save-dot.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-fig-size-dot.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-fig-theme-dot.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-gif-frames.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-gif-write.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-okabe-ito-dot.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-preamble-combined-dot.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-preamble-biblatex-dot.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-round-dot.R	0.0.71
+.setup/r-miscellaneous/texTools/texTools-tabular-dot.R	0.0.71

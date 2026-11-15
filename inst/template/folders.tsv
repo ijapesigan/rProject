@@ -32,7 +32,7 @@ pkgdown/	rProject,cran,man,talk	FALSE	FALSE	make	the public site	the rendered pk
 .setup/build/	rProject,cran,man	FALSE	TRUE	make	the user, CRAN	the package tarball and the PDF manual (`Build()`, `Manual()`)
 .setup/cpp/	rProject,cran,man	FALSE	TRUE	user	`Build()`	C++ sources, copied into `src/`
 .setup/r-dependencies/	rProject,cran,man	FALSE	TRUE	user	`Dependencies()`	R functions shared with other packages, copied into `R/`
-.setup/r-miscellaneous/	rProject,cran,man,lib,talk	FALSE	TRUE	user	the user	helpers that are not part of the package (for example `texTools`)
+.setup/r-miscellaneous/	rProject,cran,man,lib,talk	FALSE	TRUE	user	the user	helpers that are not part of the package (for example `texHelper`)
 .setup/tests-benchmark/	rProject,cran,man	FALSE	TRUE	user	`.setup/latex/r-scripts/tests-benchmark.R`	benchmark tests, outside the unit tests (`test-benchmark-<pkg>-<name>.R`)
 .setup/tests-external/	rProject,cran,man	FALSE	TRUE	user	`.setup/latex/r-scripts/tests-external.R`	external tests, outside the unit tests (`test-external-<pkg>-<name>.R`)
 .setup/data-raw/	rProject,man	FALSE	TRUE	user	`DataPath()`, `DataManifest()`	shareable raw data
