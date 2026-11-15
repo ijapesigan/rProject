@@ -66,7 +66,7 @@ the ones that are missing or not standard for its type.
 | `.setup/build/` | rProject, cran, man |  | yes | the package tarball and the PDF manual ([`Build()`](https://ijapesigan.github.io/rProject/reference/Build.md), [`Manual()`](https://ijapesigan.github.io/rProject/reference/Manual.md)) |
 | `.setup/cpp/` | rProject, cran, man |  | yes | C++ sources, copied into `src/` |
 | `.setup/r-dependencies/` | rProject, cran, man |  | yes | R functions shared with other packages, copied into `R/` |
-| `.setup/r-miscellaneous/` | rProject, cran, man, lib, talk |  | yes | helpers that are not part of the package (for example `texTools`) |
+| `.setup/r-miscellaneous/` | rProject, cran, man, lib, talk |  | yes | helpers that are not part of the package (for example `texHelper`) |
 | `.setup/tests-benchmark/` | rProject, cran, man |  | yes | benchmark tests, outside the unit tests (`test-benchmark-<pkg>-<name>.R`) |
 | `.setup/tests-external/` | rProject, cran, man |  | yes | external tests, outside the unit tests (`test-external-<pkg>-<name>.R`) |
 | `.setup/data-raw/` | rProject, man |  | yes | shareable raw data |
@@ -197,6 +197,17 @@ in it) and names them, so that they can be deleted in Overleaf too.
 | `.github/workflows/rhub-donttest.yml` | 0.0.64 |
 | `.github/workflows/rhub-etc.yml` | 0.0.64 |
 | `.github/workflows/quarto-quarto-pub.yml` | 0.0.66 |
+| `.setup/r-miscellaneous/texTools/texTools-array-dot.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-fig-save-dot.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-fig-size-dot.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-fig-theme-dot.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-gif-frames.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-gif-write.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-okabe-ito-dot.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-preamble-combined-dot.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-preamble-biblatex-dot.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-round-dot.R` | 0.0.71 |
+| `.setup/r-miscellaneous/texTools/texTools-tabular-dot.R` | 0.0.71 |
 
 ## From Overleaf to the public repository
 

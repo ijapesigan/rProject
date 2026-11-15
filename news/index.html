@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.70</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.71</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,18 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.71" id="rproject-0071">rProject 0.0.71<a class="anchor" aria-label="anchor" href="#rproject-0071"></a></h2>
+<div class="section level3">
+<h3 id="helpers-0-0-71">Helpers<a class="anchor" aria-label="anchor" href="#helpers-0-0-71"></a></h3>
+<ul><li>The template ships texHelper, not texTools: <code>.setup/r-miscellaneous/texHelper/texHelper-*.R</code>, every function of the texHelper library (the files are copies of its <code>R/</code>; texHelper is the source). The figure helpers (<code>.FigSave()</code>, <code>.FigSize()</code>, <code>.FigTheme()</code>, <code>.OkabeIto()</code>, <code>.GifFrames()</code>, <code>.GifWrite()</code>) are now texHelper’s; <code>GifFrames()</code> and <code>GifWrite()</code> gained the dot (they are internal).</li>
+<li>
+<code>texHelper-preamble-combined-dot.R</code> defines <code>.PreambleCombined()</code>, the function the Rtex templates call. The old name, <code>texHelper-preamble-biblatex-combined-dot.R</code> (<code>.PreambleBiblatexCombined()</code> and an alias), had a path of 108 bytes in the tarball, over the portable limit of 100 (a note in <code>R CMD check</code>); <code>.PreambleBiblatexCombined()</code> is gone.</li>
+<li>
+<code>removed.tsv</code> lists the 11 old <code>texTools-*.R</code> paths, so <code>make</code> deletes them.</li>
+<li>Lint: the <code>object_usage_linter</code> exemption matches <code>^texHelper-</code> (rProject and <code>lint.yml</code>).</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.70" id="rproject-0070">rProject 0.0.70<a class="anchor" aria-label="anchor" href="#rproject-0070"></a></h2>
 <p>(One release: 0.0.69 was pushed to the private repository only; its changes ship here.)</p>

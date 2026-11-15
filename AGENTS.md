@@ -65,7 +65,7 @@ the user maintains (aims, data, notation, co-authors, open issues).
 | `.setup/build/` | the package tarball and the PDF manual ([`Build()`](https://ijapesigan.github.io/rProject/reference/Build.md), [`Manual()`](https://ijapesigan.github.io/rProject/reference/Manual.md)) |
 | `.setup/cpp/` | C++ sources, copied into `src/` |
 | `.setup/r-dependencies/` | R functions shared with other packages, copied into `R/` |
-| `.setup/r-miscellaneous/` | helpers that are not part of the package (for example `texTools`) |
+| `.setup/r-miscellaneous/` | helpers that are not part of the package (for example `texHelper`) |
 | `.setup/tests-benchmark/` | benchmark tests, outside the unit tests (`test-benchmark-<pkg>-<name>.R`) |
 | `.setup/tests-external/` | external tests, outside the unit tests (`test-external-<pkg>-<name>.R`) |
 | `.setup/data-raw/` | shareable raw data |
