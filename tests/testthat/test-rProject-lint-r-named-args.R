@@ -54,7 +54,7 @@ lapply(
       }
     )
     testthat::test_that(
-      desc = paste(text, "does not count forwarded dots of a call to another file"),
+      desc = paste(text, "does not count forwarded dots across files"),
       code = {
         root <- .TestLintProject(
           files = list(
