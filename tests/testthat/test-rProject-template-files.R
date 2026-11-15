@@ -106,7 +106,7 @@ lapply(
         files <- .TemplateFiles(type = "cran")
         dirs <- files$path[files$kind == "dir"]
         testthat::expect_true(object = ".setup/cpp/.gitignore" %in% dirs)
-        testthat::expect_false(object = ".setup/data-raw/.gitignore" %in% dirs)
+        testthat::expect_true(object = ".setup/data-raw/.gitignore" %in% dirs)
         testthat::expect_false(
           object = ".setup/bin/.gitignore" %in% .TemplateFiles(
             type = "man"

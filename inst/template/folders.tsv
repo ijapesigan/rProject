@@ -35,8 +35,8 @@ pkgdown/	rProject,cran,man,talk	FALSE	FALSE	make	the public site	the rendered pk
 .setup/r-miscellaneous/	rProject,cran,man,lib,talk	FALSE	TRUE	user	the user	helpers that are not part of the package (for example `texHelper`)
 .setup/tests-benchmark/	rProject,cran,man	FALSE	TRUE	user	`.setup/latex/r-scripts/tests-benchmark.R`	benchmark tests, outside the unit tests (`test-benchmark-<pkg>-<name>.R`)
 .setup/tests-external/	rProject,cran,man	FALSE	TRUE	user	`.setup/latex/r-scripts/tests-external.R`	external tests, outside the unit tests (`test-external-<pkg>-<name>.R`)
-.setup/data-raw/	rProject,man	FALSE	TRUE	user	`DataPath()`, `DataManifest()`	shareable raw data
-.setup/data-process/	rProject,man	FALSE	TRUE	user	`DataProcess()`	scripts that build `data/*.rda` from the raw data
+.setup/data-raw/	rProject,cran,man	FALSE	TRUE	user	`DataPath()`, `DataManifest()`	shareable raw data
+.setup/data-process/	rProject,cran,man	FALSE	TRUE	user	`DataProcess()`	scripts that build `data/*.rda` from the raw data
 .setup/data-analysis/	rProject,man	FALSE	TRUE	user	`DataAnalysis()`	analysis scripts and their output
 .setup/data-dependencies/	rProject,man	FALSE	TRUE	user	`.setup/latex/r-scripts/`, `prerender.R`	`.rda` files loaded for knitr and Quarto
 .setup/data-private/	rProject,man	TRUE	FALSE	user	`DataPath()`, `DataManifest()`	restricted data: never public
