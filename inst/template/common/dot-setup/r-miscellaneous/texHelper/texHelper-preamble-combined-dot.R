@@ -31,14 +31,14 @@
 #' @family Bibliography Functions
 #' @keywords texHelper biblatex internal
 #' @noRd
-.PreambleBiblatexCombined <- function(path,
-                                      output_path,
-                                      style = "apa",
-                                      sortcites = TRUE,
-                                      sorting = "nyt",
-                                      map = TRUE,
-                                      maxcitenames = FALSE,
-                                      fn_bib = "bib.bib") {
+.PreambleCombined <- function(path,
+                              output_path,
+                              style = "apa",
+                              sortcites = TRUE,
+                              sorting = "nyt",
+                              map = TRUE,
+                              maxcitenames = FALSE,
+                              fn_bib = "bib.bib") {
   if (dir.exists(paths = path)) {
     bibs <- list.files(
       path = path,
@@ -147,6 +147,3 @@
   }
   out
 }
-
-# the name that the Rtex templates of rProject call
-.PreambleCombined <- .PreambleBiblatexCombined
