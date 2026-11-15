@@ -69,8 +69,8 @@ the ones that are missing or not standard for its type.
 | `.setup/r-miscellaneous/` | rProject, cran, man, lib, talk |  | yes | helpers that are not part of the package (for example `texHelper`) |
 | `.setup/tests-benchmark/` | rProject, cran, man |  | yes | benchmark tests, outside the unit tests (`test-benchmark-<pkg>-<name>.R`) |
 | `.setup/tests-external/` | rProject, cran, man |  | yes | external tests, outside the unit tests (`test-external-<pkg>-<name>.R`) |
-| `.setup/data-raw/` | rProject, man |  | yes | shareable raw data |
-| `.setup/data-process/` | rProject, man |  | yes | scripts that build `data/*.rda` from the raw data |
+| `.setup/data-raw/` | rProject, cran, man |  | yes | shareable raw data |
+| `.setup/data-process/` | rProject, cran, man |  | yes | scripts that build `data/*.rda` from the raw data |
 | `.setup/data-analysis/` | rProject, man |  | yes | analysis scripts and their output |
 | `.setup/data-dependencies/` | rProject, man |  | yes | `.rda` files loaded for knitr and Quarto |
 | `.setup/data-private/` | rProject, man | yes |  | restricted data: never public |

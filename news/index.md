@@ -1,5 +1,13 @@
 # Changelog
 
+## rProject 0.0.72
+
+### Tests
+
+- `test-rProject-template-files.R`: `folders.tsv` lists `cran` for
+  `.setup/data-raw/`, so the test expects it present (28 pass). No code
+  change; the release makes the fix public.
+
 ## rProject 0.0.71
 
 ### Helpers
