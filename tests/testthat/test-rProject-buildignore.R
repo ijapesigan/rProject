@@ -55,6 +55,12 @@ lapply(
       }
     )
     testthat::test_that(
+      desc = paste(text, "ignores cran-comments.md"),
+      code = {
+        testthat::expect_true(object = ignored(file = "cran-comments.md"))
+      }
+    )
+    testthat::test_that(
       desc = paste(text, "keeps package files"),
       code = {
         testthat::expect_false(

@@ -28,7 +28,18 @@
           ),
           no = NA_character_
         ),
-        first = data$text[segment[1]],
+        first = {
+          # an expression node has no text: use its first terminal token
+          row <- segment[1]
+          while (identical(x = data$text[row], y = "")) {
+            kids <- which(x = data$parent == data$id[row])
+            if (length(x = kids) == 0L) {
+              break
+            }
+            row <- kids[order(data$line1[kids], data$col1[kids])][1]
+          }
+          data$text[row]
+        },
         line = data$line1[segment[1]],
         col = data$col1[segment[1]]
       )

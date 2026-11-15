@@ -1,3 +1,13 @@
+# rProject 0.0.73
+
+## Lint
+
+- `named-args`: a forwarded `...` (or `..1`) is not a positional argument also when the callee is defined in another file (0.0.70 handled only the callee in the same file: the text of an expression argument is empty in the parse data, so `first` is now the first terminal token).
+
+## Build
+
+- `BuildIgnore()` lists `^cran-comments\\.md$` by default (R CMD check notes it as a non-standard top-level file).
+
 # rProject 0.0.72
 
 ## Tests
