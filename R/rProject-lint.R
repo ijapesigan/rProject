@@ -70,11 +70,11 @@ Lint <- function(path) {
     recursive = TRUE,
     full.names = TRUE
   )
-  # texTools helpers call each other but are not a package: object_usage_linter
+  # texHelper helpers call each other but are not a package: object_usage_linter
   # cannot see them. The template's smoke test has a {{pkg}} placeholder.
   tex_tools <- list.files(
     path = path,
-    pattern = "^texTools-.*\\.R$",
+    pattern = "^texHelper-.*\\.R$",
     recursive = TRUE,
     all.files = TRUE,
     full.names = TRUE

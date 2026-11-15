@@ -169,9 +169,9 @@ each is rebuilt only when its source is newer.
 \section{Helpers}
 
 The template writes copies, with no dependency on rProject:
-\texttt{.setup/r-miscellaneous/texTools}
-(\texttt{.Tabular()}, \texttt{.Round()}, \texttt{.Array()}, the biblatex helpers, \texttt{GifWrite()}, \texttt{GifFrames()})
-with the \texttt{ggplot2} theme and palette; a package with \texttt{Fig*()} moves them into \texttt{R}
+\texttt{.setup/r-miscellaneous/texHelper}
+(\texttt{.Tabular()}, \texttt{.Round()}, \texttt{.Array()}, the biblatex helpers, \texttt{.GifWrite()}, \texttt{.GifFrames()})
+with the \texttt{ggplot2} theme and palette; a package with \texttt{.Fig*()} moves them into \texttt{R}
 and imports \texttt{ggplot2}.
 
 \section{Tools}

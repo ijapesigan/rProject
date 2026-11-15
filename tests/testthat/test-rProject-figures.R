@@ -9,7 +9,7 @@ lapply(
       "common",
       "dot-setup",
       "r-miscellaneous",
-      "texTools",
+      "texHelper",
       package = "rProject"
     )
     testthat::skip_if(condition = !nzchar(x = tools_folder))
@@ -50,7 +50,7 @@ lapply(
       }
     )
     testthat::test_that(
-      desc = paste(text, "GifWrite gives the GIF, frames, and multi-page PDF"),
+      desc = paste(text, ".GifWrite gives the GIF, frames, and multi-page PDF"),
       code = {
         testthat::skip_if_not_installed(pkg = "ggplot2")
         testthat::skip_if_not_installed(pkg = "magick")
@@ -63,7 +63,7 @@ lapply(
           ) +
             ggplot2::geom_point()
         }
-        gif <- env$GifWrite(
+        gif <- env$.GifWrite(
           fig = fig,
           frames = 1:2,
           name = "a",
@@ -80,7 +80,7 @@ lapply(
           n = 2L
         )
         testthat::expect_error(
-          object = env$GifWrite(
+          object = env$.GifWrite(
             fig = fig,
             frames = 1,
             name = "b",

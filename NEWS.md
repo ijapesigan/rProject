@@ -1,3 +1,12 @@
+# rProject 0.0.71
+
+## Helpers
+
+- The template ships texHelper, not texTools: `.setup/r-miscellaneous/texHelper/texHelper-*.R`, every function of the texHelper library (the files are copies of its `R/`; texHelper is the source). The figure helpers (`.FigSave()`, `.FigSize()`, `.FigTheme()`, `.OkabeIto()`, `.GifFrames()`, `.GifWrite()`) are now texHelper's; `GifFrames()` and `GifWrite()` gained the dot (they are internal).
+- `.PreambleCombined()` (the Rtex templates call it) is an alias in `texHelper-preamble-biblatex-combined-dot.R`.
+- `removed.tsv` lists the 11 old `texTools-*.R` paths, so `make` deletes them.
+- Lint: the `object_usage_linter` exemption matches `^texHelper-` (rProject and `lint.yml`).
+
 # rProject 0.0.70
 
 (One release: 0.0.69 was pushed to the private repository only; its changes ship here.)
