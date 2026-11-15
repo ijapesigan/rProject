@@ -2,7 +2,7 @@
 
 [![Make
 Project](https://github.com/ijapesigan/rProject/actions/workflows/make.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/make.yml)
-[![R-CMD-check](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/check-full.yml)
+[![R-CMD-check-standard](https://github.com/ijapesigan/rProject/actions/workflows/check-standard.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/check-standard.yml)
 [![R Package Test
 Coverage](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/test-coverage.yml)
 [![Lint R
@@ -11,8 +11,6 @@ Package](https://github.com/ijapesigan/rProject/actions/workflows/lint.yml/badge
 Pages)](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/pkgdown-gh-pages.yml)
 [![Quarto Website (GitHub
 Pages)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-gh-pages.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-gh-pages.yml)
-[![Quarto Website (Quarto
-Pub)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/quarto-quarto-pub.yml)
 [![Compile
 LaTeX](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml/badge.svg)](https://github.com/ijapesigan/rProject/actions/workflows/latex.yml)
 [![Compile LaTeX (rProject
