@@ -1,5 +1,14 @@
 # Changelog
 
+## rProject 0.0.75
+
+### Tests
+
+- `withr` is in `Suggests`: the line-length tests of 0.0.74 call
+  [`withr::local_envvar()`](https://withr.r-lib.org/reference/with_envvar.html),
+  and `R CMD check` warned about an undeclared dependency in `tests/`,
+  which failed the R-CMD-check workflows of 0.0.74.
+
 ## rProject 0.0.74
 
 ### Lint
