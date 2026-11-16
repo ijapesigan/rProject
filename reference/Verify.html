@@ -9,7 +9,7 @@ against the change-set log in .setup/logs."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.73</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.74</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -129,6 +129,8 @@ project URL (for example, a share link, which grants access).
 Warning only: a file in <code>.setup/repo/</code> is missing,
 <code>private-github.md</code> differs from the <code>.verify</code> remote,
 or <code>public-github.md</code> differs from the repository in <code>clone.sh</code>.</p></li>
+<li><p><strong>Line length:</strong> (package projects) a pushed <code>.R</code> file has a line over 80
+characters; the public CI lint fails on one.</p></li>
 <li><p><strong>Linked files:</strong> (warning only) a file in <code>.setup/r-dependencies/</code>
 differs from a local clone of the functions repository (<code><a href="Linked.html">Linked()</a></code>).</p></li>
 <li><p><strong>Full text:</strong> (warning only, <code>lib-*</code> projects) an entry this push adds has

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.73</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.74</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,23 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.74" id="rproject-0074">rProject 0.0.74<a class="anchor" aria-label="anchor" href="#rproject-0074"></a></h2>
+<div class="section level3">
+<h3 id="lint-0-0-74">Lint<a class="anchor" aria-label="anchor" href="#lint-0-0-74"></a></h3>
+<ul><li>
+<code><a href="../reference/Lint.html">Lint()</a></code> stops on a <code>line_length_linter</code> finding (a line over 80 characters) in a package project (types <code>cran</code> and <code>rProject</code>, guessed from the project when <code>project.R</code> has no <code>type</code>). The public CI lint runs with <code>LINTR_ERROR_ON_LINT: true</code> and fails on one, while <code>make lint</code> only printed it, so <code>make all</code> and <code>make auto</code> released a project that then failed CI. The findings are printed first; <code>LINTR_ERROR_ON_LINT=false</code> switches the check off.</li>
+<li>
+<code>make upload</code> (<code><a href="../reference/Upload.html">Upload()</a></code>) refuses to build the folder when an <code>.R</code> file in it has a line over 80 characters.</li>
+<li>
+<code><a href="../reference/Verify.html">Verify()</a></code> has a new check, “Line length” (package projects): a pushed <code>.R</code> file with a line over 80 characters fails.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="ai-instructions-0-0-74">AI instructions<a class="anchor" aria-label="anchor" href="#ai-instructions-0-0-74"></a></h3>
+<ul><li>
+<code>AGENTS.md</code>: the <code>.setup/r-dependencies/</code> section now says the files are byte-identical copies of the source library projects (regular files, not Overleaf links) and how to change them; the package section tells agents to read the lint output and keep lines at 80 characters or fewer.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.73" id="rproject-0073">rProject 0.0.73<a class="anchor" aria-label="anchor" href="#rproject-0073"></a></h2>
 <div class="section level3">

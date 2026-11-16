@@ -90,6 +90,9 @@ The checks, and when each fails:
   from the `.verify` remote, or `public-github.md` differs from the
   repository in `clone.sh`.
 
+- **Line length:** (package projects) a pushed `.R` file has a line over
+  80 characters; the public CI lint fails on one.
+
 - **Linked files:** (warning only) a file in `.setup/r-dependencies/`
   differs from a local clone of the functions repository
   ([`Linked()`](https://ijapesigan.github.io/rProject/reference/Linked.md)).

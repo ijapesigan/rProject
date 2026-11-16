@@ -1,5 +1,33 @@
 # Changelog
 
+## rProject 0.0.74
+
+### Lint
+
+- [`Lint()`](https://ijapesigan.github.io/rProject/reference/Lint.md)
+  stops on a `line_length_linter` finding (a line over 80 characters) in
+  a package project (types `cran` and `rProject`, guessed from the
+  project when `project.R` has no `type`). The public CI lint runs with
+  `LINTR_ERROR_ON_LINT: true` and fails on one, while `make lint` only
+  printed it, so `make all` and `make auto` released a project that then
+  failed CI. The findings are printed first; `LINTR_ERROR_ON_LINT=false`
+  switches the check off.
+- `make upload`
+  ([`Upload()`](https://ijapesigan.github.io/rProject/reference/Upload.md))
+  refuses to build the folder when an `.R` file in it has a line over 80
+  characters.
+- [`Verify()`](https://ijapesigan.github.io/rProject/reference/Verify.md)
+  has a new check, “Line length” (package projects): a pushed `.R` file
+  with a line over 80 characters fails.
+
+### AI instructions
+
+- `AGENTS.md`: the `.setup/r-dependencies/` section now says the files
+  are byte-identical copies of the source library projects (regular
+  files, not Overleaf links) and how to change them; the package section
+  tells agents to read the lint output and keep lines at 80 characters
+  or fewer.
+
 ## rProject 0.0.73
 
 ### Lint
