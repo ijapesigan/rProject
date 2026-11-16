@@ -100,6 +100,11 @@ Upload <- function(path,
   delete <- listed$file[listed$action == "delete"]
   files <- files[!grepl(pattern = "^TODO$", x = files)]
   files <- files[.UploadSet(path = path, files = files)]
+  .UploadLineLength(
+    path = path,
+    files = files,
+    type = .TemplateTypeGuess(path = path)
+  )
   present <- file.exists(file.path(path, files))
   for (file in files[present]) {
     target <- file.path(folder, file)

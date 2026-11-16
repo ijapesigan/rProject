@@ -62,24 +62,24 @@ maintains (aims, data, notation, co-authors, open issues).
 
 ## Overleaf and generated files
 
-- Generated files may stay in Overleaf as regular files, never as links; a template change reaches
+- Generated files may stay in Overleaf as regular files; a template change reaches
   Overleaf with the project's next upload (`Verify()` skips them).
 - Keep the `Makefile`, `project.Rproj`, the `.gitignore` files, and the scripts the project's own build
   uses. Remove only `.setup/scripts/*` except `project.R`.
 - A copy without the `Makefile`: `Rscript -e 'rProject::Template(getwd())'` once, then `make`.
 
-## Linked from functions
+## Copies of the source libraries
 
-Files in `.setup/r-dependencies/` are Overleaf links to the private functions
-repository (`<lib>/<file>` there), shared with other projects.
+Files in `.setup/r-dependencies/<lib>/` are copies of `R/<file>` in the source
+library project `<lib>` (next to the projects), shared with other projects.
+They are regular files, not links.
 
-- Never edit them in a project or put them in its upload folder.
-- To change one, edit the local functions clone (next to the projects; agents
-  never push) and write an upload folder for functions; for a test, copy the
-  files into a scratch build of the project, not into the project.
-- Order: functions first; then refresh the links in each project that has them
-  and push. The reply and the log name the links to refresh.
-- `make linked` compares the files with the functions clone (`FUNCTIONS=<path>`).
+- Keep them identical, byte by byte, to the library's files (`cmp`).
+- To change one, change it in the library project first (its own spec, log, and
+  upload folder); then copy it into each project that has it and put the
+  copies in that project's upload folder. The reply and the log name them.
+- Copy only a library's pushed and verified state.
+- `make linked` compares the files with a local clone (`FUNCTIONS=<path>`).
 
 ## Size
 
