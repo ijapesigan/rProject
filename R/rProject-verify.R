@@ -33,6 +33,8 @@
 #'   Warning only: a file in `.setup/repo/` is missing,
 #'   `private-github.md` differs from the `.verify` remote,
 #'   or `public-github.md` differs from the repository in `clone.sh`.
+#' - **Line length:** (package projects) a pushed `.R` file has a line over 80
+#'   characters; the public CI lint fails on one.
 #' - **Linked files:** (warning only) a file in `.setup/r-dependencies/`
 #'   differs from a local clone of the functions repository ([Linked()]).
 #' - **Full text:** (warning only, `lib-*` projects) an entry this push adds has
@@ -295,6 +297,42 @@ Verify <- function(path,
         check = "Full text",
         status = full_text[["status"]],
         detail = full_text[["detail"]],
+        stringsAsFactors = FALSE
+      )
+    )
+  }
+  # a package project: no line over 80 characters in the pushed R files
+  # (the public CI lint fails on one); LINTR_ERROR_ON_LINT=false skips it
+  if (
+    .TemplateTypeGuess(path = path) %in% c("cran", "rProject") &&
+      !identical(
+        x = tolower(
+          x = Sys.getenv(
+            x = "LINTR_ERROR_ON_LINT",
+            unset = "true"
+          )
+        ),
+        y = "false"
+      )
+  ) {
+    long <- .LongLines(
+      path = private,
+      files = upload
+    )
+    checks <- rbind(
+      checks,
+      data.frame(
+        check = "Line length",
+        status = ifelse(
+          test = length(x = long) > 0L,
+          yes = "fail",
+          no = "pass"
+        ),
+        detail = ifelse(
+          test = length(x = long) > 0L,
+          yes = paste(utils::head(x = long, n = 20L), collapse = "; "),
+          no = "no line over 80 characters in the pushed R files"
+        ),
         stringsAsFactors = FALSE
       )
     )

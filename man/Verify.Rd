@@ -73,6 +73,8 @@ project URL (for example, a share link, which grants access).
 Warning only: a file in \verb{.setup/repo/} is missing,
 \code{private-github.md} differs from the \code{.verify} remote,
 or \code{public-github.md} differs from the repository in \code{clone.sh}.
+\item \strong{Line length:} (package projects) a pushed \code{.R} file has a line over 80
+characters; the public CI lint fails on one.
 \item \strong{Linked files:} (warning only) a file in \verb{.setup/r-dependencies/}
 differs from a local clone of the functions repository (\code{\link[=Linked]{Linked()}}).
 \item \strong{Full text:} (warning only, \verb{lib-*} projects) an entry this push adds has

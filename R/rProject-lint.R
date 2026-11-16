@@ -123,7 +123,8 @@ Lint <- function(path) {
   if (grepl(pattern = "^lib-[0-9]{4}-[0-9]{4}-[a-z]+$", x = project)) {
     print(x = LibCheck(path = path))
   }
-  house <- .LintHouse(path = path, type = .TemplateType(path = path))
+  type <- .TemplateType(path = path)
+  house <- .LintHouse(path = path, type = type)
   .LintReport(rows = house)
   attr(x = lints, which = "house") <- house
   errors <- sum(house$level == "error")
@@ -131,5 +132,7 @@ Lint <- function(path) {
     print(x = lints)
     stop(errors, " house checks failed (see the table above).", call. = FALSE)
   }
+  # the public CI fails on a line over 80 characters: so does make lint
+  .LintGate(lints = lints, type = .TemplateTypeGuess(path = path))
   lints
 }
