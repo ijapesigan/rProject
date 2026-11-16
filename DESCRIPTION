@@ -1,6 +1,6 @@
 Package: rProject
 Title: Setup R Project
-Version: 0.0.74
+Version: 0.0.75
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -40,5 +40,6 @@ Imports:
     utils
 Suggests:
     ggplot2,
-    testthat
+    testthat,
+    withr
 Config/roxygen2/version: 8.1.1.9000
