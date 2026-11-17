@@ -7,7 +7,7 @@
 - [rProject: Setup R
   Project](https://ijapesigan.github.io/rProject/articles/rProject.md):
 - [rProject:
-  Session](https://ijapesigan.github.io/rProject/articles/session/session.md):
+  Session](https://ijapesigan.github.io/rProject/articles/session.md):
 - [How an rProject Project
   Works](https://ijapesigan.github.io/rProject/articles/structure.md):
 - [Library

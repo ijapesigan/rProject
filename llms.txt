@@ -1,6 +1,6 @@
 # rProject
 
-Ivan Jacob Agaloos Pesigan 2026-11-16
+Ivan Jacob Agaloos Pesigan 2026-11-17
 
 ## Description
 
@@ -281,7 +281,7 @@ computing*. R Foundation for Statistical Computing.
 - [rProject: Setup R
   Project](https://ijapesigan.github.io/rProject/articles/rProject.md):
 - [rProject:
-  Session](https://ijapesigan.github.io/rProject/articles/session/session.md):
+  Session](https://ijapesigan.github.io/rProject/articles/session.md):
 - [How an rProject Project
   Works](https://ijapesigan.github.io/rProject/articles/structure.md):
 - [Library
