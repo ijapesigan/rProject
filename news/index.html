@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.75</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.76</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,19 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.76" id="rproject-0076">rProject 0.0.76<a class="anchor" aria-label="anchor" href="#rproject-0076"></a></h2>
+<div class="section level3">
+<h3 id="lint-0-0-76">Lint<a class="anchor" aria-label="anchor" href="#lint-0-0-76"></a></h3>
+<ul><li>
+<code>.LintLocked()</code> accepts a flat <code>.setup/cpp/&lt;lib&gt;-&lt;name&gt;.cpp</code> whose header (first five lines) has <code>// edit .setup/cpp/&lt;lib&gt;-...</code>: a copy of another library’s C++ file is no longer a <code>cpp-file-name</code> error (nBootstrap and processLM hold a flat <code>linearAlgebra-vech-dot.cpp</code>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="status-0-0-76">Status<a class="anchor" aria-label="anchor" href="#status-0-0-76"></a></h3>
+<ul><li>
+<code>.setup/scripts/repo-status.sh</code> and <code>make status</code> (<code>SET=&lt;type&gt;</code> or <code>PROJECTS="a b"</code>) report each project’s private and public version, tag, and flags. New agent <code>repo-status</code>; new keyword “status” and a “start” rule in the AI instructions.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.75" id="rproject-0075">rProject 0.0.75<a class="anchor" aria-label="anchor" href="#rproject-0075"></a></h2>
 <div class="section level3">
