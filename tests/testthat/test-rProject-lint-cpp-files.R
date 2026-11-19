@@ -40,6 +40,27 @@ lapply(
         unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
+    testthat::test_that(
+      desc = paste(text, "passes a flat copy with a source header"),
+      code = {
+        root <- .TestLintProject(
+          files = list(
+            ".setup/cpp/otherLib-vech-dot.cpp" = c(
+              "// ----",
+              "// edit .setup/cpp/otherLib-vech-dot.cpp",
+              "int x;"
+            ),
+            ".setup/cpp/foo.cpp" = c("int x;")
+          )
+        )
+        rows <- .LintCppFiles(path = root)
+        testthat::expect_identical(
+          object = rows$file[rows$rule == "cpp-file-name"],
+          expected = ".setup/cpp/foo.cpp"
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
   },
   text = "test-rProject-lint-cpp-files"
 )

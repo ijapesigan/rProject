@@ -51,6 +51,7 @@ package	2	.setup/notes/notes
 package	2	.setup/repo/.gitignore
 package	2	.setup/scripts/make-config.R
 package	2	.setup/scripts/verify.sh
+package	2	.setup/scripts/repo-status.sh
 package	2	Makefile
 cran	2	.github/workflows/check-full.yml
 cran	2	.github/workflows/latex.yml
@@ -94,6 +95,7 @@ lib	2	.setup/quarto/tags/tags.qmd
 lib	2	.setup/repo/.gitignore
 lib	2	.setup/scripts/make-config.R
 lib	2	.setup/scripts/verify.sh
+lib	2	.setup/scripts/repo-status.sh
 lib	2	Makefile
 talk	2	.github/workflows/lint.yml
 talk	2	.github/workflows/latex.yml
@@ -111,6 +113,7 @@ talk	2	.setup/quarto/session/session.qmd
 talk	2	.setup/quarto/tags/tags.qmd
 talk	2	.setup/scripts/make-config.R
 talk	2	.setup/scripts/verify.sh
+talk	2	.setup/scripts/repo-status.sh
 talk	2	.sif/.gitignore
 talk	2	.sim/.gitignore
 talk	2	Makefile
@@ -129,6 +132,7 @@ docker	2	.setup/scripts/make-install.R
 docker	2	.setup/scripts/make-packages.R
 docker	2	.setup/scripts/make-project.R
 docker	2	.setup/scripts/verify.sh
+docker	2	.setup/scripts/repo-status.sh
 docker	2	Makefile
 docker	2	scripts/check.sh
 docker	2	scripts/install-apt.sh

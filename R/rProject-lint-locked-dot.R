@@ -25,5 +25,27 @@
     },
     FUN.VALUE = logical(length = 1)
   )
-  unname(obj = files %in% .ConformLocked(path = path) | by_name)
+  by_header <- vapply(
+    X = files,
+    FUN = function(file) {
+      # a flat C++ copy of another library names its source on a line of its
+      # header: // edit .setup/cpp/<lib>-<name>.cpp
+      if (!grepl(pattern = "\\.cpp$", x = file)) {
+        return_value <- FALSE
+      } else {
+        full <- file.path(path, file)
+        head_lines <- if (file.exists(full)) {
+          readLines(con = full, n = 5L, warn = FALSE)
+        } else {
+          character(length = 0)
+        }
+        return_value <- any(
+          grepl(pattern = "^// edit \\.setup/cpp/[A-Za-z0-9]+-", x = head_lines)
+        )
+      }
+      return_value
+    },
+    FUN.VALUE = logical(length = 1)
+  )
+  unname(obj = files %in% .ConformLocked(path = path) | by_name | by_header)
 }

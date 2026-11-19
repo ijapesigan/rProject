@@ -1,3 +1,13 @@
+# rProject 0.0.76
+
+## Lint
+
+- `.LintLocked()` accepts a flat `.setup/cpp/<lib>-<name>.cpp` whose header (first five lines) has `// edit .setup/cpp/<lib>-...`: a copy of another library's C++ file is no longer a `cpp-file-name` error (nBootstrap and processLM hold a flat `linearAlgebra-vech-dot.cpp`).
+
+## Status
+
+- `.setup/scripts/repo-status.sh` and `make status` (`SET=<type>` or `PROJECTS="a b"`) report each project's private and public version, tag, and flags. New agent `repo-status`; new keyword "status" and a "start" rule in the AI instructions.
+
 # rProject 0.0.75
 
 ## Tests
