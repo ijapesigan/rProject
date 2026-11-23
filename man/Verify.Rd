@@ -57,7 +57,8 @@ is used. A push with no list of its own compares the files of its commit
 instead; a difference is then a warning, as a commit may hold generated
 files, and an empty commit warns that nothing was checked.
 \item \strong{Deletions:} a file listed under "Delete in Overleaf"
-is still in the private repository.
+is still in the private repository, or the pushed commit deleted a
+file the list does not name (a listed folder covers its files).
 \item \strong{Unlisted changes:} (warning only) other files differ
 between the project and the private repository
 (\code{.setup/notes/claude.txt}, the resume commands, and \verb{.setup/todo/},
@@ -75,8 +76,11 @@ Warning only: a file in \verb{.setup/repo/} is missing,
 or \code{public-github.md} differs from the repository in \code{clone.sh}.
 \item \strong{Line length:} (package projects) a pushed \code{.R} file has a line over 80
 characters; the public CI lint fails on one.
-\item \strong{Linked files:} (warning only) a file in \verb{.setup/r-dependencies/}
-differs from a local clone of the functions repository (\code{\link[=Linked]{Linked()}}).
+\item \strong{Linked files:} (warning only) a file in \verb{.setup/r-dependencies/<lib>/}
+differs from the pushed state of its library: \verb{R/} of the \code{.verify}
+clone of the library project next to this one (\verb{<lib>}, \verb{devel-<lib>},
+or \verb{cran-<lib>}), else a local clone of the functions repository
+(\code{\link[=Linked]{Linked()}}).
 \item \strong{Full text:} (warning only, \verb{lib-*} projects) an entry this push adds has
 no full text in \verb{.setup/notes/}, or a file there matches no entry
 (\code{\link[=LibFullTextReport]{LibFullTextReport()}}).

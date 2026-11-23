@@ -196,6 +196,27 @@ lapply(
         )
       }
     )
+    testthat::test_that(
+      desc = paste(text, "reads a nested or missing issue number"),
+      code = {
+        nested <- record
+        nested$issue <- list(list(2012L))
+        x <- .LibEntry(record = nested)
+        testthat::expect_equal(
+          object = unname(obj = x$fields["number"]),
+          expected = "2012"
+        )
+        nested$issue <- list("3")
+        x <- .LibEntry(record = nested)
+        testthat::expect_equal(
+          object = unname(obj = x$fields["number"]),
+          expected = "3"
+        )
+        nested$issue <- NULL
+        x <- .LibEntry(record = nested)
+        testthat::expect_false(object = "number" %in% names(x = x$fields))
+      }
+    )
     # a library of two repositories
     root <- tempfile(pattern = "lib")
     repo <- file.path(root, "lib-1980-1989-article")

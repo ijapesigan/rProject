@@ -17,6 +17,8 @@ Called for its side effects; the value is not meaningful.
 Runs \code{covr::package_coverage()} on the package. To leave files out,
 put covr's \code{.covrignore} at the project root (and add it to
 \code{.Rbuildignore} with \code{ignore} in \code{.setup/scripts/project.R}).
+The tests run with \code{NOT_CRAN=true}, as under \code{devtools::test()}, so
+that \code{testthat::skip_on_cran()} does not skip them.
 }
 \examples{
 \dontrun{

@@ -3,6 +3,8 @@
   # a draft entry from a Crossref record: type, key, repo, fields, and the
   # questions the user must answer; never invents a field
   first <- function(x) {
+    # Crossref may nest a value one level deeper (list(list(2012)))
+    x <- unlist(x = x, use.names = FALSE)
     if (is.null(x = x) || length(x = x) == 0L) {
       NA_character_
     } else {

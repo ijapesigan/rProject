@@ -1,3 +1,9 @@
 make.sh
 make.out
 make.err
+make-devel.sh
+make-devel.out
+make-devel.err
+make-cran.sh
+make-cran.out
+make-cran.err

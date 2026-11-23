@@ -7,9 +7,9 @@ tools: Bash, Read
 
 Run `bash <rProject>/.setup/scripts/o2g-watch.sh <project folder> "<subject>"`. One watcher per folder.
 
-On `match <sha>`, verify as the verify agent does. On `other`, report the commit, record nothing, and watch again. On `timeout`, report it.
+On `match <sha>`, verify as the verify agent does. On `match-files <sha> <subject>` (the upload folder's files match the push, the subject does not), verify the same way and report the subject the push carried. On `other`, report the commit, record nothing, and watch again. On `timeout`, report it.
 
-Return `match`, `other`, or `timeout`, and the verify result.
+Return `match`, `match-files`, `other`, or `timeout`, and the verify result.
 
 ## Rules
 

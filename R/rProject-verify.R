@@ -17,7 +17,8 @@
 #'   instead; a difference is then a warning, as a commit may hold generated
 #'   files, and an empty commit warns that nothing was checked.
 #' - **Deletions:** a file listed under "Delete in Overleaf"
-#'   is still in the private repository.
+#'   is still in the private repository, or the pushed commit deleted a
+#'   file the list does not name (a listed folder covers its files).
 #' - **Unlisted changes:** (warning only) other files differ
 #'   between the project and the private repository
 #'   (`.setup/notes/claude.txt`, the resume commands, and `.setup/todo/`,
@@ -35,8 +36,11 @@
 #'   or `public-github.md` differs from the repository in `clone.sh`.
 #' - **Line length:** (package projects) a pushed `.R` file has a line over 80
 #'   characters; the public CI lint fails on one.
-#' - **Linked files:** (warning only) a file in `.setup/r-dependencies/`
-#'   differs from a local clone of the functions repository ([Linked()]).
+#' - **Linked files:** (warning only) a file in `.setup/r-dependencies/<lib>/`
+#'   differs from the pushed state of its library: `R/` of the `.verify`
+#'   clone of the library project next to this one (`<lib>`, `devel-<lib>`,
+#'   or `cran-<lib>`), else a local clone of the functions repository
+#'   ([Linked()]).
 #' - **Full text:** (warning only, `lib-*` projects) an entry this push adds has
 #'   no full text in `.setup/notes/`, or a file there matches no entry
 #'   ([LibFullTextReport()]).
@@ -152,8 +156,22 @@ Verify <- function(path,
     FUN.VALUE = character(length = 1)
   )
   upload_bad <- upload_status != "match"
-  # deletions
+  # deletions: a listed file still in the private repository, and a file the
+  # commit deleted that is not listed (a folder listed covers its files)
   delete_bad <- file.exists(file.path(private, delete))
+  delete_extra <- character(length = 0L)
+  if (!no_list) {
+    commit <- .VerifyCommitFiles(private = private)
+    deleted <- commit$file[commit$status == "D"]
+    covered <- vapply(
+      X = deleted,
+      FUN = function(file) {
+        any(file == delete | startsWith(x = file, prefix = paste0(delete, "/")))
+      },
+      FUN.VALUE = logical(length = 1)
+    )
+    delete_extra <- deleted[!covered]
+  }
   # unlisted changes
   unlisted <- .VerifyUnlisted(
     path = path,
@@ -233,7 +251,11 @@ Verify <- function(path,
     status = c(
       ifelse(test = recorded, yes = "fail", no = "pass"),
       listed_status,
-      ifelse(test = any(delete_bad), yes = "fail", no = "pass"),
+      ifelse(
+        test = any(delete_bad) || length(x = delete_extra) > 0L,
+        yes = "fail",
+        no = "pass"
+      ),
       ifelse(test = length(x = unlisted) > 0L, yes = "warn", no = "pass"),
       ifelse(test = message_ok, yes = "pass", no = "warn"),
       ifelse(test = nrow(x = secrets) > 0L, yes = "fail", no = "pass"),
@@ -253,10 +275,23 @@ Verify <- function(path,
       ),
       listed_detail,
       ifelse(
-        test = any(delete_bad),
+        test = any(delete_bad) || length(x = delete_extra) > 0L,
         yes = paste(
-          "still present:",
-          paste(delete[delete_bad], collapse = "; ")
+          c(
+            if (any(delete_bad)) {
+              paste(
+                "still present:",
+                paste(delete[delete_bad], collapse = "; ")
+              )
+            },
+            if (length(x = delete_extra) > 0L) {
+              paste(
+                "deleted but not listed:",
+                paste(delete_extra, collapse = "; ")
+              )
+            }
+          ),
+          collapse = "; "
         ),
         no = paste(length(x = delete), "files removed")
       ),

@@ -207,7 +207,7 @@ docs: readme
 	@echo "\n\nBuilding CITATION.cff...\n\n"
 	@Rscript -e "rProject::CFF(\"${PWD}\")"
 
-all: lint build docs latex pkgdown quarto coverage
+all: project lint build docs latex pkgdown quarto coverage
 
 cleanall: clean cleanpush cleanpkg cleantinytex
 
@@ -225,7 +225,7 @@ localforce: project dotfiles
 	@Rscript -e "rProject::InstallLocal(all = TRUE, force = TRUE)"
 	@Rscript .setup/scripts/make-config.R ${PWD}
 
-clone:
+clone: project
 	@bash .setup/scripts/clone.sh
 
 # make all, the secret scan, then make auto (commit, push, tag); it stops at the

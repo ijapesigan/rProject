@@ -5,7 +5,7 @@ model: sonnet
 tools: Bash, Read
 ---
 
-Check on a fresh public clone: the new version and the "Automated build." commit; no private files; nothing over 50 MB; `rProject::SecretScan()`, run with `--vanilla` from `/`, so a project's `.library` cannot hide the image's rProject. Wait for the CI runs of the push.
+Check on a fresh public clone: the new version and the "Automated build." commit; no private files; no `AGENTS.html`, `CLAUDE.html` or `CLAUDE.local.html` on the deployed site (the `gh-pages` branch; a hit fails the check); nothing over 50 MB; `rProject::SecretScan()`, run with `--vanilla` from `/`, so a project's `.library` cannot hide the image's rProject. Wait for the CI runs of the push.
 
 Return a table of checks and runs; for each failure, the failing step and 10 log lines. The main session records the release.
 

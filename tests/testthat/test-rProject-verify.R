@@ -261,6 +261,39 @@ lapply(
       }
     )
     unlink(x = x$root, recursive = TRUE)
+    # 2b. the push deleted a file the log does not list
+    x <- fixture()
+    for (dir in c(x$path, x$private)) {
+      write(root = dir, file = "R/keep.R", text = "Keep <- function() 1")
+    }
+    git(x$private, "add", "--all")
+    git(x$private, "commit", "-q", "-m", "keep")
+    unlink(x = file.path(x$private, "R", "keep.R"))
+    git(x$private, "add", "--all")
+    git(
+      x$private,
+      "commit",
+      "-q",
+      "-m",
+      shQuote(string = paste0("Topic\n\nLog: .setup/logs/", log))
+    )
+    checks <- suppressMessages(
+      expr = Verify(path = x$path, private = x$private, error = FALSE)
+    )
+    testthat::test_that(
+      desc = paste(text, "fails on a deletion the log does not list"),
+      code = {
+        testthat::expect_equal(
+          object = status(checks, "Deletions"),
+          expected = "fail"
+        )
+        testthat::expect_match(
+          object = checks$detail[checks$check == "Deletions"],
+          regexp = "deleted but not listed: R/keep.R"
+        )
+      }
+    )
+    unlink(x = x$root, recursive = TRUE)
     # 3. a file that should have been deleted, and an unlisted change
     x <- fixture()
     write(root = x$private, file = "old.R", text = "y <- 1")
@@ -467,6 +500,34 @@ lapply(
         testthat::expect_equal(
           object = files$action,
           expected = c("upload", "delete")
+        )
+        unlink(x = file)
+      }
+    )
+    # 7a. a label bullet ("Delete:", "Records:") is not a file
+    testthat::test_that(
+      desc = paste(text, "reads label bullets as labels"),
+      code = {
+        file <- tempfile(fileext = ".md")
+        writeLines(
+          text = c(
+            "## Files to update in Overleaf",
+            "- New: `R/b.R`",
+            "- Delete: `R/c.R`",
+            "- Records: the push of 12f8384 (log and index.md).",
+            "- Makefile: delete two lines",
+            "- `R/a.R`: the fix"
+          ),
+          con = file
+        )
+        files <- .VerifyLogFiles(log_file = file, project = "rProject")
+        testthat::expect_equal(
+          object = files$file,
+          expected = c("R/b.R", "R/c.R", "Makefile", "R/a.R")
+        )
+        testthat::expect_equal(
+          object = files$action,
+          expected = c("upload", "delete", "upload", "upload")
         )
         unlink(x = file)
       }

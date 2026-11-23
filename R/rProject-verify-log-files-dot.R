@@ -26,6 +26,15 @@
       starts <- scope
     }
   }
+  labels_file <- c(
+    "new", "edited", "edit", "changed", "updated", "upload",
+    "delete", "deleted", "remove", "removed"
+  )
+  labels <- c(
+    labels_file,
+    "records", "record", "spec", "image", "template", "note", "notes",
+    "generated", "see", "also", "log", "logs"
+  )
   file <- character(length = 0)
   action <- character(length = 0)
   for (start in starts) {
@@ -64,17 +73,33 @@
             )
           )
         } else if (grepl(pattern = "^- ", x = lines[i])) {
-          item <- strsplit(
+          tokens <- strsplit(
             x = sub(pattern = "^- ", replacement = "", x = lines[i]),
             split = " "
-          )[[1]][1]
+          )[[1]]
+          item <- tokens[1]
+          item_action <- current
+          # a label such as "Delete:" or "New:" names the action of the
+          # next token; other labels ("Records:", "Spec:") name no file
+          label <- tolower(x = sub(pattern = ":$", replacement = "", x = item))
+          if (grepl(pattern = ":$", x = item) && label %in% labels) {
+            item <- if (label %in% labels_file) {
+              tokens[2]
+            } else {
+              NA_character_
+            }
+            if (label %in% c("delete", "deleted", "remove", "removed")) {
+              item_action <- "delete"
+            }
+          }
           item <- gsub(pattern = "`|:$|,$|/$", replacement = "", x = item)
           if (
             current != "skip" &&
+              !is.na(x = item) &&
               grepl(pattern = "^[A-Za-z0-9._][A-Za-z0-9._/-]*$", x = item)
           ) {
             file <- c(file, item)
-            action <- c(action, current)
+            action <- c(action, item_action)
           }
         }
       }
