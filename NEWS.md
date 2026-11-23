@@ -1,3 +1,14 @@
+# rProject 0.0.78
+
+## Templates
+
+- `manifest.tsv` lists `.setup/scripts/clone-private.sh` and `.setup/scripts/clone-overleaf.sh` (set `common`, tier 2): the files were in `inst/template/common/` without a row, and the manifest test failed in the public Make Project of 0.0.77.
+- `.sim/make.sh` is written only in a package (a project with `DESCRIPTION`), as the test helpers are: in 0.0.77 a talk project's `.sim/` got one too, outside the manifest, and the template test failed.
+
+## Documentation
+
+- `vignette("structure")` lists the "status <set>" keyword (0.0.76), which the AI-instructions test requires.
+
 # rProject 0.0.77
 
 ## Sites
@@ -11,7 +22,7 @@
 ## Templates
 
 - The `Makefile` of every template runs `make project` first in `make all` and `make clone` (so `make auto` too): a fresh Overleaf copy with only `.setup/scripts/project.R` failed in `lint` and in `clone`.
-- New `.sim/make.sh` template (`inst/template/once/sim-make.sh`), written by `Template()` when a project has `.sim/` and no `make.sh`: `set -Eeuo pipefail`; the project above `.sim/` by default (`PROJECT=`, `SIF=` override); the `~/work` bind (and `/scratch/ibp5092` where it exists); 1 CPU, 4 GB, one BLAS thread, `OPENBLAS_CORETYPE=Haswell`; `CLEAN=1` removes `vignettes/session.Rmd`, `vignettes/vignettes.bib`, and `${CLEAN_FILES}`; `make project`, then `make release`, which stops at the first failure (no `rm -rf .git`). `Conform()` flags a copy that differs (`sim-make`, to decide); chained jobs go in `.sim/make-<name>.sh`.
+- New `.sim/make.sh` template (`inst/template/once/sim-make.sh`), written by `Template()` when a package has `.sim/` and no `make.sh`: `set -Eeuo pipefail`; the project above `.sim/` by default (`PROJECT=`, `SIF=` override); the `~/work` bind (and `/scratch/ibp5092` where it exists); 1 CPU, 4 GB, one BLAS thread, `OPENBLAS_CORETYPE=Haswell`; `CLEAN=1` removes `vignettes/session.Rmd`, `vignettes/vignettes.bib`, and `${CLEAN_FILES}`; `make project`, then `make release`, which stops at the first failure (no `rm -rf .git`). `Conform()` flags a copy that differs (`sim-make`, to decide); chained jobs go in `.sim/make-<name>.sh`.
 - rhub workflows: a step before "Install dependencies" sets `PKG_PLATFORMS=source` on a container that is not Ubuntu, so pak builds from source instead of taking Posit's Fedora binaries, which need libraries r-hub's R builds lack (`libRlapack.so`, `libopenblasp.so.0`; quadprog, nloptr, then lavaan, lme4).
 
 ## Lint

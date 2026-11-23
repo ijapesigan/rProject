@@ -36,10 +36,15 @@
       }
     }
   }
-  # the Slurm script of .sim/: written once, when missing (a regular file in
-  # Overleaf, since it runs before make); Conform() flags a copy that differs
+  # the Slurm script of .sim/ in a package: written once, when missing (a
+  # regular file in Overleaf, since it runs before make); Conform() flags a
+  # copy that differs
   sim <- file.path(path, ".sim")
-  if (dir.exists(paths = sim) && !file.exists(file.path(sim, "make.sh"))) {
+  if (
+    dir.exists(paths = sim) &&
+      file.exists(file.path(path, "DESCRIPTION")) &&
+      !file.exists(file.path(sim, "make.sh"))
+  ) {
     written <- c(written, file.path(".sim", "make.sh"))
     if (!check) {
       file.copy(

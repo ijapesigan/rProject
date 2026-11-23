@@ -38,6 +38,8 @@ common	2	.setup/r-miscellaneous/texHelper/texHelper-tabular-dot.R
 common	2	.setup/scripts/.gitignore
 common	2	.setup/scripts/agents.sh
 common	2	.setup/scripts/clone.sh
+common	2	.setup/scripts/clone-overleaf.sh
+common	2	.setup/scripts/clone-private.sh
 common	2	.setup/scripts/image-lock.sh
 common	2	.setup/scripts/make-install.R
 common	2	.setup/scripts/make-packages.R
