@@ -64,26 +64,45 @@ Site <- function(path) {
         to = path
       )
       url <- .SiteUrl(path = path)
-      # pkgdown renders every top-level .md (it ignores .Rbuildignore):
-      # move the private ones aside, and back on exit
-      private <- c("AGENTS.md", "CLAUDE.md", "CLAUDE.local.md")
+      # pkgdown renders every top-level .md and those in .github/ (it
+      # ignores .Rbuildignore): move the private ones aside, and back on
+      # exit; the folder aside is in the project, since a move to another
+      # filesystem (/tmp) fails without an error
+      private <- c(
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CLAUDE.local.md",
+        file.path(".github", "copilot-instructions.md")
+      )
       private <- private[file.exists(file.path(path, private))]
-      aside <- tempfile(pattern = "site-private")
+      aside <- tempfile(pattern = ".site-private-", tmpdir = path)
       dir.create(path = aside)
-      file.rename(
+      keys <- gsub(pattern = "/", replacement = "--", x = private)
+      moved <- file.rename(
         from = file.path(path, private),
-        to = file.path(aside, private)
+        to = file.path(aside, keys)
       )
       on.exit(
         expr = {
+          back <- file.exists(file.path(aside, keys))
           file.rename(
-            from = file.path(aside, private),
-            to = file.path(path, private)
+            from = file.path(aside, keys)[back],
+            to = file.path(path, private)[back]
           )
           unlink(x = aside, recursive = TRUE)
         },
         add = TRUE
       )
+      if (!all(moved)) {
+        stop(
+          paste0(
+            "\n\nSite(): could not move aside ",
+            paste(private[!moved], collapse = ", "),
+            "; the site would publish them.\n\n"
+          ),
+          call. = FALSE
+        )
+      }
       pkgdown::build_site(
         pkg = path,
         preview = FALSE,
@@ -102,12 +121,17 @@ Site <- function(path) {
         ),
         add = TRUE
       )
-      # pages a site built before this fix may still hold
+      # pages a site built before this fix may still hold, as HTML and as
+      # pkgdown's Markdown copies
       unlink(
         x = file.path(
           path,
           "pkgdown",
-          c("AGENTS.html", "CLAUDE.html", "CLAUDE.local.html")
+          outer(
+            X = c("AGENTS", "CLAUDE", "CLAUDE.local", "copilot-instructions"),
+            Y = c(".html", ".md"),
+            FUN = paste0
+          )
         )
       )
     } else {

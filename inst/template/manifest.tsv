@@ -117,7 +117,6 @@ talk	2	.setup/scripts/make-config.R
 talk	2	.setup/scripts/verify.sh
 talk	2	.setup/scripts/repo-status.sh
 talk	2	.sif/.gitignore
-talk	2	.sim/.gitignore
 talk	2	Makefile
 docker	2	.github/workflows/make.yml
 docker	2	.github/workflows/non-ascii-check.yml

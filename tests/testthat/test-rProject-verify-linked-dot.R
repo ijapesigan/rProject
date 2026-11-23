@@ -16,7 +16,9 @@ lapply(
         writeLines(text = "x <- 1", con = file.path(pushed, "libA-foo-dot.R"))
         testthat::expect_equal(
           object = .LinkedSources(path = path),
-          expected = list(libA = normalizePath(path = pushed))
+          expected = list(
+            libA = normalizePath(path = pushed, winslash = "/")
+          )
         )
         x <- .VerifyLinked(path = path, private = path)
         testthat::expect_equal(

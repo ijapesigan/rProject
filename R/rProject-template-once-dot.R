@@ -36,22 +36,26 @@
       }
     }
   }
-  # the Slurm script of .sim/ in a package: written once, when missing (a
-  # regular file in Overleaf, since it runs before make); Conform() flags a
-  # copy that differs
+  # the Slurm script of .sim/ (make project, then make release or make all)
+  # and its .gitignore, in every project type: each written once, when
+  # missing (regular files in Overleaf, since the script runs before make;
+  # a simulation keeps its own .gitignore); Conform() flags a make.sh that
+  # differs
   sim <- file.path(path, ".sim")
-  if (
-    dir.exists(paths = sim) &&
-      file.exists(file.path(path, "DESCRIPTION")) &&
-      !file.exists(file.path(sim, "make.sh"))
-  ) {
-    written <- c(written, file.path(".sim", "make.sh"))
-    if (!check) {
-      file.copy(
-        from = file.path(root, "once", "sim-make.sh"),
-        to = file.path(sim, "make.sh")
-      )
-      Sys.chmod(paths = file.path(sim, "make.sh"), mode = "0755")
+  once <- c("make.sh" = "sim-make.sh", ".gitignore" = "sim-gitignore")
+  for (file in names(x = once)) {
+    if (!file.exists(file.path(sim, file))) {
+      written <- c(written, file.path(".sim", file))
+      if (!check) {
+        dir.create(path = sim, showWarnings = FALSE)
+        file.copy(
+          from = file.path(root, "once", once[[file]]),
+          to = file.path(sim, file)
+        )
+        if (file == "make.sh") {
+          Sys.chmod(paths = file.path(sim, file), mode = "0755")
+        }
+      }
     }
   }
   written

@@ -49,7 +49,8 @@ lapply(
     for (type in setdiff(x = names(x = .TemplateSets()), y = "rProject")) {
       root <- project(type = type)
       files <- .TemplateFiles(type = type)
-      all_files <- files$path
+      # with the files written once: .sim/make.sh and .sim/.gitignore
+      all_files <- c(files$path, file.path(".sim", c("make.sh", ".gitignore")))
       pending <- suppressMessages(
         expr = Template(path = root, check = TRUE)
       )

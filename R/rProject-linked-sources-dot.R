@@ -7,7 +7,11 @@
     full.names = FALSE,
     recursive = FALSE
   )
-  work <- dirname(path = normalizePath(path = path, mustWork = FALSE))
+  # "/" on every OS: on Windows, normalizePath() gives "\\", and
+  # file.path() then mixes the two
+  work <- dirname(
+    path = normalizePath(path = path, winslash = "/", mustWork = FALSE)
+  )
   sources <- vapply(
     X = libs,
     FUN = function(lib) {
