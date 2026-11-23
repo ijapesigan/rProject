@@ -25,6 +25,7 @@
       .ConformLintError(path = path),
       .ConformLock(path = path),
       .ConformUpload(path = path, template = template),
+      .ConformSimMake(path = path, template = template),
       .ConformRepo(path = path, remote = remote)
     )
   )

@@ -95,6 +95,54 @@ lapply(
         unlink(x = dirname(path = root), recursive = TRUE)
       }
     )
+    testthat::test_that(
+      desc = paste(text, "the template writes .sim/make.sh once"),
+      code = {
+        root <- .TestLintProject(files = list(".sim/.gitignore" = ""))
+        template <- system.file("template", package = "rProject")
+        testthat::skip_if_not(
+          condition = file.exists(file.path(template, "once", "sim-make.sh"))
+        )
+        written <- .TemplateOnce(path = root, root = template, check = FALSE)
+        testthat::expect_equal(
+          object = written,
+          expected = file.path(".sim", "make.sh")
+        )
+        # a project's own copy stays
+        writeLines(text = "# own", con = file.path(root, ".sim", "make.sh"))
+        testthat::expect_length(
+          object = .TemplateOnce(path = root, root = template, check = FALSE),
+          n = 0L
+        )
+        testthat::expect_equal(
+          object = readLines(con = file.path(root, ".sim", "make.sh")),
+          expected = "# own"
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
+    testthat::test_that(
+      desc = paste(text, "make all and make clone run make project first"),
+      code = {
+        template <- system.file("template", package = "rProject")
+        makefiles <- list.files(
+          path = template,
+          pattern = "^Makefile$",
+          recursive = TRUE,
+          full.names = TRUE
+        )
+        testthat::skip_if(condition = length(x = makefiles) == 0L)
+        for (makefile in makefiles) {
+          lines <- readLines(con = makefile, warn = FALSE)
+          testthat::expect_true(
+            object = any(grepl(pattern = "^all: project ", x = lines))
+          )
+          testthat::expect_true(
+            object = "clone: project" %in% lines
+          )
+        }
+      }
+    )
   },
   text = "test-rProject-lint-house"
 )

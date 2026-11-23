@@ -64,6 +64,26 @@ Site <- function(path) {
         to = path
       )
       url <- .SiteUrl(path = path)
+      # pkgdown renders every top-level .md (it ignores .Rbuildignore):
+      # move the private ones aside, and back on exit
+      private <- c("AGENTS.md", "CLAUDE.md", "CLAUDE.local.md")
+      private <- private[file.exists(file.path(path, private))]
+      aside <- tempfile(pattern = "site-private")
+      dir.create(path = aside)
+      file.rename(
+        from = file.path(path, private),
+        to = file.path(aside, private)
+      )
+      on.exit(
+        expr = {
+          file.rename(
+            from = file.path(aside, private),
+            to = file.path(path, private)
+          )
+          unlink(x = aside, recursive = TRUE)
+        },
+        add = TRUE
+      )
       pkgdown::build_site(
         pkg = path,
         preview = FALSE,
@@ -81,6 +101,14 @@ Site <- function(path) {
           )
         ),
         add = TRUE
+      )
+      # pages a site built before this fix may still hold
+      unlink(
+        x = file.path(
+          path,
+          "pkgdown",
+          c("AGENTS.html", "CLAUDE.html", "CLAUDE.local.html")
+        )
       )
     } else {
       message(

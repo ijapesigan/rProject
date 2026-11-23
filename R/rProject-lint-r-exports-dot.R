@@ -37,13 +37,20 @@
           },
           FUN.VALUE = logical(length = 1)
         )
-        text <- unlist(x = rd[hit])
+        text <- as.character(x = unlist(x = rd[hit]))
         problems <- c(
-          if (!any(startsWith(x = text, prefix = "\\value"))) {
-            "no @return"
-          },
-          if (!any(startsWith(x = text, prefix = "\\examples"))) {
-            "no @examples"
+          if (length(x = text) == 0L) {
+            # no .Rd: the \value and \examples checks are skipped
+            "no .Rd"
+          } else {
+            c(
+              if (!any(startsWith(x = text, prefix = "\\value"))) {
+                "no @return"
+              },
+              if (!any(startsWith(x = text, prefix = "\\examples"))) {
+                "no @examples"
+              }
+            )
           },
           if (
             grepl(pattern = "^[A-Za-z.][A-Za-z0-9._]*$", x = name) &&

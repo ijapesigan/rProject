@@ -76,7 +76,7 @@ Nothing is committed or pushed.
 }
 \examples{
 \dontrun{
-ConformFix(path = getwd(), reference = "../linearAlgebra")
+ConformFix(path = getwd(), reference = "../devel-linearAlgebra")
 }
 }
 \author{

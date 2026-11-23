@@ -48,7 +48,7 @@
 #'   final re-check (`NULL` without `lint` or `tests`).
 #' @examples
 #' \dontrun{
-#' ConformFix(path = getwd(), reference = "../linearAlgebra")
+#' ConformFix(path = getwd(), reference = "../devel-linearAlgebra")
 #' }
 #' @export
 ConformFix <- function(path = ".",

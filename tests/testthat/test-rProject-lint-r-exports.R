@@ -38,6 +38,23 @@ lapply(
       }
     )
     testthat::test_that(
+      desc = paste(text, "flags an export without an .Rd"),
+      code = {
+        root <- .TestLintProject(
+          files = list(
+            NAMESPACE = "export(FooBar)",
+            "tests/testthat/test-testProject-foo-bar.R" = "x <- 1"
+          )
+        )
+        rows <- .LintRExports(path = root)
+        testthat::expect_equal(object = nrow(x = rows), expected = 1L)
+        testthat::expect_true(
+          object = grepl(pattern = "no .Rd", x = rows$message, fixed = TRUE)
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
+    testthat::test_that(
       desc = paste(text, "handles an exported operator"),
       code = {
         root <- .TestLintProject(
