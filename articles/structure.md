@@ -313,6 +313,7 @@ Short messages from the user to an AI agent:
 | “CI ” | wait for the last push’s runs and read the failed logs |
 | “rollout ” | run a make target across projects, stopping at the first failure |
 | “sim status ” | count a simulation’s jobs against its design |
+| “status ” | report each project’s private and public version, tag, and flags (`make status`) |
 | “build lib” | publish the lib-\* libraries, then rebuild `bib.bib` on rProject’s `main` and `latex` branches from them |
 | “EX” | the user is leaving: update `.setup/notes/claude.txt` and the handoff |
 | “handoff” | rewrite `.setup/ai/handoff.md` without leaving |

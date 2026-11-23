@@ -100,7 +100,7 @@ Ivan Jacob Agaloos Pesigan
 ``` r
 if (FALSE) { # \dontrun{
 Conform(path = getwd())
-Conform(path = getwd(), reference = "../linearAlgebra")
+Conform(path = getwd(), reference = "../devel-linearAlgebra")
 Conform(path = getwd(), lint = TRUE, tests = TRUE)
 } # }
 ```

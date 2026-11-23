@@ -1,5 +1,118 @@
 # Changelog
 
+## rProject 0.0.78
+
+### Templates
+
+- `manifest.tsv` lists `.setup/scripts/clone-private.sh` and
+  `.setup/scripts/clone-overleaf.sh` (set `common`, tier 2): the files
+  were in `inst/template/common/` without a row, and the manifest test
+  failed in the public Make Project of 0.0.77.
+- `.sim/make.sh` is written only in a package (a project with
+  `DESCRIPTION`), as the test helpers are: in 0.0.77 a talk project’s
+  `.sim/` got one too, outside the manifest, and the template test
+  failed.
+
+### Documentation
+
+- [`vignette("structure")`](https://ijapesigan.github.io/rProject/articles/structure.md)
+  lists the “status ” keyword (0.0.76), which the AI-instructions test
+  requires.
+
+## rProject 0.0.77
+
+### Sites
+
+- [`Site()`](https://ijapesigan.github.io/rProject/reference/Site.md)
+  moves the private `AGENTS.md`, `CLAUDE.md`, and `CLAUDE.local.md`
+  aside while
+  [`pkgdown::build_site()`](https://pkgdown.r-lib.org/reference/build_site.html)
+  runs (pkgdown renders every top-level `.md` and ignores
+  `.Rbuildignore`), and removes the `AGENTS.html`, `CLAUDE.html`, and
+  `CLAUDE.local.html` that earlier builds left in `pkgdown/`. Every
+  package needs a PUB after this release to take the pages off its site.
+  The pub-check agent fails on these pages.
+
+### Coverage
+
+- [`Coverage()`](https://ijapesigan.github.io/rProject/reference/Coverage.md)
+  runs covr with `NOT_CRAN=true` (restored on exit). covr does not set
+  it, so
+  [`testthat::skip_on_cran()`](https://testthat.r-lib.org/reference/skip.html)
+  skipped most tests in a non-interactive `make all`: coverage read 0%
+  to 41% under Slurm (98% with `NOT_CRAN=true`).
+
+### Templates
+
+- The `Makefile` of every template runs `make project` first in
+  `make all` and `make clone` (so `make auto` too): a fresh Overleaf
+  copy with only `.setup/scripts/project.R` failed in `lint` and in
+  `clone`.
+- New `.sim/make.sh` template (`inst/template/once/sim-make.sh`),
+  written by
+  [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md)
+  when a package has `.sim/` and no `make.sh`: `set -Eeuo pipefail`; the
+  project above `.sim/` by default (`PROJECT=`, `SIF=` override); the
+  `~/work` bind (and `/scratch/ibp5092` where it exists); 1 CPU, 4 GB,
+  one BLAS thread, `OPENBLAS_CORETYPE=Haswell`; `CLEAN=1` removes
+  `vignettes/session.Rmd`, `vignettes/vignettes.bib`, and
+  `${CLEAN_FILES}`; `make project`, then `make release`, which stops at
+  the first failure (no `rm -rf .git`).
+  [`Conform()`](https://ijapesigan.github.io/rProject/reference/Conform.md)
+  flags a copy that differs (`sim-make`, to decide); chained jobs go in
+  `.sim/make-<name>.sh`.
+- rhub workflows: a step before “Install dependencies” sets
+  `PKG_PLATFORMS=source` on a container that is not Ubuntu, so pak
+  builds from source instead of taking Posit’s Fedora binaries, which
+  need libraries r-hub’s R builds lack (`libRlapack.so`,
+  `libopenblasp.so.0`; quadprog, nloptr, then lavaan, lme4).
+
+### Lint
+
+- `.LintRExports()` no longer stops on an export without an `.Rd`: the
+  finding is “no .Rd” (the `\value` and `\examples` checks are skipped).
+
+### Verify
+
+- “Listed files”: a label bullet is no longer read as a file.
+  `- New: <file>`, `- Edited: <file>`, and `- Delete: <file>` take the
+  next word as the file (`Delete:` lists a deletion); other labels
+  (`Records:`, `Spec:`, `Image:`, …) name no file. A file name followed
+  by `:` (`- Makefile: ...`) is still a file.
+- “Deletions” also fails when the pushed commit deleted a file the list
+  does not name (a listed folder covers its files): betaLB `2e09a4b`
+  deleted the wrong four files and passed.
+- “Linked files” compares `.setup/r-dependencies/<lib>/` with the pushed
+  state of each library, `R/` of the `.verify` clone of the library
+  project next to the project (`<lib>`, `devel-<lib>`, or `cran-<lib>`),
+  and falls back to the functions clone.
+
+### Bibliography
+
+- [`LibAdd()`](https://ijapesigan.github.io/rProject/reference/LibAdd.md):
+  a Crossref value nested one level deeper (Selya 2012’s `issue`) gave
+  `number = {list(2012)}`; the entry now reads `2012`.
+
+### Scripts
+
+- `o2g-watch.sh` takes the upload folder (fourth argument; default the
+  newest `<work>/upload/*-<project>-*/`). A push whose subject differs
+  but whose files equal the upload folder’s (`cmp`) prints
+  `match-files <sha> <subject>` and exits 0: Overleaf prefills the
+  previous subject. The global instructions and the o2g-watch agent say
+  what to do with it.
+
+### Clone
+
+- New host scripts `clone-private.sh` (private repository,
+  `jeksterslab-psu`, over SSH) and `clone-overleaf.sh` (Overleaf
+  project), next to `clone.sh` (public). Each reads `.setup/repo/` or
+  takes an argument, clones into a new folder, and never pushes.
+  `clone-overleaf.sh` sets the clone’s push URL to `no-push` and keeps
+  the Overleaf token in git’s credential helper for `git.overleaf.com`
+  only, in `~/work/.overleaf/git-credentials` (asked once; `DRYRUN=TRUE`
+  shows the command).
+
 ## rProject 0.0.76
 
 ### Lint

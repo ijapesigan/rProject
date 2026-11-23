@@ -98,6 +98,6 @@ Ivan Jacob Agaloos Pesigan
 
 ``` r
 if (FALSE) { # \dontrun{
-ConformFix(path = getwd(), reference = "../linearAlgebra")
+ConformFix(path = getwd(), reference = "../devel-linearAlgebra")
 } # }
 ```

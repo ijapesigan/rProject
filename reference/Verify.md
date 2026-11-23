@@ -66,7 +66,8 @@ The checks, and when each fails:
   commit warns that nothing was checked.
 
 - **Deletions:** a file listed under "Delete in Overleaf" is still in
-  the private repository.
+  the private repository, or the pushed commit deleted a file the list
+  does not name (a listed folder covers its files).
 
 - **Unlisted changes:** (warning only) other files differ between the
   project and the private repository (`.setup/notes/claude.txt`, the
@@ -93,8 +94,11 @@ The checks, and when each fails:
 - **Line length:** (package projects) a pushed `.R` file has a line over
   80 characters; the public CI lint fails on one.
 
-- **Linked files:** (warning only) a file in `.setup/r-dependencies/`
-  differs from a local clone of the functions repository
+- **Linked files:** (warning only) a file in
+  `.setup/r-dependencies/<lib>/` differs from the pushed state of its
+  library: `R/` of the `.verify` clone of the library project next to
+  this one (`<lib>`, `devel-<lib>`, or `cran-<lib>`), else a local clone
+  of the functions repository
   ([`Linked()`](https://ijapesigan.github.io/rProject/reference/Linked.md)).
 
 - **Full text:** (warning only, `lib-*` projects) an entry this push

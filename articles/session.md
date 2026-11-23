@@ -30,7 +30,7 @@
 `#> [1] stats     graphics  grDevices utils     datasets  methods   base     `\
 `#> `\
 `#> other attached packages:`\
-`#> [1] rProject_0.0.76`\
+`#> [1] rProject_0.0.78`\
 `#> `\
 `#> loaded via a namespace (and not attached):`\
 `#> [1] compiler_4.6.2 cli_3.6.6.9000 tools_4.6.2    otel_0.3.0     knitr_1.52    `\
@@ -449,7 +449,7 @@
 `#> tools             "tools"            `\
 `#> utils             "utils"            `\
 `#>                   LibPath                                     Version     `\
-`#> rProject          "/home/ibp5092/Downloads/rProject/.library" "0.0.76"    `\
+`#> rProject          "/home/ibp5092/Downloads/rProject/.library" "0.0.78"    `\
 `#> abind             "/usr/local/lib/R/site-library"             "1.4-8"     `\
 `#> Amelia            "/usr/local/lib/R/site-library"             "1.8.3"     `\
 `#> arm               "/usr/local/lib/R/site-library"             "1.15-3"    `\
@@ -4121,7 +4121,7 @@
 `#> tools             NA                    NA      NA     "yes"           `\
 `#> utils             NA                    NA      NA     "yes"           `\
 `#>                   Built                                                        `\
-`#> rProject          "R 4.6.2; ; 2026-11-19 16:37:30 UTC; unix"                   `\
+`#> rProject          "R 4.6.2; ; 2026-11-23 19:17:42 UTC; unix"                   `\
 `#> abind             "R 4.6.0; ; 2026-08-12 20:24:40 UTC; unix"                   `\
 `#> Amelia            "R 4.6.0; x86_64-pc-linux-gnu; 2026-10-18 11:14:25 UTC; unix"`\
 `#> arm               "R 4.6.0; ; 2026-04-25 01:17:55 UTC; unix"                   `\
