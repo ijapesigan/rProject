@@ -87,7 +87,10 @@ lapply(
           condition = dir.exists(paths = file.path(template, "once"))
         )
         written <- .TemplateOnce(path = root, root = template, check = FALSE)
-        testthat::expect_length(object = written, n = 2L)
+        testthat::expect_length(
+          object = grep(pattern = "^tests/", x = written, value = TRUE),
+          n = 2L
+        )
         testthat::expect_length(
           object = .TemplateOnce(path = root, root = template, check = FALSE),
           n = 0L
@@ -117,6 +120,45 @@ lapply(
         testthat::expect_equal(
           object = readLines(con = file.path(root, ".sim", "make.sh")),
           expected = "# own"
+        )
+        unlink(x = dirname(path = root), recursive = TRUE)
+      }
+    )
+    testthat::test_that(
+      desc = paste(text, ".sim/make.sh and .sim/.gitignore in every type"),
+      code = {
+        # a talk, a lib, or a docker project: no DESCRIPTION, no .sim/
+        root <- .TestProject(description = FALSE)
+        template <- system.file("template", package = "rProject")
+        testthat::skip_if_not(
+          condition = file.exists(file.path(template, "once", "sim-gitignore"))
+        )
+        written <- .TemplateOnce(path = root, root = template, check = TRUE)
+        testthat::expect_setequal(
+          object = written,
+          expected = file.path(".sim", c("make.sh", ".gitignore"))
+        )
+        testthat::expect_false(
+          object = dir.exists(paths = file.path(root, ".sim"))
+        )
+        .TemplateOnce(path = root, root = template, check = FALSE)
+        testthat::expect_true(
+          object = all(
+            file.exists(file.path(root, ".sim", c("make.sh", ".gitignore")))
+          )
+        )
+        # a simulation's own .gitignore stays
+        writeLines(
+          text = "output/",
+          con = file.path(root, ".sim", ".gitignore")
+        )
+        testthat::expect_length(
+          object = .TemplateOnce(path = root, root = template, check = FALSE),
+          n = 0L
+        )
+        testthat::expect_equal(
+          object = readLines(con = file.path(root, ".sim", ".gitignore")),
+          expected = "output/"
         )
         unlink(x = dirname(path = root), recursive = TRUE)
       }

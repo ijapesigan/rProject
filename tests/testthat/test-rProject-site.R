@@ -33,7 +33,15 @@ lapply(
         )
         writeLines(text = "# private", con = file.path(root, "AGENTS.md"))
         writeLines(text = "# private", con = file.path(root, "CLAUDE.md"))
-        writeLines(text = "x", con = file.path(root, "pkgdown", "AGENTS.html"))
+        dir.create(path = file.path(root, ".github"))
+        writeLines(
+          text = "# private",
+          con = file.path(root, ".github", "copilot-instructions.md")
+        )
+        stale <- c("AGENTS.html", "AGENTS.md", "copilot-instructions.html")
+        for (file in stale) {
+          writeLines(text = "x", con = file.path(root, "pkgdown", file))
+        }
         seen <- NULL
         testthat::local_mocked_bindings(
           LibPaths = function(path) {
@@ -42,8 +50,12 @@ lapply(
         )
         testthat::local_mocked_bindings(
           build_site = function(pkg, ...) {
-            # what pkgdown would render: the top-level .md files
-            seen <<- list.files(path = pkg, pattern = "\\.md$")
+            # what pkgdown would render: the .md files at the top and in
+            # .github/
+            seen <<- c(
+              list.files(path = pkg, pattern = "\\.md$"),
+              list.files(path = file.path(pkg, ".github"), pattern = "\\.md$")
+            )
             invisible(x = NULL)
           },
           .package = "pkgdown"
@@ -51,13 +63,26 @@ lapply(
         Site(path = root)
         testthat::expect_false(object = "AGENTS.md" %in% seen)
         testthat::expect_false(object = "CLAUDE.md" %in% seen)
+        testthat::expect_false(object = "copilot-instructions.md" %in% seen)
+        private <- c(
+          "AGENTS.md",
+          "CLAUDE.md",
+          file.path(".github", "copilot-instructions.md")
+        )
         testthat::expect_true(
-          object = all(
-            file.exists(file.path(root, c("AGENTS.md", "CLAUDE.md")))
-          )
+          object = all(file.exists(file.path(root, private)))
         )
         testthat::expect_false(
-          object = file.exists(file.path(root, "pkgdown", "AGENTS.html"))
+          object = any(file.exists(file.path(root, "pkgdown", stale)))
+        )
+        # the folder aside is gone
+        testthat::expect_length(
+          object = list.files(
+            path = root,
+            pattern = "^\\.site-private-",
+            all.files = TRUE
+          ),
+          n = 0L
         )
         unlink(x = dirname(path = root), recursive = TRUE)
       }
