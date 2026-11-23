@@ -41,7 +41,7 @@ the ones that are missing or not standard for its type.
 | `src/` | rProject, cran, man |  |  | C++ sources, copied from `.setup/cpp/` by [`Build()`](https://ijapesigan.github.io/rProject/reference/Build.md) |
 | `vignettes/` | rProject, cran, man, talk |  |  | vignettes; those with a source in `.setup/vignettes/` are generated |
 | `.github/workflows/` | all |  |  | CI workflows, written by [`Template()`](https://ijapesigan.github.io/rProject/reference/Template.md) (change them in rProject’s `inst/template/`) |
-| `.sim/` | rProject, cran, man, talk |  |  | simulation scripts (SLURM, GNU Parallel); a simulation has `.sim/README.md` |
+| `.sim/` | all |  |  | `make.sh` (Slurm job: `make project`, then `make release`; `PUSH=0`, `FRESH=1`) in every project; simulation scripts (SLURM, GNU Parallel); a simulation has `.sim/README.md` |
 | `.sif/` | man, talk |  |  | Apptainer images or links to them (local only; never uploaded) |
 | `scripts/` | docker |  |  | the image’s install scripts; `scripts/setup.sh` runs them in order |
 | `detritus/` | rProject, cran, man, lib, talk |  |  | LaTeX by-products (the `.tex` knitted from `.Rtex`) |

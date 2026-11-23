@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.78</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.79</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@
                         <h4 data-toc-skip class="author">Ivan Jacob
 Agaloos Pesigan</h4>
             
-            <h4 data-toc-skip class="date">2026-11-23 19:43:20</h4>
+            <h4 data-toc-skip class="date">2026-11-23 21:18:13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ijapesigan/rProject/blob/main/vignettes/structure.Rmd" class="external-link"><code>vignettes/structure.Rmd</code></a></small>
       <div class="d-none name"><code>structure.Rmd</code></div>
@@ -144,11 +144,11 @@ Overleaf and in the private repository; they never go public.
 that are missing or not standard for its type.</p>
 <table class="table">
 <colgroup>
-<col width="12%">
-<col width="17%">
+<col width="10%">
+<col width="15%">
 <col width="3%">
 <col width="3%">
-<col width="62%">
+<col width="67%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">folder</th>
@@ -223,11 +223,15 @@ scripts in <code>.setup/data-process/</code>
 </tr>
 <tr class="odd">
 <td align="left"><code>.sim/</code></td>
-<td align="left">rProject, cran, man, talk</td>
+<td align="left">all</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">simulation scripts (SLURM, GNU Parallel); a simulation
-has <code>.sim/README.md</code>
+<td align="left">
+<code>make.sh</code> (Slurm job:
+<code>make project</code>, then <code>make release</code>;
+<code>PUSH=0</code>, <code>FRESH=1</code>) in every project; simulation
+scripts (SLURM, GNU Parallel); a simulation has
+<code>.sim/README.md</code>
 </td>
 </tr>
 <tr class="even">

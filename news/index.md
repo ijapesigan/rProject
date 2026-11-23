@@ -1,5 +1,44 @@
 # Changelog
 
+## rProject 0.0.79
+
+### Sites
+
+- [`Site()`](https://ijapesigan.github.io/rProject/reference/Site.md)
+  moves the private files aside into a folder inside the project, and
+  stops if a move fails: 0.0.77 used
+  [`tempfile()`](https://rdrr.io/r/base/tempfile.html) in `/tmp`, and a
+  move from another filesystem failed without an error, so pkgdown still
+  rendered the files. `.github/copilot-instructions.md` goes aside too
+  (pkgdown renders `.github/*.md`). After the build, `pkgdown/` loses
+  `AGENTS`, `CLAUDE`, `CLAUDE.local`, and `copilot-instructions` as
+  `.html` and as `.md` (pkgdown’s Markdown copies). The public `pkgdown`
+  branch of 0.0.78 still had `AGENTS.md`, `CLAUDE.md`, and
+  `copilot-instructions.html`/`.md`; the next PUB of each package
+  removes them.
+
+### Templates
+
+- `.sim/make.sh` in every project type (package, talk, lib, docker),
+  with `.sim/.gitignore` (`inst/template/once/sim-gitignore`): each
+  written once, when missing; a simulation keeps its own `.gitignore`.
+  The talk set no longer lists `.sim/.gitignore`. `folders.tsv` lists
+  `.sim/` for every type.
+- `.sim/make.sh`: `PUSH=0` runs `make all` only (no secret scan, no
+  `make auto`); `FRESH=1` clones the private repository
+  (`.setup/repo/private-github.md`, over SSH, the `github-<owner>` alias
+  when `~/.ssh/config` has it) into `tmp/fresh-<repo>-<job>/` next to
+  the project (`FRESH_DIR=`) and builds that clone, so a PUB publishes
+  the pushed state. It replaces the scratch `lib-make.sbatch`.
+
+### Verify
+
+- `.LinkedSources()` returns paths with `/` on every OS: on Windows,
+  [`normalizePath()`](https://rdrr.io/r/base/normalizePath.html) and
+  [`file.path()`](https://rdrr.io/r/base/file.path.html) mixed
+  backslashes and `/`, and R-CMD-check-standard and -full of 0.0.78
+  failed (`test-rProject-verify-linked-dot.R`).
+
 ## rProject 0.0.78
 
 ### Templates

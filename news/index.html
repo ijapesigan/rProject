@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.78</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.79</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,26 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.79" id="rproject-0079">rProject 0.0.79<a class="anchor" aria-label="anchor" href="#rproject-0079"></a></h2>
+<div class="section level3">
+<h3 id="sites-0-0-79">Sites<a class="anchor" aria-label="anchor" href="#sites-0-0-79"></a></h3>
+<ul><li>
+<code><a href="../reference/Site.html">Site()</a></code> moves the private files aside into a folder inside the project, and stops if a move fails: 0.0.77 used <code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile()</a></code> in <code>/tmp</code>, and a move from another filesystem failed without an error, so pkgdown still rendered the files. <code>.github/copilot-instructions.md</code> goes aside too (pkgdown renders <code>.github/*.md</code>). After the build, <code>pkgdown/</code> loses <code>AGENTS</code>, <code>CLAUDE</code>, <code>CLAUDE.local</code>, and <code>copilot-instructions</code> as <code>.html</code> and as <code>.md</code> (pkgdown’s Markdown copies). The public <code>pkgdown</code> branch of 0.0.78 still had <code>AGENTS.md</code>, <code>CLAUDE.md</code>, and <code>copilot-instructions.html</code>/<code>.md</code>; the next PUB of each package removes them.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="templates-0-0-79">Templates<a class="anchor" aria-label="anchor" href="#templates-0-0-79"></a></h3>
+<ul><li>
+<code>.sim/make.sh</code> in every project type (package, talk, lib, docker), with <code>.sim/.gitignore</code> (<code>inst/template/once/sim-gitignore</code>): each written once, when missing; a simulation keeps its own <code>.gitignore</code>. The talk set no longer lists <code>.sim/.gitignore</code>. <code>folders.tsv</code> lists <code>.sim/</code> for every type.</li>
+<li>
+<code>.sim/make.sh</code>: <code>PUSH=0</code> runs <code>make all</code> only (no secret scan, no <code>make auto</code>); <code>FRESH=1</code> clones the private repository (<code>.setup/repo/private-github.md</code>, over SSH, the <code>github-&lt;owner&gt;</code> alias when <code>~/.ssh/config</code> has it) into <code>tmp/fresh-&lt;repo&gt;-&lt;job&gt;/</code> next to the project (<code>FRESH_DIR=</code>) and builds that clone, so a PUB publishes the pushed state. It replaces the scratch <code>lib-make.sbatch</code>.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="verify-0-0-79">Verify<a class="anchor" aria-label="anchor" href="#verify-0-0-79"></a></h3>
+<ul><li>
+<code>.LinkedSources()</code> returns paths with <code>/</code> on every OS: on Windows, <code><a href="https://rdrr.io/r/base/normalizePath.html" class="external-link">normalizePath()</a></code> and <code><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path()</a></code> mixed backslashes and <code>/</code>, and R-CMD-check-standard and -full of 0.0.78 failed (<code>test-rProject-verify-linked-dot.R</code>).</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.78" id="rproject-0078">rProject 0.0.78<a class="anchor" aria-label="anchor" href="#rproject-0078"></a></h2>
 <div class="section level3">
