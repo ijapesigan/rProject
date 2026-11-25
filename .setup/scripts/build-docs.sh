@@ -207,6 +207,10 @@ public_version="$("${gh}" api repos/ijapesigan/rProject/contents/DESCRIPTION \
   fail "public rProject is ${public_version}, DESCRIPTION is ${version}: PUB first"
 log "public rProject ${public_version}"
 
+# report only: the RStudio pins against rocker-versioned2 (never stops the run)
+bash "${root}/.setup/scripts/rocker-pins.sh" --remote ||
+  log "rocker pins: differ or not checked (report only; see above)"
+
 # run_wait <repo> <workflow> <jq select>: wait (up to <minutes>) for the
 # newest matching run to complete; prints "<conclusion> <id> <sha>"
 run_wait() {
