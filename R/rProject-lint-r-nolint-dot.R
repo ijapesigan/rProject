@@ -1,7 +1,12 @@
 .LintRNolint <- function(path,
                          code = .LintRCode(path = path)) {
   level <- .LintLevel(path = path)
-  good <- "#\\s*nolint:\\s*[A-Za-z_, ]+\\.\\s*Reason:\\s*\\S"
+  # one line (`# nolint:`) or a block (`# nolint start:`) names its rules
+  # and a reason; `# nolint end` closes a block and is not listed
+  good <- paste0(
+    "#\\s*nolint(\\s+start)?:\\s*[A-Za-z_, ]+\\.",
+    "\\s*Reason:\\s*\\S"
+  )
   .LintBind(
     rows = lapply(
       X = code,
@@ -11,7 +16,12 @@
         line <- integer(length = 0L)
         if (!is.null(x = data)) {
           keep <- data$token == "COMMENT" &
-            grepl(pattern = "^#\\s*nolint\\b", x = data$text, perl = TRUE)
+            grepl(pattern = "^#\\s*nolint\\b", x = data$text, perl = TRUE) &
+            !grepl(
+              pattern = "^#\\s*nolint\\s+end\\b",
+              x = data$text,
+              perl = TRUE
+            )
           comments <- data$text[keep]
           line <- data$line1[keep]
         }
