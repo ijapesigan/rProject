@@ -1,5 +1,30 @@
 # Changelog
 
+## rProject 0.0.80
+
+### Templates
+
+- `.setup/latex/r-scripts/tests.R`, `tests-external.R`, and
+  `tests-benchmark.R` wrap the
+  [`lapply()`](https://rdrr.io/r/base/lapply.html) over the test files
+  in [`invisible()`](https://rdrr.io/r/base/invisible.html). Knitr
+  printed its value (the
+  [`source()`](https://rdrr.io/r/base/source.html) results of every test
+  file) in one `kframe`, which grew past TeX’s largest dimension
+  (“Dimension too large” at `\end{kframe}` in devel-mxHelper’s
+  `<pkg>-zzz-tests-internal`).
+- The docker template’s `.setup/readme/README.Rmd` prints the render
+  time under the `# owner/image` heading (“Updated 2026-11-26 14:03:00
+  UTC.”): in the public repository, the time of the last Make Project
+  run.
+
+### Lint
+
+- `nolint`: a block start, `# nolint start: <rules>. Reason: <why>`,
+  passes as a note like a one-line `# nolint:`; without a reason it
+  stays a warning. `# nolint end` is no longer listed (devel-mxHelper
+  had 20 warnings, 10 of them `end` lines).
+
 ## rProject 0.0.79
 
 ### Sites

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.79</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.80</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,20 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.80" id="rproject-0080">rProject 0.0.80<a class="anchor" aria-label="anchor" href="#rproject-0080"></a></h2>
+<div class="section level3">
+<h3 id="templates-0-0-80">Templates<a class="anchor" aria-label="anchor" href="#templates-0-0-80"></a></h3>
+<ul><li>
+<code>.setup/latex/r-scripts/tests.R</code>, <code>tests-external.R</code>, and <code>tests-benchmark.R</code> wrap the <code><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply()</a></code> over the test files in <code><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible()</a></code>. Knitr printed its value (the <code><a href="https://rdrr.io/r/base/source.html" class="external-link">source()</a></code> results of every test file) in one <code>kframe</code>, which grew past TeX’s largest dimension (“Dimension too large” at <code>\end{kframe}</code> in devel-mxHelper’s <code>&lt;pkg&gt;-zzz-tests-internal</code>).</li>
+<li>The docker template’s <code>.setup/readme/README.Rmd</code> prints the render time under the <code># owner/image</code> heading (“Updated 2026-11-26 14:03:00 UTC.”): in the public repository, the time of the last Make Project run.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="lint-0-0-80">Lint<a class="anchor" aria-label="anchor" href="#lint-0-0-80"></a></h3>
+<ul><li>
+<code>nolint</code>: a block start, <code># nolint start: &lt;rules&gt;. Reason: &lt;why&gt;</code>, passes as a note like a one-line <code># nolint:</code>; without a reason it stays a warning. <code># nolint end</code> is no longer listed (devel-mxHelper had 20 warnings, 10 of them <code>end</code> lines).</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.79" id="rproject-0079">rProject 0.0.79<a class="anchor" aria-label="anchor" href="#rproject-0079"></a></h2>
 <div class="section level3">
