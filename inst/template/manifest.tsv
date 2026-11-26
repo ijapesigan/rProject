@@ -70,6 +70,7 @@ cran	2	.gitignore
 cran	2	.github/workflows/check-oldrel.yml
 cran	2	.github/workflows/check-standard.yml
 cran	2	.github/workflows/non-ascii-check.yml
+cran	2	.setup/vignettes/session.Rmd.orig
 rproject	2	.github/workflows/latex-rproject-daily.yml
 rproject	2	.github/workflows/quarto-gh-pages.yml
 man	2	.github/workflows/make.yml
@@ -80,6 +81,7 @@ man	2	.setup/quarto/references/references.qmd
 man	2	.setup/quarto/scss/custom.scss
 man	2	.setup/quarto/session/session.qmd
 man	2	.setup/quarto/tags/tags.qmd
+man	2	.setup/vignettes/session.Rmd.orig
 man	2	.sif/.gitignore
 lib	2	.github/workflows/make.yml
 lib	2	.github/workflows/non-ascii-check.yml
@@ -116,6 +118,7 @@ talk	2	.setup/quarto/tags/tags.qmd
 talk	2	.setup/scripts/make-config.R
 talk	2	.setup/scripts/verify.sh
 talk	2	.setup/scripts/repo-status.sh
+talk	2	.setup/vignettes/session.Rmd.orig
 talk	2	.sif/.gitignore
 talk	2	Makefile
 docker	2	.github/workflows/make.yml
