@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rProject</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.80</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.81</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,16 @@
       <small>Source: <a href="https://github.com/ijapesigan/rProject/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.81" id="rproject-0081">rProject 0.0.81<a class="anchor" aria-label="anchor" href="#rproject-0081"></a></h2>
+<div class="section level3">
+<h3 id="templates-0-0-81">Templates<a class="anchor" aria-label="anchor" href="#templates-0-0-81"></a></h3>
+<ul><li>
+<code>.setup/vignettes/session.Rmd.orig</code> comes from the template (tier 2, written by <code>make project</code>; <code>{{project}}</code> is the package name): one for cran and rProject (knitr), one for man and talk (Quarto). Each project kept its own copy (49 copies, 9 variants, none customized). Its <code>date:</code> is the render time, <code>format(Sys.time(), '%Y-%m-%d %H:%M:%S', tz = 'UTC')</code> with ” UTC”: the time <code>make all</code> knits the precompiled vignette. The man and talk form gains the Packages section. The old form (<code><a href="https://rdrr.io/r/base/library.html" class="external-link">library(pkg)</a></code>, bare <code><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo()</a></code>, <code>system("...")</code>, <code>#</code> headings) failed the 0.0.80 house checks, so Make Project stopped before it pushed the generated files and every other workflow failed on the missing <code>NAMESPACE</code> (nine devel-* repositories, 2026-11-26); devel-gammaADF’s copy named <code>linearAlgebra</code>.</li>
+<li>
+<code>.setup/scripts/image-lock.sh</code> runs under <code>set -Eeuo pipefail</code> (the house <code>sh-strict</code> warning in every project); a missing lock or field is still empty.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.80" id="rproject-0080">rProject 0.0.80<a class="anchor" aria-label="anchor" href="#rproject-0080"></a></h2>
 <div class="section level3">
