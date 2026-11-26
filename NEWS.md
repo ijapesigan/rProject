@@ -1,3 +1,10 @@
+# rProject 0.0.81
+
+## Templates
+
+- `.setup/vignettes/session.Rmd.orig` comes from the template (tier 2, written by `make project`; `{{project}}` is the package name): one for cran and rProject (knitr), one for man and talk (Quarto). Each project kept its own copy (49 copies, 9 variants, none customized). Its `date:` is the render time, `format(Sys.time(), '%Y-%m-%d %H:%M:%S', tz = 'UTC')` with " UTC": the time `make all` knits the precompiled vignette. The man and talk form gains the Packages section. The old form (`library(pkg)`, bare `sessionInfo()`, `system("...")`, `#` headings) failed the 0.0.80 house checks, so Make Project stopped before it pushed the generated files and every other workflow failed on the missing `NAMESPACE` (nine devel-* repositories, 2026-11-26); devel-gammaADF's copy named `linearAlgebra`.
+- `.setup/scripts/image-lock.sh` runs under `set -Eeuo pipefail` (the house `sh-strict` warning in every project); a missing lock or field is still empty.
+
 # rProject 0.0.80
 
 ## Templates

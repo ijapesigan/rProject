@@ -89,6 +89,54 @@ lapply(
       )
       unlink(x = root, recursive = TRUE)
     }
+    for (type in c("cran", "man", "talk")) {
+      root <- project(type = type)
+      suppressMessages(expr = Template(path = root))
+      session <- file.path(root, ".setup", "vignettes", "session.Rmd.orig")
+      lines <- readLines(con = session, warn = FALSE)
+      house <- .LintHouse(path = root, type = type)
+      testthat::test_that(
+        desc = paste(text, type, "session vignette names the package"),
+        code = {
+          testthat::expect_true(
+            object = "title: \"test: Session\"" %in% lines
+          )
+          testthat::expect_true(
+            object = "library(package = \"test\")" %in% lines
+          )
+          testthat::expect_false(
+            object = any(grepl(pattern = "{{", x = lines, fixed = TRUE))
+          )
+        }
+      )
+      testthat::test_that(
+        desc = paste(text, type, "session vignette has the UTC time"),
+        code = {
+          testthat::expect_true(
+            object = any(
+              grepl(
+                pattern = "^date: .*tz = 'UTC'.* UTC\"$",
+                x = lines
+              )
+            )
+          )
+        }
+      )
+      testthat::test_that(
+        desc = paste(text, type, "session vignette passes the house checks"),
+        code = {
+          testthat::expect_false(
+            object = any(
+              house$file %in% c(
+                ".setup/vignettes/session.Rmd.orig",
+                ".setup/scripts/image-lock.sh"
+              )
+            )
+          )
+        }
+      )
+      unlink(x = root, recursive = TRUE)
+    }
     root <- project(type = "cran")
     suppressMessages(expr = Template(path = root))
     edited <- file.path(root, ".github", "workflows", "make.yml")
